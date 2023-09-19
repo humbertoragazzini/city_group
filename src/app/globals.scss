@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './scss/base/colors.scss';
+@import './scss/components/intro_home/moving_titles.scss';
+
+.backgrounFirst{
+    position:fixed!important;
+    width: calc(100vw + 100px);
+    height: calc(100vh + 100px);
+    background-image: url('../../public/house-1477041_1920.jpg');
+    transform: scale(1.1);
+    background-size: cover;
+    background-position: 46%;
+    background-repeat: no-repeat;
+    filter: brightness(0.6) blur(0px);
+    z-index: -1;
+}
+.backgrounSecond {
+  opacity: 0;
+  position: fixed !important;
+  width: calc(100vw + 100px);
+  height: calc(100vh + 100px);
+  top: -50px;
+  left: -50px;
+  // background-image: url('../../public/warehouse-5635000.jpg');
+  background-size: cover;
+    background-position: 46%;
+    background-repeat: no-repeat;
+  filter: brightness(0.6) blur(0px);
+  z-index: -1;
+}
+.backgrounThird {
+  opacity: 0;
+  position: fixed !important;
+  width: calc(100vw + 100px);
+  height: calc(100vh + 100px);
+  top: -50px;
+  left: -50px;
+  // background-image: url('../../public/bright-1851267.jpg');
+  background-size: cover;
+    background-position: 46%;
+    background-repeat: no-repeat;
+  filter: brightness(0.6) blur(0px);
+  z-index: -1;
+}
+.backgrounFourth{
+  opacity: 0;
+  position: fixed !important;
+  width: calc(100vw + 100px);
+  height: calc(100vh + 100px);
+  top: -50px;
+  left: -50px;
+  // background-image: url('../../public/drop-of-water-578897.jpg');
+  background-size: cover;
+    background-position: 46%;
+    background-repeat: no-repeat;
+  filter: brightness(0.6) blur(0px);
+  z-index: -1;
+}
+.backgrounFiveth {
+  opacity: 0;
+  position: fixed !important;
+  width: calc(100vw + 100px);
+  height: calc(100vh + 100px);
+  top: -50px;
+  left: -50px;
+  // background-image: url('../../public/pipes-4161383.jpg');
+  background-size: cover;
+    background-position: 46%;
+    background-repeat: no-repeat;
+  filter: brightness(0.6) blur(0px);
+  z-index: -1;
+}
+
+.svgContainer{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #svg5 {
+
+    }
+}
+
+// .lastBox{
+//   width: 100%;
+//   margin-left: auto;
+//   margin-right: auto;
+
+//   .content{
+//     // backdrop-filter: blur(10px);
+//     // background-color: rgba(0, 0, 0, 0.484);
+//     .blue-box{
+//       background: #030123;
+//       border: 2px solid #05023d;
+//       border-radius: 15px;
+//       box-shadow: 5px 5px 10px;
+//     }
+//   }
+//   h2{
+//     text-align: left;
+//     font-weight: 500;
+//   }
+//   .text-box{
+//     border-radius: 15px;
+//   }
+//   .image-box {
+//     background-image: url('../../public/pexels-binyamin-mellish-186077.jpg');
+//     background-size: cover;
+//     border-radius: 15px;
+//     &.steelimage{
+//       min-height: 450px;
+//       background-image: url('../../public/steelframing.jpeg');
+//       background-position: center;
+//     }
+//   }
+//   .imageComponent{
+//     width: 450px;
+//     height: 450px;
+//     img{
+//       width: auto;
+//       height: 100%;
+//     }
+//   }
+// }
+
+.navBar {
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+
+  a {
+    transition: 0.5s;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-bottom: 3px solid transparent;
+    &.active{
+      border-color: white;
+    }
+    &:hover,
+    &:active,
+    &:focus {border-color: white;
+    }
+  }
+}
+
+.footer{background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 91%);
+  z-index: 9999;
+  .link {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    transform-origin: 0%;transition: 0.5s;
+    svg {
+      transition: 0.5s;
+        height: 35px;
+        width: 35px;
+        fill: white;
+        scale: 1;
+      }
+    &:hover,
+    &:active,
+    &:focus {
+      scale: 1.1;
+      text-decoration-color: white;
+      font-weight: 600;
+      svg{
+        scale: 1.2;
+      }
+    }
+  }
+}
+
+
+
+.blur_background{
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.484);
+}
+
+
+

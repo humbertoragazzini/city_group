@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg353"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview355"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <defs
+     id="defs350" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="_1857153592624"
+       transform="matrix(0.01,0,0,0.01,-27.691463,-122.9487)"
+       style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision">
+   <text
+   x="8824"
+   y="19989"
+   class="fil2 fnt1"
+   id="text126"
+   style="font-style:italic;font-weight:bold;font-size:2540px;font-family:Georgia;fill:#373435">Steel</text>
+
+   <text
+   x="8824"
+   y="22875"
+   class="fil2 fnt1"
+   id="text128"
+   style="font-style:italic;font-weight:bold;font-size:2540px;font-family:Georgia;fill:#373435">City</text>
+
+   <polyline
+   class="fil1 str3"
+   points="8401,18124 11112,16513 16700,17948 "
+   id="polyline130"
+   style="fill:none;stroke:#ed3237;stroke-width:500" />
+
+  </g>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+.image_component {
+    width: 450px;
+    height: 450px;
+
+    img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.titles_to_appear {
+    h1 {
+        color: white;
+        font-size: 150px;
+
+        .firstBigTitle {
+            &.second {
+                margin-left: 25%;
+            }
+        }
+    }
+}
