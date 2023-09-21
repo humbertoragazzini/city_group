@@ -11,25 +11,25 @@ export default function OurServices() {
       isFirst={true}
       titleFirst='Steel'
       titleSecond='Framing'
-      backgroundURL='url(./warehouse-5635000.jpg)'
+      backgroundURL='url(./steel-framing-background.webp)'
       ></Sections>
       <Sections 
       isFirst={false}
       titleFirst='Electricidad'
       titleSecond=''
-      backgroundURL='url(./bright-1851267.jpg)'
+      backgroundURL='url(./electricity-background.webp)'
       ></Sections>
       <Sections 
       isFirst={false}
       titleFirst='Refrigeracion'
       titleSecond=''
-      backgroundURL='url(./pipes-4161383.jpg)'
+      backgroundURL='url(./refrigeration-background.webp)'
       ></Sections>
       <Sections 
       isFirst={false}
       titleFirst='Sistemas'
       titleSecond='de Agua'
-      backgroundURL='url(./drop-of-water-578897.jpg)'
+      backgroundURL='url(./water-pipes-background.webp)'
       ></Sections>
     </>
   )
