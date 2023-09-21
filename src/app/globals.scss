@@ -110,6 +110,34 @@
     height: 40px;
   }
 }
+.navBarDropDown {
+  backdrop-filter: blur(5px);
+  z-index: 9900;
+  padding-top: 50px;
+
+  a {
+    transition: 0.5s;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-bottom: 3px solid transparent;
+
+    &.active {
+      border-color: white;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: white;
+    }
+  }
+
+  #menu-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
 
 
 

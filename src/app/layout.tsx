@@ -2,7 +2,7 @@
 import './globals.scss'
 import styles from './styles.module.scss'
 import type { Metadata } from 'next'
-import React, {useRef, useLayoutEffect} from 'react';
+import React, {useRef, useLayoutEffect, useState} from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { Inter } from 'next/font/google'
@@ -17,13 +17,21 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
 
   const pathname = usePathname();
   const mobileMenu = React.useRef<HTMLDivElement>(null);
+  const [closeOpenMenu, setCloseOpenMenu] = useState(false);
 
 
   gsap.set(mobileMenu.current?.childNodes[0].childNodes!,{opacity:0,y:-15})
     
   const OpenClose = ()=>{
-    gsap.to(mobileMenu.current,{top:'0px'})
-    gsap.fromTo(mobileMenu.current?.childNodes[0].childNodes!,{opacity:0,y:-15},{opacity:1,y:0,stagger:0.25})
+    if(closeOpenMenu){
+      gsap.to(mobileMenu.current,{top:-mobileMenu.current?.getBoundingClientRect().height!})
+      gsap.fromTo(mobileMenu.current?.childNodes[0].childNodes!,{opacity:1,y:0,stagger:0.25},{opacity:0,y:-15})
+      setCloseOpenMenu(false)
+    }else{
+      gsap.to(mobileMenu.current,{top:'0px'})
+      gsap.fromTo(mobileMenu.current?.childNodes[0].childNodes!,{opacity:0,y:-15},{opacity:1,y:0,stagger:0.25})
+      setCloseOpenMenu(true)
+    }
   }
 
   return (
@@ -100,14 +108,14 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
             </svg>
           </button>
         </div>
-        <div className={'fixed w-screen p-0 lg:p-5 navBar block lg:hidden'} ref={mobileMenu} style={{top:'-100vh'}}>
+        <div className={'fixed w-screen p-0 lg:p-5 navBarDropDown block lg:hidden'} ref={mobileMenu} style={{top:'-100vh'}}>
           <div className={'relative w-screen p-5 navBar block lg:hidden'}>
-            <Link href={'/'} className={pathname === "/" ? "p-4 pb-2 m-3 active w-fit" : "p-4 pb-2 m-3  w-fit"} style={{opacity:'0',top:'-15px'}}>Home</Link>
-            <Link href={'/our_services'} className={pathname === "/our_services w-fit" ? "p-4 pb-2 m-3 active block" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Our Services</Link>
-            <Link href={'/'} className={pathname === "/about_us" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>About Us</Link>
-            <Link href={'/'} className={pathname === "/contact" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Contact</Link>
-            <Link href={'/login'} className={pathname === "/login" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Login</Link>
-            <Link href={'/signup'} className={pathname === "/signup" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Signup</Link>
+            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/" ? "p-4 pb-2 m-3 active w-fit" : "p-4 pb-2 m-3  w-fit"} style={{opacity:'0',top:'-15px'}}>Home</Link>
+            <Link href={'/our_services'} onClick={()=>{OpenClose()}} className={pathname === "/our_services w-fit" ? "p-4 pb-2 m-3 active block" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Our Services</Link>
+            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/about_us" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>About Us</Link>
+            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/contact" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Contact</Link>
+            <Link href={'/login'} onClick={()=>{OpenClose()}} className={pathname === "/login" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Login</Link>
+            <Link href={'/signup'} onClick={()=>{OpenClose()}} className={pathname === "/signup" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Signup</Link>
           </div>
         </div>
         
