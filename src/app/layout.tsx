@@ -57,50 +57,50 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
             >
               <g fill="#fff" color="#fff" transform="translate(-26.404 -37.586)">
                 <path
-                  style={{ InkscapeStroke: "none" }}
+                  style={{ stroke: "none" }}
                   d="M34.459 37.586c-4.439 0-8.055 3.616-8.055 8.055v49.416c0 4.438 3.616 8.052 8.055 8.052h50.156c4.439 0 8.055-3.614 8.055-8.052V45.64c0-4.44-3.616-8.055-8.055-8.055zm0 2.656h50.156a5.358 5.358 0 015.399 5.399v49.416a5.356 5.356 0 01-5.399 5.396H34.46a5.356 5.356 0 01-5.398-5.396V45.64a5.358 5.358 0 015.398-5.399z"
                 ></path>
                 <g>
                   <path
-                    style={{ InkscapeStroke: "none" }}
+                    style={{ stroke: "none" }}
                     strokeWidth="1.16"
                     d="M38.219 50.696h42.527v5.22H38.22z"
                   ></path>
                   <path
-                    style={{ InkscapeStroke: "none" }}
+                    style={{ stroke: "none" }}
                     d="M37.639 50.115v6.381h43.687v-6.38zm1.16 1.16h41.367v4.06H38.799z"
                   ></path>
                 </g>
                 <g>
                   <path
-                    style={{ InkscapeStroke: "none" }}
+                    style={{ stroke: "none" }}
                     strokeWidth="1.16"
                     d="M38.157 61.752h42.527v5.22H38.157z"
                   ></path>
                   <path
-                    style={{ InkscapeStroke: "none" }}
+                    style={{ stroke: "none" }}
                     d="M37.576 61.172v6.38h43.688v-6.38zm1.16 1.16h41.368v4.06H38.736z"
                   ></path>
                 </g>
                 <g>
                   <path
-                    style={{ InkscapeStroke: "none" }}
+                    style={{ stroke: "none" }}
                     strokeWidth="1.16"
                     d="M38.157 72.623h42.527v5.22H38.157z"
                   ></path>
                   <path
-                    style={{ InkscapeStroke: "none" }}
+                    style={{ stroke: "none" }}
                     d="M37.576 72.043v6.38h43.69v-6.38zm1.16 1.16h41.368v4.06H38.736z"
                   ></path>
                 </g>
                 <g>
                   <path
-                    style={{ InkscapeStroke: "none" }}
+                    style={{ stroke: "none" }}
                     strokeWidth="1.16"
                     d="M38.033 83.618h42.528v5.22H38.033z"
                   ></path>
                   <path
-                    style={{ InkscapeStroke: "none" }}
+                    style={{ stroke: "none" }}
                     d="M37.453 83.037v6.381h43.688v-6.38zm1.16 1.16H79.98v4.06H38.613z"
                   ></path>
                 </g>

@@ -4,6 +4,18 @@
 @import './scss/base/colors.scss';
 @import './scss/components/intro_home/moving_titles.scss';
 
+// Make images for the following ratios
+
+// 4:3 aspect ratio: 800 x 600 px
+// 4:5 aspect ratio: 1080 x 1350px
+// 16:9 aspect ratio: 1920 x 1080 px
+// 21:9 ?
+
+// 3:4 aspect ratio: 600 x 800px
+// 5:4 aspect ratio:  1350 x 1080px
+// 9:16 aspect ratio: 1080 x 1920px
+// 9:21 ?
+
 .backgrounFirst{
     position:fixed!important;
     width: calc(100vw + 100px);
