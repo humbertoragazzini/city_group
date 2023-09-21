@@ -2,20 +2,34 @@
 import './globals.scss'
 import styles from './styles.module.scss'
 import type { Metadata } from 'next'
+import React, {useRef, useLayoutEffect} from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import { usePathname} from 'next/navigation';
+
+gsap.registerPlugin(ScrollTrigger)
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({children,}: {children: React.ReactNode}) {
 
-  const pathname = usePathname()
+  const pathname = usePathname();
+  const mobileMenu = React.useRef<HTMLDivElement>(null);
+
+
+  gsap.set(mobileMenu.current?.childNodes[0].childNodes!,{opacity:0,y:-15})
+    
+  const OpenClose = ()=>{
+    gsap.to(mobileMenu.current,{top:'0px'})
+    gsap.fromTo(mobileMenu.current?.childNodes[0].childNodes!,{opacity:0,y:-15},{opacity:1,y:0,stagger:0.25})
+  }
 
   return (
     <html lang="en">
       <body className={inter.className + ' ' + styles.mainContainer} style={{backgroundColor:'black'}}>
-        <div className={'fixed w-screen p-5 navBar'}>
+        <div className={'fixed w-screen p-5 navBar hidden lg:block'}>
           <Link href={'/'} className={pathname === "/" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Home</Link>
           <Link href={'/our_services'} className={pathname === "/our_services" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Our Services</Link>
           <Link href={'/'} className={pathname === "/about_us" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>About Us</Link>
@@ -23,11 +37,84 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
           <Link href={'/login'} className={pathname === "/login" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Login</Link>
           <Link href={'/signup'} className={pathname === "/signup" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Signup</Link>
         </div>
+        <div className={'fixed w-screen p-0 lg:p-5 navBar block lg:hidden'}>
+          <button className='burgerButton float-right m-3' onClick={()=>{OpenClose()}}>
+            <svg
+              id='menu-icon'
+              xmlns="http://www.w3.org/2000/svg"
+              width="250.453"
+              height="247.648"
+              version="1.1"
+              viewBox="0 0 66.266 65.523"
+            >
+              <g fill="#fff" color="#fff" transform="translate(-26.404 -37.586)">
+                <path
+                  style={{ InkscapeStroke: "none" }}
+                  d="M34.459 37.586c-4.439 0-8.055 3.616-8.055 8.055v49.416c0 4.438 3.616 8.052 8.055 8.052h50.156c4.439 0 8.055-3.614 8.055-8.052V45.64c0-4.44-3.616-8.055-8.055-8.055zm0 2.656h50.156a5.358 5.358 0 015.399 5.399v49.416a5.356 5.356 0 01-5.399 5.396H34.46a5.356 5.356 0 01-5.398-5.396V45.64a5.358 5.358 0 015.398-5.399z"
+                ></path>
+                <g>
+                  <path
+                    style={{ InkscapeStroke: "none" }}
+                    strokeWidth="1.16"
+                    d="M38.219 50.696h42.527v5.22H38.22z"
+                  ></path>
+                  <path
+                    style={{ InkscapeStroke: "none" }}
+                    d="M37.639 50.115v6.381h43.687v-6.38zm1.16 1.16h41.367v4.06H38.799z"
+                  ></path>
+                </g>
+                <g>
+                  <path
+                    style={{ InkscapeStroke: "none" }}
+                    strokeWidth="1.16"
+                    d="M38.157 61.752h42.527v5.22H38.157z"
+                  ></path>
+                  <path
+                    style={{ InkscapeStroke: "none" }}
+                    d="M37.576 61.172v6.38h43.688v-6.38zm1.16 1.16h41.368v4.06H38.736z"
+                  ></path>
+                </g>
+                <g>
+                  <path
+                    style={{ InkscapeStroke: "none" }}
+                    strokeWidth="1.16"
+                    d="M38.157 72.623h42.527v5.22H38.157z"
+                  ></path>
+                  <path
+                    style={{ InkscapeStroke: "none" }}
+                    d="M37.576 72.043v6.38h43.69v-6.38zm1.16 1.16h41.368v4.06H38.736z"
+                  ></path>
+                </g>
+                <g>
+                  <path
+                    style={{ InkscapeStroke: "none" }}
+                    strokeWidth="1.16"
+                    d="M38.033 83.618h42.528v5.22H38.033z"
+                  ></path>
+                  <path
+                    style={{ InkscapeStroke: "none" }}
+                    d="M37.453 83.037v6.381h43.688v-6.38zm1.16 1.16H79.98v4.06H38.613z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </button>
+        </div>
+        <div className={'fixed w-screen p-0 lg:p-5 navBar block lg:hidden'} ref={mobileMenu} style={{top:'-100vh'}}>
+          <div className={'relative w-screen p-5 navBar block lg:hidden'}>
+            <Link href={'/'} className={pathname === "/" ? "p-4 pb-2 m-3 active w-fit" : "p-4 pb-2 m-3  w-fit"} style={{opacity:'0',top:'-15px'}}>Home</Link>
+            <Link href={'/our_services'} className={pathname === "/our_services w-fit" ? "p-4 pb-2 m-3 active block" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Our Services</Link>
+            <Link href={'/'} className={pathname === "/about_us" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>About Us</Link>
+            <Link href={'/'} className={pathname === "/contact" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Contact</Link>
+            <Link href={'/login'} className={pathname === "/login" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Login</Link>
+            <Link href={'/signup'} className={pathname === "/signup" ? "p-4 pb-2 m-3 active block w-fit" : "p-4 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Signup</Link>
+          </div>
+        </div>
         
         {children}
 
         <div className="footer relative px-10 pt-10 pb-10">
-          <div className="grid grid-cols-4">
+          <div className="grid-cols-4 hidden md:grid">
             <div className="col-span-1 mt-3 mb-3 flex justify-center">
               <div className="">
                 <p className='text-white text-2xl mt-3 mb-3'>Mapa del sitio</p>
@@ -68,6 +155,16 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
                 <Link href={'/'} className='text-white mb-1 block link ml-3'>Steel Framing</Link>
                 <Link href={'/'} className='text-white mb-1 block link ml-3'>Durlock</Link>
                 <Link href={'/'} className='text-white mb-1 block link ml-3'>Water Pipes Installation</Link>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-4 md:hidden">
+            <div className="col-span-4 mt-3 mb-3 flex justify-center">
+              <div className="flex flex-col justify-center items-center">
+                  <Link href={'/'} className='text-white mb-2 block link ml-3'>Copyright 2023 City Group</Link>
+                  <Link href={'/'} className='text-white mb-2 block link ml-3'>Privacy policy</Link>
+                  <Link href={'/'} className='text-white mb-2 block link ml-3'>Disclaimer</Link>
+                  <Link href={'/'} className='text-white mb-2 block link ml-3'>Contact</Link>
               </div>
             </div>
           </div>

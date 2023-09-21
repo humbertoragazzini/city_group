@@ -87,48 +87,6 @@
     }
 }
 
-// .lastBox{
-//   width: 100%;
-//   margin-left: auto;
-//   margin-right: auto;
-
-//   .content{
-//     // backdrop-filter: blur(10px);
-//     // background-color: rgba(0, 0, 0, 0.484);
-//     .blue-box{
-//       background: #030123;
-//       border: 2px solid #05023d;
-//       border-radius: 15px;
-//       box-shadow: 5px 5px 10px;
-//     }
-//   }
-//   h2{
-//     text-align: left;
-//     font-weight: 500;
-//   }
-//   .text-box{
-//     border-radius: 15px;
-//   }
-//   .image-box {
-//     background-image: url('../../public/pexels-binyamin-mellish-186077.jpg');
-//     background-size: cover;
-//     border-radius: 15px;
-//     &.steelimage{
-//       min-height: 450px;
-//       background-image: url('../../public/steelframing.jpeg');
-//       background-position: center;
-//     }
-//   }
-//   .imageComponent{
-//     width: 450px;
-//     height: 450px;
-//     img{
-//       width: auto;
-//       height: 100%;
-//     }
-//   }
-// }
-
 .navBar {
   backdrop-filter: blur(5px);
   z-index: 9999;
@@ -147,7 +105,13 @@
     &:focus {border-color: white;
     }
   }
+  #menu-icon{
+    width: 40px;
+    height: 40px;
+  }
 }
+
+
 
 .footer{background: rgb(255, 255, 255);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 91%);

@@ -90,7 +90,7 @@ const Sections: React.FC<Item> = (props) => {
 
         <div className={'min-w-screen min-h-screen fixed top-0 pt-8 '+styles.titles_to_appear} ref={firstBox}>
           <div className="questions relative w-full h-full p-9 allContent">
-            <h1 className={props.isFirst ? 'absolute' : 'relative'}><span className='block firstBigTitle'>{props.titleFirst}</span><span className='block firstBigTitle'>{props.titleSecond}</span></h1>
+            <h1 className={props.isFirst ? 'absolute text-white' : 'relative text-white'}><span className='block firstBigTitle'>{props.titleFirst}</span><span className='block firstBigTitle'>{props.titleSecond}</span></h1>
             <div className='w-full relative'>
               <div className="grid grid-cols-2 gap-4 w-full">
                 <div className='col-span-2'>

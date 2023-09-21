@@ -50,7 +50,7 @@ export default function Home() {
       .fromTo(titles.current!.children[17],{opacity: '1'},{opacity: '0',duration:2.5},20)//h5
       .fromTo(titles.current!.children[16],{y:'0'},{y:'0',duration:1},60)//h5
 
-      const timeLineBox = gsap.timeline({scrollTrigger: {trigger: firstBox.current,pinSpacing:false,start: "-25% center",end: "bottom center",scrub: 2,markers: false},duration:10}) 
+      const timeLineBox = gsap.timeline({scrollTrigger: {trigger: firstBox.current,pinSpacing:false,start: "-25% center",end: "bottom bottom",scrub: 2,markers: false},duration:10}) 
       .fromTo(firstBox.current,{opacity:0},{opacity:1,duration:0.5},0)
       .fromTo(firstBox.current!.children[0].children[1].children,{opacity:0,y:-75},{opacity:1,y:0,duration:7,stagger:0.5},0)
     }, main); // <- IMPORTANT! Scopes selector text
@@ -63,24 +63,24 @@ export default function Home() {
     <main className={"flex w-full min-h-screen flex-col items-center justify-between p-0 relative opacity-0 thisIsNot " + styles.mainContainer +' '+ styles.thisIsNot} ref={mainContainer}>
       {/* moving titles */}
       <div className="titlesMovingContainer w-full " ref={main} style={{height:'300vh'}}>
-        <div className='titlesContainer fixed flex flex-col justify-center align-center' ref={titles}>    
-          <h1 className='w-max m-0 relative'>STEEL FRAMING</h1>
-          <h2 className='w-max m-0 relative'>TU HOGAR</h2>
-          <h3 className='w-max m-0 relative'>TU NEGOCIO</h3>
-          <h4 className='w-max m-0 relative'>TU LUGAR</h4>
-          <h5 className='w-max m-0 relative'>TU IDEA</h5>
-          <h6 className='w-max m-0 relative'>TU REALIDAD</h6>
-          <h1 className='w-max m-0 relative'>ELECTRICIDAD</h1>
-          <h2 className='w-max m-0 relative'>INSTALACIONES</h2>
-          <h3 className='w-max m-0 relative'>TESTEO</h3>
-          <h4 className='w-max m-0 relative'>REPARACIONES</h4>
-          <h5 className='w-max m-0 relative'>ACTUALIZACIONES</h5>
-          <h6 className='w-max m-0 relative'>CERTIFICACIONES</h6>
-          <h1 className='w-max m-0 relative'>AGUA</h1>
-          <h2 className='w-max m-0 relative'>INSTALACIONES</h2>
-          <h3 className='w-max m-0 relative'>TESTEO</h3>
-          <h4 className='w-max m-0 relative'>REPARACIONES</h4>
-          <h5 className='w-max m-0 relative'>ACTUALIZACIONES</h5>
+        <div className={'titlesContainer fixed flex flex-col justify-center align-center '+ styles.titlesContainer} ref={titles}>    
+          <h1 className={'w-max m-0 relative text-white '+ styles.header1}>STEEL FRAMING</h1>
+          <h2 className={'w-max m-0 relative text-white '+ styles.header2}>TU HOGAR</h2>
+          <h3 className={'w-max m-0 relative text-white '+ styles.header3}>TU NEGOCIO</h3>
+          <h4 className={'w-max m-0 relative text-white '+ styles.header4}>TU LUGAR</h4>
+          <h5 className={'w-max m-0 relative text-white '+ styles.header5}>TU IDEA</h5>
+          <h6 className={'w-max m-0 relative text-white '+ styles.header6}>TU REALIDAD</h6>
+          <h1 className={'w-max m-0 relative text-white '+ styles.header1}>ELECTRICIDAD</h1>
+          <h2 className={'w-max m-0 relative text-white '+ styles.header2}>INSTALACIONES</h2>
+          <h3 className={'w-max m-0 relative text-white '+ styles.header3}>TESTEO</h3>
+          <h4 className={'w-max m-0 relative text-white '+ styles.header4}>REPARACIONES</h4>
+          <h5 className={'w-max m-0 relative text-white '+ styles.header5}>ACTUALIZACIONES</h5>
+          <h6 className={'w-max m-0 relative text-white '+ styles.header6}>CERTIFICACIONES</h6>
+          <h1 className={'w-max m-0 relative text-white '+ styles.header1}>AGUA</h1>
+          <h2 className={'w-max m-0 relative text-white '+ styles.header2}>INSTALACIONES</h2>
+          <h3 className={'w-max m-0 relative text-white '+ styles.header3}>TESTEO</h3>
+          <h4 className={'w-max m-0 relative text-white '+ styles.header4}>REPARACIONES</h4>
+          <h5 className={'w-max m-0 relative text-white '+ styles.header5}>ACTUALIZACIONES</h5>
           <div className="svgContainer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ export default function Home() {
               height="182.258"
               version="1.1"
               viewBox="0 0 205.56 48.222"
-              className='mx-auto absolute'
+              className='mx-auto absolute w-5/6'
             >
               <defs id="defs2">
                 <clipPath id="clipPath1192" clipPathUnits="userSpaceOnUse">
@@ -329,11 +329,11 @@ export default function Home() {
       {/* Text Intro */}
       <div className='w-full'>
         <div className='w-full' ref={firstBox}>
-            <div className="content grid grid-cols-6 gap-4 w-full pl-5 pr-5 pb-5">
-              <div className="col-start-2 col-end-6">
+            <div className="content grid grid-cols-6 gap-4 w-full pl-3 lg:pl-5 pr-3 lg:pr-5 pb-3 lg:pb-5">
+              <div className="col-start-1 col-end-7 xl:col-start-2 xl:col-end-6">
                 <h2 className='text-center text-5xl text-bold text-white'>A wide rage of services</h2>
               </div>
-              <div className='col-start-2 col-end-6 text-box'>
+              <div className='col-start-1 col-end-7 xl:col-start-2 xl:col-end-6 text-box'>
                 <h3 className='text-3xl text-center text-white mb-3 mt-3'>From a house to busnisess</h3>
                 <h4 className='text-white text-center text-2xl mb-1 mt-4'>Steel Framing</h4>
                 <p className='text-white text-center mt-1 mb-3'>
