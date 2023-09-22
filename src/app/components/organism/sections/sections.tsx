@@ -27,7 +27,10 @@ const Sections: React.FC<Item> = (props) => {
     useLayoutEffect(() => {
     
     let ctx = gsap.context((self) => {
-      
+
+      const heightAllContent = self.selector!('.allContent')[0].getClientRects()[0].height
+      const widthFirstBigTitle = self.selector!('.allContent')[0].getClientRects()[0].width
+      console.log(heightAllContent)
       // Setting up style
       gsap.set(mainContainer.current,{height:'400vh'});
       gsap.set(background.current,{backgroundImage:props.backgroundURL});
@@ -45,31 +48,31 @@ const Sections: React.FC<Item> = (props) => {
         var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "top top",end: "bottom top",scrub: 2,markers: true},duration:67}) 
         var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "-25% center",end: "bottom center",scrub: 2,markers: true},duration:67}) 
       }else{
-        var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "-25% center",end: "bottom center",scrub: 2,markers: true},duration:67}) 
-        var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "-25% center",end: "bottom center",scrub: 2,markers: true},duration:67}) 
+        var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "-5% center",end: "bottom center",scrub: 2,markers: true},duration:67}) 
+        var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "-25% center",end: "bottom center",scrub: 2,markers: true},duration:33.5}) 
       }
 
       // Animation 
       if(props.isFirst){
         timeLineBackGround.to(background.current,{opacity:1,duration:10},0)
-        mainTimeLine.fromTo('.firstBigTitle',{x:0},{x:'100vw',duration:10, stagger:5},1)
+        mainTimeLine.fromTo('.firstBigTitle',{x:0},{x:widthFirstBigTitle,duration:10, stagger:5},1)
         mainTimeLine.fromTo('.steelQuestions.first',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:1},5)
         mainTimeLine.fromTo('.steelQuestions.first',{y:'100vh'},{y:0,duration:10},7.5)
         mainTimeLine.fromTo('.steelQuestions.second',{y:'100vh'},{y:0,duration:10},15.5)
         mainTimeLine.fromTo('.steelQuestions.second',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:2},20)
-        mainTimeLine.fromTo('.allContent',{y:0},{y:'-150vh',duration:40},37)
+        mainTimeLine.fromTo('.allContent',{y:0},{y:-heightAllContent-75,duration:40},37)
         mainTimeLine.fromTo('.'+styles.image_component,{opacity:0,rotationX:-55,translateZ:-2000,duration:10},{opacity:1,rotationX:0,translateZ:0,duration:10, stagger:2},10)        
         mainTimeLine.fromTo('.'+styles.image_component+'.firstImage',{x:0,y:0},{x:250,y:-50,duration:8},22)        
         mainTimeLine.fromTo('.'+styles.image_component+'.secondImage',{x:0,y:0},{x:170,y:250,duration:8},30)        
         mainTimeLine.fromTo('.'+styles.image_component+'.thirdImage',{x:0,y:0},{x:0,y:0,duration:8},38)   
       }else{
         timeLineBackGround.fromTo(background.current,{opacity:0},{opacity:1,duration:10},0)
-        mainTimeLine.fromTo('.firstBigTitle',{x:'-100vw'},{x:'0',duration:20, stagger:0.5},1)
+        mainTimeLine.fromTo('.firstBigTitle',{x: -widthFirstBigTitle},{x:'0',duration:20, stagger:0.5},1)
         mainTimeLine.fromTo('.steelQuestions.first',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:1},5)
         mainTimeLine.fromTo('.steelQuestions.first',{y:'100vh'},{y:0,duration:10},7.5)
         mainTimeLine.fromTo('.steelQuestions.second',{y:'100vh'},{y:0,duration:10},15.5)
         mainTimeLine.fromTo('.steelQuestions.second',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:2},20)
-        mainTimeLine.fromTo('.allContent',{y:0},{y:'-150vh',duration:40},37)  
+        mainTimeLine.fromTo('.allContent',{y:0},{y:-heightAllContent-75,duration:40},37)  
         mainTimeLine.fromTo('.'+styles.image_component,{opacity:0,rotationX:-55,translateZ:-2000,duration:10},{opacity:1,rotationX:0,translateZ:0,duration:10,stagger:2},7)        
         mainTimeLine.fromTo('.'+styles.image_component+'.firstImage',{x:0,y:0},{x:250,y:200,duration:8},20)        
         mainTimeLine.fromTo('.'+styles.image_component+'.secondImage',{x:0,y:0},{x:275,y:-250,duration:8},28)        
@@ -90,17 +93,17 @@ const Sections: React.FC<Item> = (props) => {
 
         <div className={'min-w-screen min-h-screen fixed top-0 pt-8 '+styles.titles_to_appear} ref={firstBox}>
           <div className="questions relative w-full h-full p-9 allContent">
-            <h1 className={props.isFirst ? 'absolute text-white' : 'relative text-white'}><span className='block firstBigTitle'>{props.titleFirst}</span><span className='block firstBigTitle'>{props.titleSecond}</span></h1>
+            <h1 className={props.isFirst ? 'absolute text-white '+ styles.header1 : 'relative text-white '+ styles.header1}><span className='block firstBigTitle'>{props.titleFirst}</span><span className='block firstBigTitle'>{props.titleSecond}</span></h1>
             <div className='w-full relative'>
               <div className="grid grid-cols-2 gap-4 w-full">
                 <div className='col-span-2'>
-                  <h3 className='text-white text-6xl steelQuestions bottom-0 first'>
+                  <h3 className={'text-white text-6xl steelQuestions bottom-0 first ' + styles.header2}>
                     <span className='block mb-5'>Que es Steel Framing?</span>
                   </h3>        
                 </div>  
               </div>
               <div className="grid grid-cols-4 gap-4 w-full">
-                <div className={'col-span-2'}>
+                <div className={'col-span-4 md:col-span-2'}>
                   <p className='text-white text-3xl steelQuestions bottom-0 pb-4 second'>
                     Construccion con perfiles de acero galvanizado
                   </p>  
@@ -127,7 +130,7 @@ const Sections: React.FC<Item> = (props) => {
                   </p>   
                   
                 </div>  
-                <div className='col-span-2 pb-10 imagesContainers'>
+                <div className='hidden md:block md:col-span-2 pb-10 imagesContainers'>
                   <div className={'rounded-2xl mb-4 absolute top-12 left-12 overflow-hidden firstImage '+styles.image_component}>
                     <Image
                       src="/pexels-binyamin-mellish-186077.jpg"
