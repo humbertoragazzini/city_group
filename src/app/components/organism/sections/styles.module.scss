@@ -1,17 +1,7 @@
-.image_component {
-    width: 450px;
-    height: 450px;
-
-    img {
-        width: auto;
-        height: 100%;
-    }
-}
-
-
-
-
 .titles_to_appear {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 
     .header1 {
         font-size: 55px;
