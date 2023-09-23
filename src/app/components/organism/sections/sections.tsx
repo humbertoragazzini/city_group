@@ -49,13 +49,13 @@ const Sections: React.FC<Item> = (props) => {
         var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "-5% center",end: "bottom center",scrub: 2,markers: true},duration:67}) 
       }else{
         var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "-5% center",end: "bottom center",scrub: 2,markers: true},duration:67}) 
-        var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "-25% center",end: "bottom center",scrub: 2,markers: true},duration:33.5}) 
+        var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "-5% center",end: "bottom center",scrub: 2,markers: true},duration:33.5}) 
       }
 
       // Animation 
       if(props.isFirst){
         timeLineBackGround.to(background.current,{filter: 'brightness(0.4) blur(2px)',duration:10},10)
-        timeLineBackGround.to(background.current,{opacity:1,duration:10},0)
+        timeLineBackGround.to(background.current,{opacity:1,duration:5},0)
         mainTimeLine.fromTo('.firstBigTitle',{x:0},{x:widthFirstBigTitle,duration:10, stagger:5},1)
         mainTimeLine.fromTo('.steelQuestions.first',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:1},5)
         mainTimeLine.fromTo('.steelQuestions.first',{y:'100vh'},{y:0,duration:10},7.5)
@@ -67,13 +67,14 @@ const Sections: React.FC<Item> = (props) => {
         mainTimeLine.fromTo('.'+styles.image_component+'.secondImage',{x:0,y:0},{x:170,y:250,duration:8},30)        
         mainTimeLine.fromTo('.'+styles.image_component+'.thirdImage',{x:0,y:0},{x:0,y:0,duration:8},38)   
       }else{
-        timeLineBackGround.fromTo(background.current,{opacity:0},{opacity:1,duration:10},0)
+        timeLineBackGround.fromTo(background.current,{opacity:0},{opacity:1,duration:5},0)
+        timeLineBackGround.fromTo(background.current,{x:0},{x:0,duration:1},30)
         mainTimeLine.fromTo('.firstBigTitle',{x: -widthFirstBigTitle},{x:'0',duration:20, stagger:0.5},1)
         mainTimeLine.fromTo('.steelQuestions.first',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:1},5)
         mainTimeLine.fromTo('.steelQuestions.first',{y:'100vh'},{y:0,duration:10},7.5)
         mainTimeLine.fromTo('.steelQuestions.second',{y:'100vh'},{y:0,duration:10},15.5)
         mainTimeLine.fromTo('.steelQuestions.second',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:2},10)
-        mainTimeLine.fromTo('.allContent',{y:0},{y:-heightAllContent-75,duration:40},37)  
+        mainTimeLine.fromTo('.allContent',{y:0},{y:-heightAllContent-75,duration:40},25)  
         mainTimeLine.fromTo('.'+styles.image_component,{opacity:0,rotationX:-55,translateZ:-2000,duration:10},{opacity:1,rotationX:0,translateZ:0,duration:10,stagger:2},7)        
         mainTimeLine.fromTo('.'+styles.image_component+'.firstImage',{x:0,y:0},{x:250,y:200,duration:8},20)        
         mainTimeLine.fromTo('.'+styles.image_component+'.secondImage',{x:0,y:0},{x:275,y:-250,duration:8},28)        
@@ -113,7 +114,7 @@ const Sections: React.FC<Item> = (props) => {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ipsum eum in nulla aperiam officiis illo veritatis aut consectetur placeat, repellendus autem suscipit temporibus perspiciatis voluptas debitis nesciunt? Tempora, excepturi.
                     </p> 
                     <Image
-                      className='w-full rounded-2xl steelQuestions second mb-4'
+                      className='w-full steelQuestions second mb-4'
                       src="/barGraph.svg"
                       width={250}
                       height={250}

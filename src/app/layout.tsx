@@ -34,7 +34,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
     }else{
       gsap.to(mobileMenu.current?.childNodes[0]!,{filter: 'brightness(0.5) blur(8px)',backdropFilter: 'blur(5px)',delay:0.25});
       gsap.to(mobileMenu.current,{top:'0px',duration:0})
-      gsap.fromTo(mobileMenu.current?.childNodes[1].childNodes!,{opacity:0,y:-15},{opacity:1,y:0,stagger:0.25,delay:1.25})
+      gsap.fromTo(mobileMenu.current?.childNodes[1].childNodes!,{opacity:0,y:-15},{opacity:1,y:0,stagger:0.25,duration:0.1,delay:0.1})
       setCloseOpenMenu(true)
     }
   }
