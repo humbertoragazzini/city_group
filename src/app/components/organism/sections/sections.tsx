@@ -39,19 +39,19 @@ const Sections: React.FC<Item> = (props) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       if(props.isFirst){
         gsap.fromTo('.firstBigTitle',{opacity:0,x:'-100vw'},{opacity:1,x:0,stagger:0.5,duration:2})
-        appearElements.forEach(element => {
+        appearElements.forEach((element:Element) => {
           const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
           timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(10px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
         });
       }else{
       // eslint-disable-next-line react-hooks/exhaustive-deps
         if(props.left){
-          appearElements.forEach(element => {
+          appearElements.forEach((element:Element) => {
             const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
             timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
           });
         }else{
-          appearElements.forEach(element => {
+          appearElements.forEach((element:Element) => {
             const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
             timelineElement.fromTo(element,{x:'100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
           });
