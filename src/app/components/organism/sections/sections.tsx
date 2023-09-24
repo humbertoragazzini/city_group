@@ -30,11 +30,13 @@ const Sections: React.FC<Item> = (props) => {
 
       // Setting up style
       // gsap.set(mainContainer.current,{height:'400vh'});
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       gsap.set(background.current,{backgroundImage:props.backgroundURL});
       // gsap.set('.questions',{perspectiveOrigin: '100%',perspective:'100vw'});
       // gsap.set('.imagesContainers' ,{perspective:'100vw',perspectiveOrigin: '25% 25%'});
       // gsap.set('.imagesContainers' ,{transformOrigin:'50% 100%'});
       gsap.to(mainContainer.current,{opacity:1,duration:1,delay:0.25});
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       if(props.isFirst){
         gsap.fromTo('.firstBigTitle',{opacity:0,x:'-100vw'},{opacity:1,x:0,stagger:0.5,duration:2})
         appearElements.forEach(element => {
@@ -42,6 +44,7 @@ const Sections: React.FC<Item> = (props) => {
           timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(10px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
         });
       }else{
+      // eslint-disable-next-line react-hooks/exhaustive-deps
         if(props.left){
           appearElements.forEach(element => {
             const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
@@ -57,6 +60,7 @@ const Sections: React.FC<Item> = (props) => {
 
       // Creating Timeline
 
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       if(props.isFirst){
         var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top top",end: "bottom top",scrub: 2,markers: false},duration:67}) 
         var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,start: "top center",end: "bottom center",scrub: 2,markers: false},duration:67}) 
@@ -74,6 +78,7 @@ const Sections: React.FC<Item> = (props) => {
             mm.add("(max-width: 768px)", () => {
 
         // Animation 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         if(props.isFirst){
           timeLineBackGround.to(background.current,{filter: 'brightness(0.4) blur(2px)',duration:10},10)
           timeLineBackGround.to(background.current,{opacity:1,duration:5},0)
@@ -112,6 +117,7 @@ const Sections: React.FC<Item> = (props) => {
       mm.add("(min-width: 768px)", () => {
 
         // Animation 
+      // eslint-disable-next-line react-hooks/exhaustive-deps
         if(props.isFirst){
           timeLineBackGround.to(background.current,{filter: 'brightness(0.4) blur(2px)',duration:10},10)
           timeLineBackGround.to(background.current,{opacity:1,duration:5},0)
