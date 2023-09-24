@@ -47,19 +47,19 @@ const Sections: React.FC<Item> = (props) => {
       if(props.isFirst){
         gsap.fromTo('.firstBigTitle',{opacity:0,x:'-100vw'},{opacity:1,x:0,stagger:0.5,duration:2})
         appearElements.forEach(element => {
-          const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 1,markers: false},duration:10}) 
+          const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 3,markers: false},duration:10}) 
           timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(10px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
         });
       }else{
         if(props.left){
           appearElements.forEach(element => {
-            const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 1,markers: false},duration:10}) 
-            timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(10px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
+            const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 3,markers: false},duration:10}) 
+            timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
           });
         }else{
           appearElements.forEach(element => {
-            const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 1,markers: false},duration:10}) 
-            timelineElement.fromTo(element,{x:'100vw',opacity:0,filter: 'blur(10px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
+            const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 3,markers: false},duration:10}) 
+            timelineElement.fromTo(element,{x:'100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
           });
         }
       }
@@ -170,7 +170,7 @@ const Sections: React.FC<Item> = (props) => {
                   <div className={'min-w-screen min-h-screen relative top-0 pt-8 '+styles.titles_to_appear} >
                     <div className="questions relative w-full h-full p-4 allContent my-12">
                       <div className='w-full relative'>
-                        <div className="grid grid-cols-2 mx-auto" style={{maxWidth:'1450px'}}>
+                        <div className="grid grid-cols-2 sm:px-2 md:px-4 lg:px-6 xl:px-0 mx-auto" style={{maxWidth:'1450px'}}>
                           <div className="col-span-2 md:col-span-1">
                             <div className="grid grid-cols-4 gap-4 w-full">
                               <div className="col-span-4">
@@ -245,9 +245,17 @@ const Sections: React.FC<Item> = (props) => {
                               </div>  
                             </div>
                           </div>
-                          <div className="col-span-1 hidden md:block">
-                            <div className='pb-10 max-h-screen' ref={test}>
-                              <p className='text-white'>Estadisticas y graficos</p>
+                          <div className="col-span-1 hidden md:flex h-screen items-center">
+                            <div className='pb-10 w-full flex justify-center' ref={test}>
+                              <div className='p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                                <Image
+                                  className=''
+                                  src="/pexels-binyamin-mellish-186077.jpg"
+                                  width={800}
+                                  height={800}
+                                  alt="Picture of the author"
+                                ></Image>
+                              </div>
                             </div> 
                           </div>
                         </div>
@@ -263,10 +271,18 @@ const Sections: React.FC<Item> = (props) => {
                   <div className={'min-w-screen min-h-screen relative top-0 pt-8 '+styles.titles_to_appear} >
                     <div className="questions relative w-full h-full p-4 allContent my-12">
                       <div className='w-full relative'>
-                        <div className="grid grid-cols-2 mx-auto" style={{maxWidth:'1450px'}}>
-                          <div className="col-span-1 hidden md:block">
-                            <div className='pb-10 max-h-screen' ref={test}>
-                              <p className='text-white'>Estadisticas y graficos</p>
+                        <div className="grid grid-cols-2 sm:px-4 md:px-6 lg:px-9 xl:px-9 2xl:px-6 mx-auto" style={{maxWidth:'1450px'}}>
+                          <div className="col-span-1 hidden md:flex h-screen items-center">
+                            <div className='pb-10 w-full flex justify-center' ref={test}>
+                              <div className='p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                                <Image
+                                  className=''
+                                  src="/pexels-binyamin-mellish-186077.jpg"
+                                  width={800}
+                                  height={800}
+                                  alt="Picture of the author"
+                                ></Image>
+                              </div>
                             </div> 
                           </div>
                           <div className="col-span-2 md:col-span-1">
