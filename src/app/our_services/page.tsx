@@ -12,24 +12,28 @@ export default function OurServices() {
       titleFirst='Steel'
       titleSecond='Framing'
       backgroundURL='url(./steel-framing-background.webp)'
+      left={true}
       ></Sections>
       <Sections 
       isFirst={false}
       titleFirst='Electricidad'
       titleSecond=''
       backgroundURL='url(./electricity-background.webp)'
+      left={false}
       ></Sections>
       <Sections 
       isFirst={false}
       titleFirst='Refrigeracion'
       titleSecond=''
       backgroundURL='url(./refrigeration-background.webp)'
+      left={true}
       ></Sections>
       <Sections 
       isFirst={false}
       titleFirst='Sistemas'
       titleSecond='de Agua'
       backgroundURL='url(./water-pipes-background.webp)'
+      left={false}
       ></Sections>
     </>
   )

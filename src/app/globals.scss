@@ -16,6 +16,17 @@
 // 9:16 aspect ratio: 1080 x 1920px
 // 9:21 ?
 
+body{
+    -ms-overflow-style: none;
+      /* IE and Edge */
+    scrollbar-width: none;
+      /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .backgrounFirst{
     position:fixed!important;
     width: calc(100vw + 100px);
