@@ -33,7 +33,7 @@ const Sections: React.FC<Item> = (props) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       gsap.set(background.current,{backgroundImage:props.backgroundURL});
       // gsap.set('.questions',{perspectiveOrigin: '100%',perspective:'100vw'});
-      // gsap.set('.imagesContainers' ,{perspective:'100vw',perspectiveOrigin: '25% 25%'});
+      gsap.set('.imagesContainers' ,{perspective:'100vw',perspectiveOrigin: '0%'});
       // gsap.set('.imagesContainers' ,{transformOrigin:'50% 100%'});
       gsap.to(mainContainer.current,{opacity:1,duration:1,delay:0.25});
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,9 +62,9 @@ const Sections: React.FC<Item> = (props) => {
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
       if(props.isFirst){
-        var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top top",end: "bottom top",scrub: 2,markers: false},duration:67}) 
+        var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "10% center",end: "bottom bottom",scrub: 2,markers: true},duration:20}) 
         var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,start: "top center",end: "bottom center",scrub: 2,markers: false},duration:67}) 
-      var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',pin:test.current,start: "top top",end: "bottom bottom",markers: true}}) 
+      var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',pin:test.current,start: "top top",end: "bottom bottom",markers: false}}) 
       }else{
         var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-5% center",end: "bottom center",scrub: 2,markers: false},duration:67}) 
         var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-5% center",end: "bottom center",scrub: 2,markers: false},duration:33.5}) 
@@ -74,8 +74,7 @@ const Sections: React.FC<Item> = (props) => {
 
 
       let mm = gsap.matchMedia();
-
-            mm.add("(max-width: 768px)", () => {
+      mm.add("(max-width: 768px)", () => {
 
         // Animation 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -89,7 +88,6 @@ const Sections: React.FC<Item> = (props) => {
           // mainTimeLine.fromTo('.steelQuestions.second',{y:'100vh'},{y:0,duration:10},15.5)
           // mainTimeLine.fromTo('.steelQuestions.second',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:2},10)
           // mainTimeLine.fromTo('.allContent',{y:0},{y:-heightAllContent-250,duration:40},25)
-          // mainTimeLine.fromTo('.'+styles.image_component,{opacity:0,rotationX:-55,translateZ:-2000,duration:10},{opacity:1,rotationX:0,translateZ:0,duration:10, stagger:2},10)        
           // mainTimeLine.fromTo('.'+styles.image_component+'.firstImage',{x:0,y:0},{x:250,y:-50,duration:8},22)        
           // mainTimeLine.fromTo('.'+styles.image_component+'.secondImage',{x:0,y:0},{x:170,y:250,duration:8},30)        
           // mainTimeLine.fromTo('.'+styles.image_component+'.thirdImage',{x:0,y:0},{x:0,y:0,duration:8},38)   
@@ -122,6 +120,8 @@ const Sections: React.FC<Item> = (props) => {
           timeLineBackGround.to(background.current,{filter: 'brightness(0.4) blur(2px)',duration:10},10)
           timeLineBackGround.to(background.current,{opacity:1,duration:5},0)
           timeLineBackGround.to(background.current,{x:0,duration:5},30)
+          mainTimeLine.fromTo('.perspectiveEffectContainer',{opacity:1,rotationY:260,rotationX:0,translateX:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,duration:1,stagger:0.25},0)    
+          // mainTimeLine.fromTo('.perspectiveEffectContainer',{y:0},{y:0,duration:1},67)        
           // mainTimeLine.fromTo('.firstBigTitle',{x:0},{x:widthFirstBigTitle,duration:10, stagger:5},1)
           // mainTimeLine.fromTo('.steelQuestions.first',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:1},5)
           // mainTimeLine.fromTo('.steelQuestions.first',{y:'100vh'},{y:0,duration:10},7.5)
@@ -243,64 +243,42 @@ const Sections: React.FC<Item> = (props) => {
                             </div>
                           </div>
                           <div className="col-span-1 hidden md:flex h-screen items-center">
-                            <div className='pb-10 w-full flex justify-center' ref={test}>
-                              <div className='p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="696.918"
-                                  height="521.277"
-                                  version="1.1"
-                                  viewBox="0 0 184.393 137.921"
+                            <div className='relative h-screen imagesContainers pb-10 w-full flex justify-center' ref={test}>
+                              <div className='absolute top-0 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                                <Image
                                   className='w-full'
-                                >
-                                  <g transform="translate(-22.41 -10.7)">
-                                    <g>
-                                      <path
-                                        fill="gray"
-                                        strokeWidth="0.183"
-                                        d="M50.315 91.546H104.82300000000001V144.657H50.315z"
-                                      ></path>
-                                      <path
-                                        fill="#ccc"
-                                        strokeWidth="0.239"
-                                        d="M125.439 54.159H179.947V144.307H125.439z"
-                                      ></path>
-                                      <path
-                                        fill="gray"
-                                        strokeWidth="0.182"
-                                        d="M23.061 144.307H205.454V147.801H23.061z"
-                                      ></path>
-                                      <path
-                                        fill="none"
-                                        stroke="#b3b3b3"
-                                        strokeWidth="2"
-                                        d="M23.411 11.7H205.804V147.62099999999998H23.411z"
-                                      ></path>
-                                      <text
-                                        xmlSpace="preserve"
-                                        style={{}}
-                                        x="122.644"
-                                        y="44.375"
-                                        fill="#fff"
-                                        stroke="#fff"
-                                        strokeWidth="0.265"
-                                        fontFamily="sans-serif"
-                                        fontSize="25.4"
-                                        fontWeight="bold"
-                                      >
-                                        <tspan
-                                          x="122.644"
-                                          y="44.375"
-                                          fill="#fff"
-                                          stroke="#fff"
-                                          strokeWidth="0.265"
-                                        >
-                                          70%
-                                        </tspan>
-                                      </text>
-                                    </g>
-                                  </g>
-                                </svg>
+                                  src="/house-1477041_1920.jpg"
+                                  width={500}
+                                  height={500}
+                                  alt="Picture of the author"
+                                ></Image>
+                              </div>
+                              <div className='absolute top-0 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                                <Image
+                                  className='w-full'
+                                  src="/house-1477041_1920.jpg"
+                                  width={500}
+                                  height={500}
+                                  alt="Picture of the author"
+                                ></Image>
+                              </div>
+                              <div className='absolute top-0 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                                <Image
+                                  className='w-full'
+                                  src="/house-1477041_1920.jpg"
+                                  width={500}
+                                  height={500}
+                                  alt="Picture of the author"
+                                ></Image>
+                              </div>
+                              <div className='absolute top-0 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                                <Image
+                                  className='w-full'
+                                  src="/house-1477041_1920.jpg"
+                                  width={500}
+                                  height={500}
+                                  alt="Picture of the author"
+                                ></Image>
                               </div>
                             </div> 
                           </div>
