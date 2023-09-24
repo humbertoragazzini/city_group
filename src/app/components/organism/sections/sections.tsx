@@ -7,28 +7,19 @@ import React ,{ useLayoutEffect } from 'react';
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { BooleanLiteral } from 'typescript';
+import {Item} from '@/types/types'
 
 gsap.registerPlugin(ScrollTrigger)
 
-interface Item {
-  isFirst: Boolean;
-  titleFirst: string;
-  titleSecond: string;
-  backgroundURL:string;
-  left: Boolean;
-}
-
 const Sections: React.FC<Item> = (props) => {
 
-  console.log(props.backgroundURL)
   const mainContainer = React.useRef<HTMLDivElement>(null);
   const firstBox = React.useRef<HTMLDivElement>(null);
   const background = React.useRef<HTMLDivElement>(null);
   const test = React.useRef<HTMLDivElement>(null);
   
-
-    useLayoutEffect(() => {
-    
+  useLayoutEffect(() => {
+  
     let ctx = gsap.context((self) => {
 
       // const heightAllContent = self.selector!('.allContent')[0].getClientRects()[0].height
@@ -414,8 +405,9 @@ const Sections: React.FC<Item> = (props) => {
                   </div>
                 </div>   
       }
-  
+      {/* Background */}
       <div className='backgrounSecond' ref={background}></div>
+
     </main>
   )
 }
