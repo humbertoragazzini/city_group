@@ -47,18 +47,18 @@ const Sections: React.FC<Item> = (props) => {
       if(props.isFirst){
         gsap.fromTo('.firstBigTitle',{opacity:0,x:'-100vw'},{opacity:1,x:0,stagger:0.5,duration:2})
         appearElements.forEach(element => {
-          const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 3,markers: false},duration:10}) 
+          const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
           timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(10px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
         });
       }else{
         if(props.left){
           appearElements.forEach(element => {
-            const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 3,markers: false},duration:10}) 
+            const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
             timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
           });
         }else{
           appearElements.forEach(element => {
-            const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 3,markers: false},duration:10}) 
+            const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
             timelineElement.fromTo(element,{x:'100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
           });
         }
@@ -248,13 +248,62 @@ const Sections: React.FC<Item> = (props) => {
                           <div className="col-span-1 hidden md:flex h-screen items-center">
                             <div className='pb-10 w-full flex justify-center' ref={test}>
                               <div className='p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
-                                <Image
-                                  className=''
-                                  src="/pexels-binyamin-mellish-186077.jpg"
-                                  width={800}
-                                  height={800}
-                                  alt="Picture of the author"
-                                ></Image>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="696.918"
+                                  height="521.277"
+                                  version="1.1"
+                                  viewBox="0 0 184.393 137.921"
+                                  className='w-full'
+                                >
+                                  <g transform="translate(-22.41 -10.7)">
+                                    <g>
+                                      <path
+                                        fill="gray"
+                                        strokeWidth="0.183"
+                                        d="M50.315 91.546H104.82300000000001V144.657H50.315z"
+                                      ></path>
+                                      <path
+                                        fill="#ccc"
+                                        strokeWidth="0.239"
+                                        d="M125.439 54.159H179.947V144.307H125.439z"
+                                      ></path>
+                                      <path
+                                        fill="gray"
+                                        strokeWidth="0.182"
+                                        d="M23.061 144.307H205.454V147.801H23.061z"
+                                      ></path>
+                                      <path
+                                        fill="none"
+                                        stroke="#b3b3b3"
+                                        strokeWidth="2"
+                                        d="M23.411 11.7H205.804V147.62099999999998H23.411z"
+                                      ></path>
+                                      <text
+                                        xmlSpace="preserve"
+                                        style={{}}
+                                        x="122.644"
+                                        y="44.375"
+                                        fill="#fff"
+                                        stroke="#fff"
+                                        strokeWidth="0.265"
+                                        fontFamily="sans-serif"
+                                        fontSize="25.4"
+                                        fontWeight="bold"
+                                      >
+                                        <tspan
+                                          x="122.644"
+                                          y="44.375"
+                                          fill="#fff"
+                                          stroke="#fff"
+                                          strokeWidth="0.265"
+                                        >
+                                          70%
+                                        </tspan>
+                                      </text>
+                                    </g>
+                                  </g>
+                                </svg>
                               </div>
                             </div> 
                           </div>

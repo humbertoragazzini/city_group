@@ -44,11 +44,11 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
       <body className={inter.className + ' ' + styles.mainContainer} style={{backgroundColor:'black'}}>
         <div className={'fixed w-screen p-5 navBar hidden lg:block'}>
           <Link href={'/'} className={pathname === "/" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Home</Link>
-          <Link href={'/our_services'} className={pathname === "/our_services" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Our Services</Link>
-          <Link href={'/'} className={pathname === "/about_us" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>About Us</Link>
-          <Link href={'/'} className={pathname === "/contact" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Contact</Link>
-          <Link href={'/login'} className={pathname === "/login" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Login</Link>
-          <Link href={'/signup'} className={pathname === "/signup" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Signup</Link>
+          <Link href={'/our_services'} className={pathname === "/our_services" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Nuestro Servicios</Link>
+          <Link href={'/'} className={pathname === "/about_us" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Acerca de nosotros</Link>
+          <Link href={'/'} className={pathname === "/contact" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Contacto</Link>
+          {/* <Link href={'/login'} className={pathname === "/login" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Login</Link>
+          <Link href={'/signup'} className={pathname === "/signup" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Signup</Link> */}
         </div>
         <div className={'fixed w-screen p-0 lg:p-5 navBar block lg:hidden'}>
           <button className='burgerButton float-right m-3' onClick={()=>{OpenClose()}}>
@@ -117,11 +117,11 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
           <div className="background_blur w-screen h-screen absolute top-0 left-0"></div>
           <div className={'relative w-screen p-5 navBar block lg:hidden'}>
             <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/" ? "pt-4 pr-4 pl-0 pb-2 m-3 active w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  w-fit"} style={{opacity:'0',top:'-15px'}}>Home</Link>
-            <Link href={'/our_services'} onClick={()=>{OpenClose()}} className={pathname === "/our_services w-fit" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Our Services</Link>
-            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/about_us" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>About Us</Link>
-            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/contact" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Contact</Link>
-            <Link href={'/login'} onClick={()=>{OpenClose()}} className={pathname === "/login" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Login</Link>
-            <Link href={'/signup'} onClick={()=>{OpenClose()}} className={pathname === "/signup" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Signup</Link>
+            <Link href={'/our_services'} onClick={()=>{OpenClose()}} className={pathname === "/our_services w-fit" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Nuestros Servicios</Link>
+            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/about_us" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Acerca de Nosotros</Link>
+            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/contact" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Contacto</Link>
+            {/* <Link href={'/login'} onClick={()=>{OpenClose()}} className={pathname === "/login" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Login</Link>
+            <Link href={'/signup'} onClick={()=>{OpenClose()}} className={pathname === "/signup" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Signup</Link> */}
           </div>
         </div>
         <div className="main_content_container">
