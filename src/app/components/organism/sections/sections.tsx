@@ -26,6 +26,7 @@ const Sections: React.FC<Item> = (props) => {
       // const widthFirstBigTitle = self.selector!('.allContent')[0].getClientRects()[0].width
       // const appearElements = self.selector!('.steelQuestions')
       const appearElements = self.selector!('.moveUp')
+      const photoContainers = self.selector!('.perspectiveEffectContainer')
       // console.log(appearElements)
 
       // Setting up style
@@ -39,9 +40,15 @@ const Sections: React.FC<Item> = (props) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       if(props.isFirst){
         gsap.fromTo('.firstBigTitle',{opacity:0,x:'-100vw'},{opacity:1,x:0,stagger:0.5,duration:2})
+        gsap.fromTo(test.current?.childNodes[0]!,{opacity:1,rotationY:260,rotationX:0,translateX:2500,translateZ:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:2})    
+          
         appearElements.forEach((element:Element) => {
           const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
           timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(10px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
+        });
+        photoContainers.forEach((element:Element) => {
+          const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: true},duration:20}) 
+          // photoContainerTL.fromTo(element,{opacity:1,rotationY:260,rotationX:0,translateX:2500,translateZ:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:1},0)    
         });
       }else{
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -50,10 +57,18 @@ const Sections: React.FC<Item> = (props) => {
             const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
             timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
           });
+          photoContainers.forEach((element:Element) => {
+            const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: true},duration:20}) 
+            // photoContainerTL.fromTo(element,{opacity:1,rotationY:260,rotationX:0,translateX:2500,translateZ:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:1},0)    
+          });
         }else{
           appearElements.forEach((element:Element) => {
             const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
             timelineElement.fromTo(element,{x:'100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
+          });
+          photoContainers.forEach((element:Element) => {
+            const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: true},duration:20}) 
+            // photoContainerTL.fromTo(element,{opacity:1,rotationY:260,rotationX:0,translateX:2500,translateZ:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:1},0)    
           });
         }
       }
@@ -62,13 +77,14 @@ const Sections: React.FC<Item> = (props) => {
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
       if(props.isFirst){
-        var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "10% center",end: "bottom bottom",scrub: 2,markers: true},duration:20}) 
+        var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom bottom",scrub: 2,markers: true},duration:20}) 
         var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,start: "top center",end: "bottom center",scrub: 2,markers: false},duration:67}) 
-        var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',pin:test.current,start: "top top",end: "bottom bottom",markers: false}}) 
+        // var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',pin:test.current,start: "top top",end: "bottom bottom",markers: false}}) 
+        var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top top",end: "bottom bottom",markers: false}}) 
       }else{
-        var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-25% center",end: "bottom center",scrub: 2,markers: false},duration:67}) 
+        // var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: false},duration:67}) 
         var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-5% center",end: "bottom center",scrub: 2,markers: false},duration:33.5}) 
-        var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',pin:test.current,start: "top top",end: "bottom bottom",markers: true}}) 
+        var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-25% top",end: "bottom bottom",markers: true}}) 
       }
 
 
@@ -120,7 +136,6 @@ const Sections: React.FC<Item> = (props) => {
           timeLineBackGround.to(background.current,{filter: 'brightness(0.4) blur(2px)',duration:10},10)
           timeLineBackGround.to(background.current,{opacity:1,duration:5},0)
           timeLineBackGround.to(background.current,{x:0,duration:5},30)
-          mainTimeLine.fromTo('.perspectiveEffectContainer',{opacity:1,rotationY:260,rotationX:0,translateX:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,duration:1,stagger:0.25},0)    
           // mainTimeLine.fromTo('.perspectiveEffectContainer',{y:0},{y:0,duration:1},67)        
           // mainTimeLine.fromTo('.firstBigTitle',{x:0},{x:widthFirstBigTitle,duration:10, stagger:5},1)
           // mainTimeLine.fromTo('.steelQuestions.first',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:1},5)
@@ -136,11 +151,11 @@ const Sections: React.FC<Item> = (props) => {
           timeLineBackGround.fromTo(background.current,{opacity:0},{opacity:1,duration:5},0)
           timeLineBackGround.to(background.current,{filter: 'brightness(0.4) blur(2px)',duration:10},5)
           timeLineBackGround.fromTo(background.current,{x:0},{x:0,duration:1},30)
-          if(props.left){
-            mainTimeLine.fromTo('.perspectiveEffectContainer',{opacity:1,rotationY:260,rotationX:0,translateX:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,duration:1,stagger:0.25},0) 
-          }else{
-            mainTimeLine.fromTo('.perspectiveEffectContainer',{opacity:1,rotationY:-260,rotationX:0,translateX:-2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,duration:1,stagger:0.25},0)    
-          }
+          // if(props.left){
+          //   photoContainerTL.fromTo('.perspectiveEffectContainer',{opacity:1,rotationY:260,rotationX:0,translateX:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,duration:1,stagger:0.25},0) 
+          // }else{
+          //   photoContainerTL.fromTo('.perspectiveEffectContainer',{opacity:1,rotationY:-260,rotationX:0,translateX:-2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,duration:1,stagger:0.25},0)    
+          // }
           // mainTimeLine.fromTo('.firstBigTitle',{x: -widthFirstBigTitle},{x:'0',duration:20, stagger:0.5},1)
           // mainTimeLine.fromTo('.steelQuestions.first',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:1},5)
           // mainTimeLine.fromTo('.steelQuestions.first',{y:'100vh'},{y:0,duration:10},7.5)
@@ -247,9 +262,18 @@ const Sections: React.FC<Item> = (props) => {
                               </div>  
                             </div>
                           </div>
-                          <div className="col-span-1 hidden md:flex h-screen items-center">
-                            <div className='relative h-screen imagesContainers pb-10 w-full flex justify-center' ref={test}>
-                              <div className='absolute top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                          <div className="col-span-1">
+                            <div className='relative  imagesContainers pb-10 w-full flex flex-col justify-center items-center' ref={test}>
+                              <div className={'my-9 top-1/4 p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
+                                <Image
+                                  className='w-full'
+                                  src="/house-1477041_1920.jpg"
+                                  width={500}
+                                  height={500}
+                                  alt="Picture of the author"
+                                ></Image>
+                              </div>                              
+                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
                                 <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
@@ -258,7 +282,7 @@ const Sections: React.FC<Item> = (props) => {
                                   alt="Picture of the author"
                                 ></Image>
                               </div>
-                              <div className='absolute top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
                                 <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
@@ -267,7 +291,7 @@ const Sections: React.FC<Item> = (props) => {
                                   alt="Picture of the author"
                                 ></Image>
                               </div>
-                              <div className='absolute top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
                                 <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
@@ -276,7 +300,7 @@ const Sections: React.FC<Item> = (props) => {
                                   alt="Picture of the author"
                                 ></Image>
                               </div>
-                              <div className='absolute top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
                                 <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
@@ -301,9 +325,18 @@ const Sections: React.FC<Item> = (props) => {
                     <div className="questions relative w-full h-full p-4 allContent my-12">
                       <div className='w-full relative'>
                         <div className="grid grid-cols-2 sm:px-4 md:px-6 lg:px-9 xl:px-9 2xl:px-6 mx-auto" style={{maxWidth:'1450px'}}>
-                          <div className="col-span-1 hidden md:flex h-screen items-center">
-                            <div className='relative h-screen imagesContainers pb-10 w-full flex justify-center' ref={test}>
-                              <div className='absolute top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                          <div className="col-span-1">
+                            <div className='relative  imagesContainers pb-10 w-full flex flex-col justify-center items-center' ref={test}>
+                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
+                                <Image
+                                  className='w-full'
+                                  src="/house-1477041_1920.jpg"
+                                  width={500}
+                                  height={500}
+                                  alt="Picture of the author"
+                                ></Image>
+                              </div>                              
+                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
                                 <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
@@ -312,7 +345,7 @@ const Sections: React.FC<Item> = (props) => {
                                   alt="Picture of the author"
                                 ></Image>
                               </div>
-                              <div className='absolute top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
                                 <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
@@ -321,7 +354,7 @@ const Sections: React.FC<Item> = (props) => {
                                   alt="Picture of the author"
                                 ></Image>
                               </div>
-                              <div className='absolute top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
                                 <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
@@ -330,7 +363,7 @@ const Sections: React.FC<Item> = (props) => {
                                   alt="Picture of the author"
                                 ></Image>
                               </div>
-                              <div className='absolute top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl'>
+                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
                                 <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
