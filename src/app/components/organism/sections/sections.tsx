@@ -263,52 +263,97 @@ const Sections: React.FC<Item> = (props) => {
                             </div>
                           </div>
                           <div className="col-span-1">
+                            <div className="grid grid-cols-4 gap-4 w-full opacity-0">
+                              <div className="col-span-4">
+                                <h1 className={props.isFirst ? 'relative text-white moveUp '+ styles.header1 : 'relative text-white moveUp '+ styles.header1}><span className='block firstBigTitle'>{props.titleFirst}</span><span className='block firstBigTitle'>{props.titleSecond}</span></h1>
+                              </div>
+                              <div className='col-span-4'>
+                                <h3 className={'text-white steelQuestions bottom-0 first moveUp ' + styles.header3}>
+                                  <span className='block mb-5'>Que es Steel Framing?</span>
+                                </h3>        
+                              </div>  
+                            </div>
                             <div className='relative  imagesContainers pb-10 w-full flex flex-col justify-center items-center' ref={test}>
-                              <div className={'my-9 top-1/4 p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
-                                <Image
+                              <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
+                                {/* <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
                                   width={500}
                                   height={500}
                                   alt="Picture of the author"
-                                ></Image>
-                              </div>                              
-                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
-                                <Image
+                                ></Image> */}
+                                <div className="p-9">
+                                  <h1 className='text-white text-bold relative z-50 '>70%</h1>
+                                  <h3 className='text-white relative z-50 '>Mas rapido que la contruccion tradicional</h3>
+                                </div>
+                                <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}>
+
+                                </div>
+                              </div> 
+                              <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
+                                {/* <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
                                   width={500}
                                   height={500}
                                   alt="Picture of the author"
-                                ></Image>
-                              </div>
-                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
-                                <Image
+                                ></Image> */}
+                                <div className="p-9">
+                                  <h1 className='text-white text-bold relative z-50 '>Hasta 300%</h1>
+                                  <h3 className='text-white relative z-50 '>Mas liviano que la contruccion con concreto.</h3>
+                                </div>
+                                <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}>
+
+                                </div>
+                              </div> 
+                              <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
+                                {/* <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
                                   width={500}
                                   height={500}
                                   alt="Picture of the author"
-                                ></Image>
-                              </div>
-                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
-                                <Image
+                                ></Image> */}
+                                <div className="p-9">
+                                  <h1 className='text-white text-bold relative z-50 '>ICONO</h1>
+                                  <h3 className='text-white relative z-50 '>Mayor eficiencia energetica</h3>
+                                </div>
+                                <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}>
+
+                                </div>
+                              </div> 
+                              <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
+                                {/* <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
                                   width={500}
                                   height={500}
                                   alt="Picture of the author"
-                                ></Image>
-                              </div>
-                              <div className={'my-9 top-1/4 perspectiveEffectContainer p-8 w-5/6 bg-slate-900 overflow-hidden border-slate-800 border-2 rounded-2xl '+styles.cards}>
-                                <Image
+                                ></Image> */}
+                                <div className="p-9">
+                                  <h1 className='text-white text-bold relative z-50 '>ICONO</h1>
+                                  <h3 className='text-white relative z-50 '>Alta duravilidad</h3>
+                                </div>
+                                <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}>
+
+                                </div>
+                              </div> 
+                              <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
+                                {/* <Image
                                   className='w-full'
                                   src="/house-1477041_1920.jpg"
                                   width={500}
                                   height={500}
                                   alt="Picture of the author"
-                                ></Image>
-                              </div>
+                                ></Image> */}
+                                <div className="p-9">
+                                  <h1 className='text-white text-bold relative z-50 '>ICONO</h1>
+                                  <h3 className='text-white relative z-50 '>Mayor flexibilidad en el disenio</h3>
+                                </div>
+                                <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}>
+
+                                </div>
+                              </div> 
                             </div> 
                           </div>
                         </div>
@@ -377,7 +422,7 @@ const Sections: React.FC<Item> = (props) => {
                           <div className="col-span-2 md:col-span-1">
                             <div className="grid grid-cols-4 gap-4 w-full">
                               <div className="col-span-4">
-                                <h1 className={props.isFirst ? 'relative text-white text-right moveUp '+ styles.header1 : 'relative text-white text-right moveUp '+ styles.header1}><span className='block firstBigTitle'>{props.titleFirst+' LEFT'}</span><span className='block firstBigTitle'>{props.titleSecond}</span></h1>
+                                <h1 className={props.isFirst ? 'relative text-white text-right moveUp '+ styles.header1 : 'relative text-white text-right moveUp '+ styles.header1}><span className='block firstBigTitle'>{props.titleFirst}</span><span className='block firstBigTitle'>{props.titleSecond}</span></h1>
                               </div>
                               <div className='col-span-4'>
                                 <h3 className={'text-white steelQuestions bottom-0 first moveUp ' + styles.header3}>

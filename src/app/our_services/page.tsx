@@ -1,7 +1,7 @@
 "use client";
 import styles from './styles.module.scss'
 import Sections from '@/app/components/organism/sections/sections';
-
+import EndSections from '@/app/components/organism/endSections/EndSections'
 const sectionIS = true
 export default function OurServices() {
 
@@ -14,6 +14,10 @@ export default function OurServices() {
       backgroundURL='url(./steel-framing-background.webp)'
       left={true}
       ></Sections>
+
+      <EndSections>
+      </EndSections>
+      
       <Sections 
       isFirst={false}
       titleFirst='Electricidad'

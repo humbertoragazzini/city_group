@@ -52,6 +52,12 @@
 
 }
 
+.endSections{
+    backdrop-filter: blur(10px);
+    min-height: 450px;
+    box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.5);
+}
+
 .backdrop_filter {
     backdrop-filter: blur(10px);
     box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.5);
