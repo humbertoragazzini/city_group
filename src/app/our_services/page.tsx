@@ -15,8 +15,7 @@ export default function OurServices() {
       left={true}
       ></Sections>
 
-      <EndSections>
-      </EndSections>
+      <EndSections></EndSections>
       
       <Sections 
       isFirst={false}
