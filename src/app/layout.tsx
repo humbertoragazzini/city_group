@@ -25,10 +25,10 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
   gsap.set(mainContentContainer.current,{overflow: 'hidden'});
   // gsap.set(mobileMenu.current?.childNodes[0]!,{filter: 'brightness(1) blur(0px)',backdropFilter: 'blur(0px)',delay:0});
     
-  const HiddeMenu = (e:<Event>)=>{
-    console.log(e)
-    console.log('scroll')
-  }
+  // const HiddeMenu = (e:<Event>)=>{
+  //   console.log(e)
+  //   console.log('scroll')
+  // }
   const OpenClose = ()=>{
     if(closeOpenMenu){
       gsap.fromTo(mobileMenu.current?.childNodes[1].childNodes!,{opacity:1},{opacity:0,duration:0.25})
