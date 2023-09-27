@@ -52,8 +52,12 @@
 
 }
 
+.endSectionMain{
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
 .endSections{
-    backdrop-filter: blur(15px);
+    // backdrop-filter: blur(15px);
     min-height: 50vh;
 }
 

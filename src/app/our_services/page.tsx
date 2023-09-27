@@ -14,7 +14,6 @@ export default function OurServices() {
       backgroundURL='url(./steel-framing-background.webp)'
       left={true}
       ></Sections>
-
       <EndSections></EndSections>
       
       <Sections 
@@ -24,6 +23,8 @@ export default function OurServices() {
       backgroundURL='url(./electricity-background.webp)'
       left={false}
       ></Sections>
+      <EndSections></EndSections>
+      
       <Sections 
       isFirst={false}
       titleFirst='Refrigeracion'
@@ -31,6 +32,8 @@ export default function OurServices() {
       backgroundURL='url(./refrigeration-background.webp)'
       left={true}
       ></Sections>
+      <EndSections></EndSections>
+      
       <Sections 
       isFirst={false}
       titleFirst='Sistemas'
@@ -38,6 +41,8 @@ export default function OurServices() {
       backgroundURL='url(./water-pipes-background.webp)'
       left={false}
       ></Sections>
+      <EndSections></EndSections>
+      
     </>
   )
 }

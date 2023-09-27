@@ -9,7 +9,7 @@ import { Item } from '@/types/types';
 
 const EndSections = () => {
   return (
-    <div className="h-screen w-screen flex items-center">
+    <div className={"h-screen w-screen flex items-center "+style.endSectionMain}>
       <div className={"block w-screen "+style.endSections }>
         <div className={"grid grid-cols-6 "+style.points_container}>
           <div className="col-span-1 h-full">
