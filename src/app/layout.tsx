@@ -25,7 +25,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
   gsap.set(mainContentContainer.current,{overflow: 'hidden'});
   // gsap.set(mobileMenu.current?.childNodes[0]!,{filter: 'brightness(1) blur(0px)',backdropFilter: 'blur(0px)',delay:0});
     
-  const HiddeMenu = (e)=>{
+  const HiddeMenu = (e:<Event>)=>{
     console.log(e)
     console.log('scroll')
   }
@@ -42,7 +42,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
       setCloseOpenMenu(true)
     }
   }
-
+ //ToDo make hidde animation for the menu
     useEffect(()=>{
             var lastScrollTop = 0;
             document.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
