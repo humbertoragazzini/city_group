@@ -34,13 +34,14 @@ const Sections: React.FC<Item> = (props) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       gsap.set(background.current,{backgroundImage:props.backgroundURL});
       // gsap.set('.questions',{perspectiveOrigin: '100%',perspective:'100vw'});
+      gsap.set(('.'+styles.cards) ,{perspective:'100vw',perspectiveOrigin: '0%'});
       gsap.set('.imagesContainers' ,{perspective:'100vw',perspectiveOrigin: '0%'});
       // gsap.set('.imagesContainers' ,{transformOrigin:'50% 100%'});
       gsap.to(mainContainer.current,{opacity:1,duration:1,delay:0.25});
       // eslint-disable-next-line react-hooks/exhaustive-deps
       if(props.isFirst){
         gsap.fromTo('.firstBigTitle',{opacity:0,x:'-100vw'},{opacity:1,x:0,stagger:0.5,duration:2})
-        gsap.fromTo(test.current?.childNodes[0]!,{opacity:1,rotationY:260,rotationX:0,translateX:2500,translateZ:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:2})    
+        // gsap.fromTo(test.current?.childNodes[0]!,{opacity:1,rotationY:260,rotationX:0,translateX:2500,translateZ:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:2})    
           
         appearElements.forEach((element:Element) => {
           const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
@@ -48,7 +49,8 @@ const Sections: React.FC<Item> = (props) => {
         });
         photoContainers.forEach((element:Element) => {
           const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: true},duration:20}) 
-          // photoContainerTL.fromTo(element,{opacity:1,rotationY:260,rotationX:0,translateX:2500,translateZ:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:1},0)    
+          photoContainerTL.fromTo(element,{opacity:1,rotationY:90,rotationX:0,translateX:'100vw',translateZ:0},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:1},0)    
+          photoContainerTL.fromTo(element.lastChild,{backdropFilter: 'blur(0px)'},{backdropFilter: 'blur(15px)',duration:1},0)    
         });
       }else{
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -58,7 +60,7 @@ const Sections: React.FC<Item> = (props) => {
             timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
           });
           photoContainers.forEach((element:Element) => {
-            const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: true},duration:20}) 
+            // const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: true},duration:20}) 
             // photoContainerTL.fromTo(element,{opacity:1,rotationY:260,rotationX:0,translateX:2500,translateZ:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:1},0)    
           });
         }else{
@@ -67,7 +69,7 @@ const Sections: React.FC<Item> = (props) => {
             timelineElement.fromTo(element,{x:'100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
           });
           photoContainers.forEach((element:Element) => {
-            const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: true},duration:20}) 
+            // const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: true},duration:20}) 
             // photoContainerTL.fromTo(element,{opacity:1,rotationY:260,rotationX:0,translateX:2500,translateZ:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:1},0)    
           });
         }
@@ -275,83 +277,48 @@ const Sections: React.FC<Item> = (props) => {
                             </div>
                             <div className='relative  imagesContainers pb-10 w-full flex flex-col justify-center items-center' ref={test}>
                               <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
-                                {/* <Image
-                                  className='w-full'
-                                  src="/house-1477041_1920.jpg"
-                                  width={500}
-                                  height={500}
-                                  alt="Picture of the author"
-                                ></Image> */}
-                                <div className="p-9">
-                                  <h1 className='text-white text-bold relative z-50 '>70%</h1>
-                                  <h3 className='text-white relative z-50 '>Mas rapido que la contruccion tradicional</h3>
-                                </div>
-                                <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}>
-
+                                <div className="perspectiveEffectContainer">
+                                  <div className="p-9">
+                                    <h1 className='text-white text-bold relative z-50 '>70%</h1>
+                                    <h3 className='text-white relative z-50 '>Mas rapido que la contruccion tradicional</h3>
+                                  </div>
+                                  <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}></div>    
+                                </div>                          
+                              </div>
+                              <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
+                                <div className="perspectiveEffectContainer">
+                                  <div className="p-9">
+                                    <h1 className='text-white text-bold relative z-50 '>Hasta 300%</h1>
+                                    <h3 className='text-white relative z-50 '>Mas liviano que la contruccion con concreto.</h3>
+                                  </div>
+                                  <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}></div>
                                 </div>
                               </div> 
                               <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
-                                {/* <Image
-                                  className='w-full'
-                                  src="/house-1477041_1920.jpg"
-                                  width={500}
-                                  height={500}
-                                  alt="Picture of the author"
-                                ></Image> */}
-                                <div className="p-9">
-                                  <h1 className='text-white text-bold relative z-50 '>Hasta 300%</h1>
-                                  <h3 className='text-white relative z-50 '>Mas liviano que la contruccion con concreto.</h3>
-                                </div>
-                                <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}>
-
+                                <div className="perspectiveEffectContainer">
+                                  <div className="p-9">
+                                    <h1 className='text-white text-bold relative z-50 '>ICONO</h1>
+                                    <h3 className='text-white relative z-50 '>Mayor eficiencia energetica</h3>
+                                  </div>
+                                  <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}></div>
                                 </div>
                               </div> 
                               <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
-                                {/* <Image
-                                  className='w-full'
-                                  src="/house-1477041_1920.jpg"
-                                  width={500}
-                                  height={500}
-                                  alt="Picture of the author"
-                                ></Image> */}
-                                <div className="p-9">
-                                  <h1 className='text-white text-bold relative z-50 '>ICONO</h1>
-                                  <h3 className='text-white relative z-50 '>Mayor eficiencia energetica</h3>
-                                </div>
-                                <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}>
-
+                                <div className="perspectiveEffectContainer">
+                                  <div className="p-9">
+                                    <h1 className='text-white text-bold relative z-50 '>ICONO</h1>
+                                    <h3 className='text-white relative z-50 '>Alta duravilidad</h3>
+                                  </div>
+                                  <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}></div>
                                 </div>
                               </div> 
                               <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
-                                {/* <Image
-                                  className='w-full'
-                                  src="/house-1477041_1920.jpg"
-                                  width={500}
-                                  height={500}
-                                  alt="Picture of the author"
-                                ></Image> */}
-                                <div className="p-9">
-                                  <h1 className='text-white text-bold relative z-50 '>ICONO</h1>
-                                  <h3 className='text-white relative z-50 '>Alta duravilidad</h3>
-                                </div>
-                                <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}>
-
-                                </div>
-                              </div> 
-                              <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
-                                {/* <Image
-                                  className='w-full'
-                                  src="/house-1477041_1920.jpg"
-                                  width={500}
-                                  height={500}
-                                  alt="Picture of the author"
-                                ></Image> */}
-                                <div className="p-9">
-                                  <h1 className='text-white text-bold relative z-50 '>ICONO</h1>
-                                  <h3 className='text-white relative z-50 '>Mayor flexibilidad en el disenio</h3>
-                                </div>
-                                <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}>
-
+                                <div className="perspectiveEffectContainer">
+                                  <div className="p-9">
+                                    <h1 className='text-white text-bold relative z-50 '>ICONO</h1>
+                                    <h3 className='text-white relative z-50 '>Mayor flexibilidad en el disenio</h3>
+                                  </div>
+                                  <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}></div>
                                 </div>
                               </div> 
                             </div> 

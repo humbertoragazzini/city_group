@@ -53,9 +53,12 @@
 }
 
 .endSections{
-    backdrop-filter: blur(10px);
-    min-height: 450px;
-    box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    min-height: 50vh;
+}
+
+.points_container{
+    min-height: 50vh;
 }
 
 .backdrop_filter {
