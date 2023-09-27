@@ -2,7 +2,7 @@
 import './globals.scss'
 import styles from './styles.module.scss'
 import type { Metadata } from 'next'
-import React, {useRef, useLayoutEffect, useState} from 'react';
+import React, {useRef, useLayoutEffect, useState, useEffect} from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { Inter } from 'next/font/google'
@@ -25,6 +25,10 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
   gsap.set(mainContentContainer.current,{overflow: 'hidden'});
   // gsap.set(mobileMenu.current?.childNodes[0]!,{filter: 'brightness(1) blur(0px)',backdropFilter: 'blur(0px)',delay:0});
     
+  const HiddeMenu = (e)=>{
+    console.log(e)
+    console.log('scroll')
+  }
   const OpenClose = ()=>{
     if(closeOpenMenu){
       gsap.fromTo(mobileMenu.current?.childNodes[1].childNodes!,{opacity:1},{opacity:0,duration:0.25})
@@ -39,10 +43,43 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
     }
   }
 
+    useEffect(()=>{
+            var lastScrollTop = 0;
+            document.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+              var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+              if (st > lastScrollTop) {
+                  // downscroll code
+                  console.log('down')
+              } else if (st < lastScrollTop) {
+                  console.log('up')
+              } // else was horizontal scroll
+              lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+            }, false);
+    },[])
+    useLayoutEffect(() => {
+
+
+  
+    // let ctx = gsap.context((self) => {
+
+    //   // const appearElements = self.selector!('.moveUp')
+    //   // var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-5% center",end: "bottom center",scrub: 2,markers: false},duration:33.5}) 
+
+    //     return () => { // optional
+    //       // custom cleanup code here (runs when it STOPS matching)
+    //     };
+    //   });
+      
+    // }, mainContainer);
+    
+    // return () => ctx.revert();
+    
+  }, []); 
+
   return (
     <html lang="en">
       <body className={inter.className + ' ' + styles.mainContainer} style={{backgroundColor:'black'}}>
-        <div className={'fixed w-screen p-5 navBar hidden lg:block'}>
+        <div className={'fixed w-screen p-5 navBar hidden lg:block '+styles.backdrop_filter}>
           <Link href={'/'} className={pathname === "/" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Home</Link>
           <Link href={'/our_services'} className={pathname === "/our_services" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Nuestro Servicios</Link>
           <Link href={'/'} className={pathname === "/about_us" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Acerca de nosotros</Link>

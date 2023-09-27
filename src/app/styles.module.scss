@@ -10,6 +10,10 @@
     }
 }
 
+.backdrop_filter{
+    backdrop-filter: blur(15px);
+}
+
 .mainAnimation{
     overflow: hidden;
     width: 100%;
