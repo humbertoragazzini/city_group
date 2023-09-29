@@ -17,18 +17,12 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
 
   const pathname = usePathname();
   const mobileMenu = React.useRef<HTMLDivElement>(null);
-  const mainContentContainer = React.useRef<HTMLDivElement>(null);
+  const mainContentContainer = React.useRef<HTMLBodyElement>(null);
   const [closeOpenMenu, setCloseOpenMenu] = useState(false);
 
 
   gsap.set(mobileMenu.current?.childNodes[0].childNodes!,{opacity:0,y:-15})
-  gsap.set(mainContentContainer.current,{overflow: 'hidden'});
-  // gsap.set(mobileMenu.current?.childNodes[0]!,{filter: 'brightness(1) blur(0px)',backdropFilter: 'blur(0px)',delay:0});
-    
-  // const HiddeMenu = (e:<Event>)=>{
-  //   console.log(e)
-  //   console.log('scroll')
-  // }
+
   const OpenClose = ()=>{
     if(closeOpenMenu){
       gsap.fromTo(mobileMenu.current?.childNodes[1].childNodes!,{opacity:1},{opacity:0,duration:0.25})
@@ -42,44 +36,52 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
       setCloseOpenMenu(true)
     }
   }
- //ToDo make hidde animation for the menu
-    useEffect(()=>{
-            var lastScrollTop = 0;
-            document.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
-              var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-              if (st > lastScrollTop) {
-                  // downscroll code
-                  console.log('down')
-              } else if (st < lastScrollTop) {
-                  console.log('up')
-              } // else was horizontal scroll
-              lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-            }, false);
-    },[])
-    useLayoutEffect(() => {
+
+  useLayoutEffect(() => {
+
+    let ctx = gsap.context((self) => {
+
+      const menuDesktop = self.selector!('.navBar_desktop')
 
 
-  
-    // let ctx = gsap.context((self) => {
+      var lastScrollTop = 0;
+      document.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+        var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+        if (st > lastScrollTop) {
+            // downscroll code
+            console.log('down');
+            console.log(menuDesktop[0].offsetHeight)
+            gsap.to(menuDesktop,{y:-69});
+        } else if (st < lastScrollTop) {
+            console.log('up')
+            gsap.to(menuDesktop,{y:0});
+        } // else was horizontal scroll
+        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+      }, false);
 
-    //   // const appearElements = self.selector!('.moveUp')
-    //   // var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-5% center",end: "bottom center",scrub: 2,markers: false},duration:33.5}) 
-
-    //     return () => { // optional
-    //       // custom cleanup code here (runs when it STOPS matching)
-    //     };
-    //   });
+      let mm = gsap.matchMedia();
+      mm.add("(max-width: 768px)", () => {
+        return () => { // optional
+          // custom cleanup code here (runs when it STOPS matching)
+        };
+      });
       
-    // }, mainContainer);
+      mm.add("(min-width: 768px)", () => {
+        return () => { // optional
+          // custom cleanup code here (runs when it STOPS matching)
+        };
+      });
+      
+    }, mainContentContainer);
     
-    // return () => ctx.revert();
-    
+    return () => ctx.revert();
+  
   }, []); 
 
   return (
     <html lang="en">
-      <body className={inter.className + ' ' + styles.mainContainer} style={{backgroundColor:'black'}}>
-        <div className={'fixed w-screen p-5 navBar hidden lg:block '+styles.backdrop_filter}>
+      <body className={inter.className + ' ' + styles.mainContainer} style={{backgroundColor:'black'}} ref={mainContentContainer}>
+        <div className={'fixed w-screen p-5 navBar navBar_desktop hidden lg:block '+styles.backdrop_filter}>
           <Link href={'/'} className={pathname === "/" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Home</Link>
           <Link href={'/our_services'} className={pathname === "/our_services" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Nuestro Servicios</Link>
           <Link href={'/'} className={pathname === "/about_us" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Acerca de nosotros</Link>

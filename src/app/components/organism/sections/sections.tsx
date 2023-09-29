@@ -48,7 +48,7 @@ const Sections: React.FC<Item> = (props) => {
           timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(10px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
         });
         photoContainers.forEach((element:Element) => {
-          const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% center",end: "bottom center",scrub: 2,markers: true},duration:20}) 
+          const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% center",end: "bottom center",scrub: 2,markers: false},duration:20}) 
           photoContainerTL.fromTo(element,{opacity:1,rotationY:90,rotationX:0,translateX:'100vw',translateZ:0},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:1},0)    
           photoContainerTL.fromTo(element.lastChild,{backdropFilter: 'blur(0px)'},{backdropFilter: 'blur(15px)',duration:1},0)    
         });
@@ -60,7 +60,7 @@ const Sections: React.FC<Item> = (props) => {
             timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
           });
           photoContainers.forEach((element:Element) => {
-            const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% center",end: "bottom center",scrub: 2,markers: true},duration:20}) 
+            const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% center",end: "bottom center",scrub: 2,markers: false},duration:20}) 
             photoContainerTL.fromTo(element,{opacity:1,rotationY:90,rotationX:0,translateX:'100vw',translateZ:0},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:1},0)    
             photoContainerTL.fromTo(element.lastChild,{backdropFilter: 'blur(0px)'},{backdropFilter: 'blur(15px)',duration:1},0)    
           });
@@ -70,7 +70,7 @@ const Sections: React.FC<Item> = (props) => {
             timelineElement.fromTo(element,{x:'100vw',opacity:0,filter: 'blur(20px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
           });
           photoContainers.forEach((element:Element) => {
-            const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: true},duration:20}) 
+            const  photoContainerTL = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: false},duration:20}) 
             photoContainerTL.fromTo(element,{opacity:1,rotationY:-90,rotationX:0,translateX:'-100vw',translateZ:0},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:1},0)    
             photoContainerTL.fromTo(element.lastChild,{backdropFilter: 'blur(0px)'},{backdropFilter: 'blur(15px)',duration:1},0)    
           });
@@ -81,14 +81,14 @@ const Sections: React.FC<Item> = (props) => {
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
       if(props.isFirst){
-        var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom bottom",scrub: 2,markers: true},duration:20}) 
+        var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom bottom",scrub: 2,markers: false},duration:20}) 
         var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,start: "top center",end: "bottom center",scrub: 2,markers: false},duration:67}) 
         // var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',pin:test.current,start: "top top",end: "bottom bottom",markers: false}}) 
         var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top top",end: "bottom bottom",markers: false}}) 
       }else{
         // var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: false},duration:67}) 
         var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-5% center",end: "bottom center",scrub: 2,markers: false},duration:33.5}) 
-        var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-25% top",end: "bottom bottom",markers: true}}) 
+        var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-25% top",end: "bottom bottom",markers: false}}) 
       }
 
 

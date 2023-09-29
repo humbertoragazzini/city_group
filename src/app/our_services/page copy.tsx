@@ -58,7 +58,7 @@ export default function OurServices() {
   //     gsap.set(firstBox.current!.childNodes[3], {transformOrigin:'0% 100%'});
 
   //     // Timelines variables
-  //     const timeLineBox = gsap.timeline({scrollTrigger: {trigger: firstBox.current,pinSpacing:false,start: "top top",end: "25% top",scrub: 2,markers: true},duration:10}) 
+  //     const timeLineBox = gsap.timeline({scrollTrigger: {trigger: firstBox.current,pinSpacing:false,start: "top top",end: "25% top",scrub: 2,markers: false},duration:10}) 
 
   //     // Animations
   //     timeLineBox.fromTo(backgrounSecond.current,{x:0},{x:0,duration:1},3)
@@ -72,15 +72,15 @@ export default function OurServices() {
 
  
   //     // Animation Content 2
-  //     const timeLineBox2 = gsap.timeline({scrollTrigger: {trigger: secondBox.current,pinSpacing:false,start: "-50% top",end: "0% top",scrub: 2,markers: true},duration:10}) 
+  //     const timeLineBox2 = gsap.timeline({scrollTrigger: {trigger: secondBox.current,pinSpacing:false,start: "-50% top",end: "0% top",scrub: 2,markers: false},duration:10}) 
   //     .fromTo(backgrounThird.current,{opacity:0},{opacity:1,duration:1},0)//h5
       
   //     // Animation Content 3
-  //     const timeLineBox3 = gsap.timeline({scrollTrigger: {trigger: thirdBox.current,pinSpacing:false,start: "-50% top",end: "0% top",scrub: 2,markers: true},duration:10}) 
+  //     const timeLineBox3 = gsap.timeline({scrollTrigger: {trigger: thirdBox.current,pinSpacing:false,start: "-50% top",end: "0% top",scrub: 2,markers: false},duration:10}) 
   //     .fromTo(backgrounFourth.current,{opacity:0},{opacity:1,duration:1},0)//h5
       
   //     // Animation Content 4
-  //     const timeLineBox4 = gsap.timeline({scrollTrigger: {trigger: fourthBox.current,pinSpacing:false,start: "-50% top",end: "0% top",scrub: 2,markers: true},duration:10}) 
+  //     const timeLineBox4 = gsap.timeline({scrollTrigger: {trigger: fourthBox.current,pinSpacing:false,start: "-50% top",end: "0% top",scrub: 2,markers: false},duration:10}) 
   //     .fromTo(backgrounFiveth.current,{opacity:0},{opacity:1,duration:1},0)//h5
       
   //   }, main); // <- IMPORTANT! Scopes selector text
@@ -104,7 +104,7 @@ export default function OurServices() {
       gsap.fromTo('.firstBigTitle',{opacity:0,x:'-100vw'},{opacity:1,x:0,stagger:0.5,duration:2})
 
       // Creating Timeline
-      const mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "top top",end: "bottom top",scrub: 2,markers: true},duration:190}) 
+      const mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,start: "top top",end: "bottom top",scrub: 2,markers: false},duration:190}) 
 
       // Animation Content 1
       // questions
