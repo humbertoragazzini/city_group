@@ -165,7 +165,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
           {children}
         </div>
         <div className="footer relative px-10 pt-10 pb-10">
-          <div className="grid-cols-4 hidden md:grid">
+          <div className="grid-cols-4 hidden lg:grid">
             <div className="col-span-1 mt-3 mb-3 flex justify-center">
               <div className="">
                 <p className='text-white text-2xl mt-3 mb-3'>Mapa del sitio</p>
@@ -209,13 +209,13 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-4 md:hidden">
+          <div className="grid grid-cols-4 lg:hidden">
             <div className="col-span-4 mt-3 mb-3 flex justify-center">
               <div className="flex flex-col justify-center items-center">
-                  <Link href={'/'} className='text-white mb-2 block link ml-3'>Copyright 2023 City Group</Link>
-                  <Link href={'/'} className='text-white mb-2 block link ml-3'>Privacy policy</Link>
-                  <Link href={'/'} className='text-white mb-2 block link ml-3'>Disclaimer</Link>
-                  <Link href={'/'} className='text-white mb-2 block link ml-3'>Contact</Link>
+                  <Link href={'/'} className='text-white mb-2 block link origin-center lg:origin-bottom-left lg:ml-3'>Copyright 2023 City Group</Link>
+                  <Link href={'/'} className='text-white mb-2 block link origin-center lg:origin-bottom-left lg:ml-3'>Privacy policy</Link>
+                  <Link href={'/'} className='text-white mb-2 block link origin-center lg:origin-bottom-left lg:ml-3'>Disclaimer</Link>
+                  <Link href={'/'} className='text-white mb-2 block link origin-center lg:origin-bottom-left lg:ml-3'>Contact</Link>
               </div>
             </div>
           </div>
