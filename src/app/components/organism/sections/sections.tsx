@@ -21,7 +21,7 @@ const Sections: React.FC<Item> = (props) => {
   useLayoutEffect(() => {
   
     let ctx = gsap.context((self) => {
-      const firstToMove = self.selector('.first_to_move')
+      const firstToMove = self.selector!('.first_to_move')
       const appearElements = self.selector!('.moveUp')
       const photoContainers = self.selector!('.perspectiveEffectContainer')
       gsap.set(background.current,{backgroundImage:props.backgroundURL});
