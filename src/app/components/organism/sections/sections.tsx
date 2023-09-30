@@ -21,14 +21,13 @@ const Sections: React.FC<Item> = (props) => {
   useLayoutEffect(() => {
   
     let ctx = gsap.context((self) => {
-      const firstToMove = self.selector!('.first_to_move')
+
       const appearElements = self.selector!('.moveUp')
       const photoContainers = self.selector!('.perspectiveEffectContainer')
       gsap.set(background.current,{backgroundImage:props.backgroundURL});
       gsap.set(('.'+styles.cards) ,{perspective:'100vw',perspectiveOrigin: '0%'});
       gsap.set('.imagesContainers' ,{perspective:'100vw',perspectiveOrigin: '0%'});
       gsap.to(mainContainer.current,{opacity:1,duration:1,delay:0.25});
-      gsap.fromTo(firstToMove,{x:'50vw'},{x:0,duration:2,delay:1})
       
       
       if(props.isFirst){
@@ -261,22 +260,6 @@ const Sections: React.FC<Item> = (props) => {
                               </div>  
                             </div>
                             <div className='relative  imagesContainers pb-10 w-full flex flex-col justify-center items-center' ref={test}>
-                              <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
-                                <div className="first_to_move hidden lg:block">
-                                  <div className="p-9 flex flex-col justify-center">
-                                    <div className='rounded-xl z-50 overflow-hidden'>
-                                      <Image
-                                        width={900}
-                                        height={900}
-                                        src={'/steelframing.jpeg'}
-                                        alt='imagen de una contruccion de steel framing'
-                                      ></Image>
-                                    </div>
-                                    <p className='text-white text-start relative text-sm mt-3 text-neutral-500 z-50 '>*Construccion de casa totalmente echa con steelframing</p>
-                                  </div>
-                                  <div className={'absolute top-0 left-0 h-full w-screen border-transparent border-2 rounded-2xl '+ styles.backdrop_filter}></div>    
-                                </div>                          
-                              </div>
                               <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
                                 <div className="perspectiveEffectContainer">
                                   <div className="p-9 flex flex-col justify-center">
