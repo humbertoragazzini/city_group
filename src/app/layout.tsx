@@ -21,9 +21,8 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
   const [closeOpenMenu, setCloseOpenMenu] = useState(false);
 
 
-  gsap.set(mobileMenu.current?.childNodes[0].childNodes!,{opacity:0,y:-15})
 
-  const OpenClose = ()=>{
+  var OpenClose = ()=>{
     if(closeOpenMenu){
       gsap.fromTo(mobileMenu.current?.childNodes[1].childNodes!,{opacity:1},{opacity:0,duration:0.25})
       gsap.to(mobileMenu.current,{top:-mobileMenu.current?.getBoundingClientRect().height!,duration:0,delay:1})
@@ -38,38 +37,29 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
   }
 
   useLayoutEffect(() => {
-
     let ctx = gsap.context((self) => {
-
+      
       const menuDesktop = self.selector!('.navBar_desktop')
 
-
       var lastScrollTop = 0;
-      document.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
-        var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      document.addEventListener("scroll", function(){ 
+        var st = window.pageYOffset || document.documentElement.scrollTop;
         if (st > lastScrollTop) {
-            // downscroll code
-            console.log('down');
-            console.log(menuDesktop[0].offsetHeight)
             gsap.to(menuDesktop,{y:-69});
         } else if (st < lastScrollTop) {
             console.log('up')
             gsap.to(menuDesktop,{y:0});
-        } // else was horizontal scroll
-        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
       }, false);
 
       let mm = gsap.matchMedia();
       mm.add("(max-width: 768px)", () => {
-        return () => { // optional
-          // custom cleanup code here (runs when it STOPS matching)
-        };
+        return () => {};
       });
       
       mm.add("(min-width: 768px)", () => {
-        return () => { // optional
-          // custom cleanup code here (runs when it STOPS matching)
-        };
+        return () => {};
       });
       
     }, mainContentContainer);
@@ -80,7 +70,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
 
   return (
     <html lang="en">
-      <body className={inter.className + ' ' + styles.mainContainer} style={{backgroundColor:'black'}} ref={mainContentContainer}>
+      <body className={inter.className + ' ' + styles.mainContainer} ref={mainContentContainer}>
         <div className={'fixed w-screen p-5 navBar navBar_desktop hidden lg:block '+styles.backdrop_filter}>
           <Link href={'/'} className={pathname === "/" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Home</Link>
           <Link href={'/our_services'} className={pathname === "/our_services" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Nuestro Servicios</Link>
@@ -101,50 +91,50 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
             >
               <g fill="#fff" color="#fff" transform="translate(-26.404 -37.586)">
                 <path
-                  style={{ stroke: "none" }}
+                  
                   d="M34.459 37.586c-4.439 0-8.055 3.616-8.055 8.055v49.416c0 4.438 3.616 8.052 8.055 8.052h50.156c4.439 0 8.055-3.614 8.055-8.052V45.64c0-4.44-3.616-8.055-8.055-8.055zm0 2.656h50.156a5.358 5.358 0 015.399 5.399v49.416a5.356 5.356 0 01-5.399 5.396H34.46a5.356 5.356 0 01-5.398-5.396V45.64a5.358 5.358 0 015.398-5.399z"
                 ></path>
                 <g>
                   <path
-                    style={{ stroke: "none" }}
+                    
                     strokeWidth="1.16"
                     d="M38.219 50.696h42.527v5.22H38.22z"
                   ></path>
                   <path
-                    style={{ stroke: "none" }}
+                    
                     d="M37.639 50.115v6.381h43.687v-6.38zm1.16 1.16h41.367v4.06H38.799z"
                   ></path>
                 </g>
                 <g>
                   <path
-                    style={{ stroke: "none" }}
+                    
                     strokeWidth="1.16"
                     d="M38.157 61.752h42.527v5.22H38.157z"
                   ></path>
                   <path
-                    style={{ stroke: "none" }}
+                    
                     d="M37.576 61.172v6.38h43.688v-6.38zm1.16 1.16h41.368v4.06H38.736z"
                   ></path>
                 </g>
                 <g>
                   <path
-                    style={{ stroke: "none" }}
+                    
                     strokeWidth="1.16"
                     d="M38.157 72.623h42.527v5.22H38.157z"
                   ></path>
                   <path
-                    style={{ stroke: "none" }}
+                    
                     d="M37.576 72.043v6.38h43.69v-6.38zm1.16 1.16h41.368v4.06H38.736z"
                   ></path>
                 </g>
                 <g>
                   <path
-                    style={{ stroke: "none" }}
+                    
                     strokeWidth="1.16"
                     d="M38.033 83.618h42.528v5.22H38.033z"
                   ></path>
                   <path
-                    style={{ stroke: "none" }}
+                    
                     d="M37.453 83.037v6.381h43.688v-6.38zm1.16 1.16H79.98v4.06H38.613z"
                   ></path>
                 </g>
@@ -152,15 +142,13 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
             </svg>
           </button>
         </div>
-        <div className={'fixed w-screen p-0 lg:p-5 navBarDropDown block lg:hidden'} ref={mobileMenu} style={{top:'-100vh'}}>
+        <div className={'fixed w-screen p-0 lg:p-5 navBarDropDown block lg:hidden'} ref={mobileMenu}>
           <div className="background_blur w-screen h-screen absolute top-0 left-0"></div>
           <div className={'relative w-screen p-5 navBar block lg:hidden'}>
-            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/" ? "pt-4 pr-4 pl-0 pb-2 m-3 active w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  w-fit"} style={{opacity:'0',top:'-15px'}}>Home</Link>
-            <Link href={'/our_services'} onClick={()=>{OpenClose()}} className={pathname === "/our_services w-fit" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Nuestros Servicios</Link>
-            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/about_us" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Acerca de Nosotros</Link>
-            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/contact" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Contacto</Link>
-            {/* <Link href={'/login'} onClick={()=>{OpenClose()}} className={pathname === "/login" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Login</Link>
-            <Link href={'/signup'} onClick={()=>{OpenClose()}} className={pathname === "/signup" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit"} style={{opacity:'0',top:'-15px'}}>Signup</Link> */}
+            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/" ? "pt-4 pr-4 pl-0 pb-2 m-3 active w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  w-fit opacity-0"}>Home</Link>
+            <Link href={'/our_services'} onClick={()=>{OpenClose()}} className={pathname === "/our_services w-fit" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit opacity-0"}>Nuestros Servicios</Link>
+            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/about_us" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit opacity-0"}>Acerca de Nosotros</Link>
+            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/contact" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit opacity-0"}>Contacto</Link>
           </div>
         </div>
         <div className="main_content_container">

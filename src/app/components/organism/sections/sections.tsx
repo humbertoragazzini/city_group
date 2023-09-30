@@ -22,27 +22,15 @@ const Sections: React.FC<Item> = (props) => {
   
     let ctx = gsap.context((self) => {
 
-      // const heightAllContent = self.selector!('.allContent')[0].getClientRects()[0].height
-      // const widthFirstBigTitle = self.selector!('.allContent')[0].getClientRects()[0].width
-      // const appearElements = self.selector!('.steelQuestions')
       const appearElements = self.selector!('.moveUp')
       const photoContainers = self.selector!('.perspectiveEffectContainer')
-      // console.log(appearElements)
-
-      // Setting up style
-      // gsap.set(mainContainer.current,{height:'400vh'});
-      // eslint-disable-next-line react-hooks/exhaustive-deps
       gsap.set(background.current,{backgroundImage:props.backgroundURL});
-      // gsap.set('.questions',{perspectiveOrigin: '100%',perspective:'100vw'});
       gsap.set(('.'+styles.cards) ,{perspective:'100vw',perspectiveOrigin: '0%'});
       gsap.set('.imagesContainers' ,{perspective:'100vw',perspectiveOrigin: '0%'});
-      // gsap.set('.imagesContainers' ,{transformOrigin:'50% 100%'});
       gsap.to(mainContainer.current,{opacity:1,duration:1,delay:0.25});
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+      
       if(props.isFirst){
         gsap.fromTo('.firstBigTitle',{opacity:0,x:'-100vw'},{opacity:1,x:0,stagger:0.5,duration:2})
-        // gsap.fromTo(test.current?.childNodes[0]!,{opacity:1,rotationY:260,rotationX:0,translateX:2500,translateZ:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,translateZ:0,duration:2})    
-          
         appearElements.forEach((element:Element) => {
           const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
           timelineElement.fromTo(element,{x:'-100vw',opacity:0,filter: 'blur(10px)'},{x:0,opacity:1,filter: 'blur(0px)',duration:10},0)
@@ -53,7 +41,6 @@ const Sections: React.FC<Item> = (props) => {
           photoContainerTL.fromTo(element.lastChild,{backdropFilter: 'blur(0px)'},{backdropFilter: 'blur(15px)',duration:1},0)    
         });
       }else{
-      // eslint-disable-next-line react-hooks/exhaustive-deps
         if(props.left){
           appearElements.forEach((element:Element) => {
             const timelineElement = gsap.timeline({scrollTrigger: {trigger: element,pinSpacing:false,pinSpacer:'none',start: "-25% 85%",end: "100% 85%",scrub: 5,markers: false},duration:10}) 
@@ -78,15 +65,11 @@ const Sections: React.FC<Item> = (props) => {
       }
 
       // Creating Timeline
-
-      // eslint-disable-next-line react-hooks/exhaustive-deps
       if(props.isFirst){
         var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom bottom",scrub: 2,markers: false},duration:20}) 
         var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,start: "top center",end: "bottom center",scrub: 2,markers: false},duration:67}) 
-        // var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',pin:test.current,start: "top top",end: "bottom bottom",markers: false}}) 
         var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top top",end: "bottom bottom",markers: false}}) 
       }else{
-        // var mainTimeLine = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "top center",end: "bottom center",scrub: 2,markers: false},duration:67}) 
         var timeLineBackGround = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-5% center",end: "bottom center",scrub: 2,markers: false},duration:33.5}) 
         var timeLineBackGround2 = gsap.timeline({scrollTrigger: {trigger: mainContainer.current,pinSpacing:false,pinSpacer:'none',start: "-25% top",end: "bottom bottom",markers: false}}) 
       }
@@ -97,84 +80,33 @@ const Sections: React.FC<Item> = (props) => {
       mm.add("(max-width: 768px)", () => {
 
         // Animation 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         if(props.isFirst){
           timeLineBackGround.to(background.current,{filter: 'brightness(0.4) blur(2px)',duration:10},10)
           timeLineBackGround.to(background.current,{opacity:1,duration:5},0)
           timeLineBackGround.to(background.current,{x:0,duration:5},30)
-          // mainTimeLine.fromTo('.firstBigTitle',{x:0},{x:widthFirstBigTitle,duration:10, stagger:5},1)
-          // mainTimeLine.fromTo('.steelQuestions.first',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:1},5)
-          // mainTimeLine.fromTo('.steelQuestions.first',{y:'100vh'},{y:0,duration:10},7.5)
-          // mainTimeLine.fromTo('.steelQuestions.second',{y:'100vh'},{y:0,duration:10},15.5)
-          // mainTimeLine.fromTo('.steelQuestions.second',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:2},10)
-          // mainTimeLine.fromTo('.allContent',{y:0},{y:-heightAllContent-250,duration:40},25)
-          // mainTimeLine.fromTo('.'+styles.image_component+'.firstImage',{x:0,y:0},{x:250,y:-50,duration:8},22)        
-          // mainTimeLine.fromTo('.'+styles.image_component+'.secondImage',{x:0,y:0},{x:170,y:250,duration:8},30)        
-          // mainTimeLine.fromTo('.'+styles.image_component+'.thirdImage',{x:0,y:0},{x:0,y:0,duration:8},38)   
         }else{
           timeLineBackGround.to(background.current,{filter: 'brightness(0.4) blur(2px)',duration:10},5)
           timeLineBackGround.fromTo(background.current,{opacity:0},{opacity:1,duration:5},0)
           timeLineBackGround.fromTo(background.current,{x:0},{x:0,duration:1},30)
-          // mainTimeLine.fromTo('.firstBigTitle',{x: -widthFirstBigTitle},{x:'0',duration:20, stagger:0.5},1)
-          // mainTimeLine.fromTo('.steelQuestions.first',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:1},5)
-          // mainTimeLine.fromTo('.steelQuestions.first',{y:'100vh'},{y:0,duration:10},7.5)
-          // mainTimeLine.fromTo('.steelQuestions.second',{y:'100vh'},{y:0,duration:10},15.5)
-          // mainTimeLine.fromTo('.steelQuestions.second',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:2},10)
-          // mainTimeLine.fromTo('.allContent',{y:0},{y:-heightAllContent-75,duration:40},25)  
-          // mainTimeLine.fromTo('.'+styles.image_component,{opacity:0,rotationX:-55,translateZ:-2000,duration:10},{opacity:1,rotationX:0,translateZ:0,duration:10,stagger:2},7)        
-          // mainTimeLine.fromTo('.'+styles.image_component+'.firstImage',{x:0,y:0},{x:250,y:200,duration:8},20)        
-          // mainTimeLine.fromTo('.'+styles.image_component+'.secondImage',{x:0,y:0},{x:275,y:-250,duration:8},28)        
-          // mainTimeLine.fromTo('.'+styles.image_component+'.thirdImage',{x:0,y:0},{x:0,y:0,duration:8},36)        
         }
         
-        return () => { // optional
-          // custom cleanup code here (runs when it STOPS matching)
-        };
+        return () => {};
       });
       
       mm.add("(min-width: 768px)", () => {
 
         // Animation 
-      // eslint-disable-next-line react-hooks/exhaustive-deps
         if(props.isFirst){
           timeLineBackGround.to(background.current,{filter: 'brightness(0.4) blur(2px)',duration:10},10)
           timeLineBackGround.to(background.current,{opacity:1,duration:5},0)
-          timeLineBackGround.to(background.current,{x:0,duration:5},30)
-          // mainTimeLine.fromTo('.perspectiveEffectContainer',{y:0},{y:0,duration:1},67)        
-          // mainTimeLine.fromTo('.firstBigTitle',{x:0},{x:widthFirstBigTitle,duration:10, stagger:5},1)
-          // mainTimeLine.fromTo('.steelQuestions.first',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:1},5)
-          // mainTimeLine.fromTo('.steelQuestions.first',{y:'100vh'},{y:0,duration:10},7.5)
-          // mainTimeLine.fromTo('.steelQuestions.second',{y:'100vh'},{y:0,duration:10},15.5)
-          // mainTimeLine.fromTo('.steelQuestions.second',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:2},10)
-          // mainTimeLine.fromTo('.allContent',{y:0},{y:-heightAllContent-250,duration:40},25)
-          // mainTimeLine.fromTo('.'+styles.image_component,{opacity:0,rotationX:-55,translateZ:-2000,duration:10},{opacity:1,rotationX:0,translateZ:0,duration:10, stagger:2},10)        
-          // mainTimeLine.fromTo('.'+styles.image_component+'.firstImage',{x:0,y:0},{x:250,y:-50,duration:8},22)        
-          // mainTimeLine.fromTo('.'+styles.image_component+'.secondImage',{x:0,y:0},{x:170,y:250,duration:8},30)        
-          // mainTimeLine.fromTo('.'+styles.image_component+'.thirdImage',{x:0,y:0},{x:0,y:0,duration:8},38)   
+          timeLineBackGround.to(background.current,{x:0,duration:5},30)  
         }else{
           timeLineBackGround.fromTo(background.current,{opacity:0},{opacity:1,duration:5},0)
           timeLineBackGround.to(background.current,{filter: 'brightness(0.4) blur(2px)',duration:10},5)
-          timeLineBackGround.fromTo(background.current,{x:0},{x:0,duration:1},30)
-          // if(props.left){
-          //   photoContainerTL.fromTo('.perspectiveEffectContainer',{opacity:1,rotationY:260,rotationX:0,translateX:2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,duration:1,stagger:0.25},0) 
-          // }else{
-          //   photoContainerTL.fromTo('.perspectiveEffectContainer',{opacity:1,rotationY:-260,rotationX:0,translateX:-2500},{opacity:1,rotationX:0,rotationY:0,translateX:0,duration:1,stagger:0.25},0)    
-          // }
-          // mainTimeLine.fromTo('.firstBigTitle',{x: -widthFirstBigTitle},{x:'0',duration:20, stagger:0.5},1)
-          // mainTimeLine.fromTo('.steelQuestions.first',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:1},5)
-          // mainTimeLine.fromTo('.steelQuestions.first',{y:'100vh'},{y:0,duration:10},7.5)
-          // mainTimeLine.fromTo('.steelQuestions.second',{y:'100vh'},{y:0,duration:10},15.5)
-          // mainTimeLine.fromTo('.steelQuestions.second',{opacity:0,filter: 'blur(10px)'},{opacity:1,duration:10,filter: 'blur(0px)',stagger:2},10)
-          // mainTimeLine.fromTo('.allContent',{y:0},{y:-heightAllContent-75,duration:40},25)  
-          // mainTimeLine.fromTo('.'+styles.image_component,{opacity:0,rotationX:-55,translateZ:-2000,duration:10},{opacity:1,rotationX:0,translateZ:0,duration:10,stagger:2},7)        
-          // mainTimeLine.fromTo('.'+styles.image_component+'.firstImage',{x:0,y:0},{x:250,y:200,duration:8},20)        
-          // mainTimeLine.fromTo('.'+styles.image_component+'.secondImage',{x:0,y:0},{x:275,y:-250,duration:8},28)        
-          // mainTimeLine.fromTo('.'+styles.image_component+'.thirdImage',{x:0,y:0},{x:0,y:0,duration:8},36)        
+          timeLineBackGround.fromTo(background.current,{x:0},{x:0,duration:1},30)       
         }
         
-        return () => { // optional
-          // custom cleanup code here (runs when it STOPS matching)
-        };
+        return () => {};
       });
       
     }, mainContainer);
@@ -233,7 +165,7 @@ const Sections: React.FC<Item> = (props) => {
                                   </p> 
                                   <div className="moveUp block md:hidden main_points h-full w-full flex flex-col justify-center items-center">
                                     {/* ICON MAINT*/}
-                                    <svg className='svg_border' style={{width:"100px",height:"100px"}}  viewBox="0 0 91 91" enable-background="new 0 0 91 91" id="Layer_1" version="1.1">
+                                    <svg className='svg_border' style={{width:"100px",height:"100px"}}  viewBox="0 0 91 91" enableBackground="new 0 0 91 91" id="Layer_1" version="1.1">
                                       <g>
                                       <g>
                                       <path d="M38.841,55.666l0.682-0.676l-0.02-0.016c-0.881-0.891,4.984-6.855,4.984-6.855l-8.119-8.118L8.663,66.904    c-1.973,1.977-2.92,4.705-2.658,7.686c0.242,2.793,1.533,5.49,3.813,7.771c2.43,2.424,5.553,3.66,8.533,3.66    c2.521,0,4.938-0.889,6.746-2.691l20.258-20.26l-5.111-5.17C39.604,57.252,39.151,56.488,38.841,55.666" fill="#fff"/>
@@ -275,7 +207,7 @@ const Sections: React.FC<Item> = (props) => {
                                   <div className="moveUp block md:hidden main_points h-full w-full flex flex-col justify-center items-center">
                                     {/* ICON SPEED*/}
                                     <svg className='svg_border' style={{width:"100px",height:"100px"}} viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#fff"  d="M211.733 1260.088c16.32 131.947 68.587 258.027 151.254 364.8l-168.64 130.667C88.213 1618.488 21.013 1456.14 0 1286.22Zm1654.155-391.584c18.88 57.813 32.32 117.76 39.787 178.24 4.8 40 7.146 79.147 7.146 119.787 0 40.533-2.346 79.68-7.146 119.466-21.014 170.134-88.214 332.48-194.347 469.547l-168.64-130.667c82.667-106.773 134.933-232.853 151.253-364.8 3.734-30.72 5.547-61.76 5.547-93.546 0-31.894-1.813-62.934-5.547-93.867-5.866-46.613-16.106-93.013-30.72-137.813Zm-135.125-421.707 150.826 150.827-875.413 875.413-519.893-519.893 150.826-150.827 369.067 369.067 724.587-724.587ZM194.347 577.411l168.64 130.666c-82.667 106.774-134.934 232.854-151.254 364.8L0 1046.744c21.013-169.92 88.213-332.267 194.347-469.333ZM833.14 213.709l26.134 211.734c-132.054 16.213-258.134 68.586-364.8 151.253L363.7 408.056c137.067-106.133 299.307-173.44 469.44-194.347Zm239.456-.01c170.027 21.013 332.374 88.213 469.334 194.346l-130.774 168.64c-106.56-82.666-232.746-135.04-364.693-151.253Z" fill-rule="evenodd"/>
+                                        <path fill="#fff"  d="M211.733 1260.088c16.32 131.947 68.587 258.027 151.254 364.8l-168.64 130.667C88.213 1618.488 21.013 1456.14 0 1286.22Zm1654.155-391.584c18.88 57.813 32.32 117.76 39.787 178.24 4.8 40 7.146 79.147 7.146 119.787 0 40.533-2.346 79.68-7.146 119.466-21.014 170.134-88.214 332.48-194.347 469.547l-168.64-130.667c82.667-106.773 134.933-232.853 151.253-364.8 3.734-30.72 5.547-61.76 5.547-93.546 0-31.894-1.813-62.934-5.547-93.867-5.866-46.613-16.106-93.013-30.72-137.813Zm-135.125-421.707 150.826 150.827-875.413 875.413-519.893-519.893 150.826-150.827 369.067 369.067 724.587-724.587ZM194.347 577.411l168.64 130.666c-82.667 106.774-134.934 232.854-151.254 364.8L0 1046.744c21.013-169.92 88.213-332.267 194.347-469.333ZM833.14 213.709l26.134 211.734c-132.054 16.213-258.134 68.586-364.8 151.253L363.7 408.056c137.067-106.133 299.307-173.44 469.44-194.347Zm239.456-.01c170.027 21.013 332.374 88.213 469.334 194.346l-130.774 168.64c-106.56-82.666-232.746-135.04-364.693-151.253Z" fillRule="evenodd"/>
                                     </svg>
                                     <h1 className='text-white font-bold mt-5 mb-5'>70% MAS RAPIDO</h1>
                                   </div>
@@ -334,7 +266,7 @@ const Sections: React.FC<Item> = (props) => {
                                       70%
                                       {/* ICON SPEED*/}
                                       <svg className='lg:float-left mr-5 mb-6 svg_border' style={{width:"100px",height:"100px"}} viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
-                                          <path fill="#fff"  d="M211.733 1260.088c16.32 131.947 68.587 258.027 151.254 364.8l-168.64 130.667C88.213 1618.488 21.013 1456.14 0 1286.22Zm1654.155-391.584c18.88 57.813 32.32 117.76 39.787 178.24 4.8 40 7.146 79.147 7.146 119.787 0 40.533-2.346 79.68-7.146 119.466-21.014 170.134-88.214 332.48-194.347 469.547l-168.64-130.667c82.667-106.773 134.933-232.853 151.253-364.8 3.734-30.72 5.547-61.76 5.547-93.546 0-31.894-1.813-62.934-5.547-93.867-5.866-46.613-16.106-93.013-30.72-137.813Zm-135.125-421.707 150.826 150.827-875.413 875.413-519.893-519.893 150.826-150.827 369.067 369.067 724.587-724.587ZM194.347 577.411l168.64 130.666c-82.667 106.774-134.934 232.854-151.254 364.8L0 1046.744c21.013-169.92 88.213-332.267 194.347-469.333ZM833.14 213.709l26.134 211.734c-132.054 16.213-258.134 68.586-364.8 151.253L363.7 408.056c137.067-106.133 299.307-173.44 469.44-194.347Zm239.456-.01c170.027 21.013 332.374 88.213 469.334 194.346l-130.774 168.64c-106.56-82.666-232.746-135.04-364.693-151.253Z" fill-rule="evenodd"/>
+                                          <path fill="#fff"  d="M211.733 1260.088c16.32 131.947 68.587 258.027 151.254 364.8l-168.64 130.667C88.213 1618.488 21.013 1456.14 0 1286.22Zm1654.155-391.584c18.88 57.813 32.32 117.76 39.787 178.24 4.8 40 7.146 79.147 7.146 119.787 0 40.533-2.346 79.68-7.146 119.466-21.014 170.134-88.214 332.48-194.347 469.547l-168.64-130.667c82.667-106.773 134.933-232.853 151.253-364.8 3.734-30.72 5.547-61.76 5.547-93.546 0-31.894-1.813-62.934-5.547-93.867-5.866-46.613-16.106-93.013-30.72-137.813Zm-135.125-421.707 150.826 150.827-875.413 875.413-519.893-519.893 150.826-150.827 369.067 369.067 724.587-724.587ZM194.347 577.411l168.64 130.666c-82.667 106.774-134.934 232.854-151.254 364.8L0 1046.744c21.013-169.92 88.213-332.267 194.347-469.333ZM833.14 213.709l26.134 211.734c-132.054 16.213-258.134 68.586-364.8 151.253L363.7 408.056c137.067-106.133 299.307-173.44 469.44-194.347Zm239.456-.01c170.027 21.013 332.374 88.213 469.334 194.346l-130.774 168.64c-106.56-82.666-232.746-135.04-364.693-151.253Z" fillRule="evenodd"/>
                                       </svg>
                                     </h1>
                                     <h3 className='text-white relative z-50 '>Mas rapido que la contruccion tradicional</h3>
@@ -425,7 +357,7 @@ const Sections: React.FC<Item> = (props) => {
                                       70%
                                       {/* ICON SPEED*/}
                                       <svg className='inline ml-5 mb-6 svg_border' style={{width:"100px",height:"100px"}} viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
-                                          <path fill="#fff"  d="M211.733 1260.088c16.32 131.947 68.587 258.027 151.254 364.8l-168.64 130.667C88.213 1618.488 21.013 1456.14 0 1286.22Zm1654.155-391.584c18.88 57.813 32.32 117.76 39.787 178.24 4.8 40 7.146 79.147 7.146 119.787 0 40.533-2.346 79.68-7.146 119.466-21.014 170.134-88.214 332.48-194.347 469.547l-168.64-130.667c82.667-106.773 134.933-232.853 151.253-364.8 3.734-30.72 5.547-61.76 5.547-93.546 0-31.894-1.813-62.934-5.547-93.867-5.866-46.613-16.106-93.013-30.72-137.813Zm-135.125-421.707 150.826 150.827-875.413 875.413-519.893-519.893 150.826-150.827 369.067 369.067 724.587-724.587ZM194.347 577.411l168.64 130.666c-82.667 106.774-134.934 232.854-151.254 364.8L0 1046.744c21.013-169.92 88.213-332.267 194.347-469.333ZM833.14 213.709l26.134 211.734c-132.054 16.213-258.134 68.586-364.8 151.253L363.7 408.056c137.067-106.133 299.307-173.44 469.44-194.347Zm239.456-.01c170.027 21.013 332.374 88.213 469.334 194.346l-130.774 168.64c-106.56-82.666-232.746-135.04-364.693-151.253Z" fill-rule="evenodd"/>
+                                          <path fill="#fff"  d="M211.733 1260.088c16.32 131.947 68.587 258.027 151.254 364.8l-168.64 130.667C88.213 1618.488 21.013 1456.14 0 1286.22Zm1654.155-391.584c18.88 57.813 32.32 117.76 39.787 178.24 4.8 40 7.146 79.147 7.146 119.787 0 40.533-2.346 79.68-7.146 119.466-21.014 170.134-88.214 332.48-194.347 469.547l-168.64-130.667c82.667-106.773 134.933-232.853 151.253-364.8 3.734-30.72 5.547-61.76 5.547-93.546 0-31.894-1.813-62.934-5.547-93.867-5.866-46.613-16.106-93.013-30.72-137.813Zm-135.125-421.707 150.826 150.827-875.413 875.413-519.893-519.893 150.826-150.827 369.067 369.067 724.587-724.587ZM194.347 577.411l168.64 130.666c-82.667 106.774-134.934 232.854-151.254 364.8L0 1046.744c21.013-169.92 88.213-332.267 194.347-469.333ZM833.14 213.709l26.134 211.734c-132.054 16.213-258.134 68.586-364.8 151.253L363.7 408.056c137.067-106.133 299.307-173.44 469.44-194.347Zm239.456-.01c170.027 21.013 332.374 88.213 469.334 194.346l-130.774 168.64c-106.56-82.666-232.746-135.04-364.693-151.253Z" fillRule="evenodd"/>
                                       </svg>
                                     </h1>
                                     <h3 className='text-white relative z-50 text-right'>Mas rapido que la contruccion tradicional</h3>
