@@ -5,10 +5,24 @@ export interface Titles {
   content:String;
 }
 
+export interface Highlight {
+  text:String;
+  icon:any;
+}
+
+export interface EndHighlight {
+  shorText:String;
+  icon:any;
+}
+
 export interface Services {
   text:String;
   content:String;
   icon: any;
+}
+
+export interface EndSectionData {
+  items:EndHighlight[]
 }
 
 
@@ -17,7 +31,8 @@ export interface Item {
   titleFirst: string[];
   WSProvide: String;
   EOservices: Titles[];
-  TOSProvided: Services[]
+  TOSProvided: Services[];
+  highlight: Highlight[];
   titleSecond: string;
   backgroundURL:string;
   left: Boolean;
