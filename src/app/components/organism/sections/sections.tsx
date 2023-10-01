@@ -238,8 +238,8 @@ const Sections: React.FC<Item> = (props) => {
                             <div className='relative  imagesContainers pb-10 w-full flex flex-col justify-center items-center' ref={test}>
                             <div className='relative  imagesContainers pb-10 w-full flex flex-col justify-center items-center' ref={test}>
                               {
-                                props.highlight.map((content)=>{
-                                    return  <div className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
+                                props.highlight.map((content,i)=>{
+                                    return  <div key={i} className={'my-9 top-1/4 p-0 w-5/6 relative overflow-visible '+styles.cards}>
                                               <div className="perspectiveEffectContainer">
                                                 <div className="p-9 flex flex-col justify-center">
                                                   <h1 className='text-white text-center text-bold relative z-50 '>
@@ -279,8 +279,8 @@ const Sections: React.FC<Item> = (props) => {
                                 {/* Left side of our services content */}
                                 <div>
                                   {
-                                    props.EOservices.map((content)=>{
-                                      return  <div className={'w-full mb-4 relative'}>
+                                    props.EOservices.map((content,i)=>{
+                                      return  <div key={i} className={'w-full mb-4 relative'}>
                                                 <p className={'text-white steelQuestions bottom-0 pb-4 second moveUp '+styles.header5}>
                                                   {content.text}
                                                 </p>
@@ -294,8 +294,8 @@ const Sections: React.FC<Item> = (props) => {
 
                                 {/* Advantage with text coming from the left mobile+icon / desktop only text */}
                                 {
-                                  props.TOSProvided.map((content)=>{
-                                    return  <div className={'w-full mb-4 relative'}>
+                                  props.TOSProvided.map((content,i)=>{
+                                    return  <div key={i} className={'w-full mb-4 relative'}>
                                               <h1 className='text-white font-bold mt-5 mb-5 moveUp'>{content.text}</h1>
                                               <p className='text-white text-md steelQuestions bottom-0 pb-4 second moveUp'>
                                                 {content.content}
