@@ -2,6 +2,7 @@
 import styles from './styles.module.scss'
 import Sections from '@/app/components/organism/sections/sections';
 import EndSections from '@/app/components/organism/endSections/EndSections'
+import StartSection from '@/app/components/organism/startSection/StartSection'
 const sectionIS = true
 export default function OurServices() {
 
@@ -39,6 +40,9 @@ export default function OurServices() {
   
   return (
     <>
+
+      <StartSection></StartSection>
+
       <Sections 
       isFirst={true}
       titleFirst={['Steel','Framing']}
