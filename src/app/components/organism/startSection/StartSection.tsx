@@ -18,14 +18,34 @@ const EndSections = ({ClassScreen}) => {
       const grua = self.selector!('#grua')
       const allgrua = self.selector!('#allgrua')
       const rope = self.selector!('#rope')
+      const floor = self.selector!('#floor')
+      const all_svg = self.selector!('#all_svg')
       // const intro = self.selector!('.intro')
       gsap.set(allgrua,{x:-20})
       gsap.set(roof,{transformOrigin:'25% 0%'})
-      gsap.set(grua,{x:-20})
-      gsap.fromTo(roof,{x:-35},{x:0,duration:1,delay:5})
-      gsap.fromTo(roof,{rotate:-80},{rotate:0,duration:1,delay:3})
-      gsap.fromTo(grua,{x:-35},{x:0,duration:1,delay:2})
-      gsap.fromTo(rope,{ attr:{ d:'M89.974 -8.386H90.848V79.833H89.974z'}},{ attr:{ d:'M89.974 -8.386H90.848V20.833H89.974z'},duration:1,delay:0})
+      gsap.set(grua,{x:-60})
+      gsap.set(rope,{attr:{ d:'M89.974 -8.386H90.848V103.833H89.974z'}})
+      gsap.set(roof,{x:-80,y:60})
+      gsap.fromTo(all_svg,{opacity:0},{opacity:1,duration:1,delay:0,ease:'lineal'})
+      gsap.fromTo(roof,{y:60},{y:-20,duration:1,delay:1,ease:'lineal'})
+      gsap.fromTo(rope,{attr:{ d:'M89.974 -8.386H90.848V103.833H89.974z'}},{delay:1,duration:1,attr:{ d:'M89.974 -8.386H90.848V23.833H89.974z'}})
+      gsap.fromTo(roof,{x:-80},{x:0,duration:1,delay:3,ease:'lineal'})
+      gsap.fromTo(grua,{x:-60},{x:20,duration:1,delay:3,ease:'lineal'})
+      gsap.fromTo(roof,{y:-20},{y:0,duration:1,delay:5,ease:'lineal'})
+      gsap.fromTo(rope,{attr:{ d:'M89.974 -8.386H90.848V23.833H89.974z'}},{delay:5,duration:1,attr:{ d:'M89.974 -8.386H90.848V43.833H89.974z'}})
+      gsap.to(allgrua,{opacity:0,duration:2,delay:6})
+      gsap.to(grua,{opacity:0,duration:2,delay:6})
+      gsap.to(floor,{opacity:0,duration:2,delay:6})
+      // gsap.fromTo(roof,{y:-20},{y:0,duration:1,delay:2,ease:'lineal'})
+      // gsap.fromTo(roof,{rotate:-80},{rotate:0,duration:1,delay:3})
+      // gsap.fromTo(grua,{x:-35},{x:0,duration:1,delay:2})
+      // gsap.fromTo(rope,{ attr:{ d:'M89.974 -8.386H90.848V79.833H89.974z'}},{ attr:{ d:'M89.974 -8.386H90.848V20.833H89.974z'},duration:1,delay:0})
+      // gsap.fromTo(rope,{ attr:{ d:'M89.974 -8.386H90.848V79.833H89.974z'}},{ attr:{ d:'M89.974 -8.386H90.848V20.833H89.974z'},duration:1,delay:2})
+
+      // gsap.fromTo(roof,{x:-35},{x:0,duration:1,delay:5})
+      // gsap.fromTo(roof,{rotate:-80},{rotate:0,duration:1,delay:3})
+      // gsap.fromTo(grua,{x:-35},{x:0,duration:1,delay:2})
+      // gsap.fromTo(rope,{ attr:{ d:'M89.974 -8.386H90.848V79.833H89.974z'}},{ attr:{ d:'M89.974 -8.386H90.848V20.833H89.974z'},duration:1,delay:0})
       // gsap.fromTo(rope,{ attr:{ d:'M89.974 -8.386H90.848V79.833H89.974z'}},{ attr:{ d:'M89.974 -8.386H90.848V20.833H89.974z'},duration:1,delay:2})
 
       // gsap.fromTo(path2,{opacity:0},{opacity:1,duration:1,delay:2})
@@ -59,18 +79,10 @@ const EndSections = ({ClassScreen}) => {
       height="297mm"
       version="1.1"
       viewBox="0 0 210 297"
+      className='overflow-visible opacity-0 top-0'
+      id='all_svg'
     >
       <g>
-        <rect
-          width="480.791"
-          height="274.638"
-          x="-121.595"
-          y="21.664"
-          fill="#000"
-          stroke="#fff"
-          strokeWidth="0.265"
-          ry="0.347"
-        ></rect>
         <path
           id='roof'
           fill="none"
@@ -92,6 +104,7 @@ const EndSections = ({ClassScreen}) => {
             y="119.149"
             strokeWidth="0.265"
             ry="0.347"
+            id='floor'
           ></rect>
           <g 
               id='allgrua'>
