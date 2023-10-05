@@ -44,7 +44,7 @@ const EndSections: React.FC<EndSectionData> = (props:any) => {
 
           {/* Advantages of our services */}
           {
-            props.items.map((content,i)=>{
+            props.items.map((content:any,i:any)=>{
               return  <div key={i} className="col-span-2 lg:col-span-1 h-full pt-7 pb-2">
                         <div className="main_points h-full w-full flex flex-col justify-between items-center">
                           {/* ICON */}
