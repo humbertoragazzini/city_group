@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 
 
-const EndSections = ({ClassScreen}) => {
+const EndSections = (ClassScreen:any) => {
 
   const main = React.useRef<HTMLDivElement>(null);
 
