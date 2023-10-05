@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/all';
 import { EndSectionData } from '@/types/types';
 
 
-const EndSections: React.FC<EndSectionData> = (props) => {
+const EndSections: React.FC<EndSectionData> = (props:any) => {
 
   const main = React.useRef<HTMLDivElement>(null);
 
