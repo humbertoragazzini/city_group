@@ -26,6 +26,7 @@ const EndSections = (ClassScreen:any) => {
       gsap.set(grua,{x:-60})
       gsap.set(rope,{attr:{ d:'M89.974 -8.386H90.848V103.833H89.974z'}})
       gsap.set(roof,{x:-80,y:-20})
+      gsap.set(floor,{opacity:0})
       gsap.fromTo(all_svg,{opacity:0},{opacity:1,duration:1,delay:0,ease:'lineal'})
       gsap.fromTo(roof,{y:60},{y:-20,duration:1,delay:1,ease:'lineal'})
       gsap.fromTo(rope,{attr:{ d:'M89.974 -8.386H90.848V103.833H89.974z'}},{delay:1,duration:1,attr:{ d:'M89.974 -8.386H90.848V23.833H89.974z'}})
@@ -33,9 +34,9 @@ const EndSections = (ClassScreen:any) => {
       gsap.to(grua,{x:20,duration:1,delay:2,ease:'lineal'})
       gsap.to(roof,{y:0,duration:1,delay:3,ease:'lineal'})
       gsap.to(rope,{delay:3,duration:1,attr:{ d:'M89.974 -8.386H90.848V43.833H89.974z'}})
-      gsap.to(allgrua,{opacity:0,duration:2,delay:5})
-      gsap.to(grua,{opacity:0,duration:2,delay:5})
-      gsap.to(floor,{opacity:0,duration:2,delay:5})
+      gsap.to(allgrua,{opacity:0,duration:1,delay:4})
+      gsap.to(grua,{opacity:0,duration:0.5,delay:4})
+      // gsap.to(floor,{opacity:0,duration:1,delay:4})
       // gsap.fromTo(roof,{y:-20},{y:0,duration:1,delay:2,ease:'lineal'})
       // gsap.fromTo(roof,{rotate:-80},{rotate:0,duration:1,delay:3})
       // gsap.fromTo(grua,{x:-35},{x:0,duration:1,delay:2})
@@ -581,7 +582,6 @@ const EndSections = (ClassScreen:any) => {
             fill="#fff"
             fillRule="evenodd"
             strokeWidth="0.01"
-            ariaLabel="Steel"
             className="fil2 fnt1"
             clipRule="evenodd"
             fontFamily="Georgia"
@@ -601,8 +601,6 @@ const EndSections = (ClassScreen:any) => {
           <g
             fill="#fff"
             fillRule="evenodd"
-            strokeWidth="0.01"
-            ariaLabel="City"
             className="fil2 fnt1"
             clipRule="evenodd"
             fontFamily="Georgia"
