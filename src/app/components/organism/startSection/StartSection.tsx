@@ -80,5 +80,4 @@ const EndSections: React.FC<any> = (props) =>{
       </div>
   )
 }
-
 export default EndSections
