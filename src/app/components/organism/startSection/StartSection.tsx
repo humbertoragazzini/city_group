@@ -21,6 +21,7 @@ const EndSections: React.FC<any> = (props) =>{
 
       switch (props.sectionName) {
         case 'rga':
+          const rgalogo = self.selector!('.rgalogo')
           const copos = self.selector!('.copos')
           copos.forEach((e:any) => {
             timeline.fromTo('.rgalogo',{opacity:0,scale:0.8},{opacity:1,scale:1},0)
@@ -38,6 +39,7 @@ const EndSections: React.FC<any> = (props) =>{
           const rope = self.selector!('#rope')
           const floor = self.selector!('#floor')
           const all_svg = self.selector!('#all_svg')
+          gsap.set(all_svg,{width:'90vw',height:'80vh'})
           gsap.set(allgrua,{x:-20,opacity:1})
           gsap.set(roof,{transformOrigin:'25% 0%'})
           gsap.set(grua,{x:-60})
