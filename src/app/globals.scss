@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
 }
 .snow{
   path{
-    fill: white!important;
+    fill: rgba(213, 213, 255, 0.684)!important;
     // stroke: white;
   }
 }
@@ -38,6 +38,11 @@ body::-webkit-scrollbar {
   width: 80vw!important;
   margin-left: auto;
   margin-right: auto;
+}
+
+#all_svg{
+  width: 90vw;
+  height: 80vh;
 }
 
 .backgrounFirst{
@@ -222,8 +227,15 @@ body::-webkit-scrollbar {
 }
 
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .navBar{
     backdrop-filter: blur(0px);
+  }
+
+  #all_svg {
+    position: relative;
+    top: -20vh;
+    width: 100vw!important;
+    height: 130vh!important;
   }
 }
