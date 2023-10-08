@@ -14,28 +14,51 @@ const EndSections: React.FC<any> = (props) =>{
 
     let ctx = gsap.context((self) => {
 
-      const roof = self.selector!('#roof')
-      const grua = self.selector!('#grua')
-      const allgrua = self.selector!('#allgrua')
-      const rope = self.selector!('#rope')
-      const floor = self.selector!('#floor')
-      const all_svg = self.selector!('#all_svg')
-      // const intro = self.selector!('.intro')
-      gsap.set(allgrua,{x:-20,opacity:1})
-      gsap.set(roof,{transformOrigin:'25% 0%'})
-      gsap.set(grua,{x:-60})
-      gsap.set(rope,{attr:{ d:'M89.974 -8.386H90.848V103.833H89.974z'}})
-      gsap.set(roof,{x:-80,y:-20})
-      gsap.set(floor,{opacity:0})
-      gsap.fromTo(all_svg,{opacity:0},{opacity:1,duration:1,delay:0,ease:'lineal'})
-      gsap.fromTo(roof,{y:60},{y:-20,duration:1,delay:1,ease:'lineal'})
-      gsap.fromTo(rope,{attr:{ d:'M89.974 -8.386H90.848V103.833H89.974z'}},{delay:1,duration:1,attr:{ d:'M89.974 -8.386H90.848V23.833H89.974z'}})
-      gsap.to(roof,{x:0,duration:1,delay:2,ease:'lineal'})
-      gsap.to(grua,{x:20,duration:1,delay:2,ease:'lineal'})
-      gsap.to(roof,{y:0,duration:1,delay:3,ease:'lineal'})
-      gsap.to(rope,{delay:3,duration:1,attr:{ d:'M89.974 -8.386H90.848V43.833H89.974z'}})
-      gsap.to(allgrua,{opacity:0,duration:1,delay:4})
-      gsap.to(grua,{opacity:0,duration:0.5,delay:4})
+
+      const timeline = gsap.timeline({scrollTrigger: {trigger: main.current,start: "-25% center",end: "bottom center",scrub:10,markers: false,toggleActions: "play"},duration:20})
+      const timeline2 = gsap.timeline({scrollTrigger: {trigger: main.current,pin:'.rgalogo',start: "top center",end: "center center",markers: false,toggleActions: "play"},duration:20})
+
+
+      switch (props.sectionName) {
+        case 'rga':
+          const copos = self.selector!('.copos')
+          copos.forEach((e:any) => {
+            timeline.fromTo('.rgalogo',{opacity:0,scale:0.8},{opacity:1,scale:1},0)
+            timeline.fromTo(e,{y:-200,rotate:0},{rotate:360,y:'400',duration:10,delay:Math.random()*10},0)
+            timeline2.fromTo(e,{opacity:1},{duration:5,opacity:0,delay:Math.random()*2},0)
+            timeline.fromTo(e,{z:0},{z:0},20)
+            timeline2.fromTo(e,{z:0},{z:0},20)
+          });
+          break;
+        
+        case 'steel':
+          const roof = self.selector!('#roof')
+          const grua = self.selector!('#grua')
+          const allgrua = self.selector!('#allgrua')
+          const rope = self.selector!('#rope')
+          const floor = self.selector!('#floor')
+          const all_svg = self.selector!('#all_svg')
+          gsap.set(allgrua,{x:-20,opacity:1})
+          gsap.set(roof,{transformOrigin:'25% 0%'})
+          gsap.set(grua,{x:-60})
+          gsap.set(rope,{attr:{ d:'M89.974 -8.386H90.848V103.833H89.974z'}})
+          gsap.set(roof,{x:-80,y:-20})
+          gsap.set(floor,{opacity:0})
+          gsap.fromTo(all_svg,{opacity:0},{opacity:1,duration:1,delay:0,ease:'lineal'})
+          gsap.fromTo(roof,{y:60},{y:-20,duration:1,delay:1,ease:'lineal'})
+          gsap.fromTo(rope,{attr:{ d:'M89.974 -8.386H90.848V103.833H89.974z'}},{delay:1,duration:1,attr:{ d:'M89.974 -8.386H90.848V23.833H89.974z'}})
+          gsap.to(roof,{x:0,duration:1,delay:2,ease:'lineal'})
+          gsap.to(grua,{x:20,duration:1,delay:2,ease:'lineal'})
+          gsap.to(roof,{y:0,duration:1,delay:3,ease:'lineal'})
+          gsap.to(rope,{delay:3,duration:1,attr:{ d:'M89.974 -8.386H90.848V43.833H89.974z'}})
+          gsap.to(allgrua,{opacity:0,duration:1,delay:4})
+          gsap.to(grua,{opacity:0,duration:0.5,delay:4})
+      
+        default:
+          break;
+      }
+
+      
       // gsap.to(floor,{opacity:0,duration:1,delay:4})
       // gsap.fromTo(roof,{y:-20},{y:0,duration:1,delay:2,ease:'lineal'})
       // gsap.fromTo(roof,{rotate:-80},{rotate:0,duration:1,delay:3})
@@ -73,11 +96,16 @@ const EndSections: React.FC<any> = (props) =>{
   }, []); 
 
   return (
-      <div className='h-screen w-screen flex justify-center items-center' ref={main}>
-        {props.svg}
-        {/* Background */}
-        <div className={styles.background} ></div>
-      </div>
+    <>
+      {
+        props.sectionName &&  <div className='h-screen w-screen flex justify-center items-start' ref={main}>
+          {props.svg}
+          {props.rgaLogo}
+          {/* Background */}
+          <div className={styles.background}></div>
+        </div>
+      }
+    </>
   )
 }
 export default EndSections

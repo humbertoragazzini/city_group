@@ -27,7 +27,12 @@ body{
 body::-webkit-scrollbar {
   display: none;
 }
-
+.snow{
+  path{
+    fill: white!important;
+    // stroke: white;
+  }
+}
 .rgalogo{
   max-width: 500px;
 }
