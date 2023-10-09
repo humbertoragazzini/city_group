@@ -74,7 +74,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
         <div className={'fixed w-screen p-5 navBar navBar_desktop hidden lg:block '+styles.backdrop_filter}>
           <Link href={'/'} className={pathname === "/" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Home</Link>
           <Link href={'/our_services'} className={pathname === "/our_services" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Nuestro Servicios</Link>
-          <Link href={'/'} className={pathname === "/about_us" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Acerca de nosotros</Link>
+          <Link href={'/about_us'} className={pathname === "/about_us" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Acerca de nosotros</Link>
           <Link href={'/'} className={pathname === "/contact" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Contacto</Link>
           {/* <Link href={'/login'} className={pathname === "/login" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Login</Link>
           <Link href={'/signup'} className={pathname === "/signup" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Signup</Link> */}
@@ -147,7 +147,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
           <div className={'relative w-screen p-5 navBar block lg:hidden'}>
             <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/" ? "pt-4 pr-4 pl-0 pb-2 m-3 active w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  w-fit opacity-0"}>Home</Link>
             <Link href={'/our_services'} onClick={()=>{OpenClose()}} className={pathname === "/our_services w-fit" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit opacity-0"}>Nuestros Servicios</Link>
-            <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/about_us" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit opacity-0"}>Acerca de Nosotros</Link>
+            <Link href={'/about_us'} onClick={()=>{OpenClose()}} className={pathname === "/about_us" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit opacity-0"}>Acerca de Nosotros</Link>
             <Link href={'/'} onClick={()=>{OpenClose()}} className={pathname === "/contact" ? "pt-4 pr-4 pl-0 pb-2 m-3 active block w-fit" : "pt-4 pr-4 pl-0 pb-2 m-3  block w-fit opacity-0"}>Contacto</Link>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
                 <p className='text-white text-2xl mt-3 mb-3'>Mapa del sitio</p>
                   <Link href={'/'} className='text-white mb-1 block link ml-3'>Home</Link>
                   <Link href={'/'} className='text-white mb-1 block link ml-3'>Our Services</Link>
-                  <Link href={'/'} className='text-white mb-1 block link ml-3'>About Us</Link>
+                  <Link href={'/about_us'} className='text-white mb-1 block link ml-3'>About Us</Link>
                   <Link href={'/'} className='text-white mb-1 block link ml-3'>Contact</Link>
               </div>
             </div>

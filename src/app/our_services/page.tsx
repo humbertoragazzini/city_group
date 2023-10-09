@@ -2027,7 +2027,6 @@ export default function OurServices() {
       sectionName={'steel'}      
       svg={steelcitySVG}
       ></StartSection>
-
       <Sections 
       isFirst={true}
       titleFirst={['Steel','Framing']}
@@ -2100,7 +2099,6 @@ export default function OurServices() {
       rgaLogo={rgaLogo}
       svg={snow}
       ></StartSection>
-
       <Sections 
       isFirst={false}
       titleFirst={['Electricidad']}
@@ -2137,6 +2135,78 @@ export default function OurServices() {
       titleSecond=''
       backgroundURL='url(./electricity-background.webp)'
       left={false}
+      ></Sections>
+      <EndSections
+        items={[
+          {
+            shorText:'VENTAJA1',
+            icon:maintenance
+          },
+          {
+            shorText:'VENTAJA2',
+            icon:weight
+          },
+          {
+            shorText:'VENTAJA3',
+            icon:tough
+          },
+          {
+            shorText:'VENTAJA4',
+            icon:flexible
+          },
+          {
+            shorText:'VENTAJA5',
+            icon:energyEficiency
+          },
+          {
+            shorText:'VENTAJA6',
+            icon:maintenance
+          },
+        ]}    
+      ></EndSections>
+
+      <StartSection
+      ClassScreen={'start'}
+      sectionName={'electricity'}
+      rgaLogo={rgaLogo}
+      svg={snow}
+      ></StartSection>
+      <Sections 
+      isFirst={false}
+      titleFirst={['Electricidad']}
+      WSProvide='Que es Steel Framing?'
+      EOservices={[
+        {text:'Construccion con perfiles de acero galvanizado',content:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ipsum eum in nulla aperiam officiis illo veritatis aut consectetur placeat, repellendus autem suscipit temporibus perspiciatis voluptas debitis nesciunt? Tempora, excepturi.'},
+        {text:'Por que usar Steel Framing contra la construccion clasica',content:'Usar el sistema de construcción conocido como "steel framing" en lugar de la construcción tradicional con muros de carga de ladrillo o concreto ofrece una serie de ventajas:'},        
+        {text:'Ventajas del Steel Framing',content:''},
+      ]}
+      TOSProvided={[
+        {text:'Mayor Velocidad de contruccion',content:'Los componentes prefabricados se ensamblan rápidamente, lo que acelera el proceso de construcción y reduce los costos asociados con la mano de obra.',icon:speed},
+        {text:'Amplia flexibilidad',content:'El steel framing es un método de construcción que se adapta a una amplia variedad de proyectos, desde viviendas unifamiliares hasta construcciones de gran escala. Este sistema tiene la capacidad de amoldarse a cualquier estilo arquitectónico y posibilita formatos realmente innovadores1. Además, el steel framing facilita las reformas o refacciones posteriores en las viviendas.',icon:flexible},
+        {text:'Duracion del steel framing',content:'Los perfiles de acero galvanizado representan una inversión segura para cualquier proyecto de construcción que requiera durabilidad, resistencia y confiabilidad a largo plazo. Su capacidad para resistir la corrosión, el clima adverso y las cargas sustanciales asegura que mantengan su integridad estructural y estética durante décadas, convirtiéndolos en una elección inteligente y sostenible para profesionales de la construcción y diseñadores de proyectos a nivel mundial.',icon:tough},
+        {text:'Menos Mantenimiento',content:'Los edificios construidos con steel framing requieren menos mantenimiento a lo largo del tiempo debido a la durabilidad y resistencia del material.',icon:maintenance},
+      ]}
+      highlight={[
+          {
+            text:'Hasta 75% mas rapido que la contruccion tradicional',
+            icon:speed
+          },
+          {
+            text:'Mayor eficiencia energetica',
+            icon:energyEficiency
+          },
+          {
+            text:'Alta duravilidad',
+            icon:tough
+          },
+          {
+            text:'Menos mantenimiento',
+            icon:maintenance
+          },
+      ]}
+      titleSecond=''
+      backgroundURL='url(./electricity-background.webp)'
+      left={true}
       ></Sections>
       <EndSections
         items={[
