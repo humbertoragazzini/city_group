@@ -6,16 +6,31 @@
     max-width: 70px;
 }
 .main{
-    background-color: #AAA6BD;
 }
 .about_us_header{
     background-image: url('../../../public/house-1477041_1920.jpg');
     padding-top: 70px;
     height: 35vh;
     background-position: center;
+    position: relative;
     h1{
         background-color: rgba(0, 0, 0, 0.532);
         padding: 40px;
+    }
+}
+
+.gradiantBackground{
+        background: radial-gradient(circle at 50%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.item{
+    h2{
+        color: rgba(128, 128, 128, 0.459);
+        scale: 0.8;
+    }
+    p{
+        color: rgba(128, 128, 128, 0.459);
+        scale: 0.8;
     }
 }
 
