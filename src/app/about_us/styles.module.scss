@@ -5,12 +5,16 @@
     stroke-width: 2px;
     max-width: 70px;
 }
+
 .main{
+    padding-bottom: 250px;
 }
+
+
 .about_us_header{
     background-image: url('../../../public/house-1477041_1920.jpg');
     padding-top: 70px;
-    height: 35vh;
+    height: 50vh;
     background-position: center;
     position: relative;
     h1{
@@ -25,12 +29,18 @@
 
 .item{
     h2{
-        color: rgba(128, 128, 128, 0.459);
+        color: rgba(128, 128, 128, 0.2);
         scale: 0.8;
     }
     p{
-        color: rgba(128, 128, 128, 0.459);
+        color: rgba(128, 128, 128, 0.2);
         scale: 0.8;
     }
+}
+
+.background{
+    background-image: url('../../../public/steelframing.jpeg');
+    background-size: cover;
+    filter: brightness(0.2) blur(5px);
 }
 

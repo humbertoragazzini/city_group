@@ -70,7 +70,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
 
   return (
     <html lang="en">
-      <body className={inter.className + ' ' + styles.mainContainer} ref={mainContentContainer}>
+      <body className={inter.className + ' relative '} ref={mainContentContainer}>
         <div className={'fixed w-screen p-5 navBar navBar_desktop hidden lg:block '+styles.backdrop_filter}>
           <Link href={'/'} className={pathname === "/" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Home</Link>
           <Link href={'/our_services'} className={pathname === "/our_services" ? "p-4 pb-2 m-3 active" : "p-4 pb-2 m-3 "}>Nuestro Servicios</Link>
@@ -154,7 +154,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
         <div className="main_content_container">
           {children}
         </div>
-        <div className="footer relative px-10 pt-10 pb-10">
+        <div className="footer absolute bottom-0 w-screen px-10 pt-10 pb-10">
           <div className="grid-cols-4 hidden lg:grid">
             <div className="col-span-1 mt-3 mb-3 flex justify-center">
               <div className="">

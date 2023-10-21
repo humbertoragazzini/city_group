@@ -354,7 +354,9 @@ export default function Home() {
                 <div className="content grid grid-cols-6 gap-4 w-full pl-5 pr-5 pt-5 pb-5">
                   <div className="col-start-2 col-end-6 flex justify-center flex-col items-center">
                     <h4 className='text-center text-3xl text-bold text-white mt-5 pb-5'>Visit our service page</h4>
-                    <AnimatedBlackButton></AnimatedBlackButton>
+                    <AnimatedBlackButton
+                      text={'Nuestros Servicios'}
+                    ></AnimatedBlackButton>
                   </div>
                 </div>
               </div>
