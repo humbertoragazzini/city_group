@@ -47,7 +47,6 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
         if (st > lastScrollTop) {
             gsap.to(menuDesktop,{y:-69});
         } else if (st < lastScrollTop) {
-            console.log('up')
             gsap.to(menuDesktop,{y:0});
         }
         lastScrollTop = st <= 0 ? 0 : st;
