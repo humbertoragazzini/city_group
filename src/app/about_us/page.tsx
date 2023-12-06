@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Sections from '@/app/components/organism/sections/sections';
 import EndSections from '@/app/components/organism/endSections/EndSections'
 import StartSection from '@/app/components/organism/startSection/StartSection'
-import React ,{ useLayoutEffect } from 'react';
+import React ,{ useLayoutEffect , useRef } from 'react';
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import AnimatedBlackButton from '@/app/components/atoms/animated_black_button/AnimatedBlackButton'
@@ -13,7 +13,7 @@ const sectionIS = true
 export default function About_us() {
 
   const moving_box = React.useRef<HTMLDivElement>(null);
-  const MainTL = React.useRef([]);
+  const MainTL = useRef([undefined]);
   const mainContainer = React.useRef<HTMLDivElement>(null);
   
   useLayoutEffect(() => {
@@ -34,7 +34,7 @@ export default function About_us() {
 
           gsap.fromTo(leftE,{left:'100vw'},{left:'0vw',duration:1})
           gsap.fromTo(rightE,{right:'100vw'},{right:'0vw',duration:1})  
-
+          //@ts-ignore
           MainTL.current[i] = gsap.timeline({scrollTrigger:{trigger:e,start:'center center',end:'bottom center',scrub:2,markers:true},duration:10})
           .fromTo(rightE,{opacity:'1'},{opacity:'0',duration:5},5)
           .fromTo(leftE,{opacity:'1'},{opacity:'0',duration:4.5},5)
@@ -44,7 +44,8 @@ export default function About_us() {
           const leftE = (e)
 
           gsap.set(leftE,{opacity:0})
-
+ 
+          //@ts-ignore
           MainTL.current[i] = gsap.timeline({scrollTrigger:{trigger:e,start:'-25% center',end:'center center',scrub:2,markers:true},duration:10})
           .fromTo(backgroundImages[i],{opacity:0},{opacity:1},0)
           .to(leftE,{opacity:'1',duration:4.5},0)
