@@ -32,9 +32,12 @@ export default function About_us() {
           const leftE = (e.childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0])
           const rightE = (e.childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0])
 
-          gsap.fromTo(leftE,{left:'-100vw'},{left:'0vw',duration:1},0)
-          gsap.fromTo(rightE,{right:'-100vw'},{right:'0vw',duration:1},0)  
+          // @ts-ignore
+          gsap.fromTo(leftE,{left:'100vw'},{left:'0vw',duration:1},0)
+          // @ts-ignore
+          gsap.fromTo(rightE,{right:'100vw'},{right:'0vw',duration:1},0)  
 
+          // @ts-ignore
           MainTL.current[i] = gsap.timeline({scrollTrigger:{trigger:e,start:'center center',end:'bottom center',scrub:2,markers:true},duration:10})
           .fromTo(rightE,{opacity:'1'},{opacity:'0',duration:5},5)
           .fromTo(leftE,{opacity:'1'},{opacity:'0',duration:4.5},5)
@@ -45,6 +48,7 @@ export default function About_us() {
 
           gsap.set(leftE,{opacity:0})
 
+          // @ts-ignore
           MainTL.current[i] = gsap.timeline({scrollTrigger:{trigger:e,start:'-25% center',end:'center center',scrub:2,markers:true},duration:10})
           .fromTo(backgroundImages[i],{opacity:0},{opacity:1},0)
           .to(leftE,{opacity:'1',duration:4.5},0)
