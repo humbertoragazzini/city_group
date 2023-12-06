@@ -14,7 +14,12 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors:{
-        "CustomPaletBlackBlue":""
+        "CustomPaletBlackBlue":"",
+        "text":"#dceefa",//	(220,238,250)
+        "skin":"#e5c8c4",//	(229,200,196)
+        "shirt":"#2a4758",//	(42,71,88)
+        "coat":"#1e292c",//	(30,41,44)
+        "boots":"#243b3c",//	(36,59,60)
       }
     },
   },
