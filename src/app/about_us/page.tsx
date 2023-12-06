@@ -25,6 +25,7 @@ export default function About_us() {
       setTimeout(()=>{
         gsap.fromTo(mainContainer.current,{opacity:0},{opacity:1})
       },500);
+
       containers.forEach((e:any,i:any) => {
         gsap.set(e,{height:'100vh'})
         if(i==0){
@@ -33,9 +34,9 @@ export default function About_us() {
           const rightE = (e.childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0])
 
           // @ts-ignore
-          gsap.fromTo(leftE,{left:'100vw'},{left:'0vw',duration:1},0)
+          gsap.fromTo(leftE,{left:'100vw'},{left:0,duration:1},0)
           // @ts-ignore
-          gsap.fromTo(rightE,{right:'100vw'},{right:'0vw',duration:1},0)  
+          gsap.fromTo(rightE,{right:'100vw'},{right:0,duration:1},0)  
 
           // @ts-ignore
           MainTL.current[i] = gsap.timeline({scrollTrigger:{trigger:e,start:'center center',end:'bottom center',scrub:2,markers:true},duration:10})
