@@ -25,7 +25,7 @@ export default function About_us() {
       setTimeout(()=>{
         gsap.fromTo(mainContainer.current,{opacity:0},{opacity:1})
       },500);
-      containers.forEach((e,i) => {
+      containers.forEach((e:any,i:any) => {
         gsap.set(e,{height:'100vh'})
         if(i==0){
 
