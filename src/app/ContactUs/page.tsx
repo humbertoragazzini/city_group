@@ -13,3 +13,5 @@ export default function ContactUs() {
     </main>
   );
 }
+
+ContactUs.displayName = "ContactUs";

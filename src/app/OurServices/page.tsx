@@ -13,3 +13,5 @@ export default function OurServices() {
     </main>
   );
 }
+
+OurServices.displayName = "OurServices";

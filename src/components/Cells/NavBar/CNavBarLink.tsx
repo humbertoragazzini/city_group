@@ -15,3 +15,5 @@ export default function CNavBarLink({ className, linkText, href }: any) {
     </ALink>
   );
 }
+
+CNavBarLink.displayName = "CNavBarLink";

@@ -12,3 +12,5 @@ export default function AboutUs() {
     </main>
   );
 }
+
+AboutUs.displayName = "AboutUs";

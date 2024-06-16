@@ -3,7 +3,7 @@ import CNavBarLink from "../../Cells/NavBar/CNavBarLink";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-export default function () {
+export default function ONavBar() {
   const pathname = usePathname();
 
   useEffect(() => {
@@ -58,3 +58,5 @@ export default function () {
     </>
   );
 }
+
+ONavBar.displayName = "ONavBar";
