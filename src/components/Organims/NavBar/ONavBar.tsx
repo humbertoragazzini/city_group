@@ -12,7 +12,7 @@ export default function () {
 
   return (
     <>
-      <nav className="fixed w-full hidden lg:flex flex-row justify-end mx-auto">
+      <nav className="fixed w-full hidden lg:flex flex-row justify-end mx-auto p-4">
         <div className="m-2">
           <CNavBarLink
             className={
