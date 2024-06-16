@@ -1,6 +1,6 @@
 import ALink from "../../Atoms/ALink";
 
-export default function ({ className, linkText, href }: any) {
+export default function CNavBarLink({ className, linkText, href }: any) {
   return (
     <ALink href={href}>
       <div
