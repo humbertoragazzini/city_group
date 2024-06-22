@@ -468,9 +468,11 @@ export default function MainBGAnimation() {
       {/* <PlaneBG position={[0, 2, -1.5]} color={"#d1d1d1"} size={1000}></PlaneBG> */}
       {positions.map((obj: any) => {
         return (
-          <Float>
-            <Sphere position={obj.position} size={obj.scale}></Sphere>
-          </Float>
+          <>
+            <Float>
+              <Sphere position={obj.position} size={obj.scale}></Sphere>
+            </Float>
+          </>
         );
       })}
       <Sphere position={[3, 3, 30]} color={"red"} size={1}></Sphere>
