@@ -1,10 +1,12 @@
 "use client";
 import { useEffect } from "react";
 import MainBGCanvas from "./Canvas/Canvas";
+import { usePathname } from "next/navigation";
 
-export default function MainBG({ container }: any) {
+export default function MainBG() {
+  const pathname = usePathname();
+
   useEffect(() => {
-    console.log(container.current.getBoundingClientRect());
     let count = 0;
     function scroll(e: any) {
       console.log("scroll");
@@ -17,10 +19,10 @@ export default function MainBG({ container }: any) {
     return () => {
       window.removeEventListener("scroll", scroll);
     };
-  }, [container]);
+  }, [pathname]);
 
   return (
-    <div className="fixed top-0 left-0 h-screen w-screen bg-the-grey -z-50">
+    <div className="fixed top-0 left-0 h-screen w-screen -z-50">
       <MainBGCanvas></MainBGCanvas>
     </div>
   );

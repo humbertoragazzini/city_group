@@ -1,15 +1,14 @@
 "use client";
-import MainBG from "@/components/Organims/RTFAnimations/MainBG/MainBG";
-import { useRef, useState } from "react";
+import useBeforeUnload from "@/CustomHooks/useBeforeUnload";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
-  const [size, setSize] = useState<any>(null);
-  const container = useRef<any>(null);
-
   return (
-    <main className="h-[250vh]" ref={container}>
-      <h1>Home page</h1>
-      <MainBG container={container}></MainBG>
-    </main>
+    <div>
+      <h1>My Page</h1>
+      {/* Your page content */}
+    </div>
   );
 }
+
+Home.displayName = "Home";
