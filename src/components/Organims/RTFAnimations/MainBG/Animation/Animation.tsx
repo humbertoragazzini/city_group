@@ -9,7 +9,7 @@ import PlaneBG from "../Mesh/PlaneBG";
 import Logo from "../Mesh/Logo/Logo";
 import { Float } from "@react-three/drei";
 
-export default function MainBGAnimation() {
+export default function MainBGAnimation({ scrollPosition }: any) {
   const pathname = usePathname();
   const three = useThree();
   const [positions, setPositions] = useState<any>([
@@ -447,6 +447,12 @@ export default function MainBGAnimation() {
     // }
   }, [pathname]); // eslint-disable-next-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    console.log("position inside of animation", scrollPosition / 680);
+    // three.camera.position.y = -scrollPosition / 1300;
+    gsap.to(three.camera.position, { y: -scrollPosition / 680 });
+  }, [scrollPosition]);
+
   return (
     <>
       {/* Light */}
@@ -477,13 +483,17 @@ export default function MainBGAnimation() {
       })}
       <Sphere position={[3, 3, 30]} color={"red"} size={1}></Sphere>
       <Logo
-        position={[-0.85, -0.063, 0]}
-        rotation={[Math.PI / 2, 0, Math.PI / 2]}
+        position={[-0.85, 0, 0]}
+        rotationStart={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+        rotationEnd={[Math.PI / 2, 0, Math.PI / 2]}
+        checkPath={pathname}
         scale={1.5}
       ></Logo>
       <Logo
-        position={[0.85, 0.063, 0]}
-        rotation={[Math.PI / 2, Math.PI, Math.PI / 2]}
+        position={[0.85, 0, 0]}
+        rotationStart={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+        rotationEnd={[Math.PI / 2, Math.PI, Math.PI / 2]}
+        checkPath={pathname}
         scale={1.5}
       ></Logo>
     </>
