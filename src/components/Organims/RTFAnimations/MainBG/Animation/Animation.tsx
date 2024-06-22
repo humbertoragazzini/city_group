@@ -477,8 +477,13 @@ export default function MainBGAnimation() {
       })}
       <Sphere position={[3, 3, 30]} color={"red"} size={1}></Sphere>
       <Logo
-        position={[-2, 0, 0]}
-        rotation={[Math.PI / 2, Math.PI / 2, 0]}
+        position={[-0.85, -0.063, 0]}
+        rotation={[Math.PI / 2, 0, Math.PI / 2]}
+        scale={1.5}
+      ></Logo>
+      <Logo
+        position={[0.85, 0.063, 0]}
+        rotation={[Math.PI / 2, Math.PI, Math.PI / 2]}
         scale={1.5}
       ></Logo>
     </>

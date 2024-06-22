@@ -1,0 +1,104 @@
+.visite_our_services {
+    transition: 0.25s;
+
+    .btn_content {
+        width: 200px;
+        height: 50px;
+        color: white;
+        transition: 0.25s;
+
+        span {
+            top: 9px;
+            left: 0;
+            z-index: 9999;
+        }
+
+        .top_border {
+            transition: 0.5s;
+            width: 0%;
+            border: 2px solid transparent;
+            z-index: 5000;
+
+            &.solid {
+                border-color: rgb(72, 70, 70);
+                width: 100%;
+            }
+        }
+
+        .bottom_border {
+            transition: 0.5s;
+            width: 0%;
+            right: 0;
+            border: 2px solid transparent;
+            bottom: -4px;
+
+            &.solid {
+                border-color: rgb(72, 70, 70);
+                width: 100%;
+            }
+        }
+
+        .left_border {
+            transition: 0.5s;
+            height: 0px;
+            bottom: -3px;
+            background-color: black;
+            border-left: 4px solid transparent;
+            display: inline;
+            width: 0%;
+
+            &.solid {
+                border-color: rgb(72, 70, 70);
+                height: 100%;
+            }
+        }
+
+        .rigth_border {
+            transition: 0.5s;
+            top: -3;
+            height: 0px;
+            background-color: black;
+            border-right: 4px solid transparent;
+            display: inline;
+            width: 0%;
+
+            &.solid {
+                border-color: rgb(72, 70, 70);
+                height: 100%;
+            }
+        }
+    }
+
+    &:hover {
+        .btn_content {
+            width: 200px;
+            height: 50px;
+
+            span {
+                top: 9px;
+            }
+
+            .top_border {
+                width: 100%;
+                border: 2px solid white;
+            }
+
+            .bottom_border {
+                width: 100%;
+                border: 2px solid white;
+            }
+
+            .left_border {
+                height: 53px;
+                width: 50%;
+                border-left: 4px solid white;
+            }
+
+            .rigth_border {
+                height: 53px;
+                width: 50%;
+                border-right: 4px solid white;
+            }
+        }
+    }
+}
