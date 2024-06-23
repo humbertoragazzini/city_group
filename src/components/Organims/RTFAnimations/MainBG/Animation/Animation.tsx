@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Ring from "../Mesh/Ring";
 import Sphere from "../Mesh/Sphere";
 import { usePathname } from "next/navigation";
@@ -416,6 +416,53 @@ export default function MainBGAnimation({ scrollPosition }: any) {
       scale: 0.9815030339806935,
     },
   ]);
+  const { camera, size } = useThree();
+  const cameraRef = useRef<any>(camera);
+  const [useDistance, setUseDistance] = useState();
+
+  // Function to update the camera's FOV based on window width
+  const updateFOV = () => {
+    let aspect = 0;
+    let fov = 0;
+
+    switch (pathname) {
+      case "/":
+        aspect = size.width / size.height;
+        fov = 2 * Math.atan(25 / (2.5 * 8 * aspect)) * (180 / Math.PI);
+        cameraRef.current.fov = fov;
+        cameraRef.current.updateProjectionMatrix();
+        break;
+      case "/AboutUs":
+        aspect = size.width / size.height;
+        fov = 2 * Math.atan(25 / (2.5 * 8 * aspect)) * (180 / Math.PI);
+        cameraRef.current.fov = fov;
+        cameraRef.current.updateProjectionMatrix();
+        break;
+      case "/OurServices":
+        aspect = size.width / size.height;
+        fov = 2 * Math.atan(25 / (2.5 * 8 * aspect)) * (180 / Math.PI);
+        cameraRef.current.fov = fov;
+        cameraRef.current.updateProjectionMatrix();
+        break;
+      case "/ContactUs":
+        aspect = size.width / size.height;
+        fov = 2 * Math.atan(25 / (2.5 * 8 * aspect)) * (180 / Math.PI);
+        cameraRef.current.fov = fov;
+        cameraRef.current.updateProjectionMatrix();
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  useEffect(() => {
+    updateFOV();
+    window.addEventListener("resize", updateFOV);
+    return () => {
+      window.removeEventListener("resize", updateFOV);
+    };
+  }, [size.width, size.height]);
 
   useEffect(() => {
     console.log("we change position");
@@ -430,7 +477,7 @@ export default function MainBGAnimation({ scrollPosition }: any) {
         gsap.to(three.camera.position, { x: -4, z: 8, duration: 1.5 });
         break;
       case "/ContactUs":
-        gsap.to(three.camera.position, { x: 0, z: 3.5, duration: 1.5 });
+        gsap.to(three.camera.position, { x: 0, z: 8, duration: 1.5 });
         break;
 
       default:
@@ -483,14 +530,14 @@ export default function MainBGAnimation({ scrollPosition }: any) {
       })}
       <Sphere position={[3, 3, 30]} color={"red"} size={1}></Sphere>
       <Logo
-        position={[-0.85, 0, 0]}
+        position={[-2.45, 0, 0]}
         rotationStart={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
         rotationEnd={[Math.PI / 2, 0, Math.PI / 2]}
         checkPath={pathname}
         scale={1.5}
       ></Logo>
       <Logo
-        position={[0.85, 0, 0]}
+        position={[2.45, 0, 0]}
         rotationStart={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
         rotationEnd={[Math.PI / 2, Math.PI, Math.PI / 2]}
         checkPath={pathname}

@@ -1,8 +1,9 @@
 "use client";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import MainBGAnimation from "../Animation/Animation";
 import { Stats, OrbitControls } from "@react-three/drei";
 import { SoftShadows } from "@react-three/drei";
+import { useEffect, useState, useRef } from "react";
 
 export default function MainBGCanvas({ scrollPosition }: any) {
   return (

@@ -1,10 +1,7 @@
-"use client";
+// @ts-nocheck
 import { useGLTF } from "@react-three/drei";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-// import { useLoader } from "@react-three/fiber";
-// import { GLTFLoader } from "three/examples/jsm/Addons.js";
-// import { DRACOLoader } from "three/examples/jsm/Addons.js";
 
 export default function Logo({
   position,
@@ -13,19 +10,7 @@ export default function Logo({
   checkPath,
   scale,
 }: any) {
-  // const model = useLoader(
-  //   GLTFLoader,
-  //   "./RTFA/Models/Logo/logo.glb",
-  //   (loader) => {
-  //     const dracoLoader = new DRACOLoader();
-  //     dracoLoader.setDecoderPath("./RTFA/draco/");
-  //     loader.setDRACOLoader(dracoLoader);
-  //   }
-  // );
-  // console.log(model);
-
-  const model = useGLTF("./RTFA/Models/Logo/logo.glb");
-  const clonedScene = model.scene.clone();
+  const { nodes, materials } = useGLTF("./RTFA/Models/Logo/logo.glb");
   const meshRef = useRef<any>(null);
 
   useLayoutEffect(() => {
@@ -46,10 +31,8 @@ export default function Logo({
           });
           break;
         case "/OurServices":
-          gsap.to(meshRef.current!.position, { z: 3, duration: 1, delay: 1 });
           break;
         case "/ContactUs":
-          gsap.to(meshRef.current!.position, { z: 0, duration: 1, delay: 1 });
           break;
 
         default:
@@ -59,13 +42,42 @@ export default function Logo({
   });
 
   return (
-    <mesh
+    <group
       position={position}
       rotation={rotationStart}
       scale={scale}
       ref={meshRef}
+      dispose={null}
     >
-      <primitive object={clonedScene} scale={0.35}></primitive>
-    </mesh>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus.geometry}
+        material={materials["Material.001"]}
+        rotation={[0, 0, -Math.PI / 2]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Sphere.geometry}
+        material={materials["Material.004"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube!.geometry}
+        material={materials["Material.002"]}
+        position={[0, 0.232, 0.335]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube001.geometry}
+        material={materials["Material.003"]}
+        position={[0, -1.928, -0.12]}
+      />
+    </group>
   );
 }
+
+useGLTF.preload("/logo.glb");
