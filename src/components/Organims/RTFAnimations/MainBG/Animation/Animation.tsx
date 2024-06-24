@@ -7,7 +7,7 @@ import { useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import PlaneBG from "../Mesh/PlaneBG";
 import Logo from "../Mesh/Logo/Logo";
-import { Float } from "@react-three/drei";
+import { Float, Environment } from "@react-three/drei";
 
 export default function MainBGAnimation({ scrollPosition }: any) {
   const pathname = usePathname();
@@ -503,6 +503,13 @@ export default function MainBGAnimation({ scrollPosition }: any) {
   return (
     <>
       {/* Light */}
+      <Environment
+        background
+        blur={2}
+        backgroundBlurriness={1}
+        backgroundIntensity={1}
+        files={"./RTFA/enviromentMap/blender_2k.hdr"}
+      ></Environment>
       <ambientLight intensity={0.25}></ambientLight>
       <directionalLight
         position={[1, 1, 1]}
@@ -519,15 +526,7 @@ export default function MainBGAnimation({ scrollPosition }: any) {
       ></directionalLight>
       {/* Meshes */}
       {/* <PlaneBG position={[0, 2, -1.5]} color={"#d1d1d1"} size={1000}></PlaneBG> */}
-      {positions.map((obj: any) => {
-        return (
-          <>
-            <Float>
-              <Sphere position={obj.position} size={obj.scale}></Sphere>
-            </Float>
-          </>
-        );
-      })}
+
       <Sphere position={[3, 3, 30]} color={"red"} size={1}></Sphere>
       <Logo
         position={[-2.45, 0, 0]}
