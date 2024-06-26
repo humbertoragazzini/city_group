@@ -14,7 +14,7 @@ export default function ONavBar() {
 
   return (
     <>
-      <nav className="fixed w-full hidden lg:flex flex-row justify-end mx-auto p-4">
+      <nav className="fixed w-full hidden lg:flex flex-row justify-end mx-auto p-4 z-20">
         <div className="m-2">
           <CNavBarLink
             className={

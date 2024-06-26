@@ -10,7 +10,7 @@ export default function MainBGCanvas({ scrollPosition }: any) {
     <Canvas dpr={[2, 2]} camera={{ position: [0, 0, 60], fov: 50 }} shadows>
       <MainBGAnimation scrollPosition={scrollPosition}></MainBGAnimation>
       <SoftShadows size={25} focus={5} samples={50}></SoftShadows>
-      {/* <OrbitControls /> */}
+      <OrbitControls />
       {/* <Stats /> */}
     </Canvas>
   );

@@ -27,12 +27,22 @@ export default function Logo({
           gsap.to(meshRef.current!.rotation, {
             y: rotationStart[1],
             duration: 1,
-            delay: 1,
+            delay: 0,
           });
           break;
         case "/OurServices":
+          gsap.to(meshRef.current!.rotation, {
+            y: rotationStart[1],
+            duration: 1,
+            delay: 0,
+          });
           break;
         case "/ContactUs":
+          gsap.to(meshRef.current!.rotation, {
+            y: rotationStart[1],
+            duration: 1,
+            delay: 0,
+          });
           break;
 
         default:
