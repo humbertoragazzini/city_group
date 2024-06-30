@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import ONavBar from "@/components/Organims/NavBar/ONavBar";
-import MainBG from "@/components/Organims/RTFAnimations/MainBG/MainBG";
+import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 
 const inter = Source_Sans_3({
   subsets: ["latin"],
@@ -21,10 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className + " relative"}>
         <ONavBar></ONavBar>
-        <MainBG></MainBG>
         {children}
+        <MainBG></MainBG>
       </body>
     </html>
   );
