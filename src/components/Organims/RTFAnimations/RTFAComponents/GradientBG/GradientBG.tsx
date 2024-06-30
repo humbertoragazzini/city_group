@@ -10,7 +10,7 @@ import {
 import * as THREE from "three";
 import gsap from "gsap";
 
-export default function GradientBG({ children, className }: any) {
+export default function GradientBG({ className }: any) {
   const el = useRef<any>();
   const geometry = useRef<any>();
   const content1 = useRef<any>();
