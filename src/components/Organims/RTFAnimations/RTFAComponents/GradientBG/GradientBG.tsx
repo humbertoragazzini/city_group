@@ -194,16 +194,18 @@ export default function GradientBG({ children, className }: any) {
               </mesh>
               {shperes.map((sphere) => {
                 return (
-                  <mesh position={[sphere[0], sphere[1], sphere[2]]}>
-                    <sphereGeometry
-                      args={[
-                        0.01 * Math.abs(3 / (Math.abs(sphere[2]) + 1)),
-                        25,
-                        25,
-                      ]}
-                    ></sphereGeometry>
-                    <meshStandardMaterial color="red"></meshStandardMaterial>
-                  </mesh>
+                  <>
+                    <mesh position={[sphere[0], sphere[1], sphere[2]]}>
+                      <sphereGeometry
+                        args={[
+                          0.01 * Math.abs(3 / (Math.abs(sphere[2]) + 1)),
+                          25,
+                          25,
+                        ]}
+                      ></sphereGeometry>
+                      <meshStandardMaterial color="red"></meshStandardMaterial>
+                    </mesh>
+                  </>
                 );
               })}
             </group>
