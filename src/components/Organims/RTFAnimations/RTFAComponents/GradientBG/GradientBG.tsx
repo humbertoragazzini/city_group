@@ -170,6 +170,7 @@ export default function GradientBG({ children, className }: any) {
       }
     }
     console.log(position);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -20,27 +20,6 @@ export default function MainBG({ Component, pageProps, children }: any) {
   console.log(children);
   const backgroundRef = useRef<any>();
 
-  useEffect(() => {
-    // if (backgroundRef.current) {
-    //   gsap.fromTo(
-    //     backgroundRef.current.rotation,
-    //     {
-    //       x: 0,
-    //       y: -Math.PI,
-    //       // z: Math.PI / 2,
-    //     },
-    //     {
-    //       x: Math.PI / 2,
-    //       y: -Math.PI * 2,
-    //       // z: Math.PI / 2,
-    //       duration: 2,
-    //       repeat: -1,
-    //       yoyo: true,
-    //     }
-    //   );
-    // }
-  }, [backgroundRef.current]);
-
   return (
     <>
       <GlobalCanvas
