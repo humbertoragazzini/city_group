@@ -6,6 +6,7 @@ import {
   MeshDistortMaterial,
   GradientTexture,
   MeshReflectorMaterial,
+  Float,
 } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
@@ -180,7 +181,7 @@ export default function GradientBG({ className }: any) {
         <ScrollScene track={el}>
           {(props) => (
             <group {...props}>
-              <mesh position={[0, 0, -10]} ref={geometry}>
+              {/* <mesh position={[0, 0, -10]} ref={geometry}>
                 <planeGeometry args={[10, 10, 16, 16]} />
                 <MeshDistortMaterial speed={5} distort={0}>
                   <GradientTexture
@@ -189,11 +190,15 @@ export default function GradientBG({ className }: any) {
                     rotation={0.5}
                   />
                 </MeshDistortMaterial>
-              </mesh>
+              </mesh> */}
               {shperes.map((sphere) => {
                 return (
                   <>
-                    <mesh position={[sphere[0], sphere[1], sphere[2]]}>
+                    <mesh
+                      position={[sphere[0], sphere[1], sphere[2] - 3]}
+                      receiveShadow
+                      castShadow
+                    >
                       <sphereGeometry
                         args={[
                           0.01 * Math.abs(3 / (Math.abs(sphere[2]) + 1)),
@@ -201,7 +206,11 @@ export default function GradientBG({ className }: any) {
                           25,
                         ]}
                       ></sphereGeometry>
-                      <meshStandardMaterial color="red"></meshStandardMaterial>
+                      <meshStandardMaterial
+                        color="red"
+                        metalness={0.5}
+                        roughness={0.2}
+                      ></meshStandardMaterial>
                     </mesh>
                   </>
                 );

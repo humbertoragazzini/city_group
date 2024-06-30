@@ -3,7 +3,7 @@
 import { ScrollScene, UseCanvas } from "@14islands/r3f-scroll-rig";
 import { useRef } from "react";
 
-export default function HorizontalTitle() {
+export default function GlassMorphism() {
   const el = useRef<any>();
   const ref = useRef<any>();
 
@@ -14,17 +14,18 @@ export default function HorizontalTitle() {
         <ScrollScene track={el}>
           {(props) => {
             return (
-              <mesh {...props} ref={ref}>
+              <mesh {...props} ref={ref} receiveShadow>
                 <planeGeometry args={[1, 1, 50]} />
                 <meshPhysicalMaterial
                   attach="material"
                   color="#dddddd"
-                  metalness={0}
-                  roughness={0.5}
+                  metalness={0.1}
+                  roughness={0.4}
                   transmission={1}
                   thickness={0}
-                  clearcoat={0}
+                  clearcoat={1}
                   clearcoatRoughness={0}
+                  reflectivity={0.5}
                   specularIntensity={0}
                   // reflectivity={0.5}
                 />

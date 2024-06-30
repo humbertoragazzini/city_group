@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { Float, useGLTF } from "@react-three/drei";
+import { Float, Text, useGLTF } from "@react-three/drei";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { useFrame } from "@react-three/fiber";
@@ -73,7 +73,13 @@ export default function Logo({
           <mesh
             castShadow
             geometry={nodes.Torus.geometry}
-            material={materials["Material.001"]}
+            material={
+              new MeshStandardMaterial({
+                color: "black",
+                roughness: 1,
+                metalness: 0,
+              })
+            }
             rotation={[0, Math.PI / 2, -Math.PI / 2]}
           />
           <mesh
@@ -130,6 +136,15 @@ export default function Logo({
             rotation={[0, Math.PI / 2, 0]}
           />
         </group>
+        <Text
+          fontWeight={700}
+          fontStyle="bold"
+          color={"black"}
+          position={[0, -0.35, 5]}
+          fontSize={0.15}
+        >
+          PrimalPort
+        </Text>
       </group>
     </group>
   );

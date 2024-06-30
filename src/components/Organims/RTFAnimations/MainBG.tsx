@@ -29,26 +29,26 @@ export default function MainBG({ Component, pageProps, children }: any) {
         camera={{ far: 500 }}
       >
         <directionalLight
-          position={[5, 0, 10]}
-          intensity={3}
+          position={[25, 25, 20]}
+          intensity={5}
           castShadow
           shadow-mapSize-width={2048}
           shadow-mapSize-height={2048}
-          shadow-camera-far={100}
+          shadow-camera-far={9}
           shadow-camera-left={-10}
           shadow-camera-right={10}
           shadow-camera-top={10}
           shadow-camera-bottom={-10}
         ></directionalLight>
-        <Environment
+        {/* <Environment
           background
           blur={2}
           backgroundBlurriness={0.8}
           backgroundIntensity={0.7}
           environmentIntensity={0.5}
-          files={"./RTFA/enviromentMap/blender_2kv2.hdr"}
-        ></Environment>
-        {/* <mesh ref={backgroundRef} position={[0, 0, 0]}>
+          files={"./RTFA/enviromentMap/blender_2k.hdr"}
+        ></Environment> */}
+        <mesh ref={backgroundRef} position={[0, 0, 0]}>
           <sphereGeometry args={[25, 50, 50]}></sphereGeometry>
           <meshStandardMaterial side={THREE.DoubleSide}>
             <GradientTexture
@@ -57,7 +57,7 @@ export default function MainBG({ Component, pageProps, children }: any) {
               rotation={0.5}
             />
           </meshStandardMaterial>
-        </mesh> */}
+        </mesh>
       </GlobalCanvas>
     </>
   );
