@@ -175,9 +175,7 @@ export default function GradientBG({ children, className }: any) {
 
   return (
     <>
-      <div ref={el} className={"h-[100%] aspect-square " + className}>
-        {children}
-      </div>
+      <div ref={el} className={"h-[100%] aspect-square " + className}></div>
       <UseCanvas>
         <ScrollScene track={el}>
           {(props) => (
