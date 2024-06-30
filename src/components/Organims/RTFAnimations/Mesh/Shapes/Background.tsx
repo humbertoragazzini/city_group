@@ -1,3 +1,4 @@
+// @ts-nocheck
 // import { useGLTF } from "@react-three/drei";
 // import { useEffect, useLayoutEffect, useRef } from "react";
 // import gsap from "gsap";

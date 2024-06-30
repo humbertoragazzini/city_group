@@ -24,10 +24,7 @@ export default function Home() {
         return (
           <>
             <div className="relative z-10 overflow-hidden  m-auto pt-[96px] text-white">
-              <GradientBG
-                className={"absolute top-0 left-0"}
-                children={""}
-              ></GradientBG>
+              <GradientBG className={"absolute top-0 left-0"}></GradientBG>
               <div className="grid grod-cols-1 md:grid-cols-2 p-16 max-w-[1281px] m-auto">
                 <div className="m-4 col-span-1">
                   <LogoBG></LogoBG>
