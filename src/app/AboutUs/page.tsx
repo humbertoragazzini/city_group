@@ -1,5 +1,4 @@
 "use client";
-import MainBG from "@/components/Organims/RTFAnimations/Mesh/MainBG/MainBG";
 import { useState, useRef } from "react";
 
 export default function AboutUs() {
