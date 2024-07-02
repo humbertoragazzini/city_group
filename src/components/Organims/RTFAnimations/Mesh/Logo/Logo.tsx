@@ -75,7 +75,7 @@ export default function Logo({
             geometry={nodes.Torus.geometry}
             material={
               new MeshStandardMaterial({
-                color: "black",
+                color: "white",
                 roughness: 1,
                 metalness: 0,
               })
@@ -91,14 +91,26 @@ export default function Logo({
           <mesh
             castShadow
             geometry={nodes.Cube!.geometry}
-            material={materials["Material.002"]}
+            material={
+              new MeshStandardMaterial({
+                color: "white",
+                roughness: 1,
+                metalness: 0,
+              })
+            }
             rotation={[0, Math.PI / 2, 0]}
             position={[0.34, 0.24, 0]}
           />
           <mesh
             castShadow
             geometry={nodes.Cube001.geometry}
-            material={materials["Material.003"]}
+            material={
+              new MeshStandardMaterial({
+                color: "white",
+                roughness: 1,
+                metalness: 0,
+              })
+            }
             position={[-0.125, -1.92, 0]}
             rotation={[0, Math.PI / 2, 0]}
           />
@@ -112,7 +124,13 @@ export default function Logo({
           <mesh
             castShadow
             geometry={nodes.Torus.geometry}
-            material={materials["Material.001"]}
+            material={
+              new MeshStandardMaterial({
+                color: "white",
+                roughness: 1,
+                metalness: 0,
+              })
+            }
             rotation={[0, Math.PI / 2, -Math.PI / 2]}
           />
           <mesh
@@ -124,14 +142,26 @@ export default function Logo({
           <mesh
             castShadow
             geometry={nodes.Cube!.geometry}
-            material={materials["Material.002"]}
+            material={
+              new MeshStandardMaterial({
+                color: "white",
+                roughness: 1,
+                metalness: 0,
+              })
+            }
             rotation={[0, Math.PI / 2, 0]}
             position={[0.34, 0.24, 0]}
           />
           <mesh
             castShadow
             geometry={nodes.Cube001.geometry}
-            material={materials["Material.003"]}
+            material={
+              new MeshStandardMaterial({
+                color: "white",
+                roughness: 1,
+                metalness: 0,
+              })
+            }
             position={[-0.125, -1.92, 0]}
             rotation={[0, Math.PI / 2, 0]}
           />
@@ -139,7 +169,13 @@ export default function Logo({
         <Text
           fontWeight={700}
           fontStyle="bold"
-          color={"black"}
+          material={
+            new MeshStandardMaterial({
+              color: "white",
+              roughness: 1,
+              metalness: 0,
+            })
+          }
           position={[0, -0.35, 5]}
           fontSize={0.15}
         >

@@ -18,7 +18,7 @@ export default function GlassMorphism() {
                 <planeGeometry args={[1, 1, 50]} />
                 <meshPhysicalMaterial
                   attach="material"
-                  color="#dddddd"
+                  color="#999999"
                   metalness={0.1}
                   roughness={0.4}
                   transmission={1}
