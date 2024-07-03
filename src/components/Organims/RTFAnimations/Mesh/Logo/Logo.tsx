@@ -5,8 +5,8 @@ import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { MeshStandardMaterial, MeshBasicMaterial } from "three";
 
-interface iLogo{
-  scale: number:
+interface iLogo {
+  scale: number;
 }
 
 export default function Logo({ scale }: iLogo) {
