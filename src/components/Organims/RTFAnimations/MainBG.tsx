@@ -1,25 +1,9 @@
-// @ts-nocheck
 "use client";
-import { useRef, useEffect, useState } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
-import {
-  GlobalCanvas,
-  ScrollScene,
-  UseCanvas,
-  SmoothScrollbar,
-} from "@14islands/r3f-scroll-rig";
-import {
-  MeshDistortMaterial,
-  GradientTexture,
-  Environment,
-} from "@react-three/drei";
+import { GlobalCanvas } from "@14islands/r3f-scroll-rig";
+import { GradientTexture } from "@react-three/drei";
 import * as THREE from "three";
-import gsap from "gsap";
 
-export default function MainBG({ Component, pageProps, children }: any) {
-  console.log(children);
-  const backgroundRef = useRef<any>();
-
+export default function MainBG() {
   return (
     <>
       <GlobalCanvas
@@ -40,15 +24,7 @@ export default function MainBG({ Component, pageProps, children }: any) {
           shadow-camera-top={10}
           shadow-camera-bottom={-10}
         ></directionalLight>
-        {/* <Environment
-          background
-          blur={2}
-          backgroundBlurriness={0.8}
-          backgroundIntensity={0.7}
-          environmentIntensity={0.5}
-          files={"./RTFA/enviromentMap/blender_2k.hdr"}
-        ></Environment> */}
-        <mesh ref={backgroundRef} position={[0, 0, 0]}>
+        <mesh position={[0, 0, 0]}>
           <sphereGeometry args={[25, 50, 50]}></sphereGeometry>
           <meshStandardMaterial side={THREE.DoubleSide}>
             <GradientTexture

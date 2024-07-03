@@ -1,19 +1,16 @@
 // @ts-nocheck
-import { Float, Text, useGLTF } from "@react-three/drei";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useFrame } from "@react-three/fiber";
 import { usePathname } from "next/navigation";
-import { MeshStandardMaterial } from "three";
+import { MeshStandardMaterial, MeshBasicMaterial } from "three";
 
-export default function Logo({
-  position,
-  rotationStart,
-  rotationEnd,
-  checkPath,
-  scale,
-}: any) {
-  const { nodes, materials } = useGLTF("./RTFA/Models/Logo/logo.glb");
+interface iLogo{
+  scale: number:
+}
+
+export default function Logo({ scale }: iLogo) {
+  const { nodes } = useGLTF("./RTFA/Models/Logo/logo.glb");
   const meshRefL = useRef<any>(null);
   const meshRefR = useRef<any>(null);
   const pathname = usePathname();
@@ -23,7 +20,22 @@ export default function Logo({
     meshRefR.current.children[1].material.transparent = true;
     meshRefR.current.children[2].material.transparent = true;
     meshRefR.current.children[3].material.transparent = true;
-
+    gsap.fromTo(
+      meshRefR.current.position,
+      { z: -8 },
+      {
+        z: -1,
+        duration: 2,
+      }
+    );
+    gsap.fromTo(
+      meshRefL.current.position,
+      { z: -8 },
+      {
+        z: -1,
+        duration: 2,
+      }
+    );
     gsap.fromTo(
       meshRefR.current.children[0].material,
       { opacity: 0 },
@@ -57,13 +69,9 @@ export default function Logo({
     );
   }, [pathname]);
 
-  useFrame((_, delta) => {
-    // meshRefL.current.rotation.z += 0.002;
-  });
-
   return (
     <group scale={scale}>
-      <group scale={0.5}>
+      <group scale={3} rotation={[0, 0, -Math.PI / 4]} position={[0.5, 0, 0]}>
         <group
           scale={0.186}
           position={[-0.3, 0, 5]}
@@ -85,7 +93,13 @@ export default function Logo({
           <mesh
             castShadow
             geometry={nodes.Sphere.geometry}
-            material={materials["Material.004"]}
+            material={
+              new MeshBasicMaterial({
+                color: "red",
+                roughness: 1,
+                metalness: 0,
+              })
+            }
             rotation={[0, Math.PI / 2, 0]}
           />
           <mesh
@@ -136,7 +150,13 @@ export default function Logo({
           <mesh
             castShadow
             geometry={nodes.Sphere.geometry}
-            material={materials["Material.004"]}
+            material={
+              new MeshBasicMaterial({
+                color: "red",
+                roughness: 1,
+                metalness: 0,
+              })
+            }
             rotation={[0, Math.PI / 2, 0]}
           />
           <mesh
@@ -166,7 +186,7 @@ export default function Logo({
             rotation={[0, Math.PI / 2, 0]}
           />
         </group>
-        <Text
+        {/* <Text
           fontWeight={700}
           fontStyle="bold"
           material={
@@ -180,7 +200,7 @@ export default function Logo({
           fontSize={0.15}
         >
           PrimalPort
-        </Text>
+        </Text> */}
       </group>
     </group>
   );

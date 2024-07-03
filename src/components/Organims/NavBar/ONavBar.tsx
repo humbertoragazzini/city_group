@@ -1,16 +1,12 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import CNavBarLink from "../../Cells/NavBar/CNavBarLink";
-import CNavMobLink from "@/components/Cells/NavBar/CNavMobLink";
+import CNavBarLink from "../../molecules/NavBar/CNavBarLink";
+import CNavMobLink from "@/components/molecules/NavBar/CNavMobLink";
 
 export default function ONavBar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    console.log("Current route:", pathname);
-  }, [pathname]);
 
   return (
     <>

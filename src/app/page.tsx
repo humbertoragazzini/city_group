@@ -12,18 +12,18 @@ export default function Home() {
       {() => {
         return (
           <>
-            <div className="relative z-10 overflow-hidden  m-auto pt-[0px] text-white">
+            <div className="relative z-10 overflow-hidden m-auto pt-[0px] text-white">
               <GradientBG className={"absolute top-0 left-0"}></GradientBG>
-              <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-4 md:p-32  min-h-[60vh] drop-shadow-2xl m-auto overflow-hidden">
+              <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-4 md:p-32 min-h-[60vh] drop-shadow-2xl m-auto overflow-hidden max-w-[1920px]">
                 <GlassMorphism></GlassMorphism>
-                <div className="m-4 col-span-1 ">
+                <div className="col-span-1 m-4 ">
                   <h2 className="text-[85px] leading-[110px] font-semibold mb-5 ">
                     Elevating Excellence Across Industries
                   </h2>
-                  <p className="text-4xl mb-5">
+                  <p className="mb-5 text-4xl">
                     Comprehensive Solutions in Imports, Construction, and Retail
                   </p>
-                  <p className="text-2xl mb-5">
+                  <p className="mb-5 text-2xl">
                     At PrimalPort, we harmonize the art of innovation with the
                     science of expertise to offer transcendent services in
                     Imports, Construction, and Retail. Explore how our holistic
@@ -31,9 +31,7 @@ export default function Home() {
                     and transformation across a myriad of sectors.
                   </p>
                 </div>
-                <div className="m-4 col-span-1 hidden md:block">
-                  <LogoBG></LogoBG>
-                </div>
+                <div className="hidden col-span-1 m-4 md:block"></div>
               </div>
 
               <div className="grid grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
