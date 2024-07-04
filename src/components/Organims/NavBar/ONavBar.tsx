@@ -10,7 +10,7 @@ export default function ONavBar() {
 
   return (
     <>
-      <nav className="fixed w-full hidden lg:flex flex-row justify-end mx-auto p-4 z-20">
+      <nav className="fixed w-full hidden lg:flex flex-row justify-end mx-auto p-4 z-50">
         <div className="m-2">
           <CNavBarLink
             className={
@@ -50,15 +50,15 @@ export default function ONavBar() {
           ></CNavBarLink>
         </div>
       </nav>
-      <nav className="fixed w-full flex flex-row lg:hidden justify-end max-w-[1280px] mx-auto">
+      <nav className="fixed w-screen flex flex-row lg:hidden justify-end  z-50">
         <button
-          className="bg-red-200 w-[50px] h-[50px] m-2 absolute z-50"
+          className="bg-red-700 border-2 border-white w-[50px] h-[50px] m-2 absolute z-50"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
         ></button>
         {isOpen && (
-          <div className="backdrop-blur-sm w-full">
+          <div className="backdrop-blur-sm w-screen h-screen pt-[60px]">
             <div className="m-2">
               <CNavMobLink
                 className={

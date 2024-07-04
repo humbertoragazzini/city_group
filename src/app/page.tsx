@@ -18,7 +18,7 @@ export default function Home() {
               <div className="relative h-screen w-screen ">
                 <GlassMorphism></GlassMorphism>
                 <div className="grid h-screen grid-cols-1 lg:grid-cols-2 max-w-[1920px] mx-auto">
-                  <div className="relative col-span-1 p-8">
+                  <div className="relative col-span-1 px-8 flex flex-col justify-center items-center">
                     <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px] font-semibold mb-5">
                       Elevating Excellence Across Industries
                     </h2>
