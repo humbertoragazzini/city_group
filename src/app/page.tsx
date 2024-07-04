@@ -14,29 +14,39 @@ export default function Home() {
           <>
             <div className="relative z-10 overflow-hidden m-auto pt-[0px] text-white">
               <GradientBG className={"absolute top-0 left-0"}></GradientBG>
-              <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-4 md:p-32 min-h-[60vh] drop-shadow-2xl m-auto overflow-hidden max-w-[1920px]">
+
+              <div className="relative h-screen w-screen ">
                 <GlassMorphism></GlassMorphism>
-                <div className="col-span-1 m-4 ">
-                  <h2 className="text-[85px] leading-[110px] font-semibold mb-5 ">
-                    Elevating Excellence Across Industries
-                  </h2>
-                  <p className="mb-5 text-4xl">
-                    Comprehensive Solutions in Imports, Construction, and Retail
-                  </p>
-                  <p className="mb-5 text-2xl">
-                    At PrimalPort, we harmonize the art of innovation with the
-                    science of expertise to offer transcendent services in
-                    Imports, Construction, and Retail. Explore how our holistic
-                    approach and unwavering dedication to quality foster success
-                    and transformation across a myriad of sectors.
-                  </p>
+                <div className="grid h-screen grid-cols-1 lg:grid-cols-2 max-w-[1920px] mx-auto">
+                  <div className="relative col-span-1 p-8">
+                    <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px] font-semibold mb-5">
+                      Elevating Excellence Across Industries
+                    </h2>
+                    <p className="mb-5 text-2xl sm:text-4xl">
+                      Comprehensive Solutions in Imports, Construction, and
+                      Retail
+                    </p>
+                    <p className="mb-5 text-lg sm:text-2xl">
+                      At PrimalPort, we harmonize the art of innovation with the
+                      science of expertise to offer transcendent services in
+                      Imports, Construction, and Retail. Explore how our
+                      holistic approach and unwavering dedication to quality
+                      foster success and transformation across a myriad of
+                      sectors.
+                    </p>
+                  </div>
+                  <div className="relative hidden col-span-1 m-4 lg:block">
+                    <LogoBG
+                      className={"left-[0%] top-[-45%]"}
+                      width={1300}
+                      rotation={{ x: 0, y: 0, z: Math.PI / 4 }}
+                    ></LogoBG>
+                  </div>
                 </div>
-                <div className="hidden col-span-1 m-4 md:block"></div>
               </div>
 
               <div className="grid grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
                 <div className="relative h-[25vh] m-4 col-span-1 p-11">
-                  <GlassMorphism></GlassMorphism>
                   <h2>Our Divisions</h2>
                   <h3>Import Division</h3>
                   <p>
@@ -58,10 +68,8 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-
               <div className="grid grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
                 <div className="relative h-[25vh] m-4 col-span-1 p-11">
-                  <GlassMorphism></GlassMorphism>
                   <h2>Construction Division</h2>
                   <p>
                     The Construction Division is the heart of our philosophy,
@@ -81,10 +89,8 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-
               <div className="grid grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
                 <div className="relative h-[25vh] m-4 col-span-1 p-11">
-                  <GlassMorphism></GlassMorphism>
                   <h2>Retail Sales Division</h2>
                   <p>
                     Our Retail Sales Division offers a curated selection of
@@ -104,10 +110,8 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-
               <div className="grid grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
                 <div className="relative h-[25vh] m-4 col-span-1 p-11">
-                  <GlassMorphism></GlassMorphism>
                   <h2>Why Partner with Us?</h2>
                   <p>
                     Expertise: Decades of industry experience, delivering

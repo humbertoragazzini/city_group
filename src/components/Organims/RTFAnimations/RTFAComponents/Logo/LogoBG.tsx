@@ -5,20 +5,33 @@ import { useLayoutEffect, useRef, useState } from "react";
 import Logo from "../../Mesh/Logo/Logo";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
+import { iAxis } from "../../interfaces/position";
 
-export default function LogoBG() {
+interface iLogoBG {
+  className: string;
+  rotation: iAxis;
+  width: number;
+}
+
+export default function LogoBG({ className, rotation, width }: iLogoBG) {
   const el = useRef<any>();
 
   return (
     <>
       <div
         ref={el}
-        className="w-[100%] aspect-[1.021] max-w-[550px] m-auto"
+        className={"absolute w-[" + width + "px] aspect-[1.021] " + className}
       ></div>
       <UseCanvas>
         <ScrollScene track={el}>
           {(props) => {
-            return <Logo scale={props.scale} rotationStart={[0, 0, 0]}></Logo>;
+            return (
+              <Logo
+                scale={props.scale}
+                rotationStart={[0, 0, 0]}
+                rotation={rotation}
+              ></Logo>
+            );
           }}
         </ScrollScene>
       </UseCanvas>
