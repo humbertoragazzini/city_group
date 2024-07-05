@@ -37,9 +37,9 @@ export default function Home() {
                   </div>
                   <div className="relative hidden col-span-1 m-4 lg:block">
                     <LogoBG
-                      className={"left-[0%] top-[-45%]"}
+                      className={"left-[0%] top-[-65%]"}
                       width={1300}
-                      rotation={{ x: 0, y: 0, z: Math.PI / 4 }}
+                      rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
                     ></LogoBG>
                   </div>
                 </div>
