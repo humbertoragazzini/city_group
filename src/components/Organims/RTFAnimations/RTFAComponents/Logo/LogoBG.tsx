@@ -20,8 +20,8 @@ export default function LogoBG({ className, rotation, width }: iLogoBG) {
     <>
       <div
         ref={el}
-        className={"absolute w-[" + width + "px] aspect-[1] " + className}
-        // style={}
+        className={"absolute aspect-[1] " + className}
+        style={{ width: width + "px" }}
       ></div>
       <UseCanvas>
         <ScrollScene track={el}>
