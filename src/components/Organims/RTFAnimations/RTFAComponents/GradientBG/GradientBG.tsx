@@ -11,12 +11,10 @@ import {
 } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
+import Triangle from "../../Mesh/Triangle/Triangle";
 
 export default function GradientBG({ className }: any) {
-  const { materials, nodes } = useGLTF("./RTFA/Models/Logo/band_1v3.glb");
   const el = useRef<any>();
-  const geometry = useRef<any>();
-  const content1 = useRef<any>();
   const shperes = [
     [-0.29446676731468147, -0.3455983696605165, -0.7895812995208558],
     [-0.5536564805254124, 0.6444553332075844, -2.5535409326896716],
@@ -596,24 +594,6 @@ export default function GradientBG({ className }: any) {
     [-0.5265199589882622, -0.45604537450323357, -5.418038243077516],
   ];
 
-  useLayoutEffect(() => {
-    let position = [];
-    const cols = 12;
-    const row = 12;
-
-    for (let i = -12; i < row; i++) {
-      for (let j = -12; j < cols; j++) {
-        position.push([
-          Math.random() * 1.4 - 0.7,
-          Math.random() * 1.4 - 0.7,
-          Math.random() * -9,
-        ]);
-      }
-    }
-    console.log(position);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <>
       <div ref={el} className={"h-[100%] aspect-square " + className}></div>
@@ -630,23 +610,14 @@ export default function GradientBG({ className }: any) {
                       castShadow
                       scale={Math.random() * 0.02}
                     >
-                      <mesh
-                        castShadow
-                        receiveShadow
-                        geometry={nodes.Cone.geometry}
-                        position={[0, -0.009, 0]}
-                        rotation={[0, 0, Math.random()]}
-                        scale={[1, 1, 0.165]}
-                        material={
-                          new THREE.MeshStandardMaterial({
-                            color: "#e0363e",
-                            metalness: 0.5,
-                            roughness: 0.2,
-                            opacity: 0.2,
-                            transparent: true,
-                          })
-                        }
-                      />
+                      <Triangle
+                        scale={1}
+                        rotation={{
+                          x: 0,
+                          y: 0,
+                          z: Math.random() * 3.14,
+                        }}
+                      ></Triangle>
                     </mesh>
                   </>
                 );

@@ -1,4 +1,5 @@
 // @ts-nocheck
+"use client";
 import { useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -12,7 +13,7 @@ interface iLogo {
 }
 
 export default function Logo({ scale, rotation }: iLogo) {
-  const { materials, nodes } = useGLTF("./RTFA/Models/Logo/band_1v3.glb");
+  const { materials, nodes } = useGLTF("./RTFA/Models/Logo/band1v3Main.glb");
   const meshRef = useRef<any>(null);
   const meshRefR = useRef<any>(null);
   const pathname = usePathname();
