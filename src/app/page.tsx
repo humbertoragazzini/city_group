@@ -18,7 +18,7 @@ export default function Home() {
               <div className="relative h-screen w-screen ">
                 <GlassMorphism></GlassMorphism>
                 <div className="grid h-screen grid-cols-1 lg:grid-cols-2 max-w-[1920px] mx-auto">
-                  <div className="relative col-span-1 px-8 flex flex-col justify-center items-center">
+                  <div className="relative col-span-1 px-16 flex flex-col justify-center items-center">
                     <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px] font-semibold mb-5">
                       Elevating Excellence Across Industries
                     </h2>
@@ -37,7 +37,9 @@ export default function Home() {
                   </div>
                   <div className="relative hidden col-span-1 m-4 lg:block">
                     <LogoBG
-                      className={"left-[0%] top-[-65%]"}
+                      className={
+                        "left-[0%] lg:top-[-65%] 3xl:top-[-50%] 4xl:top-[0%] 5xl:top-[0%]"
+                      }
                       width={1300}
                       rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
                     ></LogoBG>
@@ -45,10 +47,14 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="grid grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
-                <div className="relative h-[25vh] m-4 col-span-1 p-11">
-                  <h2>Our Divisions</h2>
-                  <h3>Import Division</h3>
+              <div className="grid h-screen  grid-cols-12  bg-[#267788]">
+                <div className="relative col-start-1 col-end-13 p-11">
+                  <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px]">
+                    Our Divisions
+                  </h2>
+                  <h3 className="text-3xl sm:text-[65px] sm:leading-[65px] md:text-[65px] md:leading-[65px] lg:text-[65px] lg:leading-[65px]">
+                    Import Division
+                  </h3>
                   <p>
                     In our Import Division, we traverse the globe to source the
                     finest materials and products. Our extensive network of
@@ -58,8 +64,7 @@ export default function Home() {
                     projects.
                   </p>
                 </div>
-                <div className="relative h-[25vh] m-4 col-span-1 p-11">
-                  <GlassMorphism></GlassMorphism>
+                <div className="relative h-[25vh] m-4 col-start-1 col-end-10 p-11">
                   <p>
                     Premium Materials: Handpicked for their superior quality.
                     Reliable Supply Chain: Ensuring consistency and
@@ -68,7 +73,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="grid grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
+              <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
                 <div className="relative h-[25vh] m-4 col-span-1 p-11">
                   <h2>Construction Division</h2>
                   <p>
@@ -80,7 +85,6 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="relative h-[25vh] m-4 col-span-1 p-11">
-                  <GlassMorphism></GlassMorphism>
                   <p>
                     Residential and Commercial Mastery: Diverse expertise for
                     varied needs. Innovative Design and Engineering: Melding
@@ -89,7 +93,34 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="grid grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
+
+              <div className="grid h-screen  grid-cols-12  bg-[#267788]">
+                <div className="relative col-start-1 col-end-13 p-11">
+                  <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px]">
+                    Our Divisions
+                  </h2>
+                  <h3 className="text-3xl sm:text-[65px] sm:leading-[65px] md:text-[65px] md:leading-[65px] lg:text-[65px] lg:leading-[65px]">
+                    Import Division
+                  </h3>
+                  <p>
+                    In our Import Division, we traverse the globe to source the
+                    finest materials and products. Our extensive network of
+                    international suppliers ensures that we deliver unparalleled
+                    quality and innovation. We bring the world's best to your
+                    doorstep, tailored to meet the unique demands of your
+                    projects.
+                  </p>
+                </div>
+                <div className="relative h-[25vh] m-4 col-start-1 col-end-10 p-11">
+                  <p>
+                    Premium Materials: Handpicked for their superior quality.
+                    Reliable Supply Chain: Ensuring consistency and
+                    dependability. Competitive Pricing: Providing value without
+                    compromise.
+                  </p>
+                </div>
+              </div>
+              <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
                 <div className="relative h-[25vh] m-4 col-span-1 p-11">
                   <h2>Retail Sales Division</h2>
                   <p>
@@ -101,7 +132,6 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="relative h-[25vh] m-4 col-span-1 p-11">
-                  <GlassMorphism></GlassMorphism>
                   <p>
                     Comprehensive Product Range: From essentials to exclusive
                     items. Expert Guidance: Personalized service to inform and
@@ -110,7 +140,34 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="grid grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
+
+              <div className="grid h-screen  grid-cols-12  bg-[#267788]">
+                <div className="relative col-start-1 col-end-13 p-11">
+                  <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px]">
+                    Our Divisions
+                  </h2>
+                  <h3 className="text-3xl sm:text-[65px] sm:leading-[65px] md:text-[65px] md:leading-[65px] lg:text-[65px] lg:leading-[65px]">
+                    Import Division
+                  </h3>
+                  <p>
+                    In our Import Division, we traverse the globe to source the
+                    finest materials and products. Our extensive network of
+                    international suppliers ensures that we deliver unparalleled
+                    quality and innovation. We bring the world's best to your
+                    doorstep, tailored to meet the unique demands of your
+                    projects.
+                  </p>
+                </div>
+                <div className="relative h-[25vh] m-4 col-start-1 col-end-10 p-11">
+                  <p>
+                    Premium Materials: Handpicked for their superior quality.
+                    Reliable Supply Chain: Ensuring consistency and
+                    dependability. Competitive Pricing: Providing value without
+                    compromise.
+                  </p>
+                </div>
+              </div>
+              <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
                 <div className="relative h-[25vh] m-4 col-span-1 p-11">
                   <h2>Why Partner with Us?</h2>
                   <p>
@@ -123,7 +180,6 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="relative h-[25vh] m-4 col-span-1 p-11">
-                  <GlassMorphism></GlassMorphism>
                   <p>Connect with Us</p>
                   <p>
                     Embark on your next project with the confidence that comes

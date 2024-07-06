@@ -36,6 +36,12 @@ const config: Config = {
 
         "3xl": "1920px",
         // => @media (min-width: 1536px) { ... }
+
+        "4xl": "2560px",
+        // => @media (min-width: 1536px) { ... }
+
+        "5xl": "3850px",
+        // => @media (min-width: 1536px) { ... }
       },
     },
   },

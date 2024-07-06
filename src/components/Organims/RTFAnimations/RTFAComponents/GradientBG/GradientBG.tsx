@@ -1,5 +1,6 @@
 // @ts-nocheck
 "use client";
+import { useGLTF } from "@react-three/drei";
 import { ScrollScene, UseCanvas } from "@14islands/r3f-scroll-rig";
 import { useLayoutEffect, useRef } from "react";
 import {
@@ -12,6 +13,7 @@ import * as THREE from "three";
 import gsap from "gsap";
 
 export default function GradientBG({ className }: any) {
+  const { materials, nodes } = useGLTF("./RTFA/Models/Logo/band_1v3.glb");
   const el = useRef<any>();
   const geometry = useRef<any>();
   const content1 = useRef<any>();
@@ -619,16 +621,6 @@ export default function GradientBG({ className }: any) {
         <ScrollScene track={el}>
           {(props) => (
             <group {...props}>
-              {/* <mesh position={[0, 0, -10]} ref={geometry}>
-                <planeGeometry args={[10, 10, 16, 16]} />
-                <MeshDistortMaterial speed={5} distort={0}>
-                  <GradientTexture
-                    stops={[0, 1]} // As many stops as you want
-                    colors={["#e0363e", "#010101"]} // Colors need to match the number of stops
-                    rotation={0.5}
-                  />
-                </MeshDistortMaterial>
-              </mesh> */}
               {shperes.map((sphere) => {
                 return (
                   <>
@@ -636,21 +628,25 @@ export default function GradientBG({ className }: any) {
                       position={[sphere[0], sphere[1], sphere[2] - 3]}
                       receiveShadow
                       castShadow
+                      scale={Math.random() * 0.02}
                     >
-                      <sphereGeometry
-                        args={[
-                          0.01 * Math.abs(3 / (Math.abs(sphere[2]) + 1)),
-                          25,
-                          25,
-                        ]}
-                      ></sphereGeometry>
-                      <meshStandardMaterial
-                        color="#e0363e"
-                        metalness={0.5}
-                        roughness={0.2}
-                        opacity={0.2}
-                        transparent
-                      ></meshStandardMaterial>
+                      <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Cone.geometry}
+                        position={[0, -0.009, 0]}
+                        rotation={[0, 0, Math.random()]}
+                        scale={[1, 1, 0.165]}
+                        material={
+                          new THREE.MeshStandardMaterial({
+                            color: "#e0363e",
+                            metalness: 0.5,
+                            roughness: 0.2,
+                            opacity: 0.2,
+                            transparent: true,
+                          })
+                        }
+                      />
                     </mesh>
                   </>
                 );
