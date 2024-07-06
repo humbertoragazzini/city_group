@@ -47,8 +47,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="grid h-screen  grid-cols-12  bg-[#267788]">
-                <div className="relative col-start-1 col-end-13 p-11">
+              <div className="grid h-screen grid-cols-1">
+                <div className="relative col-span-1 p-7 lg:p-11">
                   <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px]">
                     Our Divisions
                   </h2>
@@ -64,7 +64,7 @@ export default function Home() {
                     projects.
                   </p>
                 </div>
-                <div className="relative h-[25vh] m-4 col-start-1 col-end-10 p-11">
+                <div className="relative col-span-1 p-7 lg:p-11">
                   <p>
                     Premium Materials: Handpicked for their superior quality.
                     Reliable Supply Chain: Ensuring consistency and
@@ -73,8 +73,117 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
-                <div className="relative h-[25vh] m-4 col-span-1 p-11">
+
+              <div className="grid h-screen grid-cols-1 bg-[#267788]">
+                <div className="relative col-span-1 p-7 lg:p-11">
+                  <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px]">
+                    Our Divisions
+                  </h2>
+                  <h3 className="text-3xl sm:text-[65px] sm:leading-[65px] md:text-[65px] md:leading-[65px] lg:text-[65px] lg:leading-[65px]">
+                    Import Division
+                  </h3>
+                  <p>
+                    In our Import Division, we traverse the globe to source the
+                    finest materials and products. Our extensive network of
+                    international suppliers ensures that we deliver unparalleled
+                    quality and innovation. We bring the world's best to your
+                    doorstep, tailored to meet the unique demands of your
+                    projects.
+                  </p>
+                </div>
+                <div className="relative col-span-1 p-7 lg:p-11">
+                  <p>
+                    Premium Materials: Handpicked for their superior quality.
+                    Reliable Supply Chain: Ensuring consistency and
+                    dependability. Competitive Pricing: Providing value without
+                    compromise.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid h-screen grid-cols-1">
+                <div className="relative col-span-1 p-7 lg:p-11">
+                  <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px]">
+                    Our Divisions
+                  </h2>
+                  <h3 className="text-3xl sm:text-[65px] sm:leading-[65px] md:text-[65px] md:leading-[65px] lg:text-[65px] lg:leading-[65px]">
+                    Import Division
+                  </h3>
+                  <p>
+                    In our Import Division, we traverse the globe to source the
+                    finest materials and products. Our extensive network of
+                    international suppliers ensures that we deliver unparalleled
+                    quality and innovation. We bring the world's best to your
+                    doorstep, tailored to meet the unique demands of your
+                    projects.
+                  </p>
+                </div>
+                <div className="relative col-span-1 p-7 lg:p-11">
+                  <p>
+                    Premium Materials: Handpicked for their superior quality.
+                    Reliable Supply Chain: Ensuring consistency and
+                    dependability. Competitive Pricing: Providing value without
+                    compromise.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid h-screen grid-cols-1 bg-[#267788]">
+                <div className="relative col-span-1 p-7 lg:p-11">
+                  <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px]">
+                    Our Divisions
+                  </h2>
+                  <h3 className="text-3xl sm:text-[65px] sm:leading-[65px] md:text-[65px] md:leading-[65px] lg:text-[65px] lg:leading-[65px]">
+                    Import Division
+                  </h3>
+                  <p>
+                    In our Import Division, we traverse the globe to source the
+                    finest materials and products. Our extensive network of
+                    international suppliers ensures that we deliver unparalleled
+                    quality and innovation. We bring the world's best to your
+                    doorstep, tailored to meet the unique demands of your
+                    projects.
+                  </p>
+                </div>
+                <div className="relative col-span-1 p-7 lg:p-11">
+                  <p>
+                    Premium Materials: Handpicked for their superior quality.
+                    Reliable Supply Chain: Ensuring consistency and
+                    dependability. Competitive Pricing: Providing value without
+                    compromise.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid h-screen grid-cols-1">
+                <div className="relative col-span-1 p-7 lg:p-11">
+                  <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px]">
+                    Our Divisions
+                  </h2>
+                  <h3 className="text-3xl sm:text-[65px] sm:leading-[65px] md:text-[65px] md:leading-[65px] lg:text-[65px] lg:leading-[65px]">
+                    Import Division
+                  </h3>
+                  <p>
+                    In our Import Division, we traverse the globe to source the
+                    finest materials and products. Our extensive network of
+                    international suppliers ensures that we deliver unparalleled
+                    quality and innovation. We bring the world's best to your
+                    doorstep, tailored to meet the unique demands of your
+                    projects.
+                  </p>
+                </div>
+                <div className="relative col-span-1 p-7 lg:p-11">
+                  <p>
+                    Premium Materials: Handpicked for their superior quality.
+                    Reliable Supply Chain: Ensuring consistency and
+                    dependability. Competitive Pricing: Providing value without
+                    compromise.
+                  </p>
+                </div>
+              </div>
+
+              {/* <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-4 lg:p-16 max-w-[1520px] m-auto">
+                <div className="relative h-[25vh] m-4 col-span-1 p-2 lg:p-11">
                   <h2>Construction Division</h2>
                   <p>
                     The Construction Division is the heart of our philosophy,
@@ -84,7 +193,7 @@ export default function Home() {
                     commitment to excellence and sustainability.
                   </p>
                 </div>
-                <div className="relative h-[25vh] m-4 col-span-1 p-11">
+                <div className="relative h-[25vh] m-4 col-span-1 p-2 lg:p-11">
                   <p>
                     Residential and Commercial Mastery: Diverse expertise for
                     varied needs. Innovative Design and Engineering: Melding
@@ -95,7 +204,7 @@ export default function Home() {
               </div>
 
               <div className="grid h-screen  grid-cols-12  bg-[#267788]">
-                <div className="relative col-start-1 col-end-13 p-11">
+                <div className="relative col-start-1 col-end-13 p-2 lg:p-11">
                   <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px]">
                     Our Divisions
                   </h2>
@@ -111,7 +220,7 @@ export default function Home() {
                     projects.
                   </p>
                 </div>
-                <div className="relative h-[25vh] m-4 col-start-1 col-end-10 p-11">
+                <div className="relative h-[25vh] m-4 col-start-1 col-end-10 p-2 lg:p-11">
                   <p>
                     Premium Materials: Handpicked for their superior quality.
                     Reliable Supply Chain: Ensuring consistency and
@@ -120,8 +229,8 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
-                <div className="relative h-[25vh] m-4 col-span-1 p-11">
+              <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-2 lg:p-16 max-w-[1520px] m-auto">
+                <div className="relative h-[25vh] m-4 col-span-1 p-2 lg:p-11">
                   <h2>Retail Sales Division</h2>
                   <p>
                     Our Retail Sales Division offers a curated selection of
@@ -131,7 +240,7 @@ export default function Home() {
                     complete your projects with distinction.
                   </p>
                 </div>
-                <div className="relative h-[25vh] m-4 col-span-1 p-11">
+                <div className="relative h-[25vh] m-4 col-span-1 p-2 lg:p-11">
                   <p>
                     Comprehensive Product Range: From essentials to exclusive
                     items. Expert Guidance: Personalized service to inform and
@@ -142,7 +251,7 @@ export default function Home() {
               </div>
 
               <div className="grid h-screen  grid-cols-12  bg-[#267788]">
-                <div className="relative col-start-1 col-end-13 p-11">
+                <div className="relative col-start-1 col-end-13 p-2 lg:p-11">
                   <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px]">
                     Our Divisions
                   </h2>
@@ -158,7 +267,7 @@ export default function Home() {
                     projects.
                   </p>
                 </div>
-                <div className="relative h-[25vh] m-4 col-start-1 col-end-10 p-11">
+                <div className="relative h-[25vh] m-4 col-start-1 col-end-10 p-2 lg:p-11">
                   <p>
                     Premium Materials: Handpicked for their superior quality.
                     Reliable Supply Chain: Ensuring consistency and
@@ -167,8 +276,8 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-16 max-w-[1520px] m-auto">
-                <div className="relative h-[25vh] m-4 col-span-1 p-11">
+              <div className="grid h-screen grod-cols-1 md:grid-cols-2 p-2 lg:p-16 max-w-[1520px] m-auto">
+                <div className="relative h-[25vh] m-4 col-span-1 p-2 lg:p-11">
                   <h2>Why Partner with Us?</h2>
                   <p>
                     Expertise: Decades of industry experience, delivering
@@ -179,7 +288,7 @@ export default function Home() {
                     groundbreaking solutions and superior products.
                   </p>
                 </div>
-                <div className="relative h-[25vh] m-4 col-span-1 p-11">
+                <div className="relative h-[25vh] m-4 col-span-1 p-2 lg:p-11">
                   <p>Connect with Us</p>
                   <p>
                     Embark on your next project with the confidence that comes
@@ -196,7 +305,7 @@ export default function Home() {
                     offers by following us on [Social Media Links].
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </>
         );
