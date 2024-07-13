@@ -3,6 +3,8 @@ import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import ONavBar from "@/components/Organims/NavBar/ONavBar";
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
+import { AppProvider } from "@/context/AppContext";
+import AppWraper from "@/components/Atoms/AppWraper";
 
 const inter = Source_Sans_3({
   subsets: ["latin"],
@@ -21,10 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + " relative"}>
-        <ONavBar></ONavBar>
-        {children}
-        <MainBG></MainBG>
+      <body className={inter.className + " main_body relative"}>
+        <AppWraper>
+          <ONavBar></ONavBar>
+          {children}
+          <MainBG></MainBG>
+        </AppWraper>
       </body>
     </html>
   );

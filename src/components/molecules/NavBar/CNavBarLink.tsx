@@ -15,7 +15,7 @@ export default function CNavBarLink({
     <ALink href={href}>
       <div
         className={
-          "flex justify-center items-center w-fit h-fit rounded-full min-w-[100px] px-5 py-3 text-white hover:bg-the-red hover:text-white transition-all antialiased duration-500 " +
+          "flex justify-center items-center w-fit h-[50px] min-w-[100px] px-5 py-3 text-white transition-all antialiased duration-500 " +
           " " +
           className
         }
