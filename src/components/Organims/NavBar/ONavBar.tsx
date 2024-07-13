@@ -91,7 +91,7 @@ export default function ONavBar() {
             "relative h-[90px] flex flex-row items-center justify-start transition-all duration-1000 mx-auto overflow-hidden " +
             (transforBar
               ? "bg-[rgba(10,10,10,0.3)] backdrop-blur-lg w-full md:w-[768px] md:rounded-full md:top-4 justify-between"
-              : "md:bg-gradient-to-b md:from-black md:to-transparent w-screen top-0 bg-[rgba(10,10,10,0.3)] backdrop-blur-lg md:backdrop-blur-none justify-between ")
+              : "backdrop-blur-lg md:backdrop-blur-none bg-[rgba(10,10,10,0.3)] md:bg-transparent md:bg-gradient-to-b md:from-black md:to-transparent w-screen top-0 justify-between ")
           }
         >
           <button

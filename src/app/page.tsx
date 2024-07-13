@@ -22,7 +22,7 @@ export default function Home() {
             >
               <GradientBG className={"absolute top-0 left-0"}></GradientBG>
 
-              <div className="relative backdrop-blur-lg bg-[rgba(10,10,10,0.3)] md:backdrop-blur-none md:h-screen w-screen ">
+              <div className="relative backdrop-blur-lg bg-[rgba(10,10,10,0.3)] md:bg-transparent md:backdrop-blur-none md:h-screen w-screen ">
                 <GlassMorphism></GlassMorphism>
 
                 <div className="grid h-screen grid-cols-1 lg:grid-cols-2 max-w-[1920px] mx-auto">
