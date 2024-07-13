@@ -90,14 +90,14 @@ export default function ONavBar() {
           className={
             "relative h-[90px] flex flex-row items-center justify-start transition-all duration-1000 mx-auto overflow-hidden " +
             (transforBar
-              ? "bg-[rgba(10,10,10,0.3)] backdrop-blur-lg w-full md:w-[768px] rounded-full top-4 justify-between"
-              : "bg-gradient-to-b from-black to-transparent w-screen top-0")
+              ? "bg-[rgba(10,10,10,0.3)] backdrop-blur-lg w-full md:w-[768px] md:rounded-full md:top-4 justify-between"
+              : "md:bg-gradient-to-b md:from-black md:to-transparent w-screen top-0 bg-[rgba(10,10,10,0.3)] backdrop-blur-lg md:backdrop-blur-none justify-between ")
           }
         >
           <button
             className={
               "text-white text-2xl relative h-[90px] w-[90px] hover:bg-slate-800 rounded-full z-0 transition-all duration-500 flex justify-center items-center " +
-              (transforBar ? "" : "hidden")
+              (transforBar ? "" : "md:hidden")
             }
             onClick={() => handleOpenMenu()}
           >
@@ -121,7 +121,7 @@ export default function ONavBar() {
           <button
             className={
               "text-white text-2xl h-[90px] w-[150px] hover:bg-slate-800 rounded-full z-0 transition-all duration-500 flex justify-center items-center relative " +
-              (transforBar ? "" : "hidden")
+              (transforBar ? "" : "md:hidden")
             }
             onClick={() => handleOpenMenu()}
           >
@@ -130,7 +130,7 @@ export default function ONavBar() {
           <button
             className={
               "text-white text-2xl h-[90px] w-[90px] hover:bg-slate-800 rounded-full z-0 transition-all duration-500 flex justify-center items-center " +
-              (transforBar ? "" : "hidden")
+              (transforBar ? "" : "md:hidden")
             }
             onClick={() => handleOpenMenu()}
           >
@@ -186,10 +186,11 @@ export default function ONavBar() {
               </svg>
             </span>
           </button>
+
           <button
             className={
               "text-white text-5xl absolute right-0 h-[90px] rounded-full z-0 transition-all duration-500 flex justify-center items-center px-5 " +
-              (transforBar ? "hidden" : "")
+              (transforBar ? "hidden" : "hidden md:block")
             }
             onClick={() => handleOpenMenu()}
           >
@@ -249,7 +250,9 @@ export default function ONavBar() {
           <button
             className={
               "text-white text-2xl absolute left-[20px] h-[60px] w-[108px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
-              (transforBar ? "opacity-0 translate-x-[0px] scale-0" : "")
+              (transforBar
+                ? "opacity-0 translate-x-[0px] scale-0"
+                : "hidden md:block")
             }
             onClick={() => handleOpenMenu()}
           >
@@ -258,7 +261,9 @@ export default function ONavBar() {
           <button
             className={
               "text-white text-2xl absolute left-[128px] h-[60px] w-[137px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
-              (transforBar ? "opacity-0 translate-x-[-125px] scale-0" : "")
+              (transforBar
+                ? "opacity-0 translate-x-[-125px] scale-0"
+                : "hidden md:block")
             }
             onClick={() => handleOpenMenu()}
           >
@@ -267,7 +272,9 @@ export default function ONavBar() {
           <button
             className={
               "text-white text-2xl absolute left-[264px] h-[60px] w-[171px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
-              (transforBar ? "opacity-0 translate-x-[-285px] scale-0" : "")
+              (transforBar
+                ? "opacity-0 translate-x-[-285px] scale-0"
+                : "hidden md:block")
             }
             onClick={() => handleOpenMenu()}
           >
@@ -276,7 +283,9 @@ export default function ONavBar() {
           <button
             className={
               "text-white text-2xl absolute left-[434px] h-[60px] w-[127px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
-              (transforBar ? "opacity-0 translate-x-[-420px] scale-0" : "")
+              (transforBar
+                ? "opacity-0 translate-x-[-420px] scale-0"
+                : "hidden md:block")
             }
             onClick={() => handleOpenMenu()}
           >
@@ -293,11 +302,11 @@ export default function ONavBar() {
       >
         <div
           ref={contentMainRef}
-          className="grid grid-cols-3 h-fit p-12 relative over overflow-hidden"
+          className="grid grid-cols-3 h-fit lg:p-12 relative over overflow-hidden"
         >
           <div ref={contentRef} className="col-span-2">
             <div
-              className="p-12 relative"
+              className="p-5 lg:p-12 relative"
               onMouseEnter={() => {
                 setHovered("home_content");
               }}
@@ -309,7 +318,7 @@ export default function ONavBar() {
                 href={"/"}
                 order={"01"}
               ></CNavMobLink>
-              <div className="home_content subLinksContainer h-fit top-[50%] absolute left-[100%] min-w-[450px]">
+              <div className="home_content subLinksContainer hidden lg:block h-fit top-[50%] absolute left-[100%] min-w-[450px]">
                 <ul className="relative translate-y-[-50%]">
                   <li className="text-4xl m-4">
                     <a href="#">Lorem home 1</a>
@@ -333,7 +342,7 @@ export default function ONavBar() {
               </div>
             </div>
             <div
-              className="p-12 relative"
+              className="p-5 lg:p-12 relative"
               onMouseEnter={() => {
                 setHovered("services_content");
               }}
@@ -368,7 +377,7 @@ export default function ONavBar() {
               </div>
             </div>
             <div
-              className="p-12 relative"
+              className="p-5 lg:p-12 relative"
               onMouseEnter={() => {
                 setHovered("about_content");
               }}
@@ -403,7 +412,7 @@ export default function ONavBar() {
               </div>
             </div>
             <div
-              className="p-12 relative"
+              className="p-5 lg:p-12 relative"
               onMouseEnter={() => {
                 setHovered("contact_content");
               }}
@@ -437,16 +446,16 @@ export default function ONavBar() {
                 </ul>
               </div>
             </div>
-            <div className="p-12 relative" ref={lastItemRef}>
+            <div className="p-5 lg:p-12 relative" ref={lastItemRef}>
               <button
-                className="flex justify-center items-center w-fit h-fit min-w-[100px] px-5 py-5 transition-all antialiased duration-500 text-gray-600 hover:text-white"
+                className="flex justify-center items-center w-fit h-fit min-w-[100px] p-2 lg:p-5 transition-all antialiased duration-500 text-gray-600 hover:text-white"
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
                   handleOpenMenu();
                 }}
               >
-                <p className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-[180px] leading-[170px] flex justify-start items-center">
+                <p className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-6xl lg:text-[180px] lg:leading-[170px] flex justify-start items-center">
                   <span className="text-2xl mr-5">(05)</span>
                   Close
                 </p>

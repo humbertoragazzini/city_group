@@ -9,7 +9,10 @@ export default function GlassMorphism() {
 
   return (
     <>
-      <div ref={el} className="absolute top-0 left-0 w-full h-full block"></div>
+      <div
+        ref={el}
+        className="absolute top-0 left-0 w-full h-full hidden md:block"
+      ></div>
       <UseCanvas>
         <ScrollScene track={el}>
           {(props) => {
