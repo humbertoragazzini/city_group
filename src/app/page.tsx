@@ -25,8 +25,8 @@ export default function Home() {
               <div className="relative backdrop-blur-lg bg-[rgba(10,10,10,0.3)] md:bg-transparent md:backdrop-blur-none md:h-screen w-screen ">
                 <GlassMorphism></GlassMorphism>
 
-                <div className="grid h-screen grid-cols-1 lg:grid-cols-2 max-w-[1920px] mx-auto">
-                  <div className="relative col-span-1 px-4 pt-[90px] md:pt-[0px] md:px-16 flex flex-col justify-center items-center">
+                <div className="grid h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto">
+                  <div className="relative col-span-1 xl:col-span-2 px-4 pt-[90px] md:pt-[0px] md:px-16 flex flex-col justify-center items-start">
                     <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px] font-semibold mb-5">
                       <span className="block">PrimalPorts</span> Elevating
                       Excellence Across Industries
@@ -47,7 +47,7 @@ export default function Home() {
                   <div className="relative hidden col-span-1 m-4 lg:block">
                     <LogoBG
                       className={
-                        "left-[0%] lg:top-[-65%] 3xl:top-[-50%] 4xl:top-[0%] 5xl:top-[0%]"
+                        "left-[0%] lg:top-[-65%] 3xl:top-[-50%] 4xl:top-[0%] 5xl:top-[0%] hidden xl:block"
                       }
                       width={1300}
                       rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
