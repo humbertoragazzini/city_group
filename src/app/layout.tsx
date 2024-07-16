@@ -3,7 +3,7 @@ import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import ONavBar from "@/components/Organims/NavBar/ONavBar";
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
-import AppWraper from "@/components/Atoms/AppWraper";
+import AppWraper from "@/components/Atoms/Layout/AppWraper";
 import Head from "next/head";
 
 const inter = Source_Sans_3({

@@ -71,4 +71,4 @@ export default function Logo({ scale, rotation }: iLogo) {
   );
 }
 
-useGLTF.preload("/logo.glb");
+useGLTF.preload("./RTFA/Models/Logo/band1v3Main.glb");

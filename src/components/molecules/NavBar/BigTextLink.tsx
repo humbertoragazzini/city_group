@@ -1,4 +1,4 @@
-import ALink from "../../Atoms/ALink";
+import ALink from "../../Atoms/Links/ALink";
 
 interface iBigTextLink {
   className: string;
@@ -22,7 +22,7 @@ export default function BigTextLink({
           className
         }
       >
-        <p className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-6xl lg:text-[180px] lg:leading-[170px] flex justify-start items-center">
+        <p className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-6xl lg:text-[130px] lg:leading-[130px] xl:text-[180px] xl:leading-[170px] flex justify-start items-center">
           <span className="text-2xl mr-5">({order})</span>
           {linkText}
         </p>

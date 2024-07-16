@@ -1,17 +1,13 @@
-// @ts-nocheck
 "use client";
 import { usePathname } from "next/navigation";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import CNavBarLink from "../../molecules/NavBar/CNavBarLink";
+import { useLayoutEffect, useRef, useState } from "react";
 import BigTextLink from "@/components/molecules/NavBar/BigTextLink";
 import gsap from "gsap";
-import { ScrollScene, SmoothScrollbar } from "@14islands/r3f-scroll-rig";
 import { useAppContext } from "@/context/AppContext";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import NavBarLBTN from "@/components/molecules/NavBar/NavBarLBTN";
 import ReducedNavBar from "@/components/molecules/NavBar/ReducedNavBar";
-import Link from "next/link";
 import RegularNavBar from "@/components/molecules/NavBar/RegularNavBar";
+import JumpLinks from "@/components/molecules/NavBar/JumpLinks";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -33,10 +29,6 @@ export default function ONavBar() {
       isMenuOpen: !isOpen,
     }));
     setIsOpen(!isOpen);
-  };
-
-  const handleHover = (hovered: string) => {
-    setHovered(hovered);
   };
 
   useLayoutEffect(() => {
@@ -78,14 +70,20 @@ export default function ONavBar() {
   }, [hovered]);
 
   useLayoutEffect(() => {
-    window.addEventListener("scroll", (e) => {
-      if (e.currentTarget.scrollY > 100) {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
         setTransformBar(true);
       } else {
         setTransformBar(false);
       }
-    });
-  });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -107,7 +105,7 @@ export default function ONavBar() {
           ></ReducedNavBar>
         </nav>
       </div>
-
+      {/* Reduced navbar content */}
       <div
         className={
           "fixed bg-[#131d23] w-screen h-screen overflow-y-scroll z-[9999] top-[-100vh]"
@@ -118,7 +116,7 @@ export default function ONavBar() {
           ref={contentMainRef}
           className="grid grid-cols-3 h-fit lg:p-12 relative over overflow-hidden"
         >
-          <div ref={contentRef} className="col-span-2">
+          <div ref={contentRef} className="col-span-3 xl:col-span-2">
             <div
               className="p-5 lg:p-12 relative"
               onMouseEnter={() => {
@@ -132,28 +130,17 @@ export default function ONavBar() {
                 href={"/"}
                 order={"01"}
               ></BigTextLink>
-              <div className="home_content subLinksContainer hidden lg:block h-fit top-[50%] absolute left-[100%] min-w-[450px]">
-                <ul className="relative translate-y-[-50%]">
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem home 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem home 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem home 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem home 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem home 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem home 1</a>
-                  </li>
-                </ul>
-              </div>
+              <JumpLinks
+                section="home_content"
+                className=" top-[50%] absolute left-[100%] [&>ul]:translate-y-[-50%]"
+                links={[
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                ]}
+              ></JumpLinks>
             </div>
             <div
               className="p-5 lg:p-12 relative"
@@ -167,28 +154,17 @@ export default function ONavBar() {
                 href={"/OurServices"}
                 order={"02"}
               ></BigTextLink>
-              <div className="services_content subLinksContainer h-fit top-[50%] absolute left-[100%] min-w-[450px]">
-                <ul className="relative translate-y-[-50%]">
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem about 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem about 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem about 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem about 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem about 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem about 1</a>
-                  </li>
-                </ul>
-              </div>
+              <JumpLinks
+                section="services_content"
+                className=" top-[50%] absolute left-[100%] [&>ul]:translate-y-[-50%]"
+                links={[
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                ]}
+              ></JumpLinks>
             </div>
             <div
               className="p-5 lg:p-12 relative"
@@ -202,28 +178,17 @@ export default function ONavBar() {
                 href={"/AboutUs"}
                 order={"03"}
               ></BigTextLink>
-              <div className="about_content subLinksContainer h-fit top-[50%] absolute left-[100%] min-w-[450px]">
-                <ul className="relative translate-y-[-50%]">
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem services 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem services 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem services 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem services 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem services 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem services 1</a>
-                  </li>
-                </ul>
-              </div>
+              <JumpLinks
+                section="about_content"
+                className=" top-[50%] absolute left-[100%] [&>ul]:translate-y-[-50%]"
+                links={[
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                ]}
+              ></JumpLinks>
             </div>
             <div
               className="p-5 lg:p-12 relative"
@@ -237,46 +202,34 @@ export default function ONavBar() {
                 href={"/ContactUs"}
                 order={"04"}
               ></BigTextLink>
-              <div className="contact_content subLinksContainer h-fit top-[50%] absolute left-[100%] min-w-[450px]">
-                <ul className="relative translate-y-[-50%]">
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem contact 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem contact 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem contact 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem contact 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem contact 1</a>
-                  </li>
-                  <li className="text-4xl m-4">
-                    <a href="#">Lorem contact 1</a>
-                  </li>
-                </ul>
-              </div>
+              <JumpLinks
+                section="contact_content"
+                className=" top-[50%] absolute left-[100%] [&>ul]:translate-y-[-50%]"
+                links={[
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                  { href: "/", text: "Test component" },
+                ]}
+              ></JumpLinks>
             </div>
             <div className="p-5 lg:p-12 relative" ref={lastItemRef}>
               <button
-                className="flex justify-center items-center w-fit h-fit min-w-[100px] p-2 lg:p-5 transition-all antialiased duration-500 text-gray-600 hover:text-white"
+                className="flex justify-center items-center w-fit h-fit min-w-[100px] p-2 lg:p-5 transition-all antialiased duration-500 hover:scale-110 text-gray-600 hover:text-white"
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
                   handleOpenMenu();
                 }}
               >
-                <p className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-6xl lg:text-[180px] lg:leading-[170px] flex justify-start items-center">
+                <p className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-6xl lg:text-[130px] lg:leading-[130px] xl:text-[180px] xl:leading-[170px] flex justify-start items-center">
                   <span className="text-2xl mr-5">(05)</span>
                   Close
                 </p>
               </button>
             </div>
           </div>
-          <div className="col-span-1 flex justify-center items-start flex-col text-gray-600 relative"></div>
         </div>
       </div>
     </>

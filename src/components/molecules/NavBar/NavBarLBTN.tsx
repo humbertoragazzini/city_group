@@ -1,10 +1,10 @@
-import ALink from "@/components/Atoms/ALink";
-import AButton from "../../Atoms/AButton";
+import ALink from "@/components/Atoms/Links/ALink";
+import AButton from "../../Atoms/Buttons/AButton";
 import { RefObject } from "react";
 
 interface iNavBarLBTN {
   className: string;
-  transforBar: RefObject<HTMLInputElement>;
+  transforBar: boolean;
   children: any;
   href: string;
   handleOpenMenu: () => void;

@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { RefObject } from "react";
 
 interface iRegularNavBar {
-  transforBar: RefObject<HTMLInputElement>;
+  transforBar: boolean;
 }
 
 export default function RegularNavBar({ transforBar }: iRegularNavBar) {
@@ -10,7 +9,7 @@ export default function RegularNavBar({ transforBar }: iRegularNavBar) {
     <>
       <Link
         className={
-          "text-white text-xl absolute left-[20px] h-[60px] w-[108px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
+          "text-white text-xl absolute left-[20px] h-[35px] w-[108px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
           (transforBar
             ? "opacity-0 translate-x-[0px] scale-0"
             : "hidden md:block")
@@ -21,7 +20,7 @@ export default function RegularNavBar({ transforBar }: iRegularNavBar) {
       </Link>
       <Link
         className={
-          "text-white text-xl absolute left-[128px] h-[60px] w-[137px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
+          "text-white text-xl absolute left-[128px] h-[35px] w-[137px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
           (transforBar
             ? "opacity-0 translate-x-[-125px] scale-0"
             : "hidden md:block")
@@ -32,7 +31,7 @@ export default function RegularNavBar({ transforBar }: iRegularNavBar) {
       </Link>
       <Link
         className={
-          "text-white text-xl absolute left-[264px] h-[60px] w-[171px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
+          "text-white text-xl absolute left-[264px] h-[35px] w-[171px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
           (transforBar
             ? "opacity-0 translate-x-[-285px] scale-0"
             : "hidden md:block")
@@ -43,7 +42,7 @@ export default function RegularNavBar({ transforBar }: iRegularNavBar) {
       </Link>
       <Link
         className={
-          "text-white text-xl absolute left-[434px] h-[60px] w-[127px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
+          "text-white text-xl absolute left-[434px] h-[35px] w-[127px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 " +
           (transforBar
             ? "opacity-0 translate-x-[-420px] scale-0"
             : "hidden md:block")

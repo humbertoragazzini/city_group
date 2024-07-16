@@ -2,7 +2,7 @@ import NavBarLBTN from "./NavBarLBTN";
 import { RefObject } from "react";
 
 interface iReducedNavBar {
-  transforBar: RefObject<HTMLInputElement>;
+  transforBar: boolean;
   handleOpenMenu: () => void;
 }
 
