@@ -1,6 +1,5 @@
 import ALink from "@/components/Atoms/Links/ALink";
 import AButton from "../../Atoms/Buttons/AButton";
-import { RefObject } from "react";
 
 interface iNavBarLBTN {
   className: string;
@@ -28,7 +27,7 @@ export default function NavBarLBTN({
           <div
             className={`${main_style} ${
               transforBar ? "" : "md:hidden"
-            } className`}
+            } ${className}`}
           >
             {children}
           </div>
@@ -39,7 +38,7 @@ export default function NavBarLBTN({
           <div
             className={`${main_style} ${
               transforBar ? "" : "md:hidden"
-            } className`}
+            } ${className}`}
           >
             {children}
           </div>

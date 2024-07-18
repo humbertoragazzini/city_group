@@ -1,5 +1,4 @@
 import NavBarLBTN from "./NavBarLBTN";
-import { RefObject } from "react";
 
 interface iReducedNavBar {
   transforBar: boolean;
@@ -41,7 +40,7 @@ export default function ReducedNavBar({
         className={""}
         transforBar={transforBar}
         href={"/"}
-        handleOpenMenu={handleOpenMenu}
+        handleOpenMenu={() => {}}
       >
         <p className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">PrimalPorts</p>
       </NavBarLBTN>
@@ -50,7 +49,7 @@ export default function ReducedNavBar({
         className={""}
         transforBar={transforBar}
         href={"/"}
-        handleOpenMenu={handleOpenMenu}
+        handleOpenMenu={() => {}}
       >
         <span className="relative h-[60px] w-[60px] block z-10">
           <svg
