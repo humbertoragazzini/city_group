@@ -7,6 +7,9 @@ import GlassMorphism from "@/components/Organims/RTFAnimations/RTFAComponents/Gl
 import GradientBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG";
 import gsap from "gsap";
 import { useAppContext } from "@/context/AppContext";
+import GlassHScreen from "@/components/Atoms/Containers/GlassHScreen";
+import Heading from "@/components/Atoms/Heading/Heading";
+import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 export default function Home() {
   const context = useAppContext();
   return (
@@ -21,28 +24,27 @@ export default function Home() {
               }
             >
               <GradientBG className={"absolute top-0 left-0"}></GradientBG>
-
-              <div className="relative backdrop-blur-lg bg-[rgba(10,10,10,0.3)] md:bg-transparent md:backdrop-blur-none md:h-screen w-screen ">
-                <GlassMorphism></GlassMorphism>
-
+              <GlassHScreen>
                 <div className="grid h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto">
                   <div className="relative col-span-1 xl:col-span-2 px-4 pt-[90px] md:pt-[0px] md:px-16 flex flex-col justify-center items-start">
-                    <h2 className="text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px] font-semibold mb-5">
-                      <span className="block">PrimalPorts</span> Elevating
-                      Excellence Across Industries
-                    </h2>
-                    <p className="mb-5 text-2xl sm:text-4xl">
+                    <Heading
+                      text="PrimalPorts Elevating
+                      Excellence Across Industries"
+                      level={1}
+                    ></Heading>
+
+                    <Paragraph type={"standfirst"}>
                       Comprehensive Solutions in Imports, Construction, and
                       Retail
-                    </p>
-                    <p className="mb-5 text-lg sm:text-2xl">
+                    </Paragraph>
+                    <Paragraph type={"standfirst2"}>
                       At PrimalPort, we harmonize the art of innovation with the
                       science of expertise to offer transcendent services in
                       Imports, Construction, and Retail. Explore how our
                       holistic approach and unwavering dedication to quality
                       foster success and transformation across a myriad of
                       sectors.
-                    </p>
+                    </Paragraph>
                   </div>
                   <div className="relative hidden col-span-1 m-4 lg:block">
                     <LogoBG
@@ -54,7 +56,7 @@ export default function Home() {
                     ></LogoBG>
                   </div>
                 </div>
-              </div>
+              </GlassHScreen>
 
               <div className="grid h-screen grid-cols-1">
                 <div className="relative col-span-1 p-7 lg:p-11">
