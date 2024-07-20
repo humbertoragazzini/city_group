@@ -1,11 +1,7 @@
-// @ts-nocheck
 "use client";
 import { SmoothScrollbar } from "@14islands/r3f-scroll-rig";
-import { useRef } from "react";
 import LogoBG from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG";
-import GlassMorphism from "@/components/Organims/RTFAnimations/RTFAComponents/GlassMorphism/GlassMorphism";
 import GradientBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG";
-import gsap from "gsap";
 import { useAppContext } from "@/context/AppContext";
 import GlassHScreen from "@/components/Atoms/Containers/GlassHScreen";
 import Heading from "@/components/Atoms/Heading/Heading";
@@ -28,23 +24,52 @@ export default function Home() {
                 <div className="grid h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto">
                   <div className="relative col-span-1 xl:col-span-2 px-4 pt-[90px] md:pt-[0px] md:px-16 flex flex-col justify-center items-start">
                     <Heading
-                      text="PrimalPorts Elevating
-                      Excellence Across Industries"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "PrimalPorts Elevating Excellence Across Industries",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "PrimalPorts Elevando la Excelencia en Todas las Industrias",
+                        },
+                      ]}
                       level={1}
                     ></Heading>
 
-                    <Paragraph type={"standfirst"}>
-                      Comprehensive Solutions in Imports, Construction, and
-                      Retail
-                    </Paragraph>
-                    <Paragraph type={"standfirst2"}>
-                      At PrimalPort, we harmonize the art of innovation with the
-                      science of expertise to offer transcendent services in
-                      Imports, Construction, and Retail. Explore how our
-                      holistic approach and unwavering dedication to quality
-                      foster success and transformation across a myriad of
-                      sectors.
-                    </Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Comprehensive Solutions in Imports, Construction, and Retail",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "PrimalPorts Elevating Excellence Across Industries",
+                        },
+                      ]}
+                    ></Paragraph>
+
+                    <Paragraph
+                      type={"standfirst2"}
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "At PrimalPort, we harmonize the art of innovation with the science of expertise to offer transcendent services in Imports, Construction, and Retail. Explore how our holistic approach and unwavering dedication to quality foster success and transformation across a myriad of sectors.",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Comprehensive Solutions in Imports, Construction, and Retail",
+                        },
+                      ]}
+                    ></Paragraph>
                   </div>
                   <div className="relative hidden col-span-1 m-4 lg:block">
                     <LogoBG

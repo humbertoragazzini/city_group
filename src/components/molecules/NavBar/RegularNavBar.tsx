@@ -1,5 +1,7 @@
+"use client";
 import ALink from "@/components/Atoms/Links/ALink";
 import NavBarLBTN from "./NavBarLBTN";
+import { useAppContext } from "@/context/AppContext";
 
 type Link = {
   href: string;
@@ -17,6 +19,7 @@ export default function RegularNavBar({
   transforBar,
   path,
 }: iRegularNavBar) {
+  const { state, setState } = useAppContext();
   return (
     <>
       <div
@@ -79,10 +82,33 @@ export default function RegularNavBar({
             </svg>
           </span>
         </ALink>
+        <button
+          className="text-white"
+          onClick={() => {
+            setState((prevState) => ({
+              ...prevState,
+              language: "EN",
+            }));
+          }}
+        >
+          EN
+        </button>
+        <button
+          className="text-white"
+          onClick={() => {
+            setState((prevState) => ({
+              ...prevState,
+              language: "ES",
+            }));
+          }}
+        >
+          ES
+        </button>
         <div className="flex flex-row">
           {links.map((link: Link, i: number) => {
             return (
               <ALink
+                key={"Alink" + i}
                 className={`text-white text-xl h-[35px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 ${
                   link.href == path ? "border-white" : ""
                 }`}
