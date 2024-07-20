@@ -92,8 +92,8 @@ export default function ONavBar() {
           className={
             "relative h-[90px] flex flex-row items-center justify-start transition-all duration-1000 mx-auto overflow-hidden " +
             (transforBar
-              ? "bg-[rgba(10,10,10,0.3)] backdrop-blur-lg w-full md:w-[768px] md:rounded-full md:top-4 justify-between"
-              : "backdrop-blur-lg md:backdrop-blur-none bg-[rgba(10,10,10,0.3)] md:bg-transparent md:bg-gradient-to-b md:from-the-black md:to-transparent w-screen top-0 justify-between ")
+              ? "bg-[rgba(17,31,42,0.3)] backdrop-blur-lg w-full md:w-[768px] md:rounded-full md:top-4 justify-between"
+              : "backdrop-blur-lg md:backdrop-blur-none bg-[rgba(17,31,42,1)]  w-screen top-0 justify-between ")
           }
         >
           {/* Regular navbar */}
