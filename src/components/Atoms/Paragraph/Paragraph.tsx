@@ -1,5 +1,5 @@
 import { useAppContext } from "@/context/AppContext";
-import { TextContent } from "@/types/types";
+import { TextContent } from "../../../types/types";
 
 interface iParagraph {
   text: TextContent[];

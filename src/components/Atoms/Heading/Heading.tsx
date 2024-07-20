@@ -1,5 +1,5 @@
 import { useAppContext } from "@/context/AppContext";
-import { TextContent } from "@/types/types";
+import { TextContent } from "../../../types/types";
 
 interface iHeading {
   text: TextContent[];
@@ -11,11 +11,11 @@ interface iHeading {
 export default function Heading({ text, level, theme, className }: iHeading) {
   const context = useAppContext();
 
-  const filterUsersByName = () => {
+  const filterLanguage = () => {
     return text.filter((text) => text.language === context.state.language);
   };
 
-  const textContent = filterUsersByName();
+  const textContent = filterLanguage();
 
   return (
     <>
