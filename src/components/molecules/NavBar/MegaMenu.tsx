@@ -41,6 +41,7 @@ export default function MegaMenu({
           {links.map((link: any, i: any) => {
             return (
               <div
+                key={"megalink" + i}
                 className="p-5 lg:p-12 relative"
                 onMouseEnter={() => {
                   setHovered(link.section);
