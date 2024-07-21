@@ -109,7 +109,7 @@ export default function ONavBar() {
             handleOpenMenu={handleOpenMenu}
           ></ReducedNavBar>
         </nav>
-        <Language setState={setState}></Language>
+        <Language></Language>
       </div>
       {/* Reduced navbar content */}
       <MegaMenu
