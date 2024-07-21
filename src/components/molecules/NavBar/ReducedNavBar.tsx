@@ -12,7 +12,7 @@ export default function ReducedNavBar({
   return (
     <>
       {/* Open menu BTN */}
-      <NavBarLBTN
+      {/* <NavBarLBTN
         className={"!w-[60px]"}
         transforBar={transforBar}
         href={""}
@@ -20,30 +20,19 @@ export default function ReducedNavBar({
       >
         <span className="relative block z-10">
           <svg
-            xmlns="http://www.w3.org/2000/svg"
             width="45px"
             height="45px"
-            viewBox="0 0 24 24"
-            fill="none"
+            viewBox="0 0 45 45"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"
-              fill="#ffffff"
-            />
+            <circle cx="22.5" cy="22.5" r="22.5" fill="none" />
+            <rect x="11.25" y="12" width="22.5" height="3" fill="white" />
+            <rect x="5.625" y="21" width="33.75" height="3" fill="white" />
+            <rect x="11.25" y="30" width="22.5" height="3" fill="white" />
           </svg>
         </span>
-      </NavBarLBTN>
-      {/* Primalportrs home page link */}
-      <NavBarLBTN
-        className={""}
-        transforBar={transforBar}
-        href={"/"}
-        handleOpenMenu={() => {}}
-      >
-        <p className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">PrimalPorts</p>
-      </NavBarLBTN>
+      </NavBarLBTN> */}
+
       {/* Primalports home page link */}
       <NavBarLBTN
         className={"!w-[60px]"}
@@ -103,6 +92,35 @@ export default function ReducedNavBar({
           </svg>
         </span>
       </NavBarLBTN>
+      <NavBarLBTN
+        className={"!w-[60px]"}
+        transforBar={transforBar}
+        href={""}
+        handleOpenMenu={handleOpenMenu}
+      >
+        <span className="relative block z-10">
+          <svg
+            width="45px"
+            height="45px"
+            viewBox="0 0 45 45"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="22.5" cy="22.5" r="22.5" fill="none" />
+            <rect x="11.25" y="12" width="22.5" height="3" fill="white" />
+            <rect x="5.625" y="21" width="33.75" height="3" fill="white" />
+            <rect x="11.25" y="30" width="22.5" height="3" fill="white" />
+          </svg>
+        </span>
+      </NavBarLBTN>
+      {/* Primalportrs home page link */}
+      {/* <NavBarLBTN
+        className={""}
+        transforBar={transforBar}
+        href={"/"}
+        handleOpenMenu={() => {}}
+      >
+        <p className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">PrimalPorts</p>
+      </NavBarLBTN> */}
     </>
   );
 }

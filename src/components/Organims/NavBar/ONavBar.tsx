@@ -91,10 +91,10 @@ export default function ONavBar() {
       <div className="fixed top-0 overflow-visible w-screen z-50">
         <nav
           className={
-            "relative h-[90px] flex flex-row items-center justify-start transition-all duration-1000 mx-auto " +
+            "absolute h-[90px] flex flex-row items-center justify-start transition-all duration-1000 mx-auto " +
             (transforBar
-              ? "bg-[rgba(17,31,42,0.7)] backdrop-blur-lg w-full md:w-[500px] !h-[60px] md:rounded-full md:top-4 justify-between"
-              : "backdrop-blur-lg md:backdrop-blur-none w-screen top-0 justify-between ")
+              ? "opacity-0 pointer-events-none"
+              : "hidden md:block backdrop-blur-lg md:backdrop-blur-none w-screen top-4 justify-between ")
           }
         >
           {/* Regular navbar */}
@@ -103,6 +103,15 @@ export default function ONavBar() {
             links={links}
             path={pathname}
           ></RegularNavBar>
+        </nav>
+        <nav
+          className={
+            "absolute h-[60px] flex flex-row items-center justify-start transition-all duration-1000 " +
+            (transforBar
+              ? "bg-[rgba(17,31,42,0.7)] backdrop-blur-lg w-[150px] left-[-85px] !h-[60px] rounded-full ml-0 top-4 justify-between hover:left-0"
+              : "bg-[rgba(17,31,42,0.7)] backdrop-blur-lg w-[150px] left-[-85px] !h-[60px] rounded-full ml-0 top-4 justify-between hover:left-0 md:opacity-0 md:pointer-events-none")
+          }
+        >
           {/* Reduced navbar */}
           <ReducedNavBar
             transforBar={transforBar}
