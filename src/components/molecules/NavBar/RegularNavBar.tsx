@@ -22,7 +22,12 @@ export default function RegularNavBar({
 }: iRegularNavBar) {
   const { state, setState } = useAppContext();
   return (
-    <>
+    <nav
+      className={
+        "absolute h-[90px] flex flex-row items-center backdrop-blur-lg md:backdrop-blur-none w-screen top-4 justify-between transition-all duration-1000 mx-auto " +
+        (transforBar ? "opacity-0 pointer-events-none" : "hidden md:block")
+      }
+    >
       <div
         className={`${
           transforBar
@@ -48,29 +53,29 @@ export default function RegularNavBar({
           })}
         </div>
         {/* <button
-          className="text-white"
-          onClick={() => {
-            setState((prevState) => ({
-              ...prevState,
-              language: "EN",
-            }));
-          }}
-        >
-          EN
-        </button>
-        <button
-          className="text-white"
-          onClick={() => {
-            setState((prevState) => ({
-              ...prevState,
-              language: "ES",
-            }));
-          }}
-        >
-          ES
-        </button> */}
+              className="text-white"
+              onClick={() => {
+                setState((prevState) => ({
+                  ...prevState,
+                  language: "EN",
+                }));
+              }}
+            >
+              EN
+            </button>
+            <button
+              className="text-white"
+              onClick={() => {
+                setState((prevState) => ({
+                  ...prevState,
+                  language: "ES",
+                }));
+              }}
+            >
+              ES
+            </button> */}
       </div>
-    </>
+    </nav>
   );
 }
 
