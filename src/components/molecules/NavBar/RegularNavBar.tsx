@@ -27,7 +27,7 @@ export default function RegularNavBar({
         className={`${
           transforBar
             ? "hidden opacity-0 translate-x-[0px] scale-0"
-            : "hidden w-full md:flex flex-row justify-between items-center mx-5"
+            : "hidden w-full md:flex flex-row justify-between items-center ml-5"
         }`}
       >
         <div className="flex flex-row">
@@ -35,8 +35,8 @@ export default function RegularNavBar({
             return (
               <ALink
                 key={"Alink" + i}
-                className={`text-white text-xl h-[35px] z-0 transition-all duration-500 flex justify-center items-center border-b-[3px] border-transparent hover:border-white px-6 ${
-                  link.href == path ? "border-white" : ""
+                className={`text-white text-xl h-[60px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 hover:shadow-xl hover:bg-[#13212B] px-6 ${
+                  link.href == path ? "shadow-xl bg-[#13212B]" : ""
                 }`}
                 href={link.href}
               >
@@ -47,7 +47,6 @@ export default function RegularNavBar({
             );
           })}
         </div>
-        <Language></Language>
         {/* <button
           className="text-white"
           onClick={() => {

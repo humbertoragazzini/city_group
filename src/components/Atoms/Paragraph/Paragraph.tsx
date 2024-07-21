@@ -23,18 +23,22 @@ export default function Paragraph({
   const textContent = filterLanguage();
   return (
     <>
-      {type == "body" && (
-        <p className={`text-base ${className}`}>{textContent[0].content}</p>
-      )}
-      {type == "standfirst" && (
-        <p className={`text-2xl sm:text-4xl mb-5 ${className}`}>
-          {textContent[0].content}
-        </p>
-      )}
-      {type == "standfirst2" && (
-        <p className={`mb-5 text-lg sm:text-2xl ${className}`}>
-          {textContent[0].content}
-        </p>
+      {textContent[0] !== undefined && (
+        <>
+          {type == "body" && (
+            <p className={`text-base ${className}`}>{textContent[0].content}</p>
+          )}
+          {type == "standfirst" && (
+            <p className={`text-2xl sm:text-4xl mb-5 ${className}`}>
+              {textContent[0].content}
+            </p>
+          )}
+          {type == "standfirst2" && (
+            <p className={`mb-5 text-lg sm:text-2xl ${className}`}>
+              {textContent[0].content}
+            </p>
+          )}
+        </>
       )}
     </>
   );

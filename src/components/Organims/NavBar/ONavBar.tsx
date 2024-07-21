@@ -8,6 +8,7 @@ import ReducedNavBar from "@/components/molecules/NavBar/ReducedNavBar";
 import RegularNavBar from "@/components/molecules/NavBar/RegularNavBar";
 import links from "./Links";
 import MegaMenu from "@/components/molecules/NavBar/MegaMenu";
+import Language from "@/components/molecules/NavBar/Language";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -90,10 +91,10 @@ export default function ONavBar() {
       <div className="fixed top-0 overflow-visible w-screen z-50">
         <nav
           className={
-            "relative h-[90px] flex flex-row items-center justify-start transition-all duration-1000 mx-auto overflow-hidden " +
+            "relative h-[90px] flex flex-row items-center justify-start transition-all duration-1000 mx-auto " +
             (transforBar
-              ? "bg-[rgba(17,31,42,0.3)] backdrop-blur-lg w-full md:w-[768px] md:rounded-full md:top-4 justify-between"
-              : "backdrop-blur-lg md:backdrop-blur-none bg-[rgba(17,31,42,1)]  w-screen top-0 justify-between ")
+              ? "bg-[rgba(17,31,42,0.7)] backdrop-blur-lg w-full md:w-[500px] !h-[60px] md:rounded-full md:top-4 justify-between"
+              : "backdrop-blur-lg md:backdrop-blur-none w-screen top-0 justify-between ")
           }
         >
           {/* Regular navbar */}
@@ -108,6 +109,7 @@ export default function ONavBar() {
             handleOpenMenu={handleOpenMenu}
           ></ReducedNavBar>
         </nav>
+        <Language setState={setState}></Language>
       </div>
       {/* Reduced navbar content */}
       <MegaMenu

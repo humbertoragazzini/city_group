@@ -13,7 +13,7 @@ export default function ReducedNavBar({
     <>
       {/* Open menu BTN */}
       <NavBarLBTN
-        className={""}
+        className={"!w-[60px]"}
         transforBar={transforBar}
         href={""}
         handleOpenMenu={handleOpenMenu}
@@ -46,17 +46,17 @@ export default function ReducedNavBar({
       </NavBarLBTN>
       {/* Primalports home page link */}
       <NavBarLBTN
-        className={""}
+        className={"!w-[60px]"}
         transforBar={transforBar}
         href={"/"}
         handleOpenMenu={() => {}}
       >
-        <span className="relative h-[60px] w-[60px] block z-10">
+        <span className="relative h-[40px] w-[40px] block z-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            width="60"
-            height="60.07515"
+            width="40"
+            height="40.07515"
             viewBox="0 0 23.812499 23.832383"
             version="1.1"
             id="svg1"
