@@ -22,7 +22,7 @@ export default function Language() {
 
   return (
     <div
-      className="fixed h-[60px] top-4 right-[-36px] transition-all duration-700 flex flex-row justify-center items-center p-3 bg-[rgba(17,31,42,0.7)] backdrop-blur-lg hover:right-0 cursor-pointer"
+      className="fixed h-[60px] top-4 transition-all duration-700 flex flex-row justify-center items-center p-3 bg-[rgba(17,31,42,0.7)] backdrop-blur-lg right-0 cursor-pointer"
       style={{ borderRadius: "60px 0px 0px 60px" }}
       onClick={() => {
         handleClick();
