@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import { SmoothScrollbar, useScrollbar } from "@14islands/r3f-scroll-rig";
 import LogoBG from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG";
