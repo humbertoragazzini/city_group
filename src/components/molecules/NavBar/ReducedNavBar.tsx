@@ -14,7 +14,7 @@ export default function ReducedNavBar({
       <nav
         className={
           "absolute overflow-hidden h-[60px] flex flex-row items-center justify-start transition-all duration-1000 bg-[rgba(17,31,42,0.3)] backdrop-blur-lg w-[180px] rounded-l-full ml-0 top-4 justify-between right-[40px] " +
-          (transforBar ? "" : "right-[-120px] md:pointer-events-none")
+          (transforBar ? "" : "!right-[-120px] md:pointer-events-none")
         }
       >
         <NavBarLBTN

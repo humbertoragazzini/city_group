@@ -16,7 +16,15 @@ const config: Config = {
       colors: {
         "the-red": "#e0363e",
         "the-black": "#010101",
-        "the-grey": "#b3b0b1",
+        "the-darkGrey": "#b3b0b1",
+        "the-lightGrey": "#10555E",
+        "the-lightRed": "#178A95",
+        "the-darkWhite": "#FF6F61",
+        "the-darkerGrey": "#F5F7F7",
+        "the-lightWhite": "#333333",
+        "the-white": "#FFFFFF",
+        "the-darkBlack": "#000000",
+        "the-yellow": "#FFC107",
       },
       screens: {
         sm: "640px",

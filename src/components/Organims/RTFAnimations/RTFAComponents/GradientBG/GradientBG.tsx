@@ -13,7 +13,7 @@ import * as THREE from "three";
 import gsap from "gsap";
 import Triangle from "../../Mesh/Triangle/Triangle";
 
-export default function GradientBG({ className }: any) {
+export default function GradientBG({ className, scrollProgress }: any) {
   const el = useRef<any>();
   const shperes = [
     [-0.29446676731468147, -0.3455983696605165, -0.7895812995208558],
