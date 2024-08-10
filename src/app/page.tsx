@@ -721,7 +721,7 @@ export default function Home() {
 
 const TextParallaxContentExample = () => {
   return (
-    <div className="">
+    <div className="lg:hidden">
       <TextParallaxContent
         imgUrl="/img/import_export.jpg"
         subheading="Collaborate"
