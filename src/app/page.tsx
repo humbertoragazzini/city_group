@@ -719,9 +719,7 @@ export default function Home() {
   );
 }
 
-Home.displayName = "Home";
-
-export const TextParallaxContentExample = () => {
+const TextParallaxContentExample = () => {
   return (
     <div className="">
       <TextParallaxContent
@@ -845,3 +843,5 @@ const ExampleContent = () => (
     </div>
   </div>
 );
+
+Home.displayName = "Home";
