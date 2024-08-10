@@ -262,6 +262,7 @@ function MenuBackground({ homeState, about, service, contact }: any) {
         counter > 4 ? (counter = 0) : counter++;
         return (
           <Marker
+            key={"marker" + i}
             positionY={position.y}
             mousePosition={positionMouse}
             thick={counter < 5 ? false : true}
