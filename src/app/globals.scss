@@ -2,3 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 @import "./scss/base/colors.scss";
+
+.animated-background {
+  background-size: 100%;
+
+  -webkit-animation: animation 3s ease infinite !important;
+  -moz-animation: animation 3s ease infinite !important;
+  animation: animation 3s ease infinite !important;
+}
+
+@keyframes animation {
+  0%,
+  100% {
+    background-position: 0% 50% !important;
+  }
+
+  50% {
+    background-position: 100% 50% !important;
+  }
+}

@@ -88,20 +88,20 @@ export default function ONavBar() {
 
   return (
     <>
-      <div className="fixed top-0 overflow-visible w-screen z-50">
+      <div className="lg:hidden  fixed top-0 overflow-visible w-screen z-50">
         {/* Regular navbar */}
-        <RegularNavBar
+        {/* <RegularNavBar
           transforBar={transforBar}
           links={links}
           path={pathname}
-        ></RegularNavBar>
+        ></RegularNavBar> */}
 
         {/* Reduced navbar */}
         <ReducedNavBar
           transforBar={transforBar}
           handleOpenMenu={handleOpenMenu}
         ></ReducedNavBar>
-        <Language></Language>
+        {/* <Language></Language> */}
       </div>
       {/* Reduced navbar content */}
       <MegaMenu

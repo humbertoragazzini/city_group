@@ -73,35 +73,35 @@ export default function Heading({ text, level, theme, className }: iHeading) {
         <>
           {level == 1 && (
             <h1
-              className={`text-5xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px] font-semibold ${className} ${themeColor}`}
+              className={`text-4xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px] font-semibold ${className} ${themeColor}`}
             >
               {textContent.length > 0 && <>{textContent[0].content}</>}
             </h1>
           )}
           {level == 2 && (
             <h2
-              className={`text-5xl sm:text-[70px] sm:leading-[70px] md:text-[75px] md:leading-[90px] lg:text-[75px] lg:leading-[90px]  font-semibold ${className} ${themeColor}`}
+              className={`text-3xl sm:text-[70px] sm:leading-[70px] md:text-[75px] md:leading-[90px] lg:text-[75px] lg:leading-[90px]  font-semibold ${className} ${themeColor}`}
             >
               {textContent.length > 0 && <>{textContent[0].content}</>}
             </h2>
           )}
           {level == 3 && (
             <h3
-              className={`text-5xl sm:text-[60px] sm:leading-[65px] md:text-[65px] md:leading-[80px] lg:text-[65px] lg:leading-[80px] font-semibold ${className} ${themeColor}`}
+              className={`text-2xl sm:text-[60px] sm:leading-[65px] md:text-[65px] md:leading-[80px] lg:text-[65px] lg:leading-[80px] font-semibold ${className} ${themeColor}`}
             >
               {textContent.length > 0 && <>{textContent[0].content}</>}
             </h3>
           )}
           {level == 4 && (
             <h4
-              className={`text-5xl sm:text-[55px] sm:leading-[60px] md:text-[60px] md:leading-[70px] lg:text-[60px] lg:leading-[70px] font-semibold ${className} ${themeColor}`}
+              className={`text-xl sm:text-[55px] sm:leading-[60px] md:text-[60px] md:leading-[70px] lg:text-[60px] lg:leading-[70px] font-semibold ${className} ${themeColor}`}
             >
               {textContent.length > 0 && <>{textContent[0].content}</>}
             </h4>
           )}
           {level == 5 && (
             <h5
-              className={`text-5xl sm:text-[50px] sm:leading-[55px] md:text-[55px] md:leading-[65px] lg:text-[55px] lg:leading-[65px] font-semibold ${className} ${themeColor}`}
+              className={`text-lg sm:text-[50px] sm:leading-[55px] md:text-[55px] md:leading-[65px] lg:text-[55px] lg:leading-[65px] font-semibold ${className} ${themeColor}`}
             >
               {textContent.length > 0 && <>{textContent[0].content}</>}
             </h5>

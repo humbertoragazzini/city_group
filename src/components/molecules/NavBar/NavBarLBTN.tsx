@@ -18,16 +18,14 @@ export default function NavBarLBTN({
 }: iNavBarLBTN) {
   // Main Style
   const main_style =
-    "text-white text-2xl relative h-[90px] w-[90px] transition-all duration-500 flex justify-center items-center";
+    "text-white text-2xl relative h-[60px] w-[60px] transition-all duration-500 flex justify-center items-center";
 
   return (
     <>
       {href === "" && (
         <AButton onClickHandler={() => handleOpenMenu()}>
           <div
-            className={`${main_style} ${
-              transforBar ? "" : "md:hidden"
-            } ${className}`}
+            className={`${main_style} ${transforBar ? "" : ""} ${className}`}
           >
             {children}
           </div>
@@ -36,9 +34,7 @@ export default function NavBarLBTN({
       {href !== "" && (
         <ALink href={href}>
           <div
-            className={`${main_style} ${
-              transforBar ? "" : "md:hidden"
-            } ${className}`}
+            className={`${main_style} ${transforBar ? "" : ""} ${className}`}
           >
             {children}
           </div>

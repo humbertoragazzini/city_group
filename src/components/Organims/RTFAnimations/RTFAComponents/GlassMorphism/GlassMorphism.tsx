@@ -32,6 +32,7 @@ export default function GlassMorphism() {
                   specularIntensity={0}
                   // reflectivity={0.5}
                 />
+                {/* <meshStandardMaterial color={"black"}></meshStandardMaterial> */}
               </mesh>
             );
           }}

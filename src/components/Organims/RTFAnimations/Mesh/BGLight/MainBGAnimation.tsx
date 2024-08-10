@@ -1,9 +1,11 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { Environment } from "@react-three/drei";
+import { useEffect, useRef } from "react";
 
 export default function MainBGAnimation() {
   const pathname = usePathname();
+  const ligthRef = useRef();
 
   return (
     <>
@@ -18,6 +20,7 @@ export default function MainBGAnimation() {
 
       {/* Ligth */}
       <directionalLight
+        ref={ligthRef}
         position={[1, 1, 1]}
         intensity={5}
         castShadow

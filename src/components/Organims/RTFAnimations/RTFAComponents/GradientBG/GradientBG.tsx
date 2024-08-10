@@ -608,7 +608,7 @@ export default function GradientBG({ className, scrollProgress }: any) {
                       position={[sphere[0], sphere[1], sphere[2] - 3]}
                       receiveShadow
                       castShadow
-                      scale={Math.random() * 0.02}
+                      scale={Math.random() * 0.05}
                     >
                       <Triangle
                         scale={1}

@@ -1,3 +1,4 @@
+import Language from "./Language";
 import NavBarLBTN from "./NavBarLBTN";
 
 interface iReducedNavBar {
@@ -13,14 +14,11 @@ export default function ReducedNavBar({
     <>
       <nav
         className={
-          "absolute overflow-hidden h-[60px] flex flex-row items-center justify-start transition-all duration-1000 bg-[rgba(17,31,42,0.3)] backdrop-blur-lg w-[180px] rounded-l-full ml-0 top-4 justify-between right-[40px] " +
-          (transforBar ? "" : "!right-[-120px] md:pointer-events-none")
+          "absolute w-full h-[60px] bg-[rgba(17,31,42,0.3)] backdrop-blur-lg flex justify-between items-center"
         }
       >
         <NavBarLBTN
-          className={
-            "!absolute top-0 left-0 !w-[110px] pl-2 !h-[60px] flex !justify-start items-center hover:bg-[rgba(0,0,0,0.5)] rounded-r-full z-0"
-          }
+          className={"h-[60px]"}
           transforBar={transforBar}
           href={""}
           handleOpenMenu={handleOpenMenu}
@@ -41,14 +39,12 @@ export default function ReducedNavBar({
         </NavBarLBTN>
         {/* Primalports home page link */}
         <NavBarLBTN
-          className={
-            "relative !w-[120px] !h-[60px] pl-3 flex !justify-start items-center bg-[rgba(17,31,42,0.6)] rounded-l-full z-10 overflow-hidden"
-          }
+          className={"0px]"}
           transforBar={transforBar}
           href={"/"}
           handleOpenMenu={() => {}}
         >
-          <span className="relative h-[35px] w-[35px] block z-10">
+          {/* <span className="relative h-[35px] w-[35px] block z-10">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -98,8 +94,11 @@ export default function ReducedNavBar({
                 />
               </g>
             </svg>
-          </span>
+          </span> */}
+          PrimalPorts
         </NavBarLBTN>
+
+        <Language></Language>
       </nav>
     </>
   );

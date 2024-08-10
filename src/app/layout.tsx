@@ -5,6 +5,7 @@ import ONavBar from "@/components/Organims/NavBar/ONavBar";
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import AppWraper from "@/components/Atoms/Layout/AppWraper";
 import Head from "next/head";
+import RightNavBar from "@/components/Organims/NavBar/RightNavbar";
 
 const inter = Source_Sans_3({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({
       <body className={inter.className + " main_body relative"}>
         <AppWraper>
           <ONavBar></ONavBar>
+          <RightNavBar></RightNavBar>
           {children}
           <MainBG></MainBG>
         </AppWraper>

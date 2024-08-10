@@ -22,7 +22,7 @@ export default function Language() {
 
   return (
     <div
-      className="fixed h-[60px] top-4 transition-all duration-700 flex flex-row justify-center items-center p-3 bg-[rgba(17,31,42,0.7)] backdrop-blur-lg right-0 cursor-pointer"
+      className="w-[60px] flex justify-between items-center"
       style={{ borderRadius: "60px 0px 0px 60px" }}
       onClick={() => {
         handleClick();
@@ -558,9 +558,9 @@ export default function Language() {
           </svg>
         )}
       </button>
-      <Paragraph
+      {/* <Paragraph
         type="body"
-        className="ml-4 min-w-[20px] text-white"
+        className="min-w-[20px] text-white"
         text={[
           {
             language: "EN",
@@ -579,7 +579,7 @@ export default function Language() {
             content: "IT",
           },
         ]}
-      ></Paragraph>
+      ></Paragraph> */}
     </div>
   );
 }
