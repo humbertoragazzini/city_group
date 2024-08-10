@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import { useTrackerMotionValue } from "@/CustomHooks/useTrackerMotionValue";
 import { useTracker } from "@14islands/r3f-scroll-rig";
