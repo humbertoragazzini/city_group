@@ -1,5 +1,4 @@
 // @ts-nocheck
-"use client";
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
@@ -58,7 +57,7 @@ export default function RootLayout({
       <body className={inter.className + " main_body relative"}>
         <AppWraper>
           <ONavBar></ONavBar>
-          <RightNavBar></RightNavBar>
+          {/* <RightNavBar></RightNavBar> */}
           {children}
           <MainBG></MainBG>
         </AppWraper>

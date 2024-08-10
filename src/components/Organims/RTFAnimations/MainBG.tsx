@@ -42,7 +42,7 @@ export default function MainBG() {
     return () => {
       window.removeEventListener("scroll", checkProgress);
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
