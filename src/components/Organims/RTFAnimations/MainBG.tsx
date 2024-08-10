@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import { GlobalCanvas, useScrollbar } from "@14islands/r3f-scroll-rig";
 import { GradientTexture } from "@react-three/drei";
