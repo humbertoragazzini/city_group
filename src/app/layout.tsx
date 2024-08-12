@@ -57,7 +57,7 @@ export default function RootLayout({
       <body className={inter.className + " main_body relative"}>
         <AppWraper>
           <ONavBar></ONavBar>
-          {/* <RightNavBar></RightNavBar> */}
+          <RightNavBar></RightNavBar>
           {children}
           <MainBG></MainBG>
         </AppWraper>

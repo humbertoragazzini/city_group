@@ -572,7 +572,7 @@ const StickyImage = ({ imgUrl }) => {
       className="sticky z-10 overflow-hidden"
     >
       <motion.div className="h-[100vh] aspect-video">
-        <video src="./videos/PlaceHolderVideo.mp4" autoPlay loop muted></video>
+        <video src="./images/import_export.jpg" autoPlay loop muted></video>
       </motion.div>
       <motion.div
         className="absolute inset-0 bg-neutral-950/70 "

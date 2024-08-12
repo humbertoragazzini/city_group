@@ -11,7 +11,20 @@ export default function MainBG() {
   const sphereRef = useRef<any>();
   const lightRef = useRef<any>();
 
-  useLayoutEffect(() => {
+  const scroll = useScrollbar();
+
+  const checkProgress = () => {
+    // sphereRef.current.rotation.z = Math.PI / 2;
+    // sphereRef.current.rotation.x = scroll.scroll.progress * Math.PI;
+    // lightRef.current.position.y = 28 - 14 * scroll.scroll.progress;
+    lightRef.current.color = new THREE.Color(
+      255 - (255 * scroll.scroll.progress + 1),
+      255 - (255 * scroll.scroll.progress + 1),
+      255 - (255 * scroll.scroll.progress + 1)
+    );
+  };
+
+  const ligthOn = () => {
     setTimeout(() => {
       gsap.fromTo(
         lightRef.current,
@@ -19,21 +32,6 @@ export default function MainBG() {
         { intensity: 0.02, duration: 2 }
       );
     }, 2500);
-  }, []);
-
-  const scroll = useScrollbar();
-
-  const checkProgress = () => {
-    // sphereRef.current.rotation.z = Math.PI / 2;
-    // sphereRef.current.rotation.x = scroll.scroll.progress * Math.PI;
-    // lightRef.current.position.y = 28 - 14 * scroll.scroll.progress;
-    // console.log(lightRef.current.color.r);
-    // console.log(255 - (255 * scroll.scroll.progress + 1));
-    lightRef.current.color = new THREE.Color(
-      255 - (255 * scroll.scroll.progress + 1),
-      255 - (255 * scroll.scroll.progress + 1),
-      255 - (255 * scroll.scroll.progress + 1)
-    );
   };
 
   useLayoutEffect(() => {
@@ -42,6 +40,15 @@ export default function MainBG() {
     return () => {
       window.removeEventListener("scroll", checkProgress);
     };
+  }, []);
+
+  useLayoutEffect(() => {
+    const checkElement = setInterval(() => {
+      if (lightRef.current) {
+        ligthOn(lightRef.current);
+        clearInterval(checkElement);
+      }
+    }, 250);
   }, []);
 
   return (
