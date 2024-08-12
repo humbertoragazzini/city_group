@@ -1,3 +1,4 @@
+"use client";
 import Language from "./Language";
 import NavBarLBTN from "./NavBarLBTN";
 

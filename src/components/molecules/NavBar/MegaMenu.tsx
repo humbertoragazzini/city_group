@@ -1,3 +1,4 @@
+"use client";
 import { RefObject } from "react";
 import BigTextLink from "./BigTextLink";
 import JumpLinks from "./JumpLinks";

@@ -1,3 +1,4 @@
+"use client";
 import ALink from "@/components/Atoms/Links/ALink";
 
 type Link = {
