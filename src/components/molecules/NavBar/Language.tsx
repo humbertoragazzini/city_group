@@ -558,28 +558,6 @@ export default function Language() {
           </svg>
         )}
       </button>
-      {/* <Paragraph
-        type="body"
-        className="min-w-[20px] text-white"
-        text={[
-          {
-            language: "EN",
-            content: "EN",
-          },
-          {
-            language: "ES",
-            content: "ES",
-          },
-          {
-            language: "CH",
-            content: "CH",
-          },
-          {
-            language: "IT",
-            content: "IT",
-          },
-        ]}
-      ></Paragraph> */}
     </div>
   );
 }

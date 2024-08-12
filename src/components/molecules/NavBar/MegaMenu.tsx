@@ -54,11 +54,6 @@ export default function MegaMenu({
                   href={link.href}
                   order={(i + 1).toString()}
                 ></BigTextLink>
-                <JumpLinks
-                  section={link.section}
-                  className=" top-[50%] absolute left-[100%] [&>ul]:translate-y-[-50%]"
-                  links={link.jumpLinks}
-                ></JumpLinks>
               </div>
             );
           })}

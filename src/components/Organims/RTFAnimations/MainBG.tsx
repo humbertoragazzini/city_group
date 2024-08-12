@@ -25,7 +25,7 @@ export default function MainBG() {
 
   const checkProgress = () => {
     // sphereRef.current.rotation.z = Math.PI / 2;
-    sphereRef.current.rotation.x = scroll.scroll.progress * Math.PI;
+    // sphereRef.current.rotation.x = scroll.scroll.progress * Math.PI;
     // lightRef.current.position.y = 28 - 14 * scroll.scroll.progress;
     // console.log(lightRef.current.color.r);
     // console.log(255 - (255 * scroll.scroll.progress + 1));

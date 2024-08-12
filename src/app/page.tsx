@@ -137,21 +137,6 @@ export default function Home() {
               </GlassHScreen>
 
               {/* MOBILE */}
-              {/* <div className="grid lg:hidden min-h-screen grid-cols-1">
-                <div className="col-span-1 ">
-                  <div className="h-[120%] h-full bg-[rgba(255,255,255,0.75)] backdrop-blur-sm">
-                    <Image
-                      src={"/img/import_export.jpg"}
-                      width={1920}
-                      height={1080}
-                      className="w-full"
-                    ></Image>
-                  </div>
-                </div>
-                <div className="col-span-1 ">
-                  <div className="h-[120%] h-full"></div>
-                </div>
-              </div> */}
               <TextParallaxContentExample></TextParallaxContentExample>
 
               {/* DESKTOP */}
@@ -232,21 +217,6 @@ export default function Home() {
 
               <div className="hidden lg:grid min-h-screen grid-cols-1 lg:grid-cols-2 overflow-hidden">
                 <div className="relative h-full col-span-1 z-10">
-                  {/* <Parallax
-                    type={"imageH"}
-                    start={-0.5}
-                    end={0.5}
-                    valueXStart={"-100%"}
-                    valueXEnd={"0%"}
-                    className={"h-screen w-[50vw]"}
-                  >
-                    <Image
-                      src={"/img/import_export.jpg"}
-                      width={1920}
-                      height={1080}
-                      className="absolute min-h-[100vh] min-w-[160vh] top-0 right-0 -skew-x-12"
-                    ></Image>
-                  </Parallax> */}
                   <Parallax
                     type={"contentHV"}
                     start={-0.5}
@@ -358,189 +328,6 @@ export default function Home() {
                   </Parallax>
                 </div>
               </div>
-
-              {/* <div className="relative bg-the-red min-h-screen overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto mx-auto p-8 md:p-16 lg:p-9 xl:p-14 2xl:p-20">
-                  <div className="relative col-span-1">
-                    <Parallax type={"textV"} start={0} end={1}>
-                      <span className="py-40 text-[150px]">Construction</span>
-                    </Parallax>
-                  </div>
-                  <div className="relative col-span-1 lg:col-span-2">
-                    <Heading
-                      text={[
-                        {
-                          language: "EN",
-                          content: "Construction",
-                        },
-                        {
-                          language: "ES",
-                          content: "Construccion",
-                        },
-                      ]}
-                      level={3}
-                    ></Heading>
-                    <Paragraph
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Our Construction Division handles a variety of projects, from residential to commercial developments. We merge expert craftsmanship with cutting-edge solutions to ensure that every project is delivered on time, within budget, and to the highest standards of excellence.",
-                        },
-                      ]}
-                      theme="white"
-                      type="standfirst"
-                    ></Paragraph>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid min-h-screen grid-cols-1 lg:grid-cols-3 overflow-hidden">
-                <div className="relative h-full col-span-1 z-0">
-                  <Parallax
-                    type={"imageV"}
-                    start={-0.5}
-                    end={0.5}
-                    valueYStart={"-100%"}
-                    valueYEnd={"0%"}
-                  >
-                    <Image
-                      src={"/img/import_export.jpg"}
-                      width={1920}
-                      height={1080}
-                      className="min-h-[100vh] min-w-[160vh] top-0 left-0 translate-x-[-30%]"
-                    ></Image>
-                  </Parallax>
-                  <Parallax
-                    type={"textV"}
-                    start={0.5}
-                    end={1.5}
-                    className={"left-0"}
-                  >
-                    <span className="py-40 text-[150px]">Retail</span>
-                  </Parallax>
-                </div>
-                <div className="relative col-span-1 lg:col-span-2 z-10">
-                  <Parallax
-                    type={"contentH"}
-                    start={0}
-                    end={0.5}
-                    valueYStart={"-100%"}
-                    valueYEnd={"0%"}
-                    valueXStart={"100%"}
-                    valueXEnd={"0%"}
-                    className={"grid grid-cols-2 h-fit w-full"}
-                  >
-                    <div className="col-span-2 p-24 min-h-[50vh] bg-[rgba(0,0,0,0.5)] backdrop-blur">
-                      <Heading
-                        text={[
-                          {
-                            language: "EN",
-                            content: "Retail ",
-                          },
-                          {
-                            language: "ES",
-                            content: "Minorista",
-                          },
-                        ]}
-                        level={3}
-                        className="text-right pb-8"
-                      ></Heading>
-                      <p className="text-right pb-8">
-                        Our Retail Division offers a carefully curated selection
-                        of premium products, ensuring exceptional value and
-                        customer satisfaction. We are committed to providing
-                        outstanding customer service and meeting the diverse
-                        needs of our consumer base.
-                      </p>
-                      <p className="text-right pb-8">
-                        Our unwavering dedication to excellence empowers us to
-                        provide superior services that enable our clients to
-                        thrive in their respective industries.
-                      </p>
-                    </div>
-                  </Parallax>
-                </div>
-              </div>
-
-              <div className="relative bg-the-yellow min-h-screen overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto mx-auto p-8 md:p-16 lg:p-9 xl:p-14 2xl:p-20">
-                  <div className="relative col-span-1">
-                    <Parallax type={"textV"} start={0} end={1}>
-                      <span className="py-40 text-[150px]">Construction</span>
-                    </Parallax>
-                  </div>
-                  <div className="relative col-span-1 lg:col-span-2">
-                    <Heading
-                      text={[
-                        {
-                          language: "EN",
-                          content: "Web Applications Development ",
-                        },
-                        {
-                          language: "ES",
-                          content: "Web Applications Development ",
-                        },
-                      ]}
-                      level={3}
-                    ></Heading>
-                    <Paragraph
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "In the digital age, our Web Applications Development team designs bespoke, user-friendly applications aimed at enhancing your business operations. Utilizing the latest technologies, we create solutions that drive efficiency and foster engagement.",
-                        },
-                      ]}
-                      theme="white"
-                      type="standfirst"
-                    ></Paragraph>
-                  </div>
-                </div>
-              </div>
-
-              
-              <div className="relative grid min-h-screen grid-cols-1 lg:grid-cols-3 mx-auto p-2 md:p-3 lg:p-9 xl:p-14 2xl:p-20 z-0">
-                <div className="relative col-span-1 lg:col-span-3 flex justify-center items-center">
-                  <Parallax type={"textH"} start={0} end={1}>
-                    <span className="py-40 text-[150px]">Why Choose Us?</span>
-                  </Parallax>
-                </div>
-
-                <div className="relative col-span-1 lg:col-span-3 flex justify-center items-center">
-                  <Parallax type={"textH"} start={0} end={1}>
-                    <span className="py-40 text-[100px]">
-                      Expertise in multiple sectors.
-                    </span>
-                  </Parallax>
-                </div>
-
-                <div className="relative col-span-1 lg:col-span-3 flex justify-center items-center">
-                  <Parallax type={"textH"} start={0} end={1}>
-                    <span className="py-40 text-[100px]">
-                      Commitment to quality and customer satisfaction.
-                    </span>
-                  </Parallax>
-                </div>
-
-                <div className="relative col-span-1 lg:col-span-3 flex justify-center items-center">
-                  <Parallax type={"textH"} start={0} end={1}>
-                    <span className="py-40 text-[100px]">
-                      Innovative solutions tailored to your needs.
-                    </span>
-                  </Parallax>
-                </div>
-
-                <div className="relative col-span-1 lg:col-span-3 flex justify-center items-center">
-                  <Parallax type={"textH"} start={0} end={1}>
-                    <span className="py-40 text-[100px]">
-                      Discover more about how [Your Company Name] can help your
-                      business succeed. Explore our services or get in touch
-                      with us today!
-                    </span>
-                  </Parallax>
-                </div>
-              </div> */}
 
               <div className="relative bg-the-lightWhite z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
@@ -769,7 +556,7 @@ const StickyImage = ({ imgUrl }) => {
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.9, 0]);
 
   return (
     <motion.div
@@ -782,13 +569,16 @@ const StickyImage = ({ imgUrl }) => {
         scale,
       }}
       ref={targetRef}
-      className="sticky z-0 overflow-hidden"
+      className="sticky z-10 overflow-hidden"
     >
+      <motion.div className="h-[100vh] aspect-video">
+        <video src="./videos/PlaceHolderVideo.mp4" autoPlay loop muted></video>
+      </motion.div>
       <motion.div
-        className="absolute inset-0 bg-neutral-950/70"
-        style={{
-          opacity,
-        }}
+        className="absolute inset-0 bg-neutral-950/70 "
+        // style={{
+        //   backdropFilter: blur,
+        // }}
       />
     </motion.div>
   );
@@ -811,7 +601,7 @@ const OverlayCopy = ({ subheading, heading }) => {
         opacity,
       }}
       ref={targetRef}
-      className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
+      className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white z-10"
     >
       <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
         {subheading}
@@ -821,27 +611,60 @@ const OverlayCopy = ({ subheading, heading }) => {
   );
 };
 
-const ExampleContent = () => (
-  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-    <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
-      Additional content explaining the above card here
-    </h2>
-    <div className="col-span-1 md:col-span-8">
-      <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-        blanditiis soluta eius quam modi aliquam quaerat odit deleniti minima
-        maiores voluptate est ut saepe accusantium maxime doloremque nulla
-        consectetur possimus.
-      </p>
-      <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-        reiciendis blanditiis aliquam aut fugit sint.
-      </p>
-      <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
-        Learn more <FiArrowUpRight className="inline" />
-      </button>
+const ExampleContent = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [0.75, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-100vh", "150vh"]);
+  const yBg = useTransform(scrollYProgress, [0, 1], ["100vh", "150vh"]);
+  const opacity = useTransform(scrollYProgress, [0.25, 0.5, 1], [0, 1, 0]);
+  const opacityBg = useTransform(scrollYProgress, [0.25, 0.5], [0, 1]);
+
+  return (
+    <div
+      ref={targetRef}
+      className="relative mx-auto min-h-screen flex justify-center items-center grid max-w-5xl grid-cols-1 gap-8 px-16 pb-24 pt-12 z-0"
+    >
+      <div className="fixed h-screen w-screen top-0 left-0 p-4">
+        <motion.div
+          className="absolute h-full w-full"
+          style={{ y: yBg, scale, opacityBg, opacity }}
+        >
+          {/* <div className="w-full h-full bg-[rgba(214,245,39,0.75)] backdrop-blur-sm"></div> */}
+        </motion.div>
+        <div className="col-span-1">
+          <motion.div style={{ y, scale }}>
+            <h2 className="text-2xl md:text-3xl font-bold md:col-span-4 pb-7">
+              Additional content explaining the above card here
+            </h2>
+          </motion.div>
+
+          <div className="md:col-span-8">
+            <motion.div style={{ y, scale }}>
+              <p className="mb-4 text-lg md:text-xl text-black-600 md:text-2xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+                blanditiis soluta eius quam modi aliquam quaerat odit deleniti
+                minima maiores voluptate est ut saepe accusantium maxime
+                doloremque nulla consectetur possimus.
+              </p>
+              <p className="mb-8 text-lg md:text-xl text-black-600 md:text-2xl pb-7">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Accusantium reiciendis blanditiis aliquam aut fugit sint.
+              </p>
+
+              <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
+                Learn more <FiArrowUpRight className="inline" />
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 Home.displayName = "Home";

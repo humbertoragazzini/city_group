@@ -78,9 +78,7 @@ export default function ONavBar() {
         setTransformBar(false);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -89,19 +87,11 @@ export default function ONavBar() {
   return (
     <>
       <div className="lg:hidden  fixed top-0 overflow-visible w-screen z-50">
-        {/* Regular navbar */}
-        {/* <RegularNavBar
-          transforBar={transforBar}
-          links={links}
-          path={pathname}
-        ></RegularNavBar> */}
-
         {/* Reduced navbar */}
         <ReducedNavBar
           transforBar={transforBar}
           handleOpenMenu={handleOpenMenu}
         ></ReducedNavBar>
-        {/* <Language></Language> */}
       </div>
       {/* Reduced navbar content */}
       <MegaMenu
