@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { usePathname } from "next/navigation";
+import { useAppContext } from "@/context/AppContext";
+import Language from "@/components/molecules/NavBar/Language";
+import Link from "next/link";
 
 export default function Nav() {
   const [active, setActive] = useState(false);
@@ -18,7 +21,7 @@ export default function Nav() {
 
 const LinksOverlay = () => {
   return (
-    <nav className="fixed right-4 top-4 z-40 h-[calc(100vh_-_100px)] w-[calc(100%_-_32px)] overflow-hidden">
+    <nav className="fixed right-4 top-4 z-40 h-[calc(100vh_-_32px)] w-[calc(100%_-_32px)] overflow-hidden">
       <Logo />
       <LinksContainer />
       <FooterCTAs />
@@ -74,7 +77,7 @@ const NavLink = ({ children, href, idx }) => {
 const Logo = () => {
   // Temp logo from https://logoipsum.com/
   return (
-    <motion.a
+    <motion.div
       initial={{ opacity: 0, y: -12 }}
       animate={{
         opacity: 1,
@@ -82,59 +85,85 @@ const Logo = () => {
         transition: { delay: 0.5, duration: 0.5, ease: "easeInOut" },
       }}
       exit={{ opacity: 0, y: -12 }}
-      href="#"
-      className="grid h-12 w-12 place-content-center rounded-br-xl rounded-tl-xl bg-white transition-colors hover:bg-violet-50 p-2"
+      className="grid h-12 w-12 place-content-center rounded-br-xl rounded-tl-xl bg-burgundy transition-colors hover:bg-plum p-2 overflow-hidden"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="100.01515mm"
-        height="100.09864mm"
-        viewBox="0 0 100.01515 100.09864"
-        version="1.1"
-        id="svg1"
-        className="w-full"
-      >
-        <defs id="defs1" />
-        <g id="layer1" transform="translate(-752.9612,-290.42861)">
-          <ellipse
-            style={{ fill: "none", stroke: "#000000", strokeWidth: 2.913 }}
-            id="path4-5-4"
-            cx="802.97943"
-            cy="340.51636"
-            rx="48.540421"
-            ry="48.554413"
-          />
-          <path
-            style={{ fill: "none", stroke: "#000000", strokeWidth: 0 }}
-            d="m 752.96121,290.50874 0.004,2.01331"
-            id="path5-4-3"
-          />
-          <path
-            style={{ fill: "none", stroke: "#000000", strokeWidth: 0 }}
-            d="m 754.62956,291.19973 -1.43836,1.40875"
-            id="path5-8-7-6"
-          />
-          <path
-            style={{ fill: "none", stroke: "#000000", strokeWidth: 0 }}
-            d="m 755.01158,291.33319 -1.79866,-0.90458"
-            id="path5-8-2-4-0"
-          />
-          <path
-            id="path6-7-5"
-            style={{
-              fill: "#000000",
-              stroke: "#000000",
-              strokeWidth: 0.295824,
-            }}
-            d="m 803.31938,305.91245 -29.04629,48.95464 h 58.07397 z m -30.48962,51.38704 -1.71049,2.88303 64.40331,0.0398 -1.73323,-2.92282 z"
-          />
-        </g>
-      </svg>
-    </motion.a>
+      {/* <Language></Language> */}
+      <Link href={"/"} className={"w-full h-full"}>
+        <svg
+          width="100.01514mm"
+          height="100.09866mm"
+          viewBox="0 0 100.01513 100.09866"
+          version="1.1"
+          id="svg1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          className="w-8 h-8"
+        >
+          <defs id="defs1" />
+          <g id="layer1" transform="translate(-752.96121,-290.42861)">
+            <ellipse
+              style={{
+                fill: "none",
+                stroke: "#ffffff",
+                strokeWidth: 2.913,
+                strokeDasharray: "none",
+              }}
+              id="path4-5-4"
+              cx="802.97943"
+              cy="340.51636"
+              rx="48.540421"
+              ry="48.554413"
+            />
+            <path
+              style={{
+                fill: "none",
+                stroke: "#000000",
+                strokeWidth: 0,
+                strokeDasharray: "none",
+              }}
+              d="m 752.96121,290.50874 0.004,2.01331"
+              id="path5-4-3"
+            />
+            <path
+              style={{
+                fill: "none",
+                stroke: "#000000",
+                strokeWidth: 0,
+                strokeDasharray: "none",
+              }}
+              d="m 754.62956,291.19973 -1.43836,1.40875"
+              id="path5-8-7-6"
+            />
+            <path
+              style={{
+                fill: "none",
+                stroke: "#000000",
+                strokeWidth: 0,
+                strokeDasharray: "none",
+              }}
+              d="m 755.01158,291.33319 -1.79866,-0.90458"
+              id="path5-8-2-4-0"
+            />
+            <path
+              id="path6-7-5"
+              style={{
+                fill: "#ffffff",
+                stroke: "#ffffff",
+                strokeWidth: 0.295824,
+                strokeDasharray: "none",
+              }}
+              d="m 803.31938,305.91245 -29.04629,48.95464 h 58.07397 z m -30.48962,51.38704 -1.71049,2.88303 64.40331,0.0398 -1.73323,-2.92282 z"
+            />
+          </g>
+        </svg>
+      </Link>
+    </motion.div>
   );
 };
 
-const HamburgerButton = ({ active, setActive }) => {
+const HamburgerButton = ({ active, setActive }: any) => {
+  const { state, setState } = useAppContext();
+
   return (
     <>
       <motion.div
@@ -142,29 +171,26 @@ const HamburgerButton = ({ active, setActive }) => {
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
         style={{ top: 19, right: 19 }}
-        className={`fixed z-10 rounded-xl backdrop-blur-md ${
-          active ? "" : ""
+        className={`fixed z-10 transition-all duration-1000 rounded-xl backdrop-blur-md ${
+          active ? "bg-[rgba(0,0,0,0.5)]" : "bg-[rgba(0,0,0,0)]"
         } shadow-2xl`}
       />
 
       <motion.button
         initial={false}
         animate={active ? "open" : "closed"}
-        onClick={() => setActive((pv) => !pv)}
-        className={`group fixed right-4 top-4 z-50 h-12 w-12  transition-all ${
+        onClick={() => {
+          setActive((pv) => !pv);
+          setState((prevState) => ({
+            ...prevState,
+            isMenuOpen: !state.isMenuOpen,
+          }));
+        }}
+        className={`group fixed right-4 top-4 z-50 h-12 w-12 hover:bg-plum transition-all ${
           active
-            ? "rounded-bl-xl rounded-tr-xl bg-white"
-            : "bg-the-red rounded-xl"
+            ? "rounded-bl-xl rounded-tr-xl bg-burgundy"
+            : "bg-burgundy rounded-xl"
         }`}
-        // style={{
-        //   boxShadow: `0 0 ${active ? "5px" : "0px"} ${
-        //     active ? "#ffffff" : ""
-        //   }, 0 0 ${active ? "10px" : "0px"} ${active ? "#ffffff" : ""}, 0 0 ${
-        //     active ? "20px" : "0px"
-        //   } ${active ? "#ffffff" : ""}, 0 0 ${active ? "40px" : "0px"} ${
-        //     active ? "#ffffff" : ""
-        //   }, 0 0 ${active ? "80px" : "0px"} ${active ? "#ffffff" : ""}`,
-        // }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -206,10 +232,11 @@ const FooterCTAs = () => {
               }}
               exit={{ opacity: 0, y: -8 }}
             >
-              <l.Component className="text-xl text-white transition-colors hover:text-violet-300" />
+              <l.Component className="text-xl text-the-white transition-all ease-in-out hover:text-white hover:scale-125" />
             </motion.a>
           );
         })}
+        <Language></Language>
       </div>
     </>
   );
@@ -256,7 +283,7 @@ const SOCIAL_CTAS = [
 const UNDERLAY_VARIANTS = {
   open: {
     width: "calc(100% - 32px)",
-    height: "calc(100vh - 100px)",
+    height: "calc(100vh - 32px)",
     transition: { type: "spring", mass: 3, stiffness: 400, damping: 50 },
   },
   closed: {

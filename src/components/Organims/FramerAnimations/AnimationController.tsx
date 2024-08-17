@@ -18,29 +18,6 @@ export default function AnimationController({
   const contentY = useTransform(progress, [0.33, 0.7], ["0%", "0%"]);
   const contentX = useTransform(progress, [0.33333333, 0.75], ["0%", "50%"]);
 
-  useEffect(() => {
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("progress:", progress);
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-    console.log("////////////////////");
-  }, [progress]);
-
   return (
     <section
       ref={el}

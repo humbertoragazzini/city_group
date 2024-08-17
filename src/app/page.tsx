@@ -20,6 +20,9 @@ import AnimationController from "@/components/Organims/FramerAnimations/Animatio
 import React from "react";
 import { useScroll } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
+import Link from "next/link";
+import SectionL from "@/components/Organims/Sections/Desktop/SectionL";
+import SectionR from "@/components/Organims/Sections/Desktop/SectionR";
 
 export default function Home() {
   const context = useAppContext();
@@ -51,8 +54,7 @@ export default function Home() {
           <>
             <div
               className={
-                "relative z-10 overflow-hidden m-auto pt-[0px] text-white lg:pr-[45px] " +
-                (!context.state.isMenuOpen ? "" : "h-screen")
+                "relative z-10 overflow-hidden transition-all duration-1000 m-auto pt-[0px] text-white "
               }
               ref={headerRef}
             >
@@ -61,20 +63,6 @@ export default function Home() {
               <GlassHScreen>
                 <div className="opacity-0 animate-fade-in delay-[5500ms] grid h-fit lg:h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
                   <div className=" relative col-span-1 xl:col-span-2 px-4 pt-[90px]  md:pt-[60px] md:px-16 flex flex-col justify-center items-start">
-                    <Heading
-                      text={[
-                        {
-                          language: "EN",
-                          content: "PrimalPorts",
-                        },
-                        {
-                          language: "ES",
-                          content: "PrimalPorts ",
-                        },
-                      ]}
-                      level={1}
-                    ></Heading>
-
                     <Heading
                       className="mb-4"
                       text={[
@@ -141,195 +129,125 @@ export default function Home() {
 
               {/* DESKTOP */}
 
-              <div className="hidden lg:grid min-h-screen grid-cols-1 lg:grid-cols-2 overflow-hidden">
-                <div className="hidden lg:grid relative col-span-1 lg:col-span-1 gap-2 h-full w-full z-0">
-                  <Parallax
-                    type={"contentHV"}
-                    start={-0.5}
-                    end={0.5}
-                    valueYStart={"0%"}
-                    valueYEnd={"0%"}
-                    valueXStart={"-100%"}
-                    valueXEnd={"0%"}
-                    className={"h-screen w-[50vw] right-0"}
-                  >
-                    <div className="absolute top-0 right-0 col-span-2 h-screen w-[60vw] p-12 bg-[rgba(214,245,39,0.75)] backdrop-blur-sm skew-x-12 flex justify-end items-center">
-                      <div className="-skew-x-12 w-[40vw]">
-                        <Heading
-                          text={[
-                            {
-                              language: "EN",
-                              content: "Imports and Exports",
-                            },
-                            {
-                              language: "ES",
-                              content: "Importaciones y Exportaciones",
-                            },
-                          ]}
-                          level={3}
-                          className="text-white pb-8 drop-shadow-xl"
-                        ></Heading>
+              <SectionL
+                heading={[
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ]}
+                content={[
+                  {
+                    language: "EN",
+                    content: "We provide the best services to meet your needs.",
+                  },
+                  {
+                    language: "ES",
+                    content:
+                      "Ofrecemos los mejores servicios para satisfacer sus necesidades.",
+                  },
+                  {
+                    language: "CH",
+                    content: "我们提供最优质的服务以满足您的需求。",
+                  },
+                  {
+                    language: "IT",
+                    content:
+                      "Offriamo i migliori servizi per soddisfare le tue esigenze.",
+                  },
+                ]}
+                marke={[
+                  {
+                    language: "EN",
+                    content: "Trust, Quality, and Excellence.",
+                  },
+                  {
+                    language: "ES",
+                    content: "Confianza, Calidad y Excelencia.",
+                  },
+                  {
+                    language: "CH",
+                    content: "信任，质量和卓越。",
+                  },
+                  {
+                    language: "IT",
+                    content: "Fiducia, Qualità ed Eccellenza.",
+                  },
+                ]}
+              ></SectionL>
 
-                        <p className="text-white pb-8 drop-shadow-xl">
-                          In our Import Division, we traverse the globe to
-                          source the finest materials and products. Our
-                          extensive network of international suppliers ensures
-                          that we deliver unparalleled quality and innovation.
-                          We bring the world's best to your doorstep, tailored
-                          to meet the unique demands of your projects.
-                        </p>
-                      </div>
-                    </div>
-                  </Parallax>
-                </div>
-                <div className="relative h-full col-span-1 z-10">
-                  <Parallax
-                    type={"contentHV"}
-                    start={-0.5}
-                    end={0.5}
-                    valueYStart={"0%"}
-                    valueYEnd={"0%"}
-                    valueXStart={"100%"}
-                    valueXEnd={"0%"}
-                    className={"h-screen w-[50vw] left-0"}
-                  >
-                    <div className="absolute min-h-[100vh] min-w-[60vw] left-0 skew-x-12 overflow-hidden">
-                      <Image
-                        src={"/img/import_export.jpg"}
-                        width={1920}
-                        height={1080}
-                        className="absolute min-h-[100vh] min-w-[160vh] top-0 -left-[25vw] -skew-x-12"
-                      ></Image>
-                    </div>
-                  </Parallax>
-                  <Parallax
-                    type={"textV"}
-                    start={0}
-                    end={1}
-                    className={"right-0"}
-                  >
-                    <span className="lg:py-40 text-[75px] lg:text-[150px] drop-shadow-md">
-                      Imports and Exports
-                    </span>
-                  </Parallax>
-                </div>
-              </div>
+              <SectionR
+                heading={[
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ]}
+                content={[
+                  {
+                    language: "EN",
+                    content: "We provide the best services to meet your needs.",
+                  },
+                  {
+                    language: "ES",
+                    content:
+                      "Ofrecemos los mejores servicios para satisfacer sus necesidades.",
+                  },
+                  {
+                    language: "CH",
+                    content: "我们提供最优质的服务以满足您的需求。",
+                  },
+                  {
+                    language: "IT",
+                    content:
+                      "Offriamo i migliori servizi per soddisfare le tue esigenze.",
+                  },
+                ]}
+                marke={[
+                  {
+                    language: "EN",
+                    content: "Trust, Quality, and Excellence.",
+                  },
+                  {
+                    language: "ES",
+                    content: "Confianza, Calidad y Excelencia.",
+                  },
+                  {
+                    language: "CH",
+                    content: "信任，质量和卓越。",
+                  },
+                  {
+                    language: "IT",
+                    content: "Fiducia, Qualità ed Eccellenza.",
+                  },
+                ]}
+              ></SectionR>
 
-              <div className="hidden lg:grid min-h-screen grid-cols-1 lg:grid-cols-2 overflow-hidden">
-                <div className="relative h-full col-span-1 z-10">
-                  <Parallax
-                    type={"contentHV"}
-                    start={-0.5}
-                    end={0.5}
-                    valueYStart={"0%"}
-                    valueYEnd={"0%"}
-                    valueXStart={"-100%"}
-                    valueXEnd={"0%"}
-                    className={"h-screen w-[50vw] right-0"}
-                  >
-                    <div className="absolute min-h-[100vh] min-w-[60vw] right-0 -skew-x-12 overflow-hidden">
-                      <Image
-                        src={"/img/import_export.jpg"}
-                        width={1920}
-                        height={1080}
-                        className="absolute min-h-[100vh] min-w-[160vh] top-0 -right-[25vw] skew-x-12"
-                      ></Image>
-                    </div>
-                  </Parallax>
-                  <Parallax
-                    type={"contentHV"}
-                    start={-0.5}
-                    end={0.5}
-                    valueYStart={"0%"}
-                    valueYEnd={"0%"}
-                    valueXStart={"-100%"}
-                    valueXEnd={"0%"}
-                    className={
-                      "block lg:hidden w-[100vw] h-screen justify-center items-end right-0"
-                    }
-                  >
-                    <div className="absolute h-screen w-full flex justify-end items-center">
-                      <div className="right-0 overflow-hidden bg-red-100 mr-[60px] w-[65%] p-5">
-                        <Heading
-                          text={[
-                            {
-                              language: "EN",
-                              content: "Imports and Exports",
-                            },
-                            {
-                              language: "ES",
-                              content: "Importaciones y Exportaciones",
-                            },
-                          ]}
-                          level={3}
-                          className="text-white pb-8 drop-shadow-xl"
-                        ></Heading>
-
-                        <p className="text-white pb-8 drop-shadow-xl">
-                          In our Import Division, we traverse the globe to
-                          source the finest materials and products. Our
-                          extensive network of international suppliers ensures
-                          that we deliver unparalleled quality and innovation.
-                          We bring the world's best to your doorstep, tailored
-                          to meet the unique demands of your projects.
-                        </p>
-                      </div>
-                    </div>
-                  </Parallax>
-                  <Parallax
-                    type={"textV"}
-                    start={0}
-                    end={1}
-                    className={"left-0"}
-                  >
-                    <span className="lg:py-40 text-[75px] lg:text-[150px] drop-shadow-md">
-                      Imports and Exports
-                    </span>
-                  </Parallax>
-                </div>
-                <div className="hidden lg:grid relative col-span-1 lg:col-span-1 gap-2 h-full w-full z-0">
-                  <Parallax
-                    type={"contentHV"}
-                    start={-0.5}
-                    end={0.5}
-                    valueYStart={"0%"}
-                    valueYEnd={"0%"}
-                    valueXStart={"100%"}
-                    valueXEnd={"0%"}
-                    className={"h-screen w-[60vw] rigth-0"}
-                  >
-                    <div className="absolute top-0 left-0 col-span-2 h-screen w-[60vw] p-12 bg-[rgba(245,76,39,0.75)] backdrop-blur-sm -skew-x-12 flex justify-start items-center">
-                      <div className="w-[40vw] skew-x-12 text-right">
-                        <Heading
-                          text={[
-                            {
-                              language: "EN",
-                              content: "Imports and Exports",
-                            },
-                            {
-                              language: "ES",
-                              content: "Importaciones y Exportaciones",
-                            },
-                          ]}
-                          level={3}
-                          className="text-white pb-8 drop-shadow-xl"
-                        ></Heading>
-
-                        <p className="text-white pb-8 drop-shadow-xl">
-                          In our Import Division, we traverse the globe to
-                          source the finest materials and products. Our
-                          extensive network of international suppliers ensures
-                          that we deliver unparalleled quality and innovation.
-                          We bring the world's best to your doorstep, tailored
-                          to meet the unique demands of your projects.
-                        </p>
-                      </div>
-                    </div>
-                  </Parallax>
-                </div>
-              </div>
-
-              <div className="relative bg-the-lightWhite z-10">
+              <div className="relative bg-[rgba(0,0,0,0.8)] z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                   <div className="relative col-span-1 lg:col-span-3 flex justify-between items-center pb-9">
                     <div className="max-w-[650px]">
@@ -618,24 +536,18 @@ const ExampleContent = () => {
     offset: ["start end", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.75, 1]);
-  const y = useTransform(scrollYProgress, [0, 1], ["-100vh", "150vh"]);
-  const yBg = useTransform(scrollYProgress, [0, 1], ["100vh", "150vh"]);
-  const opacity = useTransform(scrollYProgress, [0.25, 0.5, 1], [0, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-100px", "100px"]);
+  const yBg = useTransform(scrollYProgress, [0, 1], ["-100px", "100px"]);
+  const opacity = useTransform(scrollYProgress, [0.25, 0.5, 1], [1, 1, 1]);
   const opacityBg = useTransform(scrollYProgress, [0.25, 0.5], [0, 1]);
 
   return (
     <div
       ref={targetRef}
-      className="relative mx-auto min-h-screen flex justify-center items-center grid max-w-5xl grid-cols-1 gap-8 px-16 pb-24 pt-12 z-0"
+      className="relative mx-auto min-h-screen flex justify-center items-center grid max-w-5xl grid-cols-1 lg:gap-8 lg:px-16 pb-24 pt-12 z-0"
     >
-      <div className="fixed h-screen w-screen top-0 left-0 p-4">
-        <motion.div
-          className="absolute h-full w-full"
-          style={{ y: yBg, scale, opacityBg, opacity }}
-        >
-          {/* <div className="w-full h-full bg-[rgba(214,245,39,0.75)] backdrop-blur-sm"></div> */}
-        </motion.div>
+      <div className="relative min-h-screen top-0 left-0 p-4">
         <div className="col-span-1">
           <motion.div style={{ y, scale }}>
             <h2 className="text-2xl md:text-3xl font-bold md:col-span-4 pb-7">
@@ -655,10 +567,14 @@ const ExampleContent = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Accusantium reiciendis blanditiis aliquam aut fugit sint.
               </p>
-
-              <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
-                Learn more <FiArrowUpRight className="inline" />
-              </button>
+              <div className="w-full flex justify-start items-center">
+                <Link
+                  href="/"
+                  className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-the-red`}
+                >
+                  Learn more <FiArrowUpRight className="inline" />
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>
