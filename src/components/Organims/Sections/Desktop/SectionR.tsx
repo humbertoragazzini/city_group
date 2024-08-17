@@ -25,13 +25,19 @@ type Text = [
   }
 ];
 
+interface iLearnMore {
+  label: Text;
+  link: string;
+}
+
 interface iSection {
   heading: Text;
   content: Text;
   marke: Text;
+  learn?: iLearnMore;
 }
 
-export default function SectionR({ heading, content, marke }: iSection) {
+export default function SectionR({ heading, content, marke, learn }: iSection) {
   const context = useAppContext();
   return (
     <div className="hidden lg:grid min-h-screen grid-cols-1 lg:grid-cols-2 overflow-hidden">
@@ -56,46 +62,6 @@ export default function SectionR({ heading, content, marke }: iSection) {
             ></Image>
           </div>
         </Parallax>
-        <Parallax
-          type={"contentHV"}
-          start={-0.5}
-          end={0.5}
-          valueYStart={"0%"}
-          valueYEnd={"0%"}
-          valueXStart={"-100%"}
-          valueXEnd={"0%"}
-          className={
-            "block lg:hidden w-[100vw] h-screen justify-center items-end right-0"
-          }
-        >
-          <div className="absolute h-screen w-full flex justify-end items-center">
-            <div className="right-0 overflow-hidden bg-red-100 mr-[60px] w-[65%] p-5">
-              <Heading
-                text={[
-                  {
-                    language: "EN",
-                    content: "Imports and Exports",
-                  },
-                  {
-                    language: "ES",
-                    content: "Importaciones y Exportaciones",
-                  },
-                ]}
-                level={3}
-                className="text-white pb-8 drop-shadow-xl"
-              ></Heading>
-
-              <p className="text-white pb-8 drop-shadow-xl">
-                In our Import Division, we traverse the globe to source the
-                finest materials and products. Our extensive network of
-                international suppliers ensures that we deliver unparalleled
-                quality and innovation. We bring the world's best to your
-                doorstep, tailored to meet the unique demands of your projects.
-              </p>
-            </div>
-          </div>
-        </Parallax>
-
         <Marke marke={marke}></Marke>
       </div>
       <div className="hidden lg:grid relative col-span-1 lg:col-span-1 gap-2 h-full w-full z-0">
@@ -122,14 +88,18 @@ export default function SectionR({ heading, content, marke }: iSection) {
                 type={"body"}
                 className="text-yellowBright pb-8 drop-shadow-xl"
               ></Paragraph>
-              <div className="w-full flex justify-end items-center">
-                <Link
-                  href="/"
-                  className={`text-black text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-lime`}
-                >
-                  Learn more <FiArrowUpRight className="inline" />
-                </Link>
-              </div>
+
+              {learn !== undefined && (
+                <div className="w-full flex justify-end items-center">
+                  <Link
+                    href={learn.link}
+                    className={`text-black text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-lime`}
+                  >
+                    <Paragraph type="body" text={learn.label}></Paragraph>{" "}
+                    <FiArrowUpRight className="inline" />
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </Parallax>

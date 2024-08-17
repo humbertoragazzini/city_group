@@ -23,6 +23,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
 import SectionL from "@/components/Organims/Sections/Desktop/SectionL";
 import SectionR from "@/components/Organims/Sections/Desktop/SectionR";
+import SectionMob from "@/components/Organims/Sections/Mobile/SectionMob";
 
 export default function Home() {
   const context = useAppContext();
@@ -75,6 +76,14 @@ export default function Home() {
                           content:
                             "Elevando la Excelencia en Todas las Industrias",
                         },
+                        {
+                          language: "CH",
+                          content: "提升各行业的卓越水平",
+                        },
+                        {
+                          language: "IT",
+                          content: "Elevare l'Eccellenza in Tutti i Settori",
+                        },
                       ]}
                       level={1}
                     ></Heading>
@@ -91,7 +100,16 @@ export default function Home() {
                         {
                           language: "ES",
                           content:
-                            "PrimalPorts Elevating Excellence Across Industries",
+                            "Soluciones Integrales en Importaciones, Construcción y Venta al por Menor",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Soluzioni Complete per Importazioni, Costruzioni e Vendita al Dettaglio",
                         },
                       ]}
                     ></Paragraph>
@@ -107,7 +125,17 @@ export default function Home() {
                         {
                           language: "ES",
                           content:
-                            "Comprehensive Solutions in Imports, Construction, and Retail",
+                            "En PrimalPort, armonizamos el arte de la innovación con la ciencia de la experiencia para ofrecer servicios trascendentes en Importaciones, Construcción y Venta al por Menor. Descubre cómo nuestro enfoque holístico y nuestra dedicación inquebrantable a la calidad fomentan el éxito y la transformación en una multitud de sectores.",
+                        },
+                        {
+                          language: "CH",
+                          content:
+                            "在PrimalPort，我们将创新的艺术与专业的科学相结合，提供卓越的进口、建筑和零售服务。探索我们全方位的方法和对质量的坚定承诺如何促进各个领域的成功与转型。",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "In PrimalPort, armonizziamo l'arte dell'innovazione con la scienza dell'esperienza per offrire servizi trascendenti in Importazioni, Costruzioni e Vendita al Dettaglio. Scopri come il nostro approccio olistico e la nostra dedizione incrollabile alla qualità favoriscono il successo e la trasformazione in una moltitudine di settori.",
                         },
                       ]}
                     ></Paragraph>
@@ -125,10 +153,13 @@ export default function Home() {
               </GlassHScreen>
 
               {/* MOBILE */}
-              <TextParallaxContentExample></TextParallaxContentExample>
+              <SectionMob
+                imgUrl="/img/import_export.jpg"
+                subheading="Modern"
+                heading="Dress for the best."
+              ></SectionMob>
 
               {/* DESKTOP */}
-
               <SectionL
                 heading={[
                   {
@@ -186,6 +217,27 @@ export default function Home() {
                     content: "Fiducia, Qualità ed Eccellenza.",
                   },
                 ]}
+                learn={{
+                  link: "/",
+                  label: [
+                    {
+                      language: "EN",
+                      content: "Learn more",
+                    },
+                    {
+                      language: "ES",
+                      content: "Acerca de",
+                    },
+                    {
+                      language: "CH",
+                      content: "了解更多",
+                    },
+                    {
+                      language: "IT",
+                      content: "Scopri di più",
+                    },
+                  ],
+                }}
               ></SectionL>
 
               <SectionR
@@ -245,6 +297,27 @@ export default function Home() {
                     content: "Fiducia, Qualità ed Eccellenza.",
                   },
                 ]}
+                learn={{
+                  link: "/",
+                  label: [
+                    {
+                      language: "EN",
+                      content: "Learn more",
+                    },
+                    {
+                      language: "ES",
+                      content: "Acerca de",
+                    },
+                    {
+                      language: "CH",
+                      content: "了解更多",
+                    },
+                    {
+                      language: "IT",
+                      content: "Scopri di più",
+                    },
+                  ],
+                }}
               ></SectionR>
 
               <div className="relative bg-[rgba(0,0,0,0.8)] z-10">
@@ -423,164 +496,5 @@ export default function Home() {
     </SmoothScrollbar>
   );
 }
-
-const TextParallaxContentExample = () => {
-  return (
-    <div className="lg:hidden">
-      <TextParallaxContent
-        imgUrl="/img/import_export.jpg"
-        subheading="Collaborate"
-        heading="Built for all of us."
-      >
-        <ExampleContent />
-      </TextParallaxContent>
-      <TextParallaxContent
-        imgUrl="/img/import_export.jpg"
-        subheading="Quality"
-        heading="Never compromise."
-      >
-        <ExampleContent />
-      </TextParallaxContent>
-      <TextParallaxContent
-        imgUrl="/img/import_export.jpg"
-        subheading="Modern"
-        heading="Dress for the best."
-      >
-        <ExampleContent />
-      </TextParallaxContent>
-    </div>
-  );
-};
-
-const IMG_PADDING = 12;
-
-const TextParallaxContent = ({ imgUrl, subheading, heading, children }) => {
-  return (
-    <div>
-      <div className="relative h-fit">
-        <StickyImage imgUrl={imgUrl} />
-        <OverlayCopy heading={heading} subheading={subheading} />
-      </div>
-      {children}
-    </div>
-  );
-};
-
-const StickyImage = ({ imgUrl }) => {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["end end", "end start"],
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.9, 0]);
-
-  return (
-    <motion.div
-      style={{
-        backgroundImage: `url(${imgUrl})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: `calc(100vh - ${IMG_PADDING * 2}px)`,
-        top: IMG_PADDING,
-        scale,
-      }}
-      ref={targetRef}
-      className="sticky z-10 overflow-hidden"
-    >
-      <motion.div className="h-[100vh] aspect-video">
-        <video src="./images/import_export.jpg" autoPlay loop muted></video>
-      </motion.div>
-      <motion.div
-        className="absolute inset-0 bg-neutral-950/70 "
-        // style={{
-        //   backdropFilter: blur,
-        // }}
-      />
-    </motion.div>
-  );
-};
-
-const OverlayCopy = ({ subheading, heading }) => {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start end", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [250, -250]);
-  const opacity = useTransform(scrollYProgress, [0.25, 0.5, 0.75], [0, 1, 0]);
-
-  return (
-    <motion.div
-      style={{
-        y,
-        opacity,
-      }}
-      ref={targetRef}
-      className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white z-10"
-    >
-      <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
-        {subheading}
-      </p>
-      <p className="text-center text-4xl font-bold md:text-7xl">{heading}</p>
-    </motion.div>
-  );
-};
-
-const ExampleContent = () => {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start end", "end start"],
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1]);
-  const y = useTransform(scrollYProgress, [0, 1], ["-100px", "100px"]);
-  const yBg = useTransform(scrollYProgress, [0, 1], ["-100px", "100px"]);
-  const opacity = useTransform(scrollYProgress, [0.25, 0.5, 1], [1, 1, 1]);
-  const opacityBg = useTransform(scrollYProgress, [0.25, 0.5], [0, 1]);
-
-  return (
-    <div
-      ref={targetRef}
-      className="relative mx-auto min-h-screen flex justify-center items-center grid max-w-5xl grid-cols-1 lg:gap-8 lg:px-16 pb-24 pt-12 z-0"
-    >
-      <div className="relative min-h-screen top-0 left-0 p-4">
-        <div className="col-span-1">
-          <motion.div style={{ y, scale }}>
-            <h2 className="text-2xl md:text-3xl font-bold md:col-span-4 pb-7">
-              Additional content explaining the above card here
-            </h2>
-          </motion.div>
-
-          <div className="md:col-span-8">
-            <motion.div style={{ y, scale }}>
-              <p className="mb-4 text-lg md:text-xl text-black-600 md:text-2xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-                blanditiis soluta eius quam modi aliquam quaerat odit deleniti
-                minima maiores voluptate est ut saepe accusantium maxime
-                doloremque nulla consectetur possimus.
-              </p>
-              <p className="mb-8 text-lg md:text-xl text-black-600 md:text-2xl pb-7">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Accusantium reiciendis blanditiis aliquam aut fugit sint.
-              </p>
-              <div className="w-full flex justify-start items-center">
-                <Link
-                  href="/"
-                  className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-the-red`}
-                >
-                  Learn more <FiArrowUpRight className="inline" />
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 Home.displayName = "Home";

@@ -217,26 +217,47 @@ const FooterCTAs = () => {
       <div className="absolute bottom-6 left-6 flex gap-4 md:flex-col">
         {SOCIAL_CTAS.map((l, idx) => {
           return (
-            <motion.a
-              key={idx}
-              href={l.href}
-              initial={{ opacity: 0, y: -8 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  delay: 1 + idx * 0.125,
-                  duration: 0.5,
-                  ease: "easeInOut",
-                },
-              }}
-              exit={{ opacity: 0, y: -8 }}
-            >
-              <l.Component className="text-xl text-the-white transition-all ease-in-out hover:text-white hover:scale-125" />
-            </motion.a>
+            <>
+              {l.href !== "language" && (
+                <motion.a
+                  key={idx}
+                  href={l.href}
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      delay: 1 + idx * 0.125,
+                      duration: 0.5,
+                      ease: "easeInOut",
+                    },
+                  }}
+                  exit={{ opacity: 0, y: -8 }}
+                >
+                  <l.Component className="text-xl text-the-white transition-all ease-in-out hover:text-white hover:scale-125" />
+                </motion.a>
+              )}
+              {l.href === "language" && (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      delay: 1 + idx * 0.125,
+                      duration: 0.5,
+                      ease: "easeInOut",
+                    },
+                  }}
+                  exit={{ opacity: 0, y: -8 }}
+                >
+                  <Language></Language>
+                </motion.div>
+              )}
+            </>
           );
         })}
-        <Language></Language>
       </div>
     </>
   );
@@ -277,6 +298,10 @@ const SOCIAL_CTAS = [
   {
     Component: SiYoutube,
     href: "#",
+  },
+  {
+    Component: SiYoutube,
+    href: "language",
   },
 ];
 

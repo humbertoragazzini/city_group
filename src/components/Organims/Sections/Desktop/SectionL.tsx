@@ -25,13 +25,19 @@ type Text = [
   }
 ];
 
+interface iLearnMore {
+  label: Text;
+  link: string;
+}
+
 interface iSection {
   heading: Text;
   content: Text;
   marke: Text;
+  learn?: iLearnMore;
 }
 
-export default function SectionL({ heading, content, marke }: iSection) {
+export default function SectionL({ heading, content, marke, learn }: iSection) {
   const context = useAppContext();
   return (
     <div className="hidden lg:grid min-h-screen grid-cols-1 lg:grid-cols-2 overflow-hidden">
@@ -59,14 +65,17 @@ export default function SectionL({ heading, content, marke }: iSection) {
                 type={"body"}
                 className="text-black pb-8 drop-shadow-xl"
               ></Paragraph>
-              <div className="w-full flex justify-start items-center">
-                <Link
-                  href="/"
-                  className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-black`}
-                >
-                  Learn more <FiArrowUpRight className="inline" />
-                </Link>
-              </div>
+              {learn !== undefined && (
+                <div className="w-full flex justify-start items-center">
+                  <Link
+                    href={learn.link}
+                    className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-black`}
+                  >
+                    <Paragraph type="body" text={learn.label}></Paragraph>{" "}
+                    <FiArrowUpRight className="inline" />
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </Parallax>
