@@ -60,6 +60,7 @@ export default function Home() {
               ref={headerRef}
             >
               <GradientBG className={"absolute top-0 left-0"}></GradientBG>
+
               <GlassHScreen>
                 <div className="opacity-0 animate-fade-in delay-[5500ms] grid h-fit lg:h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
                   <div className=" relative col-span-1 xl:col-span-2 px-4 pt-[90px]  md:pt-[60px] md:px-16 flex flex-col justify-center items-start">
@@ -139,7 +140,7 @@ export default function Home() {
                       ]}
                     ></Paragraph>
                   </div>
-                  <div className="relative hidden col-span-1 m-4 lg:block">
+                  <div className="relative hidden col-span-1 m-4 xl:block">
                     <LogoBG
                       className={
                         "left-[0%] lg:top-[-65%] 3xl:top-[-50%] 4xl:top-[0%] 5xl:top-[0%] hidden xl:block"
@@ -274,6 +275,7 @@ export default function Home() {
                   },
                 }}
               ></SectionMob>
+
               {/* DESKTOP */}
               <SectionL
                 heading={[
@@ -354,6 +356,7 @@ export default function Home() {
                   ],
                 }}
               ></SectionL>
+
               <SectionR
                 heading={[
                   {
@@ -433,6 +436,8 @@ export default function Home() {
                   ],
                 }}
               ></SectionR>
+
+              {/* Footer */}
               <div className="relative bg-[rgba(0,0,0,0.8)] z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                   <div className="relative col-span-1 lg:col-span-3 flex justify-between items-center pb-9">
@@ -579,23 +584,20 @@ export default function Home() {
                   </div>
 
                   <div className="relative col-span-1 lg:col-span-3 pb-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2">
-                      <div className="relative col-span-1 lg:col-span-2 flex flex-col justify-end items-start mb-3">
-                        <p>Lorem 84b UK</p>
-                        <p>Lorem 1055 ARG</p>
+                    <div className="flex justify-between items-start">
+                      <div className="flex flex-row">
+                        <div className="relative hidden lg:flex flex-col justify-end items-start mb-3 mr-24">
+                          <p>Lorem 84b UK</p>
+                          <p>Lorem 1055 ARG</p>
+                        </div>
+                        <div className="relative flex flex-col justify-end items-start mb-3 mr-24">
+                          <p>contact@primapports.com</p>
+                          <p>contact@primapports.com</p>
+                        </div>
                       </div>
-                      <div className="relative col-span-1 lg:col-span-2 flex flex-col justify-end items-start mb-3">
-                        <p>T +44 (0) 555 3333 UK</p>
-                        <p>T +54 (0) 555 3333 ARG</p>
-                      </div>
-                      <div className="relative col-span-1 lg:col-span-2 flex flex-col justify-end items-start mb-3">
-                        <p>Email: contact@primapports.com</p>
-                        <p>contact@primapports.com</p>
-                      </div>
-                      <div className="relative col-span-1 flex flex-col justify-end items-end mb-3">
+                      <div className="relative flex flex-col justify-end items-start mb-3">
                         <div>
-                          <p>Design and Developed by:</p>
-                          <p>Tobe21 Studios a division of Primalports</p>
+                          <p>Made by Tobe21</p>
                         </div>
                       </div>
                     </div>

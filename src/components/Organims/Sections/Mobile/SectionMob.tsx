@@ -122,8 +122,16 @@ function OverlayCopy({ subheading, heading }: any) {
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white z-10"
     >
-      <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">some text</p>
-      <p className="text-center text-4xl font-bold md:text-7xl">some text</p>
+      <Paragraph
+        type="body"
+        className="mb-2 text-center md:mb-4 !text-xl md:!text-3xl"
+        text={subheading}
+      ></Paragraph>
+      <Paragraph
+        type="body"
+        className="text-center font-bold !text-4xl md:!text-7xl"
+        text={heading}
+      ></Paragraph>
     </motion.div>
   );
 }
