@@ -1,21 +1,73 @@
+import Heading from "@/components/Atoms/Heading/Heading";
+import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 
-export default function SectionMob({ imgUrl, subheading, heading }: any) {
+type Text = [
+  {
+    language: "EN";
+    content: string;
+  },
+  {
+    language: "ES";
+    content: string;
+  },
+  {
+    language: "CH";
+    content: string;
+  },
+  {
+    language: "IT";
+    content: string;
+  }
+];
+
+interface iLearnMore {
+  label: Text;
+  link: string;
+}
+
+interface iSectionMob {
+  imgContent: {
+    imgUrl: string;
+    size: {
+      width: number;
+      height: number;
+    };
+    aria: Text;
+    heading: Text;
+    subheading: Text;
+  };
+  textContent: {
+    heading: Text;
+    text: Text;
+    learn: iLearnMore;
+  };
+}
+
+export default function SectionMob({ imgContent, textContent }: iSectionMob) {
   return (
     <div className="block lg:hidden">
       <div className="relative h-fit">
-        <StickyImage imgUrl={imgUrl} />
-        <OverlayCopy heading={heading} subheading={subheading} />
+        <StickyImage
+          imgUrl={imgContent.imgUrl}
+          aria={imgContent.aria}
+          size={imgContent.size}
+        />
+        <OverlayCopy
+          heading={imgContent.heading}
+          subheading={imgContent.subheading}
+        />
       </div>
-      <Content></Content>
+      <Content textContent={textContent}></Content>
     </div>
   );
 }
 
-function StickyImage({ imgUrl }: any) {
+function StickyImage({ imgUrl, aria, size }: any) {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -28,7 +80,7 @@ function StickyImage({ imgUrl }: any) {
   return (
     <motion.div
       style={{
-        backgroundImage: `url(${imgUrl})`,
+        // backgroundImage: `url(${imgUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: `calc(100vh - ${12 * 2}px)`,
@@ -39,7 +91,12 @@ function StickyImage({ imgUrl }: any) {
       className="sticky z-10 overflow-hidden"
     >
       <motion.div className="h-[100vh] aspect-video">
-        <video src="./images/import_export.jpg" autoPlay loop muted></video>
+        <Image
+          src={imgUrl}
+          alt={"nothing yet"}
+          width={size.width}
+          height={size.height}
+        ></Image>
       </motion.div>
       <motion.div className="absolute inset-0 bg-neutral-950/70" />
     </motion.div>
@@ -65,15 +122,13 @@ function OverlayCopy({ subheading, heading }: any) {
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white z-10"
     >
-      <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
-        {subheading}
-      </p>
-      <p className="text-center text-4xl font-bold md:text-7xl">{heading}</p>
+      <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">some text</p>
+      <p className="text-center text-4xl font-bold md:text-7xl">some text</p>
     </motion.div>
   );
 }
 
-function Content() {
+function Content({ textContent }: any) {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -94,29 +149,30 @@ function Content() {
       <div className="relative min-h-screen flex justify-start items-center top-0 left-0 p-4">
         <div className="col-span-1">
           <motion.div style={{ y, scale }}>
-            <h2 className="text-2xl md:text-3xl font-bold md:col-span-4 pb-7">
-              Additional content explaining the above card here
-            </h2>
+            <Heading
+              text={textContent.heading}
+              level={2}
+              className="text-2xl md:text-3xl font-bold md:col-span-4 pb-7"
+            ></Heading>
           </motion.div>
 
           <div className="md:col-span-8">
             <motion.div style={{ y, scale }}>
-              <p className="mb-4 text-lg  text-black-600 md:text-2xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-                blanditiis soluta eius quam modi aliquam quaerat odit deleniti
-                minima maiores voluptate est ut saepe accusantium maxime
-                doloremque nulla consectetur possimus.
-              </p>
-              <p className="mb-8 text-lg  text-black-600 md:text-2xl pb-7">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Accusantium reiciendis blanditiis aliquam aut fugit sint.
-              </p>
+              <Paragraph
+                type="standfirst3"
+                text={textContent.text}
+                className="mb-4"
+              ></Paragraph>
               <div className="w-full flex justify-start items-center">
                 <Link
-                  href="/"
+                  href={textContent.learn.link}
                   className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-the-red`}
                 >
-                  Learn more <FiArrowUpRight className="inline" />
+                  <Paragraph
+                    type="body"
+                    text={textContent.learn.label}
+                  ></Paragraph>
+                  <FiArrowUpRight className="inline" />
                 </Link>
               </div>
             </motion.div>

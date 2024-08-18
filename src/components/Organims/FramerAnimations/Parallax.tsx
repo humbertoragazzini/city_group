@@ -25,7 +25,7 @@ export default function Parallax({
   const textY = useTransform(
     progress,
     [start, end],
-    [valueYStart ?? "100%", valueYEnd ?? "-100%"]
+    [valueYStart ?? "0%", valueYEnd ?? "-100%"]
   );
   const imageY = useTransform(
     progress,

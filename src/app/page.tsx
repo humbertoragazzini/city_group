@@ -60,7 +60,6 @@ export default function Home() {
               ref={headerRef}
             >
               <GradientBG className={"absolute top-0 left-0"}></GradientBG>
-
               <GlassHScreen>
                 <div className="opacity-0 animate-fade-in delay-[5500ms] grid h-fit lg:h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
                   <div className=" relative col-span-1 xl:col-span-2 px-4 pt-[90px]  md:pt-[60px] md:px-16 flex flex-col justify-center items-start">
@@ -154,11 +153,127 @@ export default function Home() {
 
               {/* MOBILE */}
               <SectionMob
-                imgUrl="/img/import_export.jpg"
-                subheading="Modern"
-                heading="Dress for the best."
+                imgContent={{
+                  imgUrl: "/img/import_export.jpg",
+                  size: {
+                    width: 1920,
+                    height: 1080,
+                  },
+                  aria: [
+                    {
+                      language: "EN",
+                      content: "Welcome to our website",
+                    },
+                    {
+                      language: "ES",
+                      content: "Bienvenido a nuestro sitio web",
+                    },
+                    {
+                      language: "CH",
+                      content: "欢迎来到我们的网站",
+                    },
+                    {
+                      language: "IT",
+                      content: "Benvenuti nel nostro sito web",
+                    },
+                  ],
+                  heading: [
+                    {
+                      language: "EN",
+                      content: "Welcome to our website",
+                    },
+                    {
+                      language: "ES",
+                      content: "Bienvenido a nuestro sitio web",
+                    },
+                    {
+                      language: "CH",
+                      content: "欢迎来到我们的网站",
+                    },
+                    {
+                      language: "IT",
+                      content: "Benvenuti nel nostro sito web",
+                    },
+                  ],
+                  subheading: [
+                    {
+                      language: "EN",
+                      content: "Welcome to our website",
+                    },
+                    {
+                      language: "ES",
+                      content: "Bienvenido a nuestro sitio web",
+                    },
+                    {
+                      language: "CH",
+                      content: "欢迎来到我们的网站",
+                    },
+                    {
+                      language: "IT",
+                      content: "Benvenuti nel nostro sito web",
+                    },
+                  ],
+                }}
+                textContent={{
+                  heading: [
+                    {
+                      language: "EN",
+                      content: "Welcome to our website",
+                    },
+                    {
+                      language: "ES",
+                      content: "Bienvenido a nuestro sitio web",
+                    },
+                    {
+                      language: "CH",
+                      content: "欢迎来到我们的网站",
+                    },
+                    {
+                      language: "IT",
+                      content: "Benvenuti nel nostro sito web",
+                    },
+                  ],
+                  text: [
+                    {
+                      language: "EN",
+                      content: "Welcome to our website",
+                    },
+                    {
+                      language: "ES",
+                      content: "Bienvenido a nuestro sitio web",
+                    },
+                    {
+                      language: "CH",
+                      content: "欢迎来到我们的网站",
+                    },
+                    {
+                      language: "IT",
+                      content: "Benvenuti nel nostro sito web",
+                    },
+                  ],
+                  learn: {
+                    link: "/",
+                    label: [
+                      {
+                        language: "EN",
+                        content: "Learn more",
+                      },
+                      {
+                        language: "ES",
+                        content: "Acerca de",
+                      },
+                      {
+                        language: "CH",
+                        content: "了解更多",
+                      },
+                      {
+                        language: "IT",
+                        content: "Scopri di più",
+                      },
+                    ],
+                  },
+                }}
               ></SectionMob>
-
               {/* DESKTOP */}
               <SectionL
                 heading={[
@@ -239,7 +354,6 @@ export default function Home() {
                   ],
                 }}
               ></SectionL>
-
               <SectionR
                 heading={[
                   {
@@ -319,7 +433,6 @@ export default function Home() {
                   ],
                 }}
               ></SectionR>
-
               <div className="relative bg-[rgba(0,0,0,0.8)] z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                   <div className="relative col-span-1 lg:col-span-3 flex justify-between items-center pb-9">
