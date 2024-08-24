@@ -438,7 +438,7 @@ export default function Home() {
               ></SectionR>
 
               {/* Footer */}
-              <div className="relative bg-charcoal z-10 top-[-2px] pb-[2px]">
+              <div className="relative bg-onyx z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                   <div className="relative col-span-1 lg:col-span-3 flex justify-between items-center pb-9">
                     <div className="max-w-[650px]">
