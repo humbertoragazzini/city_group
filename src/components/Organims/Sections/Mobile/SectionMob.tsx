@@ -152,7 +152,7 @@ function Content({ textContent }: any) {
   return (
     <div
       ref={targetRef}
-      className="relative mx-auto min-h-screen flex justify-center items-center grid max-w-5xl grid-cols-1 lg:gap-8 lg:px-16 pb-24 pt-12 z-0"
+      className="relative mx-auto min-h-screen flex justify-center items-center max-w-5xl grid-cols-1 lg:gap-8 lg:px-16 pb-24 pt-12 z-0"
     >
       <div className="relative min-h-screen flex justify-start items-center top-0 left-0 p-4">
         <div className="col-span-1">
@@ -160,7 +160,7 @@ function Content({ textContent }: any) {
             <Heading
               text={textContent.heading}
               level={2}
-              className="text-2xl md:text-3xl font-bold md:col-span-4 pb-7"
+              className="text-2xl md:text-3xl font-bold md:col-span-4 pb-7 drop-shadow-lg"
             ></Heading>
           </motion.div>
 
@@ -169,7 +169,7 @@ function Content({ textContent }: any) {
               <Paragraph
                 type="standfirst3"
                 text={textContent.text}
-                className="mb-4"
+                className="drop-shadow-xl mb-4"
               ></Paragraph>
               <div className="w-full flex justify-start items-center">
                 <Link

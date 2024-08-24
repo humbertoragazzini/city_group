@@ -2322,14 +2322,6 @@ export default function GradientBG({ className, scrollProgress }: any) {
     ],
   ];
 
-  // let allData = "";
-  // for (let i = 0; i < shperes.length; i++) {
-  //   allData += `[${shperes[i][0]},${shperes[i][1]},${shperes[i][2]},${
-  //     Math.random() * 0.05
-  //   },${Math.random() * 3.14}],`;
-  //   console.log(allData);
-  // }
-
   return (
     <>
       <div ref={el} className={"h-[100%] aspect-square " + className}></div>

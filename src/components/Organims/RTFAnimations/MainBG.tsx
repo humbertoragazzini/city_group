@@ -17,11 +17,11 @@ export default function MainBG() {
     // sphereRef.current.rotation.z = Math.PI / 2;
     // sphereRef.current.rotation.x = scroll.scroll.progress * Math.PI;
     // lightRef.current.position.y = 28 - 14 * scroll.scroll.progress;
-    lightRef.current.color = new THREE.Color(
-      255 - (255 * scroll.scroll.progress + 1),
-      255 - (255 * scroll.scroll.progress + 1),
-      255 - (255 * scroll.scroll.progress + 1)
-    );
+    // lightRef.current.color = new THREE.Color(
+    //   255 - (255 * scroll.scroll.progress + 1),
+    //   255 - (255 * scroll.scroll.progress + 1),
+    //   255 - (255 * scroll.scroll.progress + 1)
+    // );
   };
 
   const ligthOn = () => {
