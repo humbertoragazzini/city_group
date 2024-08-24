@@ -54,11 +54,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <body
-        className={
-          inter.className + " main_body h-screen relative overflow-hidden"
-        }
-      >
+      <body className={inter.className + " main_body relative"}>
         <AppWraper>
           <ONavBar></ONavBar>
           {/* <RightNavBar></RightNavBar> */}

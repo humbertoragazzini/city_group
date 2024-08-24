@@ -48,22 +48,31 @@ export default function Home() {
     gsap.fromTo(headerRef.current, { opacity: 0 }, { opacity: 1 });
   }, []);
 
+  useEffect(() => {
+    if (context.state.isMenuOpen) {
+      const scrollPosition = window.pageYOffset;
+      window.onscroll = () => {
+        window.scrollTo(0, scrollPosition);
+      };
+    } else {
+      window.onscroll = null;
+    }
+  }, [context.state.isMenuOpen]);
+
   return (
     <SmoothScrollbar enabled={!context.state.isMenuOpen}>
       {() => {
         return (
           <>
             <div
-              className={
-                "relative z-10 overflow-hidden transition-all duration-1000 m-auto pt-[0px] text-white "
-              }
+              className={`relative z-10 overflow-hidden transition-all duration-1000 m-auto pt-[0px] text-white `}
               ref={headerRef}
             >
               <GradientBG className={"absolute top-0 left-0"}></GradientBG>
 
               <GlassHScreen>
                 <div className="opacity-0 animate-fade-in delay-[5500ms] grid h-fit lg:h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
-                  <div className=" relative col-span-1 xl:col-span-2 pt-[150px] pb-[100px]  md:px-16 flex flex-col justify-center items-start">
+                  <div className=" relative col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex flex-col justify-center items-start">
                     <Heading
                       className="mb-4"
                       text={[
@@ -583,8 +592,8 @@ export default function Home() {
                     <hr></hr>
                   </div>
 
-                  <div className="relative col-span-1 lg:col-span-3 pb-10">
-                    <div className="flex justify-between items-start">
+                  <div className="relative col-span-1 lg:col-span-3">
+                    <div className="flex flex-col sm:flex-row justify-between items-start">
                       <div className="flex flex-row">
                         <div className="relative hidden lg:flex flex-col justify-end items-start mb-3 mr-24">
                           <p>Lorem 84b UK</p>

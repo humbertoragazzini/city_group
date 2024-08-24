@@ -71,7 +71,7 @@ const NavLink = ({ children, href, idx }) => {
         transition: { duration: 0.25 },
       }}
       exit={{ opacity: 0, y: -8 }}
-      className={`block ${
+      className={`block w-fit ${
         path == href ? "text-white " : "text-the-darkGrey hover:text-white"
       }`}
     >
