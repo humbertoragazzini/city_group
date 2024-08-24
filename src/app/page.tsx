@@ -49,7 +49,7 @@ export default function Home() {
   }, []);
 
   return (
-    <SmoothScrollbar enabled={!context.state.isMenuOpen}>
+    <SmoothScrollbar>
       {() => {
         return (
           <>
@@ -63,7 +63,7 @@ export default function Home() {
 
               <GlassHScreen>
                 <div className="opacity-0 animate-fade-in delay-[5500ms] grid h-fit lg:h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
-                  <div className=" relative col-span-1 xl:col-span-2 px-4 pt-[90px]  md:pt-[60px] md:px-16 flex flex-col justify-center items-start">
+                  <div className=" relative col-span-1 xl:col-span-2 pt-[150px] pb-[100px]  md:px-16 flex flex-col justify-center items-start">
                     <Heading
                       className="mb-4"
                       text={[

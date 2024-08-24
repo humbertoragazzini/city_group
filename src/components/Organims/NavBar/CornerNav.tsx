@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useAppContext } from "@/context/AppContext";
 import Language from "@/components/molecules/NavBar/Language";
 import Link from "next/link";
+import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 
 export default function Nav() {
   const [active, setActive] = useState(false);
@@ -34,8 +35,14 @@ const LinksContainer = () => {
     <motion.div className="space-y-4 p-12 pl-4 md:pl-20">
       {LINKS.map((l, idx) => {
         return (
-          <NavLink key={l.title} href={l.href} idx={idx}>
-            {l.title.toUpperCase()}
+          <NavLink key={"Links" + idx} href={l.href} idx={idx}>
+            <Link href={l.href}>
+              <Paragraph
+                text={l.title}
+                type="body"
+                className="uppercase !text-4xl md:!text-7xl font-semibold drop-shadow-lg "
+              ></Paragraph>
+            </Link>
           </NavLink>
         );
       })}
@@ -47,7 +54,7 @@ const NavLink = ({ children, href, idx }) => {
   const path = usePathname();
 
   return (
-    <motion.a
+    <motion.div
       initial={{ opacity: 0, y: -8 }}
       animate={{
         opacity: 1,
@@ -64,13 +71,12 @@ const NavLink = ({ children, href, idx }) => {
         transition: { duration: 0.25 },
       }}
       exit={{ opacity: 0, y: -8 }}
-      href={href}
-      className={`block text-4xl md:text-5xl font-semibold drop-shadow-lg ${
+      className={`block ${
         path == href ? "text-white " : "text-the-darkGrey hover:text-white"
-      } md:text-7xl`}
+      }`}
     >
       {children}
-    </motion.a>
+    </motion.div>
   );
 };
 
@@ -265,19 +271,39 @@ const FooterCTAs = () => {
 
 const LINKS = [
   {
-    title: "home",
+    title: [
+      { language: "EN", content: "Home" },
+      { language: "ES", content: "Inicio" },
+      { language: "CH", content: "主页" }, // Chinese for "Home"
+      { language: "IT", content: "Home" },
+    ],
     href: "/",
   },
   {
-    title: "About us",
+    title: [
+      { language: "EN", content: "About us" },
+      { language: "ES", content: "Sobre Nosotros" },
+      { language: "CH", content: "关于我们" }, // Chinese for "About us"
+      { language: "IT", content: "Chi Siamo" },
+    ],
     href: "/AboutUs",
   },
   {
-    title: "Our services",
-    href: "OurServices",
+    title: [
+      { language: "EN", content: "Our services" },
+      { language: "ES", content: "Nuestros Servicios" },
+      { language: "CH", content: "我们的服务" }, // Chinese for "Our services"
+      { language: "IT", content: "I Nostri Servizi" },
+    ],
+    href: "/OurServices",
   },
   {
-    title: "Contanct",
+    title: [
+      { language: "EN", content: "Contact" },
+      { language: "ES", content: "Contacto" },
+      { language: "CH", content: "联系我们" }, // Chinese for "Contact"
+      { language: "IT", content: "Contatto" },
+    ],
     href: "/Contact",
   },
 ];
