@@ -4,7 +4,7 @@ import Nav from "./CornerNav";
 
 export default function ONavBar() {
   return (
-    <div className="fixed top-0 bg-black overflow-visible w-screen z-50">
+    <div className="fixed bg-black top-0 overflow-visible w-screen z-50">
       <ALink href={"/"} className={"w-[300px] h-[57px] block m-4"}>
         <svg
           className="w-full h-full"
@@ -69,33 +69,6 @@ export default function ONavBar() {
               }}
               d="m 446.03405,323.62781 -22.63006,39.26406 h 45.24561 z m -23.75456,41.21496 -1.33265,2.31234 50.17682,0.0319 -1.35037,-2.34425 z"
             />
-            <text
-              xmlSpace="preserve"
-              style={{
-                fontSize: "47.625px",
-                fontFamily: "Microsoft Sans Serif",
-                fill: "#ffffff",
-                stroke: "#000000",
-                strokeWidth: "0.00499999",
-                strokeDasharray: "none",
-              }}
-              x="494.07288"
-              y="368.37854"
-              id="text18-6-6"
-            >
-              <tspan
-                id="tspan18-1-2"
-                style={{
-                  fontSize: "47.625px",
-                  fill: "#ffffff",
-                  strokeWidth: "0.005",
-                }}
-                x="494.07288"
-                y="368.37854"
-              >
-                PRIMALPORTS
-              </tspan>
-            </text>
           </g>
         </svg>
       </ALink>
