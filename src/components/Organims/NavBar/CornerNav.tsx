@@ -176,8 +176,7 @@ const HamburgerButton = ({ active, setActive }: any) => {
         initial={false}
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
-        style={{ top: 19, right: 19 }}
-        className={`fixed z-10 transition-all duration-1000 rounded-xl backdrop-blur-md ${
+        className={`fixed top-[19px] right-[19px] z-10 transition-all duration-1000 rounded-xl backdrop-blur-md ${
           active ? "bg-[rgba(0,0,0,0.5)]" : "bg-[rgba(0,0,0,0)]"
         } shadow-2xl`}
       />
