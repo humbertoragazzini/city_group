@@ -107,7 +107,7 @@ export default function SectionL({ heading, content, marke, learn }: iSection) {
   );
 }
 
-function Marke({ marke }: any) {
+export function Marke({ marke }: any) {
   const context = useAppContext();
 
   const filterLanguage = () => {

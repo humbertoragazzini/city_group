@@ -66,11 +66,126 @@ export default function Home() {
           <div
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
           >
-            <div className="h-screen w-full bg-red-400"></div>
-            <div className="h-screen w-full bg-blue-400">
-              <div className="w-full h-[250px] bg-gray-600 sticky top-0 left-0"></div>
+            <GradientBG className={"absolute top-0 left-0 h-full"}></GradientBG>
+            <div className="h-[300vh] w-full">
+              <div className="w-full sticky top-0 left-0 z-0">
+                <div
+                  className="absolute w-full h-screen z-0"
+                  style={{
+                    backgroundImage: "url(./img/import_export.jpg)",
+                    backgroundSize: "cover",
+                  }}
+                ></div>
+              </div>
+              <div className="w-full sticky top-0 left-0 overflow-hidden z-20">
+                <div className="relative w-full h-screen">
+                  <Parallax
+                    type={"contentHV"}
+                    start={0}
+                    end={1}
+                    valueYStart={"0%"}
+                    valueYEnd={"0%"}
+                    valueXStart={"0%"}
+                    valueXEnd={"100%"}
+                    className={"h-screen w-screen right-0"}
+                  >
+                    <div className="absolute top-0 left-0 h-screen w-1/2 bg-black z-[10]"></div>
+                  </Parallax>
+                  <Parallax
+                    type={"contentHV"}
+                    start={0}
+                    end={1}
+                    valueYStart={"0%"}
+                    valueYEnd={"0%"}
+                    valueXStart={"0%"}
+                    valueXEnd={"-100%"}
+                    className={"h-screen w-screen right-0"}
+                  >
+                    <div className="absolute top-0 right-0  h-screen w-1/2 bg-black z-[10]"></div>
+                  </Parallax>
+                  <Parallax
+                    type={"contentHV"}
+                    start={0}
+                    end={1}
+                    valueYStart={"0%"}
+                    valueYEnd={"-100%"}
+                    valueXStart={"0%"}
+                    valueXEnd={"0%"}
+                    className={"h-screen w-screen right-0"}
+                  >
+                    <div className="absolute top-0 right-0  h-screen w-screen bg-black z-[10]"></div>
+                  </Parallax>
+                  <Parallax
+                    type={"contentHV"}
+                    start={0}
+                    end={1}
+                    valueYStart={"0%"}
+                    valueYEnd={"100%"}
+                    valueXStart={"0%"}
+                    valueXEnd={"0%"}
+                    className={"h-screen w-screen right-0"}
+                  >
+                    <div className="absolute top-0 right-0  h-screen w-screen bg-black z-[10]"></div>
+                  </Parallax>
+                  <Parallax
+                    type={"contentHV"}
+                    start={0.5}
+                    end={1}
+                    valueYStart={"0%"}
+                    valueYEnd={"-100%"}
+                    valueXStart={"0%"}
+                    valueXEnd={"0%"}
+                    className={"h-screen w-screen right-0"}
+                  >
+                    <div
+                      className="whitespace-nowrap w-screen uppercase m-0 flex items-end"
+                      style={{ writingMode: "vertical-lr" }}
+                    >
+                      <p className="text-5xl">
+                        SCROLL SCROLL SCROLL SCROLL SCROLL
+                      </p>
+                    </div>
+                  </Parallax>
+                  <Parallax
+                    type={"contentHV"}
+                    start={0.5}
+                    end={1}
+                    valueYStart={"0%"}
+                    valueYEnd={"-100%"}
+                    valueXStart={"0%"}
+                    valueXEnd={"0%"}
+                    className={"h-screen  w-screen right-0 "}
+                  >
+                    <div
+                      className="whitespace-nowrap w-screen uppercase m-0 flex "
+                      style={{ writingMode: "vertical-lr" }}
+                    >
+                      <p className="text-5xl">
+                        SCROLL SCROLL SCROLL SCROLL SCROLL
+                      </p>
+                    </div>
+                  </Parallax>
+                </div>
+              </div>
+              <div className="relative p-4 flex flex-col justify-start items-start py-11 z-10">
+                <p className="text-4xl font-bold text-white drop-shadow-2xl mb-6">
+                  About us
+                </p>
+                <p className="text-3xl text-white drop-shadow-2xl mb-6">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Commodi eum nisi sequi aperiam sed, odit dolores
+                  necessitatibus qui molestias ipsam eligendi cum doloremque
+                  nobis a dignissimos rerum praesentium hic ex?
+                </p>
+                <p className="text-3xl text-white drop-shadow-2xl mb-6">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Commodi eum nisi sequi aperiam sed, odit dolores
+                  necessitatibus qui molestias ipsam eligendi cum doloremque
+                  nobis a dignissimos rerum praesentium hic ex?
+                </p>
+              </div>
             </div>
-            <div className="h-screen w-full bg-yellow-400"></div>
+            <div className="relative h-screen w-full bg-yellow-400"></div>
             {/* Footer */}
             <div className="relative w-full bg-black z-10">
               <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
