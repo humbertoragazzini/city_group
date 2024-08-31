@@ -4,8 +4,8 @@ import Nav from "./CornerNav";
 
 export default function ONavBar() {
   return (
-    <div className="fixed top-0 overflow-visible w-screen z-50">
-      <ALink href={"/"} className={"w-[250px] h-[50px] block m-4"}>
+    <div className="fixed top-0 bg-black overflow-visible w-screen z-50">
+      <ALink href={"/"} className={"w-[300px] h-[57px] block m-4"}>
         <svg
           className="w-full h-full"
           width="426.18509mm"

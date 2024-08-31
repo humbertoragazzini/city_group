@@ -40,7 +40,7 @@ interface iSection {
 export default function SectionR({ heading, content, marke, learn }: iSection) {
   const context = useAppContext();
   return (
-    <div className="hidden lg:grid min-h-screen grid-cols-1 lg:grid-cols-2 overflow-hidden">
+    <div className="hidden lg:grid min-h-screen grid-cols-1 lg:grid-cols-2 overflow-hidden ">
       <div className="relative h-full col-span-1 z-10">
         <Parallax
           type={"contentHV"}

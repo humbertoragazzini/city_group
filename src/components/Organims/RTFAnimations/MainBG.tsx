@@ -58,6 +58,7 @@ export default function MainBG() {
         scaleMultiplier={0.01}
         shadows="soft"
         camera={{ far: 500 }}
+        className="-z-10"
       >
         <directionalLight
           position={[0, 28, 20]}
@@ -75,7 +76,7 @@ export default function MainBG() {
           shadow-camera-bottom={-10}
         ></directionalLight>
         <mesh position={[0, 0, 0]} ref={sphereRef}>
-          <sphereGeometry args={[20, 15, 15]}></sphereGeometry>
+          <sphereGeometry args={[25, 15, 15]}></sphereGeometry>
           <meshStandardMaterial side={THREE.DoubleSide}>
             <GradientTexture
               stops={[0, 1]} // As many stops as you want

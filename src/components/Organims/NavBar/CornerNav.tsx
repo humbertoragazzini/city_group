@@ -192,10 +192,10 @@ const HamburgerButton = ({ active, setActive }: any) => {
             isMenuOpen: !state.isMenuOpen,
           }));
         }}
-        className={`group fixed right-4 top-4 z-50 h-12 w-12 hover:bg-plum transition-all ${
+        className={`group fixed right-4 top-4 z-50 h-12 w-12  rounded-tr-full rounded-tl-full rounded-br-full rounded-bl-full [&>svg]:stroke-black hover:bg-the-lightGrey hover:[&>svg]:stroke-white transition-all ${
           active
-            ? "rounded-bl-xl rounded-tr-xl bg-burgundy"
-            : "bg-burgundy rounded-xl"
+            ? "animate-rounded-change-enable bg-white"
+            : "animate-rounded-change-disable bg-white "
         }`}
       >
         <svg
@@ -207,7 +207,6 @@ const HamburgerButton = ({ active, setActive }: any) => {
         >
           <path
             d="M5 8H13.75M5 12H19M10.25 16L19 16"
-            stroke="#ffffff"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
