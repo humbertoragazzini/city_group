@@ -89,11 +89,11 @@ export default function Home() {
                     valueXEnd={"100%"}
                     className={"h-screen w-screen right-0"}
                   >
-                                        <div
+                    <div
                       className="absolute top-0 left-0 h-screen w-1/2 flex justify-center items-start whitespace-nowrap uppercase bg-black z-[10]"
                       style={{ writingMode: "vertical-lr" }}
                     >
-                      <p className="text-white text-5xl">>>>></p>
+                      <p className="text-white text-5xl">{">>>>>>"}</p>
                     </div>
                   </Parallax>
                   <Parallax
@@ -110,7 +110,7 @@ export default function Home() {
                       className="absolute top-0 right-0 h-screen w-1/2 flex justify-center items-end whitespace-nowrap uppercase bg-black z-[10]"
                       style={{ writingMode: "vertical-lr" }}
                     >
-                      <p className="text-white text-5xl">>>>></p>
+                      <p className="text-white text-5xl">{">>>>>>"}</p>
                     </div>
                   </Parallax>
                   <Parallax
