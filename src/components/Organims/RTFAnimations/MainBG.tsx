@@ -2,9 +2,11 @@
 "use client";
 import { GlobalCanvas, useScrollbar } from "@14islands/r3f-scroll-rig";
 import { GradientTexture } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { useLayoutEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import RTFAPointer from "./RTFAComponents/Pointer/RTFAPointer";
 
 export default function MainBG() {
   const [scrollProgress, setScrollProgress] = useState<any>(0);
@@ -67,13 +69,13 @@ export default function MainBG() {
           intensity={0}
           color={new THREE.Color(255, 255, 255)}
           castShadow
-          shadow-mapSize-width={2048}
-          shadow-mapSize-height={2048}
-          shadow-camera-far={9}
-          shadow-camera-left={-10}
-          shadow-camera-right={10}
-          shadow-camera-top={10}
-          shadow-camera-bottom={-10}
+          shadow-mapSize-width={4096}
+          shadow-mapSize-height={4096}
+          shadow-camera-far={500}
+          shadow-camera-left={-20}
+          shadow-camera-right={20}
+          shadow-camera-top={20}
+          shadow-camera-bottom={-20}
         ></directionalLight>
         <mesh position={[0, 0, 0]} ref={sphereRef}>
           <sphereGeometry args={[25, 15, 15]}></sphereGeometry>
@@ -85,6 +87,7 @@ export default function MainBG() {
             />
           </meshStandardMaterial>
         </mesh>
+        <RTFAPointer></RTFAPointer>
       </GlobalCanvas>
     </>
   );
