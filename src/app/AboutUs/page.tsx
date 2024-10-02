@@ -28,7 +28,7 @@ import WebGLImage from "@/components/Organims/RTFAnimations/RTFAComponents/Image
 import { RTFAText } from "@/components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText";
 import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D";
 
-export default function Home() {
+export default function AboutUs() {
   const context = useAppContext();
   const [themeSelected, setThemeSelected] = useState<any>("white");
   const [Index, setIndex] = useState<any>(0);
@@ -94,251 +94,8 @@ export default function Home() {
             {/* A brief company history. Besides piquing your visitors’
             interest, a brief company history can help the press describe your
             business accurately. */}
-            {/* <div className="min-h-[100vh] w-full">
-              <div className="w-full sticky top-0 left-0 z-0">
-                <div className="absolute h-screen w-full bg-[rgba(0,0,0,0.2)] rounded-t-[80px] backdrop-blur-md overflow-hidden">
-                  <div className="grid grid-cols-2 h-full mx-auto">
-                    <div className="col-span-1 flex justify-end items-center bg-blue-700 skew-x-[45deg] w-[calc(100vw)] translate-x-[-50%]">
-                      <div>
-                        <h1 className="xl:text-[120px] font-bold text-white drop-shadow-2xl mb-6 skew-x-[-45deg] relative pr-20">
-                          ABOUT US
-                        </h1>
-                      </div>
-                    </div>
-                    <div className="col-span-1 flex justify-end items-center p-16 text-right">
-                      <div>
-                        <div>
-                          <h1 className="text-4xl font-bold text-white drop-shadow-2xl mb-6">
-                            Our Vision for Global Growth
-                          </h1>
-                          <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                            Our vision is to become a global leader in imports,
-                            retail, and construction by expanding our reach
-                            across international markets.
-                          </p>
-                          <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                            We aim to grow strategically, offering innovative
-                            solutions and superior quality that meet the
-                            evolving needs of customers worldwide. Through
-                            sustainable growth and continuous improvement, we
-                            aspire to make our mark globally while maintaining
-                            our commitment to excellence, integrity, and
-                            community impact.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="min-h-[99vh] w-full">
-              <div className="w-full sticky top-0 left-0 z-0">
-                <div className="absolute h-screen w-full bg-[rgba(0,0,0,0.2)] rounded-t-[80px] backdrop-blur-md overflow-hidden">
-                  <div className="grid grid-cols-2 h-full mx-auto">
-                    <div className="col-span-1 flex justify-end items-center bg-yellow-700 skew-x-[-45deg] w-[calc(100vw)] translate-x-[50%]">
-                      <div>
-                        <h1 className="xl:text-[120px] font-bold text-white drop-shadow-2xl mb-6 skew-x-[45deg] right-0 relative">
-                          ABOUT US
-                        </h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="min-h-[110vh] w-full">
-              <div className="w-full sticky top-0 left-0 z-0">
-                <div className="absolute h-screen w-full bg-[rgba(0,0,0,0.2)] rounded-t-[80px] backdrop-blur-md overflow-hidden">
-                  <div className="grid grid-cols-2 h-full mx-auto">
-                    <div className="col-span-1 flex justify-end items-center bg-red-700 skew-x-[45deg] w-[calc(100vw)] translate-x-[-50%]">
-                      <div>
-                        <h1 className="xl:text-[120px] font-bold text-white drop-shadow-2xl mb-6 skew-x-[-45deg] relative pr-20">
-                          ABOUT US
-                        </h1>
-                      </div>
-                    </div>
-                    <div className="col-span-1 flex justify-end items-center p-16 text-right">
-                      <div>
-                        <div>
-                          <h1 className="text-4xl font-bold text-white drop-shadow-2xl mb-6">
-                            Our Vision for Global Growth
-                          </h1>
-                          <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                            Our vision is to become a global leader in imports,
-                            retail, and construction by expanding our reach
-                            across international markets.
-                          </p>
-                          <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                            We aim to grow strategically, offering innovative
-                            solutions and superior quality that meet the
-                            evolving needs of customers worldwide. Through
-                            sustainable growth and continuous improvement, we
-                            aspire to make our mark globally while maintaining
-                            our commitment to excellence, integrity, and
-                            community impact.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="min-h-[110vh] w-full">
-              <div className="w-full sticky top-0 left-0 z-0">
-                <div className="absolute h-screen w-full bg-[rgba(0,0,0,0.2)] rounded-t-[80px] backdrop-blur-md overflow-hidden">
-                  <div className="grid grid-cols-2 h-full mx-auto">
-                    <div className="col-span-1 flex justify-end items-center bg-black skew-x-[-45deg] w-[calc(100vw)] translate-x-[50%]">
-                      <div>
-                        <h1 className="xl:text-[120px] font-bold text-white drop-shadow-2xl mb-6 skew-x-[45deg] right-0 relative">
-                          ABOUT US
-                        </h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
 
-            {/* <div className="min-h-[110vh] w-full">
-              <div className="w-full sticky top-0 left-0 z-0">
-                <div className="absolute h-screen w-full bg-gray-700 rounded-t-[80px]">
-                  <div className="grid grid-cols-2 h-full max-w-[1920px] p-16 mx-auto">
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <div>
-                        <h1 className="text-4xl font-bold text-white drop-shadow-2xl mb-6">
-                          Our Mission and Commitment
-                        </h1>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          Our mission is to provide high-quality imported
-                          products and retail services, while delivering
-                          exceptional construction solutions. We aim to meet the
-                          diverse needs of our customers by offering a reliable
-                          supply chain, competitive pricing, and outstanding
-                          craftsmanship.
-                        </p>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          Through dedication to integrity, efficiency, and
-                          innovation, we strive to enhance the communities we
-                          serve, becoming a trusted partner in both retail and
-                          construction industries.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <Image
-                        src={"/img/import_export.jpg"}
-                        width={1980}
-                        height={1080}
-                      ></Image>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="min-h-[110vh] w-full">
-              <div className="w-full sticky top-0 left-0 z-0">
-                <div className="absolute h-screen w-full bg-gray-800 rounded-t-[80px]">
-                  <div className="grid grid-cols-2 h-full max-w-[1920px] p-16 mx-auto">
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <div>
-                        <h1 className="text-4xl font-bold text-white drop-shadow-2xl mb-6">
-                          Our Vision for Global Growth
-                        </h1>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          Our vision is to become a global leader in imports,
-                          retail, and construction by expanding our reach across
-                          international markets.
-                        </p>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          We aim to grow strategically, offering innovative
-                          solutions and superior quality that meet the evolving
-                          needs of customers worldwide. Through sustainable
-                          growth and continuous improvement, we aspire to make
-                          our mark globally while maintaining our commitment to
-                          excellence, integrity, and community impact.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <Image
-                        src={"/img/import_export.jpg"}
-                        width={1980}
-                        height={1080}
-                      ></Image>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="min-h-[110vh] w-full">
-              <div className="w-full sticky top-0 left-0 z-0">
-                <div className="absolute h-screen w-full bg-gray-900 rounded-t-[80px]">
-                  <div className="grid grid-cols-2 h-full max-w-[1920px] p-16 mx-auto">
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <div>
-                        <p className="text-4xl font-bold text-white drop-shadow-2xl mb-6">
-                          About us
-                        </p>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Commodi eum nisi sequi aperiam sed, odit dolores
-                          necessitatibus qui molestias ipsam eligendi cum
-                          doloremque nobis a dignissimos rerum praesentium hic
-                          ex?
-                        </p>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Commodi eum nisi sequi aperiam sed, odit dolores
-                          necessitatibus qui molestias ipsam eligendi cum
-                          doloremque nobis a dignissimos rerum praesentium hic
-                          ex?
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <Image
-                        src={"/img/import_export.jpg"}
-                        width={1980}
-                        height={1080}
-                      ></Image>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative min-h-screen w-full bg-black flex justify-center items-center rounded-t-[80px]">
-              <div className="grid grid-cols-2 max-w-[1920px] p-16 mx-auto">
-                <div className="col-span-1 flex justify-center items-center p-6">
-                  <div>
-                    <p className="text-4xl font-bold text-white drop-shadow-2xl mb-6">
-                      About us
-                    </p>
-                    <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Commodi eum nisi sequi aperiam sed, odit dolores
-                      necessitatibus qui molestias ipsam eligendi cum doloremque
-                      nobis a dignissimos rerum praesentium hic ex?
-                    </p>
-                    <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Commodi eum nisi sequi aperiam sed, odit dolores
-                      necessitatibus qui molestias ipsam eligendi cum doloremque
-                      nobis a dignissimos rerum praesentium hic ex?
-                    </p>
-                  </div>
-                </div>
-                <div className="col-span-1 flex justify-center items-center p-6">
-                  <Image
-                    src={"/img/import_export.jpg"}
-                    width={1980}
-                    height={1080}
-                  ></Image>
-                </div>
-              </div>
-            </div> */}
-            {/* Footer */}
+            {/* 3d page */}
             <div className="relative grid grid-cols-2 min-h-[200vh] w-full overflow-x-hidden">
               <div
                 ref={aboutRef}
@@ -451,6 +208,7 @@ export default function Home() {
               </div>
             </div>
 
+            {/* footer */}
             <div className="relative w-full bg-black z-10">
               <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                 <div className="relative col-span-1 lg:col-span-3 flex justify-between items-center pb-9">
@@ -621,7 +379,7 @@ export default function Home() {
   );
 }
 
-Home.displayName = "Home";
+AboutUs.displayName = "AboutUs";
 
 // <div className="min-h-[250vh] w-full">
 //   <div className="w-full sticky top-0 left-0 z-0">
