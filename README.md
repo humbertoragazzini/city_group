@@ -34,3 +34,34 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+##Changes done to the project from 19/10/2024
+
+-   Component changes:
+        RTFAText: added type fixed errors
+-   Pages:
+        AboutUs: remove unsed code and fixed import errors
+-   3D Asset:
+        No changes.
+
+##Changes done to the project from 20/10/2024
+
+-   RTFAPointer: whe add types to the component and we remove unused code
+-   MainBG: we remove the RTFAPointer component, we need to make the cursor mesh to we can cast shadow to the elements
+-   Logo: we fix types on this component
+-   Logo3D: fixed types
+-   RTFACLogo3D: fixed types, ignore some errors from types
+-   LogoBG: fixed types
+-   WebGLImage: fixed types and removed old code
+
+##Last changes list components and pages
+
+    - RTFAText
+    - RTFAPointer
+    - AboutUs(page)
+    - MainBG
+    - Logo
+    - Logo3D
+    - RTFACLogo3D
+    - LogoBG
+    - WebGLImage

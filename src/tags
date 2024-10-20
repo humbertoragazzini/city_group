@@ -1,0 +1,576 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AButton	components/Atoms/Buttons/AButton.tsx	/^export default function AButton({ children, onClickHandler }: any) {$/;"	f
+ALink	components/Atoms/Links/ALink.tsx	/^export default function ALink({ children, href, className }: any) {$/;"	f
+ALink	components/Organims/NavBar/ONavBar.tsx	/^import ALink from "@\/components\/Atoms\/Links\/ALink";$/;"	I
+AboutUs	app/AboutUs/page.tsx	/^export default function AboutUs() {$/;"	f
+Address	app/ContactUs/page.tsx	/^                        Address: [Your Physical Address]$/;"	m
+AnimationController	app/AboutUs/page.tsx	/^import AnimationController from "@\/components\/Organims\/FramerAnimations\/AnimationController";$/;"	I
+AnimationController	app/OurServices/page.tsx	/^import AnimationController from "@\/components\/Organims\/FramerAnimations\/AnimationController";$/;"	I
+AnimationController	app/page.tsx	/^import AnimationController from "@\/components\/Organims\/FramerAnimations\/AnimationController";$/;"	I
+AnimationController	components/Organims/FramerAnimations/AnimationController.tsx	/^export default function AnimationController({$/;"	f
+AppContextProps	context/AppContext.tsx	/^interface AppContextProps {$/;"	i
+AppProvider	context/AppContext.tsx	/^export const AppProvider = ({ children }: { children: ReactNode }) => {$/;"	v
+AppState	context/AppContext.tsx	/^interface AppState {$/;"	i
+AppWraper	app/layout.tsx	/^import AppWraper from "@\/components\/Atoms\/Layout\/AppWraper";$/;"	I
+AppWraper	components/Atoms/Layout/AppWraper.tsx	/^export default function AppWraper({ children }: any) {$/;"	f
+BackgroundShapes	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^export default function BackgroundShapes({$/;"	f
+Band_1	components/Organims/RTFAnimations/Mesh/Shapes/Band_1.tsx	/^export default function Band_1({$/;"	f
+Centricity	app/ContactUs/page.tsx	/^                        Centricity: Your satisfaction is our ultimate goal, driving$/;"	m
+Component	components/Organims/NavBar/CornerNav.tsx	/^    Component: SiInstagram,$/;"	m
+Component	components/Organims/NavBar/CornerNav.tsx	/^    Component: SiLinkedin,$/;"	m
+Component	components/Organims/NavBar/CornerNav.tsx	/^    Component: SiTwitter,$/;"	m
+Component	components/Organims/NavBar/CornerNav.tsx	/^    Component: SiYoutube,$/;"	m
+Cone	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^    Cone: THREE.Mesh;$/;"	m
+ContactUs	app/ContactUs/page.tsx	/^export default function ContactUs() {$/;"	f
+Content	components/Organims/Sections/Mobile/SectionMob.tsx	/^function Content({ textContent }: any) {$/;"	f
+Expertise	app/ContactUs/page.tsx	/^                        Expertise: Decades of industry experience, delivering$/;"	m
+GLCubeImage	components/Organims/RTFAnimations/RTFAComponents/ImageContainer/WebGLImage.tsx	/^function GLCubeImage({ src, scrollState, dir, ...props }) {$/;"	f
+GLImage	components/Organims/RTFAnimations/RTFAComponents/ImageContainer/WebGLImage.tsx	/^function GLImage({ imgRef, scrollState, dir, ...props }) {$/;"	f
+GLTFResult	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^type GLTFResult = GLTF & {$/;"	t
+GlassHScreen	app/AboutUs/page.tsx	/^import GlassHScreen from "@\/components\/Atoms\/Containers\/GlassHScreen";$/;"	I
+GlassHScreen	app/OurServices/page.tsx	/^import GlassHScreen from "@\/components\/Atoms\/Containers\/GlassHScreen";$/;"	I
+GlassHScreen	app/page.tsx	/^import GlassHScreen from "@\/components\/Atoms\/Containers\/GlassHScreen";$/;"	I
+GlassHScreen	components/Atoms/Containers/GlassHScreen.tsx	/^export default function GlassHScreen({ children }: any) {$/;"	f
+GlassMorphism	app/AboutUs/page.tsx	/^import GlassMorphism from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/GlassMorphism\/GlassMorphism";$/;"	I
+GlassMorphism	app/ContactUs/page.tsx	/^import GlassMorphism from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/GlassMorphism\/GlassMorphism";$/;"	I
+GlassMorphism	app/OurServices/page.tsx	/^import GlassMorphism from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/GlassMorphism\/GlassMorphism";$/;"	I
+GlassMorphism	app/page.tsx	/^import GlassMorphism from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/GlassMorphism\/GlassMorphism";$/;"	I
+GlassMorphism	components/Atoms/Containers/GlassHScreen.tsx	/^import GlassMorphism from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/GlassMorphism\/GlassMorphism";$/;"	I
+GlassMorphism	components/Organims/RTFAnimations/RTFAComponents/GlassMorphism/GlassMorphism.tsx	/^export default function GlassMorphism() {$/;"	f
+GradientBG	app/AboutUs/page.tsx	/^import GradientBG from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/GradientBG\/GradientBG";$/;"	I
+GradientBG	app/ContactUs/page.tsx	/^import GradientBG from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/GradientBG\/GradientBG";$/;"	I
+GradientBG	app/OurServices/page.tsx	/^import GradientBG from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/GradientBG\/GradientBG";$/;"	I
+GradientBG	app/page.tsx	/^import GradientBG from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/GradientBG\/GradientBG";$/;"	I
+GradientBG	components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG.tsx	/^export default function GradientBG({ className, scrollProgress }: any) {$/;"	f
+Head	app/layout.tsx	/^import Head from "next\/head";$/;"	I
+Heading	app/AboutUs/page.tsx	/^import Heading from "@\/components\/Atoms\/Heading\/Heading";$/;"	I
+Heading	app/OurServices/page.tsx	/^import Heading from "@\/components\/Atoms\/Heading\/Heading";$/;"	I
+Heading	app/page.tsx	/^import Heading from "@\/components\/Atoms\/Heading\/Heading";$/;"	I
+Heading	components/Atoms/Heading/Heading.tsx	/^export default function Heading({ text, level, theme, className }: iHeading) {$/;"	f
+Heading	components/Organims/Sections/Desktop/SectionL.tsx	/^import Heading from "@\/components\/Atoms\/Heading\/Heading";$/;"	I
+Heading	components/Organims/Sections/Desktop/SectionR.tsx	/^import Heading from "@\/components\/Atoms\/Heading\/Heading";$/;"	I
+Heading	components/Organims/Sections/Mobile/SectionMob.tsx	/^import Heading from "@\/components\/Atoms\/Heading\/Heading";$/;"	I
+Home	app/page.tsx	/^export default function Home() {$/;"	f
+HorizontalTitle	components/Organims/RTFAnimations/RTFAComponents/HorizontalTitle/HorizontalTitle.tsx	/^export default function HorizontalTitle() {$/;"	f
+Image	app/AboutUs/page.tsx	/^import Image from "next\/image";$/;"	I
+Image	app/OurServices/page.tsx	/^import Image from "next\/image";$/;"	I
+Image	app/page.tsx	/^import Image from "next\/image";$/;"	I
+Image	components/Organims/Sections/Desktop/SectionL.tsx	/^import Image from "next\/image";$/;"	I
+Image	components/Organims/Sections/Desktop/SectionR.tsx	/^import Image from "next\/image";$/;"	I
+Image	components/Organims/Sections/Mobile/SectionMob.tsx	/^import Image from "next\/image";$/;"	I
+Language	components/Organims/NavBar/CornerNav.tsx	/^import Language from "@\/components\/molecules\/NavBar\/Language";$/;"	I
+Language	components/molecules/NavBar/Language.tsx	/^export default function Language() {$/;"	f
+Link	app/AboutUs/page.tsx	/^import Link from "next\/link";$/;"	I
+Link	app/OurServices/page.tsx	/^import Link from "next\/link";$/;"	I
+Link	app/page.tsx	/^import Link from "next\/link";$/;"	I
+Link	components/Atoms/Links/ALink.tsx	/^import Link from "next\/link";$/;"	I
+Link	components/Organims/NavBar/CornerNav.tsx	/^import Link from "next\/link";$/;"	I
+Link	components/Organims/Sections/Desktop/SectionL.tsx	/^import Link from "next\/link";$/;"	I
+Link	components/Organims/Sections/Desktop/SectionR.tsx	/^import Link from "next\/link";$/;"	I
+Link	components/Organims/Sections/Mobile/SectionMob.tsx	/^import Link from "next\/link";$/;"	I
+Logo	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^export default function Logo({ scale, rotation }: iLogo) {$/;"	f
+Logo	components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG.tsx	/^import Logo from "..\/..\/Mesh\/Logo\/Logo";$/;"	I
+Logo	components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D.tsx	/^import Logo from "..\/..\/Mesh\/Logo\/Logo";$/;"	I
+Logo3D	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^export function Logo3D(props: JSX.IntrinsicElements["group"]) {$/;"	f
+LogoBG	app/AboutUs/page.tsx	/^import LogoBG from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/Logo\/LogoBG";$/;"	I
+LogoBG	app/OurServices/page.tsx	/^import LogoBG from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/Logo\/LogoBG";$/;"	I
+LogoBG	app/page.tsx	/^import LogoBG from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/Logo\/LogoBG";$/;"	I
+LogoBG	components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG.tsx	/^export default function LogoBG({ className, rotation, width }: iLogoBG) {$/;"	f
+MainBG	app/layout.tsx	/^import MainBG from "@\/components\/Organims\/RTFAnimations\/MainBG";$/;"	I
+MainBG	components/Organims/RTFAnimations/MainBG.tsx	/^export default function MainBG() {$/;"	f
+MainBGAnimation	components/Organims/RTFAnimations/Mesh/BGLight/MainBGAnimation.tsx	/^export default function MainBGAnimation() {$/;"	f
+Marke	components/Organims/Sections/Desktop/SectionL.tsx	/^export function Marke({ marke }: any) {$/;"	f
+Marke	components/Organims/Sections/Desktop/SectionR.tsx	/^function Marke({ marke }: any) {$/;"	f
+Nav	components/Organims/NavBar/CornerNav.tsx	/^export default function Nav() {$/;"	f
+Nav	components/Organims/NavBar/ONavBar.tsx	/^import Nav from ".\/CornerNav";$/;"	I
+ONavBar	app/layout.tsx	/^import ONavBar from "@\/components\/Organims\/NavBar\/ONavBar";$/;"	I
+ONavBar	components/Organims/NavBar/ONavBar.tsx	/^export default function ONavBar() {$/;"	f
+OurServices	app/OurServices/page.tsx	/^export default function OurServices() {$/;"	f
+OverlayCopy	components/Organims/Sections/Mobile/SectionMob.tsx	/^function OverlayCopy({ subheading, heading }: any) {$/;"	f
+Paragraph	app/AboutUs/page.tsx	/^import Paragraph from "@\/components\/Atoms\/Paragraph\/Paragraph";$/;"	I
+Paragraph	app/OurServices/page.tsx	/^import Paragraph from "@\/components\/Atoms\/Paragraph\/Paragraph";$/;"	I
+Paragraph	app/page.tsx	/^import Paragraph from "@\/components\/Atoms\/Paragraph\/Paragraph";$/;"	I
+Paragraph	components/Atoms/Paragraph/Paragraph.tsx	/^export default function Paragraph({$/;"	f
+Paragraph	components/Organims/NavBar/CornerNav.tsx	/^import Paragraph from "@\/components\/Atoms\/Paragraph\/Paragraph";$/;"	I
+Paragraph	components/Organims/Sections/Desktop/SectionL.tsx	/^import Paragraph from "@\/components\/Atoms\/Paragraph\/Paragraph";$/;"	I
+Paragraph	components/Organims/Sections/Desktop/SectionR.tsx	/^import Paragraph from "@\/components\/Atoms\/Paragraph\/Paragraph";$/;"	I
+Paragraph	components/Organims/Sections/Mobile/SectionMob.tsx	/^import Paragraph from "@\/components\/Atoms\/Paragraph\/Paragraph";$/;"	I
+Paragraph	components/molecules/NavBar/Language.tsx	/^import Paragraph from "@\/components\/Atoms\/Paragraph\/Paragraph";$/;"	I
+Parallax	app/AboutUs/page.tsx	/^import Parallax from "@\/components\/Organims\/FramerAnimations\/Parallax";$/;"	I
+Parallax	app/OurServices/page.tsx	/^import Parallax from "@\/components\/Organims\/FramerAnimations\/Parallax";$/;"	I
+Parallax	app/page.tsx	/^import Parallax from "@\/components\/Organims\/FramerAnimations\/Parallax";$/;"	I
+Parallax	components/Organims/FramerAnimations/Parallax.tsx	/^export default function Parallax({$/;"	f
+Parallax	components/Organims/Sections/Desktop/SectionL.tsx	/^import Parallax from "..\/..\/FramerAnimations\/Parallax";$/;"	I
+Parallax	components/Organims/Sections/Desktop/SectionR.tsx	/^import Parallax from "..\/..\/FramerAnimations\/Parallax";$/;"	I
+Phone	app/ContactUs/page.tsx	/^                        Phone: [Your Phone Number] Email: [Your Email Address]$/;"	m
+RTFACLogo3D	app/AboutUs/page.tsx	/^import RTFACLogo3D from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/Logo\/RTFACLogo3D";$/;"	I
+RTFACLogo3D	app/OurServices/page.tsx	/^import RTFACLogo3D from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/Logo\/RTFACLogo3D";$/;"	I
+RTFACLogo3D	components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D.tsx	/^export default function RTFACLogo3D({ className, rotation, width }: iLogoBG) {$/;"	f
+RTFAPointer	components/Organims/RTFAnimations/MainBG.tsx	/^import RTFAPointer from ".\/RTFAComponents\/Pointer\/RTFAPointer";$/;"	I
+RTFAPointer	components/Organims/RTFAnimations/RTFAComponents/Pointer/RTFAPointer.tsx	/^export default function RTFAPointer() {$/;"	f
+RTFAText	components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText.tsx	/^export function RTFAText({$/;"	f
+React	app/AboutUs/page.tsx	/^import React from "react";$/;"	I
+React	app/OurServices/page.tsx	/^import React from "react";$/;"	I
+React	app/page.tsx	/^import React from "react";$/;"	I
+React	components/Organims/NavBar/CornerNav.tsx	/^import React, { useState } from "react";$/;"	I
+React	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^import React, { useLayoutEffect, useRef, useState } from "react";$/;"	I
+React	context/AppContext.tsx	/^import React, { createContext, useContext, useState, ReactNode } from "react";$/;"	I
+RightNavBar	app/layout.tsx	/^import RightNavBar from "@\/components\/Organims\/NavBar\/RightNavbar";$/;"	I
+RootLayout	app/layout.tsx	/^export default function RootLayout({$/;"	f
+SectionL	app/AboutUs/page.tsx	/^import SectionL from "@\/components\/Organims\/Sections\/Desktop\/SectionL";$/;"	I
+SectionL	app/OurServices/page.tsx	/^import SectionL from "@\/components\/Organims\/Sections\/Desktop\/SectionL";$/;"	I
+SectionL	app/page.tsx	/^import SectionL from "@\/components\/Organims\/Sections\/Desktop\/SectionL";$/;"	I
+SectionL	components/Organims/Sections/Desktop/SectionL.tsx	/^export default function SectionL({ heading, content, marke, learn }: iSection) {$/;"	f
+SectionMob	app/AboutUs/page.tsx	/^import SectionMob from "@\/components\/Organims\/Sections\/Mobile\/SectionMob";$/;"	I
+SectionMob	app/OurServices/page.tsx	/^import SectionMob from "@\/components\/Organims\/Sections\/Mobile\/SectionMob";$/;"	I
+SectionMob	app/page.tsx	/^import SectionMob from "@\/components\/Organims\/Sections\/Mobile\/SectionMob";$/;"	I
+SectionMob	components/Organims/Sections/Mobile/SectionMob.tsx	/^export default function SectionMob({ imgContent, textContent }: iSectionMob) {$/;"	f
+SectionR	app/AboutUs/page.tsx	/^import SectionR from "@\/components\/Organims\/Sections\/Desktop\/SectionR";$/;"	I
+SectionR	app/OurServices/page.tsx	/^import SectionR from "@\/components\/Organims\/Sections\/Desktop\/SectionR";$/;"	I
+SectionR	app/page.tsx	/^import SectionR from "@\/components\/Organims\/Sections\/Desktop\/SectionR";$/;"	I
+SectionR	components/Organims/Sections/Desktop/SectionR.tsx	/^export default function SectionR({ heading, content, marke, learn }: iSection) {$/;"	f
+StickyImage	components/Organims/Sections/Mobile/SectionMob.tsx	/^function StickyImage({ imgUrl, aria, size }: any) {$/;"	f
+Text	components/Organims/Sections/Desktop/SectionL.tsx	/^type Text = [$/;"	t
+Text	components/Organims/Sections/Desktop/SectionR.tsx	/^type Text = [$/;"	t
+Text	components/Organims/Sections/Mobile/SectionMob.tsx	/^type Text = [$/;"	t
+TextContent	types/types.ts	/^export type TextContent = {$/;"	t
+Tracker	CustomHooks/useTrackerMotionValue.tsx	/^interface Tracker {$/;"	i
+Triangle	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^export default function Triangle({ scale, rotation }: iTriangle) {$/;"	f
+Triangle	components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG.tsx	/^import Triangle from "..\/..\/Mesh\/Triangle\/Triangle";$/;"	I
+WebGLImage	app/AboutUs/page.tsx	/^import WebGLImage from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/ImageContainer\/WebGLImage";$/;"	I
+WebGLImage	app/OurServices/page.tsx	/^import WebGLImage from "@\/components\/Organims\/RTFAnimations\/RTFAComponents\/ImageContainer\/WebGLImage";$/;"	I
+WebGLImage	components/Organims/RTFAnimations/RTFAComponents/ImageContainer/WebGLImage.tsx	/^export default function WebGLImage({ src }) {$/;"	f
+aria	app/page.tsx	/^                aria: [$/;"	m
+aria	components/Organims/Sections/Mobile/SectionMob.tsx	/^    aria: Text;$/;"	m
+as	components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText.tsx	/^  as: Tag = "p",$/;"	m
+backgroundPosition	components/Organims/Sections/Mobile/SectionMob.tsx	/^        backgroundPosition: "center",$/;"	m
+backgroundSize	components/Organims/Sections/Mobile/SectionMob.tsx	/^        backgroundSize: "cover",$/;"	m
+bottom	components/Organims/NavBar/CornerNav.tsx	/^      bottom: ["35%", "50%", "50%"],$/;"	m
+bottom	components/Organims/NavBar/CornerNav.tsx	/^      bottom: ["50%", "50%", "35%"],$/;"	m
+bottom	components/Organims/NavBar/CornerNav.tsx	/^  bottom: {$/;"	m
+children	app/layout.tsx	/^  children: React.ReactNode;$/;"	m
+className	components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG.tsx	/^  className: string;$/;"	m
+className	components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D.tsx	/^  className: string;$/;"	m
+clearInterval	components/Organims/RTFAnimations/MainBG.tsx	/^        clearInterval(checkElement);$/;"	m
+closed	components/Organims/NavBar/CornerNav.tsx	/^    closed: {$/;"	m
+closed	components/Organims/NavBar/CornerNav.tsx	/^  closed: {$/;"	m
+color	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^              color: "white",$/;"	m
+color	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^              color: "#e0363e",$/;"	m
+content	app/page.tsx	/^                        content: "Elevare l'Eccellenza in Tutti i Settori",$/;"	m
+content	app/page.tsx	/^                        content: "Elevating Excellence Across Industries",$/;"	m
+content	app/page.tsx	/^                        content: "提升各行业的卓越水平",$/;"	m
+content	app/page.tsx	/^                        content: "进口、建筑和零售的综合解决方案",$/;"	m
+content	app/page.tsx	/^                        content:$/;"	m
+content	app/page.tsx	/^                      content: "Acerca de",$/;"	m
+content	app/page.tsx	/^                      content: "Learn more",$/;"	m
+content	app/page.tsx	/^                      content: "Scopri di più",$/;"	m
+content	app/page.tsx	/^                      content: "了解更多",$/;"	m
+content	app/page.tsx	/^                    content: "Acerca de",$/;"	m
+content	app/page.tsx	/^                    content: "Benvenuti nel nostro sito web",$/;"	m
+content	app/page.tsx	/^                    content: "Bienvenido a nuestro sitio web",$/;"	m
+content	app/page.tsx	/^                    content: "Learn more",$/;"	m
+content	app/page.tsx	/^                    content: "Scopri di più",$/;"	m
+content	app/page.tsx	/^                    content: "Welcome to our website",$/;"	m
+content	app/page.tsx	/^                    content: "了解更多",$/;"	m
+content	app/page.tsx	/^                    content: "欢迎来到我们的网站",$/;"	m
+content	app/page.tsx	/^                  content: "Benvenuti nel nostro sito web",$/;"	m
+content	app/page.tsx	/^                  content: "Bienvenido a nuestro sitio web",$/;"	m
+content	app/page.tsx	/^                  content: "Confianza, Calidad y Excelencia.",$/;"	m
+content	app/page.tsx	/^                  content: "Fiducia, Qualità ed Eccellenza.",$/;"	m
+content	app/page.tsx	/^                  content: "Trust, Quality, and Excellence.",$/;"	m
+content	app/page.tsx	/^                  content: "We provide the best services to meet your needs.",$/;"	m
+content	app/page.tsx	/^                  content: "Welcome to our website",$/;"	m
+content	app/page.tsx	/^                  content: "信任，质量和卓越。",$/;"	m
+content	app/page.tsx	/^                  content: "我们提供最优质的服务以满足您的需求。",$/;"	m
+content	app/page.tsx	/^                  content: "欢迎来到我们的网站",$/;"	m
+content	app/page.tsx	/^                  content:$/;"	m
+content	components/Organims/Sections/Desktop/SectionL.tsx	/^    content: string;$/;"	m
+content	components/Organims/Sections/Desktop/SectionL.tsx	/^  content: Text;$/;"	m
+content	components/Organims/Sections/Desktop/SectionR.tsx	/^    content: string;$/;"	m
+content	components/Organims/Sections/Desktop/SectionR.tsx	/^  content: Text;$/;"	m
+content	components/Organims/Sections/Mobile/SectionMob.tsx	/^    content: string;$/;"	m
+content	types/types.ts	/^  content: string;$/;"	m
+damping	components/Organims/NavBar/CornerNav.tsx	/^      damping: 50,$/;"	m
+default	components/Atoms/Heading/Heading.tsx	/^    default:$/;"	m
+default	components/Atoms/Paragraph/Paragraph.tsx	/^    default:$/;"	m
+delay	components/Organims/NavBar/CornerNav.tsx	/^                      delay: 1 + idx * 0.125,$/;"	m
+delay	components/Organims/NavBar/CornerNav.tsx	/^          delay: 0.75 + idx * 0.125,$/;"	m
+delay	components/Organims/NavBar/CornerNav.tsx	/^      delay: 0.75,$/;"	m
+delay	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^            delay: (50000 \/ i) * Math.random(),$/;"	m
+description	app/layout.tsx	/^  description: "Opening door to the world",$/;"	m
+duration	components/Organims/NavBar/CornerNav.tsx	/^                      duration: 0.5,$/;"	m
+duration	components/Organims/NavBar/CornerNav.tsx	/^          duration: 0.5,$/;"	m
+duration	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^        duration: 3600,$/;"	m
+duration	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^        duration: 1,$/;"	m
+duration	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^            duration: 5,$/;"	m
+ease	components/Organims/NavBar/CornerNav.tsx	/^                      ease: "easeInOut",$/;"	m
+ease	components/Organims/NavBar/CornerNav.tsx	/^          ease: "easeInOut",$/;"	m
+end	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^          end: "center center", \/\/ end after scrolling 500px beyond the start$/;"	m
+fill	app/AboutUs/page.tsx	/^                            fill: "#fff",$/;"	m
+fill	app/AboutUs/page.tsx	/^                            fill: "none",$/;"	m
+fill	app/OurServices/page.tsx	/^                            fill: "#fff",$/;"	m
+fill	app/OurServices/page.tsx	/^                            fill: "none",$/;"	m
+fill	app/page.tsx	/^                            fill: "#fff",$/;"	m
+fill	app/page.tsx	/^                            fill: "none",$/;"	m
+fill	components/Organims/NavBar/CornerNav.tsx	/^                fill: "#ffffff",$/;"	m
+fill	components/Organims/NavBar/CornerNav.tsx	/^                fill: "none",$/;"	m
+fill	components/Organims/NavBar/ONavBar.tsx	/^                fill: "#ffffff",$/;"	m
+fill	components/Organims/NavBar/ONavBar.tsx	/^                fill: "none",$/;"	m
+fill	components/molecules/NavBar/Language.tsx	/^                fill: "rgb(0,0,102)",$/;"	m
+fill	components/molecules/NavBar/Language.tsx	/^                fill: "rgb(0,146,70)",$/;"	m
+fill	components/molecules/NavBar/Language.tsx	/^                fill: "rgb(198,11,30)",$/;"	m
+fill	components/molecules/NavBar/Language.tsx	/^                fill: "rgb(204,0,0)",$/;"	m
+fill	components/molecules/NavBar/Language.tsx	/^                fill: "rgb(206,43,55)",$/;"	m
+fill	components/molecules/NavBar/Language.tsx	/^                fill: "rgb(222,41,16)",$/;"	m
+fill	components/molecules/NavBar/Language.tsx	/^                fill: "rgb(243,244,245)",$/;"	m
+fill	components/molecules/NavBar/Language.tsx	/^                fill: "rgb(255,196,0)",$/;"	m
+fill	components/molecules/NavBar/Language.tsx	/^                fill: "rgb(255,222,0)",$/;"	m
+fill	components/molecules/NavBar/Language.tsx	/^              fill: "none",$/;"	m
+fillRule	components/molecules/NavBar/Language.tsx	/^                fillRule: "nonzero",$/;"	m
+fillRule	components/molecules/NavBar/Language.tsx	/^              fillRule: "nonzero",$/;"	m
+fontFamily	app/AboutUs/page.tsx	/^                            fontFamily: "Microsoft Sans Serif",$/;"	m
+fontFamily	app/OurServices/page.tsx	/^                            fontFamily: "Microsoft Sans Serif",$/;"	m
+fontFamily	app/page.tsx	/^                            fontFamily: "Microsoft Sans Serif",$/;"	m
+fontSize	app/AboutUs/page.tsx	/^                              fontSize: "14.1111px",$/;"	m
+fontSize	app/AboutUs/page.tsx	/^                              fontSize: "47.625px",$/;"	m
+fontSize	app/AboutUs/page.tsx	/^                            fontSize: "14.1111px",$/;"	m
+fontSize	app/AboutUs/page.tsx	/^                            fontSize: "47.625px",$/;"	m
+fontSize	app/OurServices/page.tsx	/^                              fontSize: "14.1111px",$/;"	m
+fontSize	app/OurServices/page.tsx	/^                              fontSize: "47.625px",$/;"	m
+fontSize	app/OurServices/page.tsx	/^                            fontSize: "14.1111px",$/;"	m
+fontSize	app/OurServices/page.tsx	/^                            fontSize: "47.625px",$/;"	m
+fontSize	app/page.tsx	/^                              fontSize: "14.1111px",$/;"	m
+fontSize	app/page.tsx	/^                              fontSize: "47.625px",$/;"	m
+fontSize	app/page.tsx	/^                            fontSize: "14.1111px",$/;"	m
+fontSize	app/page.tsx	/^                            fontSize: "47.625px",$/;"	m
+gsap	app/AboutUs/page.tsx	/^import gsap from "gsap";$/;"	I
+gsap	app/OurServices/page.tsx	/^import gsap from "gsap";$/;"	I
+gsap	app/page.tsx	/^import gsap from "gsap";$/;"	I
+gsap	components/Organims/RTFAnimations/MainBG.tsx	/^import gsap from "gsap";$/;"	I
+gsap	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^import gsap from "gsap";$/;"	I
+gsap	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^import gsap from "gsap";$/;"	I
+gsap	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^import gsap from "gsap";$/;"	I
+gsap	components/Organims/RTFAnimations/Mesh/Shapes/Band_1.tsx	/^import gsap from "gsap";$/;"	I
+gsap	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^import gsap from "gsap";$/;"	I
+gsap	components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG.tsx	/^import gsap from "gsap";$/;"	I
+gsap	components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG.tsx	/^import gsap from "gsap";$/;"	I
+gsap	components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D.tsx	/^import gsap from "gsap";$/;"	I
+handleClick	components/molecules/NavBar/Language.tsx	/^        handleClick();$/;"	m
+heading	app/page.tsx	/^                heading: [$/;"	m
+heading	components/Organims/Sections/Desktop/SectionL.tsx	/^  heading: Text;$/;"	m
+heading	components/Organims/Sections/Desktop/SectionR.tsx	/^  heading: Text;$/;"	m
+heading	components/Organims/Sections/Mobile/SectionMob.tsx	/^    heading: Text;$/;"	m
+height	app/page.tsx	/^                  height: 1080,$/;"	m
+height	components/Organims/NavBar/CornerNav.tsx	/^    height: "56px",$/;"	m
+height	components/Organims/NavBar/CornerNav.tsx	/^    height: "calc(100vh - 32px)",$/;"	m
+height	components/Organims/Sections/Mobile/SectionMob.tsx	/^        height: `calc(100vh - ${12 * 2}px)`,$/;"	m
+height	components/Organims/Sections/Mobile/SectionMob.tsx	/^      height: number;$/;"	m
+href	components/Organims/NavBar/CornerNav.tsx	/^    href: "#",$/;"	m
+href	components/Organims/NavBar/CornerNav.tsx	/^    href: "\/",$/;"	m
+href	components/Organims/NavBar/CornerNav.tsx	/^    href: "\/AboutUs",$/;"	m
+href	components/Organims/NavBar/CornerNav.tsx	/^    href: "\/Contact",$/;"	m
+href	components/Organims/NavBar/CornerNav.tsx	/^    href: "\/OurServices",$/;"	m
+href	components/Organims/NavBar/CornerNav.tsx	/^    href: "language",$/;"	m
+iAxis	components/Organims/RTFAnimations/interfaces/position.tsx	/^export interface iAxis {$/;"	i
+iHeading	components/Atoms/Heading/Heading.tsx	/^interface iHeading {$/;"	i
+iLearnMore	components/Organims/Sections/Desktop/SectionL.tsx	/^interface iLearnMore {$/;"	i
+iLearnMore	components/Organims/Sections/Desktop/SectionR.tsx	/^interface iLearnMore {$/;"	i
+iLearnMore	components/Organims/Sections/Mobile/SectionMob.tsx	/^interface iLearnMore {$/;"	i
+iLogo	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^interface iLogo {$/;"	i
+iLogoBG	components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG.tsx	/^interface iLogoBG {$/;"	i
+iLogoBG	components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D.tsx	/^interface iLogoBG {$/;"	i
+iParagraph	components/Atoms/Paragraph/Paragraph.tsx	/^interface iParagraph {$/;"	i
+iSection	components/Organims/Sections/Desktop/SectionL.tsx	/^interface iSection {$/;"	i
+iSection	components/Organims/Sections/Desktop/SectionR.tsx	/^interface iSection {$/;"	i
+iSectionMob	components/Organims/Sections/Mobile/SectionMob.tsx	/^interface iSectionMob {$/;"	i
+iTriangle	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^interface iTriangle {$/;"	i
+if	CustomHooks/useBeforeUnload.tsx	/^    if (typeof window === "undefined") {$/;"	m
+if	app/AboutUs/page.tsx	/^    if (context.state.isMenuOpen) {$/;"	m
+if	app/OurServices/page.tsx	/^    if (context.state.isMenuOpen) {$/;"	m
+if	app/page.tsx	/^    if (context.state.isMenuOpen) {$/;"	m
+if	components/Organims/RTFAnimations/MainBG.tsx	/^      if (lightRef.current) {$/;"	m
+if	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^        if (Math.random()) {$/;"	m
+if	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^    if (allSquares.current.children.length > 0) {$/;"	m
+if	components/Organims/RTFAnimations/Mesh/Shapes/Band_1.tsx	/^    if (animations && animations.length > 0) {$/;"	m
+if	components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText.tsx	/^    if (el.current !== null) {$/;"	m
+if	components/molecules/NavBar/Language.tsx	/^    if (language < 3) {$/;"	m
+if	context/AppContext.tsx	/^  if (!context) {$/;"	m
+imgContent	components/Organims/Sections/Mobile/SectionMob.tsx	/^  imgContent: {$/;"	m
+imgUrl	app/page.tsx	/^                imgUrl: "\/img\/import_export.jpg",$/;"	m
+imgUrl	components/Organims/Sections/Mobile/SectionMob.tsx	/^    imgUrl: string;$/;"	m
+isMenuOpen	components/Organims/NavBar/CornerNav.tsx	/^            isMenuOpen: !state.isMenuOpen,$/;"	m
+isMenuOpen	context/AppContext.tsx	/^    isMenuOpen: false,$/;"	m
+isMenuOpen	context/AppContext.tsx	/^  isMenuOpen: boolean;$/;"	m
+label	app/page.tsx	/^                  label: [$/;"	m
+label	app/page.tsx	/^                label: [$/;"	m
+label	components/Organims/Sections/Desktop/SectionL.tsx	/^  label: Text;$/;"	m
+label	components/Organims/Sections/Desktop/SectionR.tsx	/^  label: Text;$/;"	m
+label	components/Organims/Sections/Mobile/SectionMob.tsx	/^  label: Text;$/;"	m
+language	app/page.tsx	/^                        language: "CH",$/;"	m
+language	app/page.tsx	/^                        language: "EN",$/;"	m
+language	app/page.tsx	/^                        language: "ES",$/;"	m
+language	app/page.tsx	/^                        language: "IT",$/;"	m
+language	app/page.tsx	/^                      language: "CH",$/;"	m
+language	app/page.tsx	/^                      language: "EN",$/;"	m
+language	app/page.tsx	/^                      language: "ES",$/;"	m
+language	app/page.tsx	/^                      language: "IT",$/;"	m
+language	app/page.tsx	/^                    language: "CH",$/;"	m
+language	app/page.tsx	/^                    language: "EN",$/;"	m
+language	app/page.tsx	/^                    language: "ES",$/;"	m
+language	app/page.tsx	/^                    language: "IT",$/;"	m
+language	app/page.tsx	/^                  language: "CH",$/;"	m
+language	app/page.tsx	/^                  language: "EN",$/;"	m
+language	app/page.tsx	/^                  language: "ES",$/;"	m
+language	app/page.tsx	/^                  language: "IT",$/;"	m
+language	components/Organims/Sections/Desktop/SectionL.tsx	/^    language: "CH";$/;"	m
+language	components/Organims/Sections/Desktop/SectionL.tsx	/^    language: "EN";$/;"	m
+language	components/Organims/Sections/Desktop/SectionL.tsx	/^    language: "ES";$/;"	m
+language	components/Organims/Sections/Desktop/SectionL.tsx	/^    language: "IT";$/;"	m
+language	components/Organims/Sections/Desktop/SectionR.tsx	/^    language: "CH";$/;"	m
+language	components/Organims/Sections/Desktop/SectionR.tsx	/^    language: "EN";$/;"	m
+language	components/Organims/Sections/Desktop/SectionR.tsx	/^    language: "ES";$/;"	m
+language	components/Organims/Sections/Desktop/SectionR.tsx	/^    language: "IT";$/;"	m
+language	components/Organims/Sections/Mobile/SectionMob.tsx	/^    language: "CH";$/;"	m
+language	components/Organims/Sections/Mobile/SectionMob.tsx	/^    language: "EN";$/;"	m
+language	components/Organims/Sections/Mobile/SectionMob.tsx	/^    language: "ES";$/;"	m
+language	components/Organims/Sections/Mobile/SectionMob.tsx	/^    language: "IT";$/;"	m
+language	components/molecules/NavBar/Language.tsx	/^      language: allLanguages[language],$/;"	m
+language	context/AppContext.tsx	/^    language: "EN",$/;"	m
+language	context/AppContext.tsx	/^  language: "EN" | "ES" | "CH" | "IT";$/;"	m
+language	types/types.ts	/^  language: "EN" | "ES" | "CH" | "IT";$/;"	m
+learn	app/page.tsx	/^                learn: {$/;"	m
+learn	components/Organims/Sections/Mobile/SectionMob.tsx	/^    learn: iLearnMore;$/;"	m
+left	components/Organims/NavBar/CornerNav.tsx	/^      left: "50%",$/;"	m
+left	components/Organims/NavBar/CornerNav.tsx	/^      left: "calc(50% + 10px)",$/;"	m
+level	components/Atoms/Heading/Heading.tsx	/^  level: number;$/;"	m
+ligthOn	components/Organims/RTFAnimations/MainBG.tsx	/^        ligthOn(lightRef.current);$/;"	m
+link	app/page.tsx	/^                  link: "\/",$/;"	m
+link	app/page.tsx	/^                link: "\/",$/;"	m
+link	components/Organims/Sections/Desktop/SectionL.tsx	/^  link: string;$/;"	m
+link	components/Organims/Sections/Desktop/SectionR.tsx	/^  link: string;$/;"	m
+link	components/Organims/Sections/Mobile/SectionMob.tsx	/^  link: string;$/;"	m
+marke	components/Organims/Sections/Desktop/SectionL.tsx	/^  marke: Text;$/;"	m
+marke	components/Organims/Sections/Desktop/SectionR.tsx	/^  marke: Text;$/;"	m
+markers	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^          markers: true,$/;"	m
+mass	components/Organims/NavBar/CornerNav.tsx	/^      mass: 3,$/;"	m
+materials	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^  materials: {};$/;"	m
+metadata	app/layout.tsx	/^export const metadata: Metadata = {$/;"	v
+metalness	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^              metalness: 0,$/;"	m
+metalness	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^              metalness: 0.5,$/;"	m
+middle	components/Organims/NavBar/CornerNav.tsx	/^  middle: {$/;"	m
+nodes	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^  nodes: {$/;"	m
+offset	components/Organims/Sections/Mobile/SectionMob.tsx	/^    offset: ["end end", "end start"],$/;"	m
+offset	components/Organims/Sections/Mobile/SectionMob.tsx	/^    offset: ["start end", "end start"],$/;"	m
+opacity	components/Organims/NavBar/CornerNav.tsx	/^                    opacity: 1,$/;"	m
+opacity	components/Organims/NavBar/CornerNav.tsx	/^        opacity: 1,$/;"	m
+opacity	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^              opacity: 0.3,$/;"	m
+opacity	components/molecules/NavBar/Language.tsx	/^                opacity: 1,$/;"	m
+opacity	components/molecules/NavBar/Language.tsx	/^              opacity: 1,$/;"	m
+open	components/Organims/NavBar/CornerNav.tsx	/^    open: {$/;"	m
+open	components/Organims/NavBar/CornerNav.tsx	/^  open: {$/;"	m
+pin	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^          pin: false, \/\/ pin the trigger element while active$/;"	m
+prop	CustomHooks/useTrackerMotionValue.tsx	/^  prop: string = "progress"$/;"	m
+rect	CustomHooks/useTrackerMotionValue.tsx	/^  rect: DOMRect;$/;"	m
+repeat	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^            repeat: -1,$/;"	m
+return	CustomHooks/useBeforeUnload.tsx	/^    return () => {$/;"	m
+return	app/AboutUs/page.tsx	/^        return ($/;"	m
+return	app/AboutUs/page.tsx	/^  return ($/;"	m
+return	app/ContactUs/page.tsx	/^        return ($/;"	m
+return	app/ContactUs/page.tsx	/^  return ($/;"	m
+return	app/OurServices/page.tsx	/^        return ($/;"	m
+return	app/OurServices/page.tsx	/^  return ($/;"	m
+return	app/layout.tsx	/^  return ($/;"	m
+return	app/page.tsx	/^        return ($/;"	m
+return	app/page.tsx	/^  return ($/;"	m
+return	components/Atoms/Containers/GlassHScreen.tsx	/^  return ($/;"	m
+return	components/Atoms/Heading/Heading.tsx	/^  return ($/;"	m
+return	components/Atoms/Links/ALink.tsx	/^  return ($/;"	m
+return	components/Atoms/Paragraph/Paragraph.tsx	/^  return ($/;"	m
+return	components/Organims/FramerAnimations/AnimationController.tsx	/^  return ($/;"	m
+return	components/Organims/FramerAnimations/Parallax.tsx	/^  return ($/;"	m
+return	components/Organims/NavBar/CornerNav.tsx	/^          return ($/;"	m
+return	components/Organims/NavBar/CornerNav.tsx	/^        return ($/;"	m
+return	components/Organims/NavBar/CornerNav.tsx	/^  return ($/;"	m
+return	components/Organims/NavBar/ONavBar.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/MainBG.tsx	/^    return () => {$/;"	m
+return	components/Organims/RTFAnimations/MainBG.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/Mesh/BGLight/MainBGAnimation.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^          return ($/;"	m
+return	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/Mesh/Shapes/Band_1.tsx	/^      return () =>$/;"	m
+return	components/Organims/RTFAnimations/Mesh/Shapes/Band_1.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/RTFAComponents/GlassMorphism/GlassMorphism.tsx	/^            return ($/;"	m
+return	components/Organims/RTFAnimations/RTFAComponents/GlassMorphism/GlassMorphism.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG.tsx	/^                return ($/;"	m
+return	components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/RTFAComponents/HorizontalTitle/HorizontalTitle.tsx	/^            return ($/;"	m
+return	components/Organims/RTFAnimations/RTFAComponents/HorizontalTitle/HorizontalTitle.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/RTFAComponents/ImageContainer/WebGLImage.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/RTFAComponents/Pointer/RTFAPointer.tsx	/^  return ($/;"	m
+return	components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText.tsx	/^  return ($/;"	m
+return	components/Organims/Sections/Desktop/SectionL.tsx	/^  return ($/;"	m
+return	components/Organims/Sections/Desktop/SectionR.tsx	/^  return ($/;"	m
+return	components/Organims/Sections/Mobile/SectionMob.tsx	/^  return ($/;"	m
+return	components/molecules/NavBar/Language.tsx	/^  return ($/;"	m
+return	context/AppContext.tsx	/^  return ($/;"	m
+rotate	components/Organims/NavBar/CornerNav.tsx	/^      rotate: ["-45deg", "0deg", "0deg"],$/;"	m
+rotate	components/Organims/NavBar/CornerNav.tsx	/^      rotate: ["0deg", "0deg", "-45deg"],$/;"	m
+rotate	components/Organims/NavBar/CornerNav.tsx	/^      rotate: ["0deg", "0deg", "45deg"],$/;"	m
+rotate	components/Organims/NavBar/CornerNav.tsx	/^      rotate: ["45deg", "0deg", "0deg"],$/;"	m
+rotation	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^  rotation: iAxis;$/;"	m
+rotation	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^  rotation: iAxis;$/;"	m
+rotation	components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG.tsx	/^  rotation: iAxis;$/;"	m
+rotation	components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D.tsx	/^  rotation: iAxis;$/;"	m
+roughness	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^              roughness: 1,$/;"	m
+roughness	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^              roughness: 0.2,$/;"	m
+scale	components/Organims/NavBar/CornerNav.tsx	/^        scale: 1.2,$/;"	m
+scale	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^  scale: number;$/;"	m
+scale	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^  scale: number;$/;"	m
+scrollState	CustomHooks/useTrackerMotionValue.tsx	/^  scrollState: Record<string, number>;$/;"	m
+scrollTrigger	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^        scrollTrigger: {$/;"	m
+scrub	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^          scrub: 1,$/;"	m
+setActive	components/Organims/NavBar/CornerNav.tsx	/^          setActive((pv) => !pv);$/;"	m
+setLanguage	components/molecules/NavBar/Language.tsx	/^      setLanguage(0);$/;"	m
+setLanguage	components/molecules/NavBar/Language.tsx	/^      setLanguage(language + 1);$/;"	m
+setLoading	CustomHooks/useBeforeUnload.tsx	/^      setLoading(false);$/;"	m
+setLoading	CustomHooks/useBeforeUnload.tsx	/^      setLoading(true);$/;"	m
+setRatioX	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^    setRatioX(ratioWX);$/;"	m
+setRatioY	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^    setRatioY(ratioWY);$/;"	m
+setScales	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^    setScales({ ...props }.scale);$/;"	m
+setState	components/Organims/NavBar/CornerNav.tsx	/^          setState((prevState) => ({$/;"	m
+setState	components/molecules/NavBar/Language.tsx	/^    setState((prevState: any) => ({$/;"	m
+setState	context/AppContext.tsx	/^  setState: React.Dispatch<React.SetStateAction<AppState>>;$/;"	m
+setTimeout	components/Organims/RTFAnimations/MainBG.tsx	/^    setTimeout(() => {$/;"	m
+setTimeout	components/Organims/RTFAnimations/Mesh/Shapes/Band_1.tsx	/^        setTimeout(() => {$/;"	m
+settextNotNull	components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText.tsx	/^      settextNotNull(true);$/;"	m
+size	app/page.tsx	/^                size: {$/;"	m
+size	components/Organims/Sections/Mobile/SectionMob.tsx	/^    size: {$/;"	m
+start	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^          start: "-25% center", \/\/ when the top of the trigger hits the top of the viewport$/;"	m
+state	context/AppContext.tsx	/^  state: AppState;$/;"	m
+stiffness	components/Organims/NavBar/CornerNav.tsx	/^      stiffness: 400,$/;"	m
+stroke	app/AboutUs/page.tsx	/^                            stroke: "#fff",$/;"	m
+stroke	app/OurServices/page.tsx	/^                            stroke: "#fff",$/;"	m
+stroke	app/page.tsx	/^                            stroke: "#fff",$/;"	m
+stroke	components/Organims/NavBar/CornerNav.tsx	/^                stroke: "#000000",$/;"	m
+stroke	components/Organims/NavBar/CornerNav.tsx	/^                stroke: "#ffffff",$/;"	m
+stroke	components/Organims/NavBar/ONavBar.tsx	/^                stroke: "#000000",$/;"	m
+stroke	components/Organims/NavBar/ONavBar.tsx	/^                stroke: "#ffffff",$/;"	m
+stroke	components/molecules/NavBar/Language.tsx	/^                stroke: "none",$/;"	m
+stroke	components/molecules/NavBar/Language.tsx	/^              stroke: "none",$/;"	m
+strokeDasharray	app/AboutUs/page.tsx	/^                            strokeDasharray: "none",$/;"	m
+strokeDasharray	app/OurServices/page.tsx	/^                            strokeDasharray: "none",$/;"	m
+strokeDasharray	app/page.tsx	/^                            strokeDasharray: "none",$/;"	m
+strokeDasharray	components/Organims/NavBar/CornerNav.tsx	/^                strokeDasharray: "none",$/;"	m
+strokeDasharray	components/Organims/NavBar/ONavBar.tsx	/^                strokeDasharray: "none",$/;"	m
+strokeDasharray	components/molecules/NavBar/Language.tsx	/^                strokeDasharray: "none",$/;"	m
+strokeDasharray	components/molecules/NavBar/Language.tsx	/^              strokeDasharray: "none",$/;"	m
+strokeLinecap	components/molecules/NavBar/Language.tsx	/^                strokeLinecap: "butt",$/;"	m
+strokeLinecap	components/molecules/NavBar/Language.tsx	/^              strokeLinecap: "butt",$/;"	m
+strokeLinejoin	components/molecules/NavBar/Language.tsx	/^                strokeLinejoin: "miter",$/;"	m
+strokeLinejoin	components/molecules/NavBar/Language.tsx	/^              strokeLinejoin: "miter",$/;"	m
+strokeMiterlimit	components/molecules/NavBar/Language.tsx	/^                strokeMiterlimit: 10,$/;"	m
+strokeMiterlimit	components/molecules/NavBar/Language.tsx	/^              strokeMiterlimit: 10,$/;"	m
+strokeWidth	app/AboutUs/page.tsx	/^                              strokeWidth: "0.005",$/;"	m
+strokeWidth	app/AboutUs/page.tsx	/^                            strokeWidth: "0.00499999",$/;"	m
+strokeWidth	app/AboutUs/page.tsx	/^                            strokeWidth: 0,$/;"	m
+strokeWidth	app/AboutUs/page.tsx	/^                            strokeWidth: 0.295824,$/;"	m
+strokeWidth	app/AboutUs/page.tsx	/^                            strokeWidth: 2.913,$/;"	m
+strokeWidth	app/OurServices/page.tsx	/^                              strokeWidth: "0.005",$/;"	m
+strokeWidth	app/OurServices/page.tsx	/^                            strokeWidth: "0.00499999",$/;"	m
+strokeWidth	app/OurServices/page.tsx	/^                            strokeWidth: 0,$/;"	m
+strokeWidth	app/OurServices/page.tsx	/^                            strokeWidth: 0.295824,$/;"	m
+strokeWidth	app/OurServices/page.tsx	/^                            strokeWidth: 2.913,$/;"	m
+strokeWidth	app/page.tsx	/^                              strokeWidth: "0.005",$/;"	m
+strokeWidth	app/page.tsx	/^                            strokeWidth: "0.00499999",$/;"	m
+strokeWidth	app/page.tsx	/^                            strokeWidth: 0,$/;"	m
+strokeWidth	app/page.tsx	/^                            strokeWidth: 0.295824,$/;"	m
+strokeWidth	app/page.tsx	/^                            strokeWidth: 2.913,$/;"	m
+strokeWidth	components/Organims/NavBar/CornerNav.tsx	/^                strokeWidth: 0,$/;"	m
+strokeWidth	components/Organims/NavBar/CornerNav.tsx	/^                strokeWidth: 0.295824,$/;"	m
+strokeWidth	components/Organims/NavBar/CornerNav.tsx	/^                strokeWidth: 2.913,$/;"	m
+strokeWidth	components/Organims/NavBar/ONavBar.tsx	/^                strokeWidth: 0,$/;"	m
+strokeWidth	components/Organims/NavBar/ONavBar.tsx	/^                strokeWidth: 0.0704324,$/;"	m
+strokeWidth	components/Organims/NavBar/ONavBar.tsx	/^                strokeWidth: 0.693553,$/;"	m
+strokeWidth	components/molecules/NavBar/Language.tsx	/^                strokeWidth: 1,$/;"	m
+strokeWidth	components/molecules/NavBar/Language.tsx	/^              strokeWidth: 0,$/;"	m
+subheading	app/page.tsx	/^                subheading: [$/;"	m
+subheading	components/Organims/Sections/Mobile/SectionMob.tsx	/^    subheading: Text;$/;"	m
+subsets	app/layout.tsx	/^  subsets: ["latin"],$/;"	m
+switch	components/Atoms/Heading/Heading.tsx	/^  switch (theme) {$/;"	m
+switch	components/Atoms/Paragraph/Paragraph.tsx	/^  switch (theme) {$/;"	m
+target	components/Organims/Sections/Mobile/SectionMob.tsx	/^    target: targetRef,$/;"	m
+text	app/page.tsx	/^                text: [$/;"	m
+text	components/Atoms/Heading/Heading.tsx	/^  text: TextContent[];$/;"	m
+text	components/Atoms/Paragraph/Paragraph.tsx	/^  text: TextContent[];$/;"	m
+text	components/Organims/Sections/Mobile/SectionMob.tsx	/^    text: Text;$/;"	m
+textContent	components/Organims/Sections/Mobile/SectionMob.tsx	/^  textContent: {$/;"	m
+title	app/layout.tsx	/^  title: "PrimalPort",$/;"	m
+title	components/Organims/NavBar/CornerNav.tsx	/^    title: [$/;"	m
+top	components/Organims/NavBar/CornerNav.tsx	/^      top: ["35%", "50%", "50%"],$/;"	m
+top	components/Organims/NavBar/CornerNav.tsx	/^      top: ["50%", "50%", "35%"],$/;"	m
+top	components/Organims/NavBar/CornerNav.tsx	/^  top: {$/;"	m
+top	components/Organims/Sections/Mobile/SectionMob.tsx	/^        top: 12,$/;"	m
+tracker	CustomHooks/useTrackerMotionValue.tsx	/^  tracker: Tracker,$/;"	m
+transition	components/Organims/NavBar/CornerNav.tsx	/^                    transition: {$/;"	m
+transition	components/Organims/NavBar/CornerNav.tsx	/^        transition: { delay: 0.5, duration: 0.5, ease: "easeInOut" },$/;"	m
+transition	components/Organims/NavBar/CornerNav.tsx	/^        transition: { duration: 0.25 },$/;"	m
+transition	components/Organims/NavBar/CornerNav.tsx	/^        transition: {$/;"	m
+transition	components/Organims/NavBar/CornerNav.tsx	/^    transition: { type: "spring", mass: 3, stiffness: 400, damping: 50 },$/;"	m
+transition	components/Organims/NavBar/CornerNav.tsx	/^    transition: {$/;"	m
+transparent	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^              transparent: true,$/;"	m
+trigger	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^          trigger: document.getElementById("content1"),$/;"	m
+trigger	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^          trigger: document.getElementById("content2"),$/;"	m
+trigger	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^          trigger: document.getElementById("content3"),$/;"	m
+type	app/layout.tsx	/^import type { Metadata } from "next";$/;"	I
+type	components/Atoms/Paragraph/Paragraph.tsx	/^  type: string;$/;"	m
+type	components/Organims/NavBar/CornerNav.tsx	/^      type: "spring",$/;"	m
+useAppContext	context/AppContext.tsx	/^export const useAppContext = (): AppContextProps => {$/;"	v
+useEffect	CustomHooks/useBeforeUnload.tsx	/^  useEffect(() => {$/;"	m
+useEffect	CustomHooks/useTrackerMotionValue.tsx	/^  useEffect(() => {$/;"	m
+useEffect	app/AboutUs/page.tsx	/^  useEffect(() => {$/;"	m
+useEffect	app/OurServices/page.tsx	/^  useEffect(() => {$/;"	m
+useEffect	app/page.tsx	/^  useEffect(() => {$/;"	m
+useEffect	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^  useEffect(() => {$/;"	m
+useEffect	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^  useEffect(() => {$/;"	m
+useEffect	components/Organims/RTFAnimations/Mesh/Shapes/Band_1.tsx	/^  useEffect(() => {$/;"	m
+useEffect	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^  useEffect(() => {}, [pathname]);$/;"	m
+useFrame	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^  useFrame((_, delta) => {$/;"	m
+useFrame	components/Organims/RTFAnimations/RTFAComponents/ImageContainer/WebGLImage.tsx	/^  useFrame(() => {$/;"	m
+useLayoutEffect	app/page.tsx	/^  useLayoutEffect(() => {$/;"	m
+useLayoutEffect	components/Organims/RTFAnimations/MainBG.tsx	/^  useLayoutEffect(() => {$/;"	m
+useLayoutEffect	components/Organims/RTFAnimations/Mesh/Logo/Logo3D.tsx	/^  useLayoutEffect(() => {$/;"	m
+useLayoutEffect	components/Organims/RTFAnimations/Mesh/Triangle/Triangle.tsx	/^  useLayoutEffect(() => {$/;"	m
+useLayoutEffect	components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D.tsx	/^  useLayoutEffect(() => {$/;"	m
+useLayoutEffect	components/Organims/RTFAnimations/RTFAComponents/Pointer/RTFAPointer.tsx	/^  useLayoutEffect(() => {$/;"	m
+useLayoutEffect	components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText.tsx	/^  useLayoutEffect(() => {$/;"	m
+useLoader	components/Organims/RTFAnimations/RTFAComponents/ImageContainer/WebGLImage.tsx	/^    useLoader(TextureLoader, "\/img\/pexels-goumbik-928199.jpg"),$/;"	m
+useTrackerMotionValue	CustomHooks/useTrackerMotionValue.tsx	/^export function useTrackerMotionValue($/;"	f
+weight	app/layout.tsx	/^  weight: ["200", "300", "400", "500", "600", "700"],$/;"	m
+width	app/page.tsx	/^                  width: 1920,$/;"	m
+width	components/Organims/NavBar/CornerNav.tsx	/^    width: "56px",$/;"	m
+width	components/Organims/NavBar/CornerNav.tsx	/^    width: "calc(100% - 32px)",$/;"	m
+width	components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG.tsx	/^  width: number;$/;"	m
+width	components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D.tsx	/^  width: number;$/;"	m
+width	components/Organims/Sections/Mobile/SectionMob.tsx	/^      width: number;$/;"	m
+x	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^            x: 0.98,$/;"	m
+x	components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG.tsx	/^                          x: 0,$/;"	m
+x	components/Organims/RTFAnimations/interfaces/position.tsx	/^  x: number;$/;"	m
+y	components/Organims/NavBar/CornerNav.tsx	/^                    y: 0,$/;"	m
+y	components/Organims/NavBar/CornerNav.tsx	/^        y: 0,$/;"	m
+y	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^            y: 0.98,$/;"	m
+y	components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG.tsx	/^                          y: 0,$/;"	m
+y	components/Organims/RTFAnimations/interfaces/position.tsx	/^  y: number;$/;"	m
+yoyo	components/Organims/RTFAnimations/Mesh/Shapes/Background.tsx	/^            yoyo: true,$/;"	m
+z	components/Organims/RTFAnimations/Mesh/Logo/Logo.tsx	/^        z: Math.PI * 10,$/;"	m
+z	components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG.tsx	/^                          z: sphere[4],$/;"	m
+z	components/Organims/RTFAnimations/interfaces/position.tsx	/^  z: number;$/;"	m

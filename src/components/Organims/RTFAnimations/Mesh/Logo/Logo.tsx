@@ -1,26 +1,24 @@
-// @ts-nocheck
 "use client";
 import { useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
-import { MeshStandardMaterial, MeshBasicMaterial } from "three";
+import { MeshStandardMaterial } from "three";
 import { iAxis } from "../../interfaces/position";
+import * as THREE from "three";
+import { Vector3 } from "@react-three/fiber";
 
 interface iLogo {
-  scale: number;
+  scale: Vector3;
   rotation: iAxis;
 }
 
 export default function Logo({ scale, rotation }: iLogo) {
-  const { materials, nodes } = useGLTF("./RTFA/Models/Logo/band1v3Main.glb");
+  const { nodes } = useGLTF("./RTFA/Models/Logo/band1v3Main.glb");
   const meshRef = useRef<any>(null);
-  const meshRefR = useRef<any>(null);
   const pathname = usePathname();
 
   useEffect(() => {
-    // meshRefR.current.children[0].material.transparent = true;
-    // meshRefR.current.children[1].material.transparent = true;
     gsap.fromTo(
       meshRef.current.rotation,
       { z: 0 },
@@ -41,7 +39,7 @@ export default function Logo({ scale, rotation }: iLogo) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Torus001.geometry}
+          geometry={(nodes.Torus001 as THREE.Mesh).geometry}
           material={
             new MeshStandardMaterial({
               color: "white",
@@ -54,7 +52,7 @@ export default function Logo({ scale, rotation }: iLogo) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cone.geometry}
+          geometry={(nodes.Cone as THREE.Mesh).geometry}
           material={
             new MeshStandardMaterial({
               color: "white",

@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 import { ScrollScene, UseCanvas } from "@14islands/r3f-scroll-rig";
 import { useRef } from "react";
