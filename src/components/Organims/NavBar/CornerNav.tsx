@@ -1,13 +1,12 @@
-// @ts-nocheck
 import { SiInstagram, SiLinkedin, SiTwitter, SiYoutube } from "react-icons/si";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import { useAppContext } from "@/context/AppContext";
 import Language from "@/components/molecules/NavBar/Language";
 import Link from "next/link";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
+import { TextContent } from "@/types/types";
 
 export default function Nav() {
   const [active, setActive] = useState(false);
@@ -38,7 +37,7 @@ const LinksContainer = () => {
           <NavLink key={"Links" + idx} href={l.href} idx={idx}>
             <Link href={l.href}>
               <Paragraph
-                text={l.title}
+                text={l.title as TextContent[]}
                 type="body"
                 className="uppercase !text-4xl md:!text-7xl font-semibold drop-shadow-lg "
               ></Paragraph>
@@ -50,7 +49,7 @@ const LinksContainer = () => {
   );
 };
 
-const NavLink = ({ children, href, idx }) => {
+const NavLink = ({ children, href, idx }: any) => {
   const path = usePathname();
 
   return (
@@ -185,7 +184,7 @@ const HamburgerButton = ({ active, setActive }: any) => {
         initial={false}
         animate={active ? "open" : "closed"}
         onClick={() => {
-          setActive((pv) => !pv);
+          setActive((pv: boolean) => !pv);
           setState((prevState) => ({
             ...prevState,
             isMenuOpen: !state.isMenuOpen,
@@ -206,8 +205,8 @@ const HamburgerButton = ({ active, setActive }: any) => {
         >
           <path
             d="M5 8H13.75M5 12H19M10.25 16L19 16"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </motion.button>

@@ -1,9 +1,8 @@
-// @ts-nocheck
 "use client";
 import { useTrackerMotionValue } from "@/CustomHooks/useTrackerMotionValue";
 import { useTracker } from "@14islands/r3f-scroll-rig";
 import { motion, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export default function AnimationController({
   children,
@@ -14,6 +13,7 @@ export default function AnimationController({
 }: any) {
   const el = useRef<any>(null);
   const tracker = useTracker(el);
+  //@ts-ignore
   const progress = useTrackerMotionValue(tracker);
   const contentY = useTransform(progress, [0.33, 0.7], ["0%", "0%"]);
   const contentX = useTransform(progress, [0.33333333, 0.75], ["0%", "50%"]);

@@ -16,6 +16,7 @@ interface iGLCubeImage {
   dir?: any;
   imgRef?: any;
 }
+
 export default function WebGLImage({ src }: iWebGLImage) {
   const el = useRef<HTMLImageElement>(null);
 

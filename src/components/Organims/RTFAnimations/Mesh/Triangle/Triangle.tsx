@@ -1,11 +1,10 @@
-// @ts-nocheck
 "use client";
 import { useGLTF } from "@react-three/drei";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { MeshStandardMaterial, MeshBasicMaterial } from "three";
 import { iAxis } from "../../interfaces/position";
+import * as THREE from "three";
 
 interface iTriangle {
   scale: number;
@@ -23,28 +22,31 @@ export default function Triangle({ scale, rotation }: iTriangle) {
   useEffect(() => {}, [pathname]);
 
   useLayoutEffect(() => {
-    const ratioWX =
-      document.querySelector(".main_body")?.getClientRects()[0].width /
-      document.querySelector(".main_body")?.getClientRects()[0].height;
-    const ratioWY =
-      document.querySelector(".main_body").getClientRects()[0].width /
-      document.querySelector(".main_body").getClientRects()[0].height;
-    console.log(ratioWY);
-    setRatioX(ratioWX);
-    setRatioY(ratioWY);
+    const body = document.querySelector(".main_body");
+    if (body !== undefined && body !== null) {
+      if (
+        body.getClientRects() !== undefined &&
+        body.getClientRects() !== null
+      ) {
+        const ratioWX =
+          body.getClientRects()[0].width / body.getClientRects()[0].height;
+        const ratioWY =
+          body.getClientRects()[0].width / body.getClientRects()[0].height;
+        setRatioX(ratioWX);
+        setRatioY(ratioWY);
+      }
+    }
   }, []);
 
   return (
-    <group
-      scale={scale}
-      ref={meshRef}
-      // rotation={[rotation.x, rotation.y, rotation.z]}
-    >
+    <group scale={scale} ref={meshRef}>
       <group scale={1} position={[0, 0, 0]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cone.geometry}
+          geometry={
+            nodes.Cone instanceof THREE.Mesh ? nodes.Cone.geometry : null
+          }
           material={
             new MeshStandardMaterial({
               color: "#e0363e",

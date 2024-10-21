@@ -35,6 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+
 ##Changes done to the project from 19/10/2024
 
 -   Component changes:
@@ -43,6 +44,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
         AboutUs: remove unsed code and fixed import errors
 -   3D Asset:
         No changes.
+
 
 ##Changes done to the project from 20/10/2024
 
@@ -53,6 +55,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 -   RTFACLogo3D: fixed types, ignore some errors from types
 -   LogoBG: fixed types
 -   WebGLImage: fixed types and removed old code
+
+
+##Chages done to the project from 21/10/2024
+
+-   HorizontalTitle: remove type ignore from the compoent
+-   GradientBG: remove type ignore and added interface
+-   Triangle: Fixed types cleaned code
+-   CornerNav: fixed types added types cleaned code
 
 ##Last changes list components and pages
 
@@ -65,3 +75,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     - RTFACLogo3D
     - LogoBG
     - WebGLImage
+    - HorizontalTitle
+    - GradientBG
+    - Triangle
+    - CornerNav

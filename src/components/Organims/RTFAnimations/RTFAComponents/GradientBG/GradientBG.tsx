@@ -1,19 +1,13 @@
-// @ts-nocheck
 "use client";
-import { Sphere, useGLTF } from "@react-three/drei";
 import { ScrollScene, UseCanvas } from "@14islands/r3f-scroll-rig";
-import { useLayoutEffect, useRef } from "react";
-import {
-  MeshDistortMaterial,
-  GradientTexture,
-  MeshReflectorMaterial,
-  Float,
-} from "@react-three/drei";
-import * as THREE from "three";
-import gsap from "gsap";
+import { useRef } from "react";
 import Triangle from "../../Mesh/Triangle/Triangle";
 
-export default function GradientBG({ className, scrollProgress }: any) {
+interface iGradientBG {
+  className: string;
+}
+
+export default function GradientBG({ className }: iGradientBG) {
   const el = useRef<any>();
   const shperes = [
     [-0.294, -0.346, -0.79, 0.016, 2.348],
@@ -117,26 +111,25 @@ export default function GradientBG({ className, scrollProgress }: any) {
         <ScrollScene track={el}>
           {(props) => (
             <group {...props}>
-              {shperes.map((sphere) => {
+              {shperes.map((sphere: any, i: any) => {
                 return (
-                  <>
-                    <mesh
-                      position={[sphere[0], sphere[1], sphere[2] - 3]}
-                      receiveShadow
-                      castShadow
-                      // scale={sphere[3]}
-                      scale={0.01}
-                    >
-                      <Triangle
-                        scale={1}
-                        rotation={{
-                          x: 0,
-                          y: 0,
-                          z: sphere[4],
-                        }}
-                      ></Triangle>
-                    </mesh>
-                  </>
+                  <mesh
+                    position={[sphere[0], sphere[1], sphere[2] - 3]}
+                    receiveShadow
+                    castShadow
+                    // scale={sphere[3]}
+                    key={"mesh-" + i}
+                    scale={0.01}
+                  >
+                    <Triangle
+                      scale={1}
+                      rotation={{
+                        x: 0,
+                        y: 0,
+                        z: sphere[4],
+                      }}
+                    ></Triangle>
+                  </mesh>
                 );
               })}
             </group>

@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 import { useTrackerMotionValue } from "@/CustomHooks/useTrackerMotionValue";
 import { useTracker } from "@14islands/r3f-scroll-rig";
@@ -18,6 +17,7 @@ export default function Parallax({
 }: any) {
   const el = useRef<any>(null);
   const tracker = useTracker(el);
+  //@ts-ignore
   const progress = useTrackerMotionValue(tracker);
   /**
    *  Y values

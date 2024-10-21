@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 import { ScrollScene, UseCanvas } from "@14islands/r3f-scroll-rig";
 import { useRef } from "react";
@@ -26,7 +25,6 @@ export default function HorizontalTitle() {
                   clearcoat={0}
                   clearcoatRoughness={0}
                   specularIntensity={0}
-                  // reflectivity={0.5}
                 />
               </mesh>
             );
