@@ -1,15 +1,18 @@
-// @ts-nocheck
 "use client";
-import {
-  ScrollScene,
-  UseCanvas,
-  useScrollRig,
-  styles,
-} from "@14islands/r3f-scroll-rig";
-import { WebGLText } from "@14islands/r3f-scroll-rig/powerups";
+import { ScrollScene, UseCanvas } from "@14islands/r3f-scroll-rig";
 import { MeshDistortMaterial } from "@react-three/drei";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { StickyScrollScene } from "@14islands/r3f-scroll-rig/powerups";
+import { useLayoutEffect, useRef, useState } from "react";
+// @ts-ignore
+import { WebGLText } from "@14islands/r3f-scroll-rig/powerups";
+
+interface iRTFAText {
+  stickyElref: any;
+  children: any;
+  font: any;
+  as?: "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  size: any;
+  className?: any;
+}
 
 export function RTFAText({
   stickyElref,
@@ -18,8 +21,8 @@ export function RTFAText({
   as: Tag = "p",
   size,
   className,
-}) {
-  const el = useRef();
+}: iRTFAText) {
+  const el = useRef<HTMLElement>(null);
   const [textNotNull, settextNotNull] = useState<any>(false);
 
   useLayoutEffect(() => {
@@ -31,14 +34,14 @@ export function RTFAText({
   return (
     <>
       <Tag
-        ref={el}
+        ref={el as React.RefObject<HTMLHeadingElement>}
         className={`opacity-0 text-${size} pb-16 w-full ${className}`}
       >
         {children}
       </Tag>
       {textNotNull && (
         <UseCanvas>
-          <ScrollScene track={el}>
+          <ScrollScene track={el as React.MutableRefObject<HTMLElement>}>
             {(props) => (
               <>
                 <WebGLText

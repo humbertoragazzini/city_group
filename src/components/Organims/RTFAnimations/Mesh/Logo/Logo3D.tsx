@@ -1,10 +1,8 @@
-// @ts-nocheck
 "use client";
 import * as THREE from "three";
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
@@ -17,7 +15,7 @@ type GLTFResult = GLTF & {
   materials: {};
 };
 
-export function Logo3D(props: JSX.IntrinsicElements["group"]) {
+export function Logo3D(props: any) {
   const ref = useRef<any>(null);
   const TL = useRef<any>(null);
   const TL2 = useRef<any>(null);
@@ -83,10 +81,6 @@ export function Logo3D(props: JSX.IntrinsicElements["group"]) {
       .to(ref.current.rotation, { x: 0, y: 0, duration: 1, ease: "lineal" }, 0)
       .to(ref.current.position, { x: -5.5, duration: 1, ease: "lineal" }, 0);
   }, []);
-  //   useFrame(() => {
-  //     ref.current.rotation.y += 0.001;
-  //     console.log({ ...props }.scrollState);
-  //   });
 
   return (
     <group

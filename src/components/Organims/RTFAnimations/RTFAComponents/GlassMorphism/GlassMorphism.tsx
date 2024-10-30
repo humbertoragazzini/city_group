@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 import { ScrollScene, UseCanvas } from "@14islands/r3f-scroll-rig";
 import { useRef } from "react";
@@ -30,9 +29,7 @@ export default function GlassMorphism() {
                   clearcoatRoughness={0}
                   reflectivity={0.5}
                   specularIntensity={0}
-                  // reflectivity={0.5}
                 />
-                {/* <meshStandardMaterial color={"black"}></meshStandardMaterial> */}
               </mesh>
             );
           }}

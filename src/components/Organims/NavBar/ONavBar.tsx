@@ -1,5 +1,4 @@
 "use client";
-import ALink from "@/components/Atoms/Links/ALink";
 import Nav from "./CornerNav";
 
 export default function ONavBar() {

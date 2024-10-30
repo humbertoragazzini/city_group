@@ -1,10 +1,7 @@
-// @ts-nocheck
 "use client";
 import { ScrollScene, UseCanvas } from "@14islands/r3f-scroll-rig";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Logo from "../../Mesh/Logo/Logo";
-import { usePathname } from "next/navigation";
-import gsap from "gsap";
 import { iAxis } from "../../interfaces/position";
 
 interface iLogoBG {

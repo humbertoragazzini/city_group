@@ -118,7 +118,6 @@ export function Marke({ marke }: any) {
 
   const textContent = filterLanguage();
 
-  console.log(textContent);
   return (
     <Parallax type={"textV"} start={0} end={1} className={"right-0"}>
       <span className="text-[75px] lg:text-[150px] drop-shadow-md">

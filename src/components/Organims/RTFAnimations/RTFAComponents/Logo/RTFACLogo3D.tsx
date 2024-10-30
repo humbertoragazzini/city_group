@@ -1,27 +1,19 @@
-// @ts-nocheck
 "use client";
-import { ScrollScene, UseCanvas } from "@14islands/r3f-scroll-rig";
-import { useLayoutEffect, useRef, useState } from "react";
-import Logo from "../../Mesh/Logo/Logo";
-import { usePathname } from "next/navigation";
-import gsap from "gsap";
+import { UseCanvas } from "@14islands/r3f-scroll-rig";
+import { useRef } from "react";
 import { iAxis } from "../../interfaces/position";
 import { Logo3D } from "../../Mesh/Logo/Logo3D";
+// @ts-ignore
 import { StickyScrollScene } from "@14islands/r3f-scroll-rig/powerups";
 
 interface iLogoBG {
-  className: string;
-  rotation: iAxis;
-  width: number;
+  className?: string;
+  rotation?: iAxis;
+  width?: number;
 }
 
 export default function RTFACLogo3D({ className, rotation, width }: iLogoBG) {
   const el = useRef<any>();
-
-  useLayoutEffect(() => {
-    console.log(StickyScrollScene);
-  }, []);
-
   return (
     <>
       <div
@@ -36,7 +28,7 @@ export default function RTFACLogo3D({ className, rotation, width }: iLogoBG) {
       </div>
       <UseCanvas>
         <StickyScrollScene track={el}>
-          {(props) => {
+          {(props: any) => {
             return <Logo3D {...props}></Logo3D>;
           }}
         </StickyScrollScene>
