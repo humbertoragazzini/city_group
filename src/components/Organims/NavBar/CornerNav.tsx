@@ -301,7 +301,7 @@ const LINKS = [
       { language: "CH", content: "联系我们" }, // Chinese for "Contact"
       { language: "IT", content: "Contatto" },
     ],
-    href: "/Contact",
+    href: "/ContactUs",
   },
 ];
 

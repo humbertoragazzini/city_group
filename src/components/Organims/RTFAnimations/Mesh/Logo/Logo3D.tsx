@@ -35,7 +35,6 @@ export function Logo3D(props: any) {
           pin: false, // pin the trigger element while active
           start: "-25% center", // when the top of the trigger hits the top of the viewport
           end: "center center", // end after scrolling 500px beyond the start
-          markers: true,
           scrub: 1,
         },
         duration: 1,
@@ -54,7 +53,6 @@ export function Logo3D(props: any) {
           pin: false, // pin the trigger element while active
           start: "-25% center", // when the top of the trigger hits the top of the viewport
           end: "center center", // end after scrolling 500px beyond the start
-          markers: true,
           scrub: 1,
         },
         duration: 1,
@@ -73,7 +71,6 @@ export function Logo3D(props: any) {
           pin: false, // pin the trigger element while active
           start: "-25% center", // when the top of the trigger hits the top of the viewport
           end: "center center", // end after scrolling 500px beyond the start
-          markers: true,
           scrub: 1,
         },
         duration: 1,
