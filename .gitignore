@@ -6,6 +6,10 @@
 .pnp.js
 .yarn/install-state.gz
 
+#tags
+/tags
+/src/tags
+
 # testing
 /coverage
 

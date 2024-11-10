@@ -1,15 +1,16 @@
 "use client";
+import { useAppContext } from "@/context/AppContext";
 import { GlobalCanvas, useScrollbar } from "@14islands/r3f-scroll-rig";
 import { GradientTexture } from "@react-three/drei";
 import gsap from "gsap";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 export default function MainBG() {
   const sphereRef = useRef<THREE.Mesh>(null);
   const lightRef = useRef<THREE.DirectionalLight>(null);
   const [ligthIntensity, setLightIntensity] = useState(0);
-
+  const context = useAppContext();
   const scroll = useScrollbar();
 
   const checkProgress = () => {
@@ -67,6 +68,9 @@ export default function MainBG() {
     checkProgress();
   }, [scroll.scroll.progress]); // Dependency on scroll progress
 
+  useEffect(() => {
+    console.log(context);
+  }, []);
   return (
     <>
       <GlobalCanvas
