@@ -1,5 +1,4 @@
 "use client";
-import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { useAppContext } from "@/context/AppContext";
 import { useState } from "react";
 
