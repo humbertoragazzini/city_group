@@ -37,6 +37,7 @@ export default function ContactUs() {
           <ContactUsPC></ContactUsPC>
         </Canvas>
       </div>
+      <div className="fixed h-screen w-screen pointer-events-none"></div>
     </div>
   );
 }

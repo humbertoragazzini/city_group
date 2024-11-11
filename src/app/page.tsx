@@ -24,6 +24,7 @@ import Link from "next/link";
 import SectionL from "@/components/Organims/Sections/Desktop/SectionL";
 import SectionR from "@/components/Organims/Sections/Desktop/SectionR";
 import SectionMob from "@/components/Organims/Sections/Mobile/SectionMob";
+import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 
 export default function Home() {
   const context = useAppContext();
@@ -67,6 +68,7 @@ export default function Home() {
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white `}
             ref={headerRef}
           >
+            <MainBG></MainBG>
             <GradientBG className={"absolute top-0 left-0 h-full"}></GradientBG>
 
             <GlassHScreen>

@@ -63,7 +63,6 @@ export default function RootLayout({
           <ONavBar></ONavBar>
           {/* <RightNavBar></RightNavBar> */}
           {children}
-          <MainBG></MainBG>
         </AppWraper>
       </body>
     </html>

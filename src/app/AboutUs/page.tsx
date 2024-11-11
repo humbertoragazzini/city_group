@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import React from "react";
 import { RTFAText } from "@/components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText";
 import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D";
+import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 
 export default function AboutUs() {
   const context = useAppContext();
@@ -28,6 +29,7 @@ export default function AboutUs() {
           <div
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
           >
+            <MainBG></MainBG>
             {/* A mission statement. This describes the purpose of your business as
             it relates to the industry or market you serve.  */}
 

@@ -77,6 +77,7 @@ export default function OurServices() {
           <div
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
           >
+            <MainBG></MainBG>
             <div className="min-h-[110vh] w-full">
               <div className="w-full sticky top-0 left-0 z-0">
                 <div className="absolute h-screen w-full bg-gray-700 rounded-t-[80px]">

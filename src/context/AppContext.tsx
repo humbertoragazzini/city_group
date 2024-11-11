@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 interface AppState {
   isMenuOpen: boolean;
   language: "EN" | "ES" | "CH" | "IT";
+  isMenuEnable: boolean;
 }
 
 interface AppContextProps {
@@ -16,6 +17,7 @@ const AppContext = createContext<AppContextProps | undefined>(undefined);
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [state, setState] = useState<AppState>({
     isMenuOpen: false,
+    isMenuEnable: true,
     language: "EN",
   });
 
