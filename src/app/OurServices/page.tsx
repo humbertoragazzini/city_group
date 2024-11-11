@@ -27,6 +27,7 @@ import SectionMob from "@/components/Organims/Sections/Mobile/SectionMob";
 import WebGLImage from "@/components/Organims/RTFAnimations/RTFAComponents/ImageContainer/WebGLImage";
 import { RTFAText } from "@/components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText";
 import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D";
+import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 
 export default function OurServices() {
   const context = useAppContext();
