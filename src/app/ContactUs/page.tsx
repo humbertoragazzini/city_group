@@ -1,3 +1,4 @@
+// @ts-ignore
 "use client";
 import { useAppContext } from "@/context/AppContext";
 import { Canvas, useThree } from "@react-three/fiber";
