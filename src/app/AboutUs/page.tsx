@@ -32,7 +32,7 @@ export default function AboutUs() {
             <MainBG></MainBG>
             {/* A mission statement. This describes the purpose of your business as
             it relates to the industry or market you serve.  */}
-
+            {/* a small change to test the git repo*/}
             {/* A vision statement.
             Outline the future of your business in this section.  */}
 
