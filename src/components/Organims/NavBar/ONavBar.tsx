@@ -81,7 +81,7 @@ export default function ONavBar() {
             </svg>
           </button>
           <button
-            className={`group fixed left-20 text-3xl text-white top-4 z-0 h-12 w-12 hidden lg:block rounded-tr-full rounded-tl-full rounded-br-full rounded-bl-full [&>svg]:stroke-black hover:bg-the-lightGrey hover:[&>svg]:stroke-white transition-all animate-rounded-change-disable bg-black "
+            className={`group fixed left-20 text-3xl text-white top-4 z-0 h-12 w-12 hidden lg:block rounded-tr-full rounded-tl-full rounded-br-full rounded-bl-full [&>svg]:stroke-black hover:bg-the-lightGrey hover:[&>svg]:stroke-white transition-all animate-rounded-change-disable"
         }`}
           >
             PRIMALPORTS

@@ -30,26 +30,137 @@ export default function AboutUs() {
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
           >
             <MainBG></MainBG>
-            {/* header section */}
-            <div
-              className="w-full min-h-[400px] !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden relative"
-              style={{ background: "url(img/import_export.jpg)" }}
-            >
-              <div className="absolute top-0 left-0 min-h-full"></div>
-              <h1 className="text-4xl">
-                Some title with the intro for our about us
-              </h1>
-              <h2>Some small title talking about how good is our service</h2>
+            {/* A mission statement. This describes the purpose of your business as
+            it relates to the industry or market you serve.  */}
+            {/* a small change to test the git repo*/}
+            {/* A vision statement.
+            Outline the future of your business in this section.  */}
+
+            {/* Your values.
+            Core values help the reader connect with you and your business on a
+            personal level.  */}
+
+            {/* A target market summary. Your site visitors want to
+            know that they’re in the right place and that your company can help
+            them.  */}
+
+            {/* A brief company history. Besides piquing your visitors’
+            interest, a brief company history can help the press describe your
+            business accurately. */}
+
+            {/* 3d page */}
+            <div className="relative grid grid-cols-2 min-h-[200vh] w-full overflow-x-hidden">
+              <div
+                ref={aboutRef}
+                className="col-start-1 col-end-3 lg:col-end-1 top-0 h-screen flex flex-col justify-center items-start mt-6 p-4 lg:p-24"
+              >
+                <RTFAText
+                  stickyElref={aboutRef}
+                  font={"/fonts/font-500.woff"}
+                  size={"5xl"}
+                >
+                  ABOUT US
+                </RTFAText>
+                <RTFAText
+                  stickyElref={aboutRef}
+                  font={"/fonts/font-500.woff"}
+                  size={"2xl"}
+                >
+                  We aim to grow strategically, offering innovative solutions
+                  and superior quality that meet the evolving needs of customers
+                  worldwide. Through sustainable growth and continuous
+                  improvement, we aspire to make our mark globally while
+                  maintaining our commitment to excellence, integrity, and
+                  community impact.
+                </RTFAText>
+              </div>
+              <RTFACLogo3D></RTFACLogo3D>
+              <div
+                ref={aboutRef}
+                className="col-start-1 col-end-3 lg:col-start-2 lg:col-end-2 top-0 h-screen flex flex-col justify-center items-start mt-6 p-4 lg:p-24"
+                id="content1"
+              >
+                <RTFAText
+                  stickyElref={aboutRef}
+                  font={"/fonts/font-500.woff"}
+                  size={"5xl"}
+                  className={"text-right"}
+                >
+                  OUR OBJECTIVES
+                </RTFAText>
+                <RTFAText
+                  stickyElref={aboutRef}
+                  font={"/fonts/font-500.woff"}
+                  size={"2xl"}
+                  className={"text-right"}
+                >
+                  We aim to grow strategically, offering innovative solutions
+                  and superior quality that meet the evolving needs of customers
+                  worldwide. Through sustainable growth and continuous
+                  improvement, we aspire to make our mark globally while
+                  maintaining our commitment to excellence, integrity, and
+                  community impact.
+                </RTFAText>
+              </div>
+
+              <div
+                ref={aboutRef}
+                className="col-start-1 col-end-3 lg:col-end-1 top-0 h-screen flex flex-col justify-center items-start mt-6 p-4 lg:p-24"
+                id="content2"
+              >
+                <RTFAText
+                  stickyElref={aboutRef}
+                  font={"/fonts/font-500.woff"}
+                  size={"5xl"}
+                >
+                  MEET THE TEAM
+                </RTFAText>
+                <RTFAText
+                  stickyElref={aboutRef}
+                  font={"/fonts/font-500.woff"}
+                  size={"2xl"}
+                >
+                  We aim to grow strategically, offering innovative solutions
+                  and superior quality that meet the evolving needs of customers
+                  worldwide. Through sustainable growth and continuous
+                  improvement, we aspire to make our mark globally while
+                  maintaining our commitment to excellence, integrity, and
+                  community impact.
+                </RTFAText>
+              </div>
+              <div
+                ref={aboutRef}
+                className="col-start-1 col-end-3 lg:col-start-2 lg:col-end-2 top-0"
+              ></div>
+              <div
+                ref={aboutRef}
+                className="col-start-1 col-end-3 lg:col-start-2 lg:col-end-2 top-0 h-screen flex flex-col justify-center items-start mt-6 p-4 lg:p-24"
+                id="content3"
+              >
+                <RTFAText
+                  stickyElref={aboutRef}
+                  font={"/fonts/font-500.woff"}
+                  size={"5xl"}
+                  className={"text-right"}
+                >
+                  OUR HISTORY
+                </RTFAText>
+                <RTFAText
+                  stickyElref={aboutRef}
+                  font={"/fonts/font-500.woff"}
+                  size={"2xl"}
+                  className={"text-right"}
+                >
+                  We aim to grow strategically, offering innovative solutions
+                  and superior quality that meet the evolving needs of customers
+                  worldwide. Through sustainable growth and continuous
+                  improvement, we aspire to make our mark globally while
+                  maintaining our commitment to excellence, integrity, and
+                  community impact.
+                </RTFAText>
+              </div>
             </div>
 
-            {/* Section with us and the description */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.75)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="absolute top-0 left-0 min-h-full"></div>
-              <h1 className="text-4xl">
-                Some title with the intro for our about us
-              </h1>
-              <h2>Some small title talking about how good is our service</h2>
-            </div>
             {/* footer */}
             <div className="relative w-full bg-black z-10">
               <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
