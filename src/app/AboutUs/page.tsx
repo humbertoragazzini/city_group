@@ -43,7 +43,7 @@ export default function AboutUs() {
             </div>
 
             {/* Section with us and the description */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.75)] flex flex-col justify-center items-center overflow-hidden relative">
+            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="absolute top-0 left-0 min-h-full"></div>
               <h1 className="text-4xl">
                 Some title with the intro for our about us
