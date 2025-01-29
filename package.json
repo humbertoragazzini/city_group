@@ -1,5 +1,5 @@
 {
-  "homepage":"https://humbertoragazzini.github.io/city_group",
+  "homepage": "https://humbertoragazzini.github.io/city_group",
   "name": "city_group",
   "version": "0.1.0",
   "private": true,
@@ -27,6 +27,7 @@
     "three": "^0.165.0"
   },
   "devDependencies": {
+    "@tailwindcss/language-server": "^0.14.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
