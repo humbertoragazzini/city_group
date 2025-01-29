@@ -43,42 +43,92 @@ export default function AboutUs() {
 
             {/* Section with us and the description */}
             <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 max-w-[75%] p-8">
                 <div className="md:col-span-2 lg:col-span-1">
-                  <h2>About us</h2>
+                  <div className="w-full flex justify-center items-end">
+                    <h2 className="text-4xl">About us</h2>
+                  </div>
                 </div>
                 <div className="md:col-span-2 lg:col-span-1">
-                  <p>About us</p>
-                  <p>
-                    We’re a cutting-edge software development agency company
-                    that works with you to solve your tech problems.
-                  </p>
+                  <div className="w-full justify-center items-start">
+                    <p>
+                      We’re a cutting-edge software development agency company
+                      that works with you to solve your tech problems.
+                    </p>
 
-                  <p>
-                    From best friends at university to business owners. We
-                    launched Forward Digital during a global pandemic and
-                    provide industry leading software solutions for our clients.
-                  </p>
+                    <p>
+                      From best friends at university to business owners. We
+                      launched Forward Digital during a global pandemic and
+                      provide industry leading software solutions for our
+                      clients.
+                    </p>
 
-                  <p>
-                    We have the expertise to help our clients and we do it in a
-                    relaxed and personable way. We’re easy to talk to and most
-                    importantly – we get the job done.
-                  </p>
+                    <p>
+                      We have the expertise to help our clients and we do it in
+                      a relaxed and personable way. We’re easy to talk to and
+                      most importantly – we get the job done.
+                    </p>
 
-                  <p>
-                    Our collaborative approach ensures we can provide
-                    exceptional tailored solutions to solve our client's
-                    specific problems.
-                  </p>
+                    <p>
+                      Our collaborative approach ensures we can provide
+                      exceptional tailored solutions to solve our client's
+                      specific problems.
+                    </p>
 
-                  <p>
-                    We’re not a big corporate organisation and we don’t want to
-                    be. That’s what sets us apart and why our clients love
-                    working with us. We avoid off-the-shelf products and take
-                    time to build a product to meet and exceed our client's
-                    needs.
-                  </p>
+                    <p>
+                      We’re not a big corporate organisation and we don’t want
+                      to be. That’s what sets us apart and why our clients love
+                      working with us. We avoid off-the-shelf products and take
+                      time to build a product to meet and exceed our client's
+                      needs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Section with photo of founders */}
+            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 max-w-[75%] p-8">
+                <div className="md:col-span-2 lg:col-span-1">
+                  <div className="w-full flex justify-center items-end">
+                    <h2 className="text-4xl">About us</h2>
+                  </div>
+                </div>
+                <div className="md:col-span-2 lg:col-span-1">
+                  <div className="w-full justify-center items-start">
+                    <p>
+                      We’re a cutting-edge software development agency company
+                      that works with you to solve your tech problems.
+                    </p>
+
+                    <p>
+                      From best friends at university to business owners. We
+                      launched Forward Digital during a global pandemic and
+                      provide industry leading software solutions for our
+                      clients.
+                    </p>
+
+                    <p>
+                      We have the expertise to help our clients and we do it in
+                      a relaxed and personable way. We’re easy to talk to and
+                      most importantly – we get the job done.
+                    </p>
+
+                    <p>
+                      Our collaborative approach ensures we can provide
+                      exceptional tailored solutions to solve our client's
+                      specific problems.
+                    </p>
+
+                    <p>
+                      We’re not a big corporate organisation and we don’t want
+                      to be. That’s what sets us apart and why our clients love
+                      working with us. We avoid off-the-shelf products and take
+                      time to build a product to meet and exceed our client's
+                      needs.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
