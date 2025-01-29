@@ -106,6 +106,10 @@ export default function AboutUs() {
                         Co-Founder - Senior Market Analisys
                       </p>
                       <p className="my-1">Cordoba - AR</p>
+                      <div className="flex justify-center items-center gap-3">
+                        <a>Li</a>
+                        <a>IN</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -125,6 +129,11 @@ export default function AboutUs() {
                         Co-Founder - Full Stack Developer
                       </p>
                       <p className="my-1">Reigate - UK</p>
+                      <div className="flex justify-center items-center gap-3">
+                        <a>Li</a>
+                        <a>IN</a>
+                        <a>git</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -144,11 +153,120 @@ export default function AboutUs() {
                         Co-Founder - Building Technician
                       </p>
                       <p className="my-1">Cordoba - UK</p>
+                      <div className="flex justify-center items-center gap-3">
+                        <a>Li</a>
+                        <a>IN</a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Our history */}
+
+            {/* Section with us and the description */}
+            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 max-w-[75%] p-8">
+                <div className="md:col-span-2 lg:col-span-1">
+                  <div className="w-full justify-center items-start">
+                    <h2 className="text-4xl mb-7">Our story</h2>
+                    <p className="mb-2">
+                      We’re a cutting-edge software development agency company
+                      that works with you to solve your tech problems.
+                    </p>
+
+                    <p className="mb-2">
+                      From best friends at university to business owners. We
+                      launched Forward Digital during a global pandemic and
+                      provide industry leading software solutions for our
+                      clients.
+                    </p>
+
+                    <p className="mb-2">
+                      We have the expertise to help our clients and we do it in
+                      a relaxed and personable way. We’re easy to talk to and
+                      most importantly – we get the job done.
+                    </p>
+
+                    <p className="mb-2">
+                      Our collaborative approach ensures we can provide
+                      exceptional tailored solutions to solve our client's
+                      specific problems.
+                    </p>
+
+                    <p className="mb-2">
+                      We’re not a big corporate organisation and we don’t want
+                      to be. That’s what sets us apart and why our clients love
+                      working with us. We avoid off-the-shelf products and take
+                      time to build a product to meet and exceed our client's
+                      needs.
+                    </p>
+                  </div>
+                </div>
+                <div className="md:col-span-2 lg:col-span-1 h-full">
+                  <div className="w-full flex flex-col justify-center items-center">
+                    <img
+                      className="max-h-[500px]"
+                      src="
+                    https://placehold.co/600x800"
+                    ></img>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Section with us and the description */}
+            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 max-w-[75%] p-8">
+                <div className="md:col-span-2 lg:col-span-1 h-full">
+                  <div className="w-full flex flex-col justify-center items-center">
+                    <img
+                      className="max-h-[500px]"
+                      src="
+                    https://placehold.co/600x800"
+                    ></img>
+                  </div>
+                </div>
+                <div className="md:col-span-2 lg:col-span-1">
+                  <div className="w-full justify-center items-start">
+                    <h2 className="text-4xl mb-7">Our values</h2>
+                    <p className="mb-2">
+                      We’re a cutting-edge software development agency company
+                      that works with you to solve your tech problems.
+                    </p>
+
+                    <p className="mb-2">
+                      From best friends at university to business owners. We
+                      launched Forward Digital during a global pandemic and
+                      provide industry leading software solutions for our
+                      clients.
+                    </p>
+
+                    <p className="mb-2">
+                      We have the expertise to help our clients and we do it in
+                      a relaxed and personable way. We’re easy to talk to and
+                      most importantly – we get the job done.
+                    </p>
+
+                    <p className="mb-2">
+                      Our collaborative approach ensures we can provide
+                      exceptional tailored solutions to solve our client's
+                      specific problems.
+                    </p>
+
+                    <p className="mb-2">
+                      We’re not a big corporate organisation and we don’t want
+                      to be. That’s what sets us apart and why our clients love
+                      working with us. We avoid off-the-shelf products and take
+                      time to build a product to meet and exceed our client's
+                      needs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* footer */}
             <div className="relative w-full bg-black z-10">
               <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
