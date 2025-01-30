@@ -6,6 +6,8 @@ import React from "react";
 import { RTFAText } from "@/components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText";
 import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D";
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
+import Link from "next/link";
+import Accordion from "@/components/molecules/Accordions/Accordion";
 
 export default function AboutUs() {
   const context = useAppContext();
@@ -30,134 +32,262 @@ export default function AboutUs() {
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
           >
             <MainBG></MainBG>
-            {/* A mission statement. This describes the purpose of your business as
-            it relates to the industry or market you serve.  */}
+            {/* header section */}
+            <div
+              className="w-full min-h-[400px] !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden relative"
+              style={{ background: "url(img/import_export.jpg)" }}
+            >
+              <h1 className="text-4xl">
+                Some title with the intro for our about us
+              </h1>
+              <h2>Some small title talking about how good is our service</h2>
+            </div>
 
-            {/* A vision statement.
-            Outline the future of your business in this section.  */}
+            {/* Section with us and the description */}
+            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 max-w-[75%] p-8">
+                <div className="md:col-span-2 lg:col-span-1">
+                  <div className="w-full flex justify-center items-end">
+                    <h2 className="text-4xl">About us</h2>
+                  </div>
+                </div>
+                <div className="md:col-span-2 lg:col-span-1">
+                  <div className="w-full justify-center items-start">
+                    <p>
+                      We’re a cutting-edge software development agency company
+                      that works with you to solve your tech problems.
+                    </p>
 
-            {/* Your values.
-            Core values help the reader connect with you and your business on a
-            personal level.  */}
+                    <p>
+                      From best friends at university to business owners. We
+                      launched Forward Digital during a global pandemic and
+                      provide industry leading software solutions for our
+                      clients.
+                    </p>
 
-            {/* A target market summary. Your site visitors want to
-            know that they’re in the right place and that your company can help
-            them.  */}
+                    <p>
+                      We have the expertise to help our clients and we do it in
+                      a relaxed and personable way. We’re easy to talk to and
+                      most importantly – we get the job done.
+                    </p>
 
-            {/* A brief company history. Besides piquing your visitors’
-            interest, a brief company history can help the press describe your
-            business accurately. */}
+                    <p>
+                      Our collaborative approach ensures we can provide
+                      exceptional tailored solutions to solve our client's
+                      specific problems.
+                    </p>
 
-            {/* 3d page */}
-            <div className="relative grid grid-cols-2 min-h-[200vh] w-full overflow-x-hidden">
-              <div
-                ref={aboutRef}
-                className="col-start-1 col-end-3 lg:col-end-1 top-0 h-screen flex flex-col justify-center items-start mt-6 p-4 lg:p-24"
-              >
-                <RTFAText
-                  stickyElref={aboutRef}
-                  font={"/fonts/font-500.woff"}
-                  size={"5xl"}
-                >
-                  ABOUT US
-                </RTFAText>
-                <RTFAText
-                  stickyElref={aboutRef}
-                  font={"/fonts/font-500.woff"}
-                  size={"2xl"}
-                >
-                  We aim to grow strategically, offering innovative solutions
-                  and superior quality that meet the evolving needs of customers
-                  worldwide. Through sustainable growth and continuous
-                  improvement, we aspire to make our mark globally while
-                  maintaining our commitment to excellence, integrity, and
-                  community impact.
-                </RTFAText>
+                    <p>
+                      We’re not a big corporate organisation and we don’t want
+                      to be. That’s what sets us apart and why our clients love
+                      working with us. We avoid off-the-shelf products and take
+                      time to build a product to meet and exceed our client's
+                      needs.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <RTFACLogo3D></RTFACLogo3D>
-              <div
-                ref={aboutRef}
-                className="col-start-1 col-end-3 lg:col-start-2 lg:col-end-2 top-0 h-screen flex flex-col justify-center items-start mt-6 p-4 lg:p-24"
-                id="content1"
-              >
-                <RTFAText
-                  stickyElref={aboutRef}
-                  font={"/fonts/font-500.woff"}
-                  size={"5xl"}
-                  className={"text-right"}
-                >
-                  OUR OBJECTIVES
-                </RTFAText>
-                <RTFAText
-                  stickyElref={aboutRef}
-                  font={"/fonts/font-500.woff"}
-                  size={"2xl"}
-                  className={"text-right"}
-                >
-                  We aim to grow strategically, offering innovative solutions
-                  and superior quality that meet the evolving needs of customers
-                  worldwide. Through sustainable growth and continuous
-                  improvement, we aspire to make our mark globally while
-                  maintaining our commitment to excellence, integrity, and
-                  community impact.
-                </RTFAText>
-              </div>
+            </div>
 
-              <div
-                ref={aboutRef}
-                className="col-start-1 col-end-3 lg:col-end-1 top-0 h-screen flex flex-col justify-center items-start mt-6 p-4 lg:p-24"
-                id="content2"
-              >
-                <RTFAText
-                  stickyElref={aboutRef}
-                  font={"/fonts/font-500.woff"}
-                  size={"5xl"}
-                >
-                  MEET THE TEAM
-                </RTFAText>
-                <RTFAText
-                  stickyElref={aboutRef}
-                  font={"/fonts/font-500.woff"}
-                  size={"2xl"}
-                >
-                  We aim to grow strategically, offering innovative solutions
-                  and superior quality that meet the evolving needs of customers
-                  worldwide. Through sustainable growth and continuous
-                  improvement, we aspire to make our mark globally while
-                  maintaining our commitment to excellence, integrity, and
-                  community impact.
-                </RTFAText>
+            {/* Section with photo of founders */}
+            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-3 max-w-[75%] pb-8 pl-8 pr-8">
+                <div className="md:col-span-3 lg:col-span-1">
+                  <div className="mb-7 mt-8 mx-8">
+                    <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
+                      <img
+                        className="min-h-full"
+                        src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
+                      ></img>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                      <p className="mb-2 mt-7 font-bold text-xl">
+                        Cristian Ragazzini
+                      </p>
+                      <p className="my-1 text-md text-center">
+                        Co-Founder - Senior Market Analisys
+                      </p>
+                      <p className="my-1">Cordoba - AR</p>
+                      <div className="flex justify-center items-center gap-3">
+                        <Link href="#">
+                          <img src={"/icons/icons8-linkedin.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-instagram.svg"}></img>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:col-span-3 lg:col-span-1">
+                  <div className="mb-7 mt-8 mx-8">
+                    <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
+                      <img
+                        className="min-h-full"
+                        src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
+                      ></img>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                      <p className="mb-2 mt-7 font-bold text-xl">
+                        Humberto Ragazzini
+                      </p>
+                      <p className="my-1 text-md text-center">
+                        Co-Founder - Full Stack Developer
+                      </p>
+                      <p className="my-1">Reigate - UK</p>
+                      <div className="flex justify-center items-center gap-3">
+                        <Link href="#">
+                          <img src={"/icons/icons8-linkedin.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-instagram.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-github.svg"}></img>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:col-span-3 lg:col-span-1">
+                  <div className="mb-7 mt-8 mx-8">
+                    <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
+                      <img
+                        className="min-h-full"
+                        src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
+                      ></img>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                      <p className="mb-2 mt-7 font-bold text-xl">
+                        Diego Ragazzini
+                      </p>
+                      <p className="my-1 text-md text-center">
+                        Co-Founder - Building Technician
+                      </p>
+                      <p className="my-1">Cordoba - UK</p>
+                      <div className="flex justify-center items-center gap-3">
+                        <Link href="#">
+                          <img src={"/icons/icons8-linkedin.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-instagram.svg"}></img>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div
-                ref={aboutRef}
-                className="col-start-1 col-end-3 lg:col-start-2 lg:col-end-2 top-0"
-              ></div>
-              <div
-                ref={aboutRef}
-                className="col-start-1 col-end-3 lg:col-start-2 lg:col-end-2 top-0 h-screen flex flex-col justify-center items-start mt-6 p-4 lg:p-24"
-                id="content3"
-              >
-                <RTFAText
-                  stickyElref={aboutRef}
-                  font={"/fonts/font-500.woff"}
-                  size={"5xl"}
-                  className={"text-right"}
-                >
-                  OUR HISTORY
-                </RTFAText>
-                <RTFAText
-                  stickyElref={aboutRef}
-                  font={"/fonts/font-500.woff"}
-                  size={"2xl"}
-                  className={"text-right"}
-                >
-                  We aim to grow strategically, offering innovative solutions
-                  and superior quality that meet the evolving needs of customers
-                  worldwide. Through sustainable growth and continuous
-                  improvement, we aspire to make our mark globally while
-                  maintaining our commitment to excellence, integrity, and
-                  community impact.
-                </RTFAText>
+            </div>
+
+            {/* Our history */}
+
+            {/* Section with us and the description */}
+            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 max-w-[75%] p-8">
+                <div className="md:col-span-2 lg:col-span-1">
+                  <div className="w-full justify-center items-start">
+                    <h2 className="text-4xl mb-7">Our story</h2>
+                    <p className="mb-2">
+                      We’re a cutting-edge software development agency company
+                      that works with you to solve your tech problems.
+                    </p>
+
+                    <p className="mb-2">
+                      From best friends at university to business owners. We
+                      launched Forward Digital during a global pandemic and
+                      provide industry leading software solutions for our
+                      clients.
+                    </p>
+
+                    <p className="mb-2">
+                      We have the expertise to help our clients and we do it in
+                      a relaxed and personable way. We’re easy to talk to and
+                      most importantly – we get the job done.
+                    </p>
+
+                    <p className="mb-2">
+                      Our collaborative approach ensures we can provide
+                      exceptional tailored solutions to solve our client's
+                      specific problems.
+                    </p>
+
+                    <p className="mb-2">
+                      We’re not a big corporate organisation and we don’t want
+                      to be. That’s what sets us apart and why our clients love
+                      working with us. We avoid off-the-shelf products and take
+                      time to build a product to meet and exceed our client's
+                      needs.
+                    </p>
+                  </div>
+                </div>
+                <div className="md:col-span-2 lg:col-span-1 h-full">
+                  <div className="w-full flex flex-col justify-center items-center">
+                    <img
+                      className="max-h-[500px]"
+                      src="
+                    https://placehold.co/600x800"
+                    ></img>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Section with us and the description */}
+            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 max-w-[75%] p-8">
+                <div className="md:col-span-2 lg:col-span-1 h-full">
+                  <div className="w-full flex flex-col justify-center items-center">
+                    <img
+                      className="max-h-[500px]"
+                      src="
+                    https://placehold.co/600x800"
+                    ></img>
+                  </div>
+                </div>
+                <div className="md:col-span-2 lg:col-span-1">
+                  <div className="w-full justify-center items-start">
+                    <h2 className="text-4xl mb-7">Our values</h2>
+                    <p className="mb-2">
+                      We’re a cutting-edge software development agency company
+                      that works with you to solve your tech problems.
+                    </p>
+
+                    <p className="mb-2">
+                      From best friends at university to business owners. We
+                      launched Forward Digital during a global pandemic and
+                      provide industry leading software solutions for our
+                      clients.
+                    </p>
+
+                    <p className="mb-2">
+                      We have the expertise to help our clients and we do it in
+                      a relaxed and personable way. We’re easy to talk to and
+                      most importantly – we get the job done.
+                    </p>
+
+                    <p className="mb-2">
+                      Our collaborative approach ensures we can provide
+                      exceptional tailored solutions to solve our client's
+                      specific problems.
+                    </p>
+
+                    <p className="mb-2">
+                      We’re not a big corporate organisation and we don’t want
+                      to be. That’s what sets us apart and why our clients love
+                      working with us. We avoid off-the-shelf products and take
+                      time to build a product to meet and exceed our client's
+                      needs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Why choose Primalport */}
+            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="max-w-[75%] p-8">
+                <h2 className="text-4xl">Why choose Primalports</h2>
+                <Accordion></Accordion>
               </div>
             </div>
 
