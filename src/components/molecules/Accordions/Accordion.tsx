@@ -56,7 +56,7 @@ const Accordion: React.FC = () => {
             className={`w-full text-left p-4 focus:outline-none border-b-2 border-gray-700 transition-all duration-300 ${
               openIndex === item.id
                 ? "bg-white text-black hover:bg-transparent hover:text-white "
-                : "hover:bg-white hover:text-black "
+                : "hover:bg-white hover:text-black"
             }`}
           >
             {item.title}
