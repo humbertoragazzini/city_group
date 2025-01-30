@@ -291,6 +291,27 @@ export default function AboutUs() {
               </div>
             </div>
 
+            {/* Lets contact */}
+            <div className="w-full min-h-[800px] bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.85)] to-black flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="md:max-w-[75%] p-8">
+                <h2 className="text-4xl text-center">Lets contact</h2>
+                <div className="flex flex-col justify-center items-center">
+                  <p className="text-lg text-center m-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Enim et illo perferendis, aliquid ipsam expedita deserunt ab
+                    molestiae sequi qui necessitatibus laborum debitis provident
+                    vitae dolore consequuntur porro tenetur fugit!
+                  </p>
+                  <p className="text-md text-center m-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </p>
+                  <a className="text-xl font-bold bg-gray-400 text-black border-2 border-white rounded-full px-5 py-3 mt-5">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* footer */}
             <div className="relative w-full bg-black z-10">
               <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
