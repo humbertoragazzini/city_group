@@ -8,11 +8,36 @@ interface AccordionItem {
 }
 
 const accordionData: AccordionItem[] = [
-  { id: 1, title: "Item 1", content: "This is the content for Item 1." },
-  { id: 2, title: "Item 2", content: "This is the content for Item 2." },
-  { id: 3, title: "Item 3", content: "This is the content for Item 3." },
-  { id: 4, title: "Item 4", content: "This is the content for Item 4." },
-  { id: 5, title: "Item 5", content: "This is the content for Item 5." },
+  {
+    id: 1,
+    title: "Reliable Global Network",
+    content:
+      "PrimalPorts has a well-established network of partners worldwide, ensuring smooth and secure import-export operations.",
+  },
+  {
+    id: 2,
+    title: "Cost-Effective Solutions",
+    content:
+      "We provide competitive pricing with efficient logistics strategies to reduce shipping and operational costs.",
+  },
+  {
+    id: 3,
+    title: "Compliance & Security",
+    content:
+      "Our team ensures that all shipments comply with international trade laws and security standards for hassle-free transactions.",
+  },
+  {
+    id: 4,
+    title: "Tailored Customer Support",
+    content:
+      "We offer dedicated account managers to assist with all aspects of the import and export process, providing personalized service.",
+  },
+  {
+    id: 5,
+    title: "Advanced Tracking Technology",
+    content:
+      "PrimalPorts utilizes cutting-edge tracking systems, allowing clients to monitor their shipments in real-time.",
+  },
 ];
 
 const Accordion: React.FC = () => {
@@ -23,12 +48,16 @@ const Accordion: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto border border-gray-300 rounded-lg p-4">
+    <div className="w-full mt-5 max-w-md mx-auto">
       {accordionData.map((item) => (
-        <div key={item.id} className="mb-2">
+        <div key={item.id} className="">
           <button
             onClick={() => toggleAccordion(item.id)}
-            className="w-full p-3 text-left bg-gray-200 rounded-lg focus:outline-none"
+            className={`w-full text-left p-4 focus:outline-none border-b-2 border-gray-700 transition-all duration-300 ${
+              openIndex === item.id
+                ? "bg-white text-black hover:bg-transparent hover:text-white "
+                : "hover:bg-white hover:text-black "
+            }`}
           >
             {item.title}
           </button>
@@ -38,10 +67,12 @@ const Accordion: React.FC = () => {
               height: openIndex === item.id ? "auto" : 0,
               opacity: openIndex === item.id ? 1 : 0,
             }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="p-3 bg-gray-100">{item.content}</div>
+            <div className="px-4 mt-4 backdrop-blur-md rounded-md">
+              {item.content}
+            </div>
           </motion.div>
         </div>
       ))}
