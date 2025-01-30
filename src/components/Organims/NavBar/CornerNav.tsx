@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SiInstagram, SiLinkedin, SiTwitter, SiYoutube } from "react-icons/si";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";

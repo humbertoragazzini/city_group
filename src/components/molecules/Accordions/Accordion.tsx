@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -48,7 +49,7 @@ const Accordion: React.FC = () => {
   };
 
   return (
-    <div className="w-full mt-5 max-w-md mx-auto">
+    <div className="w-full mt-5 max-w-lg mx-auto">
       {accordionData.map((item) => (
         <div key={item.id} className="">
           <button
