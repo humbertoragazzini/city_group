@@ -14,27 +14,35 @@ export default function Nav() {
   return (
     <>
       <HamburgerButton active={active} setActive={setActive} />
-      <AnimatePresence>{active && <LinksOverlay />}</AnimatePresence>
+      <AnimatePresence>
+        {active && <LinksOverlay active={active} setActive={setActive} />}
+      </AnimatePresence>
     </>
   );
 }
 
-const LinksOverlay = () => {
+const LinksOverlay = ({ active, setActive }) => {
   return (
     <nav className="fixed right-4 top-4 z-40 h-[calc(100vh_-_32px)] w-[calc(100%_-_32px)] overflow-hidden">
       <Logo />
-      <LinksContainer />
+      <LinksContainer active={active} setActive={setActive} />
       <FooterCTAs />
     </nav>
   );
 };
 
-const LinksContainer = () => {
+const LinksContainer = ({ active, setActive }) => {
   return (
     <motion.div className="space-y-4 p-12 pl-4 md:pl-20">
       {LINKS.map((l, idx) => {
         return (
-          <NavLink key={"Links" + idx} href={l.href} idx={idx}>
+          <NavLink
+            key={"Links" + idx}
+            href={l.href}
+            idx={idx}
+            active={active}
+            setActive={setActive}
+          >
             <Link href={l.href}>
               <Paragraph
                 text={l.title as TextContent[]}
@@ -49,12 +57,19 @@ const LinksContainer = () => {
   );
 };
 
-const NavLink = ({ children, href, idx }: any) => {
+const NavLink = ({ children, href, idx, setActive, setState }: any) => {
   const path = usePathname();
 
   return (
     <motion.div
       initial={{ opacity: 0, y: -8 }}
+      onClick={() => {
+        setActive((pv: boolean) => !pv);
+        setState((prevState) => ({
+          ...prevState,
+          isMenuOpen: !state.isMenuOpen,
+        }));
+      }}
       animate={{
         opacity: 1,
         y: 0,

@@ -6,6 +6,8 @@ import React from "react";
 import { RTFAText } from "@/components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText";
 import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D";
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
+import Link from "next/link";
+import Accordion from "@/components/molecules/Accordions/Accordion";
 
 export default function AboutUs() {
   const context = useAppContext();
@@ -89,7 +91,7 @@ export default function AboutUs() {
 
             {/* Section with photo of founders */}
             <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-3 max-w-[75%] p-8">
+              <div className="grid grid-cols-3 max-w-[75%] pb-8 pl-8 pr-8">
                 <div className="md:col-span-3 lg:col-span-1">
                   <div className="mb-7 mt-8 mx-8">
                     <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
@@ -102,13 +104,17 @@ export default function AboutUs() {
                       <p className="mb-2 mt-7 font-bold text-xl">
                         Cristian Ragazzini
                       </p>
-                      <p className="my-1 text-md">
+                      <p className="my-1 text-md text-center">
                         Co-Founder - Senior Market Analisys
                       </p>
                       <p className="my-1">Cordoba - AR</p>
                       <div className="flex justify-center items-center gap-3">
-                        <a>Li</a>
-                        <a>IN</a>
+                        <Link href="#">
+                          <img src={"/icons/icons8-linkedin.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-instagram.svg"}></img>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -125,14 +131,20 @@ export default function AboutUs() {
                       <p className="mb-2 mt-7 font-bold text-xl">
                         Humberto Ragazzini
                       </p>
-                      <p className="my-1 text-md">
+                      <p className="my-1 text-md text-center">
                         Co-Founder - Full Stack Developer
                       </p>
                       <p className="my-1">Reigate - UK</p>
                       <div className="flex justify-center items-center gap-3">
-                        <a>Li</a>
-                        <a>IN</a>
-                        <a>git</a>
+                        <Link href="#">
+                          <img src={"/icons/icons8-linkedin.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-instagram.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-github.svg"}></img>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -149,13 +161,17 @@ export default function AboutUs() {
                       <p className="mb-2 mt-7 font-bold text-xl">
                         Diego Ragazzini
                       </p>
-                      <p className="my-1 text-md">
+                      <p className="my-1 text-md text-center">
                         Co-Founder - Building Technician
                       </p>
                       <p className="my-1">Cordoba - UK</p>
                       <div className="flex justify-center items-center gap-3">
-                        <a>Li</a>
-                        <a>IN</a>
+                        <Link href="#">
+                          <img src={"/icons/icons8-linkedin.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-instagram.svg"}></img>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -264,6 +280,14 @@ export default function AboutUs() {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Why choose Primalport */}
+            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="max-w-[75%] p-8">
+                <h2 className="text-4xl">Why choose Primalports</h2>
+                <Accordion></Accordion>
               </div>
             </div>
 
