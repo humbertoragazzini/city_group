@@ -285,7 +285,7 @@ export default function AboutUs() {
 
             {/* Why choose Primalport */}
             <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="max-w-[75%] p-8">
+              <div className="md:max-w-[75%] p-8">
                 <h2 className="text-4xl">Why choose Primalports</h2>
                 <Accordion></Accordion>
               </div>
