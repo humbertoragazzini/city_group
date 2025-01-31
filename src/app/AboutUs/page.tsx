@@ -34,13 +34,15 @@ export default function AboutUs() {
             <MainBG></MainBG>
             {/* header section */}
             <div
-              className="w-full min-h-[400px] !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden relative"
+              className="w-full min-h-[400px] !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden p-4 relative"
               style={{ background: "url(img/import_export.jpg)" }}
             >
-              <h1 className="text-4xl">
+              <h1 className="text-2xl text-center md:text-4xl">
                 Some title with the intro for our about us
               </h1>
-              <h2>Some small title talking about how good is our service</h2>
+              <h2 className="mt-2 text-center text-md md:text-2xl">
+                Some small title talking about how good is our service
+              </h2>
             </div>
 
             {/* Section with us and the description */}
@@ -293,7 +295,7 @@ export default function AboutUs() {
                 <h2 className="text-4xl text-center md:text-start">
                   Why choose Primalports
                 </h2>
-                <div class="flex justify-centerl px-8">
+                <div className="flex px-8 justify-centerl">
                   <Accordion></Accordion>
                 </div>
               </div>
