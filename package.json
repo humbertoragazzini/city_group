@@ -10,7 +10,8 @@
     "lint": "next lint",
     "predeploy": "npm run build",
     "export": "next export",
-    "deploy": "gh-pages -d out --nojekyll --cname www.primalports.com"
+    "deploy": "gh-pages -d out --nojekyll --cname www.primalports.com",
+    "build:tailwind-config": "tsc tailwind.config.ts --outDir . --module commonjs"
   },
   "dependencies": {
     "@14islands/r3f-scroll-rig": "^8.13.2",

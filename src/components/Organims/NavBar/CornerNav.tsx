@@ -58,17 +58,17 @@ const LinksContainer = ({ active, setActive }) => {
   );
 };
 
-const NavLink = ({ children, href, idx, setActive, setState }: any) => {
+const NavLink = ({ children, href, idx, setActive }: any) => {
   const path = usePathname();
-
+  const { setState } = useAppContext();
   return (
     <motion.div
       initial={{ opacity: 0, y: -8 }}
       onClick={() => {
-        setActive((pv: boolean) => !pv);
+        setActive(false);
         setState((prevState) => ({
           ...prevState,
-          isMenuOpen: !state.isMenuOpen,
+          isMenuOpen: false,
         }));
       }}
       animate={{
