@@ -45,9 +45,28 @@ export default function AboutUs() {
               style={{ background: "url(img/import_export.jpg)" }}
             >
               <div className="flex flex-col items-center justify-center max-w-[1920px]">
-                <h1 className="text-2xl text-center md:text-4xl">
-                  Some title with the intro for our about us
-                </h1>
+                <Heading
+                  className={"text-2xl text-center md:text-4xl"}
+                  text={[
+                    {
+                      language: "EN",
+                      content: "Elevating Excellence Across Industries",
+                    },
+                    {
+                      language: "ES",
+                      content: "Elevando la Excelencia en Todas las Industrias",
+                    },
+                    {
+                      language: "CH",
+                      content: "提升各行业的卓越水平",
+                    },
+                    {
+                      language: "IT",
+                      content: "Elevare l'Eccellenza in Tutti i Settori",
+                    },
+                  ]}
+                  level={1}
+                ></Heading>
                 <h2 className="mt-2 text-center text-md md:text-2xl">
                   Some small title talking about how good is our service
                 </h2>
@@ -57,7 +76,7 @@ export default function AboutUs() {
             {/* Section with us and the description */}
             <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="grid grid-cols-2 w-full xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
-                <div className="col-span-2 mb-10 xl:col-span-1">
+                <div className="mb-10 col-span-2 xl:col-span-1">
                   <div className="flex items-end justify-center w-full">
                     <h2 className="text-4xl">About us</h2>
                   </div>
@@ -467,7 +486,7 @@ export default function AboutUs() {
                     </svg>
                   </div>
                 </div>
-                <div className="relative col-span-1 pb-10 lg:col-span-3">
+                <div className="relative pb-10 col-span-1 lg:col-span-3">
                   <hr></hr>
                 </div>
                 <div className="relative col-span-1 lg:col-span-3">
