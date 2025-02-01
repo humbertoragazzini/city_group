@@ -41,7 +41,7 @@ export default function AboutUs() {
 
             {/* header section */}
             <div
-              className="bg-gradient-to-b to-[rgba(0.0,0.0,0.0,0.55)] from-black w-full min-h-[400px] lg:min-h-[550px] xl:min-h-screen !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden relative"
+              className="bg-gradient-to-b to-[rgba(0.0,0.0,0.0,0.55)] from-black w-full min-h-[400px] lg:min-h-[550px] xl:min-h-[650px] !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden relative"
               style={{ background: "url(img/import_export.jpg)" }}
             >
               <div className="flex flex-col items-center justify-center max-w-[1920px]">
