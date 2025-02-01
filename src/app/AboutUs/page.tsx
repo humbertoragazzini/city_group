@@ -120,43 +120,137 @@ export default function AboutUs() {
                           content: "Chi siamo",
                         },
                       ]}
-                      level={1}
+                      level={2}
                     ></Heading>
                   </div>
                 </div>
                 <div className="col-span-2 xl:col-span-1">
                   <div className="items-start justify-center w-full">
-                    <p>
-                      We’re a cutting-edge software development agency company
-                      that works with you to solve your tech problems.
-                    </p>
-
-                    <p>
-                      From best friends at university to business owners. We
-                      launched Forward Digital during a global pandemic and
-                      provide industry leading software solutions for our
-                      clients.
-                    </p>
-
-                    <p>
-                      We have the expertise to help our clients and we do it in
-                      a relaxed and personable way. We’re easy to talk to and
-                      most importantly – we get the job done.
-                    </p>
-
-                    <p>
-                      Our collaborative approach ensures we can provide
-                      exceptional tailored solutions to solve our client's
-                      specific problems.
-                    </p>
-
-                    <p>
-                      We’re not a big corporate organisation and we don’t want
-                      to be. That’s what sets us apart and why our clients love
-                      working with us. We avoid off-the-shelf products and take
-                      time to build a product to meet and exceed our client's
-                      needs.
-                    </p>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
                   </div>
                 </div>
               </div>
@@ -258,7 +352,9 @@ export default function AboutUs() {
                 <div className="col-span-2 lg:col-span-1">
                   <div className="items-start justify-center w-full">
                     <Heading
-                      className={"text-2xl text-center md:text-4xl"}
+                      className={
+                        "text-2xl text-center md:text-start md:text-4xl"
+                      }
                       text={[
                         {
                           language: "EN",
@@ -277,42 +373,133 @@ export default function AboutUs() {
                           content: "Nuestra historia",
                         },
                       ]}
-                      level={1}
+                      level={2}
                     ></Heading>
-                    <h2 className="text-4xl text-center md:text-start mb-7">
-                      Our story
-                    </h2>
-                    <p className="mb-2 text-start">
-                      We’re a cutting-edge software development agency company
-                      that works with you to solve your tech problems.
-                    </p>
-
-                    <p className="mb-2 text-start">
-                      From best friends at university to business owners. We
-                      launched Forward Digital during a global pandemic and
-                      provide industry leading software solutions for our
-                      clients.
-                    </p>
-
-                    <p className="mb-2 text-start">
-                      We have the expertise to help our clients and we do it in
-                      a relaxed and personable way. We’re easy to talk to and
-                      most importantly – we get the job done.
-                    </p>
-
-                    <p className="mb-2 text-start">
-                      Our collaborative approach ensures we can provide
-                      exceptional tailored solutions to solve our client's
-                      specific problems.
-                    </p>
-
-                    <p className="mb-2 text-start">
-                      We’re not a big corporate organisation and we don’t want
-                      to be. That’s what sets us apart and why our clients love
-                      working with us. We avoid off-the-shelf products and take
-                      time to build a product to meet and exceed our client's
-                      needs.
-                    </p>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
                   </div>
                 </div>
                 <div className="hidden h-full col-span-2 md:block lg:col-span-1">
@@ -342,7 +529,9 @@ export default function AboutUs() {
                 <div className="col-span-2 lg:col-span-1">
                   <div className="items-start justify-center w-full">
                     <Heading
-                      className={"text-2xl text-center md:text-4xl"}
+                      className={
+                        "text-2xl text-center md:text-start md:text-4xl"
+                      }
                       text={[
                         {
                           language: "EN",
@@ -361,42 +550,133 @@ export default function AboutUs() {
                           content: "Nuestros valores",
                         },
                       ]}
-                      level={1}
+                      level={2}
                     ></Heading>
-                    <h2 className="text-4xl text-center md:text-start mb-7">
-                      Our values
-                    </h2>
-                    <p className="mb-2 text-start">
-                      We’re a cutting-edge software development agency company
-                      that works with you to solve your tech problems.
-                    </p>
-
-                    <p className="mb-2 text-start">
-                      From best friends at university to business owners. We
-                      launched Forward Digital during a global pandemic and
-                      provide industry leading software solutions for our
-                      clients.
-                    </p>
-
-                    <p className="mb-2 text-start">
-                      We have the expertise to help our clients and we do it in
-                      a relaxed and personable way. We’re easy to talk to and
-                      most importantly – we get the job done.
-                    </p>
-
-                    <p className="mb-2 text-start">
-                      Our collaborative approach ensures we can provide
-                      exceptional tailored solutions to solve our client's
-                      specific problems.
-                    </p>
-
-                    <p className="mb-2">
-                      We’re not a big corporate organisation and we don’t want
-                      to be. That’s what sets us apart and why our clients love
-                      working with us. We avoid off-the-shelf products and take
-                      time to build a product to meet and exceed our client's
-                      needs.
-                    </p>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="mb-4"
+                      text={[
+                        {
+                          language: "EN",
+                          content:
+                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        },
+                        {
+                          language: "ES",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                        },
+                        {
+                          language: "CH",
+                          content: "进口、建筑和零售的综合解决方案 (Chino)",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                        },
+                      ]}
+                    ></Paragraph>{" "}
                   </div>
                 </div>
               </div>
@@ -406,7 +686,7 @@ export default function AboutUs() {
             <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <Heading
-                  className={"text-2xl text-center md:text-4xl"}
+                  className={"text-2xl text-center  md:text-4xl"}
                   text={[
                     {
                       language: "EN",
@@ -425,9 +705,8 @@ export default function AboutUs() {
                       content: "Por que elegirnos",
                     },
                   ]}
-                  level={1}
+                  level={2}
                 ></Heading>
-                <h2 className="text-4xl text-center">Why choose Primalports</h2>
                 <div className="flex justify-centerl">
                   <Accordion></Accordion>
                 </div>
@@ -442,11 +721,11 @@ export default function AboutUs() {
                   text={[
                     {
                       language: "EN",
-                      content: "Elevating Excellence Across Industries",
+                      content: "Lets contact",
                     },
                     {
                       language: "ES",
-                      content: "Elevando la Excelencia en Todas las Industrias",
+                      content: "Contactanos",
                     },
                     {
                       language: "CH",
@@ -454,12 +733,11 @@ export default function AboutUs() {
                     },
                     {
                       language: "IT",
-                      content: "Elevare l'Eccellenza in Tutti i Settori",
+                      content: "Contactanos",
                     },
                   ]}
-                  level={1}
+                  level={2}
                 ></Heading>
-                <h2 className="text-4xl text-center">Lets contact</h2>
                 <div className="flex flex-col items-center justify-center">
                   <p className="text-lg text-center">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
