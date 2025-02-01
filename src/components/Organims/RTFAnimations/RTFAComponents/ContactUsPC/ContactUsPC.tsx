@@ -62,7 +62,7 @@ export default function ContactUsPC() {
           start: "top top", // when the top of the trigger hits the top of the viewport
           end: "center top", // end after scrolling 500px beyond the start
           scrub: 1,
-          markers: true,
+          markers: false,
         },
         duration: 1,
       })
