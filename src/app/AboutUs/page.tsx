@@ -50,26 +50,48 @@ export default function AboutUs() {
                   text={[
                     {
                       language: "EN",
-                      content: "Elevating Excellence Across Industries",
+                      content: "Titulo principal the la pagina (Ingles)",
                     },
                     {
                       language: "ES",
-                      content: "Elevando la Excelencia en Todas las Industrias",
+                      content: "Titulo principal de la pagina (Espaniol)",
                     },
                     {
                       language: "CH",
-                      content: "提升各行业的卓越水平",
+                      content: "提升各行业的卓越水平 (Chino)",
                     },
                     {
                       language: "IT",
-                      content: "Elevare l'Eccellenza in Tutti i Settori",
+                      content: "Titulo principal de la pagina (Italiano)",
                     },
                   ]}
                   level={1}
                 ></Heading>
-                <h2 className="mt-2 text-center text-md md:text-2xl">
-                  Some small title talking about how good is our service
-                </h2>
+                <Paragraph
+                  type={"standfirst3"}
+                  className="mb-4"
+                  text={[
+                    {
+                      language: "EN",
+                      content:
+                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Paragraph>
               </div>
             </div>
 
@@ -78,7 +100,28 @@ export default function AboutUs() {
               <div className="grid grid-cols-2 w-full xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <div className="mb-10 col-span-2 xl:col-span-1">
                   <div className="flex items-end justify-center w-full">
-                    <h2 className="text-4xl">About us</h2>
+                    <Heading
+                      className={"text-2xl text-center md:text-4xl"}
+                      text={[
+                        {
+                          language: "EN",
+                          content: "About us",
+                        },
+                        {
+                          language: "ES",
+                          content: "Acerca de nosotros",
+                        },
+                        {
+                          language: "CH",
+                          content: "业的卓越水平",
+                        },
+                        {
+                          language: "IT",
+                          content: "Chi siamo",
+                        },
+                      ]}
+                      level={1}
+                    ></Heading>
                   </div>
                 </div>
                 <div className="col-span-2 xl:col-span-1">
@@ -214,6 +257,28 @@ export default function AboutUs() {
               <div className="grid grid-cols-2 gap-8 xl:gap-12 xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <div className="col-span-2 lg:col-span-1">
                   <div className="items-start justify-center w-full">
+                    <Heading
+                      className={"text-2xl text-center md:text-4xl"}
+                      text={[
+                        {
+                          language: "EN",
+                          content: "Our story",
+                        },
+                        {
+                          language: "ES",
+                          content: "Nuestra historia",
+                        },
+                        {
+                          language: "CH",
+                          content: "提升各行业",
+                        },
+                        {
+                          language: "IT",
+                          content: "Nuestra historia",
+                        },
+                      ]}
+                      level={1}
+                    ></Heading>
                     <h2 className="text-4xl text-center md:text-start mb-7">
                       Our story
                     </h2>
@@ -276,6 +341,28 @@ export default function AboutUs() {
                 </div>
                 <div className="col-span-2 lg:col-span-1">
                   <div className="items-start justify-center w-full">
+                    <Heading
+                      className={"text-2xl text-center md:text-4xl"}
+                      text={[
+                        {
+                          language: "EN",
+                          content: "Our values",
+                        },
+                        {
+                          language: "ES",
+                          content: "Nuestros valores",
+                        },
+                        {
+                          language: "CH",
+                          content: "提升各行业的卓越水平",
+                        },
+                        {
+                          language: "IT",
+                          content: "Nuestros valores",
+                        },
+                      ]}
+                      level={1}
+                    ></Heading>
                     <h2 className="text-4xl text-center md:text-start mb-7">
                       Our values
                     </h2>
@@ -318,6 +405,28 @@ export default function AboutUs() {
             {/* Why choose Primalport */}
             <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
+                <Heading
+                  className={"text-2xl text-center md:text-4xl"}
+                  text={[
+                    {
+                      language: "EN",
+                      content: "Why choose Primalport",
+                    },
+                    {
+                      language: "ES",
+                      content: "Por que elegirnos",
+                    },
+                    {
+                      language: "CH",
+                      content: "提升各行业的卓越水平",
+                    },
+                    {
+                      language: "IT",
+                      content: "Por que elegirnos",
+                    },
+                  ]}
+                  level={1}
+                ></Heading>
                 <h2 className="text-4xl text-center">Why choose Primalports</h2>
                 <div className="flex justify-centerl">
                   <Accordion></Accordion>
@@ -328,6 +437,28 @@ export default function AboutUs() {
             {/* Lets contact */}
             <div className="w-full min-h-screen pt-10 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.55)] to-black flex flex-col justify-center items-center overflow-hidden relative">
               <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
+                <Heading
+                  className={"text-2xl text-center md:text-4xl"}
+                  text={[
+                    {
+                      language: "EN",
+                      content: "Elevating Excellence Across Industries",
+                    },
+                    {
+                      language: "ES",
+                      content: "Elevando la Excelencia en Todas las Industrias",
+                    },
+                    {
+                      language: "CH",
+                      content: "提升各行业的卓越水平",
+                    },
+                    {
+                      language: "IT",
+                      content: "Elevare l'Eccellenza in Tutti i Settori",
+                    },
+                  ]}
+                  level={1}
+                ></Heading>
                 <h2 className="text-4xl text-center">Lets contact</h2>
                 <div className="flex flex-col items-center justify-center">
                   <p className="text-lg text-center">
