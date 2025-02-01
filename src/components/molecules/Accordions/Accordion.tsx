@@ -49,7 +49,7 @@ const Accordion: React.FC = () => {
   };
 
   return (
-    <div className="w-full mt-5 max-w-lg mx-auto">
+    <div className="w-full mt-5 xl:max-w-[75%] mx-auto">
       {accordionData.map((item) => (
         <div key={item.id} className="">
           <button
@@ -71,7 +71,7 @@ const Accordion: React.FC = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="px-4 mt-4 backdrop-blur-md rounded-md">
+            <div className="px-4 mt-4 rounded-md backdrop-blur-md">
               {item.content}
             </div>
           </motion.div>

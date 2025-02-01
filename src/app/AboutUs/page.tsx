@@ -292,9 +292,7 @@ export default function AboutUs() {
             {/* Why choose Primalport */}
             <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
-                <h2 className="text-4xl text-center md:text-start">
-                  Why choose Primalports
-                </h2>
+                <h2 className="text-4xl text-center">Why choose Primalports</h2>
                 <div className="flex justify-centerl">
                   <Accordion></Accordion>
                 </div>
