@@ -8,6 +8,10 @@ import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import Link from "next/link";
 import Accordion from "@/components/molecules/Accordions/Accordion";
+import GradientBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG";
+import GlassHScreen from "@/components/Atoms/Containers/GlassHScreen";
+import Heading from "@/components/Atoms/Heading/Heading";
+import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 
 export default function AboutUs() {
   const context = useAppContext();
@@ -32,9 +36,12 @@ export default function AboutUs() {
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
           >
             <MainBG></MainBG>
+
+            <GradientBG className={"absolute top-0 left-0 h-full"}></GradientBG>
+
             {/* header section */}
             <div
-              className="w-full min-h-[400px] !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden relative"
+              className="bg-gradient-to-b to-[rgba(0.0,0.0,0.0,0.55)] from-black w-full min-h-[400px] lg:min-h-[550px] xl:min-h-screen !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden relative"
               style={{ background: "url(img/import_export.jpg)" }}
             >
               <div className="flex flex-col items-center justify-center max-w-[1920px]">
@@ -48,7 +55,7 @@ export default function AboutUs() {
             </div>
 
             {/* Section with us and the description */}
-            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="grid grid-cols-2 w-full xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <div className="col-span-2 mb-10 xl:col-span-1">
                   <div className="flex items-end justify-center w-full">
@@ -94,7 +101,7 @@ export default function AboutUs() {
             </div>
 
             {/* Section with photo of founders */}
-            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="grid grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <div className="col-span-3 lg:col-span-1">
                   <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
@@ -184,7 +191,7 @@ export default function AboutUs() {
             </div>
 
             {/* Our history */}
-            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="grid grid-cols-2 gap-8 xl:gap-12 xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <div className="col-span-2 lg:col-span-1">
                   <div className="items-start justify-center w-full">
@@ -237,7 +244,7 @@ export default function AboutUs() {
             </div>
 
             {/* Section our values */}
-            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="grid grid-cols-2 gap-8 xl:gap-12 xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <div className="hidden h-full col-span-2 md:block lg:col-span-1">
                   <div className="flex flex-col items-center justify-center w-full">
@@ -290,7 +297,7 @@ export default function AboutUs() {
             </div>
 
             {/* Why choose Primalport */}
-            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <h2 className="text-4xl text-center">Why choose Primalports</h2>
                 <div className="flex justify-centerl">
@@ -300,7 +307,7 @@ export default function AboutUs() {
             </div>
 
             {/* Lets contact */}
-            <div className="w-full min-h-screen pt-10 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.85)] to-black flex flex-col justify-center items-center overflow-hidden relative">
+            <div className="w-full min-h-screen pt-10 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.55)] to-black flex flex-col justify-center items-center overflow-hidden relative">
               <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <h2 className="text-4xl text-center">Lets contact</h2>
                 <div className="flex flex-col items-center justify-center">
