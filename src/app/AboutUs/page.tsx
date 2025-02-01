@@ -34,26 +34,28 @@ export default function AboutUs() {
             <MainBG></MainBG>
             {/* header section */}
             <div
-              className="w-full min-h-[400px] !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden p-4 relative"
+              className="w-full min-h-[400px] !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden relative"
               style={{ background: "url(img/import_export.jpg)" }}
             >
-              <h1 className="text-2xl text-center md:text-4xl">
-                Some title with the intro for our about us
-              </h1>
-              <h2 className="mt-2 text-center text-md md:text-2xl">
-                Some small title talking about how good is our service
-              </h2>
+              <div className="flex flex-col items-center justify-center max-w-[1920px]">
+                <h1 className="text-2xl text-center md:text-4xl">
+                  Some title with the intro for our about us
+                </h1>
+                <h2 className="mt-2 text-center text-md md:text-2xl">
+                  Some small title talking about how good is our service
+                </h2>
+              </div>
             </div>
 
             {/* Section with us and the description */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-2 max-w-[75%] lg:p-8">
-                <div className="mb-10 col-span-2 lg:col-span-1">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 w-full xl:w-[75%] xl:max-w-[1920px] lg:p-8">
+                <div className="col-span-2 mb-10 xl:col-span-1">
                   <div className="flex items-end justify-center w-full">
                     <h2 className="text-4xl">About us</h2>
                   </div>
                 </div>
-                <div className="col-span-2 lg:col-span-1">
+                <div className="col-span-2 xl:col-span-1">
                   <div className="items-start justify-center w-full">
                     <p>
                       We’re a cutting-edge software development agency company
@@ -92,13 +94,13 @@ export default function AboutUs() {
             </div>
 
             {/* Section with photo of founders */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-3 max-w-[75%] pb-8 pl-8 pr-8">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-3 gap-5 w-[75%] xl:max-w-[1920px]">
                 <div className="col-span-3 lg:col-span-1">
-                  <div className="mx-8 mt-8 mb-7">
+                  <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
                     <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
                       <img
-                        className="min-h-full"
+                        className="min-w-full"
                         src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
                       ></img>
                     </div>
@@ -122,10 +124,10 @@ export default function AboutUs() {
                   </div>
                 </div>
                 <div className="col-span-3 lg:col-span-1">
-                  <div className="mx-8 mt-8 mb-7">
+                  <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
                     <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
                       <img
-                        className="min-h-full"
+                        className="min-w-full"
                         src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
                       ></img>
                     </div>
@@ -152,10 +154,10 @@ export default function AboutUs() {
                   </div>
                 </div>
                 <div className="col-span-3 lg:col-span-1">
-                  <div className="mx-8 mt-8 mb-7">
+                  <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
                     <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
                       <img
-                        className="min-h-full"
+                        className="min-w-full"
                         src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
                       ></img>
                     </div>
@@ -182,10 +184,8 @@ export default function AboutUs() {
             </div>
 
             {/* Our history */}
-
-            {/* Section with us and the description */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-2 max-w-[75%] md:p-8">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 xl:max-w-[1920px] md:p-8">
                 <div className="col-span-2 lg:col-span-1">
                   <div className="items-start justify-center w-full">
                     <h2 className="text-4xl text-center md:text-start mb-7">
@@ -224,7 +224,7 @@ export default function AboutUs() {
                     </p>
                   </div>
                 </div>
-                <div className="hidden h-full md:block col-span-2 lg:col-span-1">
+                <div className="hidden h-full col-span-2 md:block lg:col-span-1">
                   <div className="flex flex-col items-center justify-center w-full">
                     <img
                       className="max-h-[500px]"
@@ -237,9 +237,9 @@ export default function AboutUs() {
             </div>
 
             {/* Section with us and the description */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-2 max-w-[75%] md:p-8">
-                <div className="hidden h-full md:block col-span-2 lg:col-span-1">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 xl:max-w-[1920px] md:p-8">
+                <div className="hidden h-full col-span-2 md:block lg:col-span-1">
                   <div className="flex flex-col items-center justify-center w-full">
                     <img
                       className="max-h-[500px]"
@@ -290,9 +290,9 @@ export default function AboutUs() {
             </div>
 
             {/* Why choose Primalport */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="md:max-w-[75%] md:p-8">
-                <h2 className="text-4xl text-center md:text-start">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="xl:max-w-[1920px] md:p-8">
+                <h2 className="text-4xl text-center md:px-8 md:text-start">
                   Why choose Primalports
                 </h2>
                 <div className="flex px-8 justify-centerl">
@@ -302,8 +302,8 @@ export default function AboutUs() {
             </div>
 
             {/* Lets contact */}
-            <div className="w-full min-h-[800px] bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.85)] to-black flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="md:max-w-[75%] p-8">
+            <div className="w-full min-h-screen pt-10 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.85)] to-black flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="xl:max-w-[1920px] p-8">
                 <h2 className="text-4xl text-center">Lets contact</h2>
                 <div className="flex flex-col items-center justify-center">
                   <p className="m-3 text-lg text-center">
@@ -462,7 +462,7 @@ export default function AboutUs() {
                     </svg>
                   </div>
                 </div>
-                <div className="relative pb-10 col-span-1 lg:col-span-3">
+                <div className="relative col-span-1 pb-10 lg:col-span-3">
                   <hr></hr>
                 </div>
                 <div className="relative col-span-1 lg:col-span-3">
