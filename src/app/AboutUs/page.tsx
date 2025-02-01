@@ -95,10 +95,10 @@ export default function AboutUs() {
 
             {/* Section with photo of founders */}
             <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-3 gap-5 w-[75%] xl:max-w-[1920px]">
+              <div className="grid grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-[1920px]">
                 <div className="col-span-3 lg:col-span-1">
                   <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-                    <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
+                    <div className="w-full overflow-hidden rounded-md aspect-square">
                       <img
                         className="min-w-full"
                         src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
@@ -125,7 +125,7 @@ export default function AboutUs() {
                 </div>
                 <div className="col-span-3 lg:col-span-1">
                   <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-                    <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
+                    <div className="w-full overflow-hidden rounded-md aspect-square">
                       <img
                         className="min-w-full"
                         src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
@@ -155,7 +155,7 @@ export default function AboutUs() {
                 </div>
                 <div className="col-span-3 lg:col-span-1">
                   <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-                    <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
+                    <div className="w-full overflow-hidden rounded-md aspect-square">
                       <img
                         className="min-w-full"
                         src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
@@ -185,7 +185,7 @@ export default function AboutUs() {
 
             {/* Our history */}
             <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-2 xl:max-w-[1920px] md:p-8">
+              <div className="grid grid-cols-2 gap-8 xl:gap-12 xl:w-[75%] xl:max-w-[1920px]">
                 <div className="col-span-2 lg:col-span-1">
                   <div className="items-start justify-center w-full">
                     <h2 className="text-4xl text-center md:text-start mb-7">
@@ -227,9 +227,9 @@ export default function AboutUs() {
                 <div className="hidden h-full col-span-2 md:block lg:col-span-1">
                   <div className="flex flex-col items-center justify-center w-full">
                     <img
-                      className="max-h-[500px]"
+                      className="w-full"
                       src="
-                    https://placehold.co/600x800"
+                    https://placehold.co/600x600"
                     ></img>
                   </div>
                 </div>
