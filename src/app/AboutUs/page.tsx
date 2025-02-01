@@ -8,6 +8,10 @@ import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import Link from "next/link";
 import Accordion from "@/components/molecules/Accordions/Accordion";
+import GradientBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG";
+import GlassHScreen from "@/components/Atoms/Containers/GlassHScreen";
+import Heading from "@/components/Atoms/Heading/Heading";
+import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 
 export default function AboutUs() {
   const context = useAppContext();
@@ -32,28 +36,33 @@ export default function AboutUs() {
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
           >
             <MainBG></MainBG>
+
+            <GradientBG className={"absolute top-0 left-0 h-full"}></GradientBG>
+
             {/* header section */}
             <div
-              className="w-full min-h-[400px] !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden p-4 relative"
+              className="bg-gradient-to-b to-[rgba(0.0,0.0,0.0,0.55)] from-black w-full min-h-[400px] lg:min-h-[550px] xl:min-h-screen !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden relative"
               style={{ background: "url(img/import_export.jpg)" }}
             >
-              <h1 className="text-2xl text-center md:text-4xl">
-                Some title with the intro for our about us
-              </h1>
-              <h2 className="mt-2 text-center text-md md:text-2xl">
-                Some small title talking about how good is our service
-              </h2>
+              <div className="flex flex-col items-center justify-center max-w-[1920px]">
+                <h1 className="text-2xl text-center md:text-4xl">
+                  Some title with the intro for our about us
+                </h1>
+                <h2 className="mt-2 text-center text-md md:text-2xl">
+                  Some small title talking about how good is our service
+                </h2>
+              </div>
             </div>
 
             {/* Section with us and the description */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-2 max-w-[75%] lg:p-8">
-                <div className="mb-10 col-span-2 lg:col-span-1">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 w-full xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
+                <div className="col-span-2 mb-10 xl:col-span-1">
                   <div className="flex items-end justify-center w-full">
                     <h2 className="text-4xl">About us</h2>
                   </div>
                 </div>
-                <div className="col-span-2 lg:col-span-1">
+                <div className="col-span-2 xl:col-span-1">
                   <div className="items-start justify-center w-full">
                     <p>
                       We’re a cutting-edge software development agency company
@@ -92,13 +101,13 @@ export default function AboutUs() {
             </div>
 
             {/* Section with photo of founders */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-3 max-w-[75%] pb-8 pl-8 pr-8">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <div className="col-span-3 lg:col-span-1">
-                  <div className="mx-8 mt-8 mb-7">
-                    <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
+                  <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
+                    <div className="w-full overflow-hidden rounded-md aspect-square">
                       <img
-                        className="min-h-full"
+                        className="min-w-full"
                         src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
                       ></img>
                     </div>
@@ -122,10 +131,10 @@ export default function AboutUs() {
                   </div>
                 </div>
                 <div className="col-span-3 lg:col-span-1">
-                  <div className="mx-8 mt-8 mb-7">
-                    <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
+                  <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
+                    <div className="w-full overflow-hidden rounded-md aspect-square">
                       <img
-                        className="min-h-full"
+                        className="min-w-full"
                         src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
                       ></img>
                     </div>
@@ -152,10 +161,10 @@ export default function AboutUs() {
                   </div>
                 </div>
                 <div className="col-span-3 lg:col-span-1">
-                  <div className="mx-8 mt-8 mb-7">
-                    <div className="max-w-[350px] aspect-square rounded-md overflow-hidden">
+                  <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
+                    <div className="w-full overflow-hidden rounded-md aspect-square">
                       <img
-                        className="min-h-full"
+                        className="min-w-full"
                         src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
                       ></img>
                     </div>
@@ -182,10 +191,8 @@ export default function AboutUs() {
             </div>
 
             {/* Our history */}
-
-            {/* Section with us and the description */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-2 max-w-[75%] md:p-8">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 gap-8 xl:gap-12 xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <div className="col-span-2 lg:col-span-1">
                   <div className="items-start justify-center w-full">
                     <h2 className="text-4xl text-center md:text-start mb-7">
@@ -224,27 +231,27 @@ export default function AboutUs() {
                     </p>
                   </div>
                 </div>
-                <div className="hidden h-full md:block col-span-2 lg:col-span-1">
+                <div className="hidden h-full col-span-2 md:block lg:col-span-1">
                   <div className="flex flex-col items-center justify-center w-full">
                     <img
-                      className="max-h-[500px]"
+                      className="w-full"
                       src="
-                    https://placehold.co/600x800"
+                    https://placehold.co/600x600"
                     ></img>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Section with us and the description */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-2 max-w-[75%] md:p-8">
-                <div className="hidden h-full md:block col-span-2 lg:col-span-1">
+            {/* Section our values */}
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="grid grid-cols-2 gap-8 xl:gap-12 xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
+                <div className="hidden h-full col-span-2 md:block lg:col-span-1">
                   <div className="flex flex-col items-center justify-center w-full">
                     <img
-                      className="max-h-[500px]"
+                      className="w-full"
                       src="
-                    https://placehold.co/600x800"
+                    https://placehold.co/600x600"
                     ></img>
                   </div>
                 </div>
@@ -290,29 +297,27 @@ export default function AboutUs() {
             </div>
 
             {/* Why choose Primalport */}
-            <div className="w-full min-h-[800px] bg-[rgba(0.0,0.0,0.0,0.85)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="md:max-w-[75%] md:p-8">
-                <h2 className="text-4xl text-center md:text-start">
-                  Why choose Primalports
-                </h2>
-                <div className="flex px-8 justify-centerl">
+            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
+                <h2 className="text-4xl text-center">Why choose Primalports</h2>
+                <div className="flex justify-centerl">
                   <Accordion></Accordion>
                 </div>
               </div>
             </div>
 
             {/* Lets contact */}
-            <div className="w-full min-h-[800px] bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.85)] to-black flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="md:max-w-[75%] p-8">
+            <div className="w-full min-h-screen pt-10 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.55)] to-black flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <h2 className="text-4xl text-center">Lets contact</h2>
                 <div className="flex flex-col items-center justify-center">
-                  <p className="m-3 text-lg text-center">
+                  <p className="text-lg text-center">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Enim et illo perferendis, aliquid ipsam expedita deserunt ab
                     molestiae sequi qui necessitatibus laborum debitis provident
                     vitae dolore consequuntur porro tenetur fugit!
                   </p>
-                  <p className="m-3 text-center text-md">
+                  <p className="text-center text-md">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   </p>
                   <a className="px-5 py-3 mt-5 text-xl font-bold text-black bg-gray-400 border-2 border-black rounded-full hover:bg-gray-600">
@@ -324,7 +329,7 @@ export default function AboutUs() {
 
             {/* footer */}
             <div className="relative z-10 w-full bg-black">
-              <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
+              <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto p-4 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                 <div className="relative flex items-center justify-between col-span-1 lg:col-span-3 pb-9">
                   <div className="max-w-[650px]">
                     <p className="pb-4">
@@ -462,7 +467,7 @@ export default function AboutUs() {
                     </svg>
                   </div>
                 </div>
-                <div className="relative pb-10 col-span-1 lg:col-span-3">
+                <div className="relative col-span-1 pb-10 lg:col-span-3">
                   <hr></hr>
                 </div>
                 <div className="relative col-span-1 lg:col-span-3">
