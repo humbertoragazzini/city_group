@@ -803,6 +803,27 @@ export default function AboutUs() {
               <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto p-4 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                 <div className="relative flex items-center justify-between col-span-1 lg:col-span-3 pb-9">
                   <div className="max-w-[650px]">
+                    <Paragraph
+                      type={"standfirst"}
+                      text={[
+                        {
+                          language: "EN",
+                          content: "Contact us",
+                        },
+                        {
+                          language: "ES",
+                          content: "Contact us",
+                        },
+                        {
+                          language: "CH",
+                          content: "Contact us",
+                        },
+                        {
+                          language: "IT",
+                          content: "Contact us",
+                        },
+                      ]}
+                    ></Paragraph>
                     <p className="pb-4">
                       <strong>
                         Lorem, ipsum dolor sit amet consectetur adipisicing
@@ -945,17 +966,23 @@ export default function AboutUs() {
                   <div className="flex flex-col items-start justify-between sm:flex-row">
                     <div className="flex flex-row">
                       <div className="relative flex-col items-start justify-end hidden mb-3 mr-24 lg:flex">
-                        <p>Lorem 84b UK</p>
-                        <p>Lorem 1055 ARG</p>
+                        <p>Reigate UK</p>
+                        <p>Cordoba capital ARG</p>
                       </div>
                       <div className="relative flex flex-col items-start justify-end mb-3 lg:mr-24">
-                        <p>contact@primapports.com</p>
-                        <p>contact@primapports.com</p>
+                        <p>contact@primalports.com</p>
+                        <p>contact@primalports.com</p>
                       </div>
                     </div>
                     <div className="relative flex flex-col items-start justify-end mb-3">
                       <div>
-                        <p>Made by Tobe21</p>
+                        <p>
+                          © 2025{" "}
+                          <Link href="https://github.com/humbertoragazzini/">
+                            Tobe21 WebDeveloper
+                          </Link>
+                          . All rights reserved.
+                        </p>
                       </div>
                     </div>
                   </div>
