@@ -990,10 +990,33 @@ export default function AboutUs() {
                         <p>contact@primalports.com</p>
                         <p>
                           © 2025{" "}
-                          <Link href="https://github.com/humbertoragazzini/">
-                            Tobe21 WebDeveloper
+                          <Link
+                            className="mr-2"
+                            href="https://github.com/humbertoragazzini/"
+                          >
+                            Tobe21 WebDeveloper.
                           </Link>
-                          . All rights reserved.
+                          <span>
+                            <Paragraph
+                              className="inline-block"
+                              type={"body"}
+                              text={[
+                                {
+                                  language: "ES",
+                                  content: "Todos los derechos reservados.",
+                                },
+                                {
+                                  language: "EN",
+                                  content: "All rights reserved.",
+                                },
+                                {
+                                  language: "IT",
+                                  content: "Tutti i diritti riservati.",
+                                },
+                                { language: "CH", content: "保留所有权利。" },
+                              ]}
+                            ></Paragraph>
+                          </span>
                         </p>
                       </div>
                     </div>
