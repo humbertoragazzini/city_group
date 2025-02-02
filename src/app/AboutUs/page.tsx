@@ -3,6 +3,8 @@ import { SmoothScrollbar } from "@14islands/r3f-scroll-rig";
 import { useAppContext } from "@/context/AppContext";
 import { useEffect, useRef } from "react";
 import React from "react";
+import { FiArrowUpRight } from "react-icons/fi";
+
 import { RTFAText } from "@/components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText";
 import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D";
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
@@ -766,10 +768,30 @@ export default function AboutUs() {
                     ]}
                   ></Paragraph>
                   <Link
-                    href={learn.link}
+                    href={"/"}
                     className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-black`}
                   >
-                    <Paragraph type="body" text={learn.label}></Paragraph>{" "}
+                    <Paragraph
+                      type="body"
+                      text={[
+                        {
+                          language: "EN",
+                          content: "Contact us",
+                        },
+                        {
+                          language: "ES",
+                          content: "Contact us",
+                        },
+                        {
+                          language: "CH",
+                          content: "Contact us",
+                        },
+                        {
+                          language: "IT",
+                          content: "Contact us",
+                        },
+                      ]}
+                    ></Paragraph>{" "}
                     <FiArrowUpRight className="inline" />
                   </Link>
                 </div>
