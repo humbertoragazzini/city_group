@@ -829,10 +829,28 @@ export default function AboutUs() {
                         },
                       ]}
                     ></Paragraph>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Minima sed natus animi, provident corrupti iure itaque.
-                    </p>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="pb-4"
+                      text={[
+                        {
+                          language: "ES",
+                          content: "Estamos aquí para ayudarte.",
+                        },
+                        {
+                          language: "EN",
+                          content: "We’re here to help you.",
+                        },
+                        {
+                          language: "IT",
+                          content: "Siamo qui per aiutarti.",
+                        },
+                        {
+                          language: "CH",
+                          content: "我们在聆听，我们在这里帮助您。",
+                        },
+                      ]}
+                    ></Paragraph>
                   </div>
                   <div className="hidden lg:block h-[150px] w-fit p-3">
                     <svg
