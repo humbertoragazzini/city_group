@@ -964,18 +964,13 @@ export default function AboutUs() {
                 </div>
                 <div className="relative col-span-1 lg:col-span-3">
                   <div className="flex flex-col items-start justify-between sm:flex-row">
-                    <div className="flex flex-row">
+                    <div className="flex flex-row min-w-full">
                       <div className="relative flex-col items-start justify-end hidden mb-3 mr-24 lg:flex">
                         <p>Reigate UK</p>
                         <p>Cordoba capital ARG</p>
                       </div>
-                      <div className="relative flex flex-col items-start justify-end mb-3 lg:mr-24">
+                      <div className="relative flex flex-row flex-1 items-end justify-between mb-3">
                         <p>contact@primalports.com</p>
-                        <p>contact@primalports.com</p>
-                      </div>
-                    </div>
-                    <div className="relative flex flex-col items-start justify-end mb-3">
-                      <div>
                         <p>
                           © 2025{" "}
                           <Link href="https://github.com/humbertoragazzini/">
