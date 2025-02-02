@@ -765,9 +765,13 @@ export default function AboutUs() {
                       },
                     ]}
                   ></Paragraph>
-                  <a className="px-5 py-3 mt-5 text-xl font-bold text-black bg-gray-400 border-2 border-black rounded-full hover:bg-gray-600">
-                    Contact Us
-                  </a>
+                  <Link
+                    href={learn.link}
+                    className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-black`}
+                  >
+                    <Paragraph type="body" text={learn.label}></Paragraph>{" "}
+                    <FiArrowUpRight className="inline" />
+                  </Link>
                 </div>
               </div>
             </div>
