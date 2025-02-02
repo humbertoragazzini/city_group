@@ -805,31 +805,30 @@ export default function AboutUs() {
                   <div className="max-w-[650px]">
                     <Paragraph
                       type={"standfirst"}
+                      className="pb-4 font-bold"
                       text={[
                         {
-                          language: "EN",
-                          content: "Contact us",
-                        },
-                        {
                           language: "ES",
-                          content: "Contact us",
+                          content:
+                            "¿Listo para hacer realidad tu proyecto? Contáctanos y trabajemos juntos.",
                         },
                         {
-                          language: "CH",
-                          content: "Contact us",
+                          language: "EN",
+                          content:
+                            "Ready to bring your project to life? Contact us and let's work together.",
                         },
                         {
                           language: "IT",
-                          content: "Contact us",
+                          content:
+                            "Pronto a realizzare il tuo progetto? Contattaci e lavoriamo insieme.",
+                        },
+                        {
+                          language: "CH",
+                          content:
+                            "准备好实现您的项目了吗？联系我们，让我们一起努力。",
                         },
                       ]}
                     ></Paragraph>
-                    <p className="pb-4">
-                      <strong>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.?
-                      </strong>
-                    </p>
                     <p>
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Minima sed natus animi, provident corrupti iure itaque.
@@ -969,7 +968,7 @@ export default function AboutUs() {
                         <p>Reigate UK</p>
                         <p>Cordoba capital ARG</p>
                       </div>
-                      <div className="relative flex flex-row flex-1 items-end justify-between mb-3">
+                      <div className="relative flex flex-row items-end justify-between flex-1 mb-3">
                         <p>contact@primalports.com</p>
                         <p>
                           © 2025{" "}
