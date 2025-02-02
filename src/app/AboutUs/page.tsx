@@ -739,15 +739,32 @@ export default function AboutUs() {
                   level={2}
                 ></Heading>
                 <div className="flex flex-col items-center justify-center">
-                  <p className="text-lg text-center">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Enim et illo perferendis, aliquid ipsam expedita deserunt ab
-                    molestiae sequi qui necessitatibus laborum debitis provident
-                    vitae dolore consequuntur porro tenetur fugit!
-                  </p>
-                  <p className="text-center text-md">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  </p>
+                  <Paragraph
+                    className="text-center"
+                    type="standfirst"
+                    text={[
+                      {
+                        language: "EN",
+                        content:
+                          "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                      },
+                      {
+                        language: "ES",
+                        content:
+                          "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                      },
+                      {
+                        language: "CH",
+                        content:
+                          "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                      },
+                      {
+                        language: "IT",
+                        content:
+                          "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                      },
+                    ]}
+                  ></Paragraph>
                   <a className="px-5 py-3 mt-5 text-xl font-bold text-black bg-gray-400 border-2 border-black rounded-full hover:bg-gray-600">
                     Contact Us
                   </a>
