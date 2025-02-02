@@ -803,16 +803,54 @@ export default function AboutUs() {
               <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto p-4 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                 <div className="relative flex items-center justify-between col-span-1 lg:col-span-3 pb-9">
                   <div className="max-w-[650px]">
-                    <p className="pb-4">
-                      <strong>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.?
-                      </strong>
-                    </p>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Minima sed natus animi, provident corrupti iure itaque.
-                    </p>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="pb-4 font-bold"
+                      text={[
+                        {
+                          language: "ES",
+                          content:
+                            "¿Listo para hacer realidad tu proyecto? Contáctanos y trabajemos juntos.",
+                        },
+                        {
+                          language: "EN",
+                          content:
+                            "Ready to bring your project to life? Contact us and let's work together.",
+                        },
+                        {
+                          language: "IT",
+                          content:
+                            "Pronto a realizzare il tuo progetto? Contattaci e lavoriamo insieme.",
+                        },
+                        {
+                          language: "CH",
+                          content:
+                            "准备好实现您的项目了吗？联系我们，让我们一起努力。",
+                        },
+                      ]}
+                    ></Paragraph>
+                    <Paragraph
+                      type={"standfirst"}
+                      className="pb-4"
+                      text={[
+                        {
+                          language: "ES",
+                          content: "Estamos aquí para ayudarte.",
+                        },
+                        {
+                          language: "EN",
+                          content: "We’re here to help you.",
+                        },
+                        {
+                          language: "IT",
+                          content: "Siamo qui per aiutarti.",
+                        },
+                        {
+                          language: "CH",
+                          content: "我们在聆听，我们在这里帮助您。",
+                        },
+                      ]}
+                    ></Paragraph>
                   </div>
                   <div className="hidden lg:block h-[150px] w-fit p-3">
                     <svg
@@ -943,19 +981,43 @@ export default function AboutUs() {
                 </div>
                 <div className="relative col-span-1 lg:col-span-3">
                   <div className="flex flex-col items-start justify-between sm:flex-row">
-                    <div className="flex flex-row">
+                    <div className="flex flex-row min-w-full">
                       <div className="relative flex-col items-start justify-end hidden mb-3 mr-24 lg:flex">
-                        <p>Lorem 84b UK</p>
-                        <p>Lorem 1055 ARG</p>
+                        <p>Reigate UK</p>
+                        <p>Cordoba capital ARG</p>
                       </div>
-                      <div className="relative flex flex-col items-start justify-end mb-3 lg:mr-24">
-                        <p>contact@primapports.com</p>
-                        <p>contact@primapports.com</p>
-                      </div>
-                    </div>
-                    <div className="relative flex flex-col items-start justify-end mb-3">
-                      <div>
-                        <p>Made by Tobe21</p>
+                      <div className="relative flex flex-row items-end justify-between flex-1 mb-3">
+                        <p>contact@primalports.com</p>
+                        <p>
+                          © 2025{" "}
+                          <Link
+                            className="mr-2"
+                            href="https://github.com/humbertoragazzini/"
+                          >
+                            Tobe21 WebDeveloper.
+                          </Link>
+                          <span>
+                            <Paragraph
+                              className="inline-block"
+                              type={"body"}
+                              text={[
+                                {
+                                  language: "ES",
+                                  content: "Todos los derechos reservados.",
+                                },
+                                {
+                                  language: "EN",
+                                  content: "All rights reserved.",
+                                },
+                                {
+                                  language: "IT",
+                                  content: "Tutti i diritti riservati.",
+                                },
+                                { language: "CH", content: "保留所有权利。" },
+                              ]}
+                            ></Paragraph>
+                          </span>
+                        </p>
                       </div>
                     </div>
                   </div>
