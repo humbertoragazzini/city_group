@@ -986,9 +986,13 @@ export default function AboutUs() {
                         <p>Reigate UK</p>
                         <p>Cordoba capital ARG</p>
                       </div>
-                      <div className="relative flex flex-row items-end justify-between flex-1 mb-3">
-                        <p>contact@primalports.com</p>
-                        <p>
+                      <div className="relative flex flex-col justify-between flex-1 mb-3 md:flex-row md:items-end">
+                        <p className="mb-3 md:mb-0">
+                          contact@primalports.com{" "}
+                          <span className="block">Corboba ARG</span>
+                          <span className="block"> Reigate UK</span>
+                        </p>
+                        <span className="block">
                           © 2025{" "}
                           <Link
                             className="mr-2"
@@ -1017,7 +1021,7 @@ export default function AboutUs() {
                               ]}
                             ></Paragraph>
                           </span>
-                        </p>
+                        </span>
                       </div>
                     </div>
                   </div>
