@@ -48,7 +48,7 @@ export default function AboutUs() {
             >
               <div className="flex flex-col items-center justify-center max-w-[1920px]">
                 <Heading
-                  className={"text-2xl text-center md:text-4xl"}
+                  className={"text-2xl mb-4 text-center md:text-4xl"}
                   text={[
                     {
                       language: "EN",
@@ -103,7 +103,7 @@ export default function AboutUs() {
                 <div className="mb-10 col-span-2 xl:col-span-1">
                   <div className="flex items-end justify-center w-full">
                     <Heading
-                      className={"text-2xl text-center md:text-4xl"}
+                      className={"text-2xl mb-4 text-center md:text-4xl"}
                       text={[
                         {
                           language: "EN",
@@ -355,7 +355,7 @@ export default function AboutUs() {
                   <div className="items-start justify-center w-full">
                     <Heading
                       className={
-                        "text-2xl text-center md:text-start md:text-4xl"
+                        "text-2xl mb-4 text-center md:text-start md:text-4xl"
                       }
                       text={[
                         {
@@ -519,7 +519,7 @@ export default function AboutUs() {
             {/* Section our values */}
             <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="grid grid-cols-2 gap-8 xl:gap-12 xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
-                <div className="hidden h-full col-span-2 md:block lg:col-span-1">
+                <div className="hidden h-full col-span-2 lg:block lg:col-span-1">
                   <div className="flex flex-col items-center justify-center w-full">
                     <img
                       className="w-full"
@@ -532,7 +532,7 @@ export default function AboutUs() {
                   <div className="items-start justify-center w-full">
                     <Heading
                       className={
-                        "text-2xl text-center md:text-start md:text-4xl"
+                        "text-2xl mb-4 text-center md:text-start md:text-4xl"
                       }
                       text={[
                         {
@@ -681,6 +681,15 @@ export default function AboutUs() {
                     ></Paragraph>{" "}
                   </div>
                 </div>
+                <div className="h-full col-span-2 lg:hidden lg:col-span-1">
+                  <div className="flex flex-col items-center justify-center w-full">
+                    <img
+                      className="w-full"
+                      src="
+                    https://placehold.co/600x600"
+                    ></img>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -688,7 +697,7 @@ export default function AboutUs() {
             <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <Heading
-                  className={"text-2xl text-center  md:text-4xl"}
+                  className={"text-2xl mb-4 text-center  md:text-4xl"}
                   text={[
                     {
                       language: "EN",
@@ -719,7 +728,7 @@ export default function AboutUs() {
             <div className="w-full min-h-screen pt-10 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.55)] to-black flex flex-col justify-center items-center overflow-hidden relative">
               <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <Heading
-                  className={"text-2xl text-center md:text-4xl"}
+                  className={"text-2xl mb-4 text-center md:text-4xl"}
                   text={[
                     {
                       language: "EN",
@@ -769,7 +778,7 @@ export default function AboutUs() {
                   ></Paragraph>
                   <Link
                     href={"/"}
-                    className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-black`}
+                    className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl hover:bg-[#13212B] mt-4 bg-black`}
                   >
                     <Paragraph
                       type="body"
@@ -986,9 +995,13 @@ export default function AboutUs() {
                         <p>Reigate UK</p>
                         <p>Cordoba capital ARG</p>
                       </div>
-                      <div className="relative flex flex-row items-end justify-between flex-1 mb-3">
-                        <p>contact@primalports.com</p>
-                        <p>
+                      <div className="relative flex flex-col justify-between flex-1 mb-3 md:flex-row md:items-end">
+                        <p className="mb-3 md:mb-0">
+                          contact@primalports.com{" "}
+                          <span className="block lg:hidden">Corboba ARG</span>
+                          <span className="block lg:hidden"> Reigate UK</span>
+                        </p>
+                        <span className="block">
                           © 2025{" "}
                           <Link
                             className="mr-2"
@@ -1017,7 +1030,7 @@ export default function AboutUs() {
                               ]}
                             ></Paragraph>
                           </span>
-                        </p>
+                        </span>
                       </div>
                     </div>
                   </div>

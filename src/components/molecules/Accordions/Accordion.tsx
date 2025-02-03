@@ -69,9 +69,9 @@ const Accordion: React.FC = () => {
               opacity: openIndex === item.id ? 1 : 0,
             }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="overflow-hidden"
+            className="overflow-hidden backdrop-blur-lg"
           >
-            <div className="px-4 mt-4 rounded-md backdrop-blur-md">
+            <div className="px-8 py-8 rounded-md backdrop-blur-md">
               {item.content}
             </div>
           </motion.div>
