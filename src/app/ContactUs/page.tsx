@@ -40,65 +40,9 @@ export default function AboutUs() {
             <MainBG></MainBG>
 
             <GradientBG className={"absolute top-0 left-0 h-full"}></GradientBG>
-
-            {/* header section */}
-            <div
-              className="bg-gradient-to-b to-[rgba(0.0,0.0,0.0,0.55)] from-black w-full min-h-[400px] lg:min-h-[550px] xl:min-h-[650px] !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden relative"
-              style={{ background: "url(img/import_export.jpg)" }}
-            >
-              <div className="flex flex-col items-center justify-center max-w-[1920px]">
-                <Heading
-                  className={"text-2xl mb-4 text-center md:text-4xl"}
-                  text={[
-                    {
-                      language: "EN",
-                      content: "Titulo principal the la pagina (Ingles)",
-                    },
-                    {
-                      language: "ES",
-                      content: "Titulo principal de la pagina (Espaniol)",
-                    },
-                    {
-                      language: "CH",
-                      content: "提升各行业的卓越水平 (Chino)",
-                    },
-                    {
-                      language: "IT",
-                      content: "Titulo principal de la pagina (Italiano)",
-                    },
-                  ]}
-                  level={1}
-                ></Heading>
-                <Paragraph
-                  type={"standfirst3"}
-                  className="mb-4"
-                  text={[
-                    {
-                      language: "EN",
-                      content:
-                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                    },
-                    {
-                      language: "ES",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                    },
-                    {
-                      language: "CH",
-                      content: "进口、建筑和零售的综合解决方案 (Chino)",
-                    },
-                    {
-                      language: "IT",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                    },
-                  ]}
-                ></Paragraph>
-              </div>
-            </div>
-
             {/* Section with us and the description */}
-            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
+            <div className="w-full min-h-screen pt-10 backdrop-blur-lg bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
+              <div className="aboslute w-full h-full bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.55)] to-black"></div>
               <div className="grid grid-cols-2 w-full xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
                 <div className="mb-10 col-span-2 xl:col-span-1">
                   <div className="flex items-end justify-center w-full">
@@ -107,11 +51,11 @@ export default function AboutUs() {
                       text={[
                         {
                           language: "EN",
-                          content: "About us",
+                          content: "Contact us",
                         },
                         {
                           language: "ES",
-                          content: "Acerca de nosotros",
+                          content: "Contactanos",
                         },
                         {
                           language: "CH",
@@ -119,7 +63,7 @@ export default function AboutUs() {
                         },
                         {
                           language: "IT",
-                          content: "Chi siamo",
+                          content: "Contacto",
                         },
                       ]}
                       level={2}
@@ -128,681 +72,79 @@ export default function AboutUs() {
                 </div>
                 <div className="col-span-2 xl:col-span-1">
                   <div className="items-start justify-center w-full">
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                  </div>
-                </div>
-              </div>
-            </div>
+                    <div className="flex items-center justify-center min-h-screen">
+                      <div className="w-full max-w-lg p-8 shadow-xl backdrop-blur-lg bg-white/10 rounded-2xl">
+                        <form className="space-y-4">
+                          <div>
+                            <label
+                              className="block mb-1 text-sm font-medium text-white"
+                              htmlFor="fullName"
+                            >
+                              Full Name
+                            </label>
+                            <input
+                              id="fullName"
+                              type="text"
+                              placeholder="Enter your full name"
+                              className="w-full p-3 text-white placeholder-gray-300 rounded-lg bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                          </div>
 
-            {/* Section with photo of founders */}
-            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
-                <div className="col-span-3 lg:col-span-1">
-                  <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-                    <div className="w-full overflow-hidden rounded-md aspect-square">
-                      <img
-                        className="min-w-full"
-                        src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
-                      ></img>
-                    </div>
-                    <div className="flex flex-col items-center justify-center">
-                      <p className="mb-2 text-xl font-bold mt-7">
-                        Cristian Ragazzini
-                      </p>
-                      <p className="my-1 text-center text-md">
-                        Co-Founder - Senior Market Analisys
-                      </p>
-                      <p className="my-1">Cordoba - AR</p>
-                      <div className="flex items-center justify-center gap-3">
-                        <Link href="#">
-                          <img src={"/icons/icons8-linkedin.svg"}></img>
-                        </Link>
-                        <Link href="#">
-                          <img src={"/icons/icons8-instagram.svg"}></img>
-                        </Link>
+                          <div>
+                            <label
+                              className="block mb-1 text-sm font-medium text-white"
+                              htmlFor="companyName"
+                            >
+                              Company Name
+                            </label>
+                            <input
+                              id="companyName"
+                              type="text"
+                              placeholder="Enter your company name"
+                              className="w-full p-3 text-white placeholder-gray-300 rounded-lg bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                          </div>
+
+                          <div>
+                            <label
+                              className="block mb-1 text-sm font-medium text-white"
+                              htmlFor="email"
+                            >
+                              Email
+                            </label>
+                            <input
+                              id="email"
+                              type="email"
+                              placeholder="Enter your email"
+                              className="w-full p-3 text-white placeholder-gray-300 rounded-lg bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                          </div>
+
+                          <div>
+                            <label
+                              className="block mb-1 text-sm font-medium text-white"
+                              htmlFor="inquiry"
+                            >
+                              Your Inquiry
+                            </label>
+                            <textarea
+                              id="inquiry"
+                              placeholder="Enter your message"
+                              rows={4}
+                              className="w-full p-3 text-white placeholder-gray-300 rounded-lg bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            ></textarea>
+                          </div>
+
+                          <button
+                            type="submit"
+                            className="w-full p-3 mt-2 font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition duration-300"
+                          >
+                            Send Inquiry
+                          </button>
+                        </form>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-span-3 lg:col-span-1">
-                  <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-                    <div className="w-full overflow-hidden rounded-md aspect-square">
-                      <img
-                        className="min-w-full"
-                        src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
-                      ></img>
-                    </div>
-                    <div className="flex flex-col items-center justify-center">
-                      <p className="mb-2 text-xl font-bold mt-7">
-                        Humberto Ragazzini
-                      </p>
-                      <p className="my-1 text-center text-md">
-                        Co-Founder - Full Stack Developer
-                      </p>
-                      <p className="my-1">Reigate - UK</p>
-                      <div className="flex items-center justify-center gap-3">
-                        <Link href="#">
-                          <img src={"/icons/icons8-linkedin.svg"}></img>
-                        </Link>
-                        <Link href="#">
-                          <img src={"/icons/icons8-instagram.svg"}></img>
-                        </Link>
-                        <Link href="#">
-                          <img src={"/icons/icons8-github.svg"}></img>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-span-3 lg:col-span-1">
-                  <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-                    <div className="w-full overflow-hidden rounded-md aspect-square">
-                      <img
-                        className="min-w-full"
-                        src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
-                      ></img>
-                    </div>
-                    <div className="flex flex-col items-center justify-center">
-                      <p className="mb-2 text-xl font-bold mt-7">
-                        Diego Ragazzini
-                      </p>
-                      <p className="my-1 text-center text-md">
-                        Co-Founder - Building Technician
-                      </p>
-                      <p className="my-1">Cordoba - UK</p>
-                      <div className="flex items-center justify-center gap-3">
-                        <Link href="#">
-                          <img src={"/icons/icons8-linkedin.svg"}></img>
-                        </Link>
-                        <Link href="#">
-                          <img src={"/icons/icons8-instagram.svg"}></img>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Our history */}
-            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-2 gap-8 xl:gap-12 xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
-                <div className="col-span-2 lg:col-span-1">
-                  <div className="items-start justify-center w-full">
-                    <Heading
-                      className={
-                        "text-2xl mb-4 text-center md:text-start md:text-4xl"
-                      }
-                      text={[
-                        {
-                          language: "EN",
-                          content: "Our story",
-                        },
-                        {
-                          language: "ES",
-                          content: "Nuestra historia",
-                        },
-                        {
-                          language: "CH",
-                          content: "提升各行业",
-                        },
-                        {
-                          language: "IT",
-                          content: "Nuestra historia",
-                        },
-                      ]}
-                      level={2}
-                    ></Heading>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                  </div>
-                </div>
-                <div className="hidden h-full col-span-2 md:block lg:col-span-1">
-                  <div className="flex flex-col items-center justify-center w-full">
-                    <img
-                      className="w-full"
-                      src="
-                    https://placehold.co/600x600"
-                    ></img>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Section our values */}
-            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="grid grid-cols-2 gap-8 xl:gap-12 xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
-                <div className="hidden h-full col-span-2 lg:block lg:col-span-1">
-                  <div className="flex flex-col items-center justify-center w-full">
-                    <img
-                      className="w-full"
-                      src="
-                    https://placehold.co/600x600"
-                    ></img>
-                  </div>
-                </div>
-                <div className="col-span-2 lg:col-span-1">
-                  <div className="items-start justify-center w-full">
-                    <Heading
-                      className={
-                        "text-2xl mb-4 text-center md:text-start md:text-4xl"
-                      }
-                      text={[
-                        {
-                          language: "EN",
-                          content: "Our values",
-                        },
-                        {
-                          language: "ES",
-                          content: "Nuestros valores",
-                        },
-                        {
-                          language: "CH",
-                          content: "提升各行业的卓越水平",
-                        },
-                        {
-                          language: "IT",
-                          content: "Nuestros valores",
-                        },
-                      ]}
-                      level={2}
-                    ></Heading>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>
-                    <Paragraph
-                      type={"standfirst"}
-                      className="mb-4"
-                      text={[
-                        {
-                          language: "EN",
-                          content:
-                            "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                        },
-                        {
-                          language: "ES",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                        },
-                        {
-                          language: "CH",
-                          content: "进口、建筑和零售的综合解决方案 (Chino)",
-                        },
-                        {
-                          language: "IT",
-                          content:
-                            "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                        },
-                      ]}
-                    ></Paragraph>{" "}
-                  </div>
-                </div>
-                <div className="h-full col-span-2 lg:hidden lg:col-span-1">
-                  <div className="flex flex-col items-center justify-center w-full">
-                    <img
-                      className="w-full"
-                      src="
-                    https://placehold.co/600x600"
-                    ></img>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Why choose Primalport */}
-            <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
-                <Heading
-                  className={"text-2xl mb-4 text-center  md:text-4xl"}
-                  text={[
-                    {
-                      language: "EN",
-                      content: "Why choose Primalport",
-                    },
-                    {
-                      language: "ES",
-                      content: "Por que elegirnos",
-                    },
-                    {
-                      language: "CH",
-                      content: "提升各行业的卓越水平",
-                    },
-                    {
-                      language: "IT",
-                      content: "Por que elegirnos",
-                    },
-                  ]}
-                  level={2}
-                ></Heading>
-                <div className="flex justify-centerl">
-                  <Accordion></Accordion>
-                </div>
-              </div>
-            </div>
-
-            {/* Lets contact */}
-            <div className="w-full min-h-screen pt-10 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.55)] to-black flex flex-col justify-center items-center overflow-hidden relative">
-              <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
-                <Heading
-                  className={"text-2xl mb-4 text-center md:text-4xl"}
-                  text={[
-                    {
-                      language: "EN",
-                      content: "Lets contact",
-                    },
-                    {
-                      language: "ES",
-                      content: "Contactanos",
-                    },
-                    {
-                      language: "CH",
-                      content: "提升各行业的卓越水平",
-                    },
-                    {
-                      language: "IT",
-                      content: "Contactanos",
-                    },
-                  ]}
-                  level={2}
-                ></Heading>
-                <div className="flex flex-col items-center justify-center">
-                  <Paragraph
-                    className="text-center"
-                    type="standfirst"
-                    text={[
-                      {
-                        language: "EN",
-                        content:
-                          "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                      },
-                      {
-                        language: "ES",
-                        content:
-                          "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                      },
-                      {
-                        language: "CH",
-                        content:
-                          "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                      },
-                      {
-                        language: "IT",
-                        content:
-                          "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                      },
-                    ]}
-                  ></Paragraph>
-                  <Link
-                    href={"/"}
-                    className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl hover:bg-[#13212B] mt-4 bg-black`}
-                  >
-                    <Paragraph
-                      type="body"
-                      text={[
-                        {
-                          language: "EN",
-                          content: "Contact us",
-                        },
-                        {
-                          language: "ES",
-                          content: "Contact us",
-                        },
-                        {
-                          language: "CH",
-                          content: "Contact us",
-                        },
-                        {
-                          language: "IT",
-                          content: "Contact us",
-                        },
-                      ]}
-                    ></Paragraph>{" "}
-                    <FiArrowUpRight className="inline" />
-                  </Link>
                 </div>
               </div>
             </div>
