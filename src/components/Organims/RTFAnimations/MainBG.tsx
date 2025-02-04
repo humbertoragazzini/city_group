@@ -12,7 +12,7 @@ export default function MainBG() {
   const [ligthIntensity, setLightIntensity] = useState(0);
   const context = useAppContext();
   const scroll = useScrollbar();
-
+  const boxToTest = useRef();
   const checkProgress = () => {
     if (!sphereRef.current || !lightRef.current) return;
 
@@ -55,6 +55,11 @@ export default function MainBG() {
       if (lightRef.current) {
         ligthOn();
         clearInterval(checkElement); // Clear the interval once the element is found
+        gsap.fromTo(
+          boxToTest.current.rotation,
+          { x: 0 },
+          { x: 50, duration: 240 }
+        );
       }
     }, 250);
 
@@ -65,7 +70,7 @@ export default function MainBG() {
 
   // Use `useEffect` to react to scroll progress rather than adding a manual event listener
   useLayoutEffect(() => {
-    checkProgress();
+    // checkProgress();
   }, [scroll.scroll.progress]); // Dependency on scroll progress
 
   useEffect(() => {
@@ -77,7 +82,7 @@ export default function MainBG() {
         style={{ pointerEvents: "none" }}
         scaleMultiplier={0.01}
         shadows="soft"
-        camera={{ far: 500 }}
+        camera={{ far: 1500 }}
         className="-z-10"
       >
         <directionalLight
@@ -94,8 +99,12 @@ export default function MainBG() {
           shadow-camera-top={20}
           shadow-camera-bottom={-20}
         />
+        <mesh ref={boxToTest} rotation={[0, 0.3, 0]} position={[0, 0, 0]}>
+          <boxGeometry args={[3, 3, 3, 1]}></boxGeometry>
+          <meshBasicMaterial color={"red"}></meshBasicMaterial>
+        </mesh>
         <mesh position={[0, 0, 0]} ref={sphereRef}>
-          <sphereGeometry args={[25, 15, 15]} />
+          <sphereGeometry args={[50, 15, 15]} />
           <meshStandardMaterial side={THREE.DoubleSide}>
             <GradientTexture
               stops={[0, 1]} // As many stops as you want

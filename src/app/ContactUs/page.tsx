@@ -37,7 +37,6 @@ export default function AboutUs() {
           <div
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
           >
-            <GradientBG className={"absolute top-0 left-0 h-full"}></GradientBG>
             {/* Section with us and the description */}
             <div className="w-full min-h-screen py-24 backdrop-blur-lg bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="absolute z-10 min-w-full h-full min-h-screen bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.55)] to-black"></div>
@@ -70,7 +69,7 @@ export default function AboutUs() {
                     ></Heading>
                   </div>
                 </div>
-                <div className="relative z-20 col-span-2 xl:col-span-1 mt-12">
+                <div className="relative z-20 mt-12 col-span-2 xl:col-span-1">
                   <div className="items-start justify-center w-full">
                     <div className="flex items-center justify-center m-2 lg:m-4 xl:m-12">
                       <div className="w-full p-8 shadow-xl lg:max-w-lg backdrop-blur-lg bg-white/10 rounded-2xl">

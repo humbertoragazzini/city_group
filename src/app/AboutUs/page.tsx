@@ -37,8 +37,6 @@ export default function AboutUs() {
           <div
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
           >
-            <GradientBG className={"absolute top-0 left-0 h-full"}></GradientBG>
-
             {/* header section */}
             <div
               className="bg-gradient-to-b to-[rgba(0.0,0.0,0.0,0.55)] from-black w-full min-h-[400px] lg:min-h-[550px] xl:min-h-[650px] !bg-center !bg-cover flex flex-col justify-center items-center overflow-hidden relative"
