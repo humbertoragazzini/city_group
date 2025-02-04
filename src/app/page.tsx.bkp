@@ -162,6 +162,291 @@ export default function Home() {
               </div>
             </GlassHScreen>
 
+            {/* MOBILE */}
+            <SectionMob
+              imgContent={{
+                imgUrl: "/img/import_export.jpg",
+                size: {
+                  width: 1920,
+                  height: 1080,
+                },
+                aria: [
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ],
+                heading: [
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ],
+                subheading: [
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ],
+              }}
+              textContent={{
+                heading: [
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ],
+                text: [
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ],
+                learn: {
+                  link: "/",
+                  label: [
+                    {
+                      language: "EN",
+                      content: "Learn more",
+                    },
+                    {
+                      language: "ES",
+                      content: "Acerca de",
+                    },
+                    {
+                      language: "CH",
+                      content: "了解更多",
+                    },
+                    {
+                      language: "IT",
+                      content: "Scopri di più",
+                    },
+                  ],
+                },
+              }}
+            ></SectionMob>
+
+            {/* DESKTOP */}
+            <SectionL
+              heading={[
+                {
+                  language: "EN",
+                  content: "Welcome to our website",
+                },
+                {
+                  language: "ES",
+                  content: "Bienvenido a nuestro sitio web",
+                },
+                {
+                  language: "CH",
+                  content: "欢迎来到我们的网站",
+                },
+                {
+                  language: "IT",
+                  content: "Benvenuti nel nostro sito web",
+                },
+              ]}
+              content={[
+                {
+                  language: "EN",
+                  content: "We provide the best services to meet your needs.",
+                },
+                {
+                  language: "ES",
+                  content:
+                    "Ofrecemos los mejores servicios para satisfacer sus necesidades.",
+                },
+                {
+                  language: "CH",
+                  content: "我们提供最优质的服务以满足您的需求。",
+                },
+                {
+                  language: "IT",
+                  content:
+                    "Offriamo i migliori servizi per soddisfare le tue esigenze.",
+                },
+              ]}
+              marke={[
+                {
+                  language: "EN",
+                  content: "Trust, Quality, and Excellence.",
+                },
+                {
+                  language: "ES",
+                  content: "Confianza, Calidad y Excelencia.",
+                },
+                {
+                  language: "CH",
+                  content: "信任，质量和卓越。",
+                },
+                {
+                  language: "IT",
+                  content: "Fiducia, Qualità ed Eccellenza.",
+                },
+              ]}
+              learn={{
+                link: "/",
+                label: [
+                  {
+                    language: "EN",
+                    content: "Learn more",
+                  },
+                  {
+                    language: "ES",
+                    content: "Acerca de",
+                  },
+                  {
+                    language: "CH",
+                    content: "了解更多",
+                  },
+                  {
+                    language: "IT",
+                    content: "Scopri di più",
+                  },
+                ],
+              }}
+            ></SectionL>
+
+            <SectionR
+              heading={[
+                {
+                  language: "EN",
+                  content: "Welcome to our website",
+                },
+                {
+                  language: "ES",
+                  content: "Bienvenido a nuestro sitio web",
+                },
+                {
+                  language: "CH",
+                  content: "欢迎来到我们的网站",
+                },
+                {
+                  language: "IT",
+                  content: "Benvenuti nel nostro sito web",
+                },
+              ]}
+              content={[
+                {
+                  language: "EN",
+                  content: "We provide the best services to meet your needs.",
+                },
+                {
+                  language: "ES",
+                  content:
+                    "Ofrecemos los mejores servicios para satisfacer sus necesidades.",
+                },
+                {
+                  language: "CH",
+                  content: "我们提供最优质的服务以满足您的需求。",
+                },
+                {
+                  language: "IT",
+                  content:
+                    "Offriamo i migliori servizi per soddisfare le tue esigenze.",
+                },
+              ]}
+              marke={[
+                {
+                  language: "EN",
+                  content: "Trust, Quality, and Excellence.",
+                },
+                {
+                  language: "ES",
+                  content: "Confianza, Calidad y Excelencia.",
+                },
+                {
+                  language: "CH",
+                  content: "信任，质量和卓越。",
+                },
+                {
+                  language: "IT",
+                  content: "Fiducia, Qualità ed Eccellenza.",
+                },
+              ]}
+              learn={{
+                link: "/",
+                label: [
+                  {
+                    language: "EN",
+                    content: "Learn more",
+                  },
+                  {
+                    language: "ES",
+                    content: "Acerca de",
+                  },
+                  {
+                    language: "CH",
+                    content: "了解更多",
+                  },
+                  {
+                    language: "IT",
+                    content: "Scopri di più",
+                  },
+                ],
+              }}
+            ></SectionR>
+
             {/* Footer */}
             <div className="relative w-full bg-black z-10">
               <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
