@@ -8,8 +8,8 @@ export default function ONavBar() {
   return (
     <>
       {context.state.isMenuEnable && (
-        <div className="fixed bg-gradient-to-b from-black to-transparent h-[90px] top-0 overflow-visible w-screen z-50">
-          <button
+        <div className="fixed h-[0px] top-0 overflow-visible  z-50">
+          {/*  <button
             className={`group fixed left-4 top-4 z-0 h-12 w-12 rounded-tr-full rounded-tl-full rounded-br-full rounded-bl-full [&>svg]:stroke-black hover:bg-the-lightGrey hover:[&>svg]:stroke-white transition-all animate-rounded-change-disable bg-black "
         }`}
           >
@@ -79,13 +79,13 @@ export default function ONavBar() {
                 />
               </g>
             </svg>
-          </button>
+           </button>
           <button
             className={`group fixed left-20 text-3xl text-white top-4 z-0 h-12 w-12 hidden lg:block rounded-tr-full rounded-tl-full rounded-br-full rounded-bl-full [&>svg]:stroke-black hover:bg-the-lightGrey hover:[&>svg]:stroke-white transition-all animate-rounded-change-disable"
         }`}
           >
             PRIMALPORTS
-          </button>
+          </button>*/}
           <Nav></Nav>
         </div>
       )}
