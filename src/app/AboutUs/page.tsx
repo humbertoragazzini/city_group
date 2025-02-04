@@ -37,8 +37,6 @@ export default function AboutUs() {
           <div
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
           >
-            <MainBG></MainBG>
-
             <GradientBG className={"absolute top-0 left-0 h-full"}></GradientBG>
 
             {/* header section */}

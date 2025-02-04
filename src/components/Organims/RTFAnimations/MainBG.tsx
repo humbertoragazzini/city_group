@@ -47,7 +47,7 @@ export default function MainBG() {
           }
         );
       }
-    }, 2500);
+    }, 1000);
   };
 
   useLayoutEffect(() => {

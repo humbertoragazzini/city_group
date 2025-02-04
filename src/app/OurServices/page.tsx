@@ -68,7 +68,6 @@ export default function OurServices() {
             className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white `}
             ref={headerRef}
           >
-            <MainBG></MainBG>
             <GradientBG className={"absolute top-0 left-0 h-full"}></GradientBG>
 
             <GlassHScreen>
