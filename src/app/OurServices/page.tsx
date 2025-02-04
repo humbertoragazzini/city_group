@@ -24,9 +24,6 @@ import Link from "next/link";
 import SectionL from "@/components/Organims/Sections/Desktop/SectionL";
 import SectionR from "@/components/Organims/Sections/Desktop/SectionR";
 import SectionMob from "@/components/Organims/Sections/Mobile/SectionMob";
-import WebGLImage from "@/components/Organims/RTFAnimations/RTFAComponents/ImageContainer/WebGLImage";
-import { RTFAText } from "@/components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText";
-import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D";
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 
 export default function OurServices() {
@@ -48,17 +45,9 @@ export default function OurServices() {
     "yellow",
   ];
 
-  const el = useRef<any>(null);
-  const aboutRef = useRef<any>(null);
-  const tracker = useTracker(el);
-  const progress = useTrackerMotionValue(tracker);
-
-  const scale = useTransform(progress, [0, 1], [0, 1]);
-  const transformX = useTransform(progress, [0, 1], [0, 0]);
-  const blur = useTransform(progress, [0, 1], [5, 0]);
-  // useLayoutEffect(() => {
-  //   gsap.fromTo(headerRef.current, { opacity: 0 }, { opacity: 1 });
-  // }, []);
+  useLayoutEffect(() => {
+    // gsap.fromTo(headerRef.current, { opacity: 0 }, { opacity: 1 });
+  }, []);
 
   useEffect(() => {
     if (context.state.isMenuOpen) {
@@ -76,151 +65,392 @@ export default function OurServices() {
       {() => {
         return (
           <div
-            className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
+            className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white `}
+            ref={headerRef}
           >
             <MainBG></MainBG>
-            <div className="min-h-[110vh] w-full">
-              <div className="w-full sticky top-0 left-0 z-0">
-                <div className="absolute h-screen w-full bg-gray-700 rounded-t-[80px]">
-                  <div className="grid grid-cols-2 h-full max-w-[1920px] p-16 mx-auto">
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <div>
-                        <h1 className="text-4xl font-bold text-white drop-shadow-2xl mb-6">
-                          Our Mission and Commitment
-                        </h1>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          Our mission is to provide high-quality imported
-                          products and retail services, while delivering
-                          exceptional construction solutions. We aim to meet the
-                          diverse needs of our customers by offering a reliable
-                          supply chain, competitive pricing, and outstanding
-                          craftsmanship.
-                        </p>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          Through dedication to integrity, efficiency, and
-                          innovation, we strive to enhance the communities we
-                          serve, becoming a trusted partner in both retail and
-                          construction industries.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <Image
-                        src={"/img/import_export.jpg"}
-                        width={1980}
-                        height={1080}
-                      ></Image>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="min-h-[110vh] w-full">
-              <div className="w-full sticky top-0 left-0 z-0">
-                <div className="absolute h-screen w-full bg-gray-800 rounded-t-[80px]">
-                  <div className="grid grid-cols-2 h-full max-w-[1920px] p-16 mx-auto">
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <div>
-                        <h1 className="text-4xl font-bold text-white drop-shadow-2xl mb-6">
-                          Our Vision for Global Growth
-                        </h1>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          Our vision is to become a global leader in imports,
-                          retail, and construction by expanding our reach across
-                          international markets.
-                        </p>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          We aim to grow strategically, offering innovative
-                          solutions and superior quality that meet the evolving
-                          needs of customers worldwide. Through sustainable
-                          growth and continuous improvement, we aspire to make
-                          our mark globally while maintaining our commitment to
-                          excellence, integrity, and community impact.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <Image
-                        src={"/img/import_export.jpg"}
-                        width={1980}
-                        height={1080}
-                      ></Image>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="min-h-[110vh] w-full">
-              <div className="w-full sticky top-0 left-0 z-0">
-                <div className="absolute h-screen w-full bg-gray-900 rounded-t-[80px]">
-                  <div className="grid grid-cols-2 h-full max-w-[1920px] p-16 mx-auto">
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <div>
-                        <p className="text-4xl font-bold text-white drop-shadow-2xl mb-6">
-                          About us
-                        </p>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Commodi eum nisi sequi aperiam sed, odit dolores
-                          necessitatibus qui molestias ipsam eligendi cum
-                          doloremque nobis a dignissimos rerum praesentium hic
-                          ex?
-                        </p>
-                        <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Commodi eum nisi sequi aperiam sed, odit dolores
-                          necessitatibus qui molestias ipsam eligendi cum
-                          doloremque nobis a dignissimos rerum praesentium hic
-                          ex?
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-span-1 flex justify-center items-center p-6">
-                      <Image
-                        src={"/img/import_export.jpg"}
-                        width={1980}
-                        height={1080}
-                      ></Image>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative min-h-screen w-full bg-black flex justify-center items-center rounded-t-[80px]">
-              <div className="grid grid-cols-2 max-w-[1920px] p-16 mx-auto">
-                <div className="col-span-1 flex justify-center items-center p-6">
-                  <div>
-                    <p className="text-4xl font-bold text-white drop-shadow-2xl mb-6">
-                      About us
-                    </p>
-                    <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Commodi eum nisi sequi aperiam sed, odit dolores
-                      necessitatibus qui molestias ipsam eligendi cum doloremque
-                      nobis a dignissimos rerum praesentium hic ex?
-                    </p>
-                    <p className="text-3xl text-white drop-shadow-2xl mb-6">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Commodi eum nisi sequi aperiam sed, odit dolores
-                      necessitatibus qui molestias ipsam eligendi cum doloremque
-                      nobis a dignissimos rerum praesentium hic ex?
-                    </p>
-                  </div>
-                </div>
-                <div className="col-span-1 flex justify-center items-center p-6">
-                  <Image
-                    src={"/img/import_export.jpg"}
-                    width={1980}
-                    height={1080}
-                  ></Image>
-                </div>
-              </div>
-            </div>
+            <GradientBG className={"absolute top-0 left-0 h-full"}></GradientBG>
 
-            {/* footer */}
-            <div className="relative w-full bg-black z-10">
+            <GlassHScreen>
+              <div className="opacity-0 animate-fade-in delay-[5500ms] grid h-fit lg:h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
+                <div className=" relative col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex flex-col justify-center items-start">
+                  <Heading
+                    className="mb-4"
+                    text={[
+                      {
+                        language: "EN",
+                        content: "Elevating Excellence Across Industries",
+                      },
+                      {
+                        language: "ES",
+                        content:
+                          "Elevando la Excelencia en Todas las Industrias",
+                      },
+                      {
+                        language: "CH",
+                        content: "提升各行业的卓越水平",
+                      },
+                      {
+                        language: "IT",
+                        content: "Elevare l'Eccellenza in Tutti i Settori",
+                      },
+                    ]}
+                    level={1}
+                  ></Heading>
+
+                  <Paragraph
+                    type={"standfirst3"}
+                    className="mb-4"
+                    text={[
+                      {
+                        language: "EN",
+                        content:
+                          "Comprehensive Solutions in Imports, Construction, and Retail",
+                      },
+                      {
+                        language: "ES",
+                        content:
+                          "Soluciones Integrales en Importaciones, Construcción y Venta al por Menor",
+                      },
+                      {
+                        language: "CH",
+                        content: "进口、建筑和零售的综合解决方案",
+                      },
+                      {
+                        language: "IT",
+                        content:
+                          "Soluzioni Complete per Importazioni, Costruzioni e Vendita al Dettaglio",
+                      },
+                    ]}
+                  ></Paragraph>
+
+                  <Paragraph
+                    type={"standfirst"}
+                    text={[
+                      {
+                        language: "EN",
+                        content:
+                          "At PrimalPort, we harmonize the art of innovation with the science of expertise to offer transcendent services in Imports, Construction, and Retail. Explore how our holistic approach and unwavering dedication to quality foster success and transformation across a myriad of sectors.",
+                      },
+                      {
+                        language: "ES",
+                        content:
+                          "En PrimalPort, armonizamos el arte de la innovación con la ciencia de la experiencia para ofrecer servicios trascendentes en Importaciones, Construcción y Venta al por Menor. Descubre cómo nuestro enfoque holístico y nuestra dedicación inquebrantable a la calidad fomentan el éxito y la transformación en una multitud de sectores.",
+                      },
+                      {
+                        language: "CH",
+                        content:
+                          "在PrimalPort，我们将创新的艺术与专业的科学相结合，提供卓越的进口、建筑和零售服务。探索我们全方位的方法和对质量的坚定承诺如何促进各个领域的成功与转型。",
+                      },
+                      {
+                        language: "IT",
+                        content:
+                          "In PrimalPort, armonizziamo l'arte dell'innovazione con la scienza dell'esperienza per offrire servizi trascendenti in Importazioni, Costruzioni e Vendita al Dettaglio. Scopri come il nostro approccio olistico e la nostra dedizione incrollabile alla qualità favoriscono il successo e la trasformazione in una moltitudine di settori.",
+                      },
+                    ]}
+                  ></Paragraph>
+                </div>
+                <div className="relative hidden overflow-hidden col-span-1 xl:block">
+                  <LogoBG
+                    className={
+                      "left-[0%] lg:top-[-65%] 3xl:top-[-50%] 4xl:top-[0%] 5xl:top-[0%] hidden xl:block"
+                    }
+                    width={1300}
+                    rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
+                  ></LogoBG>
+                </div>
+              </div>
+            </GlassHScreen>
+
+            {/* MOBILE */}
+            <SectionMob
+              imgContent={{
+                imgUrl: "/img/import_export.jpg",
+                size: {
+                  width: 1920,
+                  height: 1080,
+                },
+                aria: [
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ],
+                heading: [
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ],
+                subheading: [
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ],
+              }}
+              textContent={{
+                heading: [
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ],
+                text: [
+                  {
+                    language: "EN",
+                    content: "Welcome to our website",
+                  },
+                  {
+                    language: "ES",
+                    content: "Bienvenido a nuestro sitio web",
+                  },
+                  {
+                    language: "CH",
+                    content: "欢迎来到我们的网站",
+                  },
+                  {
+                    language: "IT",
+                    content: "Benvenuti nel nostro sito web",
+                  },
+                ],
+                learn: {
+                  link: "/",
+                  label: [
+                    {
+                      language: "EN",
+                      content: "Learn more",
+                    },
+                    {
+                      language: "ES",
+                      content: "Acerca de",
+                    },
+                    {
+                      language: "CH",
+                      content: "了解更多",
+                    },
+                    {
+                      language: "IT",
+                      content: "Scopri di più",
+                    },
+                  ],
+                },
+              }}
+            ></SectionMob>
+
+            {/* DESKTOP */}
+            <SectionL
+              heading={[
+                {
+                  language: "EN",
+                  content: "Welcome to our website",
+                },
+                {
+                  language: "ES",
+                  content: "Bienvenido a nuestro sitio web",
+                },
+                {
+                  language: "CH",
+                  content: "欢迎来到我们的网站",
+                },
+                {
+                  language: "IT",
+                  content: "Benvenuti nel nostro sito web",
+                },
+              ]}
+              content={[
+                {
+                  language: "EN",
+                  content: "We provide the best services to meet your needs.",
+                },
+                {
+                  language: "ES",
+                  content:
+                    "Ofrecemos los mejores servicios para satisfacer sus necesidades.",
+                },
+                {
+                  language: "CH",
+                  content: "我们提供最优质的服务以满足您的需求。",
+                },
+                {
+                  language: "IT",
+                  content:
+                    "Offriamo i migliori servizi per soddisfare le tue esigenze.",
+                },
+              ]}
+              marke={[
+                {
+                  language: "EN",
+                  content: "Trust, Quality, and Excellence.",
+                },
+                {
+                  language: "ES",
+                  content: "Confianza, Calidad y Excelencia.",
+                },
+                {
+                  language: "CH",
+                  content: "信任，质量和卓越。",
+                },
+                {
+                  language: "IT",
+                  content: "Fiducia, Qualità ed Eccellenza.",
+                },
+              ]}
+              learn={{
+                link: "/",
+                label: [
+                  {
+                    language: "EN",
+                    content: "Learn more",
+                  },
+                  {
+                    language: "ES",
+                    content: "Acerca de",
+                  },
+                  {
+                    language: "CH",
+                    content: "了解更多",
+                  },
+                  {
+                    language: "IT",
+                    content: "Scopri di più",
+                  },
+                ],
+              }}
+            ></SectionL>
+
+            <SectionR
+              heading={[
+                {
+                  language: "EN",
+                  content: "Welcome to our website",
+                },
+                {
+                  language: "ES",
+                  content: "Bienvenido a nuestro sitio web",
+                },
+                {
+                  language: "CH",
+                  content: "欢迎来到我们的网站",
+                },
+                {
+                  language: "IT",
+                  content: "Benvenuti nel nostro sito web",
+                },
+              ]}
+              content={[
+                {
+                  language: "EN",
+                  content: "We provide the best services to meet your needs.",
+                },
+                {
+                  language: "ES",
+                  content:
+                    "Ofrecemos los mejores servicios para satisfacer sus necesidades.",
+                },
+                {
+                  language: "CH",
+                  content: "我们提供最优质的服务以满足您的需求。",
+                },
+                {
+                  language: "IT",
+                  content:
+                    "Offriamo i migliori servizi per soddisfare le tue esigenze.",
+                },
+              ]}
+              marke={[
+                {
+                  language: "EN",
+                  content: "Trust, Quality, and Excellence.",
+                },
+                {
+                  language: "ES",
+                  content: "Confianza, Calidad y Excelencia.",
+                },
+                {
+                  language: "CH",
+                  content: "信任，质量和卓越。",
+                },
+                {
+                  language: "IT",
+                  content: "Fiducia, Qualità ed Eccellenza.",
+                },
+              ]}
+              learn={{
+                link: "/",
+                label: [
+                  {
+                    language: "EN",
+                    content: "Learn more",
+                  },
+                  {
+                    language: "ES",
+                    content: "Acerca de",
+                  },
+                  {
+                    language: "CH",
+                    content: "了解更多",
+                  },
+                  {
+                    language: "IT",
+                    content: "Scopri di più",
+                  },
+                ],
+              }}
+            ></SectionR>
+
+            {/* Footer */}
+            <div className="relative z-10 w-full bg-black">
               <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto px-8 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
-                <div className="relative col-span-1 lg:col-span-3 flex justify-between items-center pb-9">
+                <div className="relative flex items-center justify-between col-span-1 lg:col-span-3 pb-9">
                   <div className="max-w-[650px]">
                     <p className="pb-4">
                       <strong>
@@ -357,22 +587,22 @@ export default function OurServices() {
                     </svg>
                   </div>
                 </div>
-                <div className="relative col-span-1 lg:col-span-3 pb-10">
+                <div className="relative pb-10 col-span-1 lg:col-span-3">
                   <hr></hr>
                 </div>
                 <div className="relative col-span-1 lg:col-span-3">
-                  <div className="flex flex-col sm:flex-row justify-between items-start">
+                  <div className="flex flex-col items-start justify-between sm:flex-row">
                     <div className="flex flex-row">
-                      <div className="relative hidden lg:flex flex-col justify-end items-start mb-3 mr-24">
+                      <div className="relative flex-col items-start justify-end hidden mb-3 mr-24 lg:flex">
                         <p>Lorem 84b UK</p>
                         <p>Lorem 1055 ARG</p>
                       </div>
-                      <div className="relative flex flex-col justify-end items-start mb-3 lg:mr-24">
+                      <div className="relative flex flex-col items-start justify-end mb-3 lg:mr-24">
                         <p>contact@primapports.com</p>
                         <p>contact@primapports.com</p>
                       </div>
                     </div>
-                    <div className="relative flex flex-col justify-end items-start mb-3">
+                    <div className="relative flex flex-col items-start justify-end mb-3">
                       <div>
                         <p>Made by Tobe21</p>
                       </div>
@@ -388,4 +618,4 @@ export default function OurServices() {
   );
 }
 
-OurServices.displayName = "OurServices";
+OurServices.displayName = "Our services";
