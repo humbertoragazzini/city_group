@@ -43,7 +43,7 @@ export default function AboutUs() {
             {/* Section with us and the description */}
             <div className="w-full min-h-screen py-24 backdrop-blur-lg bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
               <div className="absolute z-10 min-w-full h-full min-h-screen bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.55)] to-black"></div>
-              <div className="grid grid-cols-2 w-full xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
+              <div className="grid grid-cols-2 w-full xl:w-[75%] xl:max-w-[1920px] p-1 md:p-2 lg:p-4">
                 <div className="col-span-2 xl:col-span-1">
                   <div className="flex items-center justify-center w-full h-full">
                     <Heading
@@ -72,10 +72,10 @@ export default function AboutUs() {
                     ></Heading>
                   </div>
                 </div>
-                <div className="relative z-20 col-span-2 xl:col-span-1">
+                <div className="relative z-20 col-span-2 xl:col-span-1 mt-12">
                   <div className="items-start justify-center w-full">
-                    <div className="flex items-center justify-center m-12">
-                      <div className="w-full max-w-lg p-8 shadow-xl backdrop-blur-lg bg-white/10 rounded-2xl">
+                    <div className="flex items-center justify-center m-2 lg:m-4 xl:m-12">
+                      <div className="w-full p-8 shadow-xl lg:max-w-lg backdrop-blur-lg bg-white/10 rounded-2xl">
                         <form className="space-y-4">
                           <div>
                             <label
