@@ -1,6 +1,6 @@
 "use client";
 import { ScrollScene, UseCanvas } from "@14islands/r3f-scroll-rig";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Logo from "../../Mesh/Logo/Logo";
 import { iAxis } from "../../interfaces/position";
 
@@ -12,7 +12,9 @@ interface iLogoBG {
 
 export default function LogoBG({ className, rotation, width }: iLogoBG) {
   const el = useRef<any>();
-
+  useEffect(() => {
+    console.log("triggered");
+  }, []);
   return (
     <>
       <div

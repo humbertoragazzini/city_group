@@ -27,7 +27,7 @@ export default function Logo({ scale, rotation }: iLogo) {
         duration: 3600,
       }
     );
-  }, [pathname]);
+  }, []);
 
   return (
     <group scale={scale} ref={meshRef}>

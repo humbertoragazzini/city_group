@@ -37,7 +37,7 @@ export default function MainBG() {
       if (lightRef.current) {
         gsap.fromTo(
           values,
-          { intensity: 0 },
+          { intensity: 5 },
           {
             intensity: 5,
             duration: 2,
