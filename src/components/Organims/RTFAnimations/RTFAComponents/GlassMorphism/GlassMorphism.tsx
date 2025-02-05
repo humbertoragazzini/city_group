@@ -10,13 +10,19 @@ export default function GlassMorphism() {
     <>
       <div
         ref={el}
-        className="absolute top-0 left-0 w-full h-full hidden md:block"
+        className="absolute top-0 left-0 hidden w-full h-full md:block"
       ></div>
       <UseCanvas>
         <ScrollScene track={el}>
           {(props) => {
             return (
-              <mesh {...props} ref={ref} receiveShadow>
+              <mesh
+                {...props}
+                ref={ref}
+                position={[0, 0, 0]}
+                renderOrder={1}
+                receiveShadow
+              >
                 <planeGeometry args={[1, 1, 50]} />
                 <meshPhysicalMaterial
                   attach="material"

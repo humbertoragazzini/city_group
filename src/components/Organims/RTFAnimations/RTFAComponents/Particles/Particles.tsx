@@ -1,8 +1,10 @@
-export default function Particles() {
+export default function Particles({ scale }: any) {
 	return (
-		<mesh>
-			<planeGeometry></planeGeometry>
-			<meshBasicMaterial></meshBasicMaterial>
-		</mesh>
+		<group scale={scale}>
+			<mesh scale={0.485} renderOrder={2} position={[0, 0, 1]}>
+				<boxGeometry args={[2, 2, 1]}></boxGeometry>
+				<meshStandardMaterial color={"red"}></meshStandardMaterial>
+			</mesh>
+		</group>
 	);
 }
