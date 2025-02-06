@@ -97,7 +97,7 @@ export default function AppWraper({ children }: any) {
                   <div className="relative hidden overflow-hidden col-span-1 xl:block">
                     <LogoBG
                       className={
-                        "left-[0%] lg:top-[-65%] 3xl:top-[-50%] 4xl:top-[0%] 5xl:top-[0%] hidden xl:block"
+                        "left-[-100%] lg:top-[0%] 3xl:top-[0] 4xl:top-[0%] 5xl:top-[0%] hidden xl:block"
                       }
                       width={1300}
                       rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
@@ -107,7 +107,7 @@ export default function AppWraper({ children }: any) {
               </GlassHScreen>
               {children}
               {/*footer*/}
-              <div className="text-white relative z-10 w-full bg-black">
+              <div className="relative z-10 w-full text-white bg-black">
                 <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto p-4 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                   <div className="relative flex items-center justify-between col-span-1 lg:col-span-3 pb-9">
                     <div className="max-w-[650px]">

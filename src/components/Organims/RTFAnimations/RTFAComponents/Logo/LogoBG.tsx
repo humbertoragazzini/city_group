@@ -3,7 +3,7 @@ import { ScrollScene, UseCanvas } from "@14islands/r3f-scroll-rig";
 import { useEffect, useRef } from "react";
 import Logo from "../../Mesh/Logo/Logo";
 import { iAxis } from "../../interfaces/position";
-
+import Particles from "../Particles/Particles";
 interface iLogoBG {
   className: string;
   rotation: iAxis;
@@ -25,10 +25,18 @@ export default function LogoBG({ className, rotation, width }: iLogoBG) {
       <UseCanvas>
         <ScrollScene track={el}>
           {(props) => {
-            return <Logo scale={props.scale} rotation={rotation}></Logo>;
+            return (
+              <Particles scale={props.scale} rotation={rotation}></Particles>
+            );
           }}
         </ScrollScene>
       </UseCanvas>
     </>
   );
 }
+
+//<ScrollScene track={el}>
+//          {(props) => {
+//            return <Logo scale={props.scale} rotation={rotation}></Logo>;
+//          }}
+//        </ScrollScene>

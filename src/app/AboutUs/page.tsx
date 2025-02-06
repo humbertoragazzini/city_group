@@ -34,7 +34,6 @@ export default function AboutUs() {
     <div
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
-      {/* header section */}
       {/* Section with us and the description */}
       <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
         <div className="grid grid-cols-2 w-full xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
@@ -742,8 +741,6 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
-
-      {/* footer */}
     </div>
   );
 }
