@@ -57,11 +57,6 @@ export default function MainBG() {
       if (lightRef.current) {
         ligthOn();
         clearInterval(checkElement); // Clear the interval once the element is found
-        gsap.fromTo(
-          boxToTest.current.rotation,
-          { x: 0 },
-          { x: 50, duration: 240 }
-        );
       }
     }, 250);
 
