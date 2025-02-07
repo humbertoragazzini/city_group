@@ -101,9 +101,16 @@ export default function MainBG() {
           shadow-camera-top={20}
           shadow-camera-bottom={-20}
         />
-        <mesh ref={boxToTest} rotation={[0, 0.3, 0]} position={[0, 0, 0]}>
-          <boxGeometry args={[3, 3, 3, 1]}></boxGeometry>
-          <meshBasicMaterial color={"red"}></meshBasicMaterial>
+
+        <mesh position={[0, 0, 0]} ref={sphereRef}>
+          <sphereGeometry args={[50, 15, 15]} />
+          <meshStandardMaterial side={THREE.DoubleSide}>
+            <GradientTexture
+              stops={[0, 1]} // As many stops as you want
+              colors={["magenta", "turquoise"]} // Colors need to match the number of stops
+              rotation={0.5}
+            />
+          </meshStandardMaterial>
         </mesh>
       </GlobalCanvas>
     </>

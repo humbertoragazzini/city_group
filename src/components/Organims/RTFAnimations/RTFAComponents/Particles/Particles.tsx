@@ -78,7 +78,44 @@ export default function Particles({ scale }: any) {
 
 			// Set the points to the state
 			setTheObject(particles.points);
+
+			// method
+			particles.morph = (index) => {
+				// update attributes
+				particles.geometry.attributes.position =
+					particles.positions[particles.index];
+				particles.geometry.attributes.aPositionTarget =
+					particles.positions[index];
+
+				// animate mixFactor
+				gsap.fromTo(
+					particles.material.uniforms.uMixFactor,
+					{ value: 0 },
+					{ value: 1, duration: 3, ease: "lineal" }
+				);
+
+				// particles index
+				particles.index = index;
+			};
+
+			particles.morph0 = () => {
+				particles.morph(0);
+			};
+			particles.morph1 = () => {
+				particles.morph(1);
+			};
+			particles.morph2 = () => {
+				particles.morph(2);
+			};
+			particles.morph3 = () => {
+				particles.morph(3);
+			};
 		}
+		let counter = 0;
+		setInterval(() => {
+			particles.morph(counter);
+			counter == 3 ? (counter = 0) : counter++;
+		}, 5500);
 		console.log(particlesVertexShader);
 		console.log(particlesFragmentShader);
 	}, [scene]);
