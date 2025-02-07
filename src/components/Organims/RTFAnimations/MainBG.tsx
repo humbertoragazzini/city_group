@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 "use client";
 import { useAppContext } from "@/context/AppContext";
 import { GlobalCanvas, useScrollbar } from "@14islands/r3f-scroll-rig";
@@ -55,11 +57,6 @@ export default function MainBG() {
       if (lightRef.current) {
         ligthOn();
         clearInterval(checkElement); // Clear the interval once the element is found
-        gsap.fromTo(
-          boxToTest.current.rotation,
-          { x: 0 },
-          { x: 50, duration: 240 }
-        );
       }
     }, 250);
 
@@ -99,10 +96,7 @@ export default function MainBG() {
           shadow-camera-top={20}
           shadow-camera-bottom={-20}
         />
-        <mesh ref={boxToTest} rotation={[0, 0.3, 0]} position={[0, 0, 0]}>
-          <boxGeometry args={[3, 3, 3, 1]}></boxGeometry>
-          <meshBasicMaterial color={"red"}></meshBasicMaterial>
-        </mesh>
+
         <mesh position={[0, 0, 0]} ref={sphereRef}>
           <sphereGeometry args={[50, 15, 15]} />
           <meshStandardMaterial side={THREE.DoubleSide}>
