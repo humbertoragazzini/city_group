@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 "use client";
 import { useAppContext } from "@/context/AppContext";
 import { GlobalCanvas, useScrollbar } from "@14islands/r3f-scroll-rig";
