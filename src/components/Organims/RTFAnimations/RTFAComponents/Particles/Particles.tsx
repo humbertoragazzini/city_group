@@ -12,6 +12,11 @@ export default function Particles({ scale }: any) {
 	const { scene } = useGLTF("/RTFA/Models/models.glb");
 	const pathname = usePathname();
 	const groupRef = useRef(null);
+	const meshRef = useRef(null);
+	const materialRef = useRef(null);
+	const bufferGRef = useRef(null);
+	const pointsRef = useRef(null);
+	const shaderMaterialRef = useRef();
 	const particles: any = useRef({
 		maxCount: 0,
 		positions: [],
@@ -42,7 +47,7 @@ export default function Particles({ scale }: any) {
 			default:
 				console.log("No matching path.");
 		}
-	}, [pathname, particles.current]);
+	}, [pathname]);
 
 	useEffect(() => {
 		if (groupRef.current) {
@@ -159,9 +164,32 @@ export default function Particles({ scale }: any) {
 
 	return (
 		<group scale={scale}>
-			{theObject && (
+			{/*theObject && (
 				<primitive scale={0.13} ref={groupRef} object={theObject} />
-			)}
+			)*/}
+			<mesh scale={0.08} ref={meshRef}>
+				<points ref={pointsRef}>
+					<bufferGeometry ref={bufferGRef}></bufferGeometry>
+					<shaderMaterial
+						ref={shaderMaterialRef}
+						vertexShader={particlesVertexShader}
+						fragmentShader={particlesFragmentShader}
+						uniforms={{
+							uSize: { value: 0.1 },
+							uResolution: {
+								value: new THREE.Vector2(
+									window.innerWidth * window.devicePixelRatio,
+									window.innerHeight * window.devicePixelRatio
+								),
+							},
+							uMixFactor: { value: 0 },
+							uColorA: { value: new THREE.Color("#ffff55") },
+							uColorB: { value: new THREE.Color("#5500ff") },
+						}}
+						side={THREE.DoubleSide}
+					/>
+				</points>
+			</mesh>
 		</group>
 	);
 }
