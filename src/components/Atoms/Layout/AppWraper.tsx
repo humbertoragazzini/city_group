@@ -97,7 +97,7 @@ export default function AppWraper({ children }: any) {
                   <div className="relative hidden overflow-hidden col-span-1 xl:block">
                     <LogoBG
                       className={
-                        "left-[-100%] lg:top-[0%] 3xl:top-[0] 4xl:top-[0%] 5xl:top-[0%] hidden xl:block"
+                        "left-[-30%] lg:top-[-20%] 3xl:top-[-20] 4xl:top-[-20%] 5xl:top-[-20%] hidden xl:block"
                       }
                       width={1300}
                       rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
