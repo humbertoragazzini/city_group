@@ -11,6 +11,7 @@ export default function Particles({ scale }: any) {
 	const [theObject, setTheObject] = useState<THREE.Points | null>(null);
 	const { scene } = useGLTF("/RTFA/Models/models.glb");
 	const pathname = usePathname();
+	const groupRef = useRef(null);
 	const particles: any = useRef({
 		maxCount: 0,
 		positions: [],
@@ -22,7 +23,7 @@ export default function Particles({ scale }: any) {
 	useEffect(() => {
 		console.log(particles.current);
 		switch (pathname) {
-			case "/home":
+			case "/":
 				console.log(pathname);
 				particles.current.morph(0);
 				break;
@@ -42,6 +43,17 @@ export default function Particles({ scale }: any) {
 				console.log("No matching path.");
 		}
 	}, [pathname, particles.current]);
+
+	useEffect(() => {
+		if (groupRef.current) {
+			gsap.to(groupRef.current.rotation, {
+				x: 1000,
+				y: 1000,
+				z: 1000,
+				duration: 10000,
+			});
+		}
+	}, [groupRef.current]);
 
 	useEffect(() => {
 		const sizes = {
@@ -85,7 +97,7 @@ export default function Particles({ scale }: any) {
 				vertexShader: particlesVertexShader,
 				fragmentShader: particlesFragmentShader,
 				uniforms: {
-					uSize: { value: 0.05 },
+					uSize: { value: 0.1 },
 					uResolution: {
 						value: new THREE.Vector2(
 							sizes.width * sizes.pixelRatio,
@@ -147,7 +159,9 @@ export default function Particles({ scale }: any) {
 
 	return (
 		<group scale={scale}>
-			{theObject && <primitive scale={0.05} object={theObject} />}
+			{theObject && (
+				<primitive scale={0.13} ref={groupRef} object={theObject} />
+			)}
 		</group>
 	);
 }
