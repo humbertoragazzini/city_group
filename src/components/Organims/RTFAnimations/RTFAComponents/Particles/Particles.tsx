@@ -147,7 +147,7 @@ export default function Particles({ scale }: any) {
 
 	return (
 		<group scale={scale}>
-			{theObject && <primitive scale={0.05} object={theObject} />}
+			{theObject && <primitive scale={0.13} object={theObject} />}
 		</group>
 	);
 }
