@@ -85,7 +85,7 @@ export default function Particles({ scale }: any) {
 				vertexShader: particlesVertexShader,
 				fragmentShader: particlesFragmentShader,
 				uniforms: {
-					uSize: { value: 0.05 },
+					uSize: { value: 0.1 },
 					uResolution: {
 						value: new THREE.Vector2(
 							sizes.width * sizes.pixelRatio,
