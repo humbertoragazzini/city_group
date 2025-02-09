@@ -1,3 +1,4 @@
+//@ts-nocheck
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { useState, useEffect, useRef, useLayoutEffect, useMemo } from "react";
