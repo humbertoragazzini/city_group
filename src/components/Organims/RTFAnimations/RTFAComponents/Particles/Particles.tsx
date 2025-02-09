@@ -20,7 +20,7 @@ export default function Particles({ scale }: any) {
     });
     const uniforms = useMemo(
         () => ({
-            uSize: { value: 0.01 },
+            uSize: { value: 0.1 },
             uResolution: {
                 value: new THREE.Vector2(
                     window.innerWidth * window.devicePixelRatio,
@@ -42,9 +42,11 @@ export default function Particles({ scale }: any) {
             ...positions.map((pos) => pos.count)
         );
 
-        const sizesArray = new Float32Array(particles.current.maxCount).fill(
-            1.0
-        );
+        const sizesArray = new Float32Array(particles.current.maxCount);
+
+        for (let i = 0; i < particles.current.maxCount; i++) {
+            sizesArray[i] = Math.random(); // Generates a random number between 0 and 1.0
+        }
 
         particles.current.positions = positions.map(
             (pos) => new THREE.Float32BufferAttribute(pos.array, 3)
@@ -62,6 +64,11 @@ export default function Particles({ scale }: any) {
             );
             bufferGRef.current.attributes.position.needsUpdate = true;
         }
+        gsap.fromTo(
+            pointsRef.current.rotation,
+            { x: 0, y: 0, z: 0 },
+            { x: 500, y: 350, z: 200, duration: 10000, yoyo: true, repeat: -1 }
+        );
     }, [scene]);
 
     useEffect(() => {
