@@ -74,12 +74,20 @@ export default function Particles({ scale }: any) {
     }, []);
 
     useEffect(() => {
-        gsap.fromTo(
-            uniforms.uMixFactor,
-            { value: 0 },
-            { value: 1, duration: 20 }
-        );
-    }, []);
+        console.log(particles.current);
+        switch (pathname) {
+            case "/":
+                break;
+            case "/AboutUs":
+                break;
+            case "/ContactUs":
+                break;
+            case "/OurServices":
+                break;
+            default:
+                console.log("No matching path.");
+        }
+    }, [pathname]);
 
     return (
         <points scale={scale} position={[0, 0, -2]} ref={pointsRef}>
