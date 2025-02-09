@@ -1,66 +1,97 @@
-// @ts-nocheck
-"use client";
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useLayoutEffect, useMemo } from "react";
 import particlesVertexShader from "../../Shaders/particles/vertex.glsl";
 import particlesFragmentShader from "../../Shaders/particles/fragment.glsl";
 import gsap from "gsap";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useFrame } from "@react-three/fiber";
+
 export default function Particles({ scale }: any) {
-	const [theObject, setTheObject] = useState<THREE.Points | null>(null);
-	const { scene } = useGLTF("/RTFA/Models/models.glb");
-	const pathname = usePathname();
-	const groupRef = useRef(null);
-	const meshRef = useRef(null);
-	const materialRef = useRef(null);
-	const bufferGRef = useRef(null);
-	const pointsRef = useRef(null);
-	const shaderMaterialRef = useRef();
-	const particles: any = useRef({
-		maxCount: 0,
-		positions: [],
-		geometry: null,
-		material: null,
-		morph: (number) => {},
-	});
+    const { scene } = useGLTF("/RTFA/Models/models.glb");
+    const pathname = usePathname();
+    const bufferGRef = useRef(null);
+    const pointsRef = useRef(null);
+    const shaderMaterialRef = useRef();
+    const particles = useRef({
+        maxCount: 0,
+    });
+    const uniforms = useMemo(
+        () => ({
+            uSize: { value: 0.01 },
+            uResolution: {
+                value: new THREE.Vector2(
+                    window.innerWidth * window.devicePixelRatio,
+                    window.innerHeight * window.devicePixelRatio
+                ),
+            },
+            uMixFactor: { value: 0 },
+            uColorA: { value: new THREE.Color("#ffff55") },
+            uColorB: { value: new THREE.Color("#5500ff") },
+        }),
+        []
+    );
 
-	useEffect(() => {
-		const positions = scene.children
-			.filter((child: any) => child.geometry)
-			.map((child: any) => child.geometry.attributes.position);
+    useLayoutEffect(() => {
+        const positions = scene.children
+            .filter((child: any) => child.geometry)
+            .map((child: any) => child.geometry.attributes.position);
+        particles.current.maxCount = Math.max(
+            ...positions.map((pos) => pos.count)
+        );
 
-		console.log(positions);
-	}, []);
+        const sizesArray = new Float32Array(particles.current.maxCount).fill(
+            1.0
+        );
 
-	return (
-		<group scale={scale}>
-			{/*theObject && (
-				<primitive scale={0.13} ref={groupRef} object={theObject} />
-			)*/}
-			<mesh scale={0.08} ref={meshRef}>
-				<points ref={pointsRef}>
-					<bufferGeometry ref={bufferGRef}></bufferGeometry>
-					<shaderMaterial
-						ref={shaderMaterialRef}
-						vertexShader={particlesVertexShader}
-						fragmentShader={particlesFragmentShader}
-						uniforms={{
-							uSize: { value: 0.1 },
-							uResolution: {
-								value: new THREE.Vector2(
-									window.innerWidth * window.devicePixelRatio,
-									window.innerHeight * window.devicePixelRatio
-								),
-							},
-							uMixFactor: { value: 0 },
-							uColorA: { value: new THREE.Color("#ffff55") },
-							uColorB: { value: new THREE.Color("#5500ff") },
-						}}
-						side={THREE.DoubleSide}
-					/>
-				</points>
-			</mesh>
-		</group>
-	);
+        particles.current.positions = positions.map(
+            (pos) => new THREE.Float32BufferAttribute(pos.array, 3)
+        );
+
+        if (positions.length > 0) {
+            bufferGRef.current.setAttribute("position", positions[0]);
+            bufferGRef.current.setAttribute(
+                "aPositionTarget",
+                positions[1] || positions[0]
+            );
+            bufferGRef.current.setAttribute(
+                "aSizes",
+                new THREE.BufferAttribute(sizesArray, 1)
+            );
+            bufferGRef.current.attributes.position.needsUpdate = true;
+        }
+    }, [scene]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            uniforms.uResolution.value.set(
+                window.innerWidth * window.devicePixelRatio,
+                window.innerHeight * window.devicePixelRatio
+            );
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    useEffect(() => {
+        gsap.fromTo(
+            uniforms.uMixFactor,
+            { value: 0 },
+            { value: 1, duration: 20 }
+        );
+    }, []);
+
+    return (
+        <points scale={scale} position={[0, 0, -2]} ref={pointsRef}>
+            <bufferGeometry ref={bufferGRef}></bufferGeometry>
+            <shaderMaterial
+                ref={shaderMaterialRef}
+                vertexShader={particlesVertexShader}
+                fragmentShader={particlesFragmentShader}
+                uniforms={uniforms}
+                frustumCulled={false}
+                side={THREE.DoubleSide}
+            />
+        </points>
+    );
 }
