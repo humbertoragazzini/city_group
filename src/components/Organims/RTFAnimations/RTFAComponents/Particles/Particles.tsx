@@ -15,6 +15,8 @@ export default function Particles({ scale }: any) {
     const shaderMaterialRef = useRef();
     const particles = useRef({
         maxCount: 0,
+        currentIndex: 0,
+        nextIndex: 0,
     });
     const uniforms = useMemo(
         () => ({
@@ -77,12 +79,72 @@ export default function Particles({ scale }: any) {
         console.log(particles.current);
         switch (pathname) {
             case "/":
+                bufferGRef.current.setAttribute(
+                    "position",
+                    particles.current.positions[particles.current.currentIndex]
+                );
+                bufferGRef.current.setAttribute(
+                    "aPositionTarget",
+                    particles.current.positions[0]
+                );
+                particles.current.currentIndex = 0;
+                bufferGRef.current.attributes.position.needsUpdate = true;
+                gsap.fromTo(
+                    uniforms.uMixFactor,
+                    { value: 0 },
+                    { value: 1, duration: 3 }
+                );
                 break;
             case "/AboutUs":
+                bufferGRef.current.setAttribute(
+                    "position",
+                    particles.current.positions[particles.current.currentIndex]
+                );
+                bufferGRef.current.setAttribute(
+                    "aPositionTarget",
+                    particles.current.positions[1]
+                );
+                particles.current.currentIndex = 1;
+                bufferGRef.current.attributes.position.needsUpdate = true;
+                gsap.fromTo(
+                    uniforms.uMixFactor,
+                    { value: 0 },
+                    { value: 1, duration: 3 }
+                );
                 break;
             case "/ContactUs":
+                bufferGRef.current.setAttribute(
+                    "position",
+                    particles.current.positions[particles.current.currentIndex]
+                );
+                bufferGRef.current.setAttribute(
+                    "aPositionTarget",
+                    particles.current.positions[2]
+                );
+                particles.current.currentIndex = 2;
+                bufferGRef.current.attributes.position.needsUpdate = true;
+                gsap.fromTo(
+                    uniforms.uMixFactor,
+                    { value: 0 },
+                    { value: 1, duration: 3 }
+                );
                 break;
             case "/OurServices":
+                bufferGRef.current.setAttribute(
+                    "position",
+                    particles.current.positions[particles.current.currentIndex]
+                );
+                bufferGRef.current.setAttribute(
+                    "aPositionTarget",
+                    particles.current.positions[3]
+                );
+                particles.current.currentIndex = 3;
+                bufferGRef.current.attributes.position.needsUpdate = true;
+                gsap.fromTo(
+                    uniforms.uMixFactor,
+                    { value: 0 },
+                    { value: 1, duration: 3 }
+                );
                 break;
             default:
                 console.log("No matching path.");
