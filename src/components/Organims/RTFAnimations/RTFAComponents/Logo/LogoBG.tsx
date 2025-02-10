@@ -12,9 +12,6 @@ interface iLogoBG {
 
 export default function LogoBG({ className, rotation, width }: iLogoBG) {
   const el = useRef<any>();
-  useEffect(() => {
-    console.log("triggered");
-  }, []);
   return (
     <>
       <div
@@ -26,7 +23,9 @@ export default function LogoBG({ className, rotation, width }: iLogoBG) {
         <ScrollScene track={el}>
           {(props) => {
             return (
-              <Particles scale={props.scale} rotation={rotation}></Particles>
+              <group scale={props.scale}>
+                <Particles scale={0.125} rotation={rotation}></Particles>
+              </group>
             );
           }}
         </ScrollScene>
@@ -39,4 +38,5 @@ export default function LogoBG({ className, rotation, width }: iLogoBG) {
 //          {(props) => {
 //            return <Logo scale={props.scale} rotation={rotation}></Logo>;
 //          }}
+//<Particles scale={props.scale} rotation={rotation}></Particles>
 //        </ScrollScene>

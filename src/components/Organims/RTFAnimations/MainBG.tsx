@@ -7,7 +7,7 @@ import { GradientTexture } from "@react-three/drei";
 import gsap from "gsap";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import * as THREE from "three";
-
+import Particles from "./RTFAComponents/Particles/Particles";
 export default function MainBG() {
   const sphereRef = useRef<THREE.Mesh>(null);
   const lightRef = useRef<THREE.DirectionalLight>(null);
@@ -96,7 +96,6 @@ export default function MainBG() {
           shadow-camera-top={20}
           shadow-camera-bottom={-20}
         />
-
         <mesh position={[0, 0, 0]} ref={sphereRef}>
           <sphereGeometry args={[50, 15, 15]} />
           <meshStandardMaterial side={THREE.DoubleSide}>
