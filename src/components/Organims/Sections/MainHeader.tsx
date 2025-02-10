@@ -1,7 +1,24 @@
 // @ts-nocheck
 import Heading from "@/components/Atoms/Heading/Heading";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 export default function MainHeader() {
+	const pathname = usePathname();
+
+	useEffect(() => {
+		switch (pathname) {
+			case "/":
+				break;
+			case "/AboutUs":
+				break;
+			case "/OurServices":
+				break;
+			case "/ContactUs":
+				break;
+		}
+	}, [pathname]);
+
 	return (
 		<div>
 			<Heading
