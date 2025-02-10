@@ -2,7 +2,7 @@
 import Heading from "@/components/Atoms/Heading/Heading";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 
 export default function MainHeader() {
@@ -11,40 +11,53 @@ export default function MainHeader() {
 	const aboutUsRef = useRef();
 	const ourServicesRef = useRef();
 	const contactUsRef = useRef();
-	useEffect(() => {
-		switch (pathname) {
-			case "/":
-				gsap.to(homeRef.current, { opacity: 1, duration: 1 });
-				gsap.to(aboutUsRef.current, {
-					opacity: 0,
-					duration: 1,
-					onComplete: () => {
-						gsap.set(aboutUsRef.current, { display: "none" });
-					},
-				});
-				gsap.to(ourServicesRef.current, {
-					opacity: 0,
-					duration: 1,
-					onComplete: () => {
-						gsap.set(ourServicesRef.current, { display: "none" });
-					},
-				});
-				gsap.to(contacUsRef.current, {
-					opacity: 0,
-					duration: 1,
-					onComplete: () => {
-						gsap.set(contactUsRef.current, { display: "none" });
-					},
-				});
-				break;
-			case "/AboutUs":
-				break;
-			case "/OurServices":
-				break;
-			case "/ContactUs":
-				break;
-			default:
-				break;
+	useLayoutEffect(() => {
+		if (
+			homeRef.current !== undefined &&
+			aboutUsRef.current !== undefined &&
+			ourServicesRef.current !== undefined &&
+			contactUsRef.current !== undefined
+		) {
+			switch (pathname) {
+				case "/":
+					gsap.to(homeRef.current, {
+						opacity: 1,
+						duration: 1,
+						onStart: () => {
+							gsap.set(homeRef.current, { display: block });
+						},
+					});
+					gsap.to(aboutUsRef.current, {
+						opacity: 0,
+						duration: 1,
+						onComplete: () => {
+							gsap.set(aboutUsRef.current, { display: "none" });
+						},
+					});
+					gsap.to(ourServicesRef.current, {
+						opacity: 0,
+						duration: 1,
+						onComplete: () => {
+							gsap.set(ourServicesRef.current, { display: "none" });
+						},
+					});
+					gsap.to(contactUsRef.current, {
+						opacity: 0,
+						duration: 1,
+						onComplete: () => {
+							gsap.set(contactUsRef.current, { display: "none" });
+						},
+					});
+					break;
+				case "/AboutUs":
+					break;
+				case "/OurServices":
+					break;
+				case "/ContactUs":
+					break;
+				default:
+					break;
+			}
 		}
 	}, [pathname]);
 
