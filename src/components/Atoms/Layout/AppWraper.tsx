@@ -17,8 +17,8 @@ export default function AppWraper({ children }: any) {
           return (
             <>
               <GlassHScreen>
-                <div className="opacity-0 animate-fade-in delay-[5500ms] grid h-fit lg:h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
-                  <div className=" relative col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex text-white flex-col justify-center items-start">
+                <div className="opacity-0 animate-fade-in delay-[5500ms] grid h-fit h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
+                  <div className=" relative  col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex text-white flex-col justify-center items-start">
                     <MainHeader></MainHeader>
                   </div>
                   <div className="relative hidden overflow-hidden col-span-1 xl:block">
