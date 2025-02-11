@@ -8,6 +8,10 @@ import gsap from "gsap";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import Particles from "./RTFAComponents/Particles/Particles";
+
+const vertexShader = ``;
+const fragmentShader = ``;
+
 export default function MainBG() {
   const sphereRef = useRef<THREE.Mesh>(null);
   const lightRef = useRef<THREE.DirectionalLight>(null);
@@ -73,6 +77,7 @@ export default function MainBG() {
   useEffect(() => {
     console.log(context);
   }, []);
+
   return (
     <>
       <GlobalCanvas
@@ -82,6 +87,7 @@ export default function MainBG() {
         camera={{ far: 1500 }}
         className="-z-10"
       >
+        <ambientLight intensity={2}></ambientLight>
         <directionalLight
           position={[0, 28, 20]}
           ref={lightRef}
@@ -97,14 +103,13 @@ export default function MainBG() {
           shadow-camera-bottom={-20}
         />
         <mesh position={[0, 0, 0]} ref={sphereRef}>
-          <sphereGeometry args={[50, 15, 15]} />
-          <meshStandardMaterial side={THREE.DoubleSide}>
-            <GradientTexture
+          <sphereGeometry args={[3, 50, 50]} />
+          <shaderMaterial></shaderMaterial>
+          {/*<GradientTexture
               stops={[0, 1]} // As many stops as you want
               colors={["magenta", "turquoise"]} // Colors need to match the number of stops
               rotation={0.5}
-            />
-          </meshStandardMaterial>
+            />*/}
         </mesh>
       </GlobalCanvas>
     </>
