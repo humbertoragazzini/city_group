@@ -48,12 +48,12 @@ export default function MainBG() {
     sphereRef.current.rotation.x = scroll.scroll.progress * 5 * Math.PI;
 
     // Update light position and color based on scroll progress
-    // lightRef.current.position.y = 28 - 14 * scroll.scroll.progress;
-    //lightRef.current.color.setRGB(
-    // 1 - scroll.scroll.progress, // Normalize to [0, 1]
-    //1 - scroll.scroll.progress,
-    //1 - scroll.scroll.progress
-    //);
+    lightRef.current.position.y = 28 - 14 * scroll.scroll.progress;
+    lightRef.current.color.setRGB(
+      1 - scroll.scroll.progress, // Normalize to [0, 1]
+      1 - scroll.scroll.progress,
+      1 - scroll.scroll.progress
+    );
   };
 
   const ligthOn = () => {
