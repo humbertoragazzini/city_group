@@ -8,6 +8,31 @@ import gsap from "gsap";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import Particles from "./RTFAComponents/Particles/Particles";
+
+const vertexShader = `  
+varying vec2 vUv;
+
+void main(){
+
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+  vUv = uv;
+
+}
+`;
+const fragmentShader = `
+precision mediump float;
+uniform vec3 colorA;
+uniform vec3 colorB;
+varying vec2 vUv;
+void main(){
+
+  vec3 color = mix(colorA,colorB,vUv.y);  
+  gl_FragColor = vec4(color,1.0);
+  
+}
+
+`;
+
 export default function MainBG() {
   const sphereRef = useRef<THREE.Mesh>(null);
   const lightRef = useRef<THREE.DirectionalLight>(null);
@@ -20,7 +45,7 @@ export default function MainBG() {
 
     // Update sphere rotation based on scroll progress
     sphereRef.current.rotation.z = Math.PI / 2;
-    sphereRef.current.rotation.x = scroll.scroll.progress * Math.PI;
+    sphereRef.current.rotation.x = scroll.scroll.progress * 5 * Math.PI;
 
     // Update light position and color based on scroll progress
     lightRef.current.position.y = 28 - 14 * scroll.scroll.progress;
@@ -67,12 +92,13 @@ export default function MainBG() {
 
   // Use `useEffect` to react to scroll progress rather than adding a manual event listener
   useLayoutEffect(() => {
-    // checkProgress();
+    checkProgress();
   }, [scroll.scroll.progress]); // Dependency on scroll progress
 
   useEffect(() => {
     console.log(context);
   }, []);
+
   return (
     <>
       <GlobalCanvas
@@ -82,6 +108,7 @@ export default function MainBG() {
         camera={{ far: 1500 }}
         className="-z-10"
       >
+        <ambientLight intensity={2}></ambientLight>
         <directionalLight
           position={[0, 28, 20]}
           ref={lightRef}
@@ -97,14 +124,21 @@ export default function MainBG() {
           shadow-camera-bottom={-20}
         />
         <mesh position={[0, 0, 0]} ref={sphereRef}>
-          <sphereGeometry args={[50, 15, 15]} />
-          <meshStandardMaterial side={THREE.DoubleSide}>
-            <GradientTexture
+          <sphereGeometry args={[50, 50, 50]} />
+          <shaderMaterial
+            vertexShader={vertexShader}
+            fragmentShader={fragmentShader}
+            uniforms={{
+              colorA: { value: new THREE.Color(1.0, 0.0, 1.0) },
+              colorB: { value: new THREE.Color(0.25, 0.88, 0.82) },
+            }}
+            side={THREE.DoubleSide}
+          ></shaderMaterial>
+          {/*<GradientTexture
               stops={[0, 1]} // As many stops as you want
               colors={["magenta", "turquoise"]} // Colors need to match the number of stops
               rotation={0.5}
-            />
-          </meshStandardMaterial>
+            />*/}
         </mesh>
       </GlobalCanvas>
     </>

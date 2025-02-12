@@ -97,7 +97,7 @@ export default function MainHeader() {
 					gsap.to(ourServicesRef.current, {
 						opacity: 1,
 						duration: 2,
-						onComplete: () => {
+						onStart: () => {
 							gsap.set(ourServicesRef.current, { display: "block" });
 						},
 					});
@@ -146,8 +146,8 @@ export default function MainHeader() {
 	}, [pathname]);
 
 	return (
-		<div className="relative w-full h-full">
-			<div className="absolute opacity-0" ref={homeRef}>
+		<div className="relative w-full h-full h-fit">
+			<div className="absolute opacity-0 h-fit" ref={homeRef}>
 				<p className="text-3xl">Home</p>
 				<Heading
 					className="mb-4"
@@ -231,7 +231,7 @@ export default function MainHeader() {
 					text={[
 						{
 							language: "EN",
-							content: "Elevating Excellence Across Industries",
+							content: "About our story",
 						},
 						{
 							language: "ES",
@@ -306,7 +306,7 @@ export default function MainHeader() {
 					text={[
 						{
 							language: "EN",
-							content: "Elevating Excellence Across Industries",
+							content: "All our services",
 						},
 						{
 							language: "ES",
@@ -381,7 +381,7 @@ export default function MainHeader() {
 					text={[
 						{
 							language: "EN",
-							content: "Elevating Excellence Across Industries",
+							content: "We are here",
 						},
 						{
 							language: "ES",
