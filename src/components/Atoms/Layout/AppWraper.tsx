@@ -8,6 +8,8 @@ import { AppProvider } from "@/context/AppContext";
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import Link from "next/link";
 import MainHeader from "@/components/Organims/Sections/MainHeader";
+import SphereBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/SphereBG";
+
 export default function AppWraper({ children }: any) {
   return (
     <AppProvider>
