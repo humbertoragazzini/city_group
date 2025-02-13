@@ -1,14 +1,15 @@
 "use client";
+
+import * as THREE from "three";
 import {
   ScrollScene,
   UseCanvas,
   useScrollbar,
 } from "@14islands/r3f-scroll-rig";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import Logo from "../../Mesh/Logo/Logo";
 import { iAxis } from "../../interfaces/position";
 import Particles from "../Particles/Particles";
-import { useScrollbar } from "@14islands/r3f-scroll-rig";
 interface iLogoBG {
   className: string;
   rotation: iAxis;
@@ -80,6 +81,7 @@ void main(){
 
 export default function SphereBG({ className }: iLogoBG) {
   const el = useRef<any>();
+  const sphereRef = useRef<any>(null);
   const scroll = useScrollbar();
   const checkProgress = () => {
     if (!sphereRef.current || !lightRef.current) return;
@@ -103,7 +105,7 @@ export default function SphereBG({ className }: iLogoBG) {
           {(props) => {
             return (
               <group scale={props.scale}>
-                <mesh position={[0, 0, 0]} ref={sphereRef}>
+                <mesh scale={0.2} position={[0, 0, 0]} ref={sphereRef}>
                   <sphereGeometry args={[4, 2, 2]} />
                   <shaderMaterial
                     vertexShader={vertexShader}
