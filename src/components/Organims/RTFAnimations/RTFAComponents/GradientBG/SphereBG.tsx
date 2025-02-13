@@ -1,20 +1,8 @@
 "use client";
 
 import * as THREE from "three";
-import {
-  ScrollScene,
-  UseCanvas,
-  useScrollbar,
-} from "@14islands/r3f-scroll-rig";
 import { useEffect, useLayoutEffect, useRef } from "react";
-import Logo from "../../Mesh/Logo/Logo";
 import { iAxis } from "../../interfaces/position";
-import Particles from "../Particles/Particles";
-interface iLogoBG {
-  className: string;
-  rotation: iAxis;
-  width: number;
-}
 const vertexShader = `  
 varying vec2 vUv;
 
@@ -79,61 +67,31 @@ void main(){
 
 `;
 
-export default function SphereBG({ className }: iLogoBG) {
-  const el = useRef<any>();
+export default function SphereBG() {
   const sphereRef = useRef<any>(null);
-  const scroll = useScrollbar();
-  const checkProgress = () => {
-    if (!sphereRef.current || !lightRef.current) return;
 
-    // Update sphere rotation based on scroll progress
-    sphereRef.current.rotation.z = (scroll.scroll.progress * Math.PI) / 2;
-    sphereRef.current.rotation.x = scroll.scroll.progress * 5 * Math.PI;
-  };
-
-  // Use `useEffect` to react to scroll progress rather than adding a manual event listener
   useLayoutEffect(() => {
-    // checkProgress();
-    console.log(scroll);
-  }, [scroll.scroll.progress]); // Dependency on scroll progress
+    document.addEventListener("scroll", (scroll) => {
+      if (sphereRef.current !== null) {
+        sphereRef.current.rotation.x = window.scrollY / 2500;
+        sphereRef.current.rotation.y = window.scrollY / 2000;
+        sphereRef.current.rotation.z = window.scrollY / 1500;
+      }
+    });
+  }, []);
 
   return (
-    <>
-      <div ref={el} className={"absolute aspect-[1] " + className}></div>
-      <UseCanvas>
-        <ScrollScene track={el}>
-          {(props) => {
-            return (
-              <group scale={props.scale}>
-                <mesh scale={0.2} position={[0, 0, 0]} ref={sphereRef}>
-                  <sphereGeometry args={[4, 2, 2]} />
-                  <shaderMaterial
-                    vertexShader={vertexShader}
-                    fragmentShader={fragmentShader}
-                    uniforms={{
-                      colorA: { value: new THREE.Color(1.0, 0.0, 1.0) },
-                      colorB: { value: new THREE.Color(0.25, 0.88, 0.82) },
-                    }}
-                    side={THREE.DoubleSide}
-                  ></shaderMaterial>
-                  {/*<GradientTexture
-              stops={[0, 1]} // As many stops as you want
-              colors={["magenta", "turquoise"]} // Colors need to match the number of stops
-              rotation={0.5}
-            />*/}
-                </mesh>{" "}
-              </group>
-            );
-          }}
-        </ScrollScene>
-      </UseCanvas>
-    </>
+    <mesh scale={10} position={[0, 0, 0]} ref={sphereRef}>
+      <sphereGeometry args={[4, 500, 500]} />
+      <shaderMaterial
+        vertexShader={vertexShader}
+        fragmentShader={fragmentShader}
+        uniforms={{
+          colorA: { value: new THREE.Color(1.0, 0.0, 0.5) },
+          colorB: { value: new THREE.Color(0.25, 0.38, 0.82) },
+        }}
+        side={THREE.DoubleSide}
+      ></shaderMaterial>
+    </mesh>
   );
 }
-
-//<ScrollScene track={el}>
-//          {(props) => {
-//            return <Logo scale={props.scale} rotation={rotation}></Logo>;
-//          }}
-//<Particles scale={props.scale} rotation={rotation}></Particles>
-//        </ScrollScene>

@@ -2,6 +2,7 @@
 
 "use client";
 import { useAppContext } from "@/context/AppContext";
+import SphereBG from "./RTFAComponents/GradientBG/SphereBG";
 import { GlobalCanvas, useScrollbar } from "@14islands/r3f-scroll-rig";
 import { GradientTexture } from "@react-three/drei";
 import gsap from "gsap";
@@ -44,10 +45,7 @@ export default function MainBG() {
           shadow-camera-top={20}
           shadow-camera-bottom={-20}
         />
-        <mesh ref={sphereRef}>
-          <planeGeometry></planeGeometry>
-          <meshStandardMaterial color={"red"}></meshStandardMaterial>
-        </mesh>
+        <SphereBG></SphereBG>
       </GlobalCanvas>
     </>
   );
