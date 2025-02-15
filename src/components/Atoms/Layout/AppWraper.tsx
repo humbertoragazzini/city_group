@@ -9,8 +9,18 @@ import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import Link from "next/link";
 import MainHeader from "@/components/Organims/Sections/MainHeader";
 import SphereBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/SphereBG";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function AppWraper({ children }: any) {
+  const pathname = usePathname();
+  const scroll = useScrollbar();
+
+  useEffect(() => {
+    console.log(scroll);
+    scroll.scrollTo("top");
+  }, [pathname]);
+
   return (
     <AppProvider>
       <MainBG></MainBG>
