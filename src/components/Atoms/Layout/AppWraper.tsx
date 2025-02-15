@@ -28,6 +28,13 @@ export default function AppWraper({ children }: any) {
         {() => {
           return (
             <>
+              <LogoBG
+                className={
+                  "block xl:hidden w-[calc(100%-150px)] ml-[75px] top-0 left-0 fixed"
+                }
+                width={undefined}
+                rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
+              ></LogoBG>
               <GlassHScreen>
                 <div className="opacity-0 animate-fade-in delay-[5500ms] grid h-fit h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
                   <div className=" relative  col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex text-white flex-col justify-center items-start">
