@@ -2,7 +2,7 @@ import GlassMorphism from "@/components/Organims/RTFAnimations/RTFAComponents/Gl
 
 export default function GlassHScreen({ children }: any) {
   return (
-    <div className="relative backdrop-blur-lg bg-[rgba(10,10,10,0.3)] md:bg-transparent md:backdrop-blur-none">
+    <div className="relative backdrop-blur-sm bg-[rgba(10,10,10,0.3)] xl:bg-transparent xl:backdrop-blur-none">
       <GlassMorphism></GlassMorphism>
       {children}
     </div>
