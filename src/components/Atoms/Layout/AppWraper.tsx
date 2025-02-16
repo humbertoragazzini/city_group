@@ -26,20 +26,11 @@ export default function AppWraper({ children }: any) {
     <AppProvider>
       <ONavBar></ONavBar>
       <MainBG></MainBG>
-      <SmoothScrollbar enabled={false}>
+      <SmoothScrollbar enabled={true}>
         {() => {
           return (
             <>
               <GlassHScreen>
-                <div className="absolute w-full min-h-screen overflow-hidden">
-                  <LogoBG
-                    className={
-                      "absolute block xl:hidden h-[calc(100%-150px)] top-0 left-0"
-                    }
-                    width={undefined}
-                    rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
-                  ></LogoBG>
-                </div>
                 <div className="opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
                   <div className=" relative min-h-fit col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex text-white flex-col justify-center items-start">
                     <MainHeader></MainHeader>
