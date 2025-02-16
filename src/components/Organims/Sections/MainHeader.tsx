@@ -27,36 +27,12 @@ export default function MainHeader() {
 							gsap.set(homeRef.current, { display: "block" });
 						},
 					});
-					gsap.to(aboutUsRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(aboutUsRef.current, { display: "none" });
-						},
-					});
-					gsap.to(ourServicesRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(ourServicesRef.current, { display: "none" });
-						},
-					});
-					gsap.to(contactUsRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(contactUsRef.current, { display: "none" });
-						},
-					});
+					gsap.set(aboutUsRef.current, { display: "none" });
+					gsap.set(ourServicesRef.current, { display: "none" });
+					gsap.set(contactUsRef.current, { display: "none" });
 					break;
 				case "/AboutUs":
-					gsap.to(homeRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(homeRef.current, { display: "none" });
-						},
-					});
+					gsap.set(homeRef.current, { display: "none" });
 					gsap.to(aboutUsRef.current, {
 						opacity: 1,
 						duration: 2,
@@ -64,36 +40,13 @@ export default function MainHeader() {
 							gsap.set(aboutUsRef.current, { display: "block" });
 						},
 					});
-					gsap.to(ourServicesRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(ourServicesRef.current, { display: "none" });
-						},
-					});
-					gsap.to(contactUsRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(contactUsRef.current, { display: "none" });
-						},
-					});
+					gsap.set(ourServicesRef.current, { display: "none" });
+					gsap.set(contactUsRef.current, { display: "none" });
 					break;
 				case "/OurServices":
-					gsap.to(homeRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(homeRef.current, { display: "none" });
-						},
-					});
-					gsap.to(aboutUsRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(aboutUsRef.current, { display: "none" });
-						},
-					});
+					gsap.set(homeRef.current, { display: "none" });
+					gsap.set(aboutUsRef.current, { display: "none" });
+					gsap.set(contactUsRef.current, { display: "none" });
 					gsap.to(ourServicesRef.current, {
 						opacity: 1,
 						duration: 2,
@@ -101,36 +54,12 @@ export default function MainHeader() {
 							gsap.set(ourServicesRef.current, { display: "block" });
 						},
 					});
-					gsap.to(contactUsRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(contactUsRef.current, { display: "none" });
-						},
-					});
+
 					break;
 				case "/ContactUs":
-					gsap.to(homeRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(homeRef.current, { display: "none" });
-						},
-					});
-					gsap.to(aboutUsRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(aboutUsRef.current, { display: "none" });
-						},
-					});
-					gsap.to(ourServicesRef.current, {
-						opacity: 0,
-						duration: 2,
-						onComplete: () => {
-							gsap.set(ourServicesRef.current, { display: "none" });
-						},
-					});
+					gsap.set(homeRef.current, { display: "none" });
+					gsap.set(aboutUsRef.current, { display: "none" });
+					gsap.set(ourServicesRef.current, { display: "none" });
 					gsap.to(contactUsRef.current, {
 						opacity: 1,
 						duration: 2,
@@ -147,7 +76,7 @@ export default function MainHeader() {
 
 	return (
 		<div className="relative w-full h-full h-fit">
-			<div className="absolute opacity-0 h-fit" ref={homeRef}>
+			<div className="relative opacity-0 h-fit" ref={homeRef}>
 				<p className="text-3xl">Home</p>
 				<Heading
 					className="mb-4"
@@ -224,7 +153,7 @@ export default function MainHeader() {
 					]}
 				></Paragraph>
 			</div>
-			<div className="absolute opacity-0" ref={aboutUsRef}>
+			<div className="relative opacity-0" ref={aboutUsRef}>
 				<p className="text-3xl">AboutUs</p>
 				<Heading
 					className="mb-4"
@@ -299,7 +228,7 @@ export default function MainHeader() {
 					]}
 				></Paragraph>
 			</div>
-			<div className="absolute opacity-0" ref={ourServicesRef}>
+			<div className="relative opacity-0" ref={ourServicesRef}>
 				<p className="text-2xl">OurServices</p>
 				<Heading
 					className="mb-4"
@@ -374,7 +303,7 @@ export default function MainHeader() {
 					]}
 				></Paragraph>
 			</div>
-			<div className="absolute opacity-0" ref={contactUsRef}>
+			<div className="relative opacity-0" ref={contactUsRef}>
 				<p className="text-2xl">ContactUs</p>
 				<Heading
 					className="mb-4"

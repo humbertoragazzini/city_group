@@ -21,7 +21,7 @@ export default function Particles({ scale }: any) {
     });
     const uniforms = useMemo(
         () => ({
-            uSize: { value: 0.1 },
+            uSize: { value: 0.025 },
             uResolution: {
                 value: new THREE.Vector2(
                     window.innerWidth * window.devicePixelRatio,
