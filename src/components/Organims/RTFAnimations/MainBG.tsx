@@ -16,11 +16,6 @@ export default function MainBG() {
   const [ligthIntensity, setLightIntensity] = useState(0);
   const context = useAppContext();
   const scroll = useScrollbar();
-  useEffect(() => {
-    const event = document.addEventListener("scroll", () => {
-      console.log(sphereRef.current);
-    });
-  }, []);
   return (
     <>
       <GlobalCanvas

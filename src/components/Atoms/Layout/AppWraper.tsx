@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import GlassHScreen from "@/components/Atoms/Containers/GlassHScreen";
 import { SmoothScrollbar, useScrollbar } from "@14islands/r3f-scroll-rig";
@@ -11,33 +12,36 @@ import MainHeader from "@/components/Organims/Sections/MainHeader";
 import SphereBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/SphereBG";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-
+import ONavBar from "@/components/Organims/NavBar/ONavBar";
 export default function AppWraper({ children }: any) {
   const pathname = usePathname();
   const scroll = useScrollbar();
 
   useEffect(() => {
+    window.scrollTo(0, 0); // Instantly scroll to top
     console.log(scroll);
-    scroll.scrollTo("top");
   }, [pathname]);
 
   return (
     <AppProvider>
+      <ONavBar></ONavBar>
       <MainBG></MainBG>
-      <SmoothScrollbar enabled={true}>
+      <SmoothScrollbar enabled={false}>
         {() => {
           return (
             <>
-              <LogoBG
-                className={
-                  "block xl:hidden w-[calc(100%-150px)] ml-[75px] top-0 left-0 fixed"
-                }
-                width={undefined}
-                rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
-              ></LogoBG>
               <GlassHScreen>
-                <div className="opacity-0 animate-fade-in delay-[5500ms] grid h-fit h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
-                  <div className=" relative  col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex text-white flex-col justify-center items-start">
+                <div className="absolute w-full min-h-screen overflow-hidden">
+                  <LogoBG
+                    className={
+                      "absolute block xl:hidden h-[calc(100%-150px)] top-0 left-0"
+                    }
+                    width={undefined}
+                    rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
+                  ></LogoBG>
+                </div>
+                <div className="opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
+                  <div className=" relative min-h-fit col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex text-white flex-col justify-center items-start">
                     <MainHeader></MainHeader>
                   </div>
                   <div className="relative hidden overflow-hidden col-span-1 xl:block">

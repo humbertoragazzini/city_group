@@ -60,7 +60,6 @@ export default function RootLayout({
       </Head>
       <body className={inter.className + " main_body"}>
         <AppWraper>
-          <ONavBar></ONavBar>
           {/* <RightNavBar></RightNavBar> */}
           {children}
         </AppWraper>

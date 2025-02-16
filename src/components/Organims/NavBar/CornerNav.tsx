@@ -8,10 +8,10 @@ import Language from "@/components/molecules/NavBar/Language";
 import Link from "next/link";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { TextContent } from "@/types/types";
-
+import { useScrollbar } from "@14islands/r3f-scroll-rig";
 export default function Nav() {
   const [active, setActive] = useState(false);
-
+  const scroll = useScrollbar();
   return (
     <>
       <HamburgerButton active={active} setActive={setActive} />
@@ -34,7 +34,7 @@ const LinksOverlay = ({ active, setActive }) => {
 
 const LinksContainer = ({ active, setActive }) => {
   return (
-    <motion.div className="space-y-4 p-12 pl-4 md:pl-20">
+    <motion.div className="p-12 pl-4 space-y-4 md:pl-20">
       {LINKS.map((l, idx) => {
         return (
           <NavLink
@@ -44,7 +44,12 @@ const LinksContainer = ({ active, setActive }) => {
             active={active}
             setActive={setActive}
           >
-            <Link href={l.href}>
+            <Link
+              href={l.href}
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
               <Paragraph
                 text={l.title as TextContent[]}
                 type="body"
@@ -106,7 +111,7 @@ const Logo = () => {
         transition: { delay: 0.5, duration: 0.5, ease: "easeInOut" },
       }}
       exit={{ opacity: 0, y: -12 }}
-      className="grid h-12 w-12 place-content-center rounded-br-xl rounded-tl-xl bg-burgundy transition-colors hover:bg-plum p-2 overflow-hidden"
+      className="w-12 h-12 p-2 overflow-hidden grid place-content-center rounded-br-xl rounded-tl-xl bg-burgundy transition-colors hover:bg-plum"
     >
       {/* <Language></Language> */}
       <Link href={"/"} className={"w-full h-full"}>
@@ -233,7 +238,7 @@ const HamburgerButton = ({ active, setActive }: any) => {
 const FooterCTAs = () => {
   return (
     <>
-      <div className="absolute bottom-6 left-6 flex gap-4 md:flex-col">
+      <div className="absolute flex bottom-6 left-6 gap-4 md:flex-col">
         {SOCIAL_CTAS.map((l, idx) => {
           return (
             <>
