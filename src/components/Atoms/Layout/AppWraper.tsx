@@ -25,7 +25,7 @@ export default function AppWraper({ children }: any) {
   return (
     <AppProvider>
       <MainBG></MainBG>
-      <SmoothScrollbar enabled={true}>
+      <SmoothScrollbar enabled={false}>
         {() => {
           return (
             <>
