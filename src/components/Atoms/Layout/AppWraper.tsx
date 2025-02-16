@@ -12,7 +12,7 @@ import MainHeader from "@/components/Organims/Sections/MainHeader";
 import SphereBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/SphereBG";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-
+import ONavBar from "@/components/Organims/NavBar/ONavBar";
 export default function AppWraper({ children }: any) {
   const pathname = usePathname();
   const scroll = useScrollbar();
@@ -24,6 +24,7 @@ export default function AppWraper({ children }: any) {
 
   return (
     <AppProvider>
+      <ONavBar></ONavBar>
       <MainBG></MainBG>
       <SmoothScrollbar enabled={false}>
         {() => {

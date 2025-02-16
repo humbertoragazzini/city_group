@@ -8,10 +8,10 @@ import Language from "@/components/molecules/NavBar/Language";
 import Link from "next/link";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { TextContent } from "@/types/types";
-
+import { useScrollbar } from "@14islands/r3f-scroll-rig";
 export default function Nav() {
   const [active, setActive] = useState(false);
-
+  const scroll = useScrollbar();
   return (
     <>
       <HamburgerButton active={active} setActive={setActive} />
@@ -44,7 +44,12 @@ const LinksContainer = ({ active, setActive }) => {
             active={active}
             setActive={setActive}
           >
-            <Link href={l.href}>
+            <Link
+              href={l.href}
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
               <Paragraph
                 text={l.title as TextContent[]}
                 type="body"

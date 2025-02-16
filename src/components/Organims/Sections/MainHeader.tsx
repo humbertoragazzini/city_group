@@ -27,12 +27,12 @@ export default function MainHeader() {
 							gsap.set(homeRef.current, { display: "block" });
 						},
 					});
-					gsap.set(aboutUsRef.current, { display: "none" });
-					gsap.set(ourServicesRef.current, { display: "none" });
-					gsap.set(contactUsRef.current, { display: "none" });
+					gsap.set(aboutUsRef.current, { display: "none", opacity: 0 });
+					gsap.set(ourServicesRef.current, { display: "none", opacity: 0 });
+					gsap.set(contactUsRef.current, { display: "none", opacity: 0 });
 					break;
 				case "/AboutUs":
-					gsap.set(homeRef.current, { display: "none" });
+					gsap.set(homeRef.current, { display: "none", opacity: 0 });
 					gsap.to(aboutUsRef.current, {
 						opacity: 1,
 						duration: 2,
@@ -40,13 +40,13 @@ export default function MainHeader() {
 							gsap.set(aboutUsRef.current, { display: "block" });
 						},
 					});
-					gsap.set(ourServicesRef.current, { display: "none" });
-					gsap.set(contactUsRef.current, { display: "none" });
+					gsap.set(ourServicesRef.current, { display: "none", opacity: 0 });
+					gsap.set(contactUsRef.current, { display: "none", opacity: 0 });
 					break;
 				case "/OurServices":
-					gsap.set(homeRef.current, { display: "none" });
-					gsap.set(aboutUsRef.current, { display: "none" });
-					gsap.set(contactUsRef.current, { display: "none" });
+					gsap.set(homeRef.current, { display: "none", opacity: 0 });
+					gsap.set(aboutUsRef.current, { display: "none", opacity: 0 });
+					gsap.set(contactUsRef.current, { display: "none", opacity: 0 });
 					gsap.to(ourServicesRef.current, {
 						opacity: 1,
 						duration: 2,
@@ -57,9 +57,9 @@ export default function MainHeader() {
 
 					break;
 				case "/ContactUs":
-					gsap.set(homeRef.current, { display: "none" });
-					gsap.set(aboutUsRef.current, { display: "none" });
-					gsap.set(ourServicesRef.current, { display: "none" });
+					gsap.set(homeRef.current, { display: "none", opacity: 0 });
+					gsap.set(aboutUsRef.current, { display: "none", opacity: 0 });
+					gsap.set(ourServicesRef.current, { display: "none", opacity: 0 });
 					gsap.to(contactUsRef.current, {
 						opacity: 1,
 						duration: 2,
