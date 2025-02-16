@@ -21,7 +21,7 @@ export default function Particles({ scale }: any) {
     });
     const uniforms = useMemo(
         () => ({
-            uSize: { value: 0.1 },
+            uSize: { value: 0.25 },
             uResolution: {
                 value: new THREE.Vector2(
                     window.innerWidth * window.devicePixelRatio,
@@ -169,6 +169,9 @@ export default function Particles({ scale }: any) {
                 uniforms={uniforms}
                 frustumCulled={false}
                 side={THREE.DoubleSide}
+                transparent={true}
+                depthTest={false}
+                blending={THREE.AdditiveBlending}
             />
         </points>
     );
