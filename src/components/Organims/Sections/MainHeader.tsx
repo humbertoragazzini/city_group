@@ -75,17 +75,40 @@ export default function MainHeader() {
   }, [pathname]);
 
   return (
-    <div className="relative w-full h-full h-fit">
+    <>
       <div
-        className="relative flex flex-col items-center justify-center opacity-0 h-fit"
+        className="relative flex flex-col items-center justify-center opacity-0"
         ref={homeRef}
       >
+        <Heading
+          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-the-red px-7 w-fit"
+          text={[
+            {
+              language: "EN",
+              content: "Imports, Construction, and Retail",
+            },
+            {
+              language: "ES",
+              content: "Elevando la Excelencia en Todas las Industrias",
+            },
+            {
+              language: "CH",
+              content: "提升各行业的卓越水平",
+            },
+            {
+              language: "IT",
+              content: "Elevare l'Eccellenza in Tutti i Settori",
+            },
+          ]}
+          level={1}
+        ></Heading>
+
         <Heading
           className="mb-4 text-center"
           text={[
             {
               language: "EN",
-              content: "Elevating Excellence Across Industries",
+              content: "Welcome to Primalport",
             },
             {
               language: "ES",
@@ -354,6 +377,6 @@ export default function MainHeader() {
           ]}
         ></Paragraph>
       </div>
-    </div>
+    </>
   );
 }

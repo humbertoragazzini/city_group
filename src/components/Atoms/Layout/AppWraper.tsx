@@ -31,10 +31,12 @@ export default function AppWraper({ children }: any) {
           return (
             <>
               <div className="opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-2 max-w-[1920px] mx-auto p-[100px]">
-                <div className="relative min-h-fit col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex text-white flex-col justify-center items-start border-4 border-white rounded-xl">
+                <div className="relative flex flex-col items-center justify-center col-span-1 text-white border-4 border-white xl:col-span-2 rounded-xl">
                   <MainHeader></MainHeader>
                   <LogoBG
-                    className={"hidden xl:block min-w-[calc(500px)]"}
+                    className={
+                      "hidden xl:block left-[250px] min-w-[calc(100%-500px)]"
+                    }
                     width={null}
                     rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
                   ></LogoBG>
