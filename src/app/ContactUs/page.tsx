@@ -38,7 +38,7 @@ export default function AboutUs() {
       <div className="w-full min-h-screen py-24 bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-center items-center overflow-hidden relative">
         <div className="absolute z-10 h-full min-w-full min-h-screen"></div>
         <div className="grid grid-cols-2 w-full xl:w-[75%] xl:max-w-[1920px] p-1 md:p-2 lg:p-4">
-          <div className="col-span-2 xl:col-span-1">
+          <div className="col-span-2 xl:col-span-2">
             <div className="flex items-center justify-center w-full h-full">
               <Heading
                 className={"relative z-20 text-2xl text-center md:text-4xl"}
@@ -64,8 +64,8 @@ export default function AboutUs() {
               ></Heading>
             </div>
           </div>
-          <div className="relative z-20 col-span-2 mt-12 xl:col-span-1">
-            <div className="items-start justify-center w-full">
+          <div className="relative z-20 col-span-2 mt-12 xl:col-span-2">
+            <div className="items-center justify-center w-full">
               <div className="flex items-center justify-center m-2 lg:m-4 xl:m-12">
                 <div className="w-full p-8 shadow-xl lg:max-w-lg backdrop-blur-lg bg-white/10 rounded-2xl">
                   <form className="space-y-4">
