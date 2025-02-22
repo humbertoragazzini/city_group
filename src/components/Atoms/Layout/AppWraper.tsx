@@ -30,8 +30,8 @@ export default function AppWraper({ children }: any) {
         {() => {
           return (
             <>
-              <div className="opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-2 max-w-[1920px] mx-auto p-[100px]">
-                <div className="relative flex flex-col items-center justify-center col-span-1 text-white border-4 border-white xl:col-span-2 rounded-xl">
+              <div className="opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-2 max-w-[1920px] mx-auto p-[45px]">
+                <div className="relative flex flex-col items-center justify-center col-span-1 text-white xl:col-span-2 ">
                   <MainHeader></MainHeader>
                   <LogoBG
                     className={
