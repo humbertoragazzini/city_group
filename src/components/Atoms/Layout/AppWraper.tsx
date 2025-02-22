@@ -30,11 +30,9 @@ export default function AppWraper({ children }: any) {
         {() => {
           return (
             <>
-              <div className="opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
-                <div className=" relative min-h-fit col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex text-white flex-col justify-center items-start">
+              <div className="opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-2 max-w-[1920px] mx-auto p-12 ">
+                <div className="relative min-h-fit col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex text-white flex-col justify-center items-start border-4 border-white rounded-xl">
                   <MainHeader></MainHeader>
-                </div>
-                <div className="relative hidden overflow-hidden col-span-1 xl:block">
                   <LogoBG
                     className={
                       "left-[-30%] lg:top-[-20%] 3xl:top-[-20] 4xl:top-[-20%] 5xl:top-[-20%] hidden xl:block"
@@ -223,7 +221,7 @@ export default function AppWraper({ children }: any) {
                       </svg>
                     </div>
                   </div>
-                  <div className="relative pb-10 col-span-1 lg:col-span-3">
+                  <div className="relative col-span-1 pb-10 lg:col-span-3">
                     <hr></hr>
                   </div>
                   <div className="relative col-span-1 lg:col-span-3">
