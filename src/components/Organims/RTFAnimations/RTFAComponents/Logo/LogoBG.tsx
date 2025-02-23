@@ -33,10 +33,3 @@ export default function LogoBG({ className, rotation, width }: iLogoBG) {
     </>
   );
 }
-
-//<ScrollScene track={el}>
-//          {(props) => {
-//            return <Logo scale={props.scale} rotation={rotation}></Logo>;
-//          }}
-//<Particles scale={props.scale} rotation={rotation}></Particles>
-//        </ScrollScene>
