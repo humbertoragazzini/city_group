@@ -1,23 +1,15 @@
 "use client";
-import { SmoothScrollbar } from "@14islands/r3f-scroll-rig";
 import { useAppContext } from "@/context/AppContext";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-
-import { RTFAText } from "@/components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText";
-import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D";
-import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import Link from "next/link";
 import Accordion from "@/components/molecules/Accordions/Accordion";
-import GradientBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG";
-import GlassHScreen from "@/components/Atoms/Containers/GlassHScreen";
 import Heading from "@/components/Atoms/Heading/Heading";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 
 export default function AboutUs() {
   const context = useAppContext();
-  const aboutRef = useRef<any>(null);
 
   useEffect(() => {
     if (context.state.isMenuOpen) {
@@ -35,9 +27,9 @@ export default function AboutUs() {
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       {/* Section with us and the description */}
-      <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
+      <div className="w-full min-h-screen pt-10 bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
         <div className="grid grid-cols-2 w-full xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
-          <div className="mb-10 col-span-2 xl:col-span-1">
+          <div className="col-span-2 mb-10 xl:col-span-1">
             <div className="flex items-end justify-center w-full">
               <Heading
                 className={"text-2xl mb-4 text-center md:text-4xl"}

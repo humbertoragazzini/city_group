@@ -9,7 +9,6 @@ import { AppProvider } from "@/context/AppContext";
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import Link from "next/link";
 import MainHeader from "@/components/Organims/Sections/MainHeader";
-import SphereBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/SphereBG";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import ONavBar from "@/components/Organims/NavBar/ONavBar";
@@ -26,35 +25,22 @@ export default function AppWraper({ children }: any) {
     <AppProvider>
       <ONavBar></ONavBar>
       <MainBG></MainBG>
-      <SmoothScrollbar enabled={false}>
+      <SmoothScrollbar enabled={true}>
         {() => {
           return (
             <>
-              <GlassHScreen>
-                <div className="absolute w-full min-h-screen overflow-hidden">
+              <div className="opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-2 max-w-[1920px] mx-auto p-[45px]">
+                <div className="relative flex flex-col items-center justify-center col-span-1 text-white xl:col-span-2 ">
+                  <MainHeader></MainHeader>
                   <LogoBG
                     className={
-                      "absolute block xl:hidden h-[calc(100%-150px)] top-0 left-0"
+                      "hidden xl:block left-[250px] min-w-[calc(100%-500px)]"
                     }
-                    width={undefined}
+                    width={null}
                     rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
                   ></LogoBG>
                 </div>
-                <div className="opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-3 max-w-[1920px] mx-auto pb-12 ">
-                  <div className=" relative min-h-fit col-span-1 xl:col-span-2 pt-[150px] pb-[100px] px-4 md:px-16 flex text-white flex-col justify-center items-start">
-                    <MainHeader></MainHeader>
-                  </div>
-                  <div className="relative hidden overflow-hidden col-span-1 xl:block">
-                    <LogoBG
-                      className={
-                        "left-[-30%] lg:top-[-20%] 3xl:top-[-20] 4xl:top-[-20%] 5xl:top-[-20%] hidden xl:block"
-                      }
-                      width={1300}
-                      rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
-                    ></LogoBG>
-                  </div>
-                </div>
-              </GlassHScreen>
+              </div>
               {children}
               {/*footer*/}
               <div className="relative z-10 w-full text-white bg-black">
@@ -234,7 +220,7 @@ export default function AppWraper({ children }: any) {
                       </svg>
                     </div>
                   </div>
-                  <div className="relative pb-10 col-span-1 lg:col-span-3">
+                  <div className="relative col-span-1 pb-10 lg:col-span-3">
                     <hr></hr>
                   </div>
                   <div className="relative col-span-1 lg:col-span-3">
