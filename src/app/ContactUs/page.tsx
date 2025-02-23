@@ -10,7 +10,6 @@ import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo
 import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import Link from "next/link";
 import Accordion from "@/components/molecules/Accordions/Accordion";
-import GradientBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG";
 import GlassHScreen from "@/components/Atoms/Containers/GlassHScreen";
 import Heading from "@/components/Atoms/Heading/Heading";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";

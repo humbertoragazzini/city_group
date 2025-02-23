@@ -2,7 +2,6 @@
 "use client";
 import { SmoothScrollbar, useScrollbar } from "@14islands/r3f-scroll-rig";
 import LogoBG from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG";
-import GradientBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG";
 import { useAppContext } from "@/context/AppContext";
 import GlassHScreen from "@/components/Atoms/Containers/GlassHScreen";
 import Heading from "@/components/Atoms/Heading/Heading";
@@ -15,7 +14,6 @@ import { useTrackerMotionValue } from "@/CustomHooks/useTrackerMotionValue";
 import GlassMorphism from "@/components/Organims/RTFAnimations/RTFAComponents/GlassMorphism/GlassMorphism";
 import Parallax from "@/components/Organims/FramerAnimations/Parallax";
 import gsap from "gsap";
-import AnimationController from "@/components/Organims/FramerAnimations/AnimationController";
 
 import React from "react";
 import { useScroll } from "framer-motion";
@@ -486,7 +484,7 @@ export default function OurServices() {
               </svg>
             </div>
           </div>
-          <div className="relative pb-10 col-span-1 lg:col-span-3">
+          <div className="relative col-span-1 pb-10 lg:col-span-3">
             <hr></hr>
           </div>
           <div className="relative col-span-1 lg:col-span-3">

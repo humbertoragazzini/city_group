@@ -2,7 +2,6 @@
 "use client";
 import { SmoothScrollbar, useScrollbar } from "@14islands/r3f-scroll-rig";
 import LogoBG from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/LogoBG";
-import GradientBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG";
 import { useAppContext } from "@/context/AppContext";
 import GlassHScreen from "@/components/Atoms/Containers/GlassHScreen";
 import Heading from "@/components/Atoms/Heading/Heading";
@@ -15,7 +14,6 @@ import { useTrackerMotionValue } from "@/CustomHooks/useTrackerMotionValue";
 import GlassMorphism from "@/components/Organims/RTFAnimations/RTFAComponents/GlassMorphism/GlassMorphism";
 import Parallax from "@/components/Organims/FramerAnimations/Parallax";
 import gsap from "gsap";
-import AnimationController from "@/components/Organims/FramerAnimations/AnimationController";
 
 import React from "react";
 import { useScroll } from "framer-motion";
@@ -65,9 +63,6 @@ export default function Home() {
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white `}
       ref={headerRef}
     >
-      {/*<MainBG></MainBG>*/}
-      {/*<GradientBG className={"absolute top-0 left-0 h-full"}></GradientBG>*/}
-
       {/* MOBILE */}
       <SectionMob
         imgContent={{

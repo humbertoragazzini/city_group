@@ -1,23 +1,15 @@
 "use client";
-import { SmoothScrollbar } from "@14islands/r3f-scroll-rig";
 import { useAppContext } from "@/context/AppContext";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-
-import { RTFAText } from "@/components/Organims/RTFAnimations/RTFAComponents/RTFAText/RTFAText";
-import RTFACLogo3D from "@/components/Organims/RTFAnimations/RTFAComponents/Logo/RTFACLogo3D";
-import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import Link from "next/link";
 import Accordion from "@/components/molecules/Accordions/Accordion";
-import GradientBG from "@/components/Organims/RTFAnimations/RTFAComponents/GradientBG/GradientBG";
-import GlassHScreen from "@/components/Atoms/Containers/GlassHScreen";
 import Heading from "@/components/Atoms/Heading/Heading";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 
 export default function AboutUs() {
   const context = useAppContext();
-  const aboutRef = useRef<any>(null);
 
   useEffect(() => {
     if (context.state.isMenuOpen) {
