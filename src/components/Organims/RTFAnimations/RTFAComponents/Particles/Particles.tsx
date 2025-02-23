@@ -53,8 +53,13 @@ export default function Particles({ scale }: any) {
         particles.current.maxCount * 3,
         3
       );
-      for (const point in pos.array) {
-        normalizedArray.array[point] = pos.array[point];
+      for (let i = 0; i < particles.current.maxCount * 3; i++) {
+        if (pos.array[i]) {
+          normalizedArray.array[i] = pos.array[i];
+        } else {
+          console.log();
+          normalizedArray.array[i] = pos.array[Math.abs(pos.array.length - i)];
+        }
       }
       return normalizedArray;
     });
