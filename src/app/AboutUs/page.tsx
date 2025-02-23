@@ -655,7 +655,7 @@ export default function AboutUs() {
       <div className="w-full min-h-screen pt-10 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.55)] to-black flex flex-col justify-center items-center overflow-hidden relative">
         <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
           <Heading
-            className={"text-2xl mb-4 text-center md:text-4xl"}
+            className={"text-2xl mb-7 text-center md:text-4xl"}
             text={[
               {
                 language: "EN",
@@ -678,7 +678,7 @@ export default function AboutUs() {
           ></Heading>
           <div className="flex flex-col items-center justify-center">
             <Paragraph
-              className="text-center"
+              className="text-center mb-7"
               type="standfirst"
               text={[
                 {
@@ -705,7 +705,7 @@ export default function AboutUs() {
             ></Paragraph>
             <Link
               href={"/"}
-              className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl hover:bg-[#13212B] mt-4 bg-black`}
+              className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl bg-the-red hover:bg-the-darkWhite mt-4`}
             >
               <Paragraph
                 type="body"
