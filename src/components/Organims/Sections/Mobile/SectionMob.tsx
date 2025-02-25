@@ -174,7 +174,7 @@ function Content({ textContent }: any) {
               <div className="w-full flex justify-start items-center">
                 <Link
                   href={textContent.learn.link}
-                  className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-the-red`}
+                  className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] mr-4 shadow-xl hover:bg-[#13212B] px-6 bg-red`}
                 >
                   <Paragraph
                     type="body"

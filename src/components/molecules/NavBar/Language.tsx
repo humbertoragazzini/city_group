@@ -21,7 +21,7 @@ export default function Language() {
 
   return (
     <button
-      className="relative w-[200px] h-[23.75] flex justify-start items-center text-xl text-the-white transition-all ease-in-out hover:text-white [&>svg]:hover:scale-125"
+      className="relative w-[200px] h-[23.75] flex justify-start items-center text-xl text-white transition-all ease-in-out hover:text-white [&>svg]:hover:scale-125"
       onClick={() => {
         handleClick();
       }}
@@ -35,7 +35,7 @@ export default function Language() {
           height="256"
           viewBox="0 0 256 256"
           xmlSpace="preserve"
-          className="h-5 w-5 transition-all duration-500"
+          className="w-5 h-5 transition-all duration-500"
         >
           <defs></defs>
           <g
@@ -288,7 +288,7 @@ export default function Language() {
           height="256"
           viewBox="0 0 256 256"
           xmlSpace="preserve"
-          className="h-5 w-5 transition-all duration-500"
+          className="w-5 h-5 transition-all duration-500"
         >
           <defs></defs>
           <g
@@ -365,7 +365,7 @@ export default function Language() {
           height="256"
           viewBox="0 0 256 256"
           xmlSpace="preserve"
-          className="h-5 w-5 transition-all duration-500"
+          className="w-5 h-5 transition-all duration-500"
         >
           <defs></defs>
           <g
@@ -486,7 +486,7 @@ export default function Language() {
           height="256"
           viewBox="0 0 256 256"
           xmlSpace="preserve"
-          className="h-5 w-5 transition-all duration-500"
+          className="w-5 h-5 transition-all duration-500"
         >
           <defs></defs>
           <g

@@ -705,7 +705,7 @@ export default function AboutUs() {
             ></Paragraph>
             <Link
               href={"/"}
-              className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl bg-the-red hover:bg-the-darkWhite mt-4 py4 px-6`}
+              className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl bg-red hover:bg-the-darkWhite mt-4 py4 px-6`}
             >
               <Paragraph
                 className="mr-3"

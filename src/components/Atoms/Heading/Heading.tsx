@@ -28,40 +28,40 @@ export default function Heading({ text, level, theme, className }: iHeading) {
 
   const textContent = filterLanguage();
   let themeColor = "";
-
+  // TODO build themes
   switch (theme) {
     case "red":
-      themeColor = "text-the-red";
+      themeColor = "";
       break;
     case "black":
-      themeColor = "text-the-black";
+      themeColor = "";
       break;
     case "darkGrey":
-      themeColor = "text-the-darkGrey";
+      themeColor = "";
       break;
     case "lightGrey":
-      themeColor = "text-the-lightGrey";
+      themeColor = "";
       break;
     case "lightRed":
-      themeColor = "text-the-lightRed";
+      themeColor = "";
       break;
     case "darkWhite":
-      themeColor = "text-the-darkWhite";
+      themeColor = "";
       break;
     case "darkerGrey":
-      themeColor = "text-the-darkerGrey";
+      themeColor = "";
       break;
     case "lightWhite":
-      themeColor = "text-the-lightWhite";
+      themeColor = "";
       break;
     case "white":
-      themeColor = "text-the-white";
+      themeColor = "";
       break;
     case "darkBlack":
-      themeColor = "text-the-darkBlack";
+      themeColor = "";
       break;
     case "yellow":
-      themeColor = "text-the-yellow";
+      themeColor = "";
       break;
     default:
       break;
