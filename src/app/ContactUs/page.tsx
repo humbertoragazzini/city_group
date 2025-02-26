@@ -3,6 +3,8 @@ import { useAppContext } from "@/context/AppContext";
 import { useEffect } from "react";
 import React from "react";
 import Heading from "@/components/Atoms/Heading/Heading";
+import { FiArrowUpRight } from "react-icons/fi";
+import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 
 export default function AboutUs() {
   const context = useAppContext();
@@ -116,13 +118,35 @@ export default function AboutUs() {
                         className="w-full p-3 text-white placeholder-gray-300 rounded-lg bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       ></textarea>
                     </div>
-
-                    <button
-                      type="submit"
-                      className="w-full p-3 mt-2 font-semibold text-white transition duration-300 bg-blue-500 rounded-lg hover:bg-blue-600"
-                    >
-                      Send Inquiry
-                    </button>
+                    <div className="flex items-center justify-center w-full">
+                      <button
+                        type="submit"
+                        className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl hover:bg-[#13212B] px-6 bg-black`}
+                      >
+                        <Paragraph
+                          type="body"
+                          text={[
+                            {
+                              language: "EN",
+                              content: "Learn more",
+                            },
+                            {
+                              language: "ES",
+                              content: "Acerca de",
+                            },
+                            {
+                              language: "CH",
+                              content: "了解更多",
+                            },
+                            {
+                              language: "IT",
+                              content: "Scopri di più",
+                            },
+                          ]}
+                        ></Paragraph>{" "}
+                        <FiArrowUpRight className="inline" />
+                      </button>
+                    </div>
                   </form>
                 </div>
               </div>
