@@ -37,7 +37,7 @@ export default function Paragraph({
 
   switch (theme) {
     case "red":
-      themeColor = "text-the-red";
+      themeColor = "text-red";
       break;
     case "black":
       themeColor = "text-the-black";

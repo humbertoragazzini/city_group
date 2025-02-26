@@ -92,7 +92,7 @@ const NavLink = ({ children, href, idx, setActive }: any) => {
       }}
       exit={{ opacity: 0, y: -8 }}
       className={`block w-fit ${
-        path == href ? "text-white " : "text-the-darkGrey hover:text-white"
+        path == href ? "text-white " : "text-lightGrey hover:text-white"
       }`}
     >
       {children}
@@ -111,7 +111,7 @@ const Logo = () => {
         transition: { delay: 0.5, duration: 0.5, ease: "easeInOut" },
       }}
       exit={{ opacity: 0, y: -12 }}
-      className="w-12 h-12 p-2 overflow-hidden grid place-content-center rounded-br-xl rounded-tl-xl bg-burgundy transition-colors hover:bg-plum"
+      className="grid w-12 h-12 p-2 overflow-hidden transition-colors place-content-center rounded-br-xl rounded-tl-xl bg-burgundy hover:bg-plum"
     >
       {/* <Language></Language> */}
       <Link href={"/"} className={"w-full h-full"}>
@@ -211,7 +211,7 @@ const HamburgerButton = ({ active, setActive }: any) => {
             isMenuOpen: !state.isMenuOpen,
           }));
         }}
-        className={`group fixed right-4 top-4 z-50 h-12 w-12  rounded-tr-full rounded-tl-full rounded-br-full rounded-bl-full [&>svg]:stroke-black hover:bg-the-lightGrey hover:[&>svg]:stroke-white transition-all ${
+        className={`group fixed right-4 top-4 z-50 h-12 w-12  rounded-tr-full rounded-tl-full rounded-br-full rounded-bl-full [&>svg]:stroke-black hover:bg-lightGrey hover:[&>svg]:stroke-white transition-all ${
           active
             ? "animate-rounded-change-enable bg-white"
             : "animate-rounded-change-disable bg-white "
@@ -238,7 +238,7 @@ const HamburgerButton = ({ active, setActive }: any) => {
 const FooterCTAs = () => {
   return (
     <>
-      <div className="absolute flex bottom-6 left-6 gap-4 md:flex-col">
+      <div className="absolute flex gap-4 bottom-6 left-6 md:flex-col">
         {SOCIAL_CTAS.map((l, idx) => {
           return (
             <>
@@ -258,7 +258,7 @@ const FooterCTAs = () => {
                   }}
                   exit={{ opacity: 0, y: -8 }}
                 >
-                  <l.Component className="text-xl text-the-white transition-all ease-in-out hover:text-white hover:scale-125" />
+                  <l.Component className="text-xl text-white transition-all ease-in-out hover:text-white hover:scale-125" />
                 </motion.a>
               )}
               {l.href === "language" && (

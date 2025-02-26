@@ -81,7 +81,7 @@ export default function MainHeader() {
         ref={homeRef}
       >
         <Heading
-          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-the-red px-7 w-fit"
+          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-red px-7 w-fit"
           text={[
             {
               language: "EN",
@@ -154,7 +154,7 @@ export default function MainHeader() {
       </div>
       <div className="relative opacity-0" ref={aboutUsRef}>
         <Heading
-          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-the-red px-7 w-fit"
+          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-red px-7 w-fit"
           text={[
             {
               language: "EN",
@@ -227,7 +227,7 @@ export default function MainHeader() {
       </div>
       <div className="relative opacity-0" ref={ourServicesRef}>
         <Heading
-          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-the-red px-7 w-fit"
+          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-red px-7 w-fit"
           text={[
             {
               language: "EN",
@@ -300,7 +300,7 @@ export default function MainHeader() {
       </div>
       <div className="relative opacity-0" ref={contactUsRef}>
         <Heading
-          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-the-red px-7 w-fit"
+          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-red px-7 w-fit"
           text={[
             {
               language: "EN",
