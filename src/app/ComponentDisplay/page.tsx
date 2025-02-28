@@ -52,6 +52,83 @@ const buttonThemes = [
   },
 ];
 
+const paragraphThemes = [
+  {
+    bg: "bg-deepBlack",
+    text: "text-yellowBright",
+  },
+  {
+    bg: "bg-plum",
+    text: "text-white",
+  },
+  {
+    bg: "bg-burgundy",
+    text: "text-white",
+  },
+  {
+    bg: "bg-white",
+    text: "text-black",
+  },
+  {
+    bg: "bg-lime",
+    text: "text-black",
+  },
+  {
+    bg: "bg-yellowBright",
+    text: "text-black",
+  },
+  {
+    bg: "bg-graphite",
+    text: "text-white",
+  },
+  {
+    bg: "bg-black",
+    text: "text-white",
+  },
+  {
+    bg: "bg-rose",
+    text: "text-white",
+  },
+];
+
+const paragraphSizes = [
+  {
+    type: "body",
+  },
+  {
+    type: "standfirst",
+  },
+  {
+    type: "standfirst2",
+  },
+  {
+    type: "standfirst3",
+  },
+  {
+    type: "standfirst4",
+  },
+];
+const headingLevel = [
+  {
+    level: 1,
+  },
+  {
+    level: 2,
+  },
+  {
+    level: 3,
+  },
+  {
+    level: 4,
+  },
+  {
+    level: 5,
+  },
+  {
+    level: 6,
+  },
+];
+
 export default function ComponentDisplay() {
   return (
     <div className="p-6 bg-white">
@@ -97,140 +174,91 @@ export default function ComponentDisplay() {
 
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
       <h1 className="mb-6 text-3xl font-bold">HEADINGS</h1>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={1}
-      ></Heading>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={2}
-      ></Heading>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={3}
-      ></Heading>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={4}
-      ></Heading>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={5}
-      ></Heading>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={6}
-      ></Heading>
+      <div className="">
+        {headingLevel.map(({ level }, indexA) => {
+          return (
+            <div
+              className="flex flex-col items-start justify-start my-4"
+              key="indexA"
+            >
+              <h1 className="text-xl">Heading level {level}</h1>
+              {paragraphThemes.map(({ bg, text }, index) => (
+                <Heading
+                  key={index}
+                  level={level}
+                  className={`${text} z-0 transition-all duration-500 ${bg}`}
+                  text={[
+                    {
+                      language: "EN",
+                      content: "Retail (Ingles)",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Heading>
+              ))}
+            </div>
+          );
+        })}
+      </div>
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
       <h1 className="mb-6 text-3xl font-bold">PARAGRAPH</h1>
+      <div className="">
+        {paragraphSizes.map(({ type }, indexA) => {
+          return (
+            <div
+              className="flex flex-col items-start justify-start my-4"
+              key="indexA"
+            >
+              <h1 className="text-xl">{type}</h1>{" "}
+              {paragraphThemes.map(({ bg, text }, index) => (
+                <Paragraph
+                  type={type}
+                  key={index}
+                  className={`${text} z-0 transition-all duration-500 ${bg}`}
+                  text={[
+                    {
+                      language: "EN",
+                      content: "Retail (Ingles)",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Paragraph>
+              ))}
+            </div>
+          );
+        })}
+      </div>
+      <hr className="mt-10 mb-6 border-4 border-black"></hr>
+      <h1 className="mb-6 text-3xl font-bold">CONTAINERS</h1>
+      <div className="relative w-[500px] h-[350px]">
+        <div className="relative w-full h-full bg-red"></div>
+      </div>
     </div>
   );
 }
