@@ -256,8 +256,12 @@ export default function ComponentDisplay() {
       </div>
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
       <h1 className="mb-6 text-3xl font-bold">CONTAINERS</h1>
-      <div className="relative w-[500px] h-[350px]">
-        <div className="relative w-full h-full bg-red"></div>
+      <div className="flex items-center justify-center w-full">
+        <div className="relative w-full h-[750px] px-5">
+          <div className="relative w-full h-full">
+            <div className="h-full bg-red 2-full skew-x-12"></div>
+          </div>
+        </div>
       </div>
     </div>
   );
