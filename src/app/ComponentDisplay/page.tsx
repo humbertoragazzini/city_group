@@ -1,8 +1,21 @@
 "use client";
+import AngledContainer from "@/components/Atoms/Containers/AngledContainer";
 import Heading from "@/components/Atoms/Heading/Heading";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { FiArrowUpRight } from "react-icons/fi";
-
+import TextButton from "@/components/Atoms/Buttons/TextButton";
+import IconButton from "@/components/Atoms/Buttons/IconButton";
+const themes = [
+  "deepBlack",
+  "plum",
+  "burgundy",
+  "white",
+  "lime",
+  "yellowBright",
+  "graphite",
+  "black",
+  "rose",
+];
 const buttonThemes = [
   {
     bg: "bg-deepBlack",
@@ -52,185 +65,208 @@ const buttonThemes = [
   },
 ];
 
+const paragraphThemes = [
+  {
+    bg: "bg-deepBlack",
+    text: "text-yellowBright",
+  },
+  {
+    bg: "bg-plum",
+    text: "text-white",
+  },
+  {
+    bg: "bg-burgundy",
+    text: "text-white",
+  },
+  {
+    bg: "bg-white",
+    text: "text-black",
+  },
+  {
+    bg: "bg-lime",
+    text: "text-black",
+  },
+  {
+    bg: "bg-yellowBright",
+    text: "text-black",
+  },
+  {
+    bg: "bg-graphite",
+    text: "text-white",
+  },
+  {
+    bg: "bg-black",
+    text: "text-white",
+  },
+  {
+    bg: "bg-rose",
+    text: "text-white",
+  },
+];
+
+const paragraphSizes = [
+  {
+    type: "body",
+  },
+  {
+    type: "standfirst",
+  },
+  {
+    type: "standfirst2",
+  },
+  {
+    type: "standfirst3",
+  },
+  {
+    type: "standfirst4",
+  },
+];
+const headingLevel = [
+  {
+    level: 1,
+  },
+  {
+    level: 2,
+  },
+  {
+    level: 3,
+  },
+  {
+    level: 4,
+  },
+  {
+    level: 5,
+  },
+  {
+    level: 6,
+  },
+];
+
 export default function ComponentDisplay() {
   return (
     <div className="p-6 bg-white">
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
       <h1 className="mb-6 text-3xl font-bold">BUTTONS</h1>
-
       <h2 className="mt-8 mb-4 text-xl font-bold">With text</h2>
       {/* Full-Width Buttons */}
       <div className="flex flex-wrap items-center gap-4">
-        {buttonThemes.map(({ bg, text, hover }, index) => (
-          <button
-            key={index}
-            className={`${text} text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl px-6 ${hover} ${bg} m-2`}
-          >
-            <Paragraph
-              type="body"
-              className="font-semibold"
-              text={[
-                { language: "EN", content: "Button with icon" },
-                { language: "ES", content: "Botón con icono" },
-                { language: "CH", content: "按钮与图标" },
-                { language: "IT", content: "Pulsante con icona" },
-              ]}
-            />
-            <FiArrowUpRight className="inline w-6 h-6 ml-3" />
-          </button>
+        {themes.map((theme, index) => (
+          <TextButton
+            themeName={theme}
+            text={[
+              { language: "EN", content: "Button with icon" },
+              { language: "ES", content: "Botón con icono" },
+              { language: "CH", content: "按钮与图标" },
+              { language: "IT", content: "Pulsante con icona" },
+            ]}
+            href={"#"}
+          ></TextButton>
         ))}
       </div>
-
       <h2 className="mt-8 mb-4 text-xl font-bold">Icon only</h2>
-
       {/* Icon-Only Buttons */}
       <div className="flex flex-wrap items-center gap-4">
-        {buttonThemes.map(({ bg, text, hover }, index) => (
-          <button
-            key={`icon-${index}`}
-            className={`${text} text-xl h-[70px] w-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full shadow-xl ${hover} ${bg} m-2`}
-          >
-            <FiArrowUpRight className="inline w-6 h-6" />
-          </button>
+        {themes.map((theme, index) => (
+          <IconButton themeName={theme} href={"#"}></IconButton>
         ))}
       </div>
-
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
       <h1 className="mb-6 text-3xl font-bold">HEADINGS</h1>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={1}
-      ></Heading>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={2}
-      ></Heading>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={3}
-      ></Heading>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={4}
-      ></Heading>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={5}
-      ></Heading>
-      <Heading
-        className={"relative"}
-        text={[
-          {
-            language: "EN",
-            content: "Contact us",
-          },
-          {
-            language: "ES",
-            content: "Contactanos",
-          },
-          {
-            language: "CH",
-            content: "业的卓越水平",
-          },
-          {
-            language: "IT",
-            content: "Contacto",
-          },
-        ]}
-        level={6}
-      ></Heading>
+      <div className="">
+        {headingLevel.map(({ level }, indexA) => {
+          return (
+            <div
+              className="flex flex-col items-start justify-start my-4"
+              key="indexA"
+            >
+              <h1 className="text-xl">Heading level {level}</h1>
+              {paragraphThemes.map(({ bg, text }, index) => (
+                <Heading
+                  key={index}
+                  level={level}
+                  className={`${text} z-0 transition-all duration-500 ${bg}`}
+                  text={[
+                    {
+                      language: "EN",
+                      content: "Retail (Ingles)",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Heading>
+              ))}
+            </div>
+          );
+        })}
+      </div>
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
       <h1 className="mb-6 text-3xl font-bold">PARAGRAPH</h1>
+      <div className="">
+        {paragraphSizes.map(({ type }, indexA) => {
+          return (
+            <div
+              className="flex flex-col items-start justify-start my-4"
+              key="indexA"
+            >
+              <h1 className="text-xl">{type}</h1>{" "}
+              {paragraphThemes.map(({ bg, text }, index) => (
+                <Paragraph
+                  type={type}
+                  key={index}
+                  className={`${text} z-0 transition-all duration-500 ${bg}`}
+                  text={[
+                    {
+                      language: "EN",
+                      content: "Retail (Ingles)",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Paragraph>
+              ))}
+            </div>
+          );
+        })}
+      </div>
+      <hr className="mt-10 mb-6 border-4 border-black"></hr>
+      <h1 className="mb-6 text-3xl font-bold">CONTAINERS</h1>{" "}
+      {paragraphSizes.map(({ type }, indexA) => {
+        return (
+          <div
+            className="flex flex-col items-start justify-start px-4 py-4 bg-zinc-400"
+            key="indexA"
+          >
+            <h1 className="text-xl">{type}</h1>{" "}
+            {themes.map((theme, index) => (
+              <AngledContainer themeName={theme}>different</AngledContainer>
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 }
