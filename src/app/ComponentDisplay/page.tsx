@@ -3,6 +3,7 @@ import AngledContainer from "@/components/Atoms/Containers/AngledContainer";
 import Heading from "@/components/Atoms/Heading/Heading";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { FiArrowUpRight } from "react-icons/fi";
+import TextButton from "@/components/Atoms/Buttons/TextButton";
 const themes = [
   "deepBlack",
   "plum",
@@ -148,23 +149,17 @@ export default function ComponentDisplay() {
       <h2 className="mt-8 mb-4 text-xl font-bold">With text</h2>
       {/* Full-Width Buttons */}
       <div className="flex flex-wrap items-center gap-4">
-        {buttonThemes.map(({ bg, text, hover }, index) => (
-          <button
-            key={index}
-            className={`${text} text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl px-6 ${hover} ${bg} m-2`}
-          >
-            <Paragraph
-              type="body"
-              className="font-semibold"
-              text={[
-                { language: "EN", content: "Button with icon" },
-                { language: "ES", content: "Botón con icono" },
-                { language: "CH", content: "按钮与图标" },
-                { language: "IT", content: "Pulsante con icona" },
-              ]}
-            />
-            <FiArrowUpRight className="inline w-6 h-6 ml-3" />
-          </button>
+        {themes.map((theme, index) => (
+          <TextButton
+            themeName={theme}
+            text={[
+              { language: "EN", content: "Button with icon" },
+              { language: "ES", content: "Botón con icono" },
+              { language: "CH", content: "按钮与图标" },
+              { language: "IT", content: "Pulsante con icona" },
+            ]}
+            href={"#"}
+          ></TextButton>
         ))}
       </div>
       <h2 className="mt-8 mb-4 text-xl font-bold">Icon only</h2>
@@ -271,9 +266,7 @@ export default function ComponentDisplay() {
           >
             <h1 className="text-xl">{type}</h1>{" "}
             {themes.map((theme, index) => (
-              <AngledContainer themeName={theme}>
-                different text
-              </AngledContainer>
+              <AngledContainer themeName={theme}>different</AngledContainer>
             ))}
           </div>
         );
