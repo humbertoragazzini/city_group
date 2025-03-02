@@ -179,34 +179,30 @@ export default function ComponentDisplay() {
               className="flex flex-col items-start justify-start my-4"
               key="indexA"
             >
-              <h1 className="text-xl">Heading level {level}</h1>
-              {paragraphThemes.map(({ bg, text }, index) => (
-                <Heading
-                  key={index}
-                  level={level}
-                  className={`${text} z-0 transition-all duration-500 ${bg}`}
-                  text={[
-                    {
-                      language: "EN",
-                      content: "Retail (Ingles)",
-                    },
-                    {
-                      language: "ES",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                    },
-                    {
-                      language: "CH",
-                      content: "进口、建筑和零售的综合解决方案 (Chino)",
-                    },
-                    {
-                      language: "IT",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                    },
-                  ]}
-                ></Heading>
-              ))}
+              <Heading
+                level={level}
+                className={`z-0 transition-all duration-500`}
+                text={[
+                  {
+                    language: "EN",
+                    content: "Retail (Ingles)",
+                  },
+                  {
+                    language: "ES",
+                    content:
+                      "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                  },
+                  {
+                    language: "CH",
+                    content: "进口、建筑和零售的综合解决方案 (Chino)",
+                  },
+                  {
+                    language: "IT",
+                    content:
+                      "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                  },
+                ]}
+              ></Heading>
             </div>
           );
         })}
@@ -260,9 +256,68 @@ export default function ComponentDisplay() {
             className="flex flex-col items-start justify-start px-4 py-4 bg-zinc-400"
             key="indexA"
           >
-            <h1 className="text-xl">{type}</h1>{" "}
+            <h1 className="text-xl">{type}</h1>
             {themes.map((theme, index) => (
-              <AngledContainer themeName={theme}>different</AngledContainer>
+              <AngledContainer themeName={theme}>
+                {headingLevel.map(({ level }, indexA) => {
+                  return (
+                    <div
+                      className="flex flex-col items-start justify-start my-4"
+                      key="indexA"
+                    >
+                      <Paragraph
+                        type={type}
+                        text={[
+                          {
+                            language: "EN",
+                            content:
+                              "Paragraph regular text component (Ingles)",
+                          },
+                          {
+                            language: "ES",
+                            content:
+                              "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                          },
+                          {
+                            language: "CH",
+                            content: "进口、建筑和零售的综合解决方案 (Chino)",
+                          },
+                          {
+                            language: "IT",
+                            content:
+                              "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                          },
+                        ]}
+                      ></Paragraph>
+
+                      <Heading
+                        level={level}
+                        className={`z-0 transition-all duration-500`}
+                        text={[
+                          {
+                            language: "EN",
+                            content: "Heading (Ingles)",
+                          },
+                          {
+                            language: "ES",
+                            content:
+                              "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                          },
+                          {
+                            language: "CH",
+                            content: "进口、建筑和零售的综合解决方案 (Chino)",
+                          },
+                          {
+                            language: "IT",
+                            content:
+                              "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                          },
+                        ]}
+                      ></Heading>
+                    </div>
+                  );
+                })}
+              </AngledContainer>
             ))}
           </div>
         );
