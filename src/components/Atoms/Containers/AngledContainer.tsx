@@ -9,7 +9,7 @@ export default function AngledContainer({ children, themeName }: any) {
 	}, [themeName]);
 
 	return (
-		<div className="flex flex-col items-start justify-start px-4 py-4 bg-zinc-400">
+		<div className="flex flex-col items-start justify-start px-10 py-12">
 			<div className="flex items-center justify-center w-full p-10">
 				<div className="relative w-full h-full">
 					<div
