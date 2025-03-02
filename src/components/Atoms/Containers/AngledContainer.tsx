@@ -13,7 +13,7 @@ export default function AngledContainer({ children, themeName }: any) {
 			<div className="flex items-center justify-center w-full p-10">
 				<div className="relative w-full h-full">
 					<div
-						className={`absolute z-0 w-full h-full ${theme.bg} skew-x-12`}
+						className={`absolute z-0 w-full h-full ${theme.bg} bg-opacity-55 skew-x-12`}
 					></div>
 					<div
 						className={`relative ${theme.text} z-10 w-full h-full px-20 py-10`}
