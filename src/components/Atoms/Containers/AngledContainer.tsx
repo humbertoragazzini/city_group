@@ -1,22 +1,11 @@
 import { useState, useEffect } from "react";
-
-const themes = {
-	deepBlack: { bg: "bg-deepBlack", text: "text-yellowBright" },
-	plum: { bg: "bg-plum", text: "text-white" },
-	burgundy: { bg: "bg-burgundy", text: "text-white" },
-	white: { bg: "bg-white", text: "text-black" },
-	lime: { bg: "bg-lime", text: "text-black" },
-	yellowBright: { bg: "bg-yellowBright", text: "text-black" },
-	graphite: { bg: "bg-graphite", text: "text-white" },
-	black: { bg: "bg-black", text: "text-white" },
-	rose: { bg: "bg-rose", text: "text-white" },
-};
+import Themes from "../../../themes/Themes.tsx";
 
 export default function AngledContainer({ children, themeName }: any) {
-	const [theme, setTheme] = useState(themes.deepBlack); // Default theme
+	const [theme, setTheme] = useState(Themes.deepBlack); // Default theme
 
 	useEffect(() => {
-		setTheme(themes[themeName] || themes.deepBlack);
+		setTheme(Themes[themeName] || Themes.deepBlack);
 	}, [themeName]);
 
 	return (
@@ -24,9 +13,11 @@ export default function AngledContainer({ children, themeName }: any) {
 			<div className="flex items-center justify-center w-full p-10">
 				<div className="relative w-full h-full">
 					<div
-						className={`absolute z-0 w-full h-full ${theme.bg} ${theme.text} skew-x-12`}
+						className={`absolute z-0 w-full h-full ${theme.bg} skew-x-12`}
 					></div>
-					<div className="relative z-10 w-full h-full px-20 py-10">
+					<div
+						className={`relative ${theme.text} z-10 w-full h-full px-20 py-10`}
+					>
 						{children}
 					</div>
 				</div>
