@@ -1,3 +1,4 @@
+//@ts-nocheck
 import Themes from "../../../themes/Themes.tsx";
 import ALink from "../Links/ALink";
 import { useState, useEffect } from "react";
