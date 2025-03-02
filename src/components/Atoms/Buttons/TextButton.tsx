@@ -21,7 +21,7 @@ export default function TextButton({
 			{href !== null && (
 				<ALink href={href}>
 					<button
-						className={`${text} text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl px-6 ${theme.text} ${theme.hover} ${theme.bg} m-2`}
+						className={`${text} text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl px-6 ${theme.text} ${theme.hover} ${theme.bg} `}
 					>
 						<Paragraph type="body" className="font-semibold" text={text} />
 						<FiArrowUpRight className="inline w-6 h-6 ml-3" />
@@ -31,7 +31,7 @@ export default function TextButton({
 			{href == null && (
 				<button
 					onClick={(e) => onClick()}
-					className={`${text} text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl px-6 ${theme.text} ${hover} ${bg} m-2`}
+					className={`${text} text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl px-6 ${theme.text} ${hover} ${bg}`}
 				>
 					<Paragraph type="body" className="font-semibold" text={text} />
 					<FiArrowUpRight className="inline w-6 h-6 ml-3" />

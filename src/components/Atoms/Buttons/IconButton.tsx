@@ -1,7 +1,6 @@
 import Themes from "../../../themes/Themes.tsx";
 import ALink from "../Links/ALink";
 import { useState, useEffect } from "react";
-import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { FiArrowUpRight } from "react-icons/fi";
 export default function IconButton({
 	href,
