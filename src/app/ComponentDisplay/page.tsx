@@ -145,7 +145,7 @@ const headingLevel = [
 
 export default function ComponentDisplay() {
   return (
-    <div className="p-6">
+    <div className="p-6 max-w-[1920px] mx-auto">
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
       <h1 className="mb-6 text-3xl font-bold">BUTTONS</h1>
       <h2 className="mt-8 mb-4 text-xl font-bold">With text</h2>
@@ -258,13 +258,13 @@ export default function ComponentDisplay() {
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
       <h1 className="mb-6 text-3xl font-bold">CONTAINERS</h1>{" "}
       <div
-        className="flex flex-col items-start justify-start px-4 py-4"
+        className="flex flex-col items-start justify-start w-full px-4 py-4"
         key="indexA"
       >
         {themes.map((theme, index) => (
           <AngledContainer key={"angled" + index} themeName={theme}>
             <div
-              className="flex flex-col items-start justify-start my-4"
+              className="flex flex-col items-start justify-start w-full my-4"
               key="indexA"
             >
               <Heading

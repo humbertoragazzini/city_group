@@ -22,7 +22,7 @@ export default function TextButton({
 			{href !== null && (
 				<ALink href={href}>
 					<button
-						className={`${text} text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl px-6 ${theme.text} ${theme.hover} ${theme.bg} `}
+						className={`${text} text-xl min-h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl px-6 ${theme.text} ${theme.hover} ${theme.bg} `}
 					>
 						<Paragraph type="body" className="font-semibold" text={text} />
 						<FiArrowUpRight className="inline w-6 h-6 ml-3" />
