@@ -4,6 +4,7 @@ import Heading from "@/components/Atoms/Heading/Heading";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { FiArrowUpRight } from "react-icons/fi";
 import TextButton from "@/components/Atoms/Buttons/TextButton";
+import IconButton from "@/components/Atoms/Buttons/IconButton";
 const themes = [
   "deepBlack",
   "plum",
@@ -165,13 +166,8 @@ export default function ComponentDisplay() {
       <h2 className="mt-8 mb-4 text-xl font-bold">Icon only</h2>
       {/* Icon-Only Buttons */}
       <div className="flex flex-wrap items-center gap-4">
-        {buttonThemes.map(({ bg, text, hover }, index) => (
-          <button
-            key={`icon-${index}`}
-            className={`${text} text-xl h-[70px] w-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full shadow-xl ${hover} ${bg} m-2`}
-          >
-            <FiArrowUpRight className="inline w-6 h-6" />
-          </button>
+        {themes.map((theme, index) => (
+          <IconButton themeName={theme} href={"#"}></IconButton>
         ))}
       </div>
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
