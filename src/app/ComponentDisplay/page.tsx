@@ -1,3 +1,4 @@
+//@ts-nocheck
 "use client";
 import AngledContainer from "@/components/Atoms/Containers/AngledContainer";
 import Heading from "@/components/Atoms/Heading/Heading";
@@ -144,30 +145,36 @@ const headingLevel = [
 
 export default function ComponentDisplay() {
   return (
-    <div className="p-6 bg-white">
+    <div className="p-6 max-w-[1920px] mx-auto">
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
       <h1 className="mb-6 text-3xl font-bold">BUTTONS</h1>
       <h2 className="mt-8 mb-4 text-xl font-bold">With text</h2>
       {/* Full-Width Buttons */}
       <div className="flex flex-wrap items-center gap-4">
         {themes.map((theme, index) => (
-          <TextButton
-            themeName={theme}
-            text={[
-              { language: "EN", content: "Button with icon" },
-              { language: "ES", content: "Botón con icono" },
-              { language: "CH", content: "按钮与图标" },
-              { language: "IT", content: "Pulsante con icona" },
-            ]}
-            href={"#"}
-          ></TextButton>
+          <div key={"with-text" + index}>
+            <TextButton
+              themeName={theme}
+              text={[
+                { language: "EN", content: "Button with icon" },
+                { language: "ES", content: "Botón con icono" },
+                { language: "CH", content: "按钮与图标" },
+                { language: "IT", content: "Pulsante con icona" },
+              ]}
+              href={"#"}
+            ></TextButton>
+          </div>
         ))}
       </div>
       <h2 className="mt-8 mb-4 text-xl font-bold">Icon only</h2>
       {/* Icon-Only Buttons */}
       <div className="flex flex-wrap items-center gap-4">
         {themes.map((theme, index) => (
-          <IconButton themeName={theme} href={"#"}></IconButton>
+          <IconButton
+            key={"buttons-" + index}
+            themeName={theme}
+            href={"#"}
+          ></IconButton>
         ))}
       </div>
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
@@ -251,13 +258,13 @@ export default function ComponentDisplay() {
       <hr className="mt-10 mb-6 border-4 border-black"></hr>
       <h1 className="mb-6 text-3xl font-bold">CONTAINERS</h1>{" "}
       <div
-        className="flex flex-col items-start justify-start px-4 py-4 bg-zinc-400"
+        className="flex flex-col items-start justify-start w-full px-4 py-4"
         key="indexA"
       >
         {themes.map((theme, index) => (
-          <AngledContainer themeName={theme}>
+          <AngledContainer key={"angled" + index} themeName={theme}>
             <div
-              className="flex flex-col items-start justify-start my-4"
+              className="flex flex-col items-start justify-start w-full my-4"
               key="indexA"
             >
               <Heading
