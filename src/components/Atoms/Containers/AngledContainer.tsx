@@ -17,7 +17,7 @@ export default function AngledContainer({ children, themeName }: any) {
 						className={`absolute z-0 w-full h-full ${theme.bg} skew-y-6`}
 					></div>
 					<div
-						className={`absolute bottom-0 left-0 z-0 w-[70px] h-[70px] ${theme.bg} -translate-x-1/2 translate-y-1/2`}
+						className={`absolute bottom-0 left-0 z-0 w-[70px] h-[70px] ${theme.hover} -translate-x-1/2 translate-y-1/2`}
 					></div>
 					<div
 						className={`absolute top-0 right-0 z-0 w-[70px] h-[70px] ${theme.bg} translate-x-1/2 -translate-y-1/2`}
