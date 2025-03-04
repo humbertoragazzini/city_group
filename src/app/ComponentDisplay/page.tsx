@@ -6,6 +6,7 @@ import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { FiArrowUpRight } from "react-icons/fi";
 import TextButton from "@/components/Atoms/Buttons/TextButton";
 import IconButton from "@/components/Atoms/Buttons/IconButton";
+import ContainerWithImage from "@/components/Organims/FramerAnimations/ContainerWithImage";
 const themes = [
   "deepBlack",
   "plum",
@@ -342,6 +343,7 @@ export default function ComponentDisplay() {
           </AngledContainer>
         ))}
       </div>
+      <ContainerWithImage themeName={"plum"}></ContainerWithImage>
     </div>
   );
 }
