@@ -7,7 +7,11 @@ import {
 	useMotionValue,
 	useSpring,
 } from "framer-motion";
-export default function AngledContainer({ children, themeName }: any) {
+export default function AngledContainer({
+	children,
+	themeName,
+	className,
+}: any) {
 	const [theme, setTheme] = useState(Themes.deepBlack); // Default theme
 
 	const ROTATION_RANGE = 32.5;
@@ -51,7 +55,9 @@ export default function AngledContainer({ children, themeName }: any) {
 	}, [themeName]);
 
 	return (
-		<div className="flex flex-col items-start justify-start w-full px-10 py-12">
+		<div
+			className={`flex flex-col items-start justify-start w-full px-10 py-12 ${className}`}
+		>
 			<motion.div
 				ref={ref}
 				onMouseMove={handleMouseMove}

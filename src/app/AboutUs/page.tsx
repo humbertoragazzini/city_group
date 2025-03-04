@@ -278,171 +278,173 @@ export default function AboutUs() {
       </div>
 
       {/* Our history */}
-      <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
-        <div className="grid grid-cols-2 gap-8 xl:gap-12 xl:w-full xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
-          <div className="col-span-2 lg:col-span-1">
-            <div className="items-start justify-center w-full">
-              <Heading
-                className={
-                  "text-2xl mb-4 text-center md:text-start md:text-4xl"
-                }
-                text={[
-                  {
-                    language: "EN",
-                    content: "Our story",
-                  },
-                  {
-                    language: "ES",
-                    content: "Nuestra historia",
-                  },
-                  {
-                    language: "CH",
-                    content: "提升各行业",
-                  },
-                  {
-                    language: "IT",
-                    content: "Nuestra historia",
-                  },
-                ]}
-                level={2}
-              ></Heading>
-              <Paragraph
-                type={"standfirst"}
-                className="mb-4"
-                text={[
-                  {
-                    language: "EN",
-                    content:
-                      "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                  },
-                  {
-                    language: "ES",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                  },
-                  {
-                    language: "CH",
-                    content: "进口、建筑和零售的综合解决方案 (Chino)",
-                  },
-                  {
-                    language: "IT",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                  },
-                ]}
-              ></Paragraph>
-              <Paragraph
-                type={"standfirst"}
-                className="mb-4"
-                text={[
-                  {
-                    language: "EN",
-                    content:
-                      "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                  },
-                  {
-                    language: "ES",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                  },
-                  {
-                    language: "CH",
-                    content: "进口、建筑和零售的综合解决方案 (Chino)",
-                  },
-                  {
-                    language: "IT",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                  },
-                ]}
-              ></Paragraph>
-              <Paragraph
-                type={"standfirst"}
-                className="mb-4"
-                text={[
-                  {
-                    language: "EN",
-                    content:
-                      "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                  },
-                  {
-                    language: "ES",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                  },
-                  {
-                    language: "CH",
-                    content: "进口、建筑和零售的综合解决方案 (Chino)",
-                  },
-                  {
-                    language: "IT",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                  },
-                ]}
-              ></Paragraph>
-              <Paragraph
-                type={"standfirst"}
-                className="mb-4"
-                text={[
-                  {
-                    language: "EN",
-                    content:
-                      "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                  },
-                  {
-                    language: "ES",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                  },
-                  {
-                    language: "CH",
-                    content: "进口、建筑和零售的综合解决方案 (Chino)",
-                  },
-                  {
-                    language: "IT",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                  },
-                ]}
-              ></Paragraph>
-              <Paragraph
-                type={"standfirst"}
-                className="mb-4"
-                text={[
-                  {
-                    language: "EN",
-                    content:
-                      "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                  },
-                  {
-                    language: "ES",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                  },
-                  {
-                    language: "CH",
-                    content: "进口、建筑和零售的综合解决方案 (Chino)",
-                  },
-                  {
-                    language: "IT",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                  },
-                ]}
-              ></Paragraph>
+      <div className="w-full p-12 min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
+        <AngledContainer themeName="red" className={"max-w-[1280px]"}>
+          <div className="p-4 grid grid-cols-2 gap-8 xl:gap-12 md:p-8 lg:p-12">
+            <div className="col-span-2 lg:col-span-1">
+              <div className="items-start justify-center w-full">
+                <Heading
+                  className={
+                    "text-2xl mb-4 text-center md:text-start md:text-4xl"
+                  }
+                  text={[
+                    {
+                      language: "EN",
+                      content: "Our story",
+                    },
+                    {
+                      language: "ES",
+                      content: "Nuestra historia",
+                    },
+                    {
+                      language: "CH",
+                      content: "提升各行业",
+                    },
+                    {
+                      language: "IT",
+                      content: "Nuestra historia",
+                    },
+                  ]}
+                  level={2}
+                ></Heading>
+                <Paragraph
+                  type={"standfirst"}
+                  className="mb-4"
+                  text={[
+                    {
+                      language: "EN",
+                      content:
+                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Paragraph>
+                <Paragraph
+                  type={"standfirst"}
+                  className="mb-4"
+                  text={[
+                    {
+                      language: "EN",
+                      content:
+                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Paragraph>
+                <Paragraph
+                  type={"standfirst"}
+                  className="mb-4"
+                  text={[
+                    {
+                      language: "EN",
+                      content:
+                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Paragraph>
+                <Paragraph
+                  type={"standfirst"}
+                  className="mb-4"
+                  text={[
+                    {
+                      language: "EN",
+                      content:
+                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Paragraph>
+                <Paragraph
+                  type={"standfirst"}
+                  className="mb-4"
+                  text={[
+                    {
+                      language: "EN",
+                      content:
+                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Paragraph>
+              </div>
             </div>
-          </div>
-          <div className="hidden h-full col-span-2 md:block lg:col-span-1">
-            <div className="flex flex-col items-center justify-center w-full">
-              <img
-                className="w-full"
-                src="
+            <div className="hidden h-full col-span-2 md:block lg:col-span-1">
+              <div className="flex flex-col items-center justify-center w-full">
+                <img
+                  className="w-full"
+                  src="
                     https://placehold.co/600x600"
-              ></img>
+                ></img>
+              </div>
             </div>
           </div>
-        </div>
+        </AngledContainer>
       </div>
 
       {/* Section our values */}
