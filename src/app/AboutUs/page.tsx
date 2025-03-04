@@ -435,9 +435,13 @@ export default function AboutUs() {
               </div>
             </div>
             <div className="hidden h-full col-span-2 md:block lg:col-span-1">
-              <div className="flex flex-col items-center justify-center w-full">
+              <div className="relative flex flex-col items-center justify-center w-full h-full">
                 <img
                   className="w-full"
+                  style={{
+                    transform: "translate(0px)",
+                    transformStyle: "preserve-3d",
+                  }}
                   src="
                     https://placehold.co/600x600"
                 ></img>
@@ -451,7 +455,7 @@ export default function AboutUs() {
       <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
         <div className="grid grid-cols-2 gap-8 xl:gap-12 xl:w-full xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
           <div className="hidden h-full col-span-2 lg:block lg:col-span-1">
-            <div className="flex flex-col items-center justify-center w-full">
+            <div className="relative flex flex-col items-center justify-center w-full">
               <img
                 className="w-full"
                 src="

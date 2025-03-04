@@ -11,6 +11,7 @@ export default function AngledContainer({
 	children,
 	themeName,
 	className,
+	tilt,
 }: any) {
 	const [theme, setTheme] = useState(Themes.deepBlack); // Default theme
 
@@ -76,7 +77,9 @@ export default function AngledContainer({
 					className="relative w-full h-full"
 				>
 					<div
-						className={`absolute z-0 w-full h-full ${theme.bg} skew-y-6`}
+						className={`absolute z-0 w-full h-full ${theme.bg} ${
+							tilt == undefined ? "skew-y-6" : "-skew-y-6"
+						}`}
 					></div>
 					<div
 						style={{
