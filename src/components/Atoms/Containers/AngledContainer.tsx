@@ -77,14 +77,14 @@ export default function AngledContainer({ children, themeName }: any) {
 							transform: "translateZ(5px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute opacity-10 bottom-0 left-[-25px] z-0 w-[70px] h-[70px] ${theme.contrast}`}
+						className={`absolute opacity-10 bottom-0 left-[-25px] z-0 w-[70px] h-[70px] bg-black`}
 					></div>
 					<div
 						style={{
 							transform: "translateZ(5px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute opacity-10 top-0 right-[-25px] z-0 w-[70px] h-[70px] ${theme.contrast} translate-x-1/2 -translate-y-1/2`}
+						className={`absolute opacity-10 top-0 right-[-25px] z-0 w-[70px] h-[70px] bg-black translate-x-1/2 -translate-y-1/2`}
 					></div>
 					<div
 						style={{
@@ -107,7 +107,7 @@ export default function AngledContainer({ children, themeName }: any) {
 							transform: "translateZ(5px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute top-0 opacity-10 ${theme.text} z-10 w-full h-full px-10 py-20`}
+						className={`absolute top-0 opacity-10 text-black z-10 w-full h-full px-10 py-20`}
 					>
 						{children}
 					</div>
