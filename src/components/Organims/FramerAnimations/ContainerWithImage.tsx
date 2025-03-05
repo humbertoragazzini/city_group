@@ -7,6 +7,8 @@ import {
 	useMotionValue,
 	useSpring,
 } from "framer-motion";
+import Heading from "../../Atoms/Heading/heading";
+
 export default function ContainerWithImage({
 	themeName,
 	className,
@@ -56,7 +58,7 @@ export default function ContainerWithImage({
 
 	return (
 		<div
-			className={`flex max-w-[1280px] flex-col items-start justify-start w-full px-10 py-12 ${className}`}
+			className={`flex max-w-[1280px] flex-col items-start justify-start w-full ${className}`}
 		>
 			<motion.div
 				ref={ref}
@@ -120,15 +122,36 @@ export default function ContainerWithImage({
 								transform: "translateZ(0px)",
 								transformStyle: "preserve-3d",
 							}}
-							className="grid grid-cols-2"
+							className="grid grid-cols-1 lg:grid-cols-2"
 						>
 							<div
 								style={{
 									transform: "translateZ(150px)",
 									transformStyle: "preserve-3d",
 								}}
-								classNmae="col-span-1"
+								className="mb-5 col-span-1 lg:mb-auto"
 							>
+								<Heading
+									level={3}
+									text={[
+										{
+											language: "EN",
+											content: "Welcome to our website",
+										},
+										{
+											language: "ES",
+											content: "Bienvenido a nuestro sitio web",
+										},
+										{
+											language: "CH",
+											content: "欢迎来到我们的网站",
+										},
+										{
+											language: "IT",
+											content: "Benvenuti nel nostro sito web",
+										},
+									]}
+								></Heading>
 								<p>
 									Lorem Ipsum is simply dummy text of the printing and
 									typesetting industry. Lorem Ipsum has been the industry's
