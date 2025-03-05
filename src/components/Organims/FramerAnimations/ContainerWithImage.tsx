@@ -7,7 +7,7 @@ import {
 	useMotionValue,
 	useSpring,
 } from "framer-motion";
-import Heading from "../../Atoms/Heading/heading";
+import Heading from "../../Atoms/Heading/Heading";
 
 export default function ContainerWithImage({
 	themeName,
@@ -16,8 +16,8 @@ export default function ContainerWithImage({
 }: any) {
 	const [theme, setTheme] = useState(Themes.deepBlack); // Default theme
 
-	const ROTATION_RANGE = 32.5;
-	const HALF_ROTATION_RANGE = 32.5 / 2;
+	const ROTATION_RANGE = 10.5;
+	const HALF_ROTATION_RANGE = 10.5 / 2;
 
 	const ref = useRef(null);
 
