@@ -7,8 +7,7 @@ import {
 	useMotionValue,
 	useSpring,
 } from "framer-motion";
-export default function AngledContainer({
-	children,
+export default function ContainerWithImage({
 	themeName,
 	className,
 	tilt,
@@ -57,7 +56,7 @@ export default function AngledContainer({
 
 	return (
 		<div
-			className={`flex flex-col items-start justify-start w-full px-10 py-12 ${className}`}
+			className={`flex max-w-[1280px] flex-col items-start justify-start w-full px-10 py-12 ${className}`}
 		>
 			<motion.div
 				ref={ref}
@@ -110,24 +109,72 @@ export default function AngledContainer({
 						className={`absolute top-0 right-[-25px] z-0 w-[70px] h-[70px] ${theme.contrast} translate-x-1/2 -translate-y-1/2`}
 					></div>
 					<div
-						aria-hidden="true"
 						style={{
-							pointerEvents: "none",
-							transform: "translateZ(5px)",
+							transform: "translateZ(0px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute top-0 opacity-10 text-black z-10 w-full h-full px-10 py-20`}
+						className={`realtive top-0 ${theme.text} z-10 w-full h-full px-10 py-20`}
 					>
-						{children}
-					</div>
-					<div
-						style={{
-							transform: "translateZ(150px)",
-							transformStyle: "preserve-3d",
-						}}
-						className={`relative ${theme.text} z-10 w-full h-full px-10 py-20`}
-					>
-						{children}
+						<div
+							style={{
+								transform: "translateZ(0px)",
+								transformStyle: "preserve-3d",
+							}}
+							className="grid grid-cols-2"
+						>
+							<div
+								style={{
+									transform: "translateZ(150px)",
+									transformStyle: "preserve-3d",
+								}}
+								classNmae="col-span-1"
+							>
+								<p>
+									Lorem Ipsum is simply dummy text of the printing and
+									typesetting industry. Lorem Ipsum has been the industry's
+									standard dummy text ever since the 1500s, when an unknown
+									printer took a galley of type and scrambled it to make a type
+									specimen book. It has survived not only five centuries, but
+									also the leap into electronic typesetting, remaining
+									essentially unchanged. It was popularised in the 1960s with
+									the release of Letraset sheets containing Lorem Ipsum
+									passages, and more recently with desktop publishing software
+									like Aldus PageMaker including versions of Lorem Ipsum.
+								</p>
+							</div>
+							<div
+								style={{
+									transform: "translateZ(0px)",
+									transformStyle: "preserve-3d",
+								}}
+								className="flex items-center justify-center aspect-square col-span-1"
+							>
+								<img
+									style={{
+										transform: "translateZ(50px)",
+										transformStyle: "preserve-3d",
+									}}
+									className="w-2/3"
+									src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Gallet_clamshell_600x600_movement.jpg?20120102182331"
+								></img>
+								<img
+									style={{
+										transform: "translateZ(150px)",
+										transformStyle: "preserve-3d",
+									}}
+									className="absolute top-0 right-0 w-1/2"
+									src="https://www.makiramen.com/wp-content/uploads/2024/04/NICOLSON-ST--600x600.jpg"
+								></img>
+								<img
+									style={{
+										transform: "translateZ(200px)",
+										transformStyle: "preserve-3d",
+									}}
+									className="absolute bottom-0 w-1/2 right-1/2"
+									src="https://archive.starbucks.com/uploads/2018/12/50a-nodl-our-name-sbx20080316-7785-1528x1080.jpg"
+								></img>
+							</div>
+						</div>
 					</div>
 				</div>
 			</motion.div>
