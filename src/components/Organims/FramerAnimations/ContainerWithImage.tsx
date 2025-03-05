@@ -11,7 +11,11 @@ import Heading from "../../Atoms/Heading/Heading";
 
 export default function ContainerWithImage({
 	themeName,
+	children,
 	className,
+	imageOne,
+	imageTwo,
+	imageThree,
 	tilt,
 }: any) {
 	const [theme, setTheme] = useState(Themes.deepBlack); // Default theme
@@ -131,39 +135,7 @@ export default function ContainerWithImage({
 								}}
 								className="mb-5 col-span-1 lg:mb-auto"
 							>
-								<Heading
-									level={3}
-									text={[
-										{
-											language: "EN",
-											content: "Welcome to our website",
-										},
-										{
-											language: "ES",
-											content: "Bienvenido a nuestro sitio web",
-										},
-										{
-											language: "CH",
-											content: "欢迎来到我们的网站",
-										},
-										{
-											language: "IT",
-											content: "Benvenuti nel nostro sito web",
-										},
-									]}
-								></Heading>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and
-									typesetting industry. Lorem Ipsum has been the industry's
-									standard dummy text ever since the 1500s, when an unknown
-									printer took a galley of type and scrambled it to make a type
-									specimen book. It has survived not only five centuries, but
-									also the leap into electronic typesetting, remaining
-									essentially unchanged. It was popularised in the 1960s with
-									the release of Letraset sheets containing Lorem Ipsum
-									passages, and more recently with desktop publishing software
-									like Aldus PageMaker including versions of Lorem Ipsum.
-								</p>
+								{children}
 							</div>
 							<div
 								style={{
@@ -178,7 +150,7 @@ export default function ContainerWithImage({
 										transformStyle: "preserve-3d",
 									}}
 									className="w-2/3"
-									src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Gallet_clamshell_600x600_movement.jpg?20120102182331"
+									src={imageOne}
 								></img>
 								<img
 									style={{
@@ -186,7 +158,7 @@ export default function ContainerWithImage({
 										transformStyle: "preserve-3d",
 									}}
 									className="absolute top-0 right-0 w-1/2"
-									src="https://www.makiramen.com/wp-content/uploads/2024/04/NICOLSON-ST--600x600.jpg"
+									src={imageTwo}
 								></img>
 								<img
 									style={{
@@ -194,7 +166,7 @@ export default function ContainerWithImage({
 										transformStyle: "preserve-3d",
 									}}
 									className="absolute bottom-0 w-1/2 right-1/2"
-									src="https://archive.starbucks.com/uploads/2018/12/50a-nodl-our-name-sbx20080316-7785-1528x1080.jpg"
+									src={imageThree}
 								></img>
 							</div>
 						</div>

@@ -15,8 +15,8 @@ export default function AngledContainer({
 }: any) {
 	const [theme, setTheme] = useState(Themes.deepBlack); // Default theme
 
-	const ROTATION_RANGE = 32.5;
-	const HALF_ROTATION_RANGE = 32.5 / 2;
+	const ROTATION_RANGE = 10.5;
+	const HALF_ROTATION_RANGE = 10.5 / 2;
 
 	const ref = useRef(null);
 
