@@ -81,7 +81,7 @@ export default function MainHeader() {
         ref={homeRef}
       >
         <Heading
-          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-red px-7 w-fit"
+          className="hidden py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-red px-7 w-fit"
           text={[
             {
               language: "EN",

@@ -91,28 +91,38 @@ export default function ContainerWithImage({
 							transform: "translateZ(5px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute opacity-10 bottom-0 left-[-25px] z-0 w-[70px] h-[70px] bg-black`}
+						className={`absolute opacity-10 bottom-0 ${
+							tilt ? "right-[-25px]" : "left-[-25px]"
+						}  z-0 w-[70px] h-[70px] bg-black`}
 					></div>
 					<div
 						style={{
 							transform: "translateZ(5px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute opacity-10 top-0 right-[-25px] z-0 w-[70px] h-[70px] bg-black translate-x-1/2 -translate-y-1/2`}
+						className={`absolute opacity-10 top-0 ${
+							tilt ? "left-[-25px]" : "right-[-25px]"
+						} z-0 w-[70px] h-[70px] bg-black translate-x-1/2 -translate-y-1/2`}
 					></div>
 					<div
 						style={{
 							transform: "translateZ(115px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute bottom-0 left-[-25px] z-0 w-[70px] h-[70px] ${theme.contrast}`}
+						className={`absolute bottom-0 ${
+							tilt ? "right-[-25px]" : "left-[-25px]"
+						} z-0 w-[70px] h-[70px] ${theme.contrast}`}
 					></div>
 					<div
 						style={{
 							transform: "translateZ(115px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute top-0 right-[-25px] z-0 w-[70px] h-[70px] ${theme.contrast} translate-x-1/2 -translate-y-1/2`}
+						className={`absolute ${
+							tilt ? "left-[-25px]" : "right-[-25px]"
+						} top-0 z-0 w-[70px] h-[70px] ${
+							theme.contrast
+						} translate-x-1/2 -translate-y-1/2`}
 					></div>
 					<div
 						style={{
@@ -133,7 +143,9 @@ export default function ContainerWithImage({
 									transform: "translateZ(150px)",
 									transformStyle: "preserve-3d",
 								}}
-								className="mb-5 col-span-1 lg:mb-auto"
+								className={`mb-5 col-span-1 lg:mb-auto ${
+									tilt ? "order-2 !text-right" : "order-1"
+								}`}
 							>
 								{children}
 							</div>
@@ -142,7 +154,9 @@ export default function ContainerWithImage({
 									transform: "translateZ(0px)",
 									transformStyle: "preserve-3d",
 								}}
-								className="flex items-center justify-center aspect-square col-span-1"
+								className={`flex items-center justify-center aspect-square col-span-1 ${
+									tilt ? "order-1" : "order-2"
+								}`}
 							>
 								<img
 									style={{
