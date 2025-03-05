@@ -343,7 +343,90 @@ export default function ComponentDisplay() {
           </AngledContainer>
         ))}
       </div>
-      <ContainerWithImage themeName={"plum"}></ContainerWithImage>
+      <ContainerWithImage
+        themeName={"plum"}
+        imageOne={
+          "https://upload.wikimedia.org/wikipedia/commons/a/ab/Gallet_clamshell_600x600_movement.jpg?20120102182331"
+        }
+        imageTwo={
+          "https://www.makiramen.com/wp-content/uploads/2024/04/NICOLSON-ST--600x600.jpg"
+        }
+        imageThree={
+          "https://archive.starbucks.com/uploads/2018/12/50a-nodl-our-name-sbx20080316-7785-1528x1080.jpg"
+        }
+      >
+        <Heading
+          level={3}
+          className={`z-0 transition-all mb-6 duration-500`}
+          text={[
+            {
+              language: "EN",
+              content: "Heading (Ingles)",
+            },
+            {
+              language: "ES",
+              content:
+                "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+            },
+            {
+              language: "CH",
+              content: "进口、建筑和零售的综合解决方案 (Chino)",
+            },
+            {
+              language: "IT",
+              content:
+                "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+            },
+          ]}
+        ></Heading>
+        <Paragraph
+          type={"body"}
+          className="mb-4"
+          text={[
+            {
+              language: "EN",
+              content: "Paragraph regular text component (Ingles)",
+            },
+            {
+              language: "ES",
+              content:
+                "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+            },
+            {
+              language: "CH",
+              content: "进口、建筑和零售的综合解决方案 (Chino)",
+            },
+            {
+              language: "IT",
+              content:
+                "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+            },
+          ]}
+        ></Paragraph>
+        <TextButton
+          href={"#"}
+          text={[
+            {
+              language: "EN",
+              content: "Paragraph regular text component (Ingles)",
+            },
+            {
+              language: "ES",
+              content:
+                "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+            },
+            {
+              language: "CH",
+              content: "进口、建筑和零售的综合解决方案 (Chino)",
+            },
+            {
+              language: "IT",
+              content:
+                "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+            },
+          ]}
+        ></TextButton>
+      </ContainerWithImage>
     </div>
   );
 }

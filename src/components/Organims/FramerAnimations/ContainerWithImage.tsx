@@ -7,17 +7,21 @@ import {
 	useMotionValue,
 	useSpring,
 } from "framer-motion";
-import Heading from "../../Atoms/Heading/heading";
+import Heading from "../../Atoms/Heading/Heading";
 
 export default function ContainerWithImage({
 	themeName,
+	children,
 	className,
+	imageOne,
+	imageTwo,
+	imageThree,
 	tilt,
 }: any) {
 	const [theme, setTheme] = useState(Themes.deepBlack); // Default theme
 
-	const ROTATION_RANGE = 32.5;
-	const HALF_ROTATION_RANGE = 32.5 / 2;
+	const ROTATION_RANGE = 10.5;
+	const HALF_ROTATION_RANGE = 10.5 / 2;
 
 	const ref = useRef(null);
 
@@ -87,28 +91,38 @@ export default function ContainerWithImage({
 							transform: "translateZ(5px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute opacity-10 bottom-0 left-[-25px] z-0 w-[70px] h-[70px] bg-black`}
+						className={`absolute opacity-10 bottom-0 ${
+							tilt ? "right-[-25px]" : "left-[-25px]"
+						}  z-0 w-[70px] h-[70px] bg-black`}
 					></div>
 					<div
 						style={{
 							transform: "translateZ(5px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute opacity-10 top-0 right-[-25px] z-0 w-[70px] h-[70px] bg-black translate-x-1/2 -translate-y-1/2`}
+						className={`absolute opacity-10 top-0 ${
+							tilt ? "left-[-25px]" : "right-[-25px]"
+						} z-0 w-[70px] h-[70px] bg-black translate-x-1/2 -translate-y-1/2`}
 					></div>
 					<div
 						style={{
 							transform: "translateZ(115px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute bottom-0 left-[-25px] z-0 w-[70px] h-[70px] ${theme.contrast}`}
+						className={`absolute bottom-0 ${
+							tilt ? "right-[-25px]" : "left-[-25px]"
+						} z-0 w-[70px] h-[70px] ${theme.contrast}`}
 					></div>
 					<div
 						style={{
 							transform: "translateZ(115px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute top-0 right-[-25px] z-0 w-[70px] h-[70px] ${theme.contrast} translate-x-1/2 -translate-y-1/2`}
+						className={`absolute ${
+							tilt ? "left-[-25px]" : "right-[-25px]"
+						} top-0 z-0 w-[70px] h-[70px] ${
+							theme.contrast
+						} translate-x-1/2 -translate-y-1/2`}
 					></div>
 					<div
 						style={{
@@ -129,48 +143,20 @@ export default function ContainerWithImage({
 									transform: "translateZ(150px)",
 									transformStyle: "preserve-3d",
 								}}
-								className="mb-5 col-span-1 lg:mb-auto"
+								className={`mb-5 col-span-1 lg:mb-auto ${
+									tilt ? "order-2 !text-right" : "order-1"
+								}`}
 							>
-								<Heading
-									level={3}
-									text={[
-										{
-											language: "EN",
-											content: "Welcome to our website",
-										},
-										{
-											language: "ES",
-											content: "Bienvenido a nuestro sitio web",
-										},
-										{
-											language: "CH",
-											content: "欢迎来到我们的网站",
-										},
-										{
-											language: "IT",
-											content: "Benvenuti nel nostro sito web",
-										},
-									]}
-								></Heading>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and
-									typesetting industry. Lorem Ipsum has been the industry's
-									standard dummy text ever since the 1500s, when an unknown
-									printer took a galley of type and scrambled it to make a type
-									specimen book. It has survived not only five centuries, but
-									also the leap into electronic typesetting, remaining
-									essentially unchanged. It was popularised in the 1960s with
-									the release of Letraset sheets containing Lorem Ipsum
-									passages, and more recently with desktop publishing software
-									like Aldus PageMaker including versions of Lorem Ipsum.
-								</p>
+								{children}
 							</div>
 							<div
 								style={{
 									transform: "translateZ(0px)",
 									transformStyle: "preserve-3d",
 								}}
-								className="flex items-center justify-center aspect-square col-span-1"
+								className={`flex items-center justify-center aspect-square col-span-1 ${
+									tilt ? "order-1" : "order-2"
+								}`}
 							>
 								<img
 									style={{
@@ -178,7 +164,7 @@ export default function ContainerWithImage({
 										transformStyle: "preserve-3d",
 									}}
 									className="w-2/3"
-									src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Gallet_clamshell_600x600_movement.jpg?20120102182331"
+									src={imageOne}
 								></img>
 								<img
 									style={{
@@ -186,7 +172,7 @@ export default function ContainerWithImage({
 										transformStyle: "preserve-3d",
 									}}
 									className="absolute top-0 right-0 w-1/2"
-									src="https://www.makiramen.com/wp-content/uploads/2024/04/NICOLSON-ST--600x600.jpg"
+									src={imageTwo}
 								></img>
 								<img
 									style={{
@@ -194,7 +180,7 @@ export default function ContainerWithImage({
 										transformStyle: "preserve-3d",
 									}}
 									className="absolute bottom-0 w-1/2 right-1/2"
-									src="https://archive.starbucks.com/uploads/2018/12/50a-nodl-our-name-sbx20080316-7785-1528x1080.jpg"
+									src={imageThree}
 								></img>
 							</div>
 						</div>
