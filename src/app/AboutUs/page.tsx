@@ -32,11 +32,12 @@ export default function AboutUs() {
     >
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
-        <div className="grid grid-cols-5 w-full xl:w-full xl:max-w-[1080px]">
+        <div className="grid grid-cols-5 w-full xl:w-full max-w-[1080px]">
           <div className="mx-auto mb-10 col-start-1 col-end-6">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
                 <Heading
+                  theme={"white"}
                   className={"text-2xl mb-4 md:text-4xl text-start w-full"}
                   text={[
                     {
