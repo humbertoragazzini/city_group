@@ -32,12 +32,12 @@ export default function AboutUs() {
     >
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
-        <div className="grid grid-cols-5 w-full xl:w-full xl:max-w-[1920px]">
+        <div className="grid grid-cols-5 w-full xl:w-full xl:max-w-[1080px]">
           <div className="mx-auto mb-10 col-start-1 col-end-6">
-            <AngledContainer themeName={"burgundy"}>
+            <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
                 <Heading
-                  className={"text-2xl mb-4 text-center md:text-4xl"}
+                  className={"text-2xl mb-4 md:text-4xl text-start w-full"}
                   text={[
                     {
                       language: "EN",
@@ -61,13 +61,13 @@ export default function AboutUs() {
               </div>
               <div className="items-start justify-center w-full">
                 <Paragraph
-                  type={"standfirst"}
+                  type={"body"}
                   className="mb-4"
                   text={[
                     {
                       language: "EN",
                       content:
-                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        "Lorem Ipsum is simply dummy text of when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.jTexto secundario de la pagina standfirst, and Retail (Ingles)",
                     },
                     {
                       language: "ES",
@@ -86,82 +86,7 @@ export default function AboutUs() {
                   ]}
                 ></Paragraph>
                 <Paragraph
-                  type={"standfirst"}
-                  className="mb-4"
-                  text={[
-                    {
-                      language: "EN",
-                      content:
-                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                    },
-                    {
-                      language: "ES",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                    },
-                    {
-                      language: "CH",
-                      content: "进口、建筑和零售的综合解决方案 (Chino)",
-                    },
-                    {
-                      language: "IT",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                    },
-                  ]}
-                ></Paragraph>
-                <Paragraph
-                  type={"standfirst"}
-                  className="mb-4"
-                  text={[
-                    {
-                      language: "EN",
-                      content:
-                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                    },
-                    {
-                      language: "ES",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                    },
-                    {
-                      language: "CH",
-                      content: "进口、建筑和零售的综合解决方案 (Chino)",
-                    },
-                    {
-                      language: "IT",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                    },
-                  ]}
-                ></Paragraph>
-                <Paragraph
-                  type={"standfirst"}
-                  className="mb-4"
-                  text={[
-                    {
-                      language: "EN",
-                      content:
-                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                    },
-                    {
-                      language: "ES",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                    },
-                    {
-                      language: "CH",
-                      content: "进口、建筑和零售的综合解决方案 (Chino)",
-                    },
-                    {
-                      language: "IT",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                    },
-                  ]}
-                ></Paragraph>
-                <Paragraph
-                  type={"standfirst"}
+                  type={"body"}
                   className="mb-4"
                   text={[
                     {
@@ -193,7 +118,7 @@ export default function AboutUs() {
 
       {/* Section with photo of founders */}
       <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
-        <div className="grid grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-[1920px] ">
+        <div className="grid grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-[1080px] ">
           <div className="col-span-3 lg:col-span-1">
             <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
               <div className="w-full overflow-hidden rounded-md aspect-square">
@@ -282,7 +207,7 @@ export default function AboutUs() {
       {/* Our history */}
       <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         <div className="grid grid-cols-12">
-          <div className="col-start-1 col-end-10">
+          <div className="col-span-12 xl:col-start-1 xl:col-end-10">
             <ContainerWithImage
               imageOne={
                 "https://upload.wikimedia.org/wikipedia/commons/a/ab/Gallet_clamshell_600x600_movement.jpg?20120102182331"
@@ -294,7 +219,7 @@ export default function AboutUs() {
                 "https://archive.starbucks.com/uploads/2018/12/50a-nodl-our-name-sbx20080316-7785-1528x1080.jpg"
               }
               themeName="red"
-              className={"max-w-[1280px] p-12"}
+              className={""}
             >
               <Heading
                 className={
@@ -453,7 +378,7 @@ export default function AboutUs() {
       {/* Our history */}
       <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         <div className="grid grid-cols-12">
-          <div className="col-start-4 col-end-13">
+          <div className="col-span-12 xl:col-start-4 xl:col-end-13">
             <ContainerWithImage
               tilt={true}
               imageOne={
@@ -466,7 +391,7 @@ export default function AboutUs() {
                 "https://archive.starbucks.com/uploads/2018/12/50a-nodl-our-name-sbx20080316-7785-1528x1080.jpg"
               }
               themeName="red"
-              className={"max-w-[1280px] p-12"}
+              className={""}
             >
               <Heading
                 className={"text-2xl mb-4 md:text-4xl"}
@@ -617,7 +542,7 @@ export default function AboutUs() {
               ></Paragraph>
             </ContainerWithImage>
           </div>
-        </div>{" "}
+        </div>
       </div>
 
       {/* Why choose Primalport */}
