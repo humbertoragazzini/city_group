@@ -3,7 +3,7 @@ import { TextContent } from "../../../types/types";
 
 interface iHeading {
   text: TextContent[];
-  level: number;
+  level: 1 | 2 | 3 | 4 | 5 | 6;
   theme?:
     | "red"
     | "black"
@@ -19,103 +19,50 @@ interface iHeading {
   className?: string;
 }
 
-export default function Heading({ text, level, theme, className }: iHeading) {
+export default function Heading({
+  text,
+  level,
+  theme = "white",
+  className = "",
+}: iHeading) {
   const context = useAppContext();
+  const textContent = text.find((t) => t.language === context.state.language);
 
-  const filterLanguage = () => {
-    return text.filter((text) => text.language === context.state.language);
+  // Define theme color mappings
+  const themeColors: Record<iHeading["theme"], string> = {
+    red: "text-red-500",
+    black: "text-black",
+    darkGrey: "text-gray-800",
+    lightGrey: "text-gray-400",
+    lightRed: "text-red-300",
+    darkWhite: "text-gray-200",
+    darkerGrey: "text-gray-700",
+    lightWhite: "text-gray-50",
+    white: "text-white",
+    darkBlack: "text-gray-900",
+    yellow: "text-yellow-500",
   };
 
-  const textContent = filterLanguage();
-  let themeColor = "";
-  // TODO build themes
-  switch (theme) {
-    case "red":
-      themeColor = "";
-      break;
-    case "black":
-      themeColor = "";
-      break;
-    case "darkGrey":
-      themeColor = "";
-      break;
-    case "lightGrey":
-      themeColor = "";
-      break;
-    case "lightRed":
-      themeColor = "";
-      break;
-    case "darkWhite":
-      themeColor = "";
-      break;
-    case "darkerGrey":
-      themeColor = "";
-      break;
-    case "lightWhite":
-      themeColor = "";
-      break;
-    case "white":
-      themeColor = "";
-      break;
-    case "darkBlack":
-      themeColor = "";
-      break;
-    case "yellow":
-      themeColor = "";
-      break;
-    default:
-      break;
-  }
+  // Define font sizes dynamically
+  const headingSizes: Record<number, string> = {
+    1: "text-5xl sm:text-[65px] sm:leading-[65px] md:text-[65px] md:leading-[90px] lg:text-[65px] lg:leading-[90px] font-semibold",
+    2: "text-4xl sm:text-[50px] sm:leading-[50px] md:text-[55px] md:leading-[70px] lg:text-[55px] lg:leading-[70px] font-semibold",
+    3: "text-3xl sm:text-[40px] sm:leading-[45px] md:text-[45px] md:leading-[60px] lg:text-[45px] lg:leading-[60px] font-semibold",
+    4: "text-2xl sm:text-[35px] sm:leading-[40px] md:text-[40px] md:leading-[50px] lg:text-[40px] lg:leading-[50px] font-semibold",
+    5: "text-lg sm:text-[30px] sm:leading-[35px] md:text-[35px] md:leading-[45px] lg:text-[35px] lg:leading-[45px] font-semibold",
+    6: "text-md sm:text-[20px] sm:leading-[30px] md:text-[25px] md:leading-[35px] lg:text-[25px] lg:leading-[35px] font-semibold",
+  };
+
+  if (!textContent) return null; // If no content, don't render anything
+
+  const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements;
 
   return (
-    <>
-      {textContent[0] !== undefined && (
-        <>
-          {level == 1 && (
-            <h1
-              className={`text-4xl sm:text-[85px] sm:leading-[85px] md:text-[85px] md:leading-[110px] lg:text-[85px] lg:leading-[110px] font-semibold ${className} ${themeColor}`}
-            >
-              {textContent.length > 0 && <>{textContent[0].content}</>}
-            </h1>
-          )}
-          {level == 2 && (
-            <h2
-              className={`text-3xl sm:text-[70px] sm:leading-[70px] md:text-[75px] md:leading-[90px] lg:text-[75px] lg:leading-[90px]  font-semibold ${className} ${themeColor}`}
-            >
-              {textContent.length > 0 && <>{textContent[0].content}</>}
-            </h2>
-          )}
-          {level == 3 && (
-            <h3
-              className={`text-2xl sm:text-[60px] sm:leading-[65px] md:text-[65px] md:leading-[80px] lg:text-[65px] lg:leading-[80px] font-semibold ${className} ${themeColor}`}
-            >
-              {textContent.length > 0 && <>{textContent[0].content}</>}
-            </h3>
-          )}
-          {level == 4 && (
-            <h4
-              className={`text-xl sm:text-[55px] sm:leading-[60px] md:text-[60px] md:leading-[70px] lg:text-[60px] lg:leading-[70px] font-semibold ${className} ${themeColor}`}
-            >
-              {textContent.length > 0 && <>{textContent[0].content}</>}
-            </h4>
-          )}
-          {level == 5 && (
-            <h5
-              className={`text-lg sm:text-[50px] sm:leading-[55px] md:text-[55px] md:leading-[65px] lg:text-[55px] lg:leading-[65px] font-semibold ${className} ${themeColor}`}
-            >
-              {textContent.length > 0 && <>{textContent[0].content}</>}
-            </h5>
-          )}
-          {level == 6 && (
-            <h6
-              className={`text-5xl sm:text-[40px] sm:leading-[50px] md:text-[45px] md:leading-[55px] lg:text-[45px] lg:leading-[55px] font-semibold ${className} ${themeColor}`}
-            >
-              {textContent.length > 0 && <>{textContent[0].content}</>}
-            </h6>
-          )}
-        </>
-      )}
-    </>
+    <HeadingTag
+      className={`${headingSizes[level]} ${themeColors[theme]} ${className}`}
+    >
+      {textContent.content}
+    </HeadingTag>
   );
 }
 
