@@ -32,12 +32,12 @@ export default function AboutUs() {
     >
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
-        <div className="grid grid-cols-5 w-full xl:w-full xl:max-w-[1920px]">
+        <div className="grid grid-cols-5 w-full xl:w-full xl:max-w-[1080px]">
           <div className="mx-auto mb-10 col-start-1 col-end-6">
-            <AngledContainer themeName={"burgundy"} className={"px-0 py-0"}>
+            <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
                 <Heading
-                  className={"text-2xl mb-4 text-center md:text-4xl"}
+                  className={"text-2xl mb-4 md:text-4xl text-start w-full"}
                   text={[
                     {
                       language: "EN",
@@ -61,13 +61,13 @@ export default function AboutUs() {
               </div>
               <div className="items-start justify-center w-full">
                 <Paragraph
-                  type={"standfirst"}
+                  type={"body"}
                   className="mb-4"
                   text={[
                     {
                       language: "EN",
                       content:
-                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        "Lorem Ipsum is simply dummy text of when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.jTexto secundario de la pagina standfirst, and Retail (Ingles)",
                     },
                     {
                       language: "ES",
@@ -86,82 +86,7 @@ export default function AboutUs() {
                   ]}
                 ></Paragraph>
                 <Paragraph
-                  type={"standfirst"}
-                  className="mb-4"
-                  text={[
-                    {
-                      language: "EN",
-                      content:
-                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                    },
-                    {
-                      language: "ES",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                    },
-                    {
-                      language: "CH",
-                      content: "进口、建筑和零售的综合解决方案 (Chino)",
-                    },
-                    {
-                      language: "IT",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                    },
-                  ]}
-                ></Paragraph>
-                <Paragraph
-                  type={"standfirst"}
-                  className="mb-4"
-                  text={[
-                    {
-                      language: "EN",
-                      content:
-                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                    },
-                    {
-                      language: "ES",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                    },
-                    {
-                      language: "CH",
-                      content: "进口、建筑和零售的综合解决方案 (Chino)",
-                    },
-                    {
-                      language: "IT",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                    },
-                  ]}
-                ></Paragraph>
-                <Paragraph
-                  type={"standfirst"}
-                  className="mb-4"
-                  text={[
-                    {
-                      language: "EN",
-                      content:
-                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
-                    },
-                    {
-                      language: "ES",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                    },
-                    {
-                      language: "CH",
-                      content: "进口、建筑和零售的综合解决方案 (Chino)",
-                    },
-                    {
-                      language: "IT",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                    },
-                  ]}
-                ></Paragraph>
-                <Paragraph
-                  type={"standfirst"}
+                  type={"body"}
                   className="mb-4"
                   text={[
                     {
