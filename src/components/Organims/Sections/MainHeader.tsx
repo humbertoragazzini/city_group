@@ -81,29 +81,6 @@ export default function MainHeader() {
         ref={homeRef}
       >
         <Heading
-          className="hidden py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-red px-7 w-fit"
-          text={[
-            {
-              language: "EN",
-              content: "Imports, Construction, and Retail",
-            },
-            {
-              language: "ES",
-              content: "Elevando la Excelencia en Todas las Industrias",
-            },
-            {
-              language: "CH",
-              content: "提升各行业的卓越水平",
-            },
-            {
-              language: "IT",
-              content: "Elevare l'Eccellenza in Tutti i Settori",
-            },
-          ]}
-          level={1}
-        ></Heading>
-
-        <Heading
           className="mb-4 text-center"
           text={[
             {
@@ -153,29 +130,6 @@ export default function MainHeader() {
         ></Paragraph>
       </div>
       <div className="relative opacity-0" ref={aboutUsRef}>
-        <Heading
-          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-red px-7 w-fit"
-          text={[
-            {
-              language: "EN",
-              content: "Imports, Construction, and Retail",
-            },
-            {
-              language: "ES",
-              content: "Elevando la Excelencia en Todas las Industrias",
-            },
-            {
-              language: "CH",
-              content: "提升各行业的卓越水平",
-            },
-            {
-              language: "IT",
-              content: "Elevare l'Eccellenza in Tutti i Settori",
-            },
-          ]}
-          level={1}
-        ></Heading>
-
         <Heading
           className="mb-4 text-center"
           text={[
@@ -227,29 +181,6 @@ export default function MainHeader() {
       </div>
       <div className="relative opacity-0" ref={ourServicesRef}>
         <Heading
-          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-red px-7 w-fit"
-          text={[
-            {
-              language: "EN",
-              content: "Imports, Construction, and Retail",
-            },
-            {
-              language: "ES",
-              content: "Elevando la Excelencia en Todas las Industrias",
-            },
-            {
-              language: "CH",
-              content: "提升各行业的卓越水平",
-            },
-            {
-              language: "IT",
-              content: "Elevare l'Eccellenza in Tutti i Settori",
-            },
-          ]}
-          level={1}
-        ></Heading>
-
-        <Heading
           className="mb-4 text-center"
           text={[
             {
@@ -299,29 +230,6 @@ export default function MainHeader() {
         ></Paragraph>
       </div>
       <div className="relative opacity-0" ref={contactUsRef}>
-        <Heading
-          className="py-3 mx-auto mb-4 !text-3xl text-center rounded-lg bg-red px-7 w-fit"
-          text={[
-            {
-              language: "EN",
-              content: "Imports, Construction, and Retail",
-            },
-            {
-              language: "ES",
-              content: "Elevando la Excelencia en Todas las Industrias",
-            },
-            {
-              language: "CH",
-              content: "提升各行业的卓越水平",
-            },
-            {
-              language: "IT",
-              content: "Elevare l'Eccellenza in Tutti i Settori",
-            },
-          ]}
-          level={1}
-        ></Heading>
-
         <Heading
           className="mb-4 text-center"
           text={[
