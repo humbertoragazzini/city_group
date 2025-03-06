@@ -11,6 +11,7 @@ import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import AngledContainer from "@/components/Atoms/Containers/AngledContainer";
 import { motion } from "framer-motion";
 import ContainerWithImage from "@/components/Organims/FramerAnimations/ContainerWithImage";
+
 export default function AboutUs() {
   const context = useAppContext();
 
@@ -30,8 +31,8 @@ export default function AboutUs() {
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       {/* Section with us and the description */}
-      <motion.div className="w-full min-h-screen pt-10 bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
-        <div className="grid grid-cols-5 w-full xl:w-full xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
+      <motion.div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+        <div className="grid grid-cols-5 w-full xl:w-full xl:max-w-[1920px]">
           <div className="mx-auto mb-10 col-start-1 col-end-6">
             <AngledContainer themeName={"burgundy"}>
               <div className="flex items-end justify-center w-full">
@@ -191,8 +192,8 @@ export default function AboutUs() {
       </motion.div>
 
       {/* Section with photo of founders */}
-      <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
-        <div className="grid grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
+      <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+        <div className="grid grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-[1920px] ">
           <div className="col-span-3 lg:col-span-1">
             <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
               <div className="w-full overflow-hidden rounded-md aspect-square">
@@ -279,7 +280,7 @@ export default function AboutUs() {
       </div>
 
       {/* Our history */}
-      <div className="w-full p-12 min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
+      <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         <div className="grid grid-cols-12">
           <div className="col-start-1 col-end-10">
             <ContainerWithImage
@@ -450,7 +451,7 @@ export default function AboutUs() {
       </div>
 
       {/* Our history */}
-      <div className="w-full p-12 min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
+      <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         <div className="grid grid-cols-12">
           <div className="col-start-4 col-end-13">
             <ContainerWithImage
@@ -620,8 +621,8 @@ export default function AboutUs() {
       </div>
 
       {/* Why choose Primalport */}
-      <div className="w-full min-h-screen pt-10 bg-[rgba(0.0,0.0,0.0,0.55)] flex flex-col justify-center items-center overflow-hidden relative">
-        <div className="xl:w-full xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
+      <div className="min-h-screen flex flex-col justify-center items-center overflow-hidden relative bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.50)]">
+        <div className="xl:w-full xl:max-w-[1920px]">
           <Heading
             className={"text-2xl mb-4 text-center  md:text-4xl"}
             text={[
@@ -651,7 +652,7 @@ export default function AboutUs() {
       </div>
 
       {/* Lets contact */}
-      <div className="w-full min-h-screen pt-10 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.55)] to-black flex flex-col justify-center items-center overflow-hidden relative">
+      <div className="min-h-screen bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.50)] to-black flex flex-col justify-center items-center overflow-hidden relative">
         <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
           <Heading
             className={"text-2xl mb-7 text-center md:text-4xl"}
