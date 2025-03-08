@@ -31,7 +31,7 @@ export default function AboutUs() {
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       {/* Section with us and the description */}
-      <motion.div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <motion.div className="p-5 xl:p-12 relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         <div className="grid grid-cols-5 w-full xl:w-full max-w-[1080px]">
           <div className="mx-auto mb-10 col-start-1 col-end-6">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
@@ -118,7 +118,7 @@ export default function AboutUs() {
       </motion.div>
 
       {/* Section with photo of founders */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <div className="p-5 xl:p-12 relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         <div className="grid grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-[1080px] ">
           <div className="col-span-3 lg:col-span-1">
             <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
@@ -206,7 +206,7 @@ export default function AboutUs() {
       </div>
 
       {/* Our history */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <div className="p-5 xl:p-12 relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         <div className="grid grid-cols-12">
           <div className="col-span-12 xl:col-start-1 xl:col-end-10">
             <ContainerWithImage
@@ -277,7 +277,7 @@ export default function AboutUs() {
       </div>
 
       {/* Our history */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <div className="p-5 xl:p-12 relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         <div className="grid grid-cols-12">
           <div className="col-span-12 xl:col-start-4 xl:col-end-13">
             <ContainerWithImage
@@ -349,7 +349,7 @@ export default function AboutUs() {
       </div>
 
       {/* Why choose Primalport */}
-      <div className="min-h-screen flex flex-col justify-center items-center overflow-hidden relative bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.50)]">
+      <div className="p-5 xl:p-12 min-h-screen flex flex-col justify-center items-center overflow-hidden relative bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.50)]">
         <div className="xl:w-full xl:max-w-[1920px]">
           <Heading
             className={"text-2xl mb-4 text-center  md:text-4xl"}
@@ -380,8 +380,8 @@ export default function AboutUs() {
       </div>
 
       {/* Lets contact */}
-      <div className="min-h-screen bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.50)] to-black flex flex-col justify-center items-center overflow-hidden relative">
-        <div className="xl:w-[75%] xl:max-w-[1920px] p-4 md:p-8 lg:p-12">
+      <div className="p-5 xl:p-12 min-h-screen bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.50)] to-black flex flex-col justify-center items-center overflow-hidden relative">
+        <div className="xl:w-[75%] xl:max-w-[1920px]">
           <Heading
             className={"text-2xl mb-7 text-center md:text-4xl"}
             text={[
