@@ -72,7 +72,7 @@ export default function ContainerWithImage({
 					transformStyle: "preserve-3d",
 					transform,
 				}}
-				className="flex items-center justify-center w-full p-10"
+				className="flex items-center justify-center w-full p-5 xl:p-10"
 			>
 				<div
 					style={{
@@ -85,24 +85,6 @@ export default function ContainerWithImage({
 						className={`absolute z-0 w-full h-full ${theme.bg} ${
 							tilt == undefined ? "skew-y-6" : "-skew-y-6"
 						}`}
-					></div>
-					<div
-						style={{
-							transform: "translateZ(5px)",
-							transformStyle: "preserve-3d",
-						}}
-						className={`absolute opacity-10 bottom-0 ${
-							tilt ? "right-[-25px]" : "left-[-25px]"
-						}  z-0 w-[70px] h-[70px] bg-black`}
-					></div>
-					<div
-						style={{
-							transform: "translateZ(5px)",
-							transformStyle: "preserve-3d",
-						}}
-						className={`absolute opacity-10 top-0 ${
-							tilt ? "left-[-25px]" : "right-[-25px]"
-						} z-0 w-[70px] h-[70px] bg-black translate-x-1/2 -translate-y-1/2`}
 					></div>
 					<div
 						style={{
@@ -129,7 +111,7 @@ export default function ContainerWithImage({
 							transform: "translateZ(0px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`realtive top-0 ${theme.text} z-10 w-full h-full px-10 py-20`}
+						className={`realtive top-0 ${theme.text} z-10 w-full h-full p-5 xl:px-10 xl:py-20`}
 					>
 						<div
 							style={{

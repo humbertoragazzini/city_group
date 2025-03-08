@@ -114,17 +114,6 @@ export default function AngledContainer({
 						className={`absolute hidden md:block top-0 right-[-15px] xl:right-[-25px] z-0 w-[50px] h-[50px] xl:w-[70px] xl:h-[70px] ${theme.contrast} translate-x-1/2 -translate-y-1/2`}
 					></div>
 					<div
-						aria-hidden="true"
-						style={{
-							pointerEvents: "none",
-							transform: "translateZ(5px)",
-							transformStyle: "preserve-3d",
-						}}
-						className={`absolute top-0 opacity-10 text-black z-10 w-full h-full px-10 py-20`}
-					>
-						{children}
-					</div>
-					<div
 						style={{
 							transform: "translateZ(150px)",
 							transformStyle: "preserve-3d",
