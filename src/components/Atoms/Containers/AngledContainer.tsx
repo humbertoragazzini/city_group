@@ -67,7 +67,7 @@ export default function AngledContainer({
 					transformStyle: "preserve-3d",
 					transform,
 				}}
-				className="flex items-center justify-center w-full p-5 xl:p-0"
+				className="flex items-center justify-center w-full"
 			>
 				<div
 					style={{
@@ -80,22 +80,6 @@ export default function AngledContainer({
 						className={`absolute z-0 w-full h-full ${theme.bg} ${
 							tilt == undefined ? "skew-y-6" : "-skew-y-6"
 						}`}
-					></div>
-					{/* bottom left shadow */}
-					<div
-						style={{
-							transform: "translateZ(5px)",
-							transformStyle: "preserve-3d",
-						}}
-						className={`absolute hidden md:block opacity-10 bottom-0 left-[-15px] xl:left-[-25px] z-0 w-[50px] h-[50px] xl:w-[70px] xl:h-[70px] bg-black`}
-					></div>
-					{/* Top right shadow */}
-					<div
-						style={{
-							transform: "translateZ(5px)",
-							transformStyle: "preserve-3d",
-						}}
-						className={`absolute hidden md:block opacity-10 top-0 right-[15px] xl:right-[-25px] z-0  w-[50px] h-[50px] xl:w-[70px] xl:h-[70px]  bg-black translate-x-1/2 -translate-y-1/2`}
 					></div>
 					{/* Bottom left white */}
 					<div
@@ -113,17 +97,6 @@ export default function AngledContainer({
 						}}
 						className={`absolute hidden md:block top-0 right-[-15px] xl:right-[-25px] z-0 w-[50px] h-[50px] xl:w-[70px] xl:h-[70px] ${theme.contrast} translate-x-1/2 -translate-y-1/2`}
 					></div>
-					<div
-						aria-hidden="true"
-						style={{
-							pointerEvents: "none",
-							transform: "translateZ(5px)",
-							transformStyle: "preserve-3d",
-						}}
-						className={`absolute top-0 opacity-10 text-black z-10 w-full h-full px-10 py-20`}
-					>
-						{children}
-					</div>
 					<div
 						style={{
 							transform: "translateZ(150px)",
