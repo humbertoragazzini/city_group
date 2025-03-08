@@ -72,7 +72,7 @@ export default function ContainerWithImage({
 					transformStyle: "preserve-3d",
 					transform,
 				}}
-				className="flex items-center justify-center w-full p-5 xl:p-10"
+				className="flex items-center justify-center w-full"
 			>
 				<div
 					style={{
