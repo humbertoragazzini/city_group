@@ -92,26 +92,28 @@ export default function ContainerWithImage({
 							transformStyle: "preserve-3d",
 						}}
 						className={`absolute bottom-0 ${
-							tilt ? "right-[-25px]" : "left-[-25px]"
-						} z-0 w-[70px] h-[70px] ${theme.contrast}`}
+							tilt
+								? "right-[15px] xl:right-[-25px]"
+								: "left-[-15px] xl:left-[-25px]"
+						} ${theme.contrast} w-[50px] h-[50px] xl:w-[70px] xl:h-[70px]`}
 					></div>
 					<div
 						style={{
 							transform: "translateZ(115px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute ${
-							tilt ? "left-[-25px]" : "right-[-25px]"
-						} top-0 z-0 w-[70px] h-[70px] ${
-							theme.contrast
-						} translate-x-1/2 -translate-y-1/2`}
+						className={`absolute hidden md:block ${
+							tilt
+								? "left-[-15px] xl:left-[-25px]"
+								: "right-[-15px] xl:right-[-25px]"
+						} ${theme.contrast} w-[50px] h-[50px] xl:w-[70px] xl:h-[70px]`}
 					></div>
 					<div
 						style={{
 							transform: "translateZ(0px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`realtive top-0 ${theme.text} z-10 w-full h-full p-5 xl:px-10 xl:py-20`}
+						className={`realtive top-0 ${theme.text} z-10 w-full h-full p-5 md:px-10 md:py-20`}
 					>
 						<div
 							style={{
