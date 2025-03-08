@@ -31,7 +31,7 @@ export default function AboutUs() {
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       {/* Section with us and the description */}
-      <motion.div className="p-5 xl:p-12 relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <motion.div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
         <div className="grid grid-cols-5 w-full xl:w-full max-w-[1080px]">
           <div className="mx-auto mb-10 col-start-1 col-end-6">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
@@ -42,7 +42,7 @@ export default function AboutUs() {
                   text={[
                     {
                       language: "EN",
-                      content: "About us",
+                      content: "Our mission",
                     },
                     {
                       language: "ES",
@@ -68,32 +68,7 @@ export default function AboutUs() {
                     {
                       language: "EN",
                       content:
-                        "Lorem Ipsum is simply dummy text of when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.jTexto secundario de la pagina standfirst, and Retail (Ingles)",
-                    },
-                    {
-                      language: "ES",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                    },
-                    {
-                      language: "CH",
-                      content: "进口、建筑和零售的综合解决方案 (Chino)",
-                    },
-                    {
-                      language: "IT",
-                      content:
-                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                    },
-                  ]}
-                ></Paragraph>
-                <Paragraph
-                  type={"body"}
-                  className="mb-4"
-                  text={[
-                    {
-                      language: "EN",
-                      content:
-                        "Texto secundario de la pagina standfirst, and Retail (Ingles)",
+                        "Provide efficient and affordable solutions for the importation of high-quality products, ensuring our customers a reliable, fast, and tailored service. We focus on optimizing costs, time, and logistics processes to guarantee a hassle-free experience.",
                     },
                     {
                       language: "ES",
@@ -118,7 +93,7 @@ export default function AboutUs() {
       </motion.div>
 
       {/* Section with photo of founders */}
-      <div className="p-5 xl:p-12 relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
         <div className="grid grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-[1080px] ">
           <div className="col-span-3 lg:col-span-1">
             <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
@@ -206,7 +181,7 @@ export default function AboutUs() {
       </div>
 
       {/* Our history */}
-      <div className="p-5 xl:p-12 relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
         <div className="grid grid-cols-12">
           <div className="col-span-12 xl:col-start-1 xl:col-end-10">
             <ContainerWithImage
@@ -277,7 +252,7 @@ export default function AboutUs() {
       </div>
 
       {/* Our history */}
-      <div className="p-5 xl:p-12 relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
         <div className="grid grid-cols-12">
           <div className="col-span-12 xl:col-start-4 xl:col-end-13">
             <ContainerWithImage
