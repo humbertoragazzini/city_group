@@ -87,7 +87,11 @@ export default function AngledContainer({
 							transform: "translateZ(115px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute hidden md:block bottom-0 left-[-15px] xl:left-[-25px] z-0 w-[50px] h-[50px] xl:w-[70px] xl:h-[70px] ${theme.contrast}`}
+						className={`absolute hidden md:block ${
+							tilt ? "bottom-[-85px]" : "bottom-0"
+						} left-[-15px] xl:left-[-25px] z-0 w-[50px] h-[50px] xl:w-[70px] xl:h-[70px] ${
+							theme.contrast
+						}`}
 					></div>
 					{/* Top right white */}
 					<div
@@ -95,7 +99,11 @@ export default function AngledContainer({
 							transform: "translateZ(115px)",
 							transformStyle: "preserve-3d",
 						}}
-						className={`absolute hidden md:block top-0 right-[-15px] xl:right-[-25px] z-0 w-[50px] h-[50px] xl:w-[70px] xl:h-[70px] ${theme.contrast} translate-x-1/2 -translate-y-1/2`}
+						className={`absolute hidden md:block ${
+							tilt ? "top-[-85px]" : "top-0"
+						}  right-[-15px] xl:right-[-25px] z-0 w-[50px] h-[50px] xl:w-[70px] xl:h-[70px] ${
+							theme.contrast
+						} translate-x-1/2 -translate-y-1/2`}
 					></div>
 					<div
 						style={{

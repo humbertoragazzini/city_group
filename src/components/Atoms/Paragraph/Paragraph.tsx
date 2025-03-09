@@ -78,29 +78,34 @@ export default function Paragraph({
       {textContent[0] !== undefined && (
         <>
           {type == "body" && (
-            <p className={`text-base ${className} ${themeColor}`}>
-              {textContent[0].content}
-            </p>
+            <p
+              dangerouslySetInnerHTML={{ __html: textContent[0].content }}
+              className={`text-base ${className} ${themeColor}`}
+            ></p>
           )}
           {type == "standfirst4" && (
-            <p className={`text-3xl sm:text-4xl ${className} ${themeColor}`}>
-              {textContent[0].content}
-            </p>
+            <p
+              dangerouslySetInnerHTML={{ __html: textContent[0].content }}
+              className={`text-3xl sm:text-4xl ${className} ${themeColor}`}
+            ></p>
           )}
           {type == "standfirst3" && (
-            <p className={`text-2xl sm:text-3xl ${className} ${themeColor}`}>
-              {textContent[0].content}
-            </p>
+            <p
+              dangerouslySetInnerHTML={{ __html: textContent[0].content }}
+              className={`text-2xl sm:text-3xl ${className} ${themeColor}`}
+            ></p>
           )}
           {type == "standfirst2" && (
-            <p className={`text-xl sm:text-2xl ${className} ${themeColor}`}>
-              {textContent[0].content}
-            </p>
+            <p
+              dangerouslySetInnerHTML={{ __html: textContent[0].content }}
+              className={`text-xl sm:text-2xl ${className} ${themeColor}`}
+            ></p>
           )}
           {type == "standfirst" && (
-            <p className={`text-lg sm:text-xl ${className} ${themeColor}`}>
-              {textContent[0].content}
-            </p>
+            <p
+              dangerouslySetInnerHTML={{ __html: textContent[0].content }}
+              className={`text-lg sm:text-xl ${className} ${themeColor}`}
+            ></p>
           )}
         </>
       )}
