@@ -32,7 +32,7 @@ export default function AboutUs() {
     >
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
-        <div className="w-full grid grid-cols-12 xl:w-full">
+        <div className="w-full max-w-7xl grid grid-cols-12 xl:w-full">
           <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-2 xl:col-end-8">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
@@ -94,7 +94,7 @@ export default function AboutUs() {
 
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
-        <div className="w-full grid grid-cols-12 xl:w-full">
+        <div className="w-full max-w-7xl grid grid-cols-12 xl:w-full">
           <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-6 xl:col-end-12">
             <AngledContainer
               tilt={true}
@@ -160,7 +160,7 @@ export default function AboutUs() {
 
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
-        <div className="w-full grid grid-cols-12 xl:w-full">
+        <div className="w-full max-w-7xl grid grid-cols-12 xl:w-full">
           <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-2 xl:col-end-8">
             <AngledContainer
               themeName={"burgundy"}
@@ -228,7 +228,7 @@ export default function AboutUs() {
 
       {/* Section with photo of founders */}
       <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
-        <div className="grid grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-[1080px] ">
+        <div className="grid mb-[25vh] grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-7xl">
           <div className="col-span-3 lg:col-span-1">
             <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
               <div className="w-full overflow-hidden rounded-md aspect-square">
@@ -315,8 +315,8 @@ export default function AboutUs() {
       </div>
 
       {/* Our history */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
-        <div className="grid grid-cols-12">
+      <div className="relative flex flex-col items-center justify-center min-h-screen p-5 xl:p-12">
+        <div className="grid max-w-7xl grid-cols-12">
           <div className="col-span-12 xl:col-start-2 xl:col-end-12">
             <ContainerWithImage
               imageOne={
@@ -328,13 +328,11 @@ export default function AboutUs() {
               imageThree={
                 "https://archive.starbucks.com/uploads/2018/12/50a-nodl-our-name-sbx20080316-7785-1528x1080.jpg"
               }
-              themeName="red"
+              themeName="black"
               className={""}
             >
               <Heading
-                className={
-                  "text-2xl mb-4 text-center md:text-start md:text-4xl"
-                }
+                className={"text-2xl mb-4 text-start md:text-4xl"}
                 text={[
                   {
                     language: "EN",
