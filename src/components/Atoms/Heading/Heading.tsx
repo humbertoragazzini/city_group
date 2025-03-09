@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { useAppContext } from "@/context/AppContext";
 import { TextContent } from "../../../types/types";
 

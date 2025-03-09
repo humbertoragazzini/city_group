@@ -31,9 +31,137 @@ export default function AboutUs() {
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       {/* Section with us and the description */}
-      <motion.div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
-        <div className="grid grid-cols-5 w-full xl:w-full max-w-[1080px]">
-          <div className="mx-auto mb-10 col-start-1 col-end-6">
+      <motion.div className="relative flex flex-col items-center justify-center p-5 xl:p-12">
+        <div className="w-full grid grid-cols-12 xl:w-full">
+          <div className="mx-auto mb-10 col-start-2 col-end-8">
+            <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
+              <div className="flex items-end justify-center w-full">
+                <Heading
+                  theme={"white"}
+                  className={"text-2xl mb-4 md:text-4xl text-start w-full"}
+                  text={[
+                    {
+                      language: "EN",
+                      content: "Our mission",
+                    },
+                    {
+                      language: "ES",
+                      content: "Acerca de nosotros",
+                    },
+                    {
+                      language: "CH",
+                      content: "业的卓越水平",
+                    },
+                    {
+                      language: "IT",
+                      content: "Chi siamo",
+                    },
+                  ]}
+                  level={2}
+                ></Heading>
+              </div>
+              <div className="items-start justify-center w-full">
+                <Paragraph
+                  type={"body"}
+                  className="mb-4"
+                  text={[
+                    {
+                      language: "EN",
+                      content:
+                        "Provide efficient and affordable solutions for the importation of high-quality products, ensuring our customers a reliable, fast, and tailored service. We focus on optimizing costs, time, and logistics processes to guarantee a hassle-free experience.",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Paragraph>
+              </div>
+            </AngledContainer>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Section with us and the description */}
+      <motion.div className="relative flex flex-col items-center justify-center p-5 xl:p-12">
+        <div className="w-full grid grid-cols-12 xl:w-full">
+          <div className="mx-auto mb-10 col-start-6 col-end-12">
+            <AngledContainer
+              tilt={true}
+              themeName={"burgundy"}
+              className={"!px-0 !py-0"}
+            >
+              <div className="flex items-end justify-center w-full">
+                <Heading
+                  theme={"white"}
+                  className={"text-2xl mb-4 md:text-4xl text-end w-full"}
+                  text={[
+                    {
+                      language: "EN",
+                      content: "Our mission",
+                    },
+                    {
+                      language: "ES",
+                      content: "Acerca de nosotros",
+                    },
+                    {
+                      language: "CH",
+                      content: "业的卓越水平",
+                    },
+                    {
+                      language: "IT",
+                      content: "Chi siamo",
+                    },
+                  ]}
+                  level={2}
+                ></Heading>
+              </div>
+              <div className="items-start justify-center w-full">
+                <Paragraph
+                  type={"body"}
+                  className="mb-4 text-end"
+                  text={[
+                    {
+                      language: "EN",
+                      content:
+                        "Provide efficient and affordable solutions for the importation of high-quality products, ensuring our customers a reliable, fast, and tailored service. We focus on optimizing costs, time, and logistics processes to guarantee a hassle-free experience.",
+                    },
+                    {
+                      language: "ES",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                    },
+                    {
+                      language: "CH",
+                      content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    },
+                    {
+                      language: "IT",
+                      content:
+                        "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                    },
+                  ]}
+                ></Paragraph>
+              </div>
+            </AngledContainer>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Section with us and the description */}
+      <motion.div className="relative flex flex-col items-center justify-center p-5 xl:p-12">
+        <div className="w-full grid grid-cols-12 xl:w-full">
+          <div className="mx-auto mb-10 col-start-2 col-end-8">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
                 <Heading
