@@ -33,7 +33,7 @@ export default function AboutUs() {
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
         <div className="w-full max-w-7xl grid grid-cols-12 xl:w-full">
-          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-2 xl:col-end-8">
+          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
                 <Heading
@@ -95,7 +95,7 @@ export default function AboutUs() {
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
         <div className="w-full max-w-7xl grid grid-cols-12 xl:w-full">
-          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-6 xl:col-end-12">
+          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-7 xl:col-end-13">
             <AngledContainer
               tilt={true}
               themeName={"burgundy"}
@@ -161,7 +161,7 @@ export default function AboutUs() {
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
         <div className="w-full max-w-7xl grid grid-cols-12 xl:w-full">
-          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-2 xl:col-end-8">
+          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
             <AngledContainer
               themeName={"burgundy"}
               className={"!px-0 !py-0 w-full"}
@@ -230,39 +230,22 @@ export default function AboutUs() {
       <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
         <div className="grid mb-[25vh] grid-cols-3 gap-5 xl:gap-12 w-full xl:max-w-7xl">
           <div className="col-span-3">
-            <div className="grid grid-cols-10">
-              <div className="col-span-3">
-                <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-                  <div className="w-full overflow-hidden max-w-64 aspect-square skew-x-12">
+            <div className="grid grid-cols-10 gap-12 mb-[25vh]">
+              <div className="col-span-10 lg:col-span-3">
+                <div className="flex h-full items-center justify-center w-full">
+                  <div className="w-full overflow-hidden aspect-square">
                     <img
-                      className="min-w-full -skew-x-12 scale-[1.2]"
+                      className="min-w-full rounded-full"
                       src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
                     ></img>
                   </div>
-                  <div className="flex flex-col items-center justify-center">
-                    <p className="mb-2 text-xl font-bold mt-7">
-                      Cristian Ragazzini
-                    </p>
-                    <p className="my-1 text-center text-md">
-                      Co-Founder - Senior Market Analisys
-                    </p>
-                    <p className="my-1">Cordoba - AR</p>
-                    <div className="flex items-center justify-center gap-3">
-                      <Link href="#">
-                        <img src={"/icons/icons8-linkedin.svg"}></img>
-                      </Link>
-                      <Link href="#">
-                        <img src={"/icons/icons8-instagram.svg"}></img>
-                      </Link>
-                    </div>
-                  </div>
                 </div>
               </div>
-              <div className="col-span-7">
+              <div className="col-span-10 lg:col-span-7">
                 <div className="w-full h-full">
-                  <div className="flex flex-col items-center justify-center h-full p-5 xl:p-12">
+                  <div className="flex flex-col items-center justify-center h-full">
                     <Heading
-                      className={"text-2xl mb-7 text-start w-full"}
+                      className={"text-2xl mb-3 text-start w-full"}
                       text={[
                         {
                           language: "EN",
@@ -285,8 +268,8 @@ export default function AboutUs() {
                     ></Heading>
                     <div className="w-full">
                       <Paragraph
-                        className="text-start mb-7"
-                        type="standfirst"
+                        className="text-start mb-3"
+                        type="body"
                         text={[
                           {
                             language: "EN",
@@ -311,79 +294,202 @@ export default function AboutUs() {
                         ]}
                       ></Paragraph>
                     </div>
+                    <div className="w-full flex flex-col items-start justify-center">
+                      <p className="mb-2 text-xl font-bold">
+                        Cristian Ragazzini
+                      </p>
+                      <p className="mb-1 text-center text-md">
+                        Co-Founder - Senior Market Analisys
+                      </p>
+                      <p className="my-1">Cordoba - AR</p>
+                      <div className="flex items-center justify-center gap-3">
+                        <Link href="#">
+                          <img src={"/icons/icons8-linkedin.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-instagram.svg"}></img>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-span-3 mt-[25vh]">
-            <div className="grid grid-cols-10">
-              <div className="col-span-7">
-                <div className="w-full h-full backdrop-blur bg-[rgba(0,0,0,0.25)]"></div>
-              </div>
-              <div className="col-span-3">
-                <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-                  <div className="w-full overflow-hidden max-w-64 aspect-square skew-x-12">
-                    <img
-                      className="min-w-full -skew-x-12 scale-[1.2]"
-                      src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
-                    ></img>
-                  </div>
-                  <div className="flex flex-col items-center justify-center">
-                    <p className="mb-2 text-xl font-bold mt-7">
+          <div className="col-span-3">
+            <div className="grid grid-cols-10 gap-12 mb-[25vh]">
+              <div className="col-span-10 lg:col-span-7">
+                <div className="w-full h-full">
+                  <div className="flex flex-col items-center justify-center h-full">
+                    <Heading
+                      className={"text-2xl mb-3 text-start w-full"}
+                      text={[
+                        {
+                          language: "EN",
+                          content: "A comment from one of the co-funders",
+                        },
+                        {
+                          language: "ES",
+                          content: "Contactanos",
+                        },
+                        {
+                          language: "CH",
+                          content: "提升各行业的卓越水平",
+                        },
+                        {
+                          language: "IT",
+                          content: "Contactanos",
+                        },
+                      ]}
+                      level={3}
+                    ></Heading>
+                    <div className="w-full">
+                      <Paragraph
+                        className="text-start mb-3"
+                        type="body"
+                        text={[
+                          {
+                            language: "EN",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                          {
+                            language: "ES",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                          {
+                            language: "CH",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                          {
+                            language: "IT",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                        ]}
+                      ></Paragraph>
+                    </div>
+                    <div className="w-full flex flex-col items-start justify-center">
+                      <p className="mb-2 text-xl font-bold">
                       Humberto Ragazzini
-                    </p>
-                    <p className="my-1 text-center text-md">
+                      </p>
+                      <p className="mb-1 text-center text-md">
                       Co-Founder - Full Stack Developer
-                    </p>
-                    <p className="my-1">Reigate - UK</p>
-                    <div className="flex items-center justify-center gap-3">
-                      <Link href="#">
-                        <img src={"/icons/icons8-linkedin.svg"}></img>
-                      </Link>
-                      <Link href="#">
-                        <img src={"/icons/icons8-instagram.svg"}></img>
-                      </Link>
-                      <Link href="#">
-                        <img src={"/icons/icons8-github.svg"}></img>
-                      </Link>
+                      </p>
+                      <p className="my-1">Reigate - UK</p>
+                      <div className="flex items-center justify-center gap-3">
+                        <Link href="#">
+                          <img src={"/icons/icons8-linkedin.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-instagram.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-github.svg"}></img>
+                        </Link>
+                      </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-span-10 lg:col-span-3">
+                <div className="flex h-full items-center justify-center w-full">
+                  <div className="w-full overflow-hidden aspect-square">
+                    <img
+                      className="min-w-full rounded-full"
+                      src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
+                    ></img>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-span-3 mt-[25vh]">
-            <div className="grid grid-cols-10">
-              <div className="col-span-3">
-                <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-                  <div className="w-full overflow-hidden max-w-64 aspect-square skew-x-12">
+          <div className="col-span-3">
+            <div className="grid grid-cols-10 gap-12 mb-[25vh]">
+              <div className="col-span-10 xl:col-span-3">
+                <div className="flex h-full items-center justify-center w-full">
+                  <div className="w-full overflow-hidden aspect-square">
                     <img
-                      className="min-w-full -skew-x-12 scale-[1.2]"
+                      className="min-w-full rounded-full"
                       src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
                     ></img>
                   </div>
-                  <div className="flex flex-col items-center justify-center">
-                    <p className="mb-2 text-xl font-bold mt-7">
+                </div>
+              </div>
+              <div className="col-span-10 xl:col-span-7">
+                <div className="w-full h-full">
+                  <div className="flex flex-col items-center justify-center h-full">
+                    <Heading
+                      className={"text-2xl mb-3 text-start w-full"}
+                      text={[
+                        {
+                          language: "EN",
+                          content: "A comment from one of the co-funders",
+                        },
+                        {
+                          language: "ES",
+                          content: "Contactanos",
+                        },
+                        {
+                          language: "CH",
+                          content: "提升各行业的卓越水平",
+                        },
+                        {
+                          language: "IT",
+                          content: "Contactanos",
+                        },
+                      ]}
+                      level={3}
+                    ></Heading>
+                    <div className="w-full">
+                      <Paragraph
+                        className="text-start mb-3"
+                        type="body"
+                        text={[
+                          {
+                            language: "EN",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                          {
+                            language: "ES",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                          {
+                            language: "CH",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                          {
+                            language: "IT",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                        ]}
+                      ></Paragraph>
+                    </div>
+                    <div className="w-full flex flex-col items-start justify-center">
+                      <p className="mb-2 text-xl font-bold">
                       Diego Ragazzini
-                    </p>
-                    <p className="my-1 text-center text-md">
+                      </p>
+                      <p className="mb-1 text-center text-md">
                       Co-Founder - Building Technician
-                    </p>
-                    <p className="my-1">Cordoba - UK</p>
-                    <div className="flex items-center justify-center gap-3">
-                      <Link href="#">
-                        <img src={"/icons/icons8-linkedin.svg"}></img>
-                      </Link>
-                      <Link href="#">
-                        <img src={"/icons/icons8-instagram.svg"}></img>
-                      </Link>
+                      </p>
+                      <p className="my-1">Cordoba - UK</p>
+                      <div className="flex items-center justify-center gap-3">
+                        <Link href="#">
+                          <img src={"/icons/icons8-linkedin.svg"}></img>
+                        </Link>
+                        <Link href="#">
+                          <img src={"/icons/icons8-instagram.svg"}></img>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-span-7">
-                <div className="w-full h-full backdrop-blur bg-[rgba(0,0,0,0.25)]"></div>
               </div>
             </div>
           </div>
