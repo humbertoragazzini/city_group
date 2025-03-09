@@ -230,8 +230,8 @@ export default function AboutUs() {
       <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
         <div className="grid mb-[25vh] grid-cols-3 gap-5 xl:gap-12 w-full xl:max-w-7xl">
           <div className="col-span-3">
-            <div className="grid grid-cols-10 gap-12 mb-[25vh]">
-              <div className="col-span-10 lg:col-span-3">
+            <div className="grid grid-cols-10 xl:gap-12 mb-[25vh]">
+              <div className="order-1 mb-12 xl:mb-0 xl:order-1 col-span-10 lg:col-span-3">
                 <div className="flex h-full items-center justify-center w-full">
                   <div className="w-full overflow-hidden aspect-square">
                     <img
@@ -241,7 +241,7 @@ export default function AboutUs() {
                   </div>
                 </div>
               </div>
-              <div className="col-span-10 lg:col-span-7">
+              <div className="order-2 xl:order-2 col-span-10 lg:col-span-7">
                 <div className="w-full h-full">
                   <div className="flex flex-col items-center justify-center h-full">
                     <Heading
@@ -317,8 +317,8 @@ export default function AboutUs() {
             </div>
           </div>
           <div className="col-span-3">
-            <div className="grid grid-cols-10 gap-12 mb-[25vh]">
-              <div className="col-span-10 lg:col-span-7">
+            <div className="grid grid-cols-10 xl:gap-12 mb-[25vh]">
+              <div className="order-2 xl:order-1 col-span-10 lg:col-span-7">
                 <div className="w-full h-full">
                   <div className="flex flex-col items-center justify-center h-full">
                     <Heading
@@ -394,7 +394,7 @@ export default function AboutUs() {
                   </div>
                 </div>
               </div>
-              <div className="col-span-10 lg:col-span-3">
+              <div className="order-1 mb-12 xl:mb-0 xl:order-2 col-span-10 lg:col-span-3">
                 <div className="flex h-full items-center justify-center w-full">
                   <div className="w-full overflow-hidden aspect-square">
                     <img
@@ -407,8 +407,8 @@ export default function AboutUs() {
             </div>
           </div>
           <div className="col-span-3">
-            <div className="grid grid-cols-10 gap-12 mb-[25vh]">
-              <div className="col-span-10 xl:col-span-3">
+            <div className="grid grid-cols-10 xl:gap-12 mb-[25vh]">
+              <div className="order-1 mb-12 xl:mb-0 xl:order-1 col-span-10 xl:col-span-3">
                 <div className="flex h-full items-center justify-center w-full">
                   <div className="w-full overflow-hidden aspect-square">
                     <img
@@ -418,7 +418,7 @@ export default function AboutUs() {
                   </div>
                 </div>
               </div>
-              <div className="col-span-10 xl:col-span-7">
+              <div className="order-2 xl:order-2 col-span-10 xl:col-span-7">
                 <div className="w-full h-full">
                   <div className="flex flex-col items-center justify-center h-full">
                     <Heading
