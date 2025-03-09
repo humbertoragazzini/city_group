@@ -228,86 +228,109 @@ export default function AboutUs() {
 
       {/* Section with photo of founders */}
       <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
-        <div className="grid mb-[25vh] grid-cols-3 gap-5 xl:gap-12 w-[75%] xl:max-w-7xl">
-          <div className="col-span-3 lg:col-span-1">
-            <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-              <div className="w-full overflow-hidden rounded-md aspect-square">
-                <img
-                  className="min-w-full"
-                  src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
-                ></img>
+        <div className="grid mb-[25vh] grid-cols-3 gap-5 xl:gap-12 w-full xl:max-w-7xl">
+          <div className="col-span-3">
+            <div className="grid grid-cols-10">
+              <div className="col-span-3">
+                <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
+                  <div className="w-full overflow-hidden max-w-64 aspect-square skew-x-12">
+                    <img
+                      className="min-w-full -skew-x-12 scale-[1.2]"
+                      src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
+                    ></img>
+                  </div>
+                  <div className="flex flex-col items-center justify-center">
+                    <p className="mb-2 text-xl font-bold mt-7">
+                      Cristian Ragazzini
+                    </p>
+                    <p className="my-1 text-center text-md">
+                      Co-Founder - Senior Market Analisys
+                    </p>
+                    <p className="my-1">Cordoba - AR</p>
+                    <div className="flex items-center justify-center gap-3">
+                      <Link href="#">
+                        <img src={"/icons/icons8-linkedin.svg"}></img>
+                      </Link>
+                      <Link href="#">
+                        <img src={"/icons/icons8-instagram.svg"}></img>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col items-center justify-center">
-                <p className="mb-2 text-xl font-bold mt-7">
-                  Cristian Ragazzini
-                </p>
-                <p className="my-1 text-center text-md">
-                  Co-Founder - Senior Market Analisys
-                </p>
-                <p className="my-1">Cordoba - AR</p>
-                <div className="flex items-center justify-center gap-3">
-                  <Link href="#">
-                    <img src={"/icons/icons8-linkedin.svg"}></img>
-                  </Link>
-                  <Link href="#">
-                    <img src={"/icons/icons8-instagram.svg"}></img>
-                  </Link>
+              <div className="col-span-7">
+                <div className="w-full h-full backdrop-blur bg-[rgba(0,0,0,0.25)]"></div>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-3">
+            <div className="grid grid-cols-10">
+              <div className="col-span-7">
+                <div className="w-full h-full backdrop-blur bg-[rgba(0,0,0,0.25)]"></div>
+              </div>
+              <div className="col-span-3">
+                <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
+                  <div className="w-full overflow-hidden max-w-64 aspect-square skew-x-12">
+                    <img
+                      className="min-w-full -skew-x-12 scale-[1.2]"
+                      src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
+                    ></img>
+                  </div>
+                  <div className="flex flex-col items-center justify-center">
+                    <p className="mb-2 text-xl font-bold mt-7">
+                      Humberto Ragazzini
+                    </p>
+                    <p className="my-1 text-center text-md">
+                      Co-Founder - Full Stack Developer
+                    </p>
+                    <p className="my-1">Reigate - UK</p>
+                    <div className="flex items-center justify-center gap-3">
+                      <Link href="#">
+                        <img src={"/icons/icons8-linkedin.svg"}></img>
+                      </Link>
+                      <Link href="#">
+                        <img src={"/icons/icons8-instagram.svg"}></img>
+                      </Link>
+                      <Link href="#">
+                        <img src={"/icons/icons8-github.svg"}></img>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-span-3 lg:col-span-1">
-            <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-              <div className="w-full overflow-hidden rounded-md aspect-square">
-                <img
-                  className="min-w-full"
-                  src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
-                ></img>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <p className="mb-2 text-xl font-bold mt-7">
-                  Humberto Ragazzini
-                </p>
-                <p className="my-1 text-center text-md">
-                  Co-Founder - Full Stack Developer
-                </p>
-                <p className="my-1">Reigate - UK</p>
-                <div className="flex items-center justify-center gap-3">
-                  <Link href="#">
-                    <img src={"/icons/icons8-linkedin.svg"}></img>
-                  </Link>
-                  <Link href="#">
-                    <img src={"/icons/icons8-instagram.svg"}></img>
-                  </Link>
-                  <Link href="#">
-                    <img src={"/icons/icons8-github.svg"}></img>
-                  </Link>
+          <div className="col-span-3">
+            <div className="grid grid-cols-10">
+              <div className="col-span-3">
+                <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
+                  <div className="w-full overflow-hidden max-w-64 aspect-square skew-x-12">
+                    <img
+                      className="min-w-full -skew-x-12 scale-[1.2]"
+                      src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
+                    ></img>
+                  </div>
+                  <div className="flex flex-col items-center justify-center">
+                    <p className="mb-2 text-xl font-bold mt-7">
+                      Diego Ragazzini
+                    </p>
+                    <p className="my-1 text-center text-md">
+                      Co-Founder - Building Technician
+                    </p>
+                    <p className="my-1">Cordoba - UK</p>
+                    <div className="flex items-center justify-center gap-3">
+                      <Link href="#">
+                        <img src={"/icons/icons8-linkedin.svg"}></img>
+                      </Link>
+                      <Link href="#">
+                        <img src={"/icons/icons8-instagram.svg"}></img>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="col-span-3 lg:col-span-1">
-            <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
-              <div className="w-full overflow-hidden rounded-md aspect-square">
-                <img
-                  className="min-w-full"
-                  src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
-                ></img>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <p className="mb-2 text-xl font-bold mt-7">Diego Ragazzini</p>
-                <p className="my-1 text-center text-md">
-                  Co-Founder - Building Technician
-                </p>
-                <p className="my-1">Cordoba - UK</p>
-                <div className="flex items-center justify-center gap-3">
-                  <Link href="#">
-                    <img src={"/icons/icons8-linkedin.svg"}></img>
-                  </Link>
-                  <Link href="#">
-                    <img src={"/icons/icons8-instagram.svg"}></img>
-                  </Link>
-                </div>
+              <div className="col-span-7">
+                <div className="w-full h-full backdrop-blur bg-[rgba(0,0,0,0.25)]"></div>
               </div>
             </div>
           </div>
@@ -328,7 +351,7 @@ export default function AboutUs() {
               imageThree={
                 "https://archive.starbucks.com/uploads/2018/12/50a-nodl-our-name-sbx20080316-7785-1528x1080.jpg"
               }
-              themeName="black"
+              themeName={"burgundy"}
               className={""}
             >
               <Heading
