@@ -31,7 +31,7 @@ export default function AboutUs() {
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       {/* Section with us and the description */}
-      <motion.div className="relative flex flex-col items-center justify-center p-5 xl:p-12">
+      <motion.div className="relative flex flex-col items-center justify-center min-h-screen p-5 xl:p-12">
         <div className="w-full grid grid-cols-12 xl:w-full">
           <div className="mx-auto mb-10 col-start-2 col-end-8">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
@@ -93,7 +93,7 @@ export default function AboutUs() {
       </motion.div>
 
       {/* Section with us and the description */}
-      <motion.div className="relative flex flex-col items-center justify-center p-5 xl:p-12">
+      <motion.div className="relative flex flex-col items-center justify-center min-h-screen p-5 xl:p-12">
         <div className="w-full grid grid-cols-12 xl:w-full">
           <div className="mx-auto mb-10 col-start-6 col-end-12">
             <AngledContainer
@@ -108,7 +108,7 @@ export default function AboutUs() {
                   text={[
                     {
                       language: "EN",
-                      content: "Our mission",
+                      content: "Vision",
                     },
                     {
                       language: "ES",
@@ -134,7 +134,7 @@ export default function AboutUs() {
                     {
                       language: "EN",
                       content:
-                        "Provide efficient and affordable solutions for the importation of high-quality products, ensuring our customers a reliable, fast, and tailored service. We focus on optimizing costs, time, and logistics processes to guarantee a hassle-free experience.",
+                        "Ser la empresa importadora de referencia en el mercado, reconocida por nuestra excelencia en gestión, innovación y compromiso con la satisfacción del cliente. Aspiramos a expandir nuestra presencia en el sector y consolidarnos como socios estratégicos para empresas y emprendedores que buscan productos de calidad al mejor precio.",
                     },
                     {
                       language: "ES",
@@ -159,7 +159,7 @@ export default function AboutUs() {
       </motion.div>
 
       {/* Section with us and the description */}
-      <motion.div className="relative flex flex-col items-center justify-center p-5 xl:p-12">
+      <motion.div className="relative flex flex-col items-center justify-center min-h-screen p-5 xl:p-12">
         <div className="w-full grid grid-cols-12 xl:w-full">
           <div className="mx-auto mb-10 col-start-2 col-end-8">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
@@ -170,7 +170,7 @@ export default function AboutUs() {
                   text={[
                     {
                       language: "EN",
-                      content: "Our mission",
+                      content: "Valores",
                     },
                     {
                       language: "ES",
@@ -195,8 +195,11 @@ export default function AboutUs() {
                   text={[
                     {
                       language: "EN",
-                      content:
-                        "Provide efficient and affordable solutions for the importation of high-quality products, ensuring our customers a reliable, fast, and tailored service. We focus on optimizing costs, time, and logistics processes to guarantee a hassle-free experience.",
+                      content: `<span style="display:block;margin-top:5px;"><strong>Compromiso</strong>: Nos esforzamos por cumplir cada operación con responsabilidad y eficiencia.</span>
+                                <span style="display:block;margin-top:10px;"><strong>Transparencia</strong>: Operamos con honestidad y claridad en cada transacción.</span>
+                                <span style="display:block;margin-top:10px;"><strong>Innovación</strong>: Buscamos constantemente mejorar nuestros procesos y servicios.</span>
+                                <span style="display:block;margin-top:10px;"><strong>Calidad</strong>: Priorizamos productos y proveedores que cumplan con altos estándares.</span>
+                                <span style="display:block;margin-top:10px;"><strong>Orientación al cliente</strong>: La satisfacción de nuestros clientes es nuestra prioridad.</span>`,
                     },
                     {
                       language: "ES",
