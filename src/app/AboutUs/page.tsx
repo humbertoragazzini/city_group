@@ -259,11 +259,64 @@ export default function AboutUs() {
                 </div>
               </div>
               <div className="col-span-7">
-                <div className="w-full h-full backdrop-blur bg-[rgba(0,0,0,0.25)]"></div>
+                <div className="w-full h-full">
+                  <div className="flex flex-col items-center justify-center h-full p-5 xl:p-12">
+                    <Heading
+                      className={"text-2xl mb-7 text-start w-full"}
+                      text={[
+                        {
+                          language: "EN",
+                          content: "A comment from one of the co-funders",
+                        },
+                        {
+                          language: "ES",
+                          content: "Contactanos",
+                        },
+                        {
+                          language: "CH",
+                          content: "提升各行业的卓越水平",
+                        },
+                        {
+                          language: "IT",
+                          content: "Contactanos",
+                        },
+                      ]}
+                      level={3}
+                    ></Heading>
+                    <div className="w-full">
+                      <Paragraph
+                        className="text-start mb-7"
+                        type="standfirst"
+                        text={[
+                          {
+                            language: "EN",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                          {
+                            language: "ES",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                          {
+                            language: "CH",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                          {
+                            language: "IT",
+                            content:
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                          },
+                        ]}
+                      ></Paragraph>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-3 mt-[25vh]">
             <div className="grid grid-cols-10">
               <div className="col-span-7">
                 <div className="w-full h-full backdrop-blur bg-[rgba(0,0,0,0.25)]"></div>
@@ -300,7 +353,7 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-3 mt-[25vh]">
             <div className="grid grid-cols-10">
               <div className="col-span-3">
                 <div className="flex flex-col items-center justify-center w-full mt-8 mb-7">
@@ -354,53 +407,53 @@ export default function AboutUs() {
               themeName={"burgundy"}
               className={""}
             >
-              <Heading
-                className={"text-2xl mb-4 text-start md:text-4xl"}
+              <heading
+                classname={"text-2xl mb-4 text-start md:text-4xl"}
                 text={[
                   {
-                    language: "EN",
-                    content: "Our story",
+                    language: "en",
+                    content: "our story",
                   },
                   {
-                    language: "ES",
-                    content: "Nuestra historia",
+                    language: "es",
+                    content: "nuestra historia",
                   },
                   {
-                    language: "CH",
+                    language: "ch",
                     content: "提升各行业",
                   },
                   {
-                    language: "IT",
-                    content: "Nuestra historia",
+                    language: "it",
+                    content: "nuestra historia",
                   },
                 ]}
                 level={2}
-              ></Heading>
-              <Paragraph
+              ></heading>
+              <paragraph
                 type={"standfirst"}
-                className="mb-4"
+                classname="mb-4"
                 text={[
                   {
-                    language: "EN",
+                    language: "en",
                     content:
-                      "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+                      "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. the point of using lorem ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'content here, content here', making it look like readable english. many desktop publishing packages and web page editors now use lorem ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
                   },
                   {
-                    language: "ES",
+                    language: "es",
                     content:
-                      "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
+                      "titulo secundario de la pagina standfirst, al por menor (espaniol)",
                   },
                   {
-                    language: "CH",
-                    content: "进口、建筑和零售的综合解决方案 (Chino)",
+                    language: "ch",
+                    content: "进口、建筑和零售的综合解决方案 (chino)",
                   },
                   {
-                    language: "IT",
+                    language: "it",
                     content:
-                      "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
+                      "titulo secundario de la pagina standfirst, al dettaglio (italiano)",
                   },
                 ]}
-              ></Paragraph>
+              ></paragraph>
             </ContainerWithImage>
           </div>
         </div>
