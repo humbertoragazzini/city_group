@@ -33,7 +33,7 @@ export default function AboutUs() {
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center min-h-screen p-5 xl:p-12">
         <div className="w-full grid grid-cols-12 xl:w-full">
-          <div className="mx-auto mb-10 col-start-2 col-end-8">
+          <div className="mx-auto mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-2 xl:col-end-8">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
                 <Heading
@@ -95,7 +95,7 @@ export default function AboutUs() {
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center min-h-screen p-5 xl:p-12">
         <div className="w-full grid grid-cols-12 xl:w-full">
-          <div className="mx-auto mb-10 col-start-6 col-end-12">
+          <div className="mx-auto mb-10 col-start-1 col-end-13 md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-6 xl:col-end-12">
             <AngledContainer
               tilt={true}
               themeName={"burgundy"}
@@ -161,7 +161,7 @@ export default function AboutUs() {
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center min-h-screen p-5 xl:p-12">
         <div className="w-full grid grid-cols-12 xl:w-full">
-          <div className="mx-auto mb-10 col-start-2 col-end-8">
+          <div className="mx-auto mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-2 xl:col-end-8">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
                 <Heading
