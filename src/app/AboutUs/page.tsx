@@ -33,7 +33,7 @@ export default function AboutUs() {
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
         <div className="w-full grid grid-cols-12 xl:w-full">
-          <div className="mx-auto mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-2 xl:col-end-8">
+          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-2 xl:col-end-8">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
                 <Heading
@@ -95,7 +95,7 @@ export default function AboutUs() {
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
         <div className="w-full grid grid-cols-12 xl:w-full">
-          <div className="mx-auto mb-10 col-start-1 col-end-13 md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-6 xl:col-end-12">
+          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-6 xl:col-end-12">
             <AngledContainer
               tilt={true}
               themeName={"burgundy"}
@@ -161,8 +161,11 @@ export default function AboutUs() {
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
         <div className="w-full grid grid-cols-12 xl:w-full">
-          <div className="mx-auto mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-2 xl:col-end-8">
-            <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
+          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-2 xl:col-end-8">
+            <AngledContainer
+              themeName={"burgundy"}
+              className={"!px-0 !py-0 w-full"}
+            >
               <div className="flex items-end justify-center w-full">
                 <Heading
                   theme={"white"}
@@ -314,80 +317,8 @@ export default function AboutUs() {
       {/* Our history */}
       <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
         <div className="grid grid-cols-12">
-          <div className="col-span-12 xl:col-start-1 xl:col-end-10">
+          <div className="col-span-12 xl:col-start-2 xl:col-end-12">
             <ContainerWithImage
-              imageOne={
-                "https://upload.wikimedia.org/wikipedia/commons/a/ab/Gallet_clamshell_600x600_movement.jpg?20120102182331"
-              }
-              imageTwo={
-                "https://www.makiramen.com/wp-content/uploads/2024/04/NICOLSON-ST--600x600.jpg"
-              }
-              imageThree={
-                "https://archive.starbucks.com/uploads/2018/12/50a-nodl-our-name-sbx20080316-7785-1528x1080.jpg"
-              }
-              themeName="red"
-              className={""}
-            >
-              <Heading
-                className={
-                  "text-2xl mb-4 text-center md:text-start md:text-4xl"
-                }
-                text={[
-                  {
-                    language: "EN",
-                    content: "Our story",
-                  },
-                  {
-                    language: "ES",
-                    content: "Nuestra historia",
-                  },
-                  {
-                    language: "CH",
-                    content: "提升各行业",
-                  },
-                  {
-                    language: "IT",
-                    content: "Nuestra historia",
-                  },
-                ]}
-                level={2}
-              ></Heading>
-              <Paragraph
-                type={"standfirst"}
-                className="mb-4"
-                text={[
-                  {
-                    language: "EN",
-                    content:
-                      "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-                  },
-                  {
-                    language: "ES",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al por Menor (Espaniol)",
-                  },
-                  {
-                    language: "CH",
-                    content: "进口、建筑和零售的综合解决方案 (Chino)",
-                  },
-                  {
-                    language: "IT",
-                    content:
-                      "Titulo secundario de la pagina standfirst, al Dettaglio (Italiano)",
-                  },
-                ]}
-              ></Paragraph>
-            </ContainerWithImage>
-          </div>
-        </div>
-      </div>
-
-      {/* Our history */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
-        <div className="grid grid-cols-12">
-          <div className="col-span-12 xl:col-start-4 xl:col-end-13">
-            <ContainerWithImage
-              tilt={true}
               imageOne={
                 "https://upload.wikimedia.org/wikipedia/commons/a/ab/Gallet_clamshell_600x600_movement.jpg?20120102182331"
               }
@@ -486,8 +417,8 @@ export default function AboutUs() {
       </div>
 
       {/* Lets contact */}
-      <div className="p-5 xl:p-12 min-h-screen bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.50)] to-black flex flex-col justify-center items-center overflow-hidden relative">
-        <div className="xl:w-[75%] xl:max-w-[1920px]">
+      <div className="p-5 xl:p-12 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.50)] to-black flex flex-col justify-center items-center overflow-hidden relative">
+        <div className="xl:w-[75%] xl:max-w-[1920px] pb-[25vh]">
           <Heading
             className={"text-2xl mb-7 text-center md:text-4xl"}
             text={[
