@@ -1,7 +1,7 @@
 //@ts-nocheck
 "use client";
 import { useAppContext } from "@/context/AppContext";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
@@ -11,9 +11,16 @@ import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import AngledContainer from "@/components/Atoms/Containers/AngledContainer";
 import { motion } from "framer-motion";
 import ContainerWithImage from "@/components/Organims/FramerAnimations/ContainerWithImage";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/src/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutUs() {
   const context = useAppContext();
+  const founder1Ref = useRef();
+  const founder2Ref = useRef();
+  const founder3Ref = useRef();
 
   useEffect(() => {
     if (context.state.isMenuOpen) {
@@ -26,14 +33,56 @@ export default function AboutUs() {
     }
   }, [context.state.isMenuOpen]);
 
+  useLayoutEffect(() => {
+    if (founder1Ref.current !== null && founder1Ref.current !== undefined) {
+      const timeline = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: founder1Ref.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: true,
+            markers: true, // Remove this in production
+          },
+        })
+        .fromTo(founder1Ref.current, { opacity: 0 }, { opacity: 1 });
+    }
+    if (founder2Ref.current !== null && founder2Ref.current !== undefined) {
+      const timeline = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: founder2Ref.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: true,
+            markers: true, // Remove this in production
+          },
+        })
+        .fromTo(founder2Ref.current, { opacity: 0 }, { opacity: 1 });
+    }
+    if (founder3Ref.current !== null && founder3Ref.current !== undefined) {
+      const timeline = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: founder3Ref.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: true,
+            markers: true, // Remove this in production
+          },
+        })
+        .fromTo(founder3Ref.current, { opacity: 0 }, { opacity: 1 });
+    }
+  }, []);
+
   return (
     <div
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
-        <div className="w-full max-w-7xl grid grid-cols-12 xl:w-full">
-          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
+        <div className="grid w-full grid-cols-12 max-w-7xl xl:w-full">
+          <div className="w-full col-start-1 col-end-13 mb-10 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
                 <Heading
@@ -94,8 +143,8 @@ export default function AboutUs() {
 
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
-        <div className="w-full max-w-7xl grid grid-cols-12 xl:w-full">
-          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-7 xl:col-end-13">
+        <div className="grid w-full grid-cols-12 max-w-7xl xl:w-full">
+          <div className="w-full col-start-1 col-end-13 mb-10 md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-7 xl:col-end-13">
             <AngledContainer
               tilt={true}
               themeName={"burgundy"}
@@ -160,8 +209,8 @@ export default function AboutUs() {
 
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
-        <div className="w-full max-w-7xl grid grid-cols-12 xl:w-full">
-          <div className="w-full mb-10 col-start-1 col-end-13 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
+        <div className="grid w-full grid-cols-12 max-w-7xl xl:w-full">
+          <div className="w-full col-start-1 col-end-13 mb-10 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
             <AngledContainer
               themeName={"burgundy"}
               className={"!px-0 !py-0 w-full"}
@@ -229,10 +278,11 @@ export default function AboutUs() {
       {/* Section with photo of founders */}
       <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
         <div className="grid mb-[25vh] grid-cols-3 gap-5 xl:gap-12 w-full xl:max-w-7xl">
-          <div className="col-span-3">
+          {/** Co funders */}
+          <div ref={founder1Ref} className="col-span-3">
             <div className="grid grid-cols-10 xl:gap-12 mb-[25vh]">
-              <div className="order-1 mb-12 xl:mb-0 xl:order-1 col-span-10 lg:col-span-3">
-                <div className="flex h-full items-center justify-center w-full">
+              <div className="order-1 col-span-10 mb-12 xl:mb-0 xl:order-1 lg:col-span-3">
+                <div className="flex items-center justify-center w-full h-full">
                   <div className="w-full overflow-hidden aspect-square">
                     <img
                       className="min-w-full rounded-full"
@@ -241,7 +291,7 @@ export default function AboutUs() {
                   </div>
                 </div>
               </div>
-              <div className="order-2 xl:order-2 col-span-10 lg:col-span-7">
+              <div className="order-2 col-span-10 xl:order-2 lg:col-span-7">
                 <div className="w-full h-full">
                   <div className="flex flex-col items-center justify-center h-full">
                     <Heading
@@ -268,7 +318,7 @@ export default function AboutUs() {
                     ></Heading>
                     <div className="w-full">
                       <Paragraph
-                        className="text-start mb-3"
+                        className="mb-3 text-start"
                         type="body"
                         text={[
                           {
@@ -294,7 +344,7 @@ export default function AboutUs() {
                         ]}
                       ></Paragraph>
                     </div>
-                    <div className="w-full flex flex-col items-start justify-center">
+                    <div className="flex flex-col items-start justify-center w-full">
                       <p className="mb-2 text-xl font-bold">
                         Cristian Ragazzini
                       </p>
@@ -316,9 +366,10 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-          <div className="col-span-3">
+          {/** Co funders */}
+          <div ref={founder2Ref} className="col-span-3">
             <div className="grid grid-cols-10 xl:gap-12 mb-[25vh]">
-              <div className="order-2 xl:order-1 col-span-10 lg:col-span-7">
+              <div className="order-2 col-span-10 xl:order-1 lg:col-span-7">
                 <div className="w-full h-full">
                   <div className="flex flex-col items-center justify-center h-full">
                     <Heading
@@ -345,7 +396,7 @@ export default function AboutUs() {
                     ></Heading>
                     <div className="w-full">
                       <Paragraph
-                        className="text-start mb-3"
+                        className="mb-3 text-start"
                         type="body"
                         text={[
                           {
@@ -371,12 +422,12 @@ export default function AboutUs() {
                         ]}
                       ></Paragraph>
                     </div>
-                    <div className="w-full flex flex-col items-start justify-center">
+                    <div className="flex flex-col items-start justify-center w-full">
                       <p className="mb-2 text-xl font-bold">
-                      Humberto Ragazzini
+                        Humberto Ragazzini
                       </p>
                       <p className="mb-1 text-center text-md">
-                      Co-Founder - Full Stack Developer
+                        Co-Founder - Full Stack Developer
                       </p>
                       <p className="my-1">Reigate - UK</p>
                       <div className="flex items-center justify-center gap-3">
@@ -394,8 +445,8 @@ export default function AboutUs() {
                   </div>
                 </div>
               </div>
-              <div className="order-1 mb-12 xl:mb-0 xl:order-2 col-span-10 lg:col-span-3">
-                <div className="flex h-full items-center justify-center w-full">
+              <div className="order-1 col-span-10 mb-12 xl:mb-0 xl:order-2 lg:col-span-3">
+                <div className="flex items-center justify-center w-full h-full">
                   <div className="w-full overflow-hidden aspect-square">
                     <img
                       className="min-w-full rounded-full"
@@ -406,10 +457,11 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-          <div className="col-span-3">
+          {/** Co funders */}
+          <div ref={founder3Ref} className="col-span-3">
             <div className="grid grid-cols-10 xl:gap-12 mb-[25vh]">
-              <div className="order-1 mb-12 xl:mb-0 xl:order-1 col-span-10 xl:col-span-3">
-                <div className="flex h-full items-center justify-center w-full">
+              <div className="order-1 col-span-10 mb-12 xl:mb-0 xl:order-1 xl:col-span-3">
+                <div className="flex items-center justify-center w-full h-full">
                   <div className="w-full overflow-hidden aspect-square">
                     <img
                       className="min-w-full rounded-full"
@@ -418,7 +470,7 @@ export default function AboutUs() {
                   </div>
                 </div>
               </div>
-              <div className="order-2 xl:order-2 col-span-10 xl:col-span-7">
+              <div className="order-2 col-span-10 xl:order-2 xl:col-span-7">
                 <div className="w-full h-full">
                   <div className="flex flex-col items-center justify-center h-full">
                     <Heading
@@ -445,7 +497,7 @@ export default function AboutUs() {
                     ></Heading>
                     <div className="w-full">
                       <Paragraph
-                        className="text-start mb-3"
+                        className="mb-3 text-start"
                         type="body"
                         text={[
                           {
@@ -471,12 +523,10 @@ export default function AboutUs() {
                         ]}
                       ></Paragraph>
                     </div>
-                    <div className="w-full flex flex-col items-start justify-center">
-                      <p className="mb-2 text-xl font-bold">
-                      Diego Ragazzini
-                      </p>
+                    <div className="flex flex-col items-start justify-center w-full">
+                      <p className="mb-2 text-xl font-bold">Diego Ragazzini</p>
                       <p className="mb-1 text-center text-md">
-                      Co-Founder - Building Technician
+                        Co-Founder - Building Technician
                       </p>
                       <p className="my-1">Cordoba - UK</p>
                       <div className="flex items-center justify-center gap-3">
@@ -498,7 +548,7 @@ export default function AboutUs() {
 
       {/* Our history */}
       <div className="relative flex flex-col items-center justify-center min-h-screen p-5 xl:p-12">
-        <div className="grid max-w-7xl grid-cols-12">
+        <div className="grid grid-cols-12 max-w-7xl">
           <div className="col-span-12 xl:col-start-2 xl:col-end-12">
             <ContainerWithImage
               imageOne={
