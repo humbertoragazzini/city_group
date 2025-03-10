@@ -43,9 +43,9 @@ export default function AboutUs() {
               trigger: ref.current,
               start: "top 60%",
               end: "85% 60%",
-              scrub: false,
+              scrub: true,
               once: true,
-              markers: true, // Remove in production
+              markers: false, // Remove in production
             },
           })
           .fromTo(
