@@ -21,6 +21,9 @@ export default function AboutUs() {
   const founder1Ref = useRef();
   const founder2Ref = useRef();
   const founder3Ref = useRef();
+  const angled1Ref = useRef();
+  const angled2Ref = useRef();
+  const angled3Ref = useRef();
 
   useEffect(() => {
     if (context.state.isMenuOpen) {
@@ -34,45 +37,117 @@ export default function AboutUs() {
   }, [context.state.isMenuOpen]);
 
   useLayoutEffect(() => {
-    if (founder1Ref.current !== null && founder1Ref.current !== undefined) {
-      const timeline = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: founder1Ref.current,
-            start: "top bottom",
-            end: "bottom bottom",
-            scrub: true,
-            markers: true, // Remove this in production
-          },
-        })
-        .fromTo(founder1Ref.current, { opacity: 0 }, { opacity: 1 });
-    }
-    if (founder2Ref.current !== null && founder2Ref.current !== undefined) {
-      const timeline = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: founder2Ref.current,
-            start: "top bottom",
-            end: "bottom bottom",
-            scrub: true,
-            markers: true, // Remove this in production
-          },
-        })
-        .fromTo(founder2Ref.current, { opacity: 0 }, { opacity: 1 });
-    }
-    if (founder3Ref.current !== null && founder3Ref.current !== undefined) {
-      const timeline = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: founder3Ref.current,
-            start: "top bottom",
-            end: "bottom bottom",
-            scrub: true,
-            markers: true, // Remove this in production
-          },
-        })
-        .fromTo(founder3Ref.current, { opacity: 0 }, { opacity: 1 });
-    }
+    // About us side boxes angled
+    [angled1Ref, angled2Ref, angled3Ref].forEach((ref, index) => {
+      if (ref.current) {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ref.current,
+              start: "top 50%",
+              end: "85% 50%",
+              scrub: false,
+              once: true,
+              markers: false, // Remove in production
+            },
+          })
+          .fromTo(
+            ref.current.querySelector(".angled_container"),
+            { y: -400, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.5 },
+            0
+          )
+          .fromTo(
+            ref.current.querySelector(".box_background_out"),
+            { opacity: 0, scale: 0 },
+            { opacity: 1, scale: 1, duration: 0.5 },
+            0
+          )
+          .fromTo(
+            ref.current.querySelector(".box_right_out"),
+            { opacity: 0, scale: 0 },
+            { opacity: 1, scale: 1, duration: 0.5 },
+            0.15
+          )
+          .fromTo(
+            ref.current.querySelector(".box_left_out"),
+            { opacity: 0, scale: 0 },
+            { opacity: 1, scale: 1, duration: 0.5 },
+            0.15
+          )
+          .fromTo(
+            ref.current.querySelector(".title_out"),
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.25 },
+            0.25
+          )
+          .fromTo(
+            ref.current.querySelector(".content_out"),
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.25 },
+            0.5
+          );
+      }
+    });
+    // founder animations
+    [founder1Ref, founder2Ref, founder3Ref].forEach((ref) => {
+      if (ref.current) {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ref.current,
+              start: "top 60%",
+              end: "85% 60%",
+              scrub: true,
+              once: true,
+              markers: false, // Remove in production
+            },
+          })
+          .fromTo(
+            ref.current.querySelector(".image_out"),
+            { opacity: 0, scale: 0.5 },
+            { opacity: 1, scale: 1, duration: 4 },
+            0
+          )
+          .fromTo(
+            ref.current.querySelector(".title_out"),
+            { opacity: 0, y: -50, scale: 0.75 },
+            { opacity: 1, y: 0, scale: 1, duration: 1 },
+            1
+          )
+          .fromTo(
+            ref.current.querySelector(".content_out"),
+            { opacity: 0, y: -50, scale: 0.75 },
+            { opacity: 1, y: 0, scale: 1, duration: 1 },
+            2
+          )
+          .fromTo(
+            ref.current.querySelector(".name_out"),
+            { opacity: 0, y: -50, scale: 0.75 },
+            { opacity: 1, y: 0, scale: 1, duration: 1 },
+            3
+          )
+          .fromTo(
+            ref.current.querySelector(".position_out"),
+            { opacity: 0, y: -50, scale: 0.75 },
+            { opacity: 1, y: 0, scale: 1, duration: 1 },
+            4
+          )
+          .fromTo(
+            ref.current.querySelector(".location_out"),
+            { opacity: 0, y: -50, scale: 0.75 },
+            { opacity: 1, y: 0, scale: 1, duration: 1 },
+            5
+          )
+          .fromTo(
+            ref.current.querySelector(".links_out"),
+            { opacity: 0, y: -50, scale: 0.75 },
+            { opacity: 1, y: 0, scale: 1, duration: 1 },
+            6
+          );
+      }
+    });
+    //
   }, []);
 
   return (
@@ -80,14 +155,19 @@ export default function AboutUs() {
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       {/* Section with us and the description */}
-      <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
+      <div
+        ref={angled1Ref}
+        className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12"
+      >
         <div className="grid w-full grid-cols-12 max-w-7xl xl:w-full">
-          <div className="w-full col-start-1 col-end-13 mb-10 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
+          <div className="w-full col-start-1 col-end-13 mb-10 angled_container md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
                 <Heading
                   theme={"white"}
-                  className={"text-2xl mb-4 md:text-4xl text-start w-full"}
+                  className={
+                    "text-2xl mb-4 md:text-4xl text-start w-full title_out"
+                  }
                   text={[
                     {
                       language: "EN",
@@ -109,7 +189,7 @@ export default function AboutUs() {
                   level={2}
                 ></Heading>
               </div>
-              <div className="items-start justify-center w-full">
+              <div className="items-start justify-center w-full content_out">
                 <Paragraph
                   type={"body"}
                   className="mb-4"
@@ -139,12 +219,15 @@ export default function AboutUs() {
             </AngledContainer>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Section with us and the description */}
-      <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
+      <div
+        ref={angled2Ref}
+        className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12"
+      >
         <div className="grid w-full grid-cols-12 max-w-7xl xl:w-full">
-          <div className="w-full col-start-1 col-end-13 mb-10 md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-7 xl:col-end-13">
+          <div className="w-full col-start-1 col-end-13 mb-10 angled_container md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-7 xl:col-end-13">
             <AngledContainer
               tilt={true}
               themeName={"burgundy"}
@@ -153,7 +236,9 @@ export default function AboutUs() {
               <div className="flex items-end justify-center w-full">
                 <Heading
                   theme={"white"}
-                  className={"text-2xl mb-4 md:text-4xl text-end w-full"}
+                  className={
+                    "text-2xl mb-4 md:text-4xl text-end w-full title_out"
+                  }
                   text={[
                     {
                       language: "EN",
@@ -175,7 +260,7 @@ export default function AboutUs() {
                   level={2}
                 ></Heading>
               </div>
-              <div className="items-start justify-center w-full">
+              <div className="items-start justify-center w-full content_out">
                 <Paragraph
                   type={"body"}
                   className="mb-4 text-end"
@@ -205,12 +290,15 @@ export default function AboutUs() {
             </AngledContainer>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Section with us and the description */}
-      <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
+      <div
+        ref={angled3Ref}
+        className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12"
+      >
         <div className="grid w-full grid-cols-12 max-w-7xl xl:w-full">
-          <div className="w-full col-start-1 col-end-13 mb-10 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
+          <div className="w-full col-start-1 col-end-13 mb-10 angled_container md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
             <AngledContainer
               themeName={"burgundy"}
               className={"!px-0 !py-0 w-full"}
@@ -218,7 +306,9 @@ export default function AboutUs() {
               <div className="flex items-end justify-center w-full">
                 <Heading
                   theme={"white"}
-                  className={"text-2xl mb-4 md:text-4xl text-start w-full"}
+                  className={
+                    "text-2xl mb-4 md:text-4xl text-start w-full title_out"
+                  }
                   text={[
                     {
                       language: "EN",
@@ -240,7 +330,7 @@ export default function AboutUs() {
                   level={2}
                 ></Heading>
               </div>
-              <div className="items-start justify-center w-full">
+              <div className="items-start justify-center w-full content_out">
                 <Paragraph
                   type={"body"}
                   className="mb-4"
@@ -273,7 +363,7 @@ export default function AboutUs() {
             </AngledContainer>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Section with photo of founders */}
       <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
@@ -285,7 +375,7 @@ export default function AboutUs() {
                 <div className="flex items-center justify-center w-full h-full">
                   <div className="w-full overflow-hidden aspect-square">
                     <img
-                      className="min-w-full rounded-full"
+                      className="min-w-full rounded-full image_out"
                       src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
                     ></img>
                   </div>
@@ -295,64 +385,37 @@ export default function AboutUs() {
                 <div className="w-full h-full">
                   <div className="flex flex-col items-center justify-center h-full">
                     <Heading
-                      className={"text-2xl mb-3 text-start w-full"}
+                      className="w-full mb-3 text-2xl text-start title_out"
                       text={[
                         {
                           language: "EN",
                           content: "A comment from one of the co-funders",
-                        },
-                        {
-                          language: "ES",
-                          content: "Contactanos",
-                        },
-                        {
-                          language: "CH",
-                          content: "提升各行业的卓越水平",
-                        },
-                        {
-                          language: "IT",
-                          content: "Contactanos",
                         },
                       ]}
                       level={3}
                     ></Heading>
                     <div className="w-full">
                       <Paragraph
-                        className="mb-3 text-start"
+                        className="mb-3 text-start content_out"
                         type="body"
                         text={[
                           {
                             language: "EN",
                             content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                          },
-                          {
-                            language: "ES",
-                            content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                          },
-                          {
-                            language: "CH",
-                            content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                          },
-                          {
-                            language: "IT",
-                            content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit. Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
                           },
                         ]}
                       ></Paragraph>
                     </div>
                     <div className="flex flex-col items-start justify-center w-full">
-                      <p className="mb-2 text-xl font-bold">
+                      <p className="mb-2 text-xl font-bold name_out">
                         Cristian Ragazzini
                       </p>
-                      <p className="mb-1 text-center text-md">
-                        Co-Founder - Senior Market Analisys
+                      <p className="mb-1 text-center text-md position_out">
+                        Co-Founder - Senior Market Analysis
                       </p>
-                      <p className="my-1">Cordoba - AR</p>
-                      <div className="flex items-center justify-center gap-3">
+                      <p className="my-1 location_out">Cordoba - AR</p>
+                      <div className="flex items-center justify-center gap-3 links_out">
                         <Link href="#">
                           <img src={"/icons/icons8-linkedin.svg"}></img>
                         </Link>
@@ -366,6 +429,7 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
+
           {/** Co funders */}
           <div ref={founder2Ref} className="col-span-3">
             <div className="grid grid-cols-10 xl:gap-12 mb-[25vh]">
@@ -373,64 +437,37 @@ export default function AboutUs() {
                 <div className="w-full h-full">
                   <div className="flex flex-col items-center justify-center h-full">
                     <Heading
-                      className={"text-2xl mb-3 text-start w-full"}
+                      className="w-full mb-3 text-2xl text-start title_out"
                       text={[
                         {
                           language: "EN",
                           content: "A comment from one of the co-funders",
-                        },
-                        {
-                          language: "ES",
-                          content: "Contactanos",
-                        },
-                        {
-                          language: "CH",
-                          content: "提升各行业的卓越水平",
-                        },
-                        {
-                          language: "IT",
-                          content: "Contactanos",
                         },
                       ]}
                       level={3}
                     ></Heading>
                     <div className="w-full">
                       <Paragraph
-                        className="mb-3 text-start"
+                        className="mb-3 text-start content_out"
                         type="body"
                         text={[
                           {
                             language: "EN",
                             content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                          },
-                          {
-                            language: "ES",
-                            content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                          },
-                          {
-                            language: "CH",
-                            content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                          },
-                          {
-                            language: "IT",
-                            content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit. Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!",
                           },
                         ]}
                       ></Paragraph>
                     </div>
                     <div className="flex flex-col items-start justify-center w-full">
-                      <p className="mb-2 text-xl font-bold">
+                      <p className="mb-2 text-xl font-bold name_out">
                         Humberto Ragazzini
                       </p>
-                      <p className="mb-1 text-center text-md">
+                      <p className="mb-1 text-center text-md position_out">
                         Co-Founder - Full Stack Developer
                       </p>
-                      <p className="my-1">Reigate - UK</p>
-                      <div className="flex items-center justify-center gap-3">
+                      <p className="my-1 location_out">Reigate - UK</p>
+                      <div className="flex items-center justify-center gap-3 links_out">
                         <Link href="#">
                           <img src={"/icons/icons8-linkedin.svg"}></img>
                         </Link>
@@ -449,7 +486,7 @@ export default function AboutUs() {
                 <div className="flex items-center justify-center w-full h-full">
                   <div className="w-full overflow-hidden aspect-square">
                     <img
-                      className="min-w-full rounded-full"
+                      className="min-w-full rounded-full image_out"
                       src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
                     ></img>
                   </div>
@@ -457,79 +494,55 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
+
           {/** Co funders */}
           <div ref={founder3Ref} className="col-span-3">
             <div className="grid grid-cols-10 xl:gap-12 mb-[25vh]">
-              <div className="order-1 col-span-10 mb-12 xl:mb-0 xl:order-1 xl:col-span-3">
+              <div className="order-1 col-span-10 mb-12 xl:mb-0 xl:order-1 lg:col-span-3">
                 <div className="flex items-center justify-center w-full h-full">
                   <div className="w-full overflow-hidden aspect-square">
                     <img
-                      className="min-w-full rounded-full"
+                      className="min-w-full rounded-full image_out"
                       src="https://www.digicatapult.org.uk/wp-content/uploads/2021/11/DC_square_People_juergen-600x600-c-default.jpg"
                     ></img>
                   </div>
                 </div>
               </div>
-              <div className="order-2 col-span-10 xl:order-2 xl:col-span-7">
+              <div className="order-2 col-span-10 xl:order-2 lg:col-span-7">
                 <div className="w-full h-full">
                   <div className="flex flex-col items-center justify-center h-full">
                     <Heading
-                      className={"text-2xl mb-3 text-start w-full"}
+                      className="w-full mb-3 text-2xl text-start title_out"
                       text={[
                         {
                           language: "EN",
                           content: "A comment from one of the co-funders",
-                        },
-                        {
-                          language: "ES",
-                          content: "Contactanos",
-                        },
-                        {
-                          language: "CH",
-                          content: "提升各行业的卓越水平",
-                        },
-                        {
-                          language: "IT",
-                          content: "Contactanos",
                         },
                       ]}
                       level={3}
                     ></Heading>
                     <div className="w-full">
                       <Paragraph
-                        className="mb-3 text-start"
+                        className="mb-3 text-start content_out"
                         type="body"
                         text={[
                           {
                             language: "EN",
                             content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                          },
-                          {
-                            language: "ES",
-                            content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                          },
-                          {
-                            language: "CH",
-                            content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
-                          },
-                          {
-                            language: "IT",
-                            content:
-                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit.Enim et illo perferendis, aliquid ipsam expedita deserunt ab molestiae sequi qui necessitatibus laborum debitis provident vitae dolore consequuntur porro ttenetur fugit!etenetur fugit!tenetur fugit!ntenetur fugit!tenetur fugit!etur fugit!",
+                              "tLorem ipsum dolor sit amet, consectetur adipisicing elit...",
                           },
                         ]}
                       ></Paragraph>
                     </div>
                     <div className="flex flex-col items-start justify-center w-full">
-                      <p className="mb-2 text-xl font-bold">Diego Ragazzini</p>
-                      <p className="mb-1 text-center text-md">
+                      <p className="mb-2 text-xl font-bold name_out">
+                        Diego Ragazzini
+                      </p>
+                      <p className="mb-1 text-center text-md position_out">
                         Co-Founder - Building Technician
                       </p>
-                      <p className="my-1">Cordoba - UK</p>
-                      <div className="flex items-center justify-center gap-3">
+                      <p className="my-1 location_out">Cordoba - UK</p>
+                      <div className="flex items-center justify-center gap-3 links_out">
                         <Link href="#">
                           <img src={"/icons/icons8-linkedin.svg"}></img>
                         </Link>
