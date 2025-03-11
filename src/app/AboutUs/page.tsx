@@ -21,6 +21,9 @@ export default function AboutUs() {
   const founder1Ref = useRef();
   const founder2Ref = useRef();
   const founder3Ref = useRef();
+  const angled1Ref = useRef();
+  const angled2Ref = useRef();
+  const angled3Ref = useRef();
 
   useEffect(() => {
     if (context.state.isMenuOpen) {
@@ -35,7 +38,39 @@ export default function AboutUs() {
 
   useLayoutEffect(() => {
     // About us side boxes angled
-
+    [angled1Ref, angled2Ref, angled3Ref].forEach((ref, index) => {
+      if (ref.current) {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ref.current,
+              start: "top 60%",
+              end: "85% 60%",
+              scrub: true,
+              once: true,
+              markers: false, // Remove in production
+            },
+          })
+          .fromTo(
+            ref.current.querySelector(".angled_container"),
+            { y: -400, opacity: 0 },
+            { y: 0, opacity: 1, duration: 2 },
+            0
+          )
+          .fromTo(
+            ref.current.querySelector(".title_out"),
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.5 },
+            1
+          )
+          .fromTo(
+            ref.current.querySelector(".content_out"),
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, scale: 1, duration: 1 },
+            2
+          );
+      }
+    });
     // founder animations
     [founder1Ref, founder2Ref, founder3Ref].forEach((ref) => {
       if (ref.current) {
@@ -102,14 +137,19 @@ export default function AboutUs() {
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       {/* Section with us and the description */}
-      <div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
+      <div
+        ref={angled1Ref}
+        className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12"
+      >
         <div className="grid w-full grid-cols-12 max-w-7xl xl:w-full">
-          <div className="w-full col-start-1 col-end-13 mb-10 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
+          <div className="w-full col-start-1 col-end-13 mb-10 angled_container md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
               <div className="flex items-end justify-center w-full">
                 <Heading
                   theme={"white"}
-                  className={"text-2xl mb-4 md:text-4xl text-start w-full"}
+                  className={
+                    "text-2xl mb-4 md:text-4xl text-start w-full title_out"
+                  }
                   text={[
                     {
                       language: "EN",
@@ -131,7 +171,7 @@ export default function AboutUs() {
                   level={2}
                 ></Heading>
               </div>
-              <div className="items-start justify-center w-full">
+              <div className="items-start justify-center w-full content_out">
                 <Paragraph
                   type={"body"}
                   className="mb-4"
@@ -164,9 +204,12 @@ export default function AboutUs() {
       </div>
 
       {/* Section with us and the description */}
-      <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
+      <div
+        ref={angled2Ref}
+        className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12"
+      >
         <div className="grid w-full grid-cols-12 max-w-7xl xl:w-full">
-          <div className="w-full col-start-1 col-end-13 mb-10 md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-7 xl:col-end-13">
+          <div className="w-full col-start-1 col-end-13 mb-10 angled_container md:col-start-3 md:col-end-13 lg:col-start-5 lg:col-end-13 xl:col-start-7 xl:col-end-13">
             <AngledContainer
               tilt={true}
               themeName={"burgundy"}
@@ -175,7 +218,9 @@ export default function AboutUs() {
               <div className="flex items-end justify-center w-full">
                 <Heading
                   theme={"white"}
-                  className={"text-2xl mb-4 md:text-4xl text-end w-full"}
+                  className={
+                    "text-2xl mb-4 md:text-4xl text-end w-full title_out"
+                  }
                   text={[
                     {
                       language: "EN",
@@ -197,7 +242,7 @@ export default function AboutUs() {
                   level={2}
                 ></Heading>
               </div>
-              <div className="items-start justify-center w-full">
+              <div className="items-start justify-center w-full content_out">
                 <Paragraph
                   type={"body"}
                   className="mb-4 text-end"
@@ -227,12 +272,15 @@ export default function AboutUs() {
             </AngledContainer>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Section with us and the description */}
-      <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
+      <div
+        ref={angled3Ref}
+        className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12"
+      >
         <div className="grid w-full grid-cols-12 max-w-7xl xl:w-full">
-          <div className="w-full col-start-1 col-end-13 mb-10 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
+          <div className="w-full col-start-1 col-end-13 mb-10 angled_container md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
             <AngledContainer
               themeName={"burgundy"}
               className={"!px-0 !py-0 w-full"}
@@ -240,7 +288,9 @@ export default function AboutUs() {
               <div className="flex items-end justify-center w-full">
                 <Heading
                   theme={"white"}
-                  className={"text-2xl mb-4 md:text-4xl text-start w-full"}
+                  className={
+                    "text-2xl mb-4 md:text-4xl text-start w-full title_out"
+                  }
                   text={[
                     {
                       language: "EN",
@@ -262,7 +312,7 @@ export default function AboutUs() {
                   level={2}
                 ></Heading>
               </div>
-              <div className="items-start justify-center w-full">
+              <div className="items-start justify-center w-full content_out">
                 <Paragraph
                   type={"body"}
                   className="mb-4"
@@ -295,7 +345,7 @@ export default function AboutUs() {
             </AngledContainer>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Section with photo of founders */}
       <div className="relative flex flex-col items-center justify-center min-h-screen p-5 overflow-hidden xl:p-12">
