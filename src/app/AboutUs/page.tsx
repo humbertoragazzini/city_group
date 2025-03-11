@@ -44,9 +44,9 @@ export default function AboutUs() {
           .timeline({
             scrollTrigger: {
               trigger: ref.current,
-              start: "top 60%",
-              end: "85% 60%",
-              scrub: true,
+              start: "top 50%",
+              end: "85% 50%",
+              scrub: false,
               once: true,
               markers: false, // Remove in production
             },
@@ -54,20 +54,38 @@ export default function AboutUs() {
           .fromTo(
             ref.current.querySelector(".angled_container"),
             { y: -400, opacity: 0 },
-            { y: 0, opacity: 1, duration: 2 },
+            { y: 0, opacity: 1, duration: 0.5 },
             0
+          )
+          .fromTo(
+            ref.current.querySelector(".box_background_out"),
+            { opacity: 0, scale: 0 },
+            { opacity: 1, scale: 1, duration: 0.5 },
+            0
+          )
+          .fromTo(
+            ref.current.querySelector(".box_right_out"),
+            { opacity: 0, scale: 0 },
+            { opacity: 1, scale: 1, duration: 0.5 },
+            0.15
+          )
+          .fromTo(
+            ref.current.querySelector(".box_left_out"),
+            { opacity: 0, scale: 0 },
+            { opacity: 1, scale: 1, duration: 0.5 },
+            0.15
           )
           .fromTo(
             ref.current.querySelector(".title_out"),
             { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, scale: 1, duration: 0.5 },
-            1
+            { opacity: 1, y: 0, scale: 1, duration: 0.25 },
+            0.25
           )
           .fromTo(
             ref.current.querySelector(".content_out"),
             { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, scale: 1, duration: 1 },
-            2
+            { opacity: 1, y: 0, scale: 1, duration: 0.25 },
+            0.5
           );
       }
     });

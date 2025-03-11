@@ -77,7 +77,7 @@ export default function AngledContainer({
           className="relative w-full h-full"
         >
           <div
-            className={`absolute z-0 w-full h-full ${theme.bg} ${
+            className={`absolute box_left_out z-0 w-full h-full ${theme.bg} ${
               tilt == undefined ? "skew-y-6" : "-skew-y-6"
             }`}
           ></div>
@@ -87,7 +87,7 @@ export default function AngledContainer({
               transform: "translateZ(115px)",
               transformStyle: "preserve-3d",
             }}
-            className={`absolute hidden md:block ${
+            className={`absolute box_right_out hidden md:block ${
               tilt ? "bottom-[-85px]" : "top-[-85px]"
             } left-[-15px] xl:left-[-25px] z-0 w-[50px] h-[50px] xl:w-[70px] xl:h-[70px] ${
               theme.contrast
@@ -99,7 +99,7 @@ export default function AngledContainer({
               transform: "translateZ(115px)",
               transformStyle: "preserve-3d",
             }}
-            className={`absolute hidden md:block ${
+            className={`absolute box_background_out hidden md:block ${
               tilt ? "top-[-85px]" : "bottom-[-85px]"
             }  right-[-15px] xl:right-[-25px] z-0 w-[50px] h-[50px] xl:w-[70px] xl:h-[70px] ${
               theme.contrast
