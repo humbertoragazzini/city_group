@@ -34,7 +34,9 @@ export default function AboutUs() {
   }, [context.state.isMenuOpen]);
 
   useLayoutEffect(() => {
-    // if (founder1Ref.current !== null && founder1Ref.current !== undefined) {
+    // About us side boxes angled
+
+    // founder animations
     [founder1Ref, founder2Ref, founder3Ref].forEach((ref) => {
       if (ref.current) {
         gsap
@@ -92,6 +94,7 @@ export default function AboutUs() {
           );
       }
     });
+    //
   }, []);
 
   return (
@@ -99,7 +102,7 @@ export default function AboutUs() {
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       {/* Section with us and the description */}
-      <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
+      <div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
         <div className="grid w-full grid-cols-12 max-w-7xl xl:w-full">
           <div className="w-full col-start-1 col-end-13 mb-10 md:col-start-1 md:col-end-11 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-7">
             <AngledContainer themeName={"burgundy"} className={"!px-0 !py-0"}>
@@ -158,7 +161,7 @@ export default function AboutUs() {
             </AngledContainer>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Section with us and the description */}
       <motion.div className="relative flex flex-col items-center justify-center mb-[25vh] p-5 xl:p-12">
