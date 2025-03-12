@@ -57,8 +57,8 @@ const Accordion: React.FC = () => {
       .timeline({
         scrollTrigger: {
           trigger: accordionRef.current,
-          start: "top 50%",
-          end: "85% 50%",
+          start: "top 85%",
+          end: "85% 85%",
           scrub: false,
           once: true,
           markers: true, // Remove in production

@@ -44,8 +44,8 @@ export default function AboutUs() {
           .timeline({
             scrollTrigger: {
               trigger: ref.current,
-              start: "top 50%",
-              end: "85% 50%",
+              start: "top 85%",
+              end: "85% 85%",
               scrub: false,
               once: true,
               markers: false, // Remove in production
