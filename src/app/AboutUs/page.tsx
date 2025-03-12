@@ -24,6 +24,7 @@ export default function AboutUs() {
   const angled1Ref = useRef();
   const angled2Ref = useRef();
   const angled3Ref = useRef();
+  const letsContactRef = useRef();
 
   useEffect(() => {
     if (context.state.isMenuOpen) {
@@ -96,8 +97,8 @@ export default function AboutUs() {
           .timeline({
             scrollTrigger: {
               trigger: ref.current,
-              start: "top 60%",
-              end: "85% 60%",
+              start: "top 85%",
+              end: "85% 85%",
               scrub: true,
               once: true,
               markers: false, // Remove in production
@@ -147,7 +148,24 @@ export default function AboutUs() {
           );
       }
     });
-    //
+    // contact us
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: letsContactRef.current,
+          start: "top 85%",
+          end: "85% 85%",
+          scrub: true,
+          once: true,
+          markers: true, // Remove in production
+        },
+      })
+      .fromTo(
+        letsContactRef.current.querySelectorAll(".item"),
+        { opacity: 0, y: 500 },
+        { opacity: 1, y: 0, stagger: 0.15 },
+        0
+      );
   }, []);
 
   return (
@@ -638,10 +656,13 @@ export default function AboutUs() {
       </div>
 
       {/* Lets contact */}
-      <div className="p-5 xl:p-12 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.50)] to-black flex flex-col justify-center items-center overflow-hidden relative">
+      <div
+        ref={letsContactRef}
+        className="p-5 xl:p-12 bg-gradient-to-b from-[rgba(0.0,0.0,0.0,0.50)] to-black flex flex-col justify-center items-center overflow-hidden relative"
+      >
         <div className="xl:w-[75%] xl:max-w-[1920px] pb-[25vh]">
           <Heading
-            className={"text-2xl mb-7 text-center md:text-4xl"}
+            className={"text-2xl mb-7 text-center md:text-4xl item"}
             text={[
               {
                 language: "EN",
@@ -664,7 +685,7 @@ export default function AboutUs() {
           ></Heading>
           <div className="flex flex-col items-center justify-center">
             <Paragraph
-              className="text-center mb-7"
+              className="text-center mb-7 item"
               type="standfirst"
               text={[
                 {
@@ -691,10 +712,10 @@ export default function AboutUs() {
             ></Paragraph>
             <Link
               href={"/"}
-              className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl bg-red hover:bg-the-darkWhite mt-4 py4 px-6`}
+              className={`text-white text-xl h-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full min-w-[150px] shadow-xl bg-red hover:bg-the-darkWhite mt-4 py4 px-6 item`}
             >
               <Paragraph
-                className="mr-3"
+                className="mr-3 "
                 type="body"
                 text={[
                   {
