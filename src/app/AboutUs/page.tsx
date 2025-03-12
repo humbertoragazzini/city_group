@@ -497,7 +497,7 @@ export default function AboutUs() {
 
           {/** Co funders */}
           <div ref={founder3Ref} className="col-span-3">
-            <div className="grid grid-cols-10 xl:gap-12 mb-[25vh]">
+            <div className="grid grid-cols-10 xl:gap-12">
               <div className="order-1 col-span-10 mb-12 xl:mb-0 xl:order-1 lg:col-span-3">
                 <div className="flex items-center justify-center w-full h-full">
                   <div className="w-full overflow-hidden aspect-square">
