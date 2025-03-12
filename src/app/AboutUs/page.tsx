@@ -560,7 +560,7 @@ export default function AboutUs() {
       </div>
 
       {/* Our history */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen p-5 xl:p-12">
+      {/* <div className="relative flex flex-col items-center justify-center min-h-screen p-5 xl:p-12">
         <div className="grid grid-cols-12 max-w-7xl">
           <div className="col-span-12 xl:col-start-2 xl:col-end-12">
             <ContainerWithImage
@@ -626,7 +626,7 @@ export default function AboutUs() {
             </ContainerWithImage>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Why choose Primalport */}
       <div className="p-5 xl:p-12 min-h-screen flex flex-col justify-center items-center overflow-hidden relative bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.50)]">
