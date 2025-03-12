@@ -61,7 +61,7 @@ const Accordion: React.FC = () => {
           end: "85% 85%",
           scrub: false,
           once: true,
-          markers: true, // Remove in production
+          markers: false, // Remove in production
         },
       })
       .fromTo(
