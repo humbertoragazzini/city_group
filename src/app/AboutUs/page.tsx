@@ -44,8 +44,8 @@ export default function AboutUs() {
           .timeline({
             scrollTrigger: {
               trigger: ref.current,
-              start: "top 50%",
-              end: "85% 50%",
+              start: "top 85%",
+              end: "85% 85%",
               scrub: false,
               once: true,
               markers: false, // Remove in production
@@ -497,7 +497,7 @@ export default function AboutUs() {
 
           {/** Co funders */}
           <div ref={founder3Ref} className="col-span-3">
-            <div className="grid grid-cols-10 xl:gap-12 mb-[25vh]">
+            <div className="grid grid-cols-10 xl:gap-12">
               <div className="order-1 col-span-10 mb-12 xl:mb-0 xl:order-1 lg:col-span-3">
                 <div className="flex items-center justify-center w-full h-full">
                   <div className="w-full overflow-hidden aspect-square">
@@ -631,28 +631,6 @@ export default function AboutUs() {
       {/* Why choose Primalport */}
       <div className="p-5 xl:p-12 min-h-screen flex flex-col justify-center items-center overflow-hidden relative bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.50)]">
         <div className="xl:w-full xl:max-w-[1920px]">
-          <Heading
-            className={"text-2xl mb-4 text-center  md:text-4xl"}
-            text={[
-              {
-                language: "EN",
-                content: "Why choose Primalport",
-              },
-              {
-                language: "ES",
-                content: "Por que elegirnos",
-              },
-              {
-                language: "CH",
-                content: "提升各行业的卓越水平",
-              },
-              {
-                language: "IT",
-                content: "Por que elegirnos",
-              },
-            ]}
-            level={2}
-          ></Heading>
           <div className="flex justify-centerl">
             <Accordion></Accordion>
           </div>
