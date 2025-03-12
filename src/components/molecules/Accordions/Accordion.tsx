@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 interface AccordionItem {
@@ -43,15 +43,35 @@ const accordionData: AccordionItem[] = [
 
 const Accordion: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const accordionRef = useRef();
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  useLayoutEffect(() => {
+    console.log(accordionRef.current.querySelectorAll(".accordion-item"));
+    gsap
+      .timeline({
+        trigger: accordionRef.current,
+        start: "top 50%",
+        end: "85% 50%",
+        scrub: false,
+        once: true,
+        markers: true, // Remove in production
+      })
+      .fromTo(
+        accordionRef.current.querySelectorAll(".accordion-item"),
+        { x: 500, opacity: 0 },
+        { x: 0, stagger: 0.15, opacity: 1 },
+        0
+      );
+  }, []);
+
   return (
-    <div className="w-full mt-5 xl:max-w-[75%] mx-auto">
+    <div ref={accordionRef} className="w-full mt-5 xl:max-w-[75%] mx-auto">
       {accordionData.map((item) => (
-        <div key={item.id} className="">
+        <div key={item.id} className="accordion-item">
           <button
             onClick={() => toggleAccordion(item.id)}
             className={`w-full text-left p-4 focus:outline-none border-b-2 border-gray-700 transition-all duration-300 ${
