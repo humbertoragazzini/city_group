@@ -157,7 +157,7 @@ export default function AboutUs() {
           end: "85% 85%",
           scrub: true,
           once: true,
-          markers: true, // Remove in production
+          markers: false, // Remove in production
         },
       })
       .fromTo(
