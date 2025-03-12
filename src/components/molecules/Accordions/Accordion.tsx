@@ -1,6 +1,8 @@
 // @ts-nocheck
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import gsap from "gsap";
+import Heading from "@/components/Atoms/Heading/Heading";
 
 interface AccordionItem {
   id: number;
@@ -50,15 +52,17 @@ const Accordion: React.FC = () => {
   };
 
   useLayoutEffect(() => {
-    console.log(accordionRef.current.querySelectorAll(".accordion-item"));
-    gsap
+    console.log(accordionRef.current);
+    const timeline = gsap
       .timeline({
-        trigger: accordionRef.current,
-        start: "top 50%",
-        end: "85% 50%",
-        scrub: false,
-        once: true,
-        markers: true, // Remove in production
+        scrollTrigger: {
+          trigger: accordionRef.current,
+          start: "top 50%",
+          end: "85% 50%",
+          scrub: false,
+          once: true,
+          markers: true, // Remove in production
+        },
       })
       .fromTo(
         accordionRef.current.querySelectorAll(".accordion-item"),
@@ -70,6 +74,28 @@ const Accordion: React.FC = () => {
 
   return (
     <div ref={accordionRef} className="w-full mt-5 xl:max-w-[75%] mx-auto">
+      <Heading
+        className={"text-2xl mb-4 text-center md:text-4xl accordion-item"}
+        text={[
+          {
+            language: "EN",
+            content: "Why choose Primalport",
+          },
+          {
+            language: "ES",
+            content: "Por que elegirnos",
+          },
+          {
+            language: "CH",
+            content: "提升各行业的卓越水平",
+          },
+          {
+            language: "IT",
+            content: "Por que elegirnos",
+          },
+        ]}
+        level={2}
+      ></Heading>
       {accordionData.map((item) => (
         <div key={item.id} className="accordion-item">
           <button

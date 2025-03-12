@@ -631,28 +631,6 @@ export default function AboutUs() {
       {/* Why choose Primalport */}
       <div className="p-5 xl:p-12 min-h-screen flex flex-col justify-center items-center overflow-hidden relative bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.50)]">
         <div className="xl:w-full xl:max-w-[1920px]">
-          <Heading
-            className={"text-2xl mb-4 text-center  md:text-4xl"}
-            text={[
-              {
-                language: "EN",
-                content: "Why choose Primalport",
-              },
-              {
-                language: "ES",
-                content: "Por que elegirnos",
-              },
-              {
-                language: "CH",
-                content: "提升各行业的卓越水平",
-              },
-              {
-                language: "IT",
-                content: "Por que elegirnos",
-              },
-            ]}
-            level={2}
-          ></Heading>
           <div className="flex justify-centerl">
             <Accordion></Accordion>
           </div>
