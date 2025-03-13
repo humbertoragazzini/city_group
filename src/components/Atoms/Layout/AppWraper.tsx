@@ -10,15 +10,15 @@ import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import Link from "next/link";
 import MainHeader from "@/components/Organims/Sections/MainHeader";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import ONavBar from "@/components/Organims/NavBar/ONavBar";
 export default function AppWraper({ children }: any) {
   const pathname = usePathname();
   const scroll = useScrollbar();
+  const mytimeline = useRef();
 
   useEffect(() => {
     window.scrollTo(0, 0); // Instantly scroll to top
-    console.log(scroll);
   }, [pathname]);
 
   return (
