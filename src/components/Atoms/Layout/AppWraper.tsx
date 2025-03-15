@@ -12,13 +12,26 @@ import MainHeader from "@/components/Organims/Sections/MainHeader";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import ONavBar from "@/components/Organims/NavBar/ONavBar";
+import gsap from "gsap";
+
 export default function AppWraper({ children }: any) {
   const pathname = usePathname();
   const scroll = useScrollbar();
-  const mytimeline = useRef();
-
+  const footerRef = useRef();
+  const footerAnimationRef = useRef();
+  
   useEffect(() => {
     window.scrollTo(0, 0); // Instantly scroll to top
+    if(footerRef.current){
+      footerAnimationRef.current = gsap.timeline({scrollTrigger:{
+       trigger: footerRef.current,
+       start: "top 85%",
+       end: "85% 85%",
+       scrub: false,
+       once: true,
+       markers: true, // Remove in production
+      }}).fromTo(footerRef.current.querySelectorAll(".item"),{y:200,opacity:0.25},{y:0,opacity:1,stagger:0.15})
+    }    
   }, [pathname]);
 
   return (
@@ -30,7 +43,7 @@ export default function AppWraper({ children }: any) {
           return (
             <>
               <div className="opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-2 max-w-[1920px] mx-auto p-[45px]">
-                <div className="relative flex flex-col items-center justify-center col-span-1 text-white xl:col-span-2 ">
+                <div className="relative flex flex-col items-center justify-center text-white col-span-1 xl:col-span-2 ">
                   <MainHeader></MainHeader>
                   <LogoBG
                     className={
@@ -43,13 +56,13 @@ export default function AppWraper({ children }: any) {
               </div>
               {children}
               {/*footer*/}
-              <div className="relative z-10 w-full text-white bg-black">
+              <div ref={footerRef} className="relative z-10 w-full text-white bg-black overflow-hidden">
                 <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto p-4 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                   <div className="relative flex items-center justify-between col-span-1 lg:col-span-3 pb-9">
                     <div className="max-w-[650px]">
                       <Paragraph
                         type={"standfirst"}
-                        className="pb-4 font-bold"
+                        className="pb-4 font-bold item"
                         text={[
                           {
                             language: "ES",
@@ -75,7 +88,7 @@ export default function AppWraper({ children }: any) {
                       ></Paragraph>
                       <Paragraph
                         type={"standfirst"}
-                        className="pb-4"
+                        className="pb-4 item"
                         text={[
                           {
                             language: "ES",
@@ -96,7 +109,7 @@ export default function AppWraper({ children }: any) {
                         ]}
                       ></Paragraph>
                     </div>
-                    <div className="hidden lg:block h-[150px] w-fit p-3">
+                    <div className="hidden lg:block h-[150px] w-fit p-3 item">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-auto h-full"
@@ -220,33 +233,33 @@ export default function AppWraper({ children }: any) {
                       </svg>
                     </div>
                   </div>
-                  <div className="relative col-span-1 pb-10 lg:col-span-3">
+                  <div className="relative pb-10 col-span-1 lg:col-span-3 item">
                     <hr></hr>
                   </div>
                   <div className="relative col-span-1 lg:col-span-3">
                     <div className="flex flex-col items-start justify-between sm:flex-row">
                       <div className="flex flex-row min-w-full">
                         <div className="relative flex-col items-start justify-end hidden mb-3 mr-24 lg:flex">
-                          <p>Reigate UK</p>
-                          <p>Cordoba capital ARG</p>
+                          <p className="item">Reigate UK</p>
+                          <p className="item">Cordoba capital ARG</p>
                         </div>
                         <div className="relative flex flex-col justify-between flex-1 mb-3 md:flex-row md:items-end">
                           <p className="mb-3 md:mb-0">
                             contact@primalports.com{" "}
-                            <span className="block lg:hidden">Corboba ARG</span>
-                            <span className="block lg:hidden"> Reigate UK</span>
+                            <span className="block lg:hidden item">Corboba ARG</span>
+                            <span className="block lg:hidden item"> Reigate UK</span>
                           </p>
                           <span className="block">
                             © 2025{" "}
                             <Link
-                              className="mr-2"
+                              className="mr-2 item"
                               href="https://github.com/humbertoragazzini/"
                             >
                               Tobe21 WebDeveloper.
                             </Link>
                             <span>
                               <Paragraph
-                                className="inline-block"
+                                className="inline-block item"
                                 type={"body"}
                                 text={[
                                   {
