@@ -10,15 +10,17 @@ import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import Link from "next/link";
 import MainHeader from "@/components/Organims/Sections/MainHeader";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect,useRef } from "react";
 import ONavBar from "@/components/Organims/NavBar/ONavBar";
+
+
 export default function AppWraper({ children }: any) {
   const pathname = usePathname();
   const scroll = useScrollbar();
-
+  const footerRef = useRef();
   useEffect(() => {
     window.scrollTo(0, 0); // Instantly scroll to top
-    console.log(scroll);
+    
   }, [pathname]);
 
   return (
@@ -43,7 +45,7 @@ export default function AppWraper({ children }: any) {
               </div>
               {children}
               {/*footer*/}
-              <div className="relative z-10 w-full text-white bg-black">
+              <div ref={footerRef} className="relative z-10 w-full text-white bg-black">
                 <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto p-4 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                   <div className="relative flex items-center justify-between col-span-1 lg:col-span-3 pb-9">
                     <div className="max-w-[650px]">
