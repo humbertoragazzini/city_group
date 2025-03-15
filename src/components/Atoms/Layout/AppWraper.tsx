@@ -13,17 +13,20 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import ONavBar from "@/components/Organims/NavBar/ONavBar";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/src/ScrollTrigger";
 
 export default function AppWraper({ children }: any) {
   const pathname = usePathname();
   const scroll = useScrollbar();
   const footerRef = useRef();
   const footerAnimationRef = useRef();
-  
+ 
+  gsap.registerPlugin(ScrollTrigger);
+ 
   useEffect(() => {
     window.scrollTo(0, 0); // Instantly scroll to top
     if(footerRef.current){
-      footerAnimationRef.current = gsap.timeline({scrollTrigger:{
+      const newTimeline = gsap.timeline({scrollTrigger:{
        trigger: footerRef.current,
        start: "top 85%",
        end: "85% 85%",
@@ -56,7 +59,7 @@ export default function AppWraper({ children }: any) {
               </div>
               {children}
               {/*footer*/}
-              <div ref={footerRef} className="relative z-10 w-full text-white bg-black overflow-hidden">
+              <div ref={footerRef} className="relative z-10 w-full overflow-hidden text-white bg-black">
                 <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto p-4 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                   <div className="relative flex items-center justify-between col-span-1 lg:col-span-3 pb-9">
                     <div className="max-w-[650px]">
