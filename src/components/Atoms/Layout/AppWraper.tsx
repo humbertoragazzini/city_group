@@ -26,7 +26,7 @@ export default function AppWraper({ children }: any) {
        trigger: footerRef.current,
        start: "top 85%",
        end: "85% 85%",
-       scrub: true,
+       scrub: false,
        once: true,
        markers: true, // Remove in production
       }}).fromTo(footerRef.current.querySelectorAll(".item"),{y:200,opacity:0.25},{y:0,opacity:1,stagger:0.15})
@@ -55,7 +55,7 @@ export default function AppWraper({ children }: any) {
               </div>
               {children}
               {/*footer*/}
-              <div ref={footerRef} className="relative z-10 w-full text-white bg-black">
+              <div ref={footerRef} className="relative z-10 w-full text-white bg-black overflow-hidden">
                 <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1920px] mx-auto p-4 lg:px-9 xl:px-14 2xl:px-20 pb-10 pt-10">
                   <div className="relative flex items-center justify-between col-span-1 lg:col-span-3 pb-9">
                     <div className="max-w-[650px]">
