@@ -244,7 +244,7 @@ export default function Footer() {
                                     <span className="block lg:hidden item"> Reigate UK</span>
                                 </p>
                                 <span className="block">
-                                    <span>© 2025</span>
+                                    <span>© 2025 </span>
                                     <Link
                                         className="mr-2 item"
                                         href="https://github.com/humbertoragazzini/"
