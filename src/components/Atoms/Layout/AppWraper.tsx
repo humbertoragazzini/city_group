@@ -10,7 +10,7 @@ import MainBG from "@/components/Organims/RTFAnimations/MainBG";
 import Link from "next/link";
 import MainHeader from "@/components/Organims/Sections/MainHeader";
 import { usePathname } from "next/navigation";
-import { useEffect,useRef } from "react";
+import { useEffect, useRef } from "react";
 import ONavBar from "@/components/Organims/NavBar/ONavBar";
 import gsap from "gsap";
 
@@ -19,6 +19,7 @@ export default function AppWraper({ children }: any) {
   const scroll = useScrollbar();
   const footerRef = useRef();
   const footerAnimationRef = useRef();
+  
   useEffect(() => {
     window.scrollTo(0, 0); // Instantly scroll to top
     if(footerRef.current){
