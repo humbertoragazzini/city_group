@@ -62,8 +62,8 @@ function Item() {
   const [enable, setEnable] = useState(false)
 
   return (
-    <div className="relative col-span-1">
-      <button onClick={e => setEnable(!enable)} className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-4 mt-2 bg-[rgba(255,255,255,0.2)] rounded-xl cursor-pointer w-full hover:bg-[rgba(255,255,255,0.30)] transition-all duration-300">
+    <div className={`relative col-span-1 rounded-xl ${enable ? "border-4 border-[rgba(255,255,255,0.35)] mt-3 mb-3 p-8" : "border-3 border-[rgba(255,255,255,0)] mt-2 bg-transparent"} transition-all duration-500`}>
+      <button onClick={e => setEnable(!enable)} className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-4 bg-[rgba(255,255,255,0.2)] rounded-xl cursor-pointer w-full hover:bg-[rgba(255,255,255,0.30)] transition-all duration-300">
         <div className="col-span-1 p-4 border-r-2 border-[rgba(255,255,255,0.5)]">
           <p className="font-bold w-full text-center">45</p>
         </div>
