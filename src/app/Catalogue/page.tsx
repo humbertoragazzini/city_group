@@ -6,7 +6,7 @@ import Heading from "@/components/Atoms/Heading/Heading";
 import { FiArrowUpRight } from "react-icons/fi";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import CardCarousel from "@/components/molecules/Carousels/CardCarousel";
-
+import { motion } from "framer-motion";
 export default function Catalogue() {
   const context = useAppContext();
 
@@ -29,7 +29,13 @@ export default function Catalogue() {
       <div className="w-full min-h-screen py-24 bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-center items-center overflow-hidden relative">
         <div className="grid w-full grid-cols-1 p-4 lg:p-8">
           <div className="col-span-1">
-            <div className="grid grid-cols-2 w-full backdrop-blur-md p-8 bg-[rgba(255,255,255,0.2)]">
+            <div className="grid grid-cols-10 full backdrop-blur-md p-8 bg-[rgba(255,255,255,0.2)]">
+              <div className="col-span-2 border-r-2 border-[rgba(255,255,255,0.5)]">45</div>
+              <div className="col-span-2 border-r-2 border-[rgba(255,255,255,0.5)]">Camara 4K/Wfif Zoom 200x</div>
+              <div className="col-span-2 border-r-2 border-[rgba(255,255,255,0.5)]">Camara</div>
+              <div className="col-span-2 border-r-2 border-[rgba(255,255,255,0.5)]">50</div>
+            </div>
+            <motion.div className="grid grid-cols-2 w-full backdrop-blur-md p-8 bg-[rgba(255,255,255,0.2)]">
               <div className="col-span-2 lg:col-span-1 p-8">
                 <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
                   <h1 className="text-2xl pb-2">Camara de seguridad 1080P/4k</h1>
@@ -57,7 +63,7 @@ export default function Catalogue() {
               <div className="col-span-2 lg:col-span-1 p-8">
                 <CardCarousel></CardCarousel>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
