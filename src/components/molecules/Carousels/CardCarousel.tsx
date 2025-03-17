@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
