@@ -1,13 +1,13 @@
 //@ts-nocheck
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import useMeasure from "react-use-measure";
 
-const CARD_WIDTH = 350;
-const CARD_HEIGHT = 350;
+let CARD_WIDTH = 350;
+let CARD_HEIGHT = 350;
 const MARGIN = 20;
-const CARD_SIZE = CARD_WIDTH + MARGIN;
+let CARD_SIZE = CARD_WIDTH + MARGIN;
 
 const BREAKPOINTS = {
     sm: 640,
@@ -17,6 +17,12 @@ const BREAKPOINTS = {
 const CardCarousel = () => {
     const [ref, { width }] = useMeasure();
     const [offset, setOffset] = useState(0);
+
+    useLayoutEffect(() => {
+        CARD_SIZE = document.querySelector(".container")?.clientWidth - 40;
+        CARD_WIDTH = document.querySelector(".container")?.clientWidth - 60;
+        CARD_HEIGHT = document.querySelector(".container")?.clientWidth - 60;
+    }, [])
 
     const CARD_BUFFER =
         width > BREAKPOINTS.lg ? 3 : width > BREAKPOINTS.sm ? 2 : 1;
@@ -41,7 +47,7 @@ const CardCarousel = () => {
     };
 
     return (
-        <section className="" ref={ref}>
+        <section className="container" ref={ref}>
             <div className="relative overflow-hidden p-4">
                 {/* CARDS */}
                 <div className="mx-auto max-w-6xl">
@@ -102,8 +108,8 @@ const Card = ({ url, category, title, description }) => {
                 <span className="text-xs font-semibold uppercase text-violet-300">
                     {category}
                 </span>
-                <p className="my-2 text-3xl font-bold">{title}</p>
-                <p className="text-lg text-slate-300">{description}</p>
+                <p className="my-2 text-lg lg:text-3xl font-bold">{title}</p>
+                <p className="text-md lg:text-lg text-slate-300">{description}</p>
             </div>
         </div>
     );
