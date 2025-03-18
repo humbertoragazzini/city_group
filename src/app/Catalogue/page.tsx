@@ -146,7 +146,7 @@ function Item(product: any) {
       <motion.div animate={{ height: !enable ? "0px" : "auto", marginTop: !enable ? "0px" : "8px" }} className="z-0 grid grid-cols-1 w-full overflow-hidden">
         <div className="col-span-1">
           <motion.div className="z-0 top-0 left-0 grid grid-cols-10 w-full backdrop-blur-md bg-[rgba(255,255,255,0.2)] rounded-xl">
-            <div className="col-span-2 lg:col-span-7 p-3 lg:p-12">
+            <div className="col-span-10 lg:col-span-7 p-3 lg:p-12">
               <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
                 <h1 className="text-2xl pb-2">Camara de seguridad 1080P/4k</h1>
               </div>
@@ -170,7 +170,7 @@ function Item(product: any) {
                 <div className="text-lg">Lorem Ipsum is simply...</div>
               </div>
             </div>
-            <div className="col-span-2 lg:col-span-3 lg:p-8">
+            <div className="col-span-10 lg:col-span-3 lg:p-8">
               <CardCarousel></CardCarousel>
             </div>
           </motion.div>
