@@ -78,23 +78,23 @@ export default function Catalogue() {
       {/* Section with us and the description */}
       <div className="w-full min-h-screen bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-center items-center overflow-hidden relative">
         <div className="grid w-full grid-cols-1 p-4 lg:p-8">
-          <button className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full hover:bg-[rgba(255,255,255,0.30)] transition-all duration-300">
-            <div className="col-span-3 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
+          <button className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300">
+            <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
               <div className="flex justify-center items-center">
                 <p className="font-bold w-full text-center">ID</p>
               </div>
             </div>
-            <div className="col-span-9 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
+            <div className="col-span-9 p-2 md:col-span-6 md:border-r-2 border-[rgba(255,255,255,0.5)]">
               <div className="flex justify-center items-center">
                 <p className="font-bold w-full text-left">Name</p>
               </div>
             </div>
-            <div className="col-span-4 hidden p-2 lg:border-r-2 border-[rgba(255,255,255,0.5)]">
+            <div className="col-span-4 hidden p-2 md:block md:col-span-3 md:border-r-2 border-[rgba(255,255,255,0.5)]">
               <div className="flex justify-center items-center">
                 <p className="font-bold w-full text-center">Type</p>
               </div>
             </div>
-            <div className="col-span-1 hidden md:grid p-2">
+            <div className="col-span-1 hidden lg:block md:grid p-2">
               <div className="flex justify-center items-center">
                 <p className="font-bold w-full text-center">Stock</p>
               </div>
@@ -122,22 +122,22 @@ function Item(product: any) {
   return (
     <div className={`relative col-span-1 rounded-xl ${enable ? "border-2 border-[rgba(255,255,255,0.35)] mt-3 mb-3 p-2" : "border-3 border-[rgba(255,255,255,0)] mt-2 bg-transparent"} transition-all duration-500`}>
       <button onClick={e => setEnable(!enable)} className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 bg-[rgba(255,255,255,0.2)] rounded-xl cursor-pointer w-full hover:bg-[rgba(255,255,255,0.30)] transition-all duration-300">
-        <div className="col-span-3 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
+        <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center">
             <p className="font-bold w-full text-center">{product.product.id}</p>
           </div>
         </div>
-        <div className="col-span-9 p-2 lg:border-r-2 border-[rgba(255,255,255,0.5)]">
+        <div className="col-span-9 p-2 md:col-span-6 md:border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center">
             <p className="font-bold w-full text-left">{product.product.name}</p>
           </div>
         </div>
-        <div className="col-span-4 hidden p-2 lg:border-r-2 border-[rgba(255,255,255,0.5)]">
+        <div className="col-span-4 hidden p-2 md:block md:col-span-3 md:border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center">
             <p className="font-bold w-full text-center">{product.product.type}</p>
           </div>
         </div>
-        <div className="col-span-1 hidden md:grid p-2">
+        <div className="col-span-1 hidden lg:block md:grid p-2">
           <div className="flex justify-center items-center">
             <p className="font-bold w-full text-center">{product.product.stock}</p>
           </div>
@@ -145,8 +145,8 @@ function Item(product: any) {
       </button>
       <motion.div animate={{ height: !enable ? "0px" : "auto", marginTop: !enable ? "0px" : "8px" }} className="z-0 grid grid-cols-1 w-full overflow-hidden">
         <div className="col-span-1">
-          <motion.div className="z-0 top-0 left-0 grid grid-cols-2 w-full backdrop-blur-md bg-[rgba(255,255,255,0.2)] rounded-xl">
-            <div className="col-span-2 lg:col-span-1 p-3">
+          <motion.div className="z-0 top-0 left-0 grid grid-cols-10 w-full backdrop-blur-md bg-[rgba(255,255,255,0.2)] rounded-xl">
+            <div className="col-span-2 lg:col-span-7 p-3 lg:p-12">
               <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
                 <h1 className="text-2xl pb-2">Camara de seguridad 1080P/4k</h1>
               </div>
@@ -170,7 +170,7 @@ function Item(product: any) {
                 <div className="text-lg">Lorem Ipsum is simply...</div>
               </div>
             </div>
-            <div className="col-span-2 lg:col-span-1 lg:p-8">
+            <div className="col-span-2 lg:col-span-3 lg:p-8">
               <CardCarousel></CardCarousel>
             </div>
           </motion.div>

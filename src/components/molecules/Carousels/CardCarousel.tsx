@@ -108,8 +108,8 @@ const Card = ({ url, category, title, description }) => {
                 <span className="text-xs font-semibold uppercase text-violet-300">
                     {category}
                 </span>
-                <p className="my-2 text-xl lg:text-3xl font-bold">{title}</p>
-                <p className="text-lg text-slate-300">{description}</p>
+                <p className="my-2 text-lg lg:text-3xl font-bold">{title}</p>
+                <p className="text-md lg:text-lg text-slate-300">{description}</p>
             </div>
         </div>
     );
