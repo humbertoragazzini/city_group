@@ -80,15 +80,15 @@ export default function Catalogue() {
     <div
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
-      <div>Filter</div>
-      <div>
-        <button>
+      <div className="w-full flex justify-center items-bcenter p-8"><h1 className="text-3xl font-bold">Filter</h1></div>
+      <div className="p-4 w-full flex justify-center items-center">
+        <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
           By id
         </button>
-        <button>
+        <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
           By type
         </button>
-        <button>
+        <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
           By name
         </button>
       </div>
