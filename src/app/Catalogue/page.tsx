@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import CardCarousel from "@/components/molecules/Carousels/CardCarousel";
 import { motion } from "framer-motion";
+import { RiCreativeCommonsZeroLine } from "react-icons/ri";
 export default function Catalogue() {
   const context = useAppContext();
   const [filtered, setFiltered] = useState();
@@ -74,9 +75,13 @@ export default function Catalogue() {
   }, [context.state.isMenuOpen]);
 
   useEffect(() => {
-    const filteredProduct = products.filter((item) => { item.id == IDtoSearch })
+    const filteredProduct = products.filter((item) => { return item.id == IDtoSearch })
+    console.log(IDtoSearch == "")
     if (filteredProduct.length > 0) {
       setFiltered(filteredProduct)
+    }
+    if (IDtoSearch == "") {
+      setFiltered(products)
     }
   }, [IDtoSearch])
 
@@ -123,13 +128,13 @@ export default function Catalogue() {
               </div>
             </div>
           </button>
-          {/* {
+          {
             products.map((product, index) => {
               return (
-                <Item key={index} product={product}></Item>
+                <Item key={index} filtered={filtered} product={product}></Item>
               )
             })
-          } */}
+          }
         </div>
       </div>
     </div>
@@ -138,31 +143,36 @@ export default function Catalogue() {
 
 Catalogue.displayName = "Catalogue";
 
-function Item(product: any) {
+function Item({ product, filtered }: any) {
 
   const [enable, setEnable] = useState(false);
+  const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    setShow(filtered.some(item => item.id == product.id))
+  }, [filtered])
 
   return (
-    <div className={`relative col-span-1 rounded-xl ${enable ? "border-2 border-[rgba(255,255,255,0.35)] mt-3 mb-3 p-2" : "border-3 border-[rgba(255,255,255,0)] mt-2 bg-transparent"} transition-all duration-500`}>
+    <div className={`relative col-span-1 rounded-xl ${enable ? "border-2 border-[rgba(255,255,255,0.35)] mt-3 mb-3 p-2" : "border-3 border-[rgba(255,255,255,0)] mt-2 bg-transparent"} transition-all duration-500 ${show ? "" : "hidden"}`}>
       <button onClick={e => setEnable(!enable)} className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 bg-[rgba(255,255,255,0.2)] rounded-xl cursor-pointer w-full hover:bg-[rgba(255,255,255,0.30)] transition-all duration-300">
         <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center">
-            <p className="font-bold w-full text-center">{product.product.id}</p>
+            <p className="font-bold w-full text-center">{product.id}</p>
           </div>
         </div>
         <div className="col-span-9 p-2 md:col-span-6 md:border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center">
-            <p className="font-bold w-full text-left">{product.product.name}</p>
+            <p className="font-bold w-full text-left">{product.name}</p>
           </div>
         </div>
         <div className="col-span-4 hidden p-2 md:block md:col-span-3 md:border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center">
-            <p className="font-bold w-full text-center">{product.product.type}</p>
+            <p className="font-bold w-full text-center">{product.type}</p>
           </div>
         </div>
         <div className="col-span-1 hidden lg:block md:grid p-2">
           <div className="flex justify-center items-center">
-            <p className="font-bold w-full text-center">{product.product.stock}</p>
+            <p className="font-bold w-full text-center">{product.stock}</p>
           </div>
         </div>
       </button>
