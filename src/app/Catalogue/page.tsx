@@ -7,7 +7,8 @@ import CardCarousel from "@/components/molecules/Carousels/CardCarousel";
 import { motion } from "framer-motion";
 export default function Catalogue() {
   const context = useAppContext();
-  const filtered = useState();
+  const [filtered, setFiltered] = useState();
+  const [IDtoSearch, setIDtoSearch] = useState();
   const products = [
     { id: 1, name: "Smartphone X12", type: "Smartphone", stock: 50 },
     { id: 2, name: "Laptop Pro 15", type: "Laptop", stock: 30 },
@@ -73,18 +74,23 @@ export default function Catalogue() {
   }, [context.state.isMenuOpen]);
 
   useEffect(() => {
-
-  }, [])
+    const filteredProduct = products.filter((item) => { item.id == IDtoSearch })
+    if (filteredProduct.length > 0) {
+      setFiltered(filteredProduct)
+    }
+  }, [IDtoSearch])
 
   return (
     <div
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       <div className="w-full flex justify-center items-bcenter p-8"><h1 className="text-3xl font-bold">Filter</h1></div>
-      <div className="p-4 w-full flex justify-center items-center">
-        <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
-          By id
-        </button>
+      <div className="bg-[rgba(255,255,255,0.2)] rounded-xl m-4 p-4 flex justify-center items-center">
+        <div className="px-5 py-3 flex justify-center items-center font-semibold mx-2 text-white rounded-lg">
+          <label className="mr-2">By ID:</label>
+          <input onKeyUp={(e) => { setIDtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Write the id">
+          </input>
+        </div>
         <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
           By type
         </button>
@@ -117,13 +123,13 @@ export default function Catalogue() {
               </div>
             </div>
           </button>
-          {
+          {/* {
             products.map((product, index) => {
               return (
                 <Item key={index} product={product}></Item>
               )
             })
-          }
+          } */}
         </div>
       </div>
     </div>
