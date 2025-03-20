@@ -7,6 +7,7 @@ import CardCarousel from "@/components/molecules/Carousels/CardCarousel";
 import { motion } from "framer-motion";
 export default function Catalogue() {
   const context = useAppContext();
+  const filtered = useState();
   const products = [
     { id: 1, name: "Smartphone X12", type: "Smartphone", stock: 50 },
     { id: 2, name: "Laptop Pro 15", type: "Laptop", stock: 30 },
@@ -71,10 +72,26 @@ export default function Catalogue() {
     }
   }, [context.state.isMenuOpen]);
 
+  useEffect(() => {
+
+  }, [])
+
   return (
     <div
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
+      <div>Filter</div>
+      <div>
+        <button>
+          By id
+        </button>
+        <button>
+          By type
+        </button>
+        <button>
+          By name
+        </button>
+      </div>
       {/* Section with us and the description */}
       <div className="w-full min-h-screen bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-center items-center overflow-hidden relative">
         <div className="grid w-full grid-cols-1 p-4 lg:p-8">
