@@ -7,6 +7,7 @@ import CardCarousel from "@/components/molecules/Carousels/CardCarousel";
 import { motion } from "framer-motion";
 export default function Catalogue() {
   const context = useAppContext();
+  const filtered = useState();
   const products = [
     { id: 1, name: "Smartphone X12", type: "Smartphone", stock: 50 },
     { id: 2, name: "Laptop Pro 15", type: "Laptop", stock: 30 },
@@ -71,10 +72,26 @@ export default function Catalogue() {
     }
   }, [context.state.isMenuOpen]);
 
+  useEffect(() => {
+
+  }, [])
+
   return (
     <div
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
+      <div className="w-full flex justify-center items-bcenter p-8"><h1 className="text-3xl font-bold">Filter</h1></div>
+      <div className="p-4 w-full flex justify-center items-center">
+        <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
+          By id
+        </button>
+        <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
+          By type
+        </button>
+        <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
+          By name
+        </button>
+      </div>
       {/* Section with us and the description */}
       <div className="w-full min-h-screen bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-center items-center overflow-hidden relative">
         <div className="grid w-full grid-cols-1 p-4 lg:p-8">
