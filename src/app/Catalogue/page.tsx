@@ -5,9 +5,12 @@ import { useEffect, useState } from "react";
 import React from "react";
 import CardCarousel from "@/components/molecules/Carousels/CardCarousel";
 import { motion } from "framer-motion";
+import { RiCreativeCommonsZeroLine } from "react-icons/ri";
 export default function Catalogue() {
   const context = useAppContext();
-  const filtered = useState();
+  const [filtered, setFiltered] = useState();
+  const [IDtoSearch, setIDtoSearch] = useState();
+  const [wordToSearch, setWordtoSearch] = useState("");
   const products = [
     { id: 1, name: "Smartphone X12", type: "Smartphone", stock: 50 },
     { id: 2, name: "Laptop Pro 15", type: "Laptop", stock: 30 },
@@ -73,18 +76,51 @@ export default function Catalogue() {
   }, [context.state.isMenuOpen]);
 
   useEffect(() => {
+    const filteredProduct = products.filter((item) => { return item.id == IDtoSearch })
+    console.log(IDtoSearch == "")
+    if (filteredProduct.length >= 0) {
+      setFiltered(filteredProduct)
+    }
+    if (IDtoSearch == "") {
+      setFiltered(products)
+    }
+  }, [IDtoSearch])
 
-  }, [])
+  useEffect(() => {
+
+    const searchWords = wordToSearch.toLowerCase().split(" ");
+    const filteredProduct = products.filter((item) => {
+      const lowerItemWords = item.name.toLowerCase().split(" ");
+
+      // Check if ANY searchWord is included in ANY of the item's words
+      return searchWords.some(searchWord =>
+        lowerItemWords.some(itemWord => itemWord.includes(searchWord))
+      );
+    });
+    if (filteredProduct.length >= 0) {
+      setFiltered(filteredProduct)
+    }
+    if (searchWords == "") {
+      setFiltered(products)
+    }
+  }, [wordToSearch])
 
   return (
     <div
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       <div className="w-full flex justify-center items-bcenter p-8"><h1 className="text-3xl font-bold">Filter</h1></div>
-      <div className="p-4 w-full flex justify-center items-center">
-        <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
-          By id
-        </button>
+      <div className="bg-[rgba(255,255,255,0.2)] rounded-xl m-4 p-4 flex justify-center items-center">
+        <div className="px-5 py-3 flex justify-center items-center font-semibold mx-2 text-white rounded-lg">
+          <label className="mr-2">By ID:</label>
+          <input onKeyUp={(e) => { setIDtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by ID">
+          </input>
+        </div>
+        <div className="px-5 py-3 flex justify-center items-center font-semibold mx-2 text-white rounded-lg">
+          <label className="mr-2">By name:</label>
+          <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by word">
+          </input>
+        </div>
         <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
           By type
         </button>
@@ -93,7 +129,7 @@ export default function Catalogue() {
         </button>
       </div>
       {/* Section with us and the description */}
-      <div className="w-full min-h-screen bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-center items-center overflow-hidden relative">
+      <div className="w-full min-h-screen bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-start items-center overflow-hidden relative">
         <div className="grid w-full grid-cols-1 p-4 lg:p-8">
           <button className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300">
             <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
@@ -120,7 +156,7 @@ export default function Catalogue() {
           {
             products.map((product, index) => {
               return (
-                <Item key={index} product={product}></Item>
+                <Item key={index} filtered={filtered} product={product}></Item>
               )
             })
           }
@@ -132,31 +168,38 @@ export default function Catalogue() {
 
 Catalogue.displayName = "Catalogue";
 
-function Item(product: any) {
+function Item({ product, filtered }: any) {
 
   const [enable, setEnable] = useState(false);
+  const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    if (filtered) {
+      setShow(filtered.some(item => item.id == product.id))
+    }
+  }, [filtered])
 
   return (
-    <div className={`relative col-span-1 rounded-xl ${enable ? "border-2 border-[rgba(255,255,255,0.35)] mt-3 mb-3 p-2" : "border-3 border-[rgba(255,255,255,0)] mt-2 bg-transparent"} transition-all duration-500`}>
+    <div className={`relative col-span-1 rounded-xl ${enable ? "border-2 border-[rgba(255,255,255,0.35)] mt-3 mb-3 p-2" : "border-3 border-[rgba(255,255,255,0)] mt-2 bg-transparent"} transition-all duration-500 ${show ? "" : "hidden"}`}>
       <button onClick={e => setEnable(!enable)} className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 bg-[rgba(255,255,255,0.2)] rounded-xl cursor-pointer w-full hover:bg-[rgba(255,255,255,0.30)] transition-all duration-300">
         <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center">
-            <p className="font-bold w-full text-center">{product.product.id}</p>
+            <p className="font-bold w-full text-center">{product.id}</p>
           </div>
         </div>
         <div className="col-span-9 p-2 md:col-span-6 md:border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center">
-            <p className="font-bold w-full text-left">{product.product.name}</p>
+            <p className="font-bold w-full text-left">{product.name}</p>
           </div>
         </div>
         <div className="col-span-4 hidden p-2 md:block md:col-span-3 md:border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center">
-            <p className="font-bold w-full text-center">{product.product.type}</p>
+            <p className="font-bold w-full text-center">{product.type}</p>
           </div>
         </div>
         <div className="col-span-1 hidden lg:block md:grid p-2">
           <div className="flex justify-center items-center">
-            <p className="font-bold w-full text-center">{product.product.stock}</p>
+            <p className="font-bold w-full text-center">{product.stock}</p>
           </div>
         </div>
       </button>
