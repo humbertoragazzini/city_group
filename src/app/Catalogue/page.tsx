@@ -181,7 +181,7 @@ Catalogue.displayName = "Catalogue";
 function DropdownMenu({ types }: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState(null);
-  const [options, setOptions] = useState(types)
+  const [options, setOptions] = useState()
 
   const toggleDropdown = () => setIsOpen(prev => !prev);
 
@@ -190,14 +190,18 @@ function DropdownMenu({ types }: any) {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    setOptions(types)
+  }, [types])
+
   return (
-    <div>
+    <div className="relative">
       <button onClick={toggleDropdown}>
         {selected || "Select an option"}
       </button>
 
       {isOpen && (
-        <ul>
+        <ul className="z-20 px-4 py-2 top-0 left-0 h-[300px] w-fit rounded-md absolute backdrop-blur-xl overflow-scroll">
           {options.map((option, index) => (
             <li
               key={index}
