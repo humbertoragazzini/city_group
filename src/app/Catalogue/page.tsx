@@ -10,6 +10,7 @@ export default function Catalogue() {
   const context = useAppContext();
   const [filtered, setFiltered] = useState();
   const [IDtoSearch, setIDtoSearch] = useState();
+  const [wordToSearch, setWordtoSearch] = useState("");
   const products = [
     { id: 1, name: "Smartphone X12", type: "Smartphone", stock: 50 },
     { id: 2, name: "Laptop Pro 15", type: "Laptop", stock: 30 },
@@ -84,6 +85,25 @@ export default function Catalogue() {
       setFiltered(products)
     }
   }, [IDtoSearch])
+
+  useEffect(() => {
+
+    const searchWords = wordToSearch.toLowerCase().split(" ");
+    const filteredProduct = products.filter((item) => {
+      const lowerItemWords = item.name.toLowerCase().split(" ");
+
+      // Check if ANY searchWord is included in ANY of the item's words
+      return searchWords.some(searchWord =>
+        lowerItemWords.some(itemWord => itemWord.includes(searchWord))
+      );
+    });
+    if (filteredProduct.length >= 0) {
+      setFiltered(filteredProduct)
+    }
+    if (searchWords == "") {
+      setFiltered(products)
+    }
+  }, [wordToSearch])
 
   return (
     <div
