@@ -93,7 +93,12 @@ export default function Catalogue() {
       <div className="bg-[rgba(255,255,255,0.2)] rounded-xl m-4 p-4 flex justify-center items-center">
         <div className="px-5 py-3 flex justify-center items-center font-semibold mx-2 text-white rounded-lg">
           <label className="mr-2">By ID:</label>
-          <input onKeyUp={(e) => { setIDtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Write the id">
+          <input onKeyUp={(e) => { setIDtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by ID">
+          </input>
+        </div>
+        <div className="px-5 py-3 flex justify-center items-center font-semibold mx-2 text-white rounded-lg">
+          <label className="mr-2">By name:</label>
+          <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by word">
           </input>
         </div>
         <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
