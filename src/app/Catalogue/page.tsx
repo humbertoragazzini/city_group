@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 import { RiCreativeCommonsZeroLine } from "react-icons/ri";
 export default function Catalogue() {
   const context = useAppContext();
-  const [filtered, setFiltered] = useState();
   const [IDtoSearch, setIDtoSearch] = useState();
   const [wordToSearch, setWordtoSearch] = useState("");
+  const [allTypes, setAlltypes] = useState();
   const products = [
     { id: 1, name: "Smartphone X12", type: "Smartphone", stock: 50 },
     { id: 2, name: "Laptop Pro 15", type: "Laptop", stock: 30 },
@@ -64,6 +64,8 @@ export default function Catalogue() {
     { id: 50, name: "Bluetooth Car Adapter", type: "Automotive", stock: 33 }
   ];
 
+  const [filtered, setFiltered] = useState(products);
+
   useEffect(() => {
     if (context.state.isMenuOpen) {
       const scrollPosition = window.pageYOffset;
@@ -105,6 +107,15 @@ export default function Catalogue() {
     }
   }, [wordToSearch])
 
+  useEffect(() => {
+    if (filtered) {
+      const types = filtered.map((item) => {
+        return item.type
+      })
+      setAlltypes(types);
+    }
+  }, [filtered])
+
   return (
     <div
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
@@ -121,12 +132,11 @@ export default function Catalogue() {
           <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by word">
           </input>
         </div>
-        <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
-          By type
-        </button>
-        <button className="px-5 py-3 font-semibold bg-yellowBright mx-2 text-black rounded-full">
-          By name
-        </button>
+        <div className="px-5 py-3 flex justify-center items-center font-semibold mx-2 text-white rounded-lg">
+          <label className="mr-2">By type:</label>
+          {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
+          <DropdownMenu types={allTypes}></DropdownMenu>
+        </div>
       </div>
       {/* Section with us and the description */}
       <div className="w-full min-h-screen bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-start items-center overflow-hidden relative">
@@ -167,6 +177,41 @@ export default function Catalogue() {
 }
 
 Catalogue.displayName = "Catalogue";
+
+function DropdownMenu({ types }: any) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
+  const [options, setOptions] = useState(types)
+
+  const toggleDropdown = () => setIsOpen(prev => !prev);
+
+  const handleSelect = (option) => {
+    setSelected(option);
+    setIsOpen(false);
+  };
+
+  return (
+    <div>
+      <button onClick={toggleDropdown}>
+        {selected || "Select an option"}
+      </button>
+
+      {isOpen && (
+        <ul>
+          {options.map((option, index) => (
+            <li
+              key={index}
+              onClick={() => handleSelect(option)}
+              style={{ cursor: "pointer" }}
+            >
+              {option}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
 
 function Item({ product, filtered }: any) {
 
