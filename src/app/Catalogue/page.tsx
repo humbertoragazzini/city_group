@@ -77,7 +77,7 @@ export default function Catalogue() {
   useEffect(() => {
     const filteredProduct = products.filter((item) => { return item.id == IDtoSearch })
     console.log(IDtoSearch == "")
-    if (filteredProduct.length > 0) {
+    if (filteredProduct.length >= 0) {
       setFiltered(filteredProduct)
     }
     if (IDtoSearch == "") {
@@ -104,7 +104,7 @@ export default function Catalogue() {
         </button>
       </div>
       {/* Section with us and the description */}
-      <div className="w-full min-h-screen bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-center items-center overflow-hidden relative">
+      <div className="w-full min-h-screen bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-start items-center overflow-hidden relative">
         <div className="grid w-full grid-cols-1 p-4 lg:p-8">
           <button className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300">
             <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
@@ -149,7 +149,9 @@ function Item({ product, filtered }: any) {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    setShow(filtered.some(item => item.id == product.id))
+    if (filtered) {
+      setShow(filtered.some(item => item.id == product.id))
+    }
   }, [filtered])
 
   return (
