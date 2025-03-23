@@ -1,11 +1,13 @@
 //@ts-nocheck
 "use client";
 import { useAppContext } from "@/context/AppContext";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import React from "react";
 import CardCarousel from "@/components/molecules/Carousels/CardCarousel";
 import { motion } from "framer-motion";
 import { RiCreativeCommonsZeroLine } from "react-icons/ri";
+import gsap from "gsap";
+import { useFilteredProducts } from "./useFilteredProducts";
 export default function Catalogue() {
   const context = useAppContext();
   const [IDtoSearch, setIDtoSearch] = useState();
@@ -64,7 +66,16 @@ export default function Catalogue() {
     { id: 50, name: "Bluetooth Car Adapter", type: "Automotive", stock: 33 }
   ];
 
-  const [filtered, setFiltered] = useState(products);
+  const [selected, setSelected] = useState("All");
+  const resultContainerRef = useRef();
+  const filtered = useFilteredProducts(products, wordToSearch, IDtoSearch);
+
+  const [filterObj, setFilterObj] = useState({
+    id: -1,
+    name: "",
+    category: [""],
+    subCategory: [""]
+  })
 
   useEffect(() => {
     if (context.state.isMenuOpen) {
@@ -77,44 +88,6 @@ export default function Catalogue() {
     }
   }, [context.state.isMenuOpen]);
 
-  useEffect(() => {
-    const filteredProduct = products.filter((item) => { return item.id == IDtoSearch })
-    console.log(IDtoSearch == "")
-    if (filteredProduct.length >= 0) {
-      setFiltered(filteredProduct)
-    }
-    if (IDtoSearch == "") {
-      setFiltered(products)
-    }
-  }, [IDtoSearch])
-
-  useEffect(() => {
-
-    const searchWords = wordToSearch.toLowerCase().split(" ");
-    const filteredProduct = products.filter((item) => {
-      const lowerItemWords = item.name.toLowerCase().split(" ");
-
-      // Check if ANY searchWord is included in ANY of the item's words
-      return searchWords.some(searchWord =>
-        lowerItemWords.some(itemWord => itemWord.includes(searchWord))
-      );
-    });
-    if (filteredProduct.length >= 0) {
-      setFiltered(filteredProduct)
-    }
-    if (searchWords == "") {
-      setFiltered(products)
-    }
-  }, [wordToSearch])
-
-  useEffect(() => {
-    if (filtered) {
-      const types = filtered.map((item) => {
-        return item.type
-      })
-      setAlltypes(types);
-    }
-  }, [filtered])
 
   return (
     <div
@@ -135,11 +108,12 @@ export default function Catalogue() {
         <div className="col-span-3 lg:col-span-1 px-5 py-3 flex lg:justify-center items-center font-semibold mx-2 text-white rounded-lg">
           <label className="mr-2">By type:</label>
           {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
-          <DropdownMenu types={allTypes}></DropdownMenu>
+          <DropdownMenu selected={selected}
+            setSelected={setSelected} types={allTypes}></DropdownMenu>
         </div>
       </div>
       {/* Section with us and the description */}
-      <div className="w-full min-h-screen bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-start items-center overflow-hidden relative">
+      <div ref={resultContainerRef} style={{ opacity: "0", height: "0px" }} className="w-full min-h-screen bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] flex flex-col justify-start items-center overflow-hidden relative">
         <div className="grid w-full grid-cols-1 p-4 lg:p-8">
           <button className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300">
             <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
@@ -164,9 +138,13 @@ export default function Catalogue() {
             </div>
           </button>
           {
-            products.map((product, index) => {
+            filtered.map((product, index) => {
+              console.log("caca")
+              if (index + 1 == products.length) {
+                gsap.fromTo(resultContainerRef.current, { opacity: 0, height: 0 }, { opacity: 1, height: "auto" })
+              }
               return (
-                <Item key={index} filtered={filtered} product={product}></Item>
+                <Item key={index} product={product}></Item>
               )
             })
           }
@@ -178,9 +156,9 @@ export default function Catalogue() {
 
 Catalogue.displayName = "Catalogue";
 
-function DropdownMenu({ types }: any) {
+function DropdownMenu({ types, selected,
+  setSelected }: any) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState(null);
   const [options, setOptions] = useState()
 
   const toggleDropdown = () => setIsOpen(prev => !prev);
@@ -224,16 +202,10 @@ function DropdownMenu({ types }: any) {
   );
 }
 
-function Item({ product, filtered }: any) {
+function Item({ product }: any) {
 
   const [enable, setEnable] = useState(false);
   const [show, setShow] = useState(true);
-
-  useEffect(() => {
-    if (filtered) {
-      setShow(filtered.some(item => item.id == product.id))
-    }
-  }, [filtered])
 
   return (
     <div className={`relative col-span-1 rounded-xl ${enable ? "border-2 border-[rgba(255,255,255,0.35)] mt-3 mb-3 p-2" : "border-3 border-[rgba(255,255,255,0)] mt-2 bg-transparent"} transition-all duration-500 ${show ? "" : "hidden"}`}>
