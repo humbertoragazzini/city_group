@@ -145,19 +145,26 @@ export default function Catalogue() {
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] text-white`}
     >
       <div className="w-full flex justify-center items-bcenter p-8"><h1 className="text-3xl font-bold">Filter</h1></div>
-      <div className="bg-[rgba(255,255,255,0.2)] rounded-xl m-4 p-4 grid grid-cols-3">
-        <div className="col-span-3 lg:col-span-1 px-5 py-3 flex lg:justify-center items-center font-semibold mx-2 text-white rounded-lg">
+      <div className="bg-[rgba(255,255,255,0.2)] rounded-xl m-4 lg:mx-8 p-4 grid grid-cols-4">
+        <div className="col-span-4 lg:col-span-1 px-5 py-3 flex lg:justify-center items-center font-semibold mx-2 text-white rounded-lg">
           <label className="mr-2">By ID:</label>
           <input onKeyUp={(e) => { setIDtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by ID">
           </input>
         </div>
-        <div className="col-span-3 lg:col-span-1 px-5 py-3 flex lg:justify-center items-center font-semibold mx-2 text-white rounded-lg">
+        <div className="col-span-4 lg:col-span-1 px-5 py-3 flex lg:justify-center items-center font-semibold mx-2 text-white rounded-lg">
           <label className="mr-2">By name:</label>
           <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by word">
           </input>
         </div>
-        <div className="col-span-3 lg:col-span-1 px-5 py-3 flex lg:justify-center items-center font-semibold mx-2 text-white rounded-lg">
-          <label className="mr-2">By type:</label>
+        <div className="col-span-4 lg:col-span-1 px-5 py-3 flex lg:justify-center items-center font-semibold mx-2 text-white rounded-lg">
+          <label className="mr-2">By category:</label>
+          {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
+          <DropdownMenu category={category}
+            setCategory={setCategory} selected={selected}
+            setSelected={setSelected} types={products} products={products}></DropdownMenu>
+        </div>
+        <div className="col-span-4 lg:col-span-1 px-5 py-3 flex lg:justify-center items-center font-semibold mx-2 text-white rounded-lg">
+          <label className="mr-2">By subcategory:</label>
           {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
           <DropdownMenu category={category}
             setCategory={setCategory} selected={selected}
