@@ -1,6 +1,7 @@
+//@ts-nocheck
 import { useMemo } from "react";
 
-export function useFilteredProducts(products, wordToSearch, IDtoSearch) {
+export function useFilteredProducts(products, wordToSearch, IDtoSearch, category) {
     return useMemo(() => {
         // If there's an ID to search, filter by it
         if (IDtoSearch && IDtoSearch !== "") {
@@ -18,6 +19,12 @@ export function useFilteredProducts(products, wordToSearch, IDtoSearch) {
             });
         }
 
+        // if is any category selected 
+        if (category && category !== "" && category !== "All") {
+            return products.filter((item) => {
+                return item.type == category
+            });
+        }
         // No filters active, return everything
         return products;
     }, [products, wordToSearch, IDtoSearch]);
