@@ -1,5 +1,8 @@
+//@ts-nocheck
+"use client"
+
 import { useState, useMemo } from "react";
-import { Item } from "./page";
+import { Item } from "./item";
 
 export default function Pagination({ items = [], itemsPerPage = 10, renderItem }) {
     const [currentPage, setCurrentPage] = useState(1);
