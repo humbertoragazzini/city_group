@@ -180,12 +180,12 @@ function Item({ product, index }: any) {
         </div>
         <div className="col-span-4 hidden p-2 md:block md:col-span-3 md:border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center">
-            <p className="font-bold w-full text-center">{product.type}</p>
+            <p className="font-bold w-full text-center">{product.category}</p>
           </div>
         </div>
         <div className="col-span-1 hidden lg:block md:grid p-2">
           <div className="flex justify-center items-center">
-            <p className="font-bold w-full text-center">{product.stock}</p>
+            <p className="font-bold w-full text-center">{product.available ? "In stock" : "Out of stock"}</p>
           </div>
         </div>
       </button>
