@@ -197,8 +197,20 @@ function Item({ product, index }: any) {
                 <h1 className="text-2xl pb-2">Camara de seguridad 1080P/4k</h1>
               </div>
               <div className="w-fit mb-3">
-                <div className="font-bold text-xl">Model: </div>
-                <div className="text-xl">La super poderosa</div>
+                <div className="font-bold text-xl">Brand: </div>
+                <div className="text-xl">{product.brand}</div>
+              </div>
+              <div className="w-fit mb-3">
+                <div className="font-bold text-xl">Software: </div>
+                <div className="text-xl">{product.software}</div>
+              </div>
+              <div className="w-fit mb-3">
+                <div className="font-bold text-xl">Category: </div>
+                <div className="text-xl">{product.category}</div>
+              </div>
+              <div className="w-fit mb-3">
+                <div className="font-bold text-xl">Sub-category: </div>
+                <div className="text-xl">{product.subcategory}</div>
               </div>
               <div className="w-fit mb-3">
                 <div className="font-bold text-xl">Tech specs: </div>
@@ -206,9 +218,6 @@ function Item({ product, index }: any) {
                   <li><div className="text-lg">1080P</div></li>
                   <li><div className="text-lg">WIFI 7</div></li>
                   <li><div className="text-lg">UP TO 128GB STORAGE</div></li>
-                  <li><div className="text-lg">CLOUD STORAGE</div></li>
-                  <li><div className="text-lg">ZOOM 400X OPTICAL</div></li>
-                  <li><div className="text-lg">120MP SENSOR</div></li>
                 </ul>
               </div>
               <div className="w-fit mb-3">
