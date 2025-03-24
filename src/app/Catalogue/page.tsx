@@ -9,6 +9,7 @@ import { RiCreativeCommonsZeroLine } from "react-icons/ri";
 import gsap from "gsap";
 import { useFilteredProducts } from "./useFilteredProducts";
 import products from "./products.tsx"
+import Pagination from "./paginator";
 export default function Catalogue() {
   const context = useAppContext();
   const [IDtoSearch, setIDtoSearch] = useState();
@@ -94,13 +95,8 @@ export default function Catalogue() {
               </div>
             </div>
           </button>
-          {
-            filtered.map((product, index) => {
-              return (
-                <Item key={index} index={index} product={product}></Item>
-              )
-            })
-          }
+          <Pagination items={filtered}></Pagination>
+
         </div>
       </div>
     </div>
@@ -155,7 +151,7 @@ function DropdownMenu({ category,
   );
 }
 
-function Item({ product, index }: any) {
+export function Item({ product, index }: any) {
 
   const [enable, setEnable] = useState(false);
   const [show, setShow] = useState(true);
