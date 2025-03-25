@@ -15,6 +15,7 @@ export default function Catalogue() {
   const [IDtoSearch, setIDtoSearch] = useState();
   const [wordToSearch, setWordtoSearch] = useState("");
   const [category, setCategory] = useState("");
+  const [subCategory, setSubCategory] = useState("");
   const [allTypes, setAlltypes] = useState();
   const [selected, setSelected] = useState("All");
   const resultContainerRef = useRef();
@@ -96,7 +97,6 @@ export default function Catalogue() {
             </div>
           </button>
           <Pagination items={filtered}></Pagination>
-
         </div>
       </div>
     </div>
@@ -109,7 +109,7 @@ function DropdownMenu({ category,
   setCategory, types, selected, products,
   setSelected }: any) {
   const [isOpen, setIsOpen] = useState(false);
-  const [options, setOptions] = useState([...new Set(products.map(({ type }) => type))])
+  const [options, setOptions] = useState([...new Set(products.map(({ category }) => category))])
 
 
   const toggleDropdown = () => setIsOpen(prev => !prev);
