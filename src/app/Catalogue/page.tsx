@@ -68,7 +68,7 @@ export default function Catalogue() {
           <label className="mr-2">By subcategory:</label>
           {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
           <DropdownMenu category={subCategory}
-            setCategory={setSubCategory} selected={subSelected}
+            setCategory={setSubCategory} selected={subSelected} filtered={filtered}
             setSelected={setSubSelected} types={products} products={products}></DropdownMenu>
         </div>
       </div>
@@ -108,10 +108,10 @@ Catalogue.displayName = "Catalogue";
 
 function DropdownMenu({ category,
   setCategory, types, selected, products,
-  setSelected, type }: any) {
+  setSelected, type, filtered }: any) {
   console.log(category)
   const [isOpen, setIsOpen] = useState(false);
-  const [options, setOptions] = useState(type == "category" ? [...new Set(products.map(({ category }) => category))] : [...new Set(products.map(({ subcategory }) => subcategory))])
+  const [options, setOptions] = useState(type == "category" ? [...new Set(products.map(({ category }) => category))] : [...new Set(filtered.map(({ subcategory }) => subcategory))])
 
 
   const toggleDropdown = () => setIsOpen(prev => !prev);
@@ -122,6 +122,11 @@ function DropdownMenu({ category,
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    if (type !== "category") {
+      setOptions([...new Set(filtered.map(({ subcategory }) => subcategory))])
+    }
+  }, [filtered])
 
   return (
     <div className="relative">
