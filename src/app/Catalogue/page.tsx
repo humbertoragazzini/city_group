@@ -62,7 +62,7 @@ export default function Catalogue() {
           {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
           <DropdownMenu category={category}
             setCategory={setCategory} selected={selected}
-            setSelected={setSelected} types={products} products={products}></DropdownMenu>
+            setSelected={setSelected} types={products} products={products} type="category"></DropdownMenu>
         </div>
         <div className="col-span-4 md:col-span-2 xl:col-span-1 px-5 py-3 flex justify-start xl:justify-center items-center font-semibold mx-2 text-white rounded-lg">
           <label className="mr-2">By subcategory:</label>
@@ -108,9 +108,10 @@ Catalogue.displayName = "Catalogue";
 
 function DropdownMenu({ category,
   setCategory, types, selected, products,
-  setSelected }: any) {
+  setSelected, type }: any) {
+  console.log(category)
   const [isOpen, setIsOpen] = useState(false);
-  const [options, setOptions] = useState([...new Set(products.map(({ category }) => category))])
+  const [options, setOptions] = useState(type == "category" ? [...new Set(products.map(({ category }) => category))] : [...new Set(products.map(({ subcategory }) => subcategory))])
 
 
   const toggleDropdown = () => setIsOpen(prev => !prev);
