@@ -18,8 +18,9 @@ export default function Catalogue() {
   const [subCategory, setSubCategory] = useState("");
   const [allTypes, setAlltypes] = useState();
   const [selected, setSelected] = useState("All");
+  const [subSelected, setSubSelected] = useState("All");
   const resultContainerRef = useRef();
-  const filtered = useFilteredProducts(products, wordToSearch, IDtoSearch, category);
+  const filtered = useFilteredProducts(products, wordToSearch, IDtoSearch, category, subCategory);
 
   const [filterObj, setFilterObj] = useState({
     id: -1,
@@ -66,9 +67,9 @@ export default function Catalogue() {
         <div className="col-span-4 md:col-span-2 xl:col-span-1 px-5 py-3 flex justify-start xl:justify-center items-center font-semibold mx-2 text-white rounded-lg">
           <label className="mr-2">By subcategory:</label>
           {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
-          <DropdownMenu category={category}
-            setCategory={setCategory} selected={selected}
-            setSelected={setSelected} types={products} products={products}></DropdownMenu>
+          <DropdownMenu category={subCategory}
+            setCategory={setSubCategory} selected={subSelected}
+            setSelected={setSubSelected} types={products} products={products}></DropdownMenu>
         </div>
       </div>
       {/* Section with us and the description */}
