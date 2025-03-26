@@ -21,8 +21,8 @@ export function Item({ product, index }: any) {
     }, [])
 
     return (
-        <div ref={itemRef} style={{ opacity: 1, }} className={`relative col-span-1 rounded-xl ${enable ? "border-2 border-[rgba(255,255,255,0.35)] mt-3 mb-3 p-2" : "border-3 border-[rgba(255,255,255,0)] mt-2 bg-transparent"} transition-all duration-500`}>
-            <button onClick={e => setEnable(!enable)} className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 bg-[rgba(255,255,255,0.2)] rounded-xl cursor-pointer w-full hover:bg-[rgba(255,255,255,0.30)] transition-all duration-300">
+        <div ref={itemRef} style={{ opacity: 1, }} className={`relative col-span-1 rounded-xl transition-all duration-500`}>
+            <button onClick={e => setEnable(!enable)} className="relative z-10 grid grid-cols-12 full p-2 rounded-full bg-gray-900 cursor-pointer w-full hover:bg-slate-800 transition-all duration-300">
                 <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
                     <div className="flex justify-center items-center">
                         <p className="font-bold w-full text-center">{product.id}</p>
@@ -46,7 +46,7 @@ export function Item({ product, index }: any) {
             </button>
             <motion.div animate={{ height: !enable ? "0px" : "auto", marginTop: !enable ? "0px" : "8px" }} className="z-0 h-[0px] grid grid-cols-1 w-full overflow-hidden">
                 <div className="col-span-1">
-                    <motion.div className="z-0 top-0 left-0 grid grid-cols-10 w-full backdrop-blur-md bg-[rgba(255,255,255,0.2)] rounded-xl">
+                    <motion.div animate={{ opacity: !enable ? "0" : "1", }} className="z-0 top-0 left-0 grid grid-cols-10 w-full">
                         <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
                             <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
                                 <h1 className="text-2xl pb-2">Camara de seguridad 1080P/4k</h1>
