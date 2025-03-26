@@ -21,6 +21,7 @@ export default function Catalogue() {
   const [subSelected, setSubSelected] = useState("All");
   const resultContainerRef = useRef();
   const filtered = useFilteredProducts(products, wordToSearch, IDtoSearch, category, subCategory);
+  const [sortedBy, setSortedBy] = useState(null);
 
   const [filterObj, setFilterObj] = useState({
     id: -1,
@@ -88,7 +89,7 @@ export default function Catalogue() {
             </div>
             <div className="col-span-4 hidden p-2 md:block md:col-span-3 md:border-r-2 border-[rgba(255,255,255,0.5)]">
               <div className="flex justify-center items-center">
-                <p className="font-bold w-full text-center">Type</p>
+                <p className="font-bold w-full text-center">Category</p>
               </div>
             </div>
             <div className="col-span-1 hidden lg:block md:grid p-2">
