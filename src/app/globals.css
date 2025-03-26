@@ -6,12 +6,25 @@
   font-size: 19px;
 }
 
+.mask-with-browser-support {
+  mask: linear-gradient(black, black), linear-gradient(black, black);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+  -webkit-mask:
+    linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-composite: xor;
+}
+
 ::-webkit-scrollbar {
   /* width: 0px; */
 }
+
 body::-webkit-scrollbar-track {
   background: rgba(73, 58, 58, 0.5);
 }
+
 body::-webkit-scrollbar-thumb {
   background-color: rgba(61, 45, 45, 0.5);
   border-radius: 20px;
@@ -25,8 +38,10 @@ html::-webkit-scrollbar {
 
 /* For IE, Edge, and Firefox */
 html {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .VerticalParallax {
@@ -45,6 +60,7 @@ html {
   min-height: 100%;
   right: 0;
 }
+
 .animated-background {
   background-size: 100%;
   background-color: red !important;
@@ -54,6 +70,7 @@ html {
 }
 
 @keyframes animation {
+
   0%,
   100% {
     background-position: 0% 50%;
@@ -68,6 +85,7 @@ html {
   height: 500vh;
   border: 1px dashed deeppink;
 }
+
 .SomeDomContent {
   background: #f2f2f2;
   position: sticky;
@@ -80,10 +98,12 @@ html {
   padding: 2rem;
   border: 1px solid turquoise;
 }
+
 /* Debug styles */
 .Debug {
   outline: 1px dashed rgba(255, 255, 255, 0.33);
 }
+
 .Debug:after {
   content: "StickyScrollScene";
   position: absolute;
@@ -112,6 +132,7 @@ body,
     border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
   }
+
   100% {
     border-top-right-radius: 0.75rem;
     border-top-left-radius: 0;
@@ -119,6 +140,7 @@ body,
     border-bottom-left-radius: 0.75rem;
   }
 }
+
 @keyframes roundedChangedisable {
   0% {
     border-top-right-radius: 0.75rem;
@@ -126,6 +148,7 @@ body,
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0.75rem;
   }
+
   100% {
     border-top-right-radius: 100%;
     border-top-left-radius: 100%;
@@ -137,6 +160,7 @@ body,
 .animate-rounded-change-enable {
   animation: roundedChangeenable 1s ease-in-out forwards;
 }
+
 .animate-rounded-change-disable {
   animation: roundedChangedisable 1s ease-in-out forwards;
 }

@@ -10,6 +10,7 @@ import gsap from "gsap";
 import { useFilteredProducts } from "./useFilteredProducts";
 import products from "./products.tsx"
 import Pagination from "./paginator";
+import Example from "./input";
 export default function Catalogue() {
   const context = useAppContext();
   const [IDtoSearch, setIDtoSearch] = useState();
@@ -44,14 +45,15 @@ export default function Catalogue() {
 
   return (
     <div
-      className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)] min-h-screen w-full text-white`}
+      className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] bg-gradient-to-b from-[rgba(0,0,0,1)] to-[rgba(0,0,0,1)] min-h-screen w-full text-white`}
     >
       <div className="w-full max-w-[1450px] mx-auto">
         <div className="rounded-xl m-4 lg:mx-8 p-2 grid grid-cols-4">
-          <div className="col-span-4 md:col-span-2 xl:col-span-1 px-3 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 text-white rounded-lg">
-            <label className="mr-2">By ID:</label>
+          <div className="col-span-4 md:col-span-2 xl:col-span-12 px-3 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 text-white rounded-lg">
+            {/* <label className="mr-2">By ID:</label>
             <input onKeyUp={(e) => { setIDtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by ID">
-            </input>
+            </input> */}
+            <Example></Example>
           </div>
           <div className="col-span-4 md:col-span-2 xl:col-span-1 px-3 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 text-white rounded-lg">
             <label className="mr-2">By name:</label>

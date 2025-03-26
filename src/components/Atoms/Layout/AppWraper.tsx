@@ -28,7 +28,10 @@ export default function AppWraper({ children }: any) {
   return (
     <AppProvider>
       <ONavBar></ONavBar>
-      <MainBG></MainBG>
+      {
+        pathname !== "/Catalogue" &&
+        <MainBG></MainBG>
+      }
       <SmoothScrollbar enabled={true}>
         {() => {
           return (
