@@ -145,7 +145,7 @@ function DropdownMenu({ category,
       </button>
 
       {isOpen && (
-        <ul className="z-20 px-4 py-2 top-0 left-0 h-[300px] w-fit rounded-md absolute backdrop-blur-xl overflow-y-scroll overflow-x-hidden">
+        <ul className="z-20 px-4 py-2 top-0 left-0 h-[300px] w-fit rounded-md absolute backdrop-blur-xl overflow-y-scroll overflow-x-hidden scrollbar scrollbar-thin scrollbar-thumb-rounded">
           <li
             key={-1}
             onClick={() => handleSelect("All")}
