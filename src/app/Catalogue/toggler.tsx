@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { BsFillCloudyFill, BsStarFill } from "react-icons/bs";
@@ -19,8 +20,8 @@ const DarkModeToggle = ({ mode, setMode }) => {
         <button
             onClick={() => setMode(mode === "dark" ? "light" : "dark")}
             className={`p-2 w-28 rounded-full flex shadow-lg relative bg-gradient-to-b ${mode === "light"
-                    ? "justify-end from-blue-500 to-sky-300"
-                    : "justify-start from-indigo-600 to-indigo-400"
+                ? "justify-end from-blue-500 to-sky-300"
+                : "justify-start from-indigo-600 to-indigo-400"
                 }`}
         >
             <Thumb mode={mode} />
@@ -42,8 +43,8 @@ const Thumb = ({ mode }) => {
         >
             <div
                 className={`absolute inset-0 ${mode === "dark"
-                        ? "bg-slate-100"
-                        : "animate-pulse bg-gradient-to-tr from-amber-300 to-yellow-500 rounded-full"
+                    ? "bg-slate-100"
+                    : "animate-pulse bg-gradient-to-tr from-amber-300 to-yellow-500 rounded-full"
                     }`}
             />
             {mode === "light" && <SunCenter />}

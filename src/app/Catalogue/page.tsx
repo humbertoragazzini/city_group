@@ -12,6 +12,7 @@ import products from "./products.tsx"
 import Pagination from "./paginator";
 import Example from "./input";
 import BeamContainer from "./input";
+import ToggleWrapper from "./toggler";
 export default function Catalogue() {
   const context = useAppContext();
   const [IDtoSearch, setIDtoSearch] = useState();
@@ -48,6 +49,7 @@ export default function Catalogue() {
     <div
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] bg-gradient-to-b from-[rgba(0,0,0,1)] to-[rgba(0,0,0,1)] min-h-screen w-full text-white`}
     >
+      <ToggleWrapper></ToggleWrapper>
       <div className="w-full max-w-[1450px] mx-auto mt-8">
         <div className="px-8">
           <BeamContainer>
