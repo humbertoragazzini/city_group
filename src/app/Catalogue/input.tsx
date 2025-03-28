@@ -1,4 +1,5 @@
 // @ts-nocheck
+"use client"
 import {
     animate,
     useMotionTemplate,
@@ -26,7 +27,7 @@ import { FiArrowRight } from "react-icons/fi";
    */
 
 
-const BeamContainer = ({ children }: any) => {
+const BeamContainer = ({ children, mode }: any) => {
     const inputRef = useRef(null);
 
     const turn = useMotionValue(0);
@@ -49,7 +50,7 @@ const BeamContainer = ({ children }: any) => {
             onClick={() => {
                 inputRef.current.focus();
             }}
-            className="relative flex w-full items-center gap-2 rounded-full border border-white/20 bg-gradient-to-br from-slate-800 to-slate-950 py-1.5 pl-6 pr-1.5"
+            className={`relative flex w-full items-center gap-2 rounded-full border border-white/20  ${mode == "dark" ? "bg-gradient-to-br from-slate-800 to-slate-950" : "bg-gradient-to-br from-slate-450 to-slate-450"} py-1.5 pl-6 pr-1.5`}
         >
             {/* <input
                 ref={inputRef}
