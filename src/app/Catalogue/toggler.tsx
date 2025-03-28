@@ -3,12 +3,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { BsFillCloudyFill, BsStarFill } from "react-icons/bs";
 
-const ToggleWrapper = () => {
-    const [mode, setMode] = useState("dark");
+const ToggleWrapper = ({ mode, setMode }: any) => {
     return (
         <div
-            className={`px-4 h-[250px] flex items-center justify-center transition-colors ${mode === "dark" ? "bg-slate-900" : "bg-slate-50"
-                }`}
+            className={`rounded-full h-fit w-fit flex items-center justify-center border-8 border-[rgba(255,255,255,0.5)] transition-colors scale-[0.5]`}
         >
             <DarkModeToggle mode={mode} setMode={setMode} />
         </div>
