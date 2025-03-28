@@ -10,7 +10,7 @@ import gsap from "gsap";
 import { useFilteredProducts } from "./useFilteredProducts";
 import Pagination from "./paginator";
 
-export function Item({ product, index }: any) {
+export function Item({ product, index, mode }: any) {
 
     const [enable, setEnable] = useState(false);
     const [show, setShow] = useState(true);
@@ -21,19 +21,19 @@ export function Item({ product, index }: any) {
     }, [])
 
     return (
-        <div ref={itemRef} style={{ opacity: 1, }} className={`relative col-span-1 rounded-xl transition-all duration-500`}>
-            <button onClick={e => setEnable(!enable)} className="relative z-10 grid grid-cols-12 full p-2 rounded-full bg-gray-900 cursor-pointer w-full hover:bg-slate-800 transition-all duration-300">
-                <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
+        <div ref={itemRef} style={{ opacity: 1, }} className={`relative col-span-1 rounded-xl transition-all duration-500 ${mode == "dark" ? "text-white" : "text-gray-700"}`}>
+            <button onClick={e => setEnable(!enable)} className={`relative transition-all duration-500 z-10 grid grid-cols-12 full p-2 rounded-full ${mode == "dark" ? "bg-gradient-radial from-gray-700 to-gray-900 hover:from-slate-900 hover:to-slate-700" : "bg-emerald-400 hover:bg-emerald-500"}  w-full cursor-pointer transition-all duration-300`}>
+                <div className={`${mode !== "dark" ? "border-[rgba(0,0,0,0.75)]" : "border-[rgba(255,255,255,0.5)]"} col-span-3 md:col-span-2 p-2 border-r-2 `}>
                     <div className="flex justify-center items-center">
                         <p className="font-bold w-full text-center">{product.id}</p>
                     </div>
                 </div>
-                <div className="col-span-9 p-2 md:col-span-6 md:border-r-2 border-[rgba(255,255,255,0.5)]">
+                <div className={`${mode !== "dark" ? "border-[rgba(0,0,0,0.75)]" : "border-[rgba(255,255,255,0.5)]"} col-span-9 p-2 md:col-span-6 md:border-r-2 `}>
                     <div className="flex justify-center items-center">
                         <p className="font-bold w-full text-left">{product.name}</p>
                     </div>
                 </div>
-                <div className="col-span-4 hidden p-2 md:block md:col-span-3 md:border-r-2 border-[rgba(255,255,255,0.5)]">
+                <div className={`${mode !== "dark" ? "border-[rgba(0,0,0,0.75)]" : "border-[rgba(255,255,255,0.5)]"} col-span-4 hidden p-2 md:block md:col-span-3 md:border-r-2 `}>
                     <div className="flex justify-center items-center">
                         <p className="font-bold w-full text-center">{product.category}</p>
                     </div>
@@ -48,7 +48,7 @@ export function Item({ product, index }: any) {
                 <div className="col-span-1">
                     <motion.div animate={{ opacity: !enable ? "0" : "1", }} className="z-0 top-0 left-0 grid grid-cols-10 w-full">
                         <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
-                            <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
+                            <div className={`w-full border-b-2 border-[rgba(125,125,125,1)] mb-4`}>
                                 <h1 className="text-2xl pb-2">Camara de seguridad 1080P/4k</h1>
                             </div>
                             <div className="w-fit mb-3">
@@ -87,7 +87,7 @@ export function Item({ product, index }: any) {
                         </div>
                     </motion.div>
                 </div>
-            </motion.div>
-        </div>
+            </motion.div >
+        </div >
     )
 }

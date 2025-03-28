@@ -4,7 +4,7 @@
 import { useState, useMemo } from "react";
 import { Item } from "./item";
 
-export default function Pagination({ items = [], itemsPerPage = 10, renderItem }) {
+export default function Pagination({ items = [], itemsPerPage = 10, renderItem, mode }) {
     const [currentPage, setCurrentPage] = useState(1);
 
     const totalPages = Math.ceil(items.length / itemsPerPage);
@@ -25,7 +25,7 @@ export default function Pagination({ items = [], itemsPerPage = 10, renderItem }
     return (
         <div>
             <div className="grid gap-2">
-                {currentItems.map((product, index) => <Item key={index} index={index} product={product}></Item>
+                {currentItems.map((product, index) => <Item key={index} index={index} product={product} mode={mode}></Item>
                 )}
             </div>
 
