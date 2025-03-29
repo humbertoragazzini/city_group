@@ -31,6 +31,7 @@ export default function Catalogue() {
     subCategory
   );
   const [sortedBy, setSortedBy] = useState(null);
+  const [typeMode, setTypeMode] = useState("card");
   const [mode, setMode] = useState("dark");
   const [filterObj, setFilterObj] = useState({
     id: -1,
@@ -135,66 +136,59 @@ export default function Catalogue() {
           className="w-full flex flex-col justify-start items-center overflow-hidden relative"
         >
           <div className="grid w-full grid-cols-1 p-4 lg:p-8">
-            <button className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300">
-              <div
-                className={`col-span-3 md:col-span-2 p-2 border-r-2 ${
-                  mode == "dark"
-                    ? "text-white border-[rgba(255,255,255,0.5)]"
-                    : "text-black border-[rgba(150,150,150,0.5)]"
-                }`}
-              >
-                <div className="flex justify-center items-center">
-                  <p className="font-bold w-full text-center">ID</p>
+            {typeMode !== "card" && (
+              <button className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300">
+                <div
+                  className={`col-span-3 md:col-span-2 p-2 border-r-2 ${
+                    mode == "dark"
+                      ? "text-white border-[rgba(255,255,255,0.5)]"
+                      : "text-black border-[rgba(150,150,150,0.5)]"
+                  }`}
+                >
+                  <div className="flex justify-center items-center">
+                    <p className="font-bold w-full text-center">ID</p>
+                  </div>
                 </div>
-              </div>
-              <div
-                className={`col-span-3 md:col-span-6 p-2 border-r-2 ${
-                  mode == "dark"
-                    ? "text-white border-[rgba(255,255,255,0.5)]"
-                    : "text-black border-[rgba(150,150,150,0.5)]"
-                }`}
-              >
-                <div className="flex justify-center items-center">
-                  <p className="font-bold w-full text-left">Name</p>
+                <div
+                  className={`col-span-3 md:col-span-6 p-2 border-r-2 ${
+                    mode == "dark"
+                      ? "text-white border-[rgba(255,255,255,0.5)]"
+                      : "text-black border-[rgba(150,150,150,0.5)]"
+                  }`}
+                >
+                  <div className="flex justify-center items-center">
+                    <p className="font-bold w-full text-left">Name</p>
+                  </div>
                 </div>
-              </div>
-              <div
-                className={`col-span-3 md:col-span-3 p-2 border-r-2 ${
-                  mode == "dark"
-                    ? "text-white border-[rgba(255,255,255,0.5)]"
-                    : "text-black border-[rgba(150,150,150,0.5)]"
-                }`}
-              >
-                <div className="flex justify-center items-center">
-                  <p className="font-bold w-full text-center">Category</p>
+                <div
+                  className={`col-span-3 md:col-span-3 p-2 border-r-2 ${
+                    mode == "dark"
+                      ? "text-white border-[rgba(255,255,255,0.5)]"
+                      : "text-black border-[rgba(150,150,150,0.5)]"
+                  }`}
+                >
+                  <div className="flex justify-center items-center">
+                    <p className="font-bold w-full text-center">Category</p>
+                  </div>
                 </div>
-              </div>
-              <div
-                className={`col-span-3 md:col-span-1 p-2 border-r-2 ${
-                  mode == "dark"
-                    ? "text-white border-[rgba(255,255,255,0.5)]"
-                    : "text-black border-[rgba(150,150,150,0.5)]"
-                }`}
-              >
-                <div className="flex justify-center items-center">
-                  <p className="font-bold w-full text-center">Stock</p>
+                <div
+                  className={`col-span-3 md:col-span-1 p-2 border-r-2 ${
+                    mode == "dark"
+                      ? "text-white border-[rgba(255,255,255,0.5)]"
+                      : "text-black border-[rgba(150,150,150,0.5)]"
+                  }`}
+                >
+                  <div className="flex justify-center items-center">
+                    <p className="font-bold w-full text-center">Stock</p>
+                  </div>
                 </div>
-              </div>
-            </button>
+              </button>
+            )}
             <Pagination
               items={filtered}
               mode={mode}
-              type="listItem"
+              type={typeMode}
             ></Pagination>
-          </div>
-        </div>
-        {/* Section with us and the description */}
-        <div
-          ref={resultContainerRef}
-          className="w-full flex flex-col justify-start items-center overflow-hidden relative"
-        >
-          <div className="grid w-full grid-cols-1 p-4 lg:p-8">
-            <Pagination items={filtered} mode={mode} type={"card"}></Pagination>
           </div>
         </div>
       </div>

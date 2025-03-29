@@ -4,6 +4,13 @@
 import { useState, useMemo } from "react";
 import { Item } from "./item";
 import { Card } from "./card";
+import {
+  FiArrowLeft,
+  FiArrowRight,
+  FiArrowUpLeft,
+  FiArrowUpRight,
+} from "react-icons/fi";
+import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 
 export default function Pagination({
   items = [],
@@ -46,14 +53,22 @@ export default function Pagination({
       )}
 
       <div className="flex justify-between items-center mt-4">
-        <button onClick={handlePrev} disabled={currentPage === 1}>
-          ⬅ Prev
+        <button
+          onClick={handlePrev}
+          disabled={currentPage === 1}
+          class=" text-xl h-[70px] w-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full shadow-xl text-black hover:bg-black border-2 border-yellowBright hover:text-yellowBright bg-yellowBright m-2"
+        >
+          <FiArrowLeft className="inline w-[40px] h-[40px]" />
         </button>
-        <span>
+        <span className="text-xl font-semibold">
           Page {currentPage} of {totalPages}
         </span>
-        <button onClick={handleNext} disabled={currentPage === totalPages}>
-          Next ➡
+        <button
+          onClick={handleNext}
+          disabled={currentPage === totalPages}
+          class=" text-xl h-[70px] w-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full shadow-xl text-black hover:bg-black border-2 border-yellowBright hover:text-yellowBright bg-yellowBright m-2"
+        >
+          <FiArrowRight className="inline w-[40px] h-[40px]" />
         </button>
       </div>
     </div>
