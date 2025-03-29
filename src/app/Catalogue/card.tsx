@@ -11,7 +11,7 @@ import { useFilteredProducts } from "./useFilteredProducts";
 import Pagination from "./paginator";
 import { FiCheck } from "react-icons/fi";
 
-export function Item({ product, index }: any) {
+export function Card({ product, index }: any) {
   const [enable, setEnable] = useState(false);
   const [show, setShow] = useState(true);
   const itemRef = useRef();
@@ -24,11 +24,11 @@ export function Item({ product, index }: any) {
     <div
       ref={itemRef}
       style={{ opacity: 1 }}
-      className={`relative col-span-1 rounded-xl transition-all duration-500`}
+      className={`relative col-span-1 aspect-square rounded-xl transition-all duration-500 bg-gray-900`}
     >
-      <button
+      {/* <button
         onClick={(e) => setEnable(!enable)}
-        className="relative z-10 grid grid-cols-12 full p-2 rounded-full bg-gray-900 cursor-pointer w-full hover:bg-slate-800 transition-all duration-300"
+        className="relative z-10 grid grid-cols-12 full p-2 rounded-full  cursor-pointer w-full hover:bg-slate-800 transition-all duration-300"
       >
         <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center h-full">
@@ -50,22 +50,49 @@ export function Item({ product, index }: any) {
             {product.available ? <FiCheck className="w-[28px]"></FiCheck> : ""}
           </div>
         </div>
-      </button>
+      </button> */}
       <motion.div
-        animate={{
-          height: !enable ? "0px" : "auto",
-          marginTop: !enable ? "0px" : "8px",
-        }}
-        className="z-0 h-[0px] grid grid-cols-1 w-full overflow-hidden"
+        animate={{}}
+        className="z-0 grid grid-cols-1 w-full overflow-hidden"
       >
-        <div className="col-span-1">
+        <button className="col-span-1">
           <motion.div
-            animate={{ opacity: !enable ? "0" : "1" }}
-            className="z-0 top-0 left-0 grid grid-cols-10 w-full"
+            animate={{}}
+            className="z-0 top-0 left-0 grid grid-cols-10 w-full lg:p-4"
           >
-            <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
+            <div className="col-span-10 p-3">
+              <div className="w-full flex justify-center items-center">
+                <img src="https://placehold.co/300x300"></img>
+              </div>
+            </div>
+            <div className="col-span-10 p-3">
+              <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)]">
+                <h1 className="text-2xl pb-2">{product.name}</h1>
+              </div>
+            </div>
+            <div className="col-span-10 px-3">
+              <div className="w-fit flex justify-start">
+                <div className="font-bold text-xl">Brand: </div>
+                <div className="text-xl pl-3">{product.brand}</div>
+              </div>
+            </div>
+            <div className="col-span-10 px-3">
+              <div className="w-fit flex justify-start">
+                <div className="font-bold text-xl">Software: </div>
+                <div className="text-xl pl-3">{product.software}</div>
+              </div>
+            </div>
+            <div className="col-span-10 px-3">
+              <div className="w-fit flex justify-start">
+                <div className="font-bold text-xl">Specs: </div>
+                <div className="text-xl pl-3">
+                  1080P / WIFI 7 / UP TO 128GB / STORAGE
+                </div>
+              </div>
+            </div>
+            {/* <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
               <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
-                <h1 className="text-2xl pb-2">Camara de seguridad 1080P/4k</h1>
+                <h1 className="text-2xl pb-2">{product.name}</h1>
               </div>
               <div className="w-fit mb-3">
                 <div className="font-bold text-xl">Brand: </div>
@@ -101,14 +128,14 @@ export function Item({ product, index }: any) {
                 <div className="font-bold text-xl">Description: </div>
                 <div className="text-lg">Lorem Ipsum is simply...</div>
               </div>
-            </div>
-            <div className="col-span-10 lg:col-span-5 lg:p-8">
+            </div> */}
+            {/* <div className="col-span-10 lg:col-span-5 lg:p-8">
               <div className="w-full">
                 <CardCarousel></CardCarousel>
               </div>
-            </div>
+            </div> */}
           </motion.div>
-        </div>
+        </button>
       </motion.div>
     </div>
   );
