@@ -65,7 +65,11 @@ export default function Catalogue() {
         } else {
           setTypeMode("card")
         }
-      }} className="rounded-full w-8 h-8 bg-slate-300"></button>
+      }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
+        <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
+
+        </div>
+      </button>
       <div className="w-full max-w-[1450px] mx-auto mt-8">
         <div className="px-8">
           <BeamContainer mode={mode}>
