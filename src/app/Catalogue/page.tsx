@@ -53,21 +53,26 @@ export default function Catalogue() {
 
   return (
     <div
-      className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] bg-gradient-to-b ${
-        mode == "dark"
-          ? "from-[rgba(0,0,0,1)] to-[rgba(0,0,0,1)]"
-          : "from-[rgba(255,255,255,1)] to-[rgba(150,150,150,1)]"
-      } min-h-screen w-full text-white`}
+      className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] bg-gradient-to-b ${mode == "dark"
+        ? "from-[rgba(0,0,0,1)] to-[rgba(0,0,0,1)]"
+        : "from-[rgba(255,255,255,1)] to-[rgba(150,150,150,1)]"
+        } min-h-screen w-full text-white`}
     >
       <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper>
+      <button onClick={(e) => {
+        if (typeMode == "card") {
+          setTypeMode("listItem")
+        } else {
+          setTypeMode("card")
+        }
+      }} className="rounded-full w-8 h-8 bg-slate-300"></button>
       <div className="w-full max-w-[1450px] mx-auto mt-8">
         <div className="px-8">
           <BeamContainer mode={mode}>
             <div className="grid grid-cols-4">
               <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 ${
-                  mode == "dark" ? "text-white" : "text-black"
-                } rounded-lg`}
+                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 ${mode == "dark" ? "text-white" : "text-black"
+                  } rounded-lg`}
               >
                 <label className="mr-2">ID:</label>
                 <input
@@ -79,9 +84,8 @@ export default function Catalogue() {
                 ></input>
               </div>
               <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${
-                  mode == "dark" ? "text-white" : "text-black"
-                } rounded-lg`}
+                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+                  } rounded-lg`}
               >
                 <label className="mr-2 text-nowrap">By name:</label>
                 <input
@@ -93,9 +97,8 @@ export default function Catalogue() {
                 ></input>
               </div>
               <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${
-                  mode == "dark" ? "text-white" : "text-black"
-                } rounded-lg`}
+                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+                  } rounded-lg`}
               >
                 <label className="mr-2">By category:</label>
                 {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
@@ -110,9 +113,8 @@ export default function Catalogue() {
                 ></DropdownMenu>
               </div>
               <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${
-                  mode == "dark" ? "text-white" : "text-black"
-                } rounded-lg`}
+                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+                  } rounded-lg`}
               >
                 <label className="mr-2">By subcategory:</label>
                 {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
@@ -139,44 +141,40 @@ export default function Catalogue() {
             {typeMode !== "card" && (
               <button className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300">
                 <div
-                  className={`col-span-3 md:col-span-2 p-2 border-r-2 ${
-                    mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.5)]"
-                      : "text-black border-[rgba(150,150,150,0.5)]"
-                  }`}
+                  className={`col-span-3 md:col-span-2 p-2 border-r-2 ${mode == "dark"
+                    ? "text-white border-[rgba(255,255,255,0.5)]"
+                    : "text-black border-[rgba(150,150,150,0.5)]"
+                    }`}
                 >
                   <div className="flex justify-center items-center">
                     <p className="font-bold w-full text-center">ID</p>
                   </div>
                 </div>
                 <div
-                  className={`col-span-3 md:col-span-6 p-2 border-r-2 ${
-                    mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.5)]"
-                      : "text-black border-[rgba(150,150,150,0.5)]"
-                  }`}
+                  className={`col-span-3 md:col-span-6 p-2 border-r-2 ${mode == "dark"
+                    ? "text-white border-[rgba(255,255,255,0.5)]"
+                    : "text-black border-[rgba(150,150,150,0.5)]"
+                    }`}
                 >
                   <div className="flex justify-center items-center">
                     <p className="font-bold w-full text-left">Name</p>
                   </div>
                 </div>
                 <div
-                  className={`col-span-3 md:col-span-3 p-2 border-r-2 ${
-                    mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.5)]"
-                      : "text-black border-[rgba(150,150,150,0.5)]"
-                  }`}
+                  className={`col-span-3 md:col-span-3 p-2 border-r-2 ${mode == "dark"
+                    ? "text-white border-[rgba(255,255,255,0.5)]"
+                    : "text-black border-[rgba(150,150,150,0.5)]"
+                    }`}
                 >
                   <div className="flex justify-center items-center">
                     <p className="font-bold w-full text-center">Category</p>
                   </div>
                 </div>
                 <div
-                  className={`col-span-3 md:col-span-1 p-2 border-r-2 ${
-                    mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.5)]"
-                      : "text-black border-[rgba(150,150,150,0.5)]"
-                  }`}
+                  className={`col-span-3 md:col-span-1 p-2 border-r-2 ${mode == "dark"
+                    ? "text-white border-[rgba(255,255,255,0.5)]"
+                    : "text-black border-[rgba(150,150,150,0.5)]"
+                    }`}
                 >
                   <div className="flex justify-center items-center">
                     <p className="font-bold w-full text-center">Stock</p>
