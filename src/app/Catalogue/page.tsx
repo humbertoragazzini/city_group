@@ -75,20 +75,22 @@ export default function Catalogue() {
               opacity: filterMenu ? 1 : 0
             }}
             className="absolute flex top-16 flex-col justify-center items-start z-50 bg-slate-600 p-9 rounded-xl shadow-xl">
-            <div>Toggle dark mode <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
-            <div> Toggle view          <button onClick={(e) => {
-              if (typeMode == "card") {
-                setTypeMode("listItem")
-              } else {
-                setTypeMode("card")
-              }
-            }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
-              <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
+            <div className="mb-4"><p className="mb-2">Toggle dark mode</p> <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
+            <div className="mb-4">
+              <p className="mb-2">Toggle view</p>
+              <button onClick={(e) => {
+                if (typeMode == "card") {
+                  setTypeMode("listItem")
+                } else {
+                  setTypeMode("card")
+                }
+              }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
+                <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
 
-              </div>
-            </button></div>
+                </div>
+              </button></div>
             <div
-              className={`px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 ${mode == "dark" ? "text-white" : "text-black"
+              className={`flex justify-start xl:justify-center items-center font-semibold mb-4 ${mode == "dark" ? "text-white" : "text-black"
                 } rounded-lg`}
             >
               <label className="mr-2">ID:</label>
@@ -101,7 +103,7 @@ export default function Catalogue() {
               ></input>
             </div>
             <div
-              className={`px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+              className={`flex justify-start xl:justify-center items-center font-semibold mb-4 ${mode == "dark" ? "text-white" : "text-black"
                 } rounded-lg`}
             >
               <label className="mr-2 text-nowrap">By name:</label>
@@ -114,7 +116,7 @@ export default function Catalogue() {
               ></input>
             </div>
             <div
-              className={`px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+              className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 ${mode == "dark" ? "text-white" : "text-black"
                 } rounded-lg`}
             >
               <label className="mr-2">By category:</label>
@@ -130,7 +132,7 @@ export default function Catalogue() {
               ></DropdownMenu>
             </div>
             <div
-              className={`px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+              className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 ${mode == "dark" ? "text-white" : "text-black"
                 } rounded-lg`}
             >
               <label className="mr-2">By subcategory:</label>
