@@ -13,6 +13,9 @@ import Pagination from "./paginator";
 import Example from "./input";
 import BeamContainer from "./input";
 import ToggleWrapper from "./toggler";
+import { ImFilter } from "react-icons/im";
+
+
 export default function Catalogue() {
   const context = useAppContext();
   const [IDtoSearch, setIDtoSearch] = useState();
@@ -33,6 +36,7 @@ export default function Catalogue() {
   const [sortedBy, setSortedBy] = useState(null);
   const [typeMode, setTypeMode] = useState("card");
   const [mode, setMode] = useState("dark");
+  const [filterMenu, setFilterMenu] = useState(false)
   const [filterObj, setFilterObj] = useState({
     id: -1,
     name: "",
@@ -60,23 +64,31 @@ export default function Catalogue() {
     >
 
       <div className="w-full h-[120px] mx-auto">
-        <div className="px-8 flex justify-center items-center h-full">
+        <div className="px-8 relative">
           {/* <BeamContainer mode={mode}> */}
-          <div>Toggle dark mode <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
-          <div> Toggle view          <button onClick={(e) => {
-            if (typeMode == "card") {
-              setTypeMode("listItem")
-            } else {
-              setTypeMode("card")
-            }
-          }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
-            <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
+          <button className="w-[55px] h-[55px] [&>svg]:fill-black rounded-full bg-white flex justify-center items-center p-2 m-0 fixed top-3 z-[50]" onClick={() => { setFilterMenu(!filterMenu) }}>
+            <ImFilter className="w-full h-full z-[60]" />
+          </button>
+          <motion.div
+            animate={{
+              x: filterMenu ? 0 : -250,
+              opacity: filterMenu ? 1 : 0
+            }}
+            className="absolute flex top-16 flex-col justify-center items-start z-50 bg-slate-600 p-9 rounded-xl shadow-xl">
+            <div>Toggle dark mode <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
+            <div> Toggle view          <button onClick={(e) => {
+              if (typeMode == "card") {
+                setTypeMode("listItem")
+              } else {
+                setTypeMode("card")
+              }
+            }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
+              <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
 
-            </div>
-          </button></div>
-          <div className="grid grid-cols-4">
+              </div>
+            </button></div>
             <div
-              className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 ${mode == "dark" ? "text-white" : "text-black"
+              className={`px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 ${mode == "dark" ? "text-white" : "text-black"
                 } rounded-lg`}
             >
               <label className="mr-2">ID:</label>
@@ -89,7 +101,7 @@ export default function Catalogue() {
               ></input>
             </div>
             <div
-              className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+              className={`px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
                 } rounded-lg`}
             >
               <label className="mr-2 text-nowrap">By name:</label>
@@ -102,7 +114,7 @@ export default function Catalogue() {
               ></input>
             </div>
             <div
-              className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+              className={`px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
                 } rounded-lg`}
             >
               <label className="mr-2">By category:</label>
@@ -118,7 +130,7 @@ export default function Catalogue() {
               ></DropdownMenu>
             </div>
             <div
-              className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+              className={`px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
                 } rounded-lg`}
             >
               <label className="mr-2">By subcategory:</label>
@@ -133,7 +145,7 @@ export default function Catalogue() {
                 products={products}
               ></DropdownMenu>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Section with us and the description */}
