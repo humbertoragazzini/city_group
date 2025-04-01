@@ -11,7 +11,7 @@ import { useFilteredProducts } from "./useFilteredProducts";
 import Pagination from "./paginator";
 import { FiCheck } from "react-icons/fi";
 
-export function Item({ product, index }: any) {
+export function Item({ product, index, mode }: any) {
   const [enable, setEnable] = useState(false);
   const [show, setShow] = useState(true);
   const itemRef = useRef();
@@ -24,11 +24,11 @@ export function Item({ product, index }: any) {
     <div
       ref={itemRef}
       style={{ opacity: 1 }}
-      className={`relative col-span-1 rounded-xl transition-all duration-500`}
+      className={`relative col-span-1 transition-all duration-500`}
     >
       <button
         onClick={(e) => setEnable(!enable)}
-        className="relative z-10 grid grid-cols-12 full p-2 rounded-full bg-gray-900 cursor-pointer w-full hover:bg-slate-800 transition-all duration-300"
+        className={`relative z-10 grid grid-cols-12 full p-2 cursor-pointer w-full ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"} transition-all duration-300`}
       >
         <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center h-full">

@@ -16,6 +16,7 @@ export default function Pagination({
   items = [],
   itemsPerPage = 10,
   renderItem,
+  mode,
   type,
 }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,14 +41,14 @@ export default function Pagination({
       {type == "listItem" && (
         <div className="grid gap-2">
           {currentItems.map((product, index) => (
-            <Item key={index} index={index} product={product}></Item>
+            <Item key={index} index={index} product={product} mode={mode}></Item>
           ))}
         </div>
       )}
       {type == "card" && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {currentItems.map((product, index) => (
-            <Card key={index} index={index} product={product}></Card>
+            <Card key={index} index={index} product={product} mode={mode}></Card>
           ))}
         </div>
       )}
@@ -56,17 +57,17 @@ export default function Pagination({
         <button
           onClick={handlePrev}
           disabled={currentPage === 1}
-          class=" text-xl h-[70px] w-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full shadow-xl text-black hover:bg-black border-2 border-yellowBright hover:text-yellowBright bg-yellowBright m-2"
+          class={`text-xl h-[70px] w-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full m-2 ${mode == "dark" ? "[&>svg]:stroke-white" : "[&>svg]:stroke-black"}`}
         >
           <FiArrowLeft className="inline w-[40px] h-[40px]" />
         </button>
-        <span className="text-xl font-semibold">
+        <span className={`text-xl font-semibold ${mode == "dark" ? "text-white" : "text-black"}`}>
           Page {currentPage} of {totalPages}
         </span>
         <button
           onClick={handleNext}
           disabled={currentPage === totalPages}
-          class=" text-xl h-[70px] w-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full shadow-xl text-black hover:bg-black border-2 border-yellowBright hover:text-yellowBright bg-yellowBright m-2"
+          class={`text-xl h-[70px] w-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full m-2 ${mode == "dark" ? "[&>svg]:stroke-white" : "[&>svg]:stroke-black"}`}
         >
           <FiArrowRight className="inline w-[40px] h-[40px]" />
         </button>

@@ -78,9 +78,10 @@ export default function Catalogue() {
               x: filterMenu ? "-50vw" : "-100vw",
               opacity: filterMenu ? 1 : 0
             }}
-            className="absolute w-screen h-screen flex justify-end top-[-50px] bg-slate-600 p-9 rounded-br-2xl rounded-tr-2xl shadow-xl z-[40]">
+            className={`absolute w-screen h-screen flex justify-end top-[-50px] backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"
+              } p-9 rounded-br-2xl rounded-tr-2xl shadow-xl z-[40]`}>
             <div className="w-1/2 flex flex-col justify-start items-start p-8">
-              <button onClick={() => { setFilterMenu(!filterMenu) }} className="w-[55px] h-[55px] bg-red rounded-full absolute right-0 top-0 m-4 p-3"><LuPanelLeftClose className="w-full h-full"></LuPanelLeftClose></button>
+              <button onClick={() => { setFilterMenu(!filterMenu) }} className="w-[55px] h-[55px] rounded-full absolute right-0 top-0 m-4 p-3"><LuPanelLeftClose className="w-full h-full"></LuPanelLeftClose></button>
               <div className="mb-4"><p className="mb-2">Toggle dark mode</p> <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
               <div className="mb-4">
                 <p className="mb-2">Toggle view</p>
@@ -96,8 +97,7 @@ export default function Catalogue() {
                   </div>
                 </button></div>
               <div
-                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 rounded-lg`}
               >
                 <label className="mr-2">ID:</label>
                 <input
@@ -109,8 +109,7 @@ export default function Catalogue() {
                 ></input>
               </div>
               <div
-                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 rounded-lg`}
               >
                 <label className="mr-2 text-nowrap">By name:</label>
                 <input
@@ -122,8 +121,7 @@ export default function Catalogue() {
                 ></input>
               </div>
               <div
-                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 rounded-lg`}
               >
                 <label className="mr-2">By category:</label>
                 {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
@@ -138,8 +136,7 @@ export default function Catalogue() {
                 ></DropdownMenu>
               </div>
               <div
-                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 rounded-lg`}
               >
                 <label className="mr-2">By subcategory:</label>
                 {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
