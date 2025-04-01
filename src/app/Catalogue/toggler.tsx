@@ -6,7 +6,7 @@ import { BsFillCloudyFill, BsStarFill } from "react-icons/bs";
 const ToggleWrapper = ({ mode, setMode }: any) => {
     return (
         <div
-            className={`rounded-full h-fit w-fit flex items-center justify-center border-8 border-[rgba(255,255,255,0.5)] transition-colors scale-[0.5]`}
+            className={`rounded-full h-fit w-fit flex items-center justify-center transition-colors`}
         >
             <DarkModeToggle mode={mode} setMode={setMode} />
         </div>
@@ -17,7 +17,7 @@ const DarkModeToggle = ({ mode, setMode }) => {
     return (
         <button
             onClick={() => setMode(mode === "dark" ? "light" : "dark")}
-            className={`p-2 w-28 rounded-full flex shadow-lg relative bg-gradient-to-b ${mode === "light"
+            className={`p-2 w-14 rounded-full flex shadow-lg relative bg-gradient-to-b ${mode === "light"
                 ? "justify-end from-blue-500 to-sky-300"
                 : "justify-start from-indigo-600 to-indigo-400"
                 }`}
@@ -37,7 +37,7 @@ const Thumb = ({ mode }) => {
                 duration: 0.75,
                 type: "spring",
             }}
-            className="h-10 w-10 rounded-full overflow-hidden shadow-lg relative"
+            className="h-[30px] w-[30px] rounded-full overflow-hidden shadow-lg relative"
         >
             <div
                 className={`absolute inset-0 ${mode === "dark"

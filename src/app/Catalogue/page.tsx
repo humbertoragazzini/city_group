@@ -62,8 +62,8 @@ export default function Catalogue() {
       <div className="w-full h-[120px] mx-auto">
         <div className="px-8 flex justify-center items-center h-full">
           {/* <BeamContainer mode={mode}> */}
-          <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper>
-          <button onClick={(e) => {
+          <div>Toggle dark mode <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
+          <div> Toggle view          <button onClick={(e) => {
             if (typeMode == "card") {
               setTypeMode("listItem")
             } else {
@@ -73,7 +73,7 @@ export default function Catalogue() {
             <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
 
             </div>
-          </button>
+          </button></div>
           <div className="grid grid-cols-4">
             <div
               className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 ${mode == "dark" ? "text-white" : "text-black"
