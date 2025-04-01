@@ -14,6 +14,7 @@ import Example from "./input";
 import BeamContainer from "./input";
 import ToggleWrapper from "./toggler";
 import { ImFilter } from "react-icons/im";
+import { LuPanelLeftClose } from "react-icons/lu";
 
 
 export default function Catalogue() {
@@ -34,7 +35,7 @@ export default function Catalogue() {
     subCategory
   );
   const [sortedBy, setSortedBy] = useState(null);
-  const [typeMode, setTypeMode] = useState("card");
+  const [typeMode, setTypeMode] = useState("listItem");
   const [mode, setMode] = useState("dark");
   const [filterMenu, setFilterMenu] = useState(false)
   const [filterObj, setFilterObj] = useState({
@@ -57,95 +58,101 @@ export default function Catalogue() {
 
   return (
     <div
-      className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] bg-gradient-to-b ${mode == "dark"
+      className={`relative min-h-screen z-10 transition-all duration-1000 m-auto pt-[50px] bg-gradient-to-b ${mode == "dark"
         ? "from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,1)]"
         : "from-[rgba(255,255,255,1)] to-[rgba(150,150,150,1)]"
-        } min-h-screen w-full text-white`}
+        } w-full text-white`}
     >
 
-      <div className="w-full h-[120px] mx-auto">
-        <div className="px-8 relative">
+      <div className="w-full">
+        <div className="relative">
           {/* <BeamContainer mode={mode}> */}
-          <button className="w-[55px] h-[55px] [&>svg]:fill-black rounded-full bg-white flex justify-center items-center p-2 m-0 fixed top-3 z-[50]" onClick={() => { setFilterMenu(!filterMenu) }}>
+          <motion.button animate={{
+            x: filterMenu ? -255 : 0,
+            opacity: filterMenu ? 0 : 1
+          }} className="w-[55px] h-[55px] ml-4 [&>svg]:fill-black rounded-full bg-white flex justify-center items-center p-2 m-0 fixed top-3 z-[50]" onClick={() => { setFilterMenu(!filterMenu) }}>
             <ImFilter className="w-full h-full z-[60]" />
-          </button>
+          </motion.button>
           <motion.div
             animate={{
-              x: filterMenu ? 0 : -250,
+              x: filterMenu ? "-50vw" : "-100vw",
               opacity: filterMenu ? 1 : 0
             }}
-            className="absolute flex top-16 flex-col justify-center items-start z-50 bg-slate-600 p-9 rounded-xl shadow-xl">
-            <div className="mb-4"><p className="mb-2">Toggle dark mode</p> <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
-            <div className="mb-4">
-              <p className="mb-2">Toggle view</p>
-              <button onClick={(e) => {
-                if (typeMode == "card") {
-                  setTypeMode("listItem")
-                } else {
-                  setTypeMode("card")
-                }
-              }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
-                <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
+            className="absolute w-screen h-screen flex justify-end top-[-50px] bg-slate-600 p-9 rounded-br-2xl rounded-tr-2xl shadow-xl z-[40]">
+            <div className="w-1/2 flex flex-col justify-start items-start p-8">
+              <button onClick={() => { setFilterMenu(!filterMenu) }} className="w-[55px] h-[55px] bg-red rounded-full absolute right-0 top-0 m-4 p-3"><LuPanelLeftClose className="w-full h-full"></LuPanelLeftClose></button>
+              <div className="mb-4"><p className="mb-2">Toggle dark mode</p> <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
+              <div className="mb-4">
+                <p className="mb-2">Toggle view</p>
+                <button onClick={(e) => {
+                  if (typeMode == "card") {
+                    setTypeMode("listItem")
+                  } else {
+                    setTypeMode("card")
+                  }
+                }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
+                  <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
 
-                </div>
-              </button></div>
-            <div
-              className={`flex justify-start xl:justify-center items-center font-semibold mb-4 ${mode == "dark" ? "text-white" : "text-black"
-                } rounded-lg`}
-            >
-              <label className="mr-2">ID:</label>
-              <input
-                onKeyUp={(e) => {
-                  setIDtoSearch(e.currentTarget.value);
-                }}
-                className="bg-transparent flex justify-center items-center p-2"
-                placeholder="Search by ID"
-              ></input>
-            </div>
-            <div
-              className={`flex justify-start xl:justify-center items-center font-semibold mb-4 ${mode == "dark" ? "text-white" : "text-black"
-                } rounded-lg`}
-            >
-              <label className="mr-2 text-nowrap">By name:</label>
-              <input
-                onKeyUp={(e) => {
-                  setWordtoSearch(e.currentTarget.value);
-                }}
-                className="bg-transparent flex justify-center items-center p-2"
-                placeholder="Search by word"
-              ></input>
-            </div>
-            <div
-              className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 ${mode == "dark" ? "text-white" : "text-black"
-                } rounded-lg`}
-            >
-              <label className="mr-2">By category:</label>
-              {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
-              <DropdownMenu
-                category={category}
-                setCategory={setCategory}
-                selected={selected}
-                setSelected={setSelected}
-                types={products}
-                products={products}
-                type="category"
-              ></DropdownMenu>
-            </div>
-            <div
-              className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 ${mode == "dark" ? "text-white" : "text-black"
-                } rounded-lg`}
-            >
-              <label className="mr-2">By subcategory:</label>
-              {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
-              <DropdownMenu
-                category={subCategory}
-                setCategory={setSubCategory}
-                selected={subSelected}
-                filtered={filtered}
-                setSelected={setSubSelected}
-                types={products}
-                products={products}
-              ></DropdownMenu>
+                  </div>
+                </button></div>
+              <div
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 ${mode == "dark" ? "text-white" : "text-black"
+                  } rounded-lg`}
+              >
+                <label className="mr-2">ID:</label>
+                <input
+                  onKeyUp={(e) => {
+                    setIDtoSearch(e.currentTarget.value);
+                  }}
+                  className="bg-transparent flex justify-center items-center p-2"
+                  placeholder="Search by ID"
+                ></input>
+              </div>
+              <div
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 ${mode == "dark" ? "text-white" : "text-black"
+                  } rounded-lg`}
+              >
+                <label className="mr-2 text-nowrap">By name:</label>
+                <input
+                  onKeyUp={(e) => {
+                    setWordtoSearch(e.currentTarget.value);
+                  }}
+                  className="bg-transparent flex justify-center items-center p-2"
+                  placeholder="Search by word"
+                ></input>
+              </div>
+              <div
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 ${mode == "dark" ? "text-white" : "text-black"
+                  } rounded-lg`}
+              >
+                <label className="mr-2">By category:</label>
+                {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
+                <DropdownMenu
+                  category={category}
+                  setCategory={setCategory}
+                  selected={selected}
+                  setSelected={setSelected}
+                  types={products}
+                  products={products}
+                  type="category"
+                ></DropdownMenu>
+              </div>
+              <div
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 ${mode == "dark" ? "text-white" : "text-black"
+                  } rounded-lg`}
+              >
+                <label className="mr-2">By subcategory:</label>
+                {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
+                <DropdownMenu
+                  category={subCategory}
+                  setCategory={setSubCategory}
+                  selected={subSelected}
+                  filtered={filtered}
+                  setSelected={setSubSelected}
+                  types={products}
+                  products={products}
+                ></DropdownMenu>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -153,7 +160,7 @@ export default function Catalogue() {
         {/* Section with us and the description */}
         <div
           ref={resultContainerRef}
-          className="w-full flex flex-col justify-start items-center overflow-hidden relative"
+          className="w-full max-w-[1450px] mx-auto flex flex-col justify-start items-center overflow-hidden relative"
         >
           <div className="grid w-full grid-cols-1 p-4 lg:p-8">
             {typeMode !== "card" && (
