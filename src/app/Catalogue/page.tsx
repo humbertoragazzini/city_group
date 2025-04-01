@@ -13,6 +13,10 @@ import Pagination from "./paginator";
 import Example from "./input";
 import BeamContainer from "./input";
 import ToggleWrapper from "./toggler";
+import { ImFilter } from "react-icons/im";
+import { LuPanelLeftClose } from "react-icons/lu";
+
+
 export default function Catalogue() {
   const context = useAppContext();
   const [IDtoSearch, setIDtoSearch] = useState();
@@ -31,8 +35,9 @@ export default function Catalogue() {
     subCategory
   );
   const [sortedBy, setSortedBy] = useState(null);
-  const [typeMode, setTypeMode] = useState("card");
+  const [typeMode, setTypeMode] = useState("listItem");
   const [mode, setMode] = useState("dark");
+  const [filterMenu, setFilterMenu] = useState(false)
   const [filterObj, setFilterObj] = useState({
     id: -1,
     name: "",
@@ -53,30 +58,46 @@ export default function Catalogue() {
 
   return (
     <div
-      className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] bg-gradient-to-b ${mode == "dark"
-        ? "from-[rgba(0,0,0,1)] to-[rgba(0,0,0,1)]"
+      className={`relative min-h-screen z-10 transition-all duration-1000 m-auto pt-[50px] bg-gradient-to-b ${mode == "dark"
+        ? "from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,1)]"
         : "from-[rgba(255,255,255,1)] to-[rgba(150,150,150,1)]"
-        } min-h-screen w-full text-white`}
+        } w-full text-white`}
     >
-      <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper>
-      <button onClick={(e) => {
-        if (typeMode == "card") {
-          setTypeMode("listItem")
-        } else {
-          setTypeMode("card")
-        }
-      }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
-        <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
 
-        </div>
-      </button>
-      <div className="w-full max-w-[1450px] mx-auto mt-8">
-        <div className="px-8">
-          <BeamContainer mode={mode}>
-            <div className="grid grid-cols-4">
+      <div className="w-full">
+        <div className="relative">
+          {/* <BeamContainer mode={mode}> */}
+          <motion.button animate={{
+            x: filterMenu ? -255 : 0,
+            opacity: filterMenu ? 0 : 1
+          }} className="w-[55px] h-[55px] ml-4 [&>svg]:fill-black rounded-full bg-white flex justify-center items-center p-2 m-0 fixed top-3 z-[50]" onClick={() => { setFilterMenu(!filterMenu) }}>
+            <ImFilter className="w-full h-full z-[60]" />
+          </motion.button>
+          <motion.div
+            animate={{
+              x: filterMenu ? "-50vw" : "-100vw",
+              opacity: filterMenu ? 1 : 0
+            }}
+            className={`absolute w-screen h-screen flex justify-end top-[-50px] backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"
+              } p-9 rounded-br-2xl rounded-tr-2xl shadow-xl z-[40]`}>
+            <div className="w-1/2 flex flex-col justify-start items-start p-8">
+              <button onClick={() => { setFilterMenu(!filterMenu) }} className="w-[55px] h-[55px] rounded-full absolute right-0 top-0 m-4 p-3"><LuPanelLeftClose className="w-full h-full"></LuPanelLeftClose></button>
+              <div className="mb-4"><p className="mb-2">Toggle dark mode</p> <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
+              <div className="mb-4">
+                <p className="mb-2">Toggle view</p>
+                <button onClick={(e) => {
+                  if (typeMode == "card") {
+                    setTypeMode("listItem")
+                  } else {
+                    setTypeMode("card")
+                  }
+                }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
+                  <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
+
+                  </div>
+                </button></div>
               <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 rounded-lg`}
               >
                 <label className="mr-2">ID:</label>
                 <input
@@ -88,8 +109,7 @@ export default function Catalogue() {
                 ></input>
               </div>
               <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 rounded-lg`}
               >
                 <label className="mr-2 text-nowrap">By name:</label>
                 <input
@@ -101,8 +121,7 @@ export default function Catalogue() {
                 ></input>
               </div>
               <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 rounded-lg`}
               >
                 <label className="mr-2">By category:</label>
                 {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
@@ -117,8 +136,7 @@ export default function Catalogue() {
                 ></DropdownMenu>
               </div>
               <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
+                className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 rounded-lg`}
               >
                 <label className="mr-2">By subcategory:</label>
                 {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
@@ -133,13 +151,13 @@ export default function Catalogue() {
                 ></DropdownMenu>
               </div>
             </div>
-          </BeamContainer>
+          </motion.div>
         </div>
 
         {/* Section with us and the description */}
         <div
           ref={resultContainerRef}
-          className="w-full flex flex-col justify-start items-center overflow-hidden relative"
+          className="w-full max-w-[1450px] mx-auto flex flex-col justify-start items-center overflow-hidden relative"
         >
           <div className="grid w-full grid-cols-1 p-4 lg:p-8">
             {typeMode !== "card" && (

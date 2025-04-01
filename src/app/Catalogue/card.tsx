@@ -55,7 +55,7 @@ export function Card({ product, index }: any) {
         animate={{}}
         className="z-0 grid grid-cols-1 w-full overflow-hidden"
       >
-        <button className="col-span-1">
+        <button className="col-span-1 h-full">
           <motion.div
             animate={{}}
             className="z-0 top-0 left-0 grid grid-cols-10 w-full lg:p-4"
@@ -67,29 +67,29 @@ export function Card({ product, index }: any) {
             </div>
             <div className="col-span-10 p-3">
               <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)]">
-                <h1 className="text-2xl pb-2">{product.name}</h1>
+                <h1 className="text-2xl pb-2 text-left">{product.name}</h1>
               </div>
             </div>
             <div className="col-span-10 px-3">
               <div className="w-fit flex justify-start">
-                <div className="font-bold text-xl">Brand: </div>
+                <div className="font-bold text-xl text-left">Brand: </div>
                 <div className="text-xl pl-3">{product.brand}</div>
               </div>
             </div>
-            <div className="col-span-10 px-3">
+            {/* <div className="col-span-10 px-3">
               <div className="w-fit flex justify-start">
                 <div className="font-bold text-xl">Software: </div>
                 <div className="text-xl pl-3">{product.software}</div>
               </div>
-            </div>
-            <div className="col-span-10 px-3">
+            </div> */}
+            {/* <div className="col-span-10 px-3">
               <div className="w-fit flex justify-start">
                 <div className="font-bold text-xl">Specs: </div>
                 <div className="text-xl pl-3">
                   1080P / WIFI 7 / UP TO 128GB / STORAGE
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
               <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
                 <h1 className="text-2xl pb-2">{product.name}</h1>
