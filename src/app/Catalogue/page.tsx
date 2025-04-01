@@ -54,86 +54,86 @@ export default function Catalogue() {
   return (
     <div
       className={`relative z-10 transition-all duration-1000 m-auto pt-[0px] bg-gradient-to-b ${mode == "dark"
-        ? "from-[rgba(0,0,0,1)] to-[rgba(0,0,0,1)]"
+        ? "from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,1)]"
         : "from-[rgba(255,255,255,1)] to-[rgba(150,150,150,1)]"
         } min-h-screen w-full text-white`}
     >
-      <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper>
-      <button onClick={(e) => {
-        if (typeMode == "card") {
-          setTypeMode("listItem")
-        } else {
-          setTypeMode("card")
-        }
-      }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
-        <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
 
-        </div>
-      </button>
-      <div className="w-full max-w-[1450px] mx-auto mt-8">
-        <div className="px-8">
-          <BeamContainer mode={mode}>
-            <div className="grid grid-cols-4">
-              <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
-              >
-                <label className="mr-2">ID:</label>
-                <input
-                  onKeyUp={(e) => {
-                    setIDtoSearch(e.currentTarget.value);
-                  }}
-                  className="bg-transparent flex justify-center items-center p-2"
-                  placeholder="Search by ID"
-                ></input>
-              </div>
-              <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
-              >
-                <label className="mr-2 text-nowrap">By name:</label>
-                <input
-                  onKeyUp={(e) => {
-                    setWordtoSearch(e.currentTarget.value);
-                  }}
-                  className="bg-transparent flex justify-center items-center p-2"
-                  placeholder="Search by word"
-                ></input>
-              </div>
-              <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
-              >
-                <label className="mr-2">By category:</label>
-                {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
-                <DropdownMenu
-                  category={category}
-                  setCategory={setCategory}
-                  selected={selected}
-                  setSelected={setSelected}
-                  types={products}
-                  products={products}
-                  type="category"
-                ></DropdownMenu>
-              </div>
-              <div
-                className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
-                  } rounded-lg`}
-              >
-                <label className="mr-2">By subcategory:</label>
-                {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
-                <DropdownMenu
-                  category={subCategory}
-                  setCategory={setSubCategory}
-                  selected={subSelected}
-                  filtered={filtered}
-                  setSelected={setSubSelected}
-                  types={products}
-                  products={products}
-                ></DropdownMenu>
-              </div>
+      <div className="w-full h-[120px] mx-auto">
+        <div className="px-8 flex justify-center items-center h-full">
+          {/* <BeamContainer mode={mode}> */}
+          <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper>
+          <button onClick={(e) => {
+            if (typeMode == "card") {
+              setTypeMode("listItem")
+            } else {
+              setTypeMode("card")
+            }
+          }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
+            <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
+
             </div>
-          </BeamContainer>
+          </button>
+          <div className="grid grid-cols-4">
+            <div
+              className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2 ${mode == "dark" ? "text-white" : "text-black"
+                } rounded-lg`}
+            >
+              <label className="mr-2">ID:</label>
+              <input
+                onKeyUp={(e) => {
+                  setIDtoSearch(e.currentTarget.value);
+                }}
+                className="bg-transparent flex justify-center items-center p-2"
+                placeholder="Search by ID"
+              ></input>
+            </div>
+            <div
+              className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+                } rounded-lg`}
+            >
+              <label className="mr-2 text-nowrap">By name:</label>
+              <input
+                onKeyUp={(e) => {
+                  setWordtoSearch(e.currentTarget.value);
+                }}
+                className="bg-transparent flex justify-center items-center p-2"
+                placeholder="Search by word"
+              ></input>
+            </div>
+            <div
+              className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+                } rounded-lg`}
+            >
+              <label className="mr-2">By category:</label>
+              {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
+              <DropdownMenu
+                category={category}
+                setCategory={setCategory}
+                selected={selected}
+                setSelected={setSelected}
+                types={products}
+                products={products}
+                type="category"
+              ></DropdownMenu>
+            </div>
+            <div
+              className={`col-span-4 md:col-span-2 xl:col-span-1 px-0 py-0 flex justify-start xl:justify-center items-center font-semibold mx-2  ${mode == "dark" ? "text-white" : "text-black"
+                } rounded-lg`}
+            >
+              <label className="mr-2">By subcategory:</label>
+              {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
+              <DropdownMenu
+                category={subCategory}
+                setCategory={setSubCategory}
+                selected={subSelected}
+                filtered={filtered}
+                setSelected={setSubSelected}
+                types={products}
+                products={products}
+              ></DropdownMenu>
+            </div>
+          </div>
         </div>
 
         {/* Section with us and the description */}

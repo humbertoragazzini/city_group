@@ -29,7 +29,7 @@ export default function AppWraper({ children }: any) {
     <AppProvider>
       <ONavBar></ONavBar>
       {
-        pathname !== "/Catalogue" &&
+        1 == 1 &&
         <MainBG></MainBG>
       }
       <SmoothScrollbar enabled={true}>
@@ -38,8 +38,7 @@ export default function AppWraper({ children }: any) {
             <>
               {/*header*/}
               {
-                !(pathname == "/Catalogue") &&
-                <div className={`opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-2 max-w-[1920px] mx-auto p-[45px]`}>
+                !(pathname == "/Catalogue") && <div className={`opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-2 max-w-[1920px] mx-auto p-[45px]`}>
                   <div className="relative flex flex-col items-center justify-center text-white col-span-1 xl:col-span-2 ">
                     <MainHeader></MainHeader>
                     <LogoBG
