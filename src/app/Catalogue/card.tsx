@@ -11,7 +11,7 @@ import { useFilteredProducts } from "./useFilteredProducts";
 import Pagination from "./paginator";
 import { FiCheck } from "react-icons/fi";
 
-export function Card({ product, index }: any) {
+export function Card({ product, index, mode }: any) {
   const [enable, setEnable] = useState(false);
   const [show, setShow] = useState(true);
   const itemRef = useRef();
@@ -24,7 +24,7 @@ export function Card({ product, index }: any) {
     <div
       ref={itemRef}
       style={{ opacity: 1 }}
-      className={`relative col-span-1 aspect-square rounded-xl transition-all duration-500 bg-gray-900`}
+      className={`relative col-span-1 aspect-square rounded-xl transition-all duration-500 ${mode == "dark" ? "bg-gray-900" : "text-black"}`}
     >
       {/* <button
         onClick={(e) => setEnable(!enable)}

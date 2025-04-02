@@ -60,7 +60,7 @@ export default function Catalogue() {
     <div
       className={`relative min-h-screen z-10 transition-all duration-1000 m-auto pt-[50px] bg-gradient-to-b ${mode == "dark"
         ? "from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,1)]"
-        : "from-[rgba(255,255,255,1)] to-[rgba(150,150,150,1)]"
+        : "bg-[rgba(220,180,200,1)]"
         } w-full text-white`}
     >
 
@@ -75,10 +75,10 @@ export default function Catalogue() {
           </motion.button>
           <motion.div
             animate={{
-              x: filterMenu ? "-50vw" : "-100vw",
+              x: filterMenu ? 0 : "-100%",
               opacity: filterMenu ? 1 : 0
             }}
-            className={`absolute w-screen h-screen flex justify-end top-[-50px] backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"
+            className={`absolute w-fit h-screen flex justify-end top-[-50px] backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"
               } p-9 rounded-br-2xl rounded-tr-2xl shadow-xl z-[40]`}>
             <div className="w-1/2 flex flex-col justify-start items-start p-8">
               <button onClick={() => { setFilterMenu(!filterMenu) }} className="w-[55px] h-[55px] rounded-full absolute right-0 top-0 m-4 p-3"><LuPanelLeftClose className="w-full h-full"></LuPanelLeftClose></button>
