@@ -37,7 +37,7 @@ export default function Catalogue() {
   const [sortedBy, setSortedBy] = useState(null);
   const [typeMode, setTypeMode] = useState("listItem");
   const [mode, setMode] = useState("dark");
-  const [filterMenu, setFilterMenu] = useState(false)
+  const [filterMenu, setFilterMenu] = useState(true)
   const [filterObj, setFilterObj] = useState({
     id: -1,
     name: "",
@@ -60,7 +60,7 @@ export default function Catalogue() {
     <div
       className={`relative min-h-screen z-10 transition-all duration-1000 m-auto pt-[50px] bg-gradient-to-b ${mode == "dark"
         ? "from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,1)]"
-        : "from-[rgba(255,255,255,1)] to-[rgba(150,150,150,1)]"
+        : "bg-[rgba(220,180,200,1)]"
         } w-full text-white`}
     >
 
@@ -70,17 +70,17 @@ export default function Catalogue() {
           <motion.button animate={{
             x: filterMenu ? -255 : 0,
             opacity: filterMenu ? 0 : 1
-          }} className="w-[55px] h-[55px] ml-4 [&>svg]:fill-black rounded-full bg-white flex justify-center items-center p-2 m-0 fixed top-3 z-[50]" onClick={() => { setFilterMenu(!filterMenu) }}>
+          }} className="w-[55px] h-[55px] ml-4 [&>svg]:fill-white rounded-full flex justify-center items-center p-2 m-0 fixed top-3 z-[50]" onClick={() => { setFilterMenu(!filterMenu) }}>
             <ImFilter className="w-full h-full z-[60]" />
           </motion.button>
           <motion.div
             animate={{
-              x: filterMenu ? "-50vw" : "-100vw",
+              x: filterMenu ? 0 : "-100%",
               opacity: filterMenu ? 1 : 0
             }}
-            className={`absolute w-screen h-screen flex justify-end top-[-50px] backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"
+            className={`absolute w-fit h-screen flex justify-end top-[-50px] backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"
               } p-9 rounded-br-2xl rounded-tr-2xl shadow-xl z-[40]`}>
-            <div className="w-1/2 flex flex-col justify-start items-start p-8">
+            <div className="w-full flex flex-col justify-start items-start p-8">
               <button onClick={() => { setFilterMenu(!filterMenu) }} className="w-[55px] h-[55px] rounded-full absolute right-0 top-0 m-4 p-3"><LuPanelLeftClose className="w-full h-full"></LuPanelLeftClose></button>
               <div className="mb-4"><p className="mb-2">Toggle dark mode</p> <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
               <div className="mb-4">
@@ -155,7 +155,10 @@ export default function Catalogue() {
         </div>
 
         {/* Section with us and the description */}
-        <div
+        <motion.div
+          animate={{
+            filter: filterMenu ? "blur(5px)" : ""
+          }}
           ref={resultContainerRef}
           className="w-full max-w-[1450px] mx-auto flex flex-col justify-start items-center overflow-hidden relative"
         >
@@ -210,7 +213,7 @@ export default function Catalogue() {
               type={typeMode}
             ></Pagination>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
