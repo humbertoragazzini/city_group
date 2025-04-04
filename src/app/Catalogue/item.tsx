@@ -28,26 +28,26 @@ export function Item({ product, index, mode }: any) {
     >
       <button
         onClick={(e) => setEnable(!enable)}
-        className={`relative z-10 grid grid-cols-12 full p-2 cursor-pointer w-full ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"} transition-all duration-300`}
+        className={`relative z-10 grid grid-cols-12 full p-2 cursor-pointer shadow-lg w-full ${mode == "dark" ? "bg-[#0D1B2A] text-[#D6EFFF]" : "bg-[#E0F7FA] text-[#37474F]"} transition-all duration-300`}
       >
-        <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
+        <div className="col-span-3 md:col-span-2 p-2">
           <div className="flex justify-center items-center h-full">
             <p className="font-bold w-full text-center">{product.id}</p>
           </div>
         </div>
-        <div className="col-span-9 p-2 md:col-span-6 md:border-r-2 border-[rgba(255,255,255,0.5)]">
+        <div className="col-span-9 p-2 md:col-span-6 ">
           <div className="flex justify-center items-center h-full">
             <p className="font-bold w-full text-left">{product.name}</p>
           </div>
         </div>
-        <div className="col-span-4 hidden p-2 md:block md:col-span-3 md:border-r-2 border-[rgba(255,255,255,0.5)]">
+        <div className="col-span-4 hidden p-2 md:block md:col-span-3 ">
           <div className="flex justify-center items-center h-full">
             <p className="font-bold w-full text-center">{product.category}</p>
           </div>
         </div>
         <div className="col-span-1 hidden lg:block md:grid p-2">
           <div className="flex justify-center items-center h-full">
-            {product.available ? <FiCheck className="w-[28px]"></FiCheck> : ""}
+            {product.available ? <div className="w-9 h-9 bg-green-700 flex justify-center items-center rounded-full"><FiCheck className="w-[28px] stroke-black"></FiCheck></div> : ""}
           </div>
         </div>
       </button>
