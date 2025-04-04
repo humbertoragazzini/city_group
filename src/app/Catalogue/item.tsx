@@ -28,7 +28,7 @@ export function Item({ product, index, mode }: any) {
     >
       <button
         onClick={(e) => setEnable(!enable)}
-        className={`relative z-10 grid grid-cols-12 full p-2 cursor-pointer w-full ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"} transition-all duration-300`}
+        className={`relative z-10 grid grid-cols-12 full p-2 cursor-pointer shadow-lg w-full ${mode == "dark" ? "" : "bg-[#E0F7FA] text-[#37474F]"} transition-all duration-300`}
       >
         <div className="col-span-3 md:col-span-2 p-2 border-r-2 border-[rgba(255,255,255,0.5)]">
           <div className="flex justify-center items-center h-full">
