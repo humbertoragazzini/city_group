@@ -53,13 +53,13 @@ export default function Pagination({
         </div>
       )}
 
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex justify-between items-center mt-7 px-10">
         <button
           onClick={handlePrev}
           disabled={currentPage === 1}
-          class={`p-4 min-w-[150px] text-xl h-[70px] relative w-fit z-0 transition-all duration-500 flex justify-between items-center rounded-full m-2 ${mode == "dark" ? "[&>svg]:stroke-white text-[#A8DADC]" : "[&>svg]:stroke-black text-[#607D8B	]"}`}
+          class={`p-4 min-w-[150px] text-xl h-[70px] relative w-fit z-0 transition-all duration-500 flex justify-between items-center rounded-full ${mode == "dark" ? "[&>svg]:stroke-[#A8DADC] text-[#A8DADC] text-[#A8DADC]" : "[&>svg]:stroke-black text-[#37474F]"}`}
         >
-          <div className="absolute top-0 left-0 w-full h-full shadow-xl bg-slate-800 skew-x-6"></div>
+          <div className={`absolute top-0 left-0 w-full h-full shadow-xl ${mode == "dark" ? "bg-[#324A5F]" : "bg-[#B3E5FC]"} skew-x-6`}></div>
           <FiArrowLeft className="relative inline w-[30px] h-[30px] mr-3" />
           <span className="relative">Preview</span>
         </button>
@@ -69,9 +69,9 @@ export default function Pagination({
         <button
           onClick={handleNext}
           disabled={currentPage === totalPages}
-          class={`p-4 min-w-[150px] text-xl h-[70px] relative w-fit z-0 transition-all duration-500 flex justify-between items-center rounded-full m-2 ${mode == "dark" ? "[&>svg]:stroke-white text-[#A8DADC]" : "[&>svg]:stroke-black text-[#607D8B	]"}`}
+          class={`p-4 min-w-[150px] text-xl h-[70px] relative w-fit z-0 transition-all duration-500 flex justify-between items-center rounded-full m-2 ${mode == "dark" ? "[&>svg]:stroke-[#A8DADC] text-[#A8DADC] text-[#A8DADC]" : "[&>svg]:stroke-black text-[#37474F]"}`}
         >
-          <div className="absolute top-0 left-0 w-full h-full shadow-xl bg-slate-800 -skew-x-6"></div>
+          <div className={`absolute top-0 left-0 w-full h-full shadow-xl ${mode == "dark" ? "bg-[#324A5F]" : "bg-[#B3E5FC]"} -skew-x-6`}></div>
           <span className="relative">Next</span>
           <FiArrowRight className="relative inline w-[30px] h-[30px] ml-3" />
         </button>
