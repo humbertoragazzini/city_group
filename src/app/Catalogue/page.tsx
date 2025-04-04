@@ -163,7 +163,7 @@ export default function Catalogue() {
           className="w-full max-w-[1450px] mx-auto flex flex-col justify-start items-center overflow-hidden relative"
         >
           <div className="grid w-full grid-cols-1 p-4 lg:p-8">
-            <div className={`rounded-xl shadow-xl ${mode == "dark" ? "bg-[#F0F8FF] border-1 border-slate-800" : "bg-white border-1 border-slate-300"} p-9`} >
+            <div className={`rounded-xl shadow-xl ${mode == "dark" ? "bg-[#1B263B] border-1 border-slate-800" : "bg-[#F0F8FF] border-1 border-slate-300"} p-9`} >
               {typeMode !== "card" && (
                 <button className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300">
                   <div

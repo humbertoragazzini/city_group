@@ -57,19 +57,23 @@ export default function Pagination({
         <button
           onClick={handlePrev}
           disabled={currentPage === 1}
-          class={`text-xl h-[70px] w-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full m-2 ${mode == "dark" ? "[&>svg]:stroke-white" : "[&>svg]:stroke-black"}`}
+          class={`p-4 min-w-[150px] text-xl h-[70px] relative w-fit z-0 transition-all duration-500 flex justify-between items-center rounded-full m-2 ${mode == "dark" ? "[&>svg]:stroke-white text-[#A8DADC]" : "[&>svg]:stroke-black text-[#607D8B	]"}`}
         >
-          <FiArrowLeft className="inline w-[40px] h-[40px]" />
+          <div className="absolute top-0 left-0 w-full h-full shadow-xl bg-slate-800 skew-x-6"></div>
+          <FiArrowLeft className="relative inline w-[30px] h-[30px] mr-3" />
+          <span className="relative">Preview</span>
         </button>
-        <span className={`text-xl font-semibold ${mode == "dark" ? "text-white" : "text-black"}`}>
+        <span className={`text-xl ${mode == "dark" ? "text-white" : "text-black"}`}>
           Page {currentPage} of {totalPages}
         </span>
         <button
           onClick={handleNext}
           disabled={currentPage === totalPages}
-          class={`text-xl h-[70px] w-[70px] z-0 transition-all duration-500 flex justify-center items-center rounded-full m-2 ${mode == "dark" ? "[&>svg]:stroke-white" : "[&>svg]:stroke-black"}`}
+          class={`p-4 min-w-[150px] text-xl h-[70px] relative w-fit z-0 transition-all duration-500 flex justify-between items-center rounded-full m-2 ${mode == "dark" ? "[&>svg]:stroke-white text-[#A8DADC]" : "[&>svg]:stroke-black text-[#607D8B	]"}`}
         >
-          <FiArrowRight className="inline w-[40px] h-[40px]" />
+          <div className="absolute top-0 left-0 w-full h-full shadow-xl bg-slate-800 -skew-x-6"></div>
+          <span className="relative">Next</span>
+          <FiArrowRight className="relative inline w-[30px] h-[30px] ml-3" />
         </button>
       </div>
     </div>
