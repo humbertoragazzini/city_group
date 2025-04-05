@@ -165,7 +165,7 @@ export default function Catalogue() {
           <div className="grid w-full grid-cols-1 p-4 lg:p-8">
             <div className={`rounded-xl shadow-xl ${mode == "dark" ? "bg-[#1B263B] border-1 border-slate-800" : "bg-[#F0F8FF] border-1 border-slate-300"} p-9`} >
               {typeMode !== "card" && (
-                <button className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300">
+                <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
                   <div
                     className={`col-span-3 md:col-span-2 p-2 border-r-2 ${mode == "dark"
                       ? "text-white border-[rgba(255,255,255,0.1)]"
@@ -206,7 +206,7 @@ export default function Catalogue() {
                       <p className="font-bold w-full text-center">Stock</p>
                     </div>
                   </div>
-                </button>
+                </div>
               )}
               <Pagination
                 items={filtered}
