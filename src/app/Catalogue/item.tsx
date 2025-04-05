@@ -18,13 +18,13 @@ export function Item({ product, index, mode }: any) {
 
   useLayoutEffect(() => {
     console.log("pass")
-    gsap.fromTo(itemRef.current, { opacity: 0 }, { opacity: 1, delay: index })
+    gsap.fromTo(itemRef.current, { opacity: 0 }, { opacity: 1, delay: index / 5 })
   }, []);
 
   return (
     <div
       ref={itemRef}
-      style={{ opacity: 1 }}
+      style={{ opacity: 0 }}
       className={`relative col-span-1 transition-all duration-500`}
     >
       <button
