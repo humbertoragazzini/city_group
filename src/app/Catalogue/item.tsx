@@ -63,10 +63,10 @@ export function Item({ product, index, mode }: any) {
         <div className="col-span-1">
           <motion.div
             animate={{ opacity: !enable ? "0" : "1" }}
-            className="z-0 top-0 left-0 grid grid-cols-10 w-full"
+            className={`z-0 top-0 left-0 grid grid-cols-10 w-full ${mode == "dark" ? "text-[#D6EFFF]" : "text-[#37474F]"}`}
           >
             <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
-              <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
+              <div className={`w-full border-b-2 ${mode == "dark" ? "text-[#D6EFFF] border-[rgba(255,255,255,0.5)]" : "text-[#37474F] border-[#37474F]"} mb-4`}>
                 <h1 className="text-2xl pb-2">Camara de seguridad 1080P/4k</h1>
               </div>
               <div className="w-fit mb-3">

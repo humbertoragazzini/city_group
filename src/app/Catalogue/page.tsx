@@ -70,7 +70,7 @@ export default function Catalogue() {
           <motion.button animate={{
             x: filterMenu ? -255 : 0,
             opacity: filterMenu ? 0 : 1
-          }} className="w-[55px] h-[55px] ml-4 [&>svg]:fill-white rounded-full flex justify-center items-center p-2 m-0 fixed top-3 z-[50]" onClick={() => { setFilterMenu(!filterMenu) }}>
+          }} className={`w-[55px] h-[55px] ml-4 rounded-full flex justify-center items-center p-3 m-0 fixed top-4 z-[50] backdrop-blur-lg shadow-lg ${mode == "dark" ? "bg-white [&>svg]:fill-black" : "bg-white [&>svg]:fill-black"}`} onClick={() => { setFilterMenu(!filterMenu) }}>
             <ImFilter className="w-full h-full z-[60]" />
           </motion.button>
           <motion.div
@@ -78,7 +78,7 @@ export default function Catalogue() {
               x: filterMenu ? 0 : "-100%",
               opacity: filterMenu ? 1 : 0
             }}
-            className={`absolute w-fit h-screen flex justify-end top-[-50px] backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"
+            className={`fixed w-fit h-screen flex justify-end top-0 backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"
               } p-9 rounded-br-2xl rounded-tr-2xl shadow-xl z-[40]`}>
             <div className="w-full flex flex-col justify-start items-start p-8">
               <button onClick={() => { setFilterMenu(!filterMenu) }} className="w-[55px] h-[55px] rounded-full absolute right-0 top-0 m-4 p-3"><LuPanelLeftClose className="w-full h-full"></LuPanelLeftClose></button>
