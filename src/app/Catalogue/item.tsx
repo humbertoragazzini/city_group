@@ -17,7 +17,8 @@ export function Item({ product, index, mode }: any) {
   const itemRef = useRef();
 
   useLayoutEffect(() => {
-    // gsap.fromTo(itemRef.current, { opacity: 0 }, { opacity: 1, delay: index / 10 })
+    console.log("pass")
+    gsap.fromTo(itemRef.current, { opacity: 0 }, { opacity: 1, delay: index / 10 })
   }, []);
 
   return (
@@ -27,6 +28,7 @@ export function Item({ product, index, mode }: any) {
       className={`relative col-span-1 transition-all duration-500`}
     >
       <button
+
         onClick={(e) => setEnable(!enable)}
         className={`relative z-10 grid grid-cols-12 full p-2 cursor-pointer shadow-lg w-full ${mode == "dark" ? "bg-[#0D1B2A] text-[#D6EFFF]" : "bg-[#E0F7FA] text-[#37474F]"} transition-all duration-300`}
       >
