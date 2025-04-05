@@ -17,16 +17,18 @@ export function Item({ product, index, mode }: any) {
   const itemRef = useRef();
 
   useLayoutEffect(() => {
-    // gsap.fromTo(itemRef.current, { opacity: 0 }, { opacity: 1, delay: index / 10 })
+    console.log("pass")
+    gsap.fromTo(itemRef.current, { opacity: 0 }, { opacity: 1, delay: index / 5 })
   }, []);
 
   return (
     <div
       ref={itemRef}
-      style={{ opacity: 1 }}
+      style={{ opacity: 0 }}
       className={`relative col-span-1 transition-all duration-500`}
     >
       <button
+
         onClick={(e) => setEnable(!enable)}
         className={`relative z-10 grid grid-cols-12 full p-2 cursor-pointer shadow-lg w-full ${mode == "dark" ? "bg-[#0D1B2A] text-[#D6EFFF]" : "bg-[#E0F7FA] text-[#37474F]"} transition-all duration-300`}
       >
@@ -47,7 +49,7 @@ export function Item({ product, index, mode }: any) {
         </div>
         <div className="col-span-1 hidden lg:block md:grid p-2">
           <div className="flex justify-center items-center h-full">
-            {product.available ? <div className="w-9 h-9 bg-green-700 flex justify-center items-center rounded-full"><FiCheck className="w-[28px] stroke-black"></FiCheck></div> : ""}
+            <div className={`${product.avaible ? "" : "opacity-0"} w-9 h-9 bg-green-400 flex justify-center items-center rounded-full`}><FiCheck className="w-[28px] stroke-black"></FiCheck></div>
           </div>
         </div>
       </button>
@@ -61,10 +63,10 @@ export function Item({ product, index, mode }: any) {
         <div className="col-span-1">
           <motion.div
             animate={{ opacity: !enable ? "0" : "1" }}
-            className="z-0 top-0 left-0 grid grid-cols-10 w-full"
+            className={`z-0 top-0 left-0 grid grid-cols-10 w-full ${mode == "dark" ? "text-[#D6EFFF]" : "text-[#37474F]"}`}
           >
             <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
-              <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
+              <div className={`w-full border-b-2 ${mode == "dark" ? "text-[#D6EFFF] border-[rgba(255,255,255,0.5)]" : "text-[#37474F] border-[#37474F]"} mb-4`}>
                 <h1 className="text-2xl pb-2">Camara de seguridad 1080P/4k</h1>
               </div>
               <div className="w-fit mb-3">

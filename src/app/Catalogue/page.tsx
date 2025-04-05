@@ -70,7 +70,7 @@ export default function Catalogue() {
           <motion.button animate={{
             x: filterMenu ? -255 : 0,
             opacity: filterMenu ? 0 : 1
-          }} className="w-[55px] h-[55px] ml-4 [&>svg]:fill-white rounded-full flex justify-center items-center p-2 m-0 fixed top-3 z-[50]" onClick={() => { setFilterMenu(!filterMenu) }}>
+          }} className={`w-[55px] h-[55px] ml-4 rounded-full flex justify-center items-center p-3 m-0 fixed top-4 z-[50] backdrop-blur-lg shadow-lg ${mode == "dark" ? "bg-white [&>svg]:fill-black" : "bg-white [&>svg]:fill-black"}`} onClick={() => { setFilterMenu(!filterMenu) }}>
             <ImFilter className="w-full h-full z-[60]" />
           </motion.button>
           <motion.div
@@ -78,7 +78,7 @@ export default function Catalogue() {
               x: filterMenu ? 0 : "-100%",
               opacity: filterMenu ? 1 : 0
             }}
-            className={`absolute w-fit h-screen flex justify-end top-[-50px] backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"
+            className={`fixed w-fit h-screen flex justify-end top-0 backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.25)] text-black"
               } p-9 rounded-br-2xl rounded-tr-2xl shadow-xl z-[40]`}>
             <div className="w-full flex flex-col justify-start items-start p-8">
               <button onClick={() => { setFilterMenu(!filterMenu) }} className="w-[55px] h-[55px] rounded-full absolute right-0 top-0 m-4 p-3"><LuPanelLeftClose className="w-full h-full"></LuPanelLeftClose></button>
@@ -165,7 +165,7 @@ export default function Catalogue() {
           <div className="grid w-full grid-cols-1 p-4 lg:p-8">
             <div className={`rounded-xl shadow-xl ${mode == "dark" ? "bg-[#1B263B] border-1 border-slate-800" : "bg-[#F0F8FF] border-1 border-slate-300"} p-9`} >
               {typeMode !== "card" && (
-                <button className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300">
+                <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
                   <div
                     className={`col-span-3 md:col-span-2 p-2 border-r-2 ${mode == "dark"
                       ? "text-white border-[rgba(255,255,255,0.1)]"
@@ -206,7 +206,7 @@ export default function Catalogue() {
                       <p className="font-bold w-full text-center">Stock</p>
                     </div>
                   </div>
-                </button>
+                </div>
               )}
               <Pagination
                 items={filtered}

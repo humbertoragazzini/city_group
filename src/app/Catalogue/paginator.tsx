@@ -38,10 +38,17 @@ export default function Pagination({
 
   return (
     <div>
+      {
+        currentItems.length == 0 && <div className="w-full flex justify-center items-center p-32">
+          <h1 className="text-2xl">
+            No result with that filter
+          </h1>
+        </div>
+      }
       {type == "listItem" && (
         <div className="grid gap-2">
           {currentItems.map((product, index) => (
-            <Item key={index} index={index} product={product} mode={mode}></Item>
+            <Item key={"item-" + index + product.id} index={index} product={product} mode={mode}></Item>
           ))}
         </div>
       )}
