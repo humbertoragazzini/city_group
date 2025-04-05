@@ -41,7 +41,7 @@ export default function Pagination({
       {type == "listItem" && (
         <div className="grid gap-2">
           {currentItems.map((product, index) => (
-            <Item key={index} index={index} product={product} mode={mode}></Item>
+            <Item key={"item-" + index + product.id} index={index} product={product} mode={mode}></Item>
           ))}
         </div>
       )}

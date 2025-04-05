@@ -18,7 +18,7 @@ export function Item({ product, index, mode }: any) {
 
   useLayoutEffect(() => {
     console.log("pass")
-    gsap.fromTo(itemRef.current, { opacity: 0 }, { opacity: 1, delay: index / 10 })
+    gsap.fromTo(itemRef.current, { opacity: 0 }, { opacity: 1, delay: index })
   }, []);
 
   return (
