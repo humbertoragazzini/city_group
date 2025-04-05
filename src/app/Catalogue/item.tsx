@@ -47,7 +47,7 @@ export function Item({ product, index, mode }: any) {
         </div>
         <div className="col-span-1 hidden lg:block md:grid p-2">
           <div className="flex justify-center items-center h-full">
-            {product.available ? <div className="w-9 h-9 bg-green-400 flex justify-center items-center rounded-full"><FiCheck className="w-[28px] stroke-black"></FiCheck></div> : ""}
+            <div className={`${product.avaible ? "" : "opacity-0"} w-9 h-9 bg-green-400 flex justify-center items-center rounded-full`}><FiCheck className="w-[28px] stroke-black"></FiCheck></div>
           </div>
         </div>
       </button>
