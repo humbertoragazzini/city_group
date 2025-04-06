@@ -4,7 +4,7 @@ import { useAppContext } from "@/context/AppContext";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import React from "react";
 import CardCarousel from "@/components/molecules/Carousels/CardCarousel";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { RiCreativeCommonsZeroLine } from "react-icons/ri";
 import gsap from "gsap";
 import { useFilteredProducts } from "./useFilteredProducts";
@@ -79,27 +79,51 @@ export function Card({ product, index, mode }: any) {
           </div>
         </button>
       </div>
-      {
-        show && (
-          <Modal product={product} setShow={setShow}
-            show={show} mode={mode}></Modal>
-        )
-      }
+      <AnimatePresence>
+        {
+          show && (
+            <Modal product={product} setShow={setShow}
+              show={show} mode={mode}></Modal>
+          )
+
+        }
+      </AnimatePresence>
     </div>
   );
 }
 
 
 function Modal({ product, setShow, show, mode }: any) {
-  return (
 
+
+
+  return (
     <motion.div
+
+      initial={{
+        opacity: 0,
+        display: "hidden"
+      }}
       animate={{
-        y: ["-100vh", 0],
+        opacity: [0, 1],
         display: ["hidden", "flex"]
       }}
+      exit={{
+        opacity: [1, 0],
+        display: ["flex", "hidden"]
+      }}
       className={`fixed top-0 left-0 w-screen h-screen backdrop-blur-lg z-[999] flex justify-center items-center ${mode == "dark" ? "bg-gray-900" : "text-black"}`} style={{ bottom: "100vh" }}>
-      <div className="w-[75%] h-fit p-12 bg-white shadow-lg rounded-2xl">
+      <motion.div
+        initial={{
+          y: 0,
+        }}
+        animate={{
+          y: ["-100vh", 0],
+        }}
+        exit={{
+          y: [0, "-100vh"],
+          display: ["flex", "hidden"]
+        }} className="w-[75%] h-fit p-12 bg-white shadow-lg rounded-2xl">
         <button onClick={(e) => { setShow(!show) }} className="p-4 bg-red">
           Close
         </button>
@@ -163,7 +187,7 @@ function Modal({ product, setShow, show, mode }: any) {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   )
 }
