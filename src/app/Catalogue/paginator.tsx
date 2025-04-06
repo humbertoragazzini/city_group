@@ -9,6 +9,8 @@ import {
   FiArrowRight,
   FiArrowUpLeft,
   FiArrowUpRight,
+  FiChevronLeft,
+  FiChevronRight,
 } from "react-icons/fi";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 
@@ -67,7 +69,7 @@ export default function Pagination({
           class={`p-4 min-w-[150px] text-xl h-[70px] relative w-fit z-0 transition-all duration-500 flex justify-between items-center rounded-full ${mode == "dark" ? "[&>svg]:stroke-[#A8DADC] text-[#A8DADC] text-[#A8DADC]" : "[&>svg]:stroke-black text-[#37474F]"}`}
         >
           <div className={`absolute top-0 left-0 w-full h-full shadow-xl ${mode == "dark" ? "bg-[#324A5F]" : "bg-[#B3E5FC]"} skew-x-6`}></div>
-          <FiArrowLeft className="relative inline w-[30px] h-[30px] mr-3" />
+          <FiChevronLeft className="relative inline w-[30px] h-[30px] mr-3" />
           <span className="relative">Preview</span>
         </button>
         <span className={`text-xl ${mode == "dark" ? "text-white" : "text-black"}`}>
@@ -80,7 +82,7 @@ export default function Pagination({
         >
           <div className={`absolute top-0 left-0 w-full h-full shadow-xl ${mode == "dark" ? "bg-[#324A5F]" : "bg-[#B3E5FC]"} -skew-x-6`}></div>
           <span className="relative">Next</span>
-          <FiArrowRight className="relative inline w-[30px] h-[30px] ml-3" />
+          <FiChevronRight className="relative inline w-[30px] h-[30px] ml-3" />
         </button>
       </div>
     </div>

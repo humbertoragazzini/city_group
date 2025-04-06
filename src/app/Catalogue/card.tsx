@@ -112,6 +112,7 @@ function Modal({ product, setShow, show, mode }: any) {
         opacity: [1, 0],
         display: ["flex", "hidden"]
       }}
+      transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 w-screen h-screen backdrop-blur-lg z-[999] flex justify-center items-center ${mode == "dark" ? "bg-gray-900" : "text-black"}`} style={{ bottom: "100vh" }}>
       <motion.div
         initial={{
@@ -123,9 +124,15 @@ function Modal({ product, setShow, show, mode }: any) {
         exit={{
           y: [0, "-100vh"],
           display: ["flex", "hidden"]
-        }} className="w-[75%] h-fit p-12 bg-white shadow-lg rounded-2xl">
-        <button onClick={(e) => { setShow(!show) }} className="p-4 bg-red">
-          Close
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 20
+        }}
+        className="w-[75%] h-fit p-12 bg-white shadow-lg rounded-2xl relative">
+        <button onClick={(e) => { setShow(!show) }} className="p-4 w-[55px] h-[55px] rounded-full bg-red absolute right-0 top-0 m-3 text-white ">
+          X
         </button>
         <div className="grid grid-cols-10">
           <div className="col-span-10 px-3">
