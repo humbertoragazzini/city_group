@@ -82,66 +82,74 @@ export function Card({ product, index, mode }: any) {
       {
         show && (
 
-          <motion.div className="fixed top-0 left-0 w-screen h-screen backdrop-blur-lg">
-            <button onClick={(e) => { setShow(!show) }} className="p-4 bg-red">
-              Close
-            </button>
-            <div className="col-span-10 px-3">
-              <div className="w-fit flex justify-start">
-                <div className="font-bold text-xl">Software: </div>
-                <div className="text-xl pl-3">{product.software}</div>
-              </div>
-            </div>
-            <div className="col-span-10 px-3">
-              <div className="w-fit flex justify-start">
-                <div className="font-bold text-xl">Specs: </div>
-                <div className="text-xl pl-3">
-                  1080P / WIFI 7 / UP TO 128GB / STORAGE
+          <motion.div
+            animate={{
+              y: ["-100vh", 0],
+            }}
+            className="fixed top-0 left-0 w-screen h-screen backdrop-blur-lg z-[999] flex justify-center items-center" style={{ bottom: "100vh" }}>
+            <div className="w-[75%] h-fit p-12 bg-white shadow-lg rounded-2xl">
+              <button onClick={(e) => { setShow(!show) }} className="p-4 bg-red">
+                Close
+              </button>
+              <div className="grid grid-cols-10">
+                <div className="col-span-10 px-3">
+                  <div className="w-fit flex justify-start">
+                    <div className="font-bold text-xl">Software: </div>
+                    <div className="text-xl pl-3">{product.software}</div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
-              <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
-                <h1 className="text-2xl pb-2">{product.name}</h1>
-              </div>
-              <div className="w-fit mb-3">
-                <div className="font-bold text-xl">Brand: </div>
-                <div className="text-xl">{product.brand}</div>
-              </div>
-              <div className="w-fit mb-3">
-                <div className="font-bold text-xl">Software: </div>
-                <div className="text-xl">{product.software}</div>
-              </div>
-              <div className="w-fit mb-3">
-                <div className="font-bold text-xl">Category: </div>
-                <div className="text-xl">{product.category}</div>
-              </div>
-              <div className="w-fit mb-3">
-                <div className="font-bold text-xl">Sub-category: </div>
-                <div className="text-xl">{product.subcategory}</div>
-              </div>
-              <div className="w-fit mb-3">
-                <div className="font-bold text-xl">Tech specs: </div>
-                <ul className="list-disc pl-6">
-                  <li>
-                    <div className="text-lg">1080P</div>
-                  </li>
-                  <li>
-                    <div className="text-lg">WIFI 7</div>
-                  </li>
-                  <li>
-                    <div className="text-lg">UP TO 128GB STORAGE</div>
-                  </li>
-                </ul>
-              </div>
-              <div className="w-fit mb-3">
-                <div className="font-bold text-xl">Description: </div>
-                <div className="text-lg">Lorem Ipsum is simply...</div>
-              </div>
-            </div>
-            <div className="col-span-10 lg:col-span-5 lg:p-8">
-              <div className="w-full">
-                <CardCarousel></CardCarousel>
+                <div className="col-span-10 px-3">
+                  <div className="w-fit flex justify-start">
+                    <div className="font-bold text-xl">Specs: </div>
+                    <div className="text-xl pl-3">
+                      1080P / WIFI 7 / UP TO 128GB / STORAGE
+                    </div>
+                  </div>
+                </div>
+                <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
+                  <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
+                    <h1 className="text-2xl pb-2">{product.name}</h1>
+                  </div>
+                  <div className="w-fit mb-3">
+                    <div className="font-bold text-xl">Brand: </div>
+                    <div className="text-xl">{product.brand}</div>
+                  </div>
+                  <div className="w-fit mb-3">
+                    <div className="font-bold text-xl">Software: </div>
+                    <div className="text-xl">{product.software}</div>
+                  </div>
+                  <div className="w-fit mb-3">
+                    <div className="font-bold text-xl">Category: </div>
+                    <div className="text-xl">{product.category}</div>
+                  </div>
+                  <div className="w-fit mb-3">
+                    <div className="font-bold text-xl">Sub-category: </div>
+                    <div className="text-xl">{product.subcategory}</div>
+                  </div>
+                  <div className="w-fit mb-3">
+                    <div className="font-bold text-xl">Tech specs: </div>
+                    <ul className="list-disc pl-6">
+                      <li>
+                        <div className="text-lg">1080P</div>
+                      </li>
+                      <li>
+                        <div className="text-lg">WIFI 7</div>
+                      </li>
+                      <li>
+                        <div className="text-lg">UP TO 128GB STORAGE</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="w-fit mb-3">
+                    <div className="font-bold text-xl">Description: </div>
+                    <div className="text-lg">Lorem Ipsum is simply...</div>
+                  </div>
+                </div>
+                <div className="col-span-10 lg:col-span-5 lg:p-8">
+                  <div className="w-full">
+                    <CardCarousel></CardCarousel>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
