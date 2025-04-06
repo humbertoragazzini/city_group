@@ -58,22 +58,22 @@ export function Card({ product, index, mode }: any) {
         <button className="col-span-1 h-full">
           <motion.div
             animate={{}}
-            className="z-0 top-0 left-0 grid grid-cols-10 w-full lg:p-4"
+            className="z-0 top-0 left-0 grid grid-cols-10 w-full lg:p-4  border-b-2 border-[rgba(120,120,120,0.5)] "
           >
             <div className="col-span-10 p-3">
               <div className="w-full flex justify-center items-center">
                 <img src="https://placehold.co/300x300"></img>
               </div>
             </div>
-            <div className="col-span-10 p-3">
-              <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)]">
-                <h1 className="text-2xl pb-2 text-left">{product.name}</h1>
+            <div className="col-span-10 px-3">
+              <div className="w-full pb-1">
+                <h1 className="text-xl text-left truncate">{product.name}</h1>
               </div>
             </div>
             <div className="col-span-10 px-3">
               <div className="w-fit flex justify-start">
-                <div className="font-bold text-xl text-left">Brand: </div>
-                <div className="text-xl pl-3">{product.brand}</div>
+                <div className="font-bold text-base text-left">Brand: </div>
+                <div className="text-base pl-3">{product.brand}</div>
               </div>
             </div>
             {/* <div className="col-span-10 px-3">
