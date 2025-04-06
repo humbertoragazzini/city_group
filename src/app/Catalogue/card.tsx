@@ -13,7 +13,7 @@ import { FiCheck } from "react-icons/fi";
 
 export function Card({ product, index, mode }: any) {
   const [enable, setEnable] = useState(false);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const itemRef = useRef();
 
   useLayoutEffect(() => {
@@ -51,12 +51,12 @@ export function Card({ product, index, mode }: any) {
           </div>
         </div>
       </button> */}
-      <motion.div
+      <div
         animate={{}}
         className="z-0 grid grid-cols-1 w-full overflow-hidden"
       >
-        <button className="col-span-1 h-full">
-          <motion.div
+        <button className="col-span-1 h-full" onClick={(e) => { setShow(!show) }}>
+          <div
             animate={{}}
             className="z-0 top-0 left-0 grid grid-cols-10 w-full lg:p-4  border-b-2 border-[rgba(120,120,120,0.5)] "
           >
@@ -76,21 +76,31 @@ export function Card({ product, index, mode }: any) {
                 <div className="text-base pl-3">{product.brand}</div>
               </div>
             </div>
-            {/* <div className="col-span-10 px-3">
+          </div>
+        </button>
+      </div>
+      {
+        show && (
+
+          <motion.div className="fixed top-0 left-0 w-screen h-screen backdrop-blur-lg">
+            <button onClick={(e) => { setShow(!show) }} className="p-4 bg-red">
+              Close
+            </button>
+            <div className="col-span-10 px-3">
               <div className="w-fit flex justify-start">
                 <div className="font-bold text-xl">Software: </div>
                 <div className="text-xl pl-3">{product.software}</div>
               </div>
-            </div> */}
-            {/* <div className="col-span-10 px-3">
+            </div>
+            <div className="col-span-10 px-3">
               <div className="w-fit flex justify-start">
                 <div className="font-bold text-xl">Specs: </div>
                 <div className="text-xl pl-3">
                   1080P / WIFI 7 / UP TO 128GB / STORAGE
                 </div>
               </div>
-            </div> */}
-            {/* <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
+            </div>
+            <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
               <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
                 <h1 className="text-2xl pb-2">{product.name}</h1>
               </div>
@@ -128,15 +138,15 @@ export function Card({ product, index, mode }: any) {
                 <div className="font-bold text-xl">Description: </div>
                 <div className="text-lg">Lorem Ipsum is simply...</div>
               </div>
-            </div> */}
-            {/* <div className="col-span-10 lg:col-span-5 lg:p-8">
+            </div>
+            <div className="col-span-10 lg:col-span-5 lg:p-8">
               <div className="w-full">
                 <CardCarousel></CardCarousel>
               </div>
-            </div> */}
+            </div>
           </motion.div>
-        </button>
-      </motion.div>
+        )
+      }
     </div>
   );
 }
