@@ -64,7 +64,7 @@ export function Card({ product, index, mode }: any) {
           >
             <div className="col-span-10 p-3">
               <div className="w-full flex justify-center items-center">
-                <img src="https://placehold.co/300x300"></img>
+                <img src="https://hanwhavision.eu/wp-content/uploads/2023/09/Product-Images_ANE-L6012R_20220502111658_Common_1-1.png"></img>
               </div>
             </div>
             <div className="col-span-10 px-3">
