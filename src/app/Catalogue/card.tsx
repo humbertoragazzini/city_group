@@ -10,6 +10,8 @@ import gsap from "gsap";
 import { useFilteredProducts } from "./useFilteredProducts";
 import Pagination from "./paginator";
 import { FiCheck, FiX } from "react-icons/fi";
+import ContainerNeum from "./ContainerNeum";
+import ButtonNeum from "./Button";
 
 export function Card({ product, index, mode }: any) {
   const [enable, setEnable] = useState(false);
@@ -53,12 +55,12 @@ export function Card({ product, index, mode }: any) {
       </button> */}
       <div
         animate={{}}
-        className="z-0 grid grid-cols-1 w-full overflow-hidden"
+        className="z-0 grid grid-cols-1 w-full"
       >
-        <button className="col-span-1 h-full" onClick={(e) => { setShow(!show) }}>
+        <ButtonNeum className="col-span-1 h-full" onClick={(e) => { setShow(!show) }}>
           <div
             animate={{}}
-            className="z-0 top-0 left-0 grid grid-cols-10 w-full lg:p-4  border-b-2 border-[rgba(120,120,120,0.5)] "
+            className="z-0 top-0 left-0 grid grid-cols-10 w-full lg:p-4"
           >
             <div className="col-span-10 p-3">
               <div className="w-full flex justify-center items-center">
@@ -77,7 +79,7 @@ export function Card({ product, index, mode }: any) {
               </div>
             </div>
           </div>
-        </button>
+        </ButtonNeum>
       </div>
       <AnimatePresence>
         {

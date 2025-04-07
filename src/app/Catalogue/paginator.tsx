@@ -13,6 +13,8 @@ import {
   FiChevronRight,
 } from "react-icons/fi";
 import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
+import ButtonNeum from "./Button";
+import ContainerNeum from "./ContainerNeum";
 
 export default function Pagination({
   items = [],
@@ -55,35 +57,31 @@ export default function Pagination({
         </div>
       )}
       {type == "card" && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {currentItems.map((product, index) => (
             <Card key={index} index={index} product={product} mode={mode}></Card>
           ))}
         </div>
       )}
 
-      <div className="flex justify-between items-center mt-7 px-10">
-        <button
+      <div className="flex justify-between items-center mt-7">
+        <ButtonNeum
           onClick={handlePrev}
           disabled={currentPage === 1}
-          class={`p-4 min-w-[150px] text-xl h-[70px] relative w-fit z-0 transition-all duration-500 flex justify-between items-center rounded-full ${mode == "dark" ? "[&>svg]:stroke-[#A8DADC] text-[#A8DADC] text-[#A8DADC]" : "[&>svg]:stroke-black text-[#37474F]"}`}
         >
-          <div className={`absolute top-0 left-0 w-full h-full shadow-xl ${mode == "dark" ? "bg-[#324A5F]" : "bg-[#B3E5FC]"} skew-x-6`}></div>
-          <FiChevronLeft className="relative inline w-[30px] h-[30px] mr-3" />
-          <span className="relative">Preview</span>
-        </button>
-        <span className={`text-xl ${mode == "dark" ? "text-white" : "text-black"}`}>
-          Page {currentPage} of {totalPages}
-        </span>
-        <button
+          <FiChevronLeft className="relative inline w-[30px] h-[30px]" />
+        </ButtonNeum>
+        <ContainerNeum>
+          <span className={`text-lg ${mode == "dark" ? "text-white" : "text-black"}`}>
+            Page {currentPage} of {totalPages}
+          </span>
+        </ContainerNeum>
+        <ButtonNeum
           onClick={handleNext}
           disabled={currentPage === totalPages}
-          class={`p-4 min-w-[150px] text-xl h-[70px] relative w-fit z-0 transition-all duration-500 flex justify-between items-center rounded-full m-2 ${mode == "dark" ? "[&>svg]:stroke-[#A8DADC] text-[#A8DADC] text-[#A8DADC]" : "[&>svg]:stroke-black text-[#37474F]"}`}
         >
-          <div className={`absolute top-0 left-0 w-full h-full shadow-xl ${mode == "dark" ? "bg-[#324A5F]" : "bg-[#B3E5FC]"} -skew-x-6`}></div>
-          <span className="relative">Next</span>
-          <FiChevronRight className="relative inline w-[30px] h-[30px] ml-3" />
-        </button>
+          <FiChevronRight className="relative inline w-[30px] h-[30px]" />
+        </ButtonNeum>
       </div>
     </div>
   );

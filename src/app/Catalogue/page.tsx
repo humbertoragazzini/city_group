@@ -59,13 +59,6 @@ export default function Catalogue() {
   }, [context.state.isMenuOpen]);
 
   return (
-    // <div
-    //   className={`relative min-h-screen z-10 transition-all duration-1000 m-auto pt-[50px] bg-gradient-to-b ${mode == "dark"
-    //     ? "from-[rgba(0,0,0,0.2)] to-[rgba(0,0,0,1)] text-white"
-    //     : "bg-[rgba(255,255,255,1)]"
-    //     } w-full `}
-    // >
-    // </div >
 
     <MainContainer>
 
@@ -73,10 +66,10 @@ export default function Catalogue() {
         {/* Section with us and the description */}
         <motion.div
           ref={resultContainerRef}
-          className="w-full mx-auto flex flex-col justify-start items-center overflow-hidden relative"
+          className="mt-[90px] w-full px-11 mx-auto flex flex-col justify-start items-center overflow-hidden relative"
         >
           <div className="grid w-full grid-cols-12">
-            <div className="col-span-3 p-9 mt-[85px]">
+            <div className="col-span-3 p-9">
               <ContainerNeum>
                 <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl w-full transition-all duration-300 mb-4">
                   <div className={`col-span-12 mb-4 pb-3 pt-4`}>
@@ -160,9 +153,6 @@ export default function Catalogue() {
                     }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
                       <div className="w-[30px] h-[30px] bg-slate-500 rounded-full"></div>
                     </button>
-                  </div>
-                  <div className={`col-span-12 mb-3`}>
-                    <div className="mb-4"><p className="mb-2">Toggle dark mode</p> <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
                   </div>
                 </div>
               </ContainerNeum>
@@ -289,7 +279,8 @@ export default function Catalogue() {
               </div>
 
               {typeMode !== "card" && (
-                <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
+                <ContainerNeum className={"relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300 mb-4"}>
+
                   <div
                     className={`col-span-3 md:col-span-2 p-2 border-r-2 ${mode == "dark"
                       ? "text-white border-[rgba(255,255,255,0.1)]"
@@ -330,7 +321,8 @@ export default function Catalogue() {
                       <p className="font-bold w-full text-center">Stock</p>
                     </div>
                   </div>
-                </div>
+
+                </ContainerNeum>
               )}
               <Pagination
                 items={filtered}
