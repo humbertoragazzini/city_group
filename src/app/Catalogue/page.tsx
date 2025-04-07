@@ -71,12 +71,12 @@ export default function Catalogue() {
           className="w-full mx-auto flex flex-col justify-start items-center overflow-hidden relative"
         >
           <div className="grid w-full grid-cols-12">
-            <div className="col-span-3 pt-9">
+            <div className="col-span-3 p-9">
               <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
-                <div className={`col-span-12 border-b-2 border-slate-400 mb-4 pb-3 pt-4`}>
+                <div className={`col-span-12 mb-4 pb-3 pt-4`}>
                   <p className="text-2xl">Filters:</p>
                 </div>
-                <div className={`col-span-12`}>
+                <div className={`col-span-12 mb-3`}>
                   <div
                     className={`flex justify-start items-center font-semibold rounded-lg`}
                   >
@@ -90,7 +90,7 @@ export default function Catalogue() {
                     ></input>
                   </div>
                 </div>
-                <div className={`col-span-12`}>
+                <div className={`col-span-12 mb-3`}>
                   <div
                     className={`flex justify-start items-center font-semibold rounded-lg`}
                   >
@@ -104,7 +104,7 @@ export default function Catalogue() {
                     ></input>
                   </div>
                 </div>
-                <div className={`col-span-12`}>
+                <div className={`col-span-12 mb-3`}>
                   <div
                     className={`flex justify-start items-center font-semibold rounded-lg`}
                   >
@@ -121,7 +121,7 @@ export default function Catalogue() {
                     ></DropdownMenu>
                   </div>
                 </div>
-                <div className={`col-span-12`}>
+                <div className={`col-span-12 mb-3`}>
                   <div
                     className={`flex items-center font-semibold rounded-lg`}
                   >
@@ -140,10 +140,10 @@ export default function Catalogue() {
                 </div>
               </div>
               <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
-                <div className={`col-span-12 border-b-2 border-slate-400 mb-4 pb-3 pt-4`}>
+                <div className={`col-span-12 mb-4 pb-3 pt-4`}>
                   <p className="text-2xl">Settings:</p>
                 </div>
-                <div className={`col-span-12`}>
+                <div className={`col-span-12 mb-3`}>
                   <p className="mb-2">Toggle view</p>
                   <button onClick={(e) => {
                     if (typeMode == "card") {
@@ -155,7 +155,7 @@ export default function Catalogue() {
                     <div className="w-[30px] h-[30px] bg-slate-500 rounded-full"></div>
                   </button>
                 </div>
-                <div className={`col-span-12`}>
+                <div className={`col-span-12 mb-3`}>
                   <div className="mb-4"><p className="mb-2">Toggle dark mode</p> <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
                 </div>
               </div>

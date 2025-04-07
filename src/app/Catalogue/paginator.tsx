@@ -16,7 +16,7 @@ import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 
 export default function Pagination({
   items = [],
-  itemsPerPage = 10,
+  itemsPerPage = 8,
   renderItem,
   mode,
   type,
