@@ -9,7 +9,7 @@ import { RiCreativeCommonsZeroLine } from "react-icons/ri";
 import gsap from "gsap";
 import { useFilteredProducts } from "./useFilteredProducts";
 import Pagination from "./paginator";
-import { FiCheck } from "react-icons/fi";
+import { FiCheck, FiX } from "react-icons/fi";
 
 export function Card({ product, index, mode }: any) {
   const [enable, setEnable] = useState(false);
@@ -131,8 +131,8 @@ function Modal({ product, setShow, show, mode }: any) {
           damping: 20
         }}
         className="w-[75%] h-fit p-12 bg-white shadow-lg rounded-2xl relative">
-        <button onClick={(e) => { setShow(!show) }} className="p-4 w-[55px] h-[55px] rounded-full bg-red absolute right-0 top-0 m-3 text-white ">
-          X
+        <button onClick={(e) => { setShow(!show) }} className="p-3 w-[55px] h-[55px] flex justify-center items-center rounded-full bg-red absolute right-0 top-0 m-3 text-white ">
+          <FiX className="w-[35px] h-[35px]" />
         </button>
         <div className="grid grid-cols-10">
           <div className="col-span-10 px-3">
