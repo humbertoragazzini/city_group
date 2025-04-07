@@ -138,7 +138,9 @@ export default function Catalogue() {
                     </div>
                   </div>
                 </div>
-                <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
+              </ContainerNeum>
+              <ContainerNeum className={"mt-5"}>
+                < div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
                   <div className={`col-span-12 mb-4 pb-3 pt-4`}>
                     <p className="text-2xl">Settings:</p>
                   </div>
@@ -279,43 +281,30 @@ export default function Catalogue() {
               </div>
 
               {typeMode !== "card" && (
-                <ContainerNeum className={"relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300 mb-4"}>
-
+                <ContainerNeum className={"relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300 mb-5"}>
                   <div
-                    className={`col-span-3 md:col-span-2 p-2 border-r-2 ${mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.1)]"
-                      : "text-black border-[rgba(150,150,150,0.1)]"
-                      }`}
+                    className={`col-span-3 md:col-span-2 p-2`}
                   >
                     <div className="flex justify-center items-center">
                       <p className="font-bold w-full text-center">ID</p>
                     </div>
                   </div>
                   <div
-                    className={`col-span-3 md:col-span-6 p-2 border-r-2 ${mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.1)]"
-                      : "text-black border-[rgba(150,150,150,0.1)]"
-                      }`}
+                    className={`col-span-3 md:col-span-6 p-2`}
                   >
-                    <div className="flex justify-center items-center">
+                    <div className="flex justify-start items-center">
                       <p className="font-bold">Name</p>
                     </div>
                   </div>
                   <div
-                    className={`col-span-3 md:col-span-3 p-2 border-r-2 ${mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.1)]"
-                      : "text-black border-[rgba(150,150,150,0.1)]"
-                      }`}
+                    className={`col-span-3 md:col-span-3 p-2`}
                   >
                     <div className="flex justify-center items-center">
                       <p className="font-bold w-full text-center">Category</p>
                     </div>
                   </div>
                   <div
-                    className={`col-span-3 md:col-span-1 p-2 ${mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.1)]"
-                      : "text-black border-[rgba(150,150,150,0.1)]"
-                      }`}
+                    className={`col-span-3 md:col-span-1 p-2`}
                   >
                     <div className="flex justify-center items-center">
                       <p className="font-bold w-full text-center">Stock</p>
@@ -331,9 +320,9 @@ export default function Catalogue() {
               ></Pagination>
             </div>
           </div>
-        </motion.div>
+        </motion.div >
       </div >
-    </MainContainer>
+    </MainContainer >
   );
 }
 

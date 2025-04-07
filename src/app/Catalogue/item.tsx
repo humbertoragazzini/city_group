@@ -34,17 +34,17 @@ export function Item({ product, index, mode }: any) {
       >
         <div className="col-span-3 md:col-span-2 p-2">
           <div className="flex justify-center items-center h-full">
-            <p className="font-bold w-full text-center">{product.id}</p>
+            <p className="font-semibold w-full text-center">{product.id}</p>
           </div>
         </div>
         <div className="col-span-9 p-2 md:col-span-6 ">
           <div className="flex justify-center items-center h-full">
-            <p className="font-bold w-full text-left">{product.name}</p>
+            <p className="font-semibold w-full text-left">{product.name}</p>
           </div>
         </div>
         <div className="col-span-4 hidden p-2 md:block md:col-span-3 ">
           <div className="flex justify-center items-center h-full">
-            <p className="font-bold w-full text-center">{product.category}</p>
+            <p className="font-semibold w-full text-center">{product.category}</p>
           </div>
         </div>
         <div className="col-span-1 hidden lg:block md:grid p-2">
