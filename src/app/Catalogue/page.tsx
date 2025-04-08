@@ -279,7 +279,6 @@ export default function Catalogue() {
                   </div>
                 </motion.div>
               </div>
-
               {typeMode !== "card" && (
                 <ContainerNeum className={"relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300 mb-5"}>
                   <div
@@ -310,7 +309,6 @@ export default function Catalogue() {
                       <p className="font-bold w-full text-center">Stock</p>
                     </div>
                   </div>
-
                 </ContainerNeum>
               )}
               <Pagination
