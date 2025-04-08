@@ -15,6 +15,8 @@ import BeamContainer from "./input";
 import ToggleWrapper from "./toggler";
 import { ImFilter } from "react-icons/im";
 import { LuPanelLeftClose } from "react-icons/lu";
+import MainContainer from "./mainContainer";
+import ContainerNeum from "./ContainerNeum";
 
 
 export default function Catalogue() {
@@ -36,7 +38,7 @@ export default function Catalogue() {
   );
   const [sortedBy, setSortedBy] = useState(null);
   const [typeMode, setTypeMode] = useState("listItem");
-  const [mode, setMode] = useState("dark");
+  const [mode, setMode] = useState("light");
   const [filterMenu, setFilterMenu] = useState(true)
   const [filterObj, setFilterObj] = useState({
     id: -1,
@@ -57,108 +59,105 @@ export default function Catalogue() {
   }, [context.state.isMenuOpen]);
 
   return (
-    <div
-      className={`relative min-h-screen z-10 transition-all duration-1000 m-auto pt-[50px] bg-gradient-to-b ${mode == "dark"
-        ? "from-[rgba(0,0,0,0.2)] to-[rgba(0,0,0,1)] text-white"
-        : "bg-[rgba(255,255,255,1)]"
-        } w-full `}
-    >
+
+    <MainContainer>
 
       <div className="w-full">
         {/* Section with us and the description */}
         <motion.div
           ref={resultContainerRef}
-          className="w-full mx-auto flex flex-col justify-start items-center overflow-hidden relative"
+          className="mt-[90px] w-full px-11 mx-auto flex flex-col justify-start items-center overflow-hidden relative"
         >
           <div className="grid w-full grid-cols-12">
             <div className="col-span-3 p-9">
-              <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
-                <div className={`col-span-12 mb-4 pb-3 pt-4`}>
-                  <p className="text-2xl">Filters:</p>
-                </div>
-                <div className={`col-span-12 mb-3`}>
-                  <div
-                    className={`flex justify-start items-center font-semibold rounded-lg`}
-                  >
-                    <label className="mr-2">ID:</label>
-                    <input
-                      onKeyUp={(e) => {
-                        setIDtoSearch(e.currentTarget.value);
-                      }}
-                      className="bg-transparent flex justify-center items-center"
-                      placeholder="Search by ID"
-                    ></input>
+              <ContainerNeum>
+                <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl w-full transition-all duration-300 mb-4">
+                  <div className={`col-span-12 mb-4 pb-3 pt-4`}>
+                    <p className="text-2xl">Filters:</p>
+                  </div>
+                  <div className={`col-span-12 mb-3`}>
+                    <div
+                      className={`flex justify-start items-center font-semibold rounded-lg`}
+                    >
+                      <label className="mr-2">ID:</label>
+                      <input
+                        onKeyUp={(e) => {
+                          setIDtoSearch(e.currentTarget.value);
+                        }}
+                        className="bg-transparent flex justify-center items-center"
+                        placeholder="Search by ID"
+                      ></input>
+                    </div>
+                  </div>
+                  <div className={`col-span-12 mb-3`}>
+                    <div
+                      className={`flex justify-start items-center font-semibold rounded-lg`}
+                    >
+                      <label className="mr-2 text-nowrap">By name:</label>
+                      <input
+                        onKeyUp={(e) => {
+                          setWordtoSearch(e.currentTarget.value);
+                        }}
+                        className="bg-transparent flex justify-center items-center"
+                        placeholder="Search by word"
+                      ></input>
+                    </div>
+                  </div>
+                  <div className={`col-span-12 mb-3`}>
+                    <div
+                      className={`flex justify-start items-center font-semibold rounded-lg`}
+                    >
+                      <label className="mr-2">By category:</label>
+                      {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center" placeholder="Search by type"> */}
+                      <DropdownMenu
+                        category={category}
+                        setCategory={setCategory}
+                        selected={selected}
+                        setSelected={setSelected}
+                        types={products}
+                        products={products}
+                        type="category"
+                      ></DropdownMenu>
+                    </div>
+                  </div>
+                  <div className={`col-span-12 mb-3`}>
+                    <div
+                      className={`flex items-center font-semibold rounded-lg`}
+                    >
+                      <label className="mr-2">By subcategory:</label>
+                      {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center" placeholder="Search by type"> */}
+                      <DropdownMenu
+                        category={subCategory}
+                        setCategory={setSubCategory}
+                        selected={subSelected}
+                        filtered={filtered}
+                        setSelected={setSubSelected}
+                        types={products}
+                        products={products}
+                      ></DropdownMenu>
+                    </div>
                   </div>
                 </div>
-                <div className={`col-span-12 mb-3`}>
-                  <div
-                    className={`flex justify-start items-center font-semibold rounded-lg`}
-                  >
-                    <label className="mr-2 text-nowrap">By name:</label>
-                    <input
-                      onKeyUp={(e) => {
-                        setWordtoSearch(e.currentTarget.value);
-                      }}
-                      className="bg-transparent flex justify-center items-center"
-                      placeholder="Search by word"
-                    ></input>
+              </ContainerNeum>
+              <ContainerNeum className={"mt-5"}>
+                < div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
+                  <div className={`col-span-12 mb-4 pb-3 pt-4`}>
+                    <p className="text-2xl">Settings:</p>
+                  </div>
+                  <div className={`col-span-12 mb-3`}>
+                    <p className="mb-2">Toggle view</p>
+                    <button onClick={(e) => {
+                      if (typeMode == "card") {
+                        setTypeMode("listItem")
+                      } else {
+                        setTypeMode("card")
+                      }
+                    }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
+                      <div className="w-[30px] h-[30px] bg-slate-500 rounded-full"></div>
+                    </button>
                   </div>
                 </div>
-                <div className={`col-span-12 mb-3`}>
-                  <div
-                    className={`flex justify-start items-center font-semibold rounded-lg`}
-                  >
-                    <label className="mr-2">By category:</label>
-                    {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center" placeholder="Search by type"> */}
-                    <DropdownMenu
-                      category={category}
-                      setCategory={setCategory}
-                      selected={selected}
-                      setSelected={setSelected}
-                      types={products}
-                      products={products}
-                      type="category"
-                    ></DropdownMenu>
-                  </div>
-                </div>
-                <div className={`col-span-12 mb-3`}>
-                  <div
-                    className={`flex items-center font-semibold rounded-lg`}
-                  >
-                    <label className="mr-2">By subcategory:</label>
-                    {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center" placeholder="Search by type"> */}
-                    <DropdownMenu
-                      category={subCategory}
-                      setCategory={setSubCategory}
-                      selected={subSelected}
-                      filtered={filtered}
-                      setSelected={setSubSelected}
-                      types={products}
-                      products={products}
-                    ></DropdownMenu>
-                  </div>
-                </div>
-              </div>
-              <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
-                <div className={`col-span-12 mb-4 pb-3 pt-4`}>
-                  <p className="text-2xl">Settings:</p>
-                </div>
-                <div className={`col-span-12 mb-3`}>
-                  <p className="mb-2">Toggle view</p>
-                  <button onClick={(e) => {
-                    if (typeMode == "card") {
-                      setTypeMode("listItem")
-                    } else {
-                      setTypeMode("card")
-                    }
-                  }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
-                    <div className="w-[30px] h-[30px] bg-slate-500 rounded-full"></div>
-                  </button>
-                </div>
-                <div className={`col-span-12 mb-3`}>
-                  <div className="mb-4"><p className="mb-2">Toggle dark mode</p> <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
-                </div>
-              </div>
+              </ContainerNeum>
             </div>
             <div className={`col-span-9 ${mode == "dark" ? "" : ""} p-9`} >
 
@@ -280,50 +279,37 @@ export default function Catalogue() {
                   </div>
                 </motion.div>
               </div>
-
               {typeMode !== "card" && (
-                <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
+                <ContainerNeum className={"relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300 mb-5"}>
                   <div
-                    className={`col-span-3 md:col-span-2 p-2 border-r-2 ${mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.1)]"
-                      : "text-black border-[rgba(150,150,150,0.1)]"
-                      }`}
+                    className={`col-span-3 md:col-span-2 p-2`}
                   >
                     <div className="flex justify-center items-center">
                       <p className="font-bold w-full text-center">ID</p>
                     </div>
                   </div>
                   <div
-                    className={`col-span-3 md:col-span-6 p-2 border-r-2 ${mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.1)]"
-                      : "text-black border-[rgba(150,150,150,0.1)]"
-                      }`}
+                    className={`col-span-3 md:col-span-6 p-2`}
                   >
-                    <div className="flex justify-center items-center">
+                    <div className="flex justify-start items-center">
                       <p className="font-bold">Name</p>
                     </div>
                   </div>
                   <div
-                    className={`col-span-3 md:col-span-3 p-2 border-r-2 ${mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.1)]"
-                      : "text-black border-[rgba(150,150,150,0.1)]"
-                      }`}
+                    className={`col-span-3 md:col-span-3 p-2`}
                   >
                     <div className="flex justify-center items-center">
                       <p className="font-bold w-full text-center">Category</p>
                     </div>
                   </div>
                   <div
-                    className={`col-span-3 md:col-span-1 p-2 ${mode == "dark"
-                      ? "text-white border-[rgba(255,255,255,0.1)]"
-                      : "text-black border-[rgba(150,150,150,0.1)]"
-                      }`}
+                    className={`col-span-3 md:col-span-1 p-2`}
                   >
                     <div className="flex justify-center items-center">
                       <p className="font-bold w-full text-center">Stock</p>
                     </div>
                   </div>
-                </div>
+                </ContainerNeum>
               )}
               <Pagination
                 items={filtered}
@@ -332,9 +318,9 @@ export default function Catalogue() {
               ></Pagination>
             </div>
           </div>
-        </motion.div>
+        </motion.div >
       </div >
-    </div >
+    </MainContainer >
   );
 }
 

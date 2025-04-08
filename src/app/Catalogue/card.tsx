@@ -9,20 +9,31 @@ import { RiCreativeCommonsZeroLine } from "react-icons/ri";
 import gsap from "gsap";
 import { useFilteredProducts } from "./useFilteredProducts";
 import Pagination from "./paginator";
-import { FiCheck } from "react-icons/fi";
+import { FiCheck, FiX } from "react-icons/fi";
+import ContainerNeum from "./ContainerNeum";
+import ButtonNeum from "./Button";
+import { delay } from "framer-motion/dom";
 
 export function Card({ product, index, mode }: any) {
   const [enable, setEnable] = useState(false);
   const [show, setShow] = useState(false);
   const itemRef = useRef();
+  const [load, setLoad] = useState(false);
 
   useLayoutEffect(() => {
     // gsap.fromTo(itemRef.current, { opacity: 0 }, { opacity: 1, delay: index / 10 })
   }, []);
 
   return (
-    <div
+    <motion.div
+      animate={{
+        opacity: load ? 1 : 0
+      }}
+      transition={{ delay: index / 5, duration: 0.8 }}
       ref={itemRef}
+      initial={{
+        opacity: 0,
+      }}
       style={{ opacity: 1 }}
       className={`relative col-span-1 aspect-square rounded-xl transition-all duration-500 ${mode == "dark" ? "bg-gray-900" : "text-black"}`}
     >
@@ -53,16 +64,16 @@ export function Card({ product, index, mode }: any) {
       </button> */}
       <div
         animate={{}}
-        className="z-0 grid grid-cols-1 w-full overflow-hidden"
+        className="z-0 grid grid-cols-1 w-full"
       >
-        <button className="col-span-1 h-full" onClick={(e) => { setShow(!show) }}>
+        <ButtonNeum className="col-span-1 h-full" onClick={(e) => { setShow(!show) }}>
           <div
             animate={{}}
-            className="z-0 top-0 left-0 grid grid-cols-10 w-full lg:p-4  border-b-2 border-[rgba(120,120,120,0.5)] "
+            className="z-0 top-0 left-0 grid grid-cols-10 w-full lg:p-4"
           >
             <div className="col-span-10 p-3">
               <div className="w-full flex justify-center items-center">
-                <img src="https://placehold.co/300x300"></img>
+                <img onLoad={() => { setLoad(true) }} src="https://hanwhavision.eu/wp-content/uploads/2023/09/Product-Images_ANE-L6012R_20220502111658_Common_1-1.png"></img>
               </div>
             </div>
             <div className="col-span-10 px-3">
@@ -77,7 +88,7 @@ export function Card({ product, index, mode }: any) {
               </div>
             </div>
           </div>
-        </button>
+        </ButtonNeum>
       </div>
       <AnimatePresence>
         {
@@ -88,7 +99,7 @@ export function Card({ product, index, mode }: any) {
 
         }
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }
 
@@ -131,8 +142,8 @@ function Modal({ product, setShow, show, mode }: any) {
           damping: 20
         }}
         className="w-[75%] h-fit p-12 bg-white shadow-lg rounded-2xl relative">
-        <button onClick={(e) => { setShow(!show) }} className="p-4 w-[55px] h-[55px] rounded-full bg-red absolute right-0 top-0 m-3 text-white ">
-          X
+        <button onClick={(e) => { setShow(!show) }} className="p-3 w-[55px] h-[55px] flex justify-center items-center rounded-full bg-red absolute right-0 top-0 m-3 text-white ">
+          <FiX className="w-[35px] h-[35px]" />
         </button>
         <div className="grid grid-cols-10">
           <div className="col-span-10 px-3">

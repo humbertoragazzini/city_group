@@ -10,6 +10,7 @@ import gsap from "gsap";
 import { useFilteredProducts } from "./useFilteredProducts";
 import Pagination from "./paginator";
 import { FiCheck } from "react-icons/fi";
+import ButtonNeum from "./Button";
 
 export function Item({ product, index, mode }: any) {
   const [enable, setEnable] = useState(false);
@@ -27,32 +28,32 @@ export function Item({ product, index, mode }: any) {
       style={{ opacity: 0 }}
       className={`relative col-span-1 transition-all duration-500 mb-3`}
     >
-      <button
-
+      <ButtonNeum
         onClick={(e) => setEnable(!enable)}
-        className={`relative z-10 grid grid-cols-12 full p-2 cursor-pointer shadow-lg w-full ${mode == "dark" ? "bg-[#0D1B2A] text-[#D6EFFF]" : "bg-[#E0F7FA] text-[#37474F]"} transition-all duration-300`}
+        className={`relative w-full z-10 grid grid-cols-12`}
       >
         <div className="col-span-3 md:col-span-2 p-2">
           <div className="flex justify-center items-center h-full">
-            <p className="font-bold w-full text-center">{product.id}</p>
+            <p className="font-semibold w-full text-center">{product.id}</p>
           </div>
         </div>
         <div className="col-span-9 p-2 md:col-span-6 ">
           <div className="flex justify-center items-center h-full">
-            <p className="font-bold w-full text-left">{product.name}</p>
+            <p className="font-semibold w-full text-left">{product.name}</p>
           </div>
         </div>
         <div className="col-span-4 hidden p-2 md:block md:col-span-3 ">
           <div className="flex justify-center items-center h-full">
-            <p className="font-bold w-full text-center">{product.category}</p>
+            <p className="font-semibold w-full text-center">{product.category}</p>
           </div>
         </div>
         <div className="col-span-1 hidden lg:block md:grid p-2">
           <div className="flex justify-center items-center h-full">
-            <div className={`${product.avaible ? "" : "opacity-0"} w-9 h-9 bg-green-400 flex justify-center items-center rounded-full`}><FiCheck className="w-[28px] stroke-black"></FiCheck></div>
+            <div className={`${product.avaible ? "" : "opacity-0"} w-7 h-7 bg-green-400 flex justify-center items-center rounded-full`}><FiCheck className="w-[28px] stroke-black"></FiCheck></div>
           </div>
         </div>
-      </button>
+      </ButtonNeum>
+
       <motion.div
         animate={{
           height: !enable ? "0px" : "auto",
