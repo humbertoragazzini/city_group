@@ -19,9 +19,10 @@ const CardCarousel = () => {
     const [offset, setOffset] = useState(0);
 
     useLayoutEffect(() => {
-        CARD_SIZE = document.querySelector(".container")?.clientWidth / 2 - 40;
-        CARD_WIDTH = document.querySelector(".container")?.clientWidth / 2 - 60;
-        CARD_HEIGHT = document.querySelector(".container")?.clientWidth / 2 - 60;
+        console.log(document.querySelector(".container")?.clientWidth)
+        CARD_SIZE = document.querySelector(".container")?.clientWidth / 1 - 40;
+        CARD_WIDTH = document.querySelector(".container")?.clientWidth / 1 - 60;
+        CARD_HEIGHT = document.querySelector(".container")?.clientWidth / 1 - 60;
     }, [])
 
     const CARD_BUFFER =
