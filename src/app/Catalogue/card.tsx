@@ -124,42 +124,24 @@ function Modal({ product, setShow, show, mode }: any) {
         display: ["flex", "hidden"]
       }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 w-screen h-screen backdrop-blur-lg z-[999] flex justify-center items-center ${mode == "dark" ? "bg-gray-900" : "text-black"}`} style={{ bottom: "100vh" }}>
+      className={`fixed top-0 left-0 w-screen h-screen bg-[#e0e0e0] z-[999] flex justify-center items-center `} style={{ bottom: "100vh" }}>
       <motion.div
         initial={{
           y: 0,
+          boxShadow: "none"
         }}
         animate={{
-          y: ["-100vh", 0],
+          boxShadow: "8px 8px 16px #bebebe, -8px -8px 16px #ffffff"
         }}
         exit={{
-          y: [0, "-100vh"],
           display: ["flex", "hidden"]
         }}
-        transition={{
-          type: "spring",
-          stiffness: 300,
-          damping: 20
-        }}
-        className="w-[75%] h-fit p-12 bg-white shadow-lg rounded-2xl relative">
-        <button onClick={(e) => { setShow(!show) }} className="p-3 w-[55px] h-[55px] flex justify-center items-center rounded-full bg-red absolute right-0 top-0 m-3 text-white ">
+        className="w-[75%] h-fit p-12 bg-[#e0e0e0] 
+          transition-all duration-200 rounded-2xl relative">
+        <motion.button animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ delay: 0.75 }} onClick={(e) => { setShow(!show) }} className="p-3 w-[55px] h-[55px] flex justify-center items-center rounded-full bg-red absolute right-0 top-0 m-3 text-white ">
           <FiX className="w-[35px] h-[35px]" />
-        </button>
-        <div className="grid grid-cols-10">
-          <div className="col-span-10 px-3">
-            <div className="w-fit flex justify-start">
-              <div className="font-bold text-xl">Software: </div>
-              <div className="text-xl pl-3">{product.software}</div>
-            </div>
-          </div>
-          <div className="col-span-10 px-3">
-            <div className="w-fit flex justify-start">
-              <div className="font-bold text-xl">Specs: </div>
-              <div className="text-xl pl-3">
-                1080P / WIFI 7 / UP TO 128GB / STORAGE
-              </div>
-            </div>
-          </div>
+        </motion.button>
+        <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ delay: 0.75 }} className="grid grid-cols-10">
           <div className="col-span-10 lg:col-span-5 p-3 lg:p-12">
             <div className="w-full border-b-2 border-[rgba(255,255,255,0.5)] mb-4">
               <h1 className="text-2xl pb-2">{product.name}</h1>
@@ -204,7 +186,7 @@ function Modal({ product, setShow, show, mode }: any) {
               <CardCarousel></CardCarousel>
             </div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </motion.div>
   )
