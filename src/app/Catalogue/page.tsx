@@ -68,10 +68,10 @@ export default function Catalogue() {
         {/* Section with us and the description */}
         <motion.div
           ref={resultContainerRef}
-          className="mt-[90px] w-full px-11 mx-auto flex flex-col justify-start items-center overflow-hidden relative"
+          className="mt-[90px] w-full lg:px-11 mx-auto flex flex-col justify-start items-center overflow-hidden relative"
         >
           <div className="grid w-full grid-cols-12">
-            <div className="col-span-3 p-9">
+            <div className="col-span-12 lg:col-span-3 p-9">
               <ContainerNeum>
                 <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl w-full transition-all duration-300 mb-4">
                   <div className={`col-span-12 mb-4 pb-3 pt-4`}>
@@ -141,36 +141,8 @@ export default function Catalogue() {
                   </div>
                 </div>
               </ContainerNeum>
-              <ContainerNeum className={"mt-5"}>
-                < div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl cursor-pointer w-full transition-all duration-300 mb-4">
-                  <div className={`col-span-12 mb-4 pb-3 pt-4`}>
-                    <p className="text-2xl">Settings:</p>
-                  </div>
-                  <div className={`col-span-12 mb-3`}>
-                    <p className="mb-2">Toggle view</p>
-
-
-                    <ButtonNeum className={"relative !p-0 w-[50px] h-[50px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
-                      <motion.div
-                        animate={{
-                          opacity: typeMode === "card" ? 1 : 0
-                        }}
-                        className={"absolute top-[8px] left-[8px]"}
-                      >
-                        <FiList className="w-[35px] h-[35px]" /></motion.div>
-                      <motion.div
-                        animate={{
-                          opacity: typeMode !== "card" ? 1 : 0
-                        }}
-                        className={"absolute top-[8px] left-[8px]"}
-                      >
-                        <FiGrid className="w-[35px] h-[35px]" /></motion.div>
-                    </ButtonNeum>
-                  </div>
-                </div>
-              </ContainerNeum>
             </div>
-            <div className={`col-span-9 ${mode == "dark" ? "" : ""} p-9`} >
+            <div className={`col-span-12 lg:col-span-9 ${mode == "dark" ? "" : ""} p-9`} >
 
               <div className="relative px-6 flex justify-start items-center mb-6 md:hidden">
                 {/* <BeamContainer mode={mode}> */}
@@ -211,117 +183,24 @@ export default function Catalogue() {
                   </div>
                 </motion.div>
               </div>
-              <div className="absolute left-0 w-full px-8 flex flex-col justify-start items-center z-[999] md:hidden">
-                <motion.div
-                  animate={{
-                    opacity: filterMenu == "filter" ? 1 : 0,
-                    display: filterMenu == "filter" ? "" : "none"
-                  }}
-                  className={`w-full flex justify-center backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.1)] text-black"
-                    } p-9 rounded-br-2xl rounded-xl shadow-xl z-[40]`}>
-                  <div className="w-full flex justify-start items-start p-8">
-                    <div className="mb-4">
-                      <p className="mb-2">Toggle view</p>
-                      <button onClick={(e) => {
-                        if (typeMode == "card") {
-                          setTypeMode("listItem")
-                        } else {
-                          setTypeMode("card")
-                        }
-                      }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
-                        <div className="w-[30px] h-[30px] bg-slate-500 rounded-full">
-
-                        </div>
-                      </button></div>
-                    <div
-                      className={`flex justify-start xl:justify-center items-center font-semibold mb-4 rounded-lg`}
-                    >
-                      <label className="mr-2">ID:</label>
-                      <input
-                        onKeyUp={(e) => {
-                          setIDtoSearch(e.currentTarget.value);
-                        }}
-                        className="bg-transparent flex justify-center items-center p-2"
-                        placeholder="Search by ID"
-                      ></input>
-                    </div>
-                    <div
-                      className={`flex justify-start xl:justify-center items-center font-semibold mb-4 rounded-lg`}
-                    >
-                      <label className="mr-2 text-nowrap">By name:</label>
-                      <input
-                        onKeyUp={(e) => {
-                          setWordtoSearch(e.currentTarget.value);
-                        }}
-                        className="bg-transparent flex justify-center items-center p-2"
-                        placeholder="Search by word"
-                      ></input>
-                    </div>
-                    <div
-                      className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 rounded-lg`}
-                    >
-                      <label className="mr-2">By category:</label>
-                      {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
-                      <DropdownMenu
-                        category={category}
-                        setCategory={setCategory}
-                        selected={selected}
-                        setSelected={setSelected}
-                        types={products}
-                        products={products}
-                        type="category"
-                      ></DropdownMenu>
-                    </div>
-                    <div
-                      className={`flex justify-start xl:justify-center items-center font-semibold mb-4 py-2 rounded-lg`}
-                    >
-                      <label className="mr-2">By subcategory:</label>
-                      {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center p-2" placeholder="Search by type"> */}
-                      <DropdownMenu
-                        category={subCategory}
-                        setCategory={setSubCategory}
-                        selected={subSelected}
-                        filtered={filtered}
-                        setSelected={setSubSelected}
-                        types={products}
-                        products={products}
-                      ></DropdownMenu>
-                    </div>
-                  </div>
-                </motion.div>
+              <div className="hidden lg:flex justify-end items-center">
+                <ButtonNeum className={"relative !p-0 mb-4 w-[50px] h-[50px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                  <motion.div
+                    animate={{
+                      opacity: typeMode === "card" ? 1 : 0
+                    }}
+                    className={"absolute top-[8px] left-[8px]"}
+                  >
+                    <FiList className="w-[35px] h-[35px]" /></motion.div>
+                  <motion.div
+                    animate={{
+                      opacity: typeMode !== "card" ? 1 : 0
+                    }}
+                    className={"absolute top-[8px] left-[8px]"}
+                  >
+                    <FiGrid className="w-[35px] h-[35px]" /></motion.div>
+                </ButtonNeum>
               </div>
-              {typeMode !== "card" && (
-                <ContainerNeum className={"relative z-10 grid grid-cols-12 full backdrop-blur-md p-2 rounded-xl cursor-pointer w-full transition-all duration-300 mb-5"}>
-                  <div
-                    className={`col-span-3 md:col-span-2 p-2`}
-                  >
-                    <div className="flex justify-center items-center">
-                      <p className="font-bold w-full text-center">ID</p>
-                    </div>
-                  </div>
-                  <div
-                    className={`col-span-3 md:col-span-6 p-2`}
-                  >
-                    <div className="flex justify-start items-center">
-                      <p className="font-bold">Name</p>
-                    </div>
-                  </div>
-                  <div
-                    className={`col-span-3 md:col-span-3 p-2`}
-                  >
-                    <div className="flex justify-center items-center">
-                      <p className="font-bold w-full text-center">Category</p>
-                    </div>
-                  </div>
-                  <div
-                    className={`col-span-3 md:col-span-1 p-2`}
-                  >
-                    <div className="flex justify-center items-center">
-                      <p className="font-bold w-full text-center">Stock</p>
-                    </div>
-                  </div>
-                </ContainerNeum>
-              )}
               <Pagination
                 items={filtered}
                 mode={mode}
