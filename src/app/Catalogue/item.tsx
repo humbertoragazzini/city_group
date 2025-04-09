@@ -33,22 +33,22 @@ export function Item({ product, index, mode }: any) {
         className={`relative w-full z-10 grid grid-cols-12`}
       >
         <div className="col-span-3 md:col-span-2 p-2">
-          <div className="flex justify-center items-center h-full">
-            <p className="font-semibold w-full text-center">{product.id}</p>
+          <div className="flex justify-start items-center h-full">
+            <p className="font-semibold w-full text-left">{product.id}</p>
           </div>
         </div>
         <div className="col-span-9 p-2 md:col-span-6 ">
-          <div className="flex justify-center items-center h-full">
+          <div className="flex justify-start items-center h-full">
             <p className="font-semibold w-full text-left">{product.name}</p>
           </div>
         </div>
         <div className="col-span-4 hidden p-2 md:block md:col-span-3 ">
-          <div className="flex justify-center items-center h-full">
-            <p className="font-semibold w-full text-center">{product.category}</p>
+          <div className="flex justify-start items-center h-full">
+            <p className="font-semibold w-full text-left">{product.category}</p>
           </div>
         </div>
         <div className="col-span-1 hidden lg:block md:grid p-2">
-          <div className="flex justify-center items-center h-full">
+          <div className="flex justify-start items-center h-full">
             <div className={`${product.avaible ? "" : "opacity-0"} w-7 h-7 bg-green-400 flex justify-center items-center rounded-full`}><FiCheck className="w-[28px] stroke-black"></FiCheck></div>
           </div>
         </div>
