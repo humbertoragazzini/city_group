@@ -68,6 +68,7 @@ export default function Pagination({
         <ButtonNeum
           onClick={handlePrev}
           disabled={currentPage === 1}
+          className={"w-[55px] h-[55px] flex justify-center items-center !p-0"}
         >
           <FiChevronLeft className="relative inline w-[30px] h-[30px]" />
         </ButtonNeum>
@@ -79,6 +80,7 @@ export default function Pagination({
         <ButtonNeum
           onClick={handleNext}
           disabled={currentPage === totalPages}
+          className={"w-[55px] h-[55px] flex justify-center items-center !p-0"}
         >
           <FiChevronRight className="relative inline w-[30px] h-[30px]" />
         </ButtonNeum>
