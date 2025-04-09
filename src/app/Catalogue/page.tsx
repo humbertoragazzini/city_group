@@ -17,6 +17,8 @@ import { ImFilter } from "react-icons/im";
 import { LuPanelLeftClose } from "react-icons/lu";
 import MainContainer from "./mainContainer";
 import ContainerNeum from "./ContainerNeum";
+import ButtonNeum from "./Button";
+import { FiGrid, FiList } from "react-icons/fi";
 
 
 export default function Catalogue() {
@@ -146,29 +148,24 @@ export default function Catalogue() {
                   </div>
                   <div className={`col-span-12 mb-3`}>
                     <p className="mb-2">Toggle view</p>
-                    <motion.button
-                      animate={{
-                        backgroundColor: typeMode === "card" ? "#d0d0d0" : "#e0e0e0",
-                      }}
-                      onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}
-                      className={`relative rounded-full w-16 h-9 overflow-hidden isolate
-              flex items-center
-              shadow-[inset_4px_4px_4px_0px_#d1d9e6,inset_-4px_-4px_4px_0px_#ffffff,-8px_-4px_8px_0px_#ffffff,8px_4px_12px_0px_#d1d9e6]`}>
 
+
+                    <ButtonNeum className={"relative !p-0 w-[50px] h-[50px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
                       <motion.div
-                        layout
-                        transition={{ type: "spring", stiffness: 700, damping: 30 }}
-                        className={`w-[30px] h-[30px] rounded-full shadow-[-8px_-4px_8px_0px_#ffffff,8px_4px_12px_0px_#d1d9e6]`}
-                        style={{
-                          marginLeft: typeMode === "card" ? "7px" : "calc(100% - 37px)", // 100% - width - 2px
-                          position: "absolute",
-
-                          backgroundColor: typeMode === "card" ? "#e0e0e0" : "#d0d0d0",
-                          top: "7px",
-                          transform: "translateY(-50%)",
+                        animate={{
+                          opacity: typeMode === "card" ? 1 : 0
                         }}
-                      />
-                    </motion.button>
+                        className={"absolute top-[8px] left-[8px]"}
+                      >
+                        <FiList className="w-[35px] h-[35px]" /></motion.div>
+                      <motion.div
+                        animate={{
+                          opacity: typeMode !== "card" ? 1 : 0
+                        }}
+                        className={"absolute top-[8px] left-[8px]"}
+                      >
+                        <FiGrid className="w-[35px] h-[35px]" /></motion.div>
+                    </ButtonNeum>
                   </div>
                 </div>
               </ContainerNeum>
