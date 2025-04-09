@@ -17,6 +17,8 @@ import { ImFilter } from "react-icons/im";
 import { LuPanelLeftClose } from "react-icons/lu";
 import MainContainer from "./mainContainer";
 import ContainerNeum from "./ContainerNeum";
+import ButtonNeum from "./Button";
+import { FiGrid, FiList } from "react-icons/fi";
 
 
 export default function Catalogue() {
@@ -146,15 +148,24 @@ export default function Catalogue() {
                   </div>
                   <div className={`col-span-12 mb-3`}>
                     <p className="mb-2">Toggle view</p>
-                    <button onClick={(e) => {
-                      if (typeMode == "card") {
-                        setTypeMode("listItem")
-                      } else {
-                        setTypeMode("card")
-                      }
-                    }} className={`rounded-full px-[4px] w-14 h-8 bg-slate-300 flex ${typeMode == "card" ? "justify-start" : "justify-end"} items-center`}>
-                      <div className="w-[30px] h-[30px] bg-slate-500 rounded-full"></div>
-                    </button>
+
+
+                    <ButtonNeum className={"relative !p-0 w-[50px] h-[50px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                      <motion.div
+                        animate={{
+                          opacity: typeMode === "card" ? 1 : 0
+                        }}
+                        className={"absolute top-[8px] left-[8px]"}
+                      >
+                        <FiList className="w-[35px] h-[35px]" /></motion.div>
+                      <motion.div
+                        animate={{
+                          opacity: typeMode !== "card" ? 1 : 0
+                        }}
+                        className={"absolute top-[8px] left-[8px]"}
+                      >
+                        <FiGrid className="w-[35px] h-[35px]" /></motion.div>
+                    </ButtonNeum>
                   </div>
                 </div>
               </ContainerNeum>
