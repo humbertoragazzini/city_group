@@ -67,13 +67,13 @@ export default function Catalogue() {
         {/* Section with us and the description */}
         <motion.div
           ref={resultContainerRef}
-          className="w-full lg:px-11 mx-auto flex flex-col justify-start items-center overflow-hidden relative"
+          className="w-full flex flex-col justify-start items-center overflow-hidden relative p-4"
         >
-          <div className="grid w-full grid-cols-12">
-            <div className="col-span-12 lg:col-span-3 p-9">
+          <div className="grid w-full grid-cols-12 gap-4">
+            <div className="col-span-12 lg:col-span-3">
               <ContainerNeum>
-                <div className="relative z-10 grid grid-cols-12 full backdrop-blur-md rounded-xl w-full transition-all duration-300 mb-4">
-                  <div className={`col-span-12 mb-4 pb-3 pt-4`}>
+                <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300 mb-4">
+                  <div className={`col-span-12`}>
                     <p className="text-2xl">Filters:</p>
                   </div>
                   <div className={`col-span-12 mb-3`}>
@@ -141,7 +141,7 @@ export default function Catalogue() {
                 </div>
               </ContainerNeum>
             </div>
-            <div className={`col-span-12 lg:col-span-9 ${mode == "dark" ? "" : ""} p-9`} >
+            <div className={`col-span-12 lg:col-span-9`} >
 
               <div className="relative px-6 flex justify-start items-center mb-6 md:hidden">
                 {/* <BeamContainer mode={mode}> */}
