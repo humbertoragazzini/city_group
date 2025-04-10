@@ -63,12 +63,11 @@ export default function Catalogue() {
   return (
 
     <MainContainer>
-
       <div className="w-full">
         {/* Section with us and the description */}
         <motion.div
           ref={resultContainerRef}
-          className="mt-[90px] w-full lg:px-11 mx-auto flex flex-col justify-start items-center overflow-hidden relative"
+          className="w-full lg:px-11 mx-auto flex flex-col justify-start items-center overflow-hidden relative"
         >
           <div className="grid w-full grid-cols-12">
             <div className="col-span-12 lg:col-span-3 p-9">
@@ -184,7 +183,7 @@ export default function Catalogue() {
                 </motion.div>
               </div>
               <div className="hidden lg:flex justify-end items-center">
-                <ButtonNeum className={"relative !p-0 mb-4 w-[50px] h-[50px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                <ButtonNeum className={"relative !p-0 mb-4 w-[55px] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
                   <motion.div
                     animate={{
                       opacity: typeMode === "card" ? 1 : 0
@@ -196,7 +195,7 @@ export default function Catalogue() {
                     animate={{
                       opacity: typeMode !== "card" ? 1 : 0
                     }}
-                    className={"absolute top-[8px] left-[8px]"}
+                    className={"absolute top-[10px] left-[10px]"}
                   >
                     <FiGrid className="w-[35px] h-[35px]" /></motion.div>
                 </ButtonNeum>
