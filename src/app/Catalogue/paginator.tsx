@@ -50,14 +50,14 @@ export default function Pagination({
         </div>
       }
       {type == "listItem" && (
-        <div className="grid gap-2">
+        <div className="grid gap-5">
           {currentItems.map((product, index) => (
             <Item key={"item-" + index + product.id} index={index} product={product} mode={mode}></Item>
           ))}
         </div>
       )}
       {type == "card" && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {currentItems.map((product, index) => (
             <Card key={index} index={index} product={product} mode={mode}></Card>
           ))}

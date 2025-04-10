@@ -65,7 +65,7 @@ export default function Catalogue() {
   return (
 
     <MainContainer>
-      <div className="w-full mt-[90px] max-w-[1450px]">
+      <div className="w-full mt-[90px]">
         {/* Section with us and the description */}
         <motion.div
           ref={resultContainerRef}
@@ -73,12 +73,12 @@ export default function Catalogue() {
         >
           <div className="grid w-full grid-cols-12 gap-5">
             <div className="col-span-12 lg:col-span-4">
-              <ContainerNeum className={"mb-4"}>
+              <ContainerNeum className={"mb-5 !p-5"}>
                 <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300">
                   <div className={`col-span-12`}>
                     <p className="text-2xl mb-3">Filters:</p>
                   </div>
-                  <div className={`col-span-12 mb-3`}>
+                  <div className={`col-span-12`}>
                     <div
                       className={`flex justify-start items-center font-semibold rounded-lg`}
                     >
@@ -94,7 +94,7 @@ export default function Catalogue() {
                   </div>
                 </div>
               </ContainerNeum>
-              <ContainerNeum className={"mb-4"}>
+              <ContainerNeum className={"mb-5 !p-5"}>
                 <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300">
                   <div className={`col-span-12`}>
                     <div
@@ -115,9 +115,9 @@ export default function Catalogue() {
                   </div>
                 </div>
               </ContainerNeum>
-              <ContainerNeum>
+              <ContainerNeum className={"!p-5"}>
                 <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300">
-                  <div className={`col-span-12 mb-3`}>
+                  <div className={`col-span-12`}>
                     <div
                       className={`flex flex-col justify-start items-start font-semibold rounded-lg`}
                     >
@@ -178,8 +178,8 @@ export default function Catalogue() {
                   </div>
                 </motion.div>
               </div>
-              <div className="hidden lg:flex justify-end items-center">
-                <ButtonNeum className={"relative flex justify-between items-center !p-4 mb-4 mr-4 w-[calc(100%-275px)] h-[55px]"} onClick={() => { return "" }}>
+              <div className="hidden lg:flex justify-end items-center mb-5">
+                <ButtonNeum className={"relative flex justify-between items-center !p-4 mr-4 w-[calc(100%-275px)] h-[55px]"} onClick={() => { return "" }}>
                   <input
                     onKeyUp={(e) => {
                       setWordtoSearch(e.currentTarget.value);
@@ -192,7 +192,7 @@ export default function Catalogue() {
                   >
                     <IoSearch className="w-[25px] h-[25px]" /></div>
                 </ButtonNeum>
-                <ButtonNeum className={"relative !p-4 mb-4 mr-4 w-[135px] h-[55px] flex justify-between items-center"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                <ButtonNeum className={"relative !p-4 mr-4 w-[135px] h-[55px] flex justify-between items-center"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
                   <p className="relative top-[2px]">In stock</p>
                   <motion.div
                     animate={{
@@ -202,7 +202,7 @@ export default function Catalogue() {
                   >
                     <FaCheckSquare className="w-[20px] h-[20px]" /></motion.div>
                 </ButtonNeum>
-                <ButtonNeum className={"relative flex justify-center items-center !p-0 mb-4 mr-4 w-[55px] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                <ButtonNeum className={"relative flex justify-center items-center !p-0 mr-4 w-[55px] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
                   <motion.div
                     animate={{
                       opacity: typeMode === "card" ? 1 : 0,
@@ -220,7 +220,7 @@ export default function Catalogue() {
                     Z-A
                   </motion.div>
                 </ButtonNeum>
-                <ButtonNeum className={"relative !p-0 mb-4 w-[55px] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                <ButtonNeum className={"relative !p-0 w-[55px] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
                   <motion.div
                     animate={{
                       opacity: typeMode === "card" ? 1 : 0
