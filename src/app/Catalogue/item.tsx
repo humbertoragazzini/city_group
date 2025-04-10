@@ -9,7 +9,7 @@ import { RiCreativeCommonsZeroLine } from "react-icons/ri";
 import gsap from "gsap";
 import { useFilteredProducts } from "./useFilteredProducts";
 import Pagination from "./paginator";
-import { FiCheck } from "react-icons/fi";
+import { FiCheck, FiChevronDown } from "react-icons/fi";
 import ButtonNeum from "./Button";
 
 export function Item({ product, index, mode }: any) {
@@ -21,38 +21,52 @@ export function Item({ product, index, mode }: any) {
     console.log("pass")
     gsap.fromTo(itemRef.current, { opacity: 0 }, { opacity: 1, delay: index / 5 })
   }, []);
-
+  console.log(product.available)
   return (
     <div
       ref={itemRef}
       style={{ opacity: 0 }}
       className={`relative col-span-1 transition-all duration-500 mb-3`}
     >
-      <ButtonNeum
+      <div
         onClick={(e) => setEnable(!enable)}
-        className={`relative w-full z-10 grid grid-cols-12`}
+        className={`relative w-full z-10`}
       >
-        <div className="col-span-3 md:col-span-2 p-2">
-          <div className="flex justify-start items-center h-full">
-            <p className="font-semibold w-full text-left">{product.id}</p>
-          </div>
+        <div className="flex justify-between items-center w-full h-full">
+          <ButtonNeum className={"flex justify-start items-center w-[calc(100%-70px)] h-[55px] !p-0 overflow-hidden"}>
+            <div className="p-2 w-[55px] h-[55px]">
+              <div className="flex justify-start items-center h-full w-full">
+                <p className="font-semibold w-full text-center">{product.id}</p>
+              </div>
+            </div>
+            <div className="p-2 w-[calc(100%-265px)]">
+              <div className="flex justify-start items-center h-full">
+                <p className="font-semibold w-full text-left">{product.name}</p>
+              </div>
+            </div>
+            <div className="p-2 w-[155px]">
+              <div className="flex justify-start items-center h-full">
+                <p className="font-semibold w-full text-left">{product.category}</p>
+              </div>
+            </div>
+            <div className="p-2 w-[55px]">
+              <div className="flex justify-start items-center h-full">
+                <div className={`${product.available ? "opacity-1" : "opacity-0"} w-7 h-7 bg-green-400 flex justify-center items-center rounded-full`}><FiCheck className="w-[28px] stroke-black"></FiCheck></div>
+              </div>
+            </div>
+          </ButtonNeum>
+          <ButtonNeum
+            onClick={(e) => setEnable(!enable)}
+            className={"w-[55px] h-[55px] flex justify-center items-center !p-0"}
+          >
+            <motion.div animate={{
+              rotateZ: enable ? "180deg" : "0deg"
+            }}>
+              <FiChevronDown className="relative inline w-[30px] h-[30px]" />
+            </motion.div>
+          </ButtonNeum>
         </div>
-        <div className="col-span-9 p-2 md:col-span-6 ">
-          <div className="flex justify-start items-center h-full">
-            <p className="font-semibold w-full text-left">{product.name}</p>
-          </div>
-        </div>
-        <div className="col-span-4 hidden p-2 md:block md:col-span-3 ">
-          <div className="flex justify-start items-center h-full">
-            <p className="font-semibold w-full text-left">{product.category}</p>
-          </div>
-        </div>
-        <div className="col-span-1 hidden lg:block md:grid p-2">
-          <div className="flex justify-start items-center h-full">
-            <div className={`${product.avaible ? "" : "opacity-0"} w-7 h-7 bg-green-400 flex justify-center items-center rounded-full`}><FiCheck className="w-[28px] stroke-black"></FiCheck></div>
-          </div>
-        </div>
-      </ButtonNeum>
+      </div>
 
       <motion.div
         animate={{

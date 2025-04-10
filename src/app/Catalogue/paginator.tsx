@@ -57,7 +57,7 @@ export default function Pagination({
         </div>
       )}
       {type == "card" && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
           {currentItems.map((product, index) => (
             <Card key={index} index={index} product={product} mode={mode}></Card>
           ))}
