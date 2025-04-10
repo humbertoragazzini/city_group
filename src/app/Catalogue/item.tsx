@@ -21,7 +21,7 @@ export function Item({ product, index, mode }: any) {
     console.log("pass")
     gsap.fromTo(itemRef.current, { opacity: 0 }, { opacity: 1, delay: index / 5 })
   }, []);
-
+  console.log(product.available)
   return (
     <div
       ref={itemRef}
@@ -33,25 +33,25 @@ export function Item({ product, index, mode }: any) {
         className={`relative w-full z-10`}
       >
         <div className="flex justify-between items-center w-full h-full">
-          <ButtonNeum className={"flex justify-between items-center w-[calc(100%-70px)] h-[55px]"}>
-            <div className="p-2">
-              <div className="flex justify-start items-center h-full">
-                <p className="font-semibold w-full text-left">{product.id}</p>
+          <ButtonNeum className={"flex justify-start items-center w-[calc(100%-70px)] h-[55px] !p-0 overflow-hidden"}>
+            <div className="p-2 w-[55px] h-[55px]">
+              <div className="flex justify-start items-center h-full w-full">
+                <p className="font-semibold w-full text-center">{product.id}</p>
               </div>
             </div>
-            <div className="p-2">
+            <div className="p-2 w-[calc(100%-265px)]">
               <div className="flex justify-start items-center h-full">
                 <p className="font-semibold w-full text-left">{product.name}</p>
               </div>
             </div>
-            <div className="p-2">
+            <div className="p-2 w-[155px]">
               <div className="flex justify-start items-center h-full">
                 <p className="font-semibold w-full text-left">{product.category}</p>
               </div>
             </div>
-            <div className="p-2">
+            <div className="p-2 w-[55px]">
               <div className="flex justify-start items-center h-full">
-                <div className={`${product.avaible ? "" : "opacity-0"} w-7 h-7 bg-green-400 flex justify-center items-center rounded-full`}><FiCheck className="w-[28px] stroke-black"></FiCheck></div>
+                <div className={`${product.available ? "opacity-1" : "opacity-0"} w-7 h-7 bg-green-400 flex justify-center items-center rounded-full`}><FiCheck className="w-[28px] stroke-black"></FiCheck></div>
               </div>
             </div>
           </ButtonNeum>

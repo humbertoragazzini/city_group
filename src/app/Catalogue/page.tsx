@@ -63,7 +63,7 @@ export default function Catalogue() {
   return (
 
     <MainContainer>
-      <div className="w-full">
+      <div className="w-full mt-[90px]">
         {/* Section with us and the description */}
         <motion.div
           ref={resultContainerRef}
