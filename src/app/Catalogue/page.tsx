@@ -19,6 +19,8 @@ import MainContainer from "./mainContainer";
 import ContainerNeum from "./ContainerNeum";
 import ButtonNeum from "./Button";
 import { FiGrid, FiList } from "react-icons/fi";
+import { FaCheckSquare } from "react-icons/fa";
+import { IoSearch } from "react-icons/io5";
 
 
 export default function Catalogue() {
@@ -63,13 +65,13 @@ export default function Catalogue() {
   return (
 
     <MainContainer>
-      <div className="w-full mt-[90px]">
+      <div className="w-full mt-[90px] max-w-[1450px]">
         {/* Section with us and the description */}
         <motion.div
           ref={resultContainerRef}
           className="w-full flex flex-col justify-start items-center overflow-hidden relative p-4"
         >
-          <div className="grid w-full grid-cols-12 gap-4">
+          <div className="grid w-full grid-cols-12 gap-5">
             <div className="col-span-12 lg:col-span-3">
               <ContainerNeum>
                 <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300 mb-4">
@@ -90,7 +92,7 @@ export default function Catalogue() {
                       ></input>
                     </div>
                   </div>
-                  <div className={`col-span-12 mb-3`}>
+                  {/* <div className={`col-span-12 mb-3`}>
                     <div
                       className={`flex justify-start items-center font-semibold rounded-lg`}
                     >
@@ -103,7 +105,7 @@ export default function Catalogue() {
                         placeholder="Search by word"
                       ></input>
                     </div>
-                  </div>
+                  </div> */}
                   <div className={`col-span-12 mb-3`}>
                     <div
                       className={`flex justify-start items-center font-semibold rounded-lg`}
@@ -183,6 +185,44 @@ export default function Catalogue() {
                 </motion.div>
               </div>
               <div className="hidden lg:flex justify-end items-center">
+                <ButtonNeum className={"relative flex justify-between items-center !p-4 mb-4 mr-4 w-[calc(100%-275px)] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                  Search
+                  <motion.div
+                    animate={{
+                      opacity: typeMode !== "card" ? 1 : 0
+                    }}
+                    className={""}
+                  >
+                    <IoSearch className="w-[25px] h-[25px]" /></motion.div>
+                </ButtonNeum>
+                <ButtonNeum className={"relative !p-4 mb-4 mr-4 w-[135px] h-[55px] flex justify-between items-center"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                  <p className="relative top-[2px]">In stock</p>
+                  <motion.div
+                    animate={{
+                      opacity: typeMode !== "card" ? 1 : 0
+                    }}
+                    className={""}
+                  >
+                    <FaCheckSquare className="w-[20px] h-[20px]" /></motion.div>
+                </ButtonNeum>
+                <ButtonNeum className={"relative flex justify-center items-center !p-0 mb-4 mr-4 w-[55px] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                  <motion.div
+                    animate={{
+                      opacity: typeMode === "card" ? 1 : 0,
+                    }}
+                    className={"absolute top-[14px] left-[14px]"}
+                  >
+                    A-Z
+                  </motion.div>
+                  <motion.div
+                    animate={{
+                      opacity: typeMode !== "card" ? 1 : 0,
+                    }}
+                    className={"absolute top-[14px] left-[14px]"}
+                  >
+                    Z-A
+                  </motion.div>
+                </ButtonNeum>
                 <ButtonNeum className={"relative !p-0 mb-4 w-[55px] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
                   <motion.div
                     animate={{
