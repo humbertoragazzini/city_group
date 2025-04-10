@@ -185,15 +185,18 @@ export default function Catalogue() {
                 </motion.div>
               </div>
               <div className="hidden lg:flex justify-end items-center">
-                <ButtonNeum className={"relative flex justify-between items-center !p-4 mb-4 mr-4 w-[calc(100%-275px)] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
-                  Search
-                  <motion.div
-                    animate={{
-                      opacity: typeMode !== "card" ? 1 : 0
+                <ButtonNeum className={"relative flex justify-between items-center !p-4 mb-4 mr-4 w-[calc(100%-275px)] h-[55px]"} onClick={() => { return "" }}>
+                  <input
+                    onKeyUp={(e) => {
+                      setWordtoSearch(e.currentTarget.value);
                     }}
+                    className="bg-transparent flex justify-center items-center focus:outline-none"
+                    placeholder="Search by word"
+                  ></input>
+                  <div
                     className={""}
                   >
-                    <IoSearch className="w-[25px] h-[25px]" /></motion.div>
+                    <IoSearch className="w-[25px] h-[25px]" /></div>
                 </ButtonNeum>
                 <ButtonNeum className={"relative !p-4 mb-4 mr-4 w-[135px] h-[55px] flex justify-between items-center"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
                   <p className="relative top-[2px]">In stock</p>
