@@ -33,12 +33,14 @@ export default function Catalogue() {
   const [selected, setSelected] = useState("All");
   const [subSelected, setSubSelected] = useState("All");
   const resultContainerRef = useRef();
+  const [order, setOrder] = useState(true)
   const filtered = useFilteredProducts(
     products,
     wordToSearch,
     IDtoSearch,
     category,
-    subCategory
+    subCategory,
+    order
   );
   const [sortedBy, setSortedBy] = useState(null);
   const [typeMode, setTypeMode] = useState("listItem");
@@ -202,10 +204,11 @@ export default function Catalogue() {
                   >
                     <FaCheckSquare className="w-[20px] h-[20px]" /></motion.div>
                 </ButtonNeum>
-                <ButtonNeum className={"relative flex justify-center items-center !p-0 mr-4 w-[55px] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                <ButtonNeum className={"relative flex justify-center items-center !p-0 mr-4 w-[55px] h-[55px]"}
+                  onClick={() => setOrder(!order)}>
                   <motion.div
                     animate={{
-                      opacity: typeMode === "card" ? 1 : 0,
+                      opacity: order ? 1 : 0,
                     }}
                     className={"absolute top-[14px] left-[14px]"}
                   >
@@ -213,7 +216,7 @@ export default function Catalogue() {
                   </motion.div>
                   <motion.div
                     animate={{
-                      opacity: typeMode !== "card" ? 1 : 0,
+                      opacity: !order ? 1 : 0,
                     }}
                     className={"absolute top-[14px] left-[14px]"}
                   >

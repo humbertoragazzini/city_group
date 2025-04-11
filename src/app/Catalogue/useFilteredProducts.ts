@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { useMemo } from "react";
 
-export function useFilteredProducts(products, wordToSearch, IDtoSearch, category, subcategory) {
+export function useFilteredProducts(products, wordToSearch, IDtoSearch, category, subcategory, order) {
     return useMemo(() => {
         console.log(wordToSearch)
         console.log(IDtoSearch)
@@ -37,6 +37,10 @@ export function useFilteredProducts(products, wordToSearch, IDtoSearch, category
             });
         }
         // No filters active, return everything
-        return tempProduct;
+        if (order) {
+            return tempProduct.sort((a, b) => a.name.localeCompare(b.name));;
+        } else {
+            return tempProduct.sort((a, b) => b.name.localeCompare(a.name));;
+        }
     }, [products, wordToSearch, IDtoSearch, category, subcategory]);
 }
