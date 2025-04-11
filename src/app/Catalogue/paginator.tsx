@@ -20,8 +20,10 @@ export default function Pagination({
   items = [],
   itemsPerPage = 8,
   renderItem,
+  order,
   mode,
   type,
+  isStockA
 }) {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -30,7 +32,7 @@ export default function Pagination({
   const currentItems = useMemo(() => {
     const start = (currentPage - 1) * itemsPerPage;
     return items.slice(start, start + itemsPerPage);
-  }, [items, currentPage, itemsPerPage]);
+  }, [items, currentPage, itemsPerPage, order, isStockA]);
 
   const handleNext = () => {
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);

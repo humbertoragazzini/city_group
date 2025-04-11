@@ -1,11 +1,8 @@
 //@ts-nocheck
 import { useMemo } from "react";
 
-export function useFilteredProducts(products, wordToSearch, IDtoSearch, category, subcategory, order) {
+export function useFilteredProducts(products, wordToSearch, IDtoSearch, category, subcategory, order, isStockA) {
     return useMemo(() => {
-        console.log(wordToSearch)
-        console.log(IDtoSearch)
-        console.log(category)
         let tempProduct = products;
         // If there's an ID to search, filter by it
         if (IDtoSearch && IDtoSearch !== "") {
@@ -36,11 +33,20 @@ export function useFilteredProducts(products, wordToSearch, IDtoSearch, category
                 return item.subcategory == subcategory
             });
         }
+
+        // if is any subcategory selected 
+        tempProduct = tempProduct.filter((item) => {
+            console.log("item", item.available)
+            console.log("isStockA", isStockA)
+            console.log((item.available === isStockA))
+            return (item.available === isStockA)
+        });
+
         // No filters active, return everything
         if (order) {
             return tempProduct.sort((a, b) => a.name.localeCompare(b.name));;
         } else {
             return tempProduct.sort((a, b) => b.name.localeCompare(a.name));;
         }
-    }, [products, wordToSearch, IDtoSearch, category, subcategory]);
+    }, [products, wordToSearch, IDtoSearch, category, subcategory, order]);
 }

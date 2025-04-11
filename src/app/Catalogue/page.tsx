@@ -34,13 +34,15 @@ export default function Catalogue() {
   const [subSelected, setSubSelected] = useState("All");
   const resultContainerRef = useRef();
   const [order, setOrder] = useState(true)
+  const [isStockA, setIsStockA] = useState(true)
   const filtered = useFilteredProducts(
     products,
     wordToSearch,
     IDtoSearch,
     category,
     subCategory,
-    order
+    order,
+    isStockA,
   );
   const [sortedBy, setSortedBy] = useState(null);
   const [typeMode, setTypeMode] = useState("listItem");
@@ -194,11 +196,11 @@ export default function Catalogue() {
                   >
                     <IoSearch className="w-[25px] h-[25px]" /></div>
                 </ButtonNeum>
-                <ButtonNeum className={"relative !p-4 mr-4 w-[135px] h-[55px] flex justify-between items-center"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                <ButtonNeum className={"relative !p-4 mr-4 w-[135px] h-[55px] flex justify-between items-center"} onClick={() => setIsStockA(!isStockA)}>
                   <p className="relative top-[2px]">In stock</p>
                   <motion.div
                     animate={{
-                      opacity: typeMode !== "card" ? 1 : 0
+                      opacity: isStockA ? 1 : 0
                     }}
                     className={""}
                   >
@@ -244,6 +246,8 @@ export default function Catalogue() {
                 items={filtered}
                 mode={mode}
                 type={typeMode}
+                order={order}
+                isStockA={isStockA}
               ></Pagination>
             </div>
           </div>
