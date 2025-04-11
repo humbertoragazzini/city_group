@@ -35,12 +35,15 @@ export function useFilteredProducts(products, wordToSearch, IDtoSearch, category
         }
 
         // if is any subcategory selected 
-        tempProduct = tempProduct.filter((item) => {
-            console.log("item", item.available)
-            console.log("isStockA", isStockA)
-            console.log((item.available === isStockA))
-            return (item.available === isStockA)
-        });
+        if (isStockA) {
+            tempProduct = tempProduct.filter((item) => {
+                return (item.available === isStockA)
+            });
+        } else {
+            tempProduct = tempProduct.filter((item) => {
+                return true
+            });
+        }
 
         // No filters active, return everything
         if (order) {
@@ -48,5 +51,5 @@ export function useFilteredProducts(products, wordToSearch, IDtoSearch, category
         } else {
             return tempProduct.sort((a, b) => b.name.localeCompare(a.name));;
         }
-    }, [products, wordToSearch, IDtoSearch, category, subcategory, order]);
+    }, [products, wordToSearch, IDtoSearch, category, subcategory, order, isStockA]);
 }

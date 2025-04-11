@@ -183,7 +183,7 @@ export default function Catalogue() {
                 </motion.div>
               </div>
               <div className="hidden lg:flex justify-end items-center mb-5">
-                <ButtonNeum className={"relative flex justify-between items-center !p-4 mr-4 w-[calc(100%-275px)] h-[55px]"} onClick={() => { return "" }}>
+                <ButtonNeum className={"relative flex justify-between items-center !p-4 mr-4 w-[calc(100%-295px)] h-[55px]"} onClick={() => { return "" }}>
                   <input
                     onKeyUp={(e) => {
                       setWordtoSearch(e.currentTarget.value);
@@ -196,8 +196,8 @@ export default function Catalogue() {
                   >
                     <IoSearch className="w-[25px] h-[25px]" /></div>
                 </ButtonNeum>
-                <ButtonNeum className={"relative !p-4 mr-4 w-[135px] h-[55px] flex justify-between items-center"} onClick={() => setIsStockA(!isStockA)}>
-                  <p className="relative top-[2px]">In stock</p>
+                <ButtonNeum className={"relative !p-4 mr-4 w-[155px] h-[55px] flex justify-between items-center"} onClick={() => setIsStockA(!isStockA)}>
+                  <p className="relative top-[2px]">Stock only</p>
                   <motion.div
                     animate={{
                       opacity: isStockA ? 1 : 0
