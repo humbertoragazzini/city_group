@@ -20,7 +20,7 @@ import ContainerNeum from "./ContainerNeum";
 import ButtonNeum from "./Button";
 import { FiGrid, FiList } from "react-icons/fi";
 import { FaCheckSquare } from "react-icons/fa";
-import { IoSearch } from "react-icons/io5";
+import { IoChevronDown, IoSearch } from "react-icons/io5";
 
 
 export default function Catalogue() {
@@ -33,12 +33,16 @@ export default function Catalogue() {
   const [selected, setSelected] = useState("All");
   const [subSelected, setSubSelected] = useState("All");
   const resultContainerRef = useRef();
+  const [order, setOrder] = useState(true)
+  const [isStockA, setIsStockA] = useState(true)
   const filtered = useFilteredProducts(
     products,
     wordToSearch,
     IDtoSearch,
     category,
-    subCategory
+    subCategory,
+    order,
+    isStockA,
   );
   const [sortedBy, setSortedBy] = useState(null);
   const [typeMode, setTypeMode] = useState("listItem");
@@ -65,20 +69,20 @@ export default function Catalogue() {
   return (
 
     <MainContainer>
-      <div className="w-full mt-[90px] max-w-[1450px]">
+      <div className="w-full mt-[90px]">
         {/* Section with us and the description */}
         <motion.div
           ref={resultContainerRef}
           className="w-full flex flex-col justify-start items-center overflow-hidden relative p-4"
         >
           <div className="grid w-full grid-cols-12 gap-5">
-            <div className="col-span-12 lg:col-span-3">
-              <ContainerNeum>
-                <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300 mb-4">
+            <div className="col-span-12 lg:col-span-4">
+              <ContainerNeum className={"mb-5 !p-5"}>
+                <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300">
                   <div className={`col-span-12`}>
-                    <p className="text-2xl">Filters:</p>
+                    <p className="text-2xl mb-3">Filters:</p>
                   </div>
-                  <div className={`col-span-12 mb-3`}>
+                  <div className={`col-span-12`}>
                     <div
                       className={`flex justify-start items-center font-semibold rounded-lg`}
                     >
@@ -92,27 +96,17 @@ export default function Catalogue() {
                       ></input>
                     </div>
                   </div>
-                  {/* <div className={`col-span-12 mb-3`}>
+                </div>
+              </ContainerNeum>
+              <ContainerNeum className={"mb-5 !p-5"}>
+                <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300">
+                  <div className={`col-span-12`}>
                     <div
-                      className={`flex justify-start items-center font-semibold rounded-lg`}
-                    >
-                      <label className="mr-2 text-nowrap">By name:</label>
-                      <input
-                        onKeyUp={(e) => {
-                          setWordtoSearch(e.currentTarget.value);
-                        }}
-                        className="bg-transparent flex justify-center items-center"
-                        placeholder="Search by word"
-                      ></input>
-                    </div>
-                  </div> */}
-                  <div className={`col-span-12 mb-3`}>
-                    <div
-                      className={`flex justify-start items-center font-semibold rounded-lg`}
+                      className={`flex flex-col justify-start items-start font-semibold rounded-lg`}
                     >
                       <label className="mr-2">By category:</label>
                       {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center" placeholder="Search by type"> */}
-                      <DropdownMenu
+                      <Selectors
                         category={category}
                         setCategory={setCategory}
                         selected={selected}
@@ -120,16 +114,20 @@ export default function Catalogue() {
                         types={products}
                         products={products}
                         type="category"
-                      ></DropdownMenu>
+                      ></Selectors>
                     </div>
                   </div>
-                  <div className={`col-span-12 mb-3`}>
+                </div>
+              </ContainerNeum>
+              <ContainerNeum className={"!p-5"}>
+                <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300">
+                  <div className={`col-span-12`}>
                     <div
-                      className={`flex items-center font-semibold rounded-lg`}
+                      className={`flex flex-col justify-start items-start font-semibold rounded-lg`}
                     >
                       <label className="mr-2">By subcategory:</label>
                       {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center" placeholder="Search by type"> */}
-                      <DropdownMenu
+                      <Selectors
                         category={subCategory}
                         setCategory={setSubCategory}
                         selected={subSelected}
@@ -137,13 +135,13 @@ export default function Catalogue() {
                         setSelected={setSubSelected}
                         types={products}
                         products={products}
-                      ></DropdownMenu>
+                      ></Selectors>
                     </div>
                   </div>
                 </div>
               </ContainerNeum>
             </div>
-            <div className={`col-span-12 lg:col-span-9`} >
+            <div className={`col-span-12 lg:col-span-8`} >
 
               <div className="relative px-6 flex justify-start items-center mb-6 md:hidden">
                 {/* <BeamContainer mode={mode}> */}
@@ -184,31 +182,35 @@ export default function Catalogue() {
                   </div>
                 </motion.div>
               </div>
-              <div className="hidden lg:flex justify-end items-center">
-                <ButtonNeum className={"relative flex justify-between items-center !p-4 mb-4 mr-4 w-[calc(100%-275px)] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
-                  Search
-                  <motion.div
-                    animate={{
-                      opacity: typeMode !== "card" ? 1 : 0
+              <div className="hidden lg:flex justify-end items-center mb-5">
+                <ButtonNeum className={"relative flex justify-between items-center !p-4 mr-4 w-[calc(100%-295px)] h-[55px]"} onClick={() => { return "" }}>
+                  <input
+                    onKeyUp={(e) => {
+                      setWordtoSearch(e.currentTarget.value);
                     }}
+                    className="bg-transparent flex justify-center items-center focus:outline-none"
+                    placeholder="Search by word"
+                  ></input>
+                  <div
                     className={""}
                   >
-                    <IoSearch className="w-[25px] h-[25px]" /></motion.div>
+                    <IoSearch className="w-[25px] h-[25px]" /></div>
                 </ButtonNeum>
-                <ButtonNeum className={"relative !p-4 mb-4 mr-4 w-[135px] h-[55px] flex justify-between items-center"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
-                  <p className="relative top-[2px]">In stock</p>
+                <ButtonNeum className={"relative !p-4 mr-4 w-[155px] h-[55px] flex justify-between items-center"} onClick={() => setIsStockA(!isStockA)}>
+                  <p className="relative top-[2px]">Stock only</p>
                   <motion.div
                     animate={{
-                      opacity: typeMode !== "card" ? 1 : 0
+                      opacity: isStockA ? 1 : 0
                     }}
                     className={""}
                   >
                     <FaCheckSquare className="w-[20px] h-[20px]" /></motion.div>
                 </ButtonNeum>
-                <ButtonNeum className={"relative flex justify-center items-center !p-0 mb-4 mr-4 w-[55px] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                <ButtonNeum className={"relative flex justify-center items-center !p-0 mr-4 w-[55px] h-[55px]"}
+                  onClick={() => setOrder(!order)}>
                   <motion.div
                     animate={{
-                      opacity: typeMode === "card" ? 1 : 0,
+                      opacity: order ? 1 : 0,
                     }}
                     className={"absolute top-[14px] left-[14px]"}
                   >
@@ -216,14 +218,14 @@ export default function Catalogue() {
                   </motion.div>
                   <motion.div
                     animate={{
-                      opacity: typeMode !== "card" ? 1 : 0,
+                      opacity: !order ? 1 : 0,
                     }}
                     className={"absolute top-[14px] left-[14px]"}
                   >
                     Z-A
                   </motion.div>
                 </ButtonNeum>
-                <ButtonNeum className={"relative !p-0 mb-4 w-[55px] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
+                <ButtonNeum className={"relative !p-0 w-[55px] h-[55px]"} onClick={() => setTypeMode(typeMode === "card" ? "listItem" : "card")}>
                   <motion.div
                     animate={{
                       opacity: typeMode === "card" ? 1 : 0
@@ -244,6 +246,8 @@ export default function Catalogue() {
                 items={filtered}
                 mode={mode}
                 type={typeMode}
+                order={order}
+                isStockA={isStockA}
               ></Pagination>
             </div>
           </div>
@@ -312,6 +316,78 @@ function DropdownMenu({
             ))}
         </ul>
       )}
+    </div>
+  );
+}
+
+
+function Selectors({
+  category,
+  setCategory,
+  types,
+  selected,
+  products,
+  setSelected,
+  type,
+  filtered,
+}: any) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [options, setOptions] = useState(
+    type == "category"
+      ? [...new Set(products.map(({ category }) => category))]
+      : [...new Set(filtered.map(({ subcategory }) => subcategory))]
+  );
+
+  const toggleDropdown = () => setIsOpen((prev) => !prev);
+
+  const handleSelect = (option) => {
+    setSelected(option);
+    setCategory(option);
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    if (type !== "category") {
+      setOptions([...new Set(filtered.map(({ subcategory }) => subcategory))]);
+    }
+  }, [filtered]);
+
+  return (
+    <div className="relative min-w-[150px]">
+      <motion.ul animate={{
+        height: isOpen ? "fit-content" : "200px",
+      }} className="flex justify-start items-center flex-wrap overflow-hidden">
+        {options !== undefined &&
+          options.map((option, index) => (
+            <li
+              key={index}
+              onClick={() => handleSelect(option)}
+              style={{ cursor: "pointer" }}
+              className="flex flex-row justify-center items-center p-1"
+            >
+              <FaCheckSquare className="w-[20px] h-[20px] mr-3" />
+              <p className="top-[2px] relative">{option}</p>
+            </li>
+          ))}
+        <li
+          key={-1}
+          onClick={() => handleSelect("All")}
+          style={{ cursor: "pointer" }}
+          className="flex flex-row justify-center items-center p-1"
+        >
+          <FaCheckSquare className="w-[20px] h-[20px] mr-3" />
+          {"All"}
+        </li>
+        <motion.div animate={{
+          background: isOpen ? "transparent" : "",
+          height: isOpen ? 0 : "200px",
+        }} className="absolute w-full h-full z-10 bg-gradient-to-b from-transparent to-[#e0e0e0]">
+
+        </motion.div>
+      </motion.ul>
+      <motion.button onClick={() => { toggleDropdown() }} className="relatice z-10 w-full flex justify-center items-center">
+        <IoChevronDown className="w-[35px] h-[35px]"></IoChevronDown>
+      </motion.button>
     </div>
   );
 }

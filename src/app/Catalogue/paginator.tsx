@@ -20,8 +20,10 @@ export default function Pagination({
   items = [],
   itemsPerPage = 8,
   renderItem,
+  order,
   mode,
   type,
+  isStockA
 }) {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -30,7 +32,7 @@ export default function Pagination({
   const currentItems = useMemo(() => {
     const start = (currentPage - 1) * itemsPerPage;
     return items.slice(start, start + itemsPerPage);
-  }, [items, currentPage, itemsPerPage]);
+  }, [items, currentPage, itemsPerPage, order, isStockA]);
 
   const handleNext = () => {
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
@@ -50,14 +52,14 @@ export default function Pagination({
         </div>
       }
       {type == "listItem" && (
-        <div className="grid gap-2">
+        <div className="grid gap-5">
           {currentItems.map((product, index) => (
             <Item key={"item-" + index + product.id} index={index} product={product} mode={mode}></Item>
           ))}
         </div>
       )}
       {type == "card" && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {currentItems.map((product, index) => (
             <Card key={index} index={index} product={product} mode={mode}></Card>
           ))}

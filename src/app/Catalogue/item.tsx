@@ -26,7 +26,7 @@ export function Item({ product, index, mode }: any) {
     <div
       ref={itemRef}
       style={{ opacity: 0 }}
-      className={`relative col-span-1 transition-all duration-500 mb-3`}
+      className={`relative col-span-1 transition-all duration-500`}
     >
       <div
         onClick={(e) => setEnable(!enable)}
