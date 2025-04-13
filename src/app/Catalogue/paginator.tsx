@@ -52,7 +52,7 @@ export default function Pagination({
         </div>
       }
       {type == "listItem" && (
-        <div className="grid gap-5">
+        <div className="grid grid-cols-1 gap-5">
           {currentItems.map((product, index) => (
             <Item key={"item-" + index + product.id} index={index} product={product} mode={mode}></Item>
           ))}

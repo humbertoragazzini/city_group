@@ -34,17 +34,17 @@ export function Item({ product, index, mode }: any) {
       >
         <div className="flex justify-between items-center w-full h-full">
           <ButtonNeum className={"flex justify-start items-center w-[calc(100%-70px)] h-[55px] !p-0 overflow-hidden"}>
-            <div className="p-2 w-[55px] h-[55px]">
+            <div className="hidden md:block p-2 w-[55px] h-[55px]">
               <div className="flex justify-start items-center h-full w-full">
                 <p className="font-semibold w-full text-center">{product.id}</p>
               </div>
             </div>
-            <div className="p-2 w-[calc(100%-265px)]">
+            <div className="p-2 w-[calc(100%-65px)] md:w-[calc(100%-265px)]">
               <div className="flex justify-start items-center h-full">
                 <p className="font-semibold w-full text-left">{product.name}</p>
               </div>
             </div>
-            <div className="p-2 w-[155px]">
+            <div className="hidden md:block p-2 w-[155px]">
               <div className="flex justify-start items-center h-full">
                 <p className="font-semibold w-full text-left">{product.category}</p>
               </div>
