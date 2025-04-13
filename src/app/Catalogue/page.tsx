@@ -342,7 +342,7 @@ function Selectors({
   return (
     <div className="relative min-w-[150px]">
       <motion.ul animate={{
-        height: isOpen ? "fit-content" : "200px",
+        height: isOpen ? "fit-content" : "0px",
       }} className="relative flex justify-start items-center flex-wrap overflow-hidden">
         {options !== undefined &&
           options.map((option, index) => (
