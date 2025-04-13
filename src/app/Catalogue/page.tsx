@@ -142,19 +142,6 @@ export default function Catalogue() {
               </ContainerNeum>
             </div>
             <div className={`col-span-12 lg:col-span-8`} >
-
-              <div className="relative px-6 flex justify-start items-center mb-6 md:hidden">
-                {/* <BeamContainer mode={mode}> */}
-                <motion.button animate={{
-                  scale: filterMenu == "filter" ? 1.2 : 1,
-                }} className={`w-[100px] h-fit px-6 rounded-lg flex justify-center items-start p-3 m-0 z-[50] backdrop-blur-lg shadow-lg ${mode == "dark" ? "bg-[rgba(140,95,150,0.75)] [&>svg]:fill-black text-white" : "bg-white [&>svg]:fill-black text-black"}`} onClick={() => { setFilterMenu("filter") }}>
-                  FILTERS
-                </motion.button>
-                <motion.button animate={{
-                  scale: filterMenu == "settings" ? 1.2 : 1,
-                }} className={`w-[100px] h-fit ml-4 px-6 rounded-lg flex justify-center items-start p-3 m-0 z-[50] backdrop-blur-lg shadow-lg ${mode == "dark" ? "bg-[rgba(140,95,150,0.75)] [&>svg]:fill-black text-white" : "bg-white [&>svg]:fill-black text-black"}`} onClick={() => { setFilterMenu("settings") }}>
-                  Settings
-                </motion.button></div>
               <div className="absolute left-0 w-full px-8 flex flex-col justify-start items-center md:hidden">
                 <motion.div
                   animate={{
@@ -356,7 +343,7 @@ function Selectors({
     <div className="relative min-w-[150px]">
       <motion.ul animate={{
         height: isOpen ? "fit-content" : "200px",
-      }} className="flex justify-start items-center flex-wrap overflow-hidden">
+      }} className="relative flex justify-start items-center flex-wrap overflow-hidden">
         {options !== undefined &&
           options.map((option, index) => (
             <li
@@ -381,11 +368,11 @@ function Selectors({
         <motion.div animate={{
           background: isOpen ? "transparent" : "",
           height: isOpen ? 0 : "200px",
-        }} className="absolute w-full h-full z-10 bg-gradient-to-b from-transparent to-[#e0e0e0]">
+        }} className="absolute w-full h-full z-10 bg-gradient-to-b from-transparent to-[#e0e0e0] bottom-0">
 
         </motion.div>
       </motion.ul>
-      <motion.button onClick={() => { toggleDropdown() }} className="relatice z-10 w-full flex justify-center items-center">
+      <motion.button onClick={() => { toggleDropdown() }} className="relatice z-20 w-full flex justify-center items-center">
         <IoChevronDown className="w-[35px] h-[35px]"></IoChevronDown>
       </motion.button>
     </div>
