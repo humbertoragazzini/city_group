@@ -73,14 +73,14 @@ export default function Catalogue() {
         {/* Section with us and the description */}
         <motion.div
           ref={resultContainerRef}
-          className="w-full flex flex-col justify-start items-center overflow-hidden relative p-4"
+          className="relative flex flex-col items-center justify-start w-full p-4 overflow-hidden"
         >
-          <div className="grid w-full grid-cols-12 gap-5">
+          <div className="w-full grid grid-cols-12 gap-5">
             <div className="col-span-12 lg:col-span-4">
               <ContainerNeum className={"mb-5 !p-5"}>
-                <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300">
+                <div className="relative z-10 w-full grid grid-cols-12 full rounded-xl transition-all duration-300">
                   <div className={`col-span-12`}>
-                    <p className="text-2xl mb-3">Filters:</p>
+                    <p className="mb-3 text-2xl">Filters:</p>
                   </div>
                   <div className={`col-span-12`}>
                     <div
@@ -91,7 +91,7 @@ export default function Catalogue() {
                         onKeyUp={(e) => {
                           setIDtoSearch(e.currentTarget.value);
                         }}
-                        className="bg-transparent flex justify-center items-center"
+                        className="flex items-center justify-center bg-transparent"
                         placeholder="Search by ID"
                       ></input>
                     </div>
@@ -99,13 +99,12 @@ export default function Catalogue() {
                 </div>
               </ContainerNeum>
               <ContainerNeum className={"mb-5 !p-5"}>
-                <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300">
+                <div className="relative z-10 w-full grid grid-cols-12 full rounded-xl transition-all duration-300">
                   <div className={`col-span-12`}>
                     <div
                       className={`flex flex-col justify-start items-start font-semibold rounded-lg`}
                     >
                       <label className="mr-2">By category:</label>
-                      {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center" placeholder="Search by type"> */}
                       <Selectors
                         category={category}
                         setCategory={setCategory}
@@ -120,13 +119,12 @@ export default function Catalogue() {
                 </div>
               </ContainerNeum>
               <ContainerNeum className={"!p-5"}>
-                <div className="relative z-10 grid grid-cols-12 full rounded-xl w-full transition-all duration-300">
+                <div className="relative z-10 w-full grid grid-cols-12 full rounded-xl transition-all duration-300">
                   <div className={`col-span-12`}>
                     <div
                       className={`flex flex-col justify-start items-start font-semibold rounded-lg`}
                     >
                       <label className="mr-2">By subcategory:</label>
-                      {/* <input onKeyUp={(e) => { setWordtoSearch(e.currentTarget.value) }} className="bg-transparent flex justify-center items-center" placeholder="Search by type"> */}
                       <Selectors
                         category={subCategory}
                         setCategory={setSubCategory}
@@ -142,7 +140,7 @@ export default function Catalogue() {
               </ContainerNeum>
             </div>
             <div className={`col-span-12 lg:col-span-8`} >
-              <div className="absolute left-0 w-full px-8 flex flex-col justify-start items-center md:hidden">
+              <div className="absolute left-0 flex flex-col items-center justify-start w-full px-8 md:hidden">
                 <motion.div
                   animate={{
                     opacity: filterMenu == "settings" ? 1 : 0,
@@ -150,7 +148,7 @@ export default function Catalogue() {
                   }}
                   className={`w-full flex justify-center backdrop-blur-xl ${mode == "dark" ? "bg-[rgba(60,15,60,0.55)] text-white" : "bg-[rgba(255,255,255,0.1)] text-black"
                     } p-9 rounded-br-2xl rounded-xl shadow-xl z-[40]`}>
-                  <div className="w-full flex justify-start items-start p-8">
+                  <div className="flex items-start justify-start w-full p-8">
                     <button onClick={() => { setFilterMenu(!filterMenu) }} className="w-[55px] h-[55px] rounded-full absolute right-0 top-0 m-4 p-3"><LuPanelLeftClose className="w-full h-full"></LuPanelLeftClose></button>
                     <div className="mb-4"><p className="mb-2">Toggle dark mode</p> <ToggleWrapper mode={mode} setMode={setMode}></ToggleWrapper></div>
                     <div className="mb-4">
@@ -169,13 +167,13 @@ export default function Catalogue() {
                   </div>
                 </motion.div>
               </div>
-              <div className="hidden lg:flex justify-end items-center mb-5">
+              <div className="items-center justify-end hidden mb-5 lg:flex">
                 <ButtonNeum className={"relative flex justify-between items-center !p-4 mr-4 w-[calc(100%-295px)] h-[55px]"} onClick={() => { return "" }}>
                   <input
                     onKeyUp={(e) => {
                       setWordtoSearch(e.currentTarget.value);
                     }}
-                    className="bg-transparent flex justify-center items-center focus:outline-none"
+                    className="flex items-center justify-center bg-transparent focus:outline-none"
                     placeholder="Search by word"
                   ></input>
                   <div
@@ -343,14 +341,14 @@ function Selectors({
     <div className="relative min-w-[150px]">
       <motion.ul animate={{
         height: isOpen ? "fit-content" : "0px",
-      }} className="relative flex justify-start items-center flex-wrap overflow-hidden">
+      }} className="relative flex flex-wrap items-center justify-start overflow-hidden">
         {options !== undefined &&
           options.map((option, index) => (
             <li
               key={index}
               onClick={() => handleSelect(option)}
               style={{ cursor: "pointer" }}
-              className="flex flex-row justify-center items-center p-1"
+              className="flex flex-row items-center justify-center p-1"
             >
               <FaCheckSquare className="w-[20px] h-[20px] mr-3" />
               <p className="top-[2px] relative">{option}</p>
@@ -360,7 +358,7 @@ function Selectors({
           key={-1}
           onClick={() => handleSelect("All")}
           style={{ cursor: "pointer" }}
-          className="flex flex-row justify-center items-center p-1"
+          className="flex flex-row items-center justify-center p-1"
         >
           <FaCheckSquare className="w-[20px] h-[20px] mr-3" />
           {"All"}
@@ -372,7 +370,7 @@ function Selectors({
 
         </motion.div>
       </motion.ul>
-      <motion.button onClick={() => { toggleDropdown() }} className="relatice z-20 w-full flex justify-center items-center">
+      <motion.button onClick={() => { toggleDropdown() }} className="z-20 flex items-center justify-center w-full relatice">
         <IoChevronDown className="w-[35px] h-[35px]"></IoChevronDown>
       </motion.button>
     </div>
