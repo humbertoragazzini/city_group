@@ -35,6 +35,7 @@ export default function Particles({ scale }: any) {
     []
   );
 
+  //TODO make changes to add the new geometry
   useLayoutEffect(() => {
     const positions = scene.children
       .filter((child: any) => child.geometry)
