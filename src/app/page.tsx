@@ -78,7 +78,7 @@ export default function Home() {
             },
             {
               language: "ES",
-              content: "Bienvenido a nuestro sitio web",
+              content: "Contamos con conexiones globales y estrategicas",
             },
             {
               language: "CH",
@@ -134,7 +134,7 @@ export default function Home() {
             },
             {
               language: "ES",
-              content: "Bienvenido a nuestro sitio web",
+              content: "Contamos con conexiones Globales Estrategicas",
             },
             {
               language: "CH",
@@ -152,7 +152,7 @@ export default function Home() {
             },
             {
               language: "ES",
-              content: "Bienvenido a nuestro sitio web",
+              content: "Operamos con presencia activa en Argentina, Reino Unido y China, lo que nos permite coordinar operaciones logísticas eficientes entre Asia, Europa y América del Sur. Nuestra red de socios confiables asegura entregas a tiempo, cumplimiento normativo y una gestión de comercio internacional sin complicaciones.",
             },
             {
               language: "CH",
@@ -196,7 +196,7 @@ export default function Home() {
           },
           {
             language: "ES",
-            content: "Bienvenido a nuestro sitio web",
+            content: "Contamos con una amplia variedad de productos",
           },
           {
             language: "CH",
@@ -215,7 +215,7 @@ export default function Home() {
           {
             language: "ES",
             content:
-              "Ofrecemos los mejores servicios para satisfacer sus necesidades.",
+              "",
           },
           {
             language: "CH",

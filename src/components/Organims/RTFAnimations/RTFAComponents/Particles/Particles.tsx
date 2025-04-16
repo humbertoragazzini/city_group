@@ -9,13 +9,14 @@ import { usePathname } from "next/navigation";
 import { useFrame } from "@react-three/fiber";
 
 export default function Particles({ scale }: any) {
-  const { scene } = useGLTF("/RTFA/Models/models.glb");
+  //const { scene } = useGLTF("/RTFA/Models/models.glb");
+  const { scene } = useGLTF("/RTFA/Models/earth_land2.glb");
   const pathname = usePathname();
   const bufferGRef = useRef(null);
   const pointsRef = useRef(null);
   const shaderMaterialRef = useRef();
   const particles = useRef({
-    maxCount: 10242,
+    maxCount: 45242,
     currentIndex: 0,
     nextIndex: 0,
   });
@@ -40,7 +41,7 @@ export default function Particles({ scale }: any) {
     const positions = scene.children
       .filter((child: any) => child.geometry)
       .map((child: any) => child.geometry.attributes.position);
-    console.log(positions);
+    console.log(scene);
     // particles.current.maxCount = Math.max(...positions.map((pos) => pos.count));
 
     const sizesArray = new Float32Array(particles.current.maxCount);
@@ -82,7 +83,7 @@ export default function Particles({ scale }: any) {
     gsap.fromTo(
       pointsRef.current.rotation,
       { x: 0, y: 0, z: 0 },
-      { x: 500, y: 350, z: 200, duration: 10000, yoyo: true, repeat: -1 }
+      { x: 5, y: 300, z: 1, duration: 10000, yoyo: true, repeat: -1 }
     );
   }, [scene]);
 
