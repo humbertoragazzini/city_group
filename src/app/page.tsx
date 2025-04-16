@@ -152,7 +152,8 @@ export default function Home() {
             },
             {
               language: "ES",
-              content: "Operamos con presencia activa en Argentina, Reino Unido y China, lo que nos permite coordinar operaciones logísticas eficientes entre Asia, Europa y América del Sur. Nuestra red de socios confiables asegura entregas a tiempo, cumplimiento normativo y una gestión de comercio internacional sin complicaciones.",
+              content:
+                "Operamos con presencia activa en Argentina, Reino Unido y China, lo que nos permite coordinar operaciones logísticas eficientes entre Asia, Europa y América del Sur. Nuestra red de socios confiables asegura entregas a tiempo, cumplimiento normativo y una gestión de comercio internacional sin complicaciones.",
             },
             {
               language: "CH",
@@ -265,7 +266,10 @@ export default function Home() {
         ]}
         marke={[
           { language: "EN", content: "Electronics, Tools, and Machinery." },
-          { language: "ES", content: "Electrónica, Herramientas y Maquinaria." },
+          {
+            language: "ES",
+            content: "Electrónica, Herramientas y Maquinaria.",
+          },
           { language: "CH", content: "电子产品，工具和机械。" },
           { language: "IT", content: "Elettronica, Strumenti e Macchinari." },
         ]}
@@ -284,7 +288,10 @@ export default function Home() {
       <SectionL
         heading={[
           { language: "EN", content: "Personalized Trade Services" },
-          { language: "ES", content: "Servicios de Comercio Internacional Personalizados" },
+          {
+            language: "ES",
+            content: "Servicios de Comercio Internacional Personalizados",
+          },
           { language: "CH", content: "个性化国际贸易服务" },
           { language: "IT", content: "Servizi Commerciali Personalizzati" },
         ]}
