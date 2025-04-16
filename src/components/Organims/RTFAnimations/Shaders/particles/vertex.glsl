@@ -6,7 +6,7 @@ uniform float uMixFactor;
 uniform vec3 uColorA;
 uniform vec3 uColorB;
 varying  vec3 vColor;
-
+varying vec4 vPosition;
 //	Simplex 3D Noise 
 //	by Ian McEwan, Ashima Arts
 //
@@ -108,4 +108,5 @@ void main()
 
     // update varying
     vColor = mix(uColorA,uColorB,noise);
+    vPosition = modelPosition;
 }
