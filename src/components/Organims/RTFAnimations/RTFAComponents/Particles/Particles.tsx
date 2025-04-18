@@ -16,7 +16,7 @@ export default function Particles({ scale }: any) {
   const pointsRef = useRef(null);
   const shaderMaterialRef = useRef();
   const particles = useRef({
-    maxCount: 45242,
+    maxCount: 25242,
     currentIndex: 0,
     nextIndex: 0,
   });
