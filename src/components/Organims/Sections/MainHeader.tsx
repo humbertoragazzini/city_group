@@ -81,11 +81,11 @@ export default function MainHeader() {
         ref={homeRef}
       >
         <Heading
-          className="mb-4 text-center"
+          className="mb-4 !text-[150px] text-start"
           text={[
             {
               language: "EN",
-              content: "Welcome to Primalport",
+              content: "Primalport",
             },
             {
               language: "ES",
