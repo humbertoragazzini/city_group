@@ -22,23 +22,22 @@ export default function AppWraper({ children }: any) {
 
   useEffect(() => {
     window.scrollTo(0, 0); // Instantly scroll to top
-    console.log(pathname)
+    console.log(pathname);
   }, [pathname]);
 
   return (
     <AppProvider>
       <ONavBar></ONavBar>
-      {
-        1 == 1 &&
-        <MainBG></MainBG>
-      }
+      {1 == 1 && <MainBG></MainBG>}
       <SmoothScrollbar enabled={true}>
         {() => {
           return (
             <>
               {/*header*/}
-              {
-                !(pathname == "/Catalogue") && <div className={`opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-2 max-w-[1920px] mx-auto p-[45px]`}>
+              {!(pathname == "/Catalogue") && (
+                <div
+                  className={`opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-2 max-w-[1920px] mx-auto p-[45px]`}
+                >
                   <div className="relative flex flex-col items-center justify-center text-white col-span-1 xl:col-span-2 ">
                     <MainHeader></MainHeader>
                     <LogoBG
@@ -49,20 +48,31 @@ export default function AppWraper({ children }: any) {
                       rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
                     ></LogoBG>
                   </div>
+                  <div className="grid grid-cols-12">
+                    <div className="col-span-6">
+                      <h1>The new title</h1>
+                    </div>
+                    <div className="col-span-6">
+                      <LogoBG
+                        className={
+                          "hidden xl:block left-[250px] min-w-[calc(100%-500px)]"
+                        }
+                        width={null}
+                        rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
+                      ></LogoBG>
+                    </div>
+                  </div>
                 </div>
-              }
+              )}
               {/*body*/}
               {children}
               {/*footer*/}
-              {
-                !(pathname == "/Catalogue") &&
-                <Footer></Footer>
-              }
+              {!(pathname == "/Catalogue") && <Footer></Footer>}
             </>
           );
         }}
       </SmoothScrollbar>
-    </AppProvider >
+    </AppProvider>
   );
 }
 

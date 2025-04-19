@@ -109,8 +109,7 @@ export default function MainHeader() {
           text={[
             {
               language: "EN",
-              content:
-                "Comprehensive Solutions in Imports, Construction, and Retail",
+              content: "Your Gateway to International Commerce",
             },
             {
               language: "ES",
