@@ -81,7 +81,7 @@ export default function MainHeader() {
         ref={homeRef}
       >
         <Heading
-          className="mb-4 !text-[150px] text-start"
+          className="mb-4 text-center"
           text={[
             {
               language: "EN",
