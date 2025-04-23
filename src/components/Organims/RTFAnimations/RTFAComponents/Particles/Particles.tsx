@@ -10,7 +10,7 @@ import { useFrame } from "@react-three/fiber";
 
 export default function Particles({ scale }: any) {
   // const { scene } = useGLTF("/RTFA/Models/models.glb");
-  const { scene } = useGLTF("/RTFA/Models/earth_land2.glb");
+  const { scene } = useGLTF("/RTFA/Models/earth_land_v2.glb");
   const pathname = usePathname();
   const bufferGRef = useRef(null);
   const pointsRef = useRef(null);
@@ -67,10 +67,6 @@ export default function Particles({ scale }: any) {
       }
       return normalizedArray;
     });
-
-    console.log("all positions", positions);
-    console.log("all particles.current.positions", particles.current.positions);
-    console.log("all sizesArray", sizesArray);
 
     if (particles.current.positions.length > 0) {
       bufferGRef.current.setAttribute("position", particles.current.positions[0]);
