@@ -109,7 +109,7 @@ export default function Particles({ scale }: any) {
         );
         bufferGRef.current.setAttribute(
           "aPositionTarget",
-          particles.current.positions[0]
+          particles.current.positions[2]
         );
         particles.current.currentIndex = 0;
         bufferGRef.current.attributes.position.needsUpdate = true;
@@ -143,7 +143,7 @@ export default function Particles({ scale }: any) {
         );
         bufferGRef.current.setAttribute(
           "aPositionTarget",
-          particles.current.positions[2]
+          particles.current.positions[0]
         );
         particles.current.currentIndex = 2;
         bufferGRef.current.attributes.position.needsUpdate = true;
