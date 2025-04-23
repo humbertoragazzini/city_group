@@ -9,14 +9,14 @@ import { usePathname } from "next/navigation";
 import { useFrame } from "@react-three/fiber";
 
 export default function Particles({ scale }: any) {
-  //const { scene } = useGLTF("/RTFA/Models/models.glb");
-  const { scene } = useGLTF("/RTFA/Models/earth_land2.glb");
+  // const { scene } = useGLTF("/RTFA/Models/models.glb");
+  const { scene } = useGLTF("/RTFA/Models/earth_land_v2.glb");
   const pathname = usePathname();
   const bufferGRef = useRef(null);
   const pointsRef = useRef(null);
   const shaderMaterialRef = useRef();
   const particles = useRef({
-    maxCount: 25242,
+    maxCount: 0,
     currentIndex: 0,
     nextIndex: 0,
   });
@@ -42,10 +42,10 @@ export default function Particles({ scale }: any) {
       .filter((child: any) => child.geometry)
       .map((child: any) => child.geometry.attributes.position);
     console.log(scene);
-    // particles.current.maxCount = Math.max(...positions.map((pos) => pos.count));
-
+    particles.current.maxCount = Math.max(...positions.map((pos) => pos.count));
+    console.log(particles.current.maxCount)
     const sizesArray = new Float32Array(particles.current.maxCount);
-
+    console.log(scene.children)
     for (let i = 0; i < particles.current.maxCount; i++) {
       sizesArray[i] = Math.random(); // Generates a random number between 0 and 1.0
     }
@@ -55,24 +55,24 @@ export default function Particles({ scale }: any) {
         particles.current.maxCount * 3,
         3
       );
+      let counter = 0;
       for (let i = 0; i < particles.current.maxCount * 3; i++) {
-        if (pos.array[i]) {
+        if (pos.array[i] !== undefined) {
           normalizedArray.array[i] = pos.array[i];
         } else {
-          console.log();
-          normalizedArray.array[i] = pos.array[Math.abs(pos.array.length - i)];
+          normalizedArray.array[i] = pos.array[counter];
+          counter < pos.array.length - 1 ? counter++ : counter = 0;
+          // normalizedArray.array[i] = 0.0;
         }
       }
       return normalizedArray;
     });
 
-    console.log(particles.current.positions);
-
-    if (positions.length > 0) {
-      bufferGRef.current.setAttribute("position", positions[0]);
+    if (particles.current.positions.length > 0) {
+      bufferGRef.current.setAttribute("position", particles.current.positions[0]);
       bufferGRef.current.setAttribute(
         "aPositionTarget",
-        positions[1] || positions[0]
+        particles.current.positions[0] || particles.current.positions[1]
       );
       bufferGRef.current.setAttribute(
         "aSizes",
@@ -99,6 +99,7 @@ export default function Particles({ scale }: any) {
   }, []);
 
   useEffect(() => {
+    console.log(particles.current.maxCount)
     console.log(particles.current);
     switch (pathname) {
       case "/":
@@ -108,7 +109,7 @@ export default function Particles({ scale }: any) {
         );
         bufferGRef.current.setAttribute(
           "aPositionTarget",
-          particles.current.positions[0]
+          particles.current.positions[2]
         );
         particles.current.currentIndex = 0;
         bufferGRef.current.attributes.position.needsUpdate = true;
@@ -142,7 +143,7 @@ export default function Particles({ scale }: any) {
         );
         bufferGRef.current.setAttribute(
           "aPositionTarget",
-          particles.current.positions[2]
+          particles.current.positions[0]
         );
         particles.current.currentIndex = 2;
         bufferGRef.current.attributes.position.needsUpdate = true;
