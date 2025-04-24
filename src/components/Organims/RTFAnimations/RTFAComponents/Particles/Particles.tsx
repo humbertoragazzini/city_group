@@ -25,8 +25,8 @@ export default function Particles({ scale }: any) {
       uSize: { value: 0.25 },
       uResolution: {
         value: new THREE.Vector2(
-          window.innerWidth * window.devicePixelRatio,
-          window.innerHeight * window.devicePixelRatio
+          window.innerWidth / window.devicePixelRatio,
+          window.innerHeight / window.devicePixelRatio
         ),
       },
       uMixFactor: { value: 0 },
@@ -93,8 +93,8 @@ export default function Particles({ scale }: any) {
   useEffect(() => {
     const handleResize = () => {
       uniforms.uResolution.value.set(
-        window.innerWidth * window.devicePixelRatio,
-        window.innerHeight * window.devicePixelRatio
+        window.innerWidth / window.devicePixelRatio,
+        window.innerHeight / window.devicePixelRatio
       );
     };
     window.addEventListener("resize", handleResize);
@@ -179,7 +179,7 @@ export default function Particles({ scale }: any) {
   }, [pathname]);
 
   return (
-    <points scale={scale} position={[0, 0, -2]} ref={pointsRef}>
+    <points scale={0.75} position={[0, 0, 0]} ref={pointsRef}>
       <bufferGeometry ref={bufferGRef}></bufferGeometry>
       <shaderMaterial
         ref={shaderMaterialRef}

@@ -104,7 +104,7 @@ void main()
 
     // Point size
     gl_PointSize = uSize * uResolution.y * aSizes;
-    gl_PointSize *= (0.5 / - viewPosition.z);
+    gl_PointSize *= (2.5 / - viewPosition.z);
 
     // update varying
     vColor = mix(uColorA,uColorB,noise);

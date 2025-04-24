@@ -37,15 +37,17 @@ export default function AppWraper({ children }: any) {
               <div
                 className={`opacity-0 animate-fade-in delay-[1500ms] grid h-fit min-h-screen grid-cols-1 xl:grid-cols-2 max-w-[1920px] mx-auto p-[45px]`}
               >
-                <div className="relative flex flex-col items-center justify-center text-white col-span-1 xl:col-span-2 ">
+                <div className="relative flex flex-col items-center justify-center overflow-hidden text-white col-span-1 xl:col-span-2">
                   <MainHeader></MainHeader>
-                  <LogoBG
-                    className={
-                      "block w-full lg:left-[250px] lg:min-w-[calc(100%-500px)]"
-                    }
-                    width={null}
-                    rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
-                  ></LogoBG>
+                  <div className="absolute right-0 translate-x-1/2 h-full lg:w-[calc(100%-200px)] xl:w-[calc(100%-750px)] aspect-square">
+                    <LogoBG
+                      className={
+                        "block w-full translate-y-[0%] top-0 aspect-square"
+                      }
+                      width={null}
+                      rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
+                    ></LogoBG>{" "}
+                  </div>
                 </div>
                 {/* <div className="flex items-center justify-center text-white col-span-1">
                     <MainHeader></MainHeader>

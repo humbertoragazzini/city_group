@@ -82,7 +82,7 @@ export default function MainHeader() {
       >
         <div className="backdrop-blur-md">
           <Heading
-            className="mb-4 text-center"
+            className="mb-4 text-left lg:text-center"
             text={[
               {
                 language: "EN",

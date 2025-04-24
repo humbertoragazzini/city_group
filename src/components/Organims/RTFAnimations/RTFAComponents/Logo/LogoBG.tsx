@@ -24,7 +24,7 @@ export default function LogoBG({ className, rotation, width }: iLogoBG) {
           {(props) => {
             return (
               <group scale={props.scale}>
-                <Particles scale={0.125} rotation={rotation}></Particles>
+                <Particles rotation={rotation}></Particles>
               </group>
             );
           }}
