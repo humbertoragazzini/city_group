@@ -41,7 +41,7 @@ export default function AppWraper({ children }: any) {
                   <MainHeader></MainHeader>
                   <LogoBG
                     className={
-                      "hidden xl:block left-[250px] min-w-[calc(100%-500px)]"
+                      "block w-full lg:left-[250px] lg:min-w-[calc(100%-500px)]"
                     }
                     width={null}
                     rotation={{ x: 0, y: Math.PI / 2, z: 0 }}

@@ -43,11 +43,11 @@ export default function Particles({ scale }: any) {
       .map((child: any) => child.geometry.attributes.position);
     console.log(scene);
     particles.current.maxCount = Math.max(...positions.map((pos) => pos.count));
-    console.log(particles.current.maxCount)
+    console.log(particles.current.maxCount);
     const sizesArray = new Float32Array(particles.current.maxCount);
-    console.log(scene.children)
+    console.log(scene.children);
     for (let i = 0; i < particles.current.maxCount; i++) {
-      sizesArray[i] = Math.random(); // Generates a random number between 0 and 1.0
+      sizesArray[i] = Math.random() / 4; // Generates a random number between 0 and 1.0
     }
 
     particles.current.positions = positions.map((pos) => {
@@ -61,7 +61,7 @@ export default function Particles({ scale }: any) {
           normalizedArray.array[i] = pos.array[i];
         } else {
           normalizedArray.array[i] = pos.array[counter];
-          counter < pos.array.length - 1 ? counter++ : counter = 0;
+          counter < pos.array.length - 1 ? counter++ : (counter = 0);
           // normalizedArray.array[i] = 0.0;
         }
       }
@@ -69,7 +69,10 @@ export default function Particles({ scale }: any) {
     });
 
     if (particles.current.positions.length > 0) {
-      bufferGRef.current.setAttribute("position", particles.current.positions[0]);
+      bufferGRef.current.setAttribute(
+        "position",
+        particles.current.positions[0]
+      );
       bufferGRef.current.setAttribute(
         "aPositionTarget",
         particles.current.positions[0] || particles.current.positions[1]
@@ -99,7 +102,7 @@ export default function Particles({ scale }: any) {
   }, []);
 
   useEffect(() => {
-    console.log(particles.current.maxCount)
+    console.log(particles.current.maxCount);
     console.log(particles.current);
     switch (pathname) {
       case "/":
@@ -111,7 +114,7 @@ export default function Particles({ scale }: any) {
           "aPositionTarget",
           particles.current.positions[2]
         );
-        particles.current.currentIndex = 0;
+        particles.current.currentIndex = 2;
         bufferGRef.current.attributes.position.needsUpdate = true;
         gsap.fromTo(
           uniforms.uMixFactor,
@@ -145,7 +148,7 @@ export default function Particles({ scale }: any) {
           "aPositionTarget",
           particles.current.positions[0]
         );
-        particles.current.currentIndex = 2;
+        particles.current.currentIndex = 0;
         bufferGRef.current.attributes.position.needsUpdate = true;
         gsap.fromTo(
           uniforms.uMixFactor,
