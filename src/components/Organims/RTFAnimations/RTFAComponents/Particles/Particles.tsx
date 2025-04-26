@@ -41,11 +41,8 @@ export default function Particles({ scale }: any) {
     const positions = scene.children
       .filter((child: any) => child.geometry)
       .map((child: any) => child.geometry.attributes.position);
-    console.log(scene);
     particles.current.maxCount = Math.max(...positions.map((pos) => pos.count));
-    console.log(particles.current.maxCount);
     const sizesArray = new Float32Array(particles.current.maxCount);
-    console.log(scene.children);
     for (let i = 0; i < particles.current.maxCount; i++) {
       sizesArray[i] = Math.random() / 4; // Generates a random number between 0 and 1.0
     }
@@ -112,7 +109,7 @@ export default function Particles({ scale }: any) {
         );
         bufferGRef.current.setAttribute(
           "aPositionTarget",
-          particles.current.positions[2]
+          particles.current.positions[1]
         );
         particles.current.currentIndex = 2;
         bufferGRef.current.attributes.position.needsUpdate = true;

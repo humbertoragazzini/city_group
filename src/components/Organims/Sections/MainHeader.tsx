@@ -4,6 +4,7 @@ import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
+import LogoBG from "../RTFAnimations/RTFAComponents/Logo/LogoBG";
 
 export default function MainHeader() {
   const pathname = usePathname();
@@ -80,60 +81,99 @@ export default function MainHeader() {
         className="relative flex flex-col items-center justify-center opacity-0"
         ref={homeRef}
       >
-        <div className="backdrop-blur-md">
-          <Heading
-            className="mb-4 text-left lg:text-center"
-            text={[
-              {
-                language: "EN",
-                content: "Primalport",
-              },
-              {
-                language: "ES",
-                content: "Elevando la Excelencia en Todas las Industrias",
-              },
-              {
-                language: "CH",
-                content: "提升各行业的卓越水平",
-              },
-              {
-                language: "IT",
-                content: "Elevare l'Eccellenza in Tutti i Settori",
-              },
-            ]}
-            level={1}
-          ></Heading>
-
-          <Paragraph
-            type={"standfirst3"}
-            className="mb-4 text-center"
-            text={[
-              {
-                language: "EN",
-                content: "Your Gateway to International Commerce",
-              },
-              {
-                language: "ES",
-                content:
-                  "Soluciones Integrales en Importaciones, Construcción y Venta al por Menor",
-              },
-              {
-                language: "CH",
-                content: "进口、建筑和零售的综合解决方案",
-              },
-              {
-                language: "IT",
-                content:
-                  "Soluzioni Complete per Importazioni, Costruzioni e Vendita al Dettaglio",
-              },
-            ]}
-          ></Paragraph>
+        <div className="">
+          <div className={"grid grid-cols-4 gap-10"}>
+            <div className="flex flex-col items-start justify-center col-span-2">
+              <Heading
+                className="mb-4 text-left lg:text-6xl xl:text-[150px] !leading-[150px]"
+                text={[
+                  {
+                    language: "EN",
+                    content: "Primalports",
+                  },
+                  {
+                    language: "ES",
+                    content:
+                      "Soluciones Integrales en Importaciones, Construcción y Venta al por Menor",
+                  },
+                  {
+                    language: "CH",
+                    content: "进口、建筑和零售的综合解决方案",
+                  },
+                  {
+                    language: "IT",
+                    content:
+                      "Soluzioni Complete per Importazioni, Costruzioni e Vendita al Dettaglio",
+                  },
+                ]}
+                level={1}
+              ></Heading>
+              <Heading
+                className="mb-4 text-left lg:text-3xl"
+                text={[
+                  {
+                    language: "EN",
+                    content: "Your Gateway to International Commerce",
+                  },
+                  {
+                    language: "ES",
+                    content:
+                      "Soluciones Integrales en Importaciones, Construcción y Venta al por Menor",
+                  },
+                  {
+                    language: "CH",
+                    content: "进口、建筑和零售的综合解决方案",
+                  },
+                  {
+                    language: "IT",
+                    content:
+                      "Soluzioni Complete per Importazioni, Costruzioni e Vendita al Dettaglio",
+                  },
+                ]}
+                level={2}
+              ></Heading>
+              <Paragraph
+                type={"standfirst3"}
+                className="mb-4 text-left lg:text-lg"
+                text={[
+                  {
+                    language: "EN",
+                    content:
+                      "We are a global import and export company dedicated to connecting markets and delivering tailored solutions. With a commitment to precision, trust, and innovation, we help our clients grow and thrive on the world stage.",
+                  },
+                  {
+                    language: "ES",
+                    content:
+                      "Soluciones Integrales en Importaciones, Construcción y Venta al por Menor",
+                  },
+                  {
+                    language: "CH",
+                    content: "进口、建筑和零售的综合解决方案",
+                  },
+                  {
+                    language: "IT",
+                    content:
+                      "Soluzioni Complete per Importazioni, Costruzioni e Vendita al Dettaglio",
+                  },
+                ]}
+              ></Paragraph>
+            </div>
+            <div className="overflow-hidden col-span-2">
+              <LogoBG
+                className={
+                  "relative block w-full translate-y-[0%] left-0 aspect-square"
+                }
+                width={null}
+                rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
+              ></LogoBG>
+            </div>
+          </div>
         </div>
       </div>
       <div className="relative opacity-0" ref={aboutUsRef}>
         <div className="backdrop-blur-md">
           <Heading
-            className="mb-4 text-center"
+            className="mb-4 lg:text-center"
             text={[
               {
                 language: "EN",
@@ -157,7 +197,7 @@ export default function MainHeader() {
 
           <Paragraph
             type={"standfirst3"}
-            className="mb-4 text-center"
+            className="mb-4 lg:text-center"
             text={[
               {
                 language: "EN",
