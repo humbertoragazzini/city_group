@@ -81,15 +81,15 @@ export default function MainHeader() {
         className="relative flex flex-col items-center justify-center opacity-0"
         ref={homeRef}
       >
-        <div className="backdrop-blur-md">
-          <div className={"grid grid-cols-3"}>
-            <div className="col-span-2">
+        <div className="">
+          <div className={"grid grid-cols-4 gap-10"}>
+            <div className="flex flex-col items-start justify-center col-span-2">
               <Heading
-                className="mb-4 text-left lg:text-6xl xl:text-[120px] !leading-[150px]"
+                className="mb-4 text-left lg:text-6xl xl:text-[150px] !leading-[150px]"
                 text={[
                   {
                     language: "EN",
-                    content: "Your Gateway to International Commerce",
+                    content: "Primalports",
                   },
                   {
                     language: "ES",
@@ -108,9 +108,8 @@ export default function MainHeader() {
                 ]}
                 level={1}
               ></Heading>
-              <Paragraph
-                type={"standfirst3"}
-                className="mb-4 text-center"
+              <Heading
+                className="mb-4 text-left lg:text-3xl"
                 text={[
                   {
                     language: "EN",
@@ -131,9 +130,35 @@ export default function MainHeader() {
                       "Soluzioni Complete per Importazioni, Costruzioni e Vendita al Dettaglio",
                   },
                 ]}
+                level={2}
+              ></Heading>
+              <Paragraph
+                type={"standfirst3"}
+                className="mb-4 text-left lg:text-lg"
+                text={[
+                  {
+                    language: "EN",
+                    content:
+                      "We are a global import and export company dedicated to connecting markets and delivering tailored solutions. With a commitment to precision, trust, and innovation, we help our clients grow and thrive on the world stage.",
+                  },
+                  {
+                    language: "ES",
+                    content:
+                      "Soluciones Integrales en Importaciones, Construcción y Venta al por Menor",
+                  },
+                  {
+                    language: "CH",
+                    content: "进口、建筑和零售的综合解决方案",
+                  },
+                  {
+                    language: "IT",
+                    content:
+                      "Soluzioni Complete per Importazioni, Costruzioni e Vendita al Dettaglio",
+                  },
+                ]}
               ></Paragraph>
             </div>
-            <div className="col-span-1">
+            <div className="overflow-hidden col-span-2">
               <LogoBG
                 className={
                   "relative block w-full translate-y-[0%] left-0 aspect-square"
