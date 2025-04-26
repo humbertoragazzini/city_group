@@ -39,7 +39,7 @@ export default function AppWraper({ children }: any) {
               >
                 <div className="relative flex flex-col items-center justify-center overflow-hidden text-white col-span-1 xl:col-span-2">
                   <MainHeader></MainHeader>
-                  <div className="absolute right-0 translate-x-1/2 h-full lg:w-[calc(100%-200px)] xl:w-[calc(100%-750px)] aspect-square">
+                  <div className="absolute -right-8 translate-x-1/2 h-full lg:w-[calc(100%-200px)] xl:w-[calc(100%-750px)] aspect-square">
                     <LogoBG
                       className={
                         "block w-full translate-y-[0%] top-0 aspect-square"

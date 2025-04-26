@@ -81,59 +81,65 @@ export default function MainHeader() {
         ref={homeRef}
       >
         <div className="backdrop-blur-md">
-          <Heading
-            className="mb-4 text-left lg:text-center"
-            text={[
-              {
-                language: "EN",
-                content: "Primalport",
-              },
-              {
-                language: "ES",
-                content: "Elevando la Excelencia en Todas las Industrias",
-              },
-              {
-                language: "CH",
-                content: "提升各行业的卓越水平",
-              },
-              {
-                language: "IT",
-                content: "Elevare l'Eccellenza in Tutti i Settori",
-              },
-            ]}
-            level={1}
-          ></Heading>
-
-          <Paragraph
-            type={"standfirst3"}
-            className="mb-4 text-center"
-            text={[
-              {
-                language: "EN",
-                content: "Your Gateway to International Commerce",
-              },
-              {
-                language: "ES",
-                content:
-                  "Soluciones Integrales en Importaciones, Construcción y Venta al por Menor",
-              },
-              {
-                language: "CH",
-                content: "进口、建筑和零售的综合解决方案",
-              },
-              {
-                language: "IT",
-                content:
-                  "Soluzioni Complete per Importazioni, Costruzioni e Vendita al Dettaglio",
-              },
-            ]}
-          ></Paragraph>
+          <div className={"grid grid-cols-2"}>
+            <div className="col-span-1">
+              <Heading
+                className="mb-4 text-left lg:text-6xl xl:text-[120px] !leading-[150px]"
+                text={[
+                  {
+                    language: "EN",
+                    content: "Your Gateway to International Commerce",
+                  },
+                  {
+                    language: "ES",
+                    content:
+                      "Soluciones Integrales en Importaciones, Construcción y Venta al por Menor",
+                  },
+                  {
+                    language: "CH",
+                    content: "进口、建筑和零售的综合解决方案",
+                  },
+                  {
+                    language: "IT",
+                    content:
+                      "Soluzioni Complete per Importazioni, Costruzioni e Vendita al Dettaglio",
+                  },
+                ]}
+                level={1}
+              ></Heading>
+              <Paragraph
+                type={"standfirst3"}
+                className="mb-4 text-center"
+                text={[
+                  {
+                    language: "EN",
+                    content: "Your Gateway to International Commerce",
+                  },
+                  {
+                    language: "ES",
+                    content:
+                      "Soluciones Integrales en Importaciones, Construcción y Venta al por Menor",
+                  },
+                  {
+                    language: "CH",
+                    content: "进口、建筑和零售的综合解决方案",
+                  },
+                  {
+                    language: "IT",
+                    content:
+                      "Soluzioni Complete per Importazioni, Costruzioni e Vendita al Dettaglio",
+                  },
+                ]}
+              ></Paragraph>
+            </div>
+            <div className="col-span-1"></div>
+          </div>
         </div>
       </div>
       <div className="relative opacity-0" ref={aboutUsRef}>
         <div className="backdrop-blur-md">
           <Heading
-            className="mb-4 text-center"
+            className="mb-4 lg:text-center"
             text={[
               {
                 language: "EN",
@@ -157,7 +163,7 @@ export default function MainHeader() {
 
           <Paragraph
             type={"standfirst3"}
-            className="mb-4 text-center"
+            className="mb-4 lg:text-center"
             text={[
               {
                 language: "EN",
