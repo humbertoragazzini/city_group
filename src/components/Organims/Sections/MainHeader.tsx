@@ -4,6 +4,7 @@ import Paragraph from "@/components/Atoms/Paragraph/Paragraph";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
+import LogoBG from "../RTFAnimations/RTFAComponents/Logo/LogoBG";
 
 export default function MainHeader() {
   const pathname = usePathname();
@@ -81,8 +82,8 @@ export default function MainHeader() {
         ref={homeRef}
       >
         <div className="backdrop-blur-md">
-          <div className={"grid grid-cols-2"}>
-            <div className="col-span-1">
+          <div className={"grid grid-cols-3"}>
+            <div className="col-span-2">
               <Heading
                 className="mb-4 text-left lg:text-6xl xl:text-[120px] !leading-[150px]"
                 text={[
@@ -132,7 +133,15 @@ export default function MainHeader() {
                 ]}
               ></Paragraph>
             </div>
-            <div className="col-span-1"></div>
+            <div className="col-span-1">
+              <LogoBG
+                className={
+                  "relative block w-full translate-y-[0%] left-0 aspect-square"
+                }
+                width={null}
+                rotation={{ x: 0, y: Math.PI / 2, z: 0 }}
+              ></LogoBG>
+            </div>
           </div>
         </div>
       </div>
